@@ -1,0 +1,74 @@
+[
+ {
+  "id": "kolberg",
+  "name": "Kołobrzeg, Polen",
+  "x": 483.8,
+  "y": 365.1
+ },
+ {
+  "id": "ruegen",
+  "name": "Rügen, Deutschland",
+  "x": 455.3,
+  "y": 360.8
+ },
+ {
+  "id": "amsterdam",
+  "name": "Amsterdam, Niederlande",
+  "x": 341.6,
+  "y": 401.8
+ },
+ {
+  "id": "normandie",
+  "name": "Normandie, Frankreich",
+  "x": 256.3,
+  "y": 459.4
+ },
+ {
+  "id": "biarritz",
+  "name": "Biarritz, Frankreich",
+  "x": 219.3,
+  "y": 583.5
+ },
+ {
+  "id": "porto",
+  "name": "Porto, Portugal",
+  "x": 94,
+  "y": 607.6
+ },
+ {
+  "id": "algarve",
+  "name": "Algarve, Portugal",
+  "x": 75.3,
+  "y": 697.2
+ },
+ {
+  "id": "andalusien",
+  "name": "Andalusien, Spanien",
+  "x": 140.6,
+  "y": 722.6
+ },
+ {
+  "id": "provence",
+  "name": "Provence, Frankreich",
+  "x": 331.7,
+  "y": 597.7
+ },
+ {
+  "id": "gardasee",
+  "name": "Gardasee, Italien",
+  "x": 416.1,
+  "y": 556.1
+ },
+ {
+  "id": "istrien",
+  "name": "Istrien, Kroatien",
+  "x": 466.3,
+  "y": 564.2
+ },
+ {
+  "id": "alpen",
+  "name": "Tirol, Österreich",
+  "x": 428.2,
+  "y": 519.2
+ }
+]

@@ -3,224 +3,225 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tussy Van — Dein Zuhause ist überall</title>
-  <meta name="description" content="Tussy Van baut handgefertigte Premium-Camper für Menschen, die draußen leben. Autark, winterfest, kompromisslos schön.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23102418'/%3E%3Cpath d='M8 11h16v4h-6v10h-4V15H8z' fill='%23e0393e'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="css/styles.css">
+  <title>Tussy Van — Eine Frau, ein blauer Bulli, ganz Europa</title>
+  <meta name="description" content="Vanlife, Reiserouten und DIY-Schraubertipps: Tussy reist mit ihrem blauen VW T4 durch Europa und zeigt dir die schönsten Ziele, Stellplätze und Camper-Hacks.">
+  <link rel="canonical" href="https://tussyvan.de/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tussy Van — Eine Frau, ein blauer Bulli, ganz Europa">
+  <meta property="og:description" content="Vanlife, Reiserouten und DIY-Schraubertipps aus dem blauen VW T4.">
+  <meta property="og:image" content="img/hero-tussy.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231b49c8'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23d3e23c' stroke-width='2.5'/%3E%3Cpath d='M16 7v18M16 16l-7 7M16 16l7 7' stroke='%23d3e23c' stroke-width='2.5'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Tussy Van",
+    "url": "https://tussyvan.de/",
+    "description": "Vanlife, Reiserouten und DIY-Schraubertipps aus dem blauen VW T4.",
+    "author": { "@type": "Person", "name": "Tussy", "url": "https://www.youtube.com/@tussyvan" }
+  }
+  </script>
 </head>
 <body>
 
-  <div class="scroll-progress"><span></span></div>
+  <div class="road-side" aria-hidden="true"></div>
+  <div class="road-bulli" aria-hidden="true"></div>
 
   <header class="site-header">
     <div class="wrap">
-      <a href="#hero" class="logo">Tussy<em>&nbsp;Van</em></a>
+      <a class="logo" href="index.html" aria-label="Tussy Van — Startseite">
+        <svg viewBox="0 0 64 44" aria-hidden="true">
+          <path d="M4 28 Q4 12 14 8 Q26 3 50 5 Q58 6 60 18 L61 26 Q61 32 55 32 L10 32 Q4 32 4 28 Z" fill="#1b49c8" stroke="#26251f" stroke-width="2.5"/>
+          <path d="M14 10 Q24 6 32 6 L32 17 L12 17 Q12 13 14 10 Z" fill="#cfe6ff" stroke="#26251f" stroke-width="2"/>
+          <path d="M37 6 L48 7 Q55 9 58 17 L37 17 Z" fill="#cfe6ff" stroke="#26251f" stroke-width="2"/>
+          <circle cx="18" cy="32" r="6" fill="#26251f"/><circle cx="18" cy="32" r="2.5" fill="#c9c4b2"/>
+          <circle cx="47" cy="32" r="6" fill="#26251f"/><circle cx="47" cy="32" r="2.5" fill="#c9c4b2"/>
+          <circle cx="40" cy="23" r="2.2" fill="#d3e23c"/><circle cx="26" cy="23" r="1.8" fill="#d3e23c"/>
+        </svg>
+        <b>Tussy&nbsp;<em>Van</em></b>
+      </a>
+      <button class="nav-toggle" aria-label="Menü öffnen">☰</button>
       <nav class="main-nav">
-        <a href="#produkte">Produkte</a>
-        <a href="#story">Story</a>
-        <a href="#features">Features</a>
-        <a href="#kontakt" class="btn btn-red">Probefahrt</a>
+        <a href="index.html" aria-current="page">Start</a>
+        <a href="reiseziele.html">Reiseziele</a>
+        <a href="blog.html">Blog</a>
+        <a href="ueber-mich.html">Über mich</a>
+        <a class="btn btn-terra" href="https://www.youtube.com/@tussyvan?sub_confirmation=1" target="_blank" rel="noopener">▶ Abonnieren</a>
       </nav>
     </div>
   </header>
 
-  <!-- ============ HERO — scroll-scrubbed camera push ============ -->
-  <section id="hero" class="scrub">
-    <div class="stage">
-      <canvas aria-hidden="true"></canvas>
-
-      <div class="overlay">
-        <div data-in="0.00" data-out="0.30">
-          <span class="eyebrow">Camper &middot; Lifestyle &middot; Reise</span>
-          <h1 class="display-xl">Dein Zuhause<br>ist überall.</h1>
-          <p class="lead">Handgebaute Premium-Camper für Menschen, die draußen leben — nicht nur Urlaub machen.</p>
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="sticker neon wobble">☮ vanlife seit 2019</span>
+        <h1 class="display-xl">Eine Frau.<br>Ein <span class="u-blue">blauer Bulli</span>.<br><span class="u-neon">Ganz Europa.</span></h1>
+        <span class="hand">…und ja, geschraubt wird selbst!</span>
+        <p class="lead">Ich bin Tussy — ich reise mit meinem VW T4 durch Europa, sammle die schönsten Stellplätze und zeige dir auf YouTube, wie Vanlife wirklich aussieht: Traumstrände inklusive Ölwechsel.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-blue" href="https://www.youtube.com/@tussyvan?sub_confirmation=1" target="_blank" rel="noopener">▶ YouTube abonnieren</a>
+          <a class="btn" href="reiseziele.html">Reiseziele entdecken</a>
         </div>
-        <div data-in="0.36" data-out="0.62">
-          <span class="eyebrow">Gebaut für die Wildnis</span>
-          <p class="display-lg">Wo die Straße endet,<br>fängt Tussy erst an.</p>
-        </div>
-        <div data-in="0.68" data-out="1.00">
-          <span class="eyebrow">Näher dran als je zuvor</span>
-          <p class="display-lg">Bereit für deine<br>erste Nacht draußen?</p>
-          <div>
-            <a href="#produkte" class="btn btn-red">Modelle entdecken</a>
-            <a href="#story" class="btn btn-ghost">Unsere Story</a>
-          </div>
+        <div class="hero-badges">
+          <span class="sticker wobble">🔧 DIY &amp; Reparatur</span>
+          <span class="sticker army wobble">🌍 12+ Länder</span>
+          <span class="sticker terra hand wobble">immer der Sonne nach</span>
         </div>
       </div>
-
-      <div class="scroll-hint" data-in="0.00" data-out="0.10">Scrollen</div>
+      <div class="hero-photo reveal">
+        <span class="deco deco-peace sticker neon wobble" data-parallax="-0.06">☮</span>
+        <div class="frame">
+          <img src="img/hero-tussy.jpg" alt="Tussy sitzt auf der Motorhaube ihres blauen VW T4 mit neongelben Stickern" fetchpriority="high">
+        </div>
+        <span class="caption sticker hand" data-parallax="-0.03">mein Blauer &amp; ich 💙</span>
+        <span class="deco deco-route sticker blue wobble" data-parallax="-0.09">18.000 km / Jahr</span>
+      </div>
     </div>
   </section>
 
-  <!-- ============ PRODUKTE ============ -->
-  <section id="produkte" class="section">
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Vanlife <em>☮</em> Europa <em>★</em> DIY <em>⚙</em> Stellplätze <em>☀</em> T4 Forever <em>☮</em> Meer sehen <em>★</em> Selbst schrauben <em>⚙</em> Freiheit <em>☀</em></span>
+      <span>Vanlife <em>☮</em> Europa <em>★</em> DIY <em>⚙</em> Stellplätze <em>☀</em> T4 Forever <em>☮</em> Meer sehen <em>★</em> Selbst schrauben <em>⚙</em> Freiheit <em>☀</em></span>
+    </div>
+  </div>
+
+  <!-- ============ YOUTUBE ============ -->
+  <section class="yt-section section" id="youtube">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Produkte</span>
-        <h2 class="display-lg">Drei Vans.<br>Ein Versprechen.</h2>
-        <p class="lead">Jeder Tussy wird in unserer Manufaktur im Schwarzwald von Hand ausgebaut — Eichenholz, Wolle, Stahl. Keine Serienware.</p>
+        <span class="eyebrow">YouTube</span>
+        <h2 class="display-lg">Komm mit auf Tour.</h2>
+        <span class="hand" style="color:var(--neon)">jeden Sonntag ein neues Video!</span>
+        <p class="lead">Roadtrips, Pannen, Traumbuchten und ehrliche Kosten — alles ungeschönt auf meinem Kanal.</p>
       </div>
-
-      <div class="product-grid">
-        <article class="product-card reveal" data-tilt>
-          <figure>
-            <img src="img/tussy-one.jpg" alt="Tussy One — kompakter Camper an der Steilküste" loading="lazy">
-            <span class="tag">Kompakt</span>
-          </figure>
-          <div class="product-body">
-            <div>
-              <h3>Tussy One</h3>
-              <p class="sub">Der Wendige. Stadt unter der Woche, Küste am Wochenende.</p>
+      <div class="yt-grid">
+        <div class="yt-player reveal">
+          <div class="yt-consent">
+            <div class="inner">
+              <span class="sticker neon">🎬 Datenschutz-Hinweis</span>
+              <p>Das Video wird von YouTube (Google) geladen. Erst nach deinem Klick werden Daten an YouTube übertragen. Details in der <a href="datenschutz.html" style="color:var(--neon)">Datenschutzerklärung</a>.</p>
+              <button class="btn btn-neon" data-load-youtube>▶ Neueste Videos laden</button>
             </div>
-            <ul class="spec-list">
-              <li>Länge <strong>5,4 m</strong></li>
-              <li>Schlafplätze <strong>2</strong></li>
-              <li>Autarkie <strong>7 Tage</strong></li>
-              <li>Solar <strong>400 W</strong></li>
-            </ul>
-            <div class="price-row">
-              <div class="price">ab 59.900&nbsp;€<small>inkl. Ausbau</small></div>
-              <a href="#kontakt">Anfragen →</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-card reveal" data-delay="1" data-tilt>
-          <figure>
-            <img src="img/tussy-expedition.jpg" alt="Tussy Expedition — 4x4 Expeditions-Camper im Bergnebel" loading="lazy">
-            <span class="tag hot">Bestseller</span>
-          </figure>
-          <div class="product-body">
-            <div>
-              <h3>Tussy Expedition</h3>
-              <p class="sub">Der Kompromisslose. 4x4, Dachträger, gebaut für das Ende der Karte.</p>
-            </div>
-            <ul class="spec-list">
-              <li>Länge <strong>6,0 m</strong></li>
-              <li>Schlafplätze <strong>2 + 1</strong></li>
-              <li>Autarkie <strong>14 Tage</strong></li>
-              <li>Antrieb <strong>4x4</strong></li>
-            </ul>
-            <div class="price-row">
-              <div class="price">ab 84.500&nbsp;€<small>inkl. Ausbau</small></div>
-              <a href="#kontakt">Anfragen →</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-card reveal" data-delay="2" data-tilt>
-          <figure>
-            <img src="img/tussy-grand.jpg" alt="Tussy Grand — Familien-Camper mit Aufstelldach am Lagerfeuer" loading="lazy">
-            <span class="tag">Familie</span>
-          </figure>
-          <div class="product-body">
-            <div>
-              <h3>Tussy Grand</h3>
-              <p class="sub">Der Große. Aufstelldach, vier Betten, ein ganzes Zuhause auf Rädern.</p>
-            </div>
-            <ul class="spec-list">
-              <li>Länge <strong>6,4 m</strong></li>
-              <li>Schlafplätze <strong>4</strong></li>
-              <li>Autarkie <strong>10 Tage</strong></li>
-              <li>Solar <strong>600 W</strong></li>
-            </ul>
-            <div class="price-row">
-              <div class="price">ab 98.900&nbsp;€<small>inkl. Ausbau</small></div>
-              <a href="#kontakt">Anfragen →</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ STORY — scroll-scrubbed interior ============ -->
-  <section id="story" class="scrub">
-    <div class="stage">
-      <canvas aria-hidden="true"></canvas>
-
-      <div class="overlay">
-        <div data-in="0.00" data-out="0.30">
-          <span class="eyebrow">Story</span>
-          <p class="display-lg">Ein Abend<br>im Tussy.</p>
-        </div>
-        <div data-in="0.36" data-out="0.64">
-          <div class="story-panel">
-            <blockquote>„Wir haben 2019 unseren ersten Van für uns selbst ausgebaut. Heute bauen wir jeden Tussy noch genauso: als wäre er unser eigener."</blockquote>
-            <cite>Toni &amp; Sarah — Gründer, Tussy Van</cite>
           </div>
         </div>
-        <div data-in="0.70" data-out="1.00">
-          <span class="eyebrow">Handwerk statt Fließband</span>
-          <p class="display-lg">Eiche. Wolle. Stahl.<br>Und viel Zeit.</p>
-          <p class="lead">Über 800 Stunden Handarbeit stecken in jedem Ausbau. Man sieht sie nicht alle — aber man spürt jede einzelne.</p>
+        <div class="yt-side">
+          <div class="card reveal" data-delay="1">
+            <span class="stat">▶ @tussyvan</span>
+            <h3>Der Kanal zum Bulli</h3>
+            <p>Reisefolgen, Schrauber-Tutorials und Q&amp;As aus dem Van — schau vorbei und sag hallo in den Kommentaren!</p>
+          </div>
+          <div class="card reveal" data-delay="2">
+            <h3>Nichts mehr verpassen</h3>
+            <p>Glocke aktivieren und jeden Sonntag mitreisen.</p>
+          </div>
+          <a class="btn btn-terra reveal" data-delay="3" href="https://www.youtube.com/@tussyvan?sub_confirmation=1" target="_blank" rel="noopener">▶ Jetzt kostenlos abonnieren</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ FEATURES ============ -->
-  <section id="features" class="section">
+  <!-- ============ KARTE ============ -->
+  <section class="map-section section" id="karte">
+    <div class="wrap map-grid">
+      <div class="map-copy reveal">
+        <span class="eyebrow">Die Route</span>
+        <h2 class="display-lg">Wo der Blaue schon überall war.</h2>
+        <span class="hand">scroll — und er fährt los!</span>
+        <p class="lead" style="margin-top:1rem">Von der polnischen Ostsee bis an die Algarve: Klick auf eine Station für meine ehrlichen Tipps — Stellplatz, beste Reisezeit und das, was in keinem Reiseführer steht.</p>
+        <div class="hint">🖱️ Punkte anklicken · 🚌 der Bulli folgt deinem Scroll</div>
+        <a class="btn btn-blue" style="margin-top:1.6rem" href="reiseziele.html">Alle Reiseziele ansehen</a>
+      </div>
+      <div class="map-stage reveal" data-map="img/europe-map.svg" data-points="js/route-points.json">
+        <div class="map-card">
+          <h3></h3>
+          <p></p>
+          <a href="reiseziele.html">Mehr dazu →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BLOG TEASER ============ -->
+  <section class="section" id="blog">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Features</span>
-        <h2 class="display-lg">Alles dran.<br>Nichts drangeklebt.</h2>
-        <p class="lead">Keine Aufpreisliste, keine Sternchen. Jeder Tussy fährt mit der vollen Ausstattung vom Hof.</p>
+        <span class="eyebrow">Blog</span>
+        <h2 class="display-lg">Frisch aus dem Van.</h2>
+        <span class="hand">Reiseberichte &amp; Schrauberwissen</span>
       </div>
-
-      <div class="feature-grid">
-        <div class="feature-card reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5 5l2.1 2.1M16.9 16.9L19 19M19 5l-2.1 2.1M7.1 16.9L5 19"/></svg></div>
-          <h3>600 W Solar &amp; 210 Ah Lithium</h3>
-          <p>Bis zu 14 Tage komplett autark — Kühlschrank, Licht, Laptop und Drohne inklusive.</p>
-        </div>
-        <div class="feature-card reveal" data-delay="1">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M12 3l3 3M12 3L9 6M12 21l3-3M12 21l-3-3M4 8l16 8M4 8l4 .5M4 8l.5 4M20 16l-4-.5M20 16l-.5-4M20 8L4 16M20 8l-4 .5M20 8l-.5 4M4 16l4-.5M4 16l.5-4"/></svg></div>
-          <h3>Winterfest bis −25 °C</h3>
-          <p>Dieselheizung, isolierte Wassertanks und 40 mm Wollisolierung. Skiurlaub? Kein Problem.</p>
-        </div>
-        <div class="feature-card reveal" data-delay="2">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10h16M6 10V7a2 2 0 012-2h8a2 2 0 012 2v3M5 10v9h14v-9M9 14h6"/></svg></div>
-          <h3>Küche aus massiver Eiche</h3>
-          <p>Zwei Flammen, 65 l Kompressor-Kühlschrank und eine Arbeitsplatte, auf der man wirklich kocht.</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 18v-6a2 2 0 012-2h14a2 2 0 012 2v6M3 18h18M3 18v2M21 18v2M6 10V7a2 2 0 012-2h8a2 2 0 012 2v3"/></svg></div>
-          <h3>Boxspring-Schlafsystem</h3>
-          <p>Tellerfedern und eine 14 cm Kaltschaummatratze — besser als das Bett zuhause.</p>
-        </div>
-        <div class="feature-card reveal" data-delay="1">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></div>
-          <h3>Tussy Smart Control</h3>
-          <p>Batterie, Wasser, Heizung und Standort — alles in einer App, auch offline im Funkloch.</p>
-        </div>
-        <div class="feature-card reveal" data-delay="2">
-          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="17" r="2.5"/><circle cx="17" cy="17" r="2.5"/><path d="M2 17h2.5M9.5 17h5M19.5 17H22M4 17v-5l3-5h7l4 5h4v5"/></svg></div>
-          <h3>4x4 &amp; Offroad-Paket</h3>
-          <p>Allrad, Höherlegung und AT-Bereifung — für die Plätze, die in keiner App verzeichnet sind.</p>
-        </div>
+      <div class="post-grid">
+        <a class="post-card reveal" href="blog/algarve-im-winter.html">
+          <span class="cat sticker terra">Reisebericht</span>
+          <h3>Überwintern an der Algarve — mein Fazit nach 3 Monaten</h3>
+          <p>Was kostet der Winter im Süden wirklich? Stellplätze, Gasflaschen-Chaos und warum ich wiederkomme.</p>
+          <span class="meta">12 Min. Lesezeit</span>
+        </a>
+        <a class="post-card reveal" data-delay="1" href="blog/solardusche-selber-bauen.html">
+          <span class="cat sticker neon">DIY &amp; Reparatur</span>
+          <h3>Solardusche für 30 € selbst bauen</h3>
+          <p>Warmduschen hinterm Bulli — mit Baumarktteilen, einer Stunde Zeit und null Vorkenntnissen.</p>
+          <span class="meta">8 Min. Lesezeit</span>
+        </a>
+        <a class="post-card reveal" data-delay="2" href="blog/t4-springt-nicht-an-checkliste.html">
+          <span class="cat sticker army">Frau schraubt selbst</span>
+          <h3>T4 springt nicht an? Meine 10-Punkte-Checkliste</h3>
+          <p>Bevor du den Abschleppdienst rufst: die häufigsten Übeltäter — und wie du sie selbst findest.</p>
+          <span class="meta">10 Min. Lesezeit</span>
+        </a>
       </div>
-
-      <div class="stats-band reveal">
-        <div><div class="num">800<em>+</em></div><div class="label">Vans gebaut</div></div>
-        <div><div class="num">14</div><div class="label">Tage autark</div></div>
-        <div><div class="num">12</div><div class="label">Jahre Garantie</div></div>
-        <div><div class="num">4,9<em>★</em></div><div class="label">Kundenbewertung</div></div>
+      <div class="reveal" style="margin-top:2.2rem">
+        <a class="btn" href="blog.html">Alle Beiträge lesen</a>
       </div>
     </div>
   </section>
 
-  <!-- ============ CTA ============ -->
-  <section id="kontakt">
-    <div class="wrap reveal">
-      <span class="eyebrow">Bereit?</span>
-      <h2 class="display-lg">Der Weg wartet nicht.</h2>
-      <p class="lead">Buche eine kostenlose Probefahrt — ein Wochenende, ein Tussy, null Verpflichtung. Danach entscheidest du.</p>
-      <div>
-        <a href="mailto:hallo@tussy-van.de?subject=Probefahrt" class="btn btn-red">Jetzt Probefahrt buchen</a>
-        <a href="mailto:hallo@tussy-van.de?subject=Katalog" class="btn btn-ghost">Katalog anfordern</a>
+  <!-- ============ ÜBER MICH TEASER ============ -->
+  <section class="section" id="ueber-mich" style="background:var(--paper-2);border-top:3px solid var(--ink)">
+    <div class="wrap about-grid">
+      <div class="about-photo reveal">
+        <div class="frame">
+          <img src="img/tussy-bulli.jpg" alt="Tussy steht neben ihrem blauen VW T4 Bulli" loading="lazy">
+        </div>
+        <span class="caption sticker hand">Team Blau 💙</span>
       </div>
+      <div class="reveal" data-delay="1">
+        <span class="eyebrow">Über mich</span>
+        <h2 class="display-lg">Hi, ich bin Tussy.</h2>
+        <span class="hand">Bulli-Fahrerin, Selberschrauberin, Sonnenanbeterin</span>
+        <p class="lead" style="margin-top:1rem">2019 habe ich einen müden T4 gekauft, ihn royalblau lackiert und mit gelben Stickern beklebt. Seitdem sind wir unzertrennlich: über 60.000 km, 12 Länder und gefühlt 100 Werkstatt-Momente — die meisten davon habe ich selbst gelöst.</p>
+        <ul class="about-facts">
+          <li><b>🚌 Mein Van:</b> VW T4, Bj. 1998, 2.5 TDI — hört auf „der Blaue"</li>
+          <li><b>🔧 Motto:</b> Erst googeln, dann schrauben, dann feiern</li>
+          <li><b>📍 Basislager:</b> polnische Ostseeküste</li>
+        </ul>
+        <a class="btn btn-blue" style="margin-top:1.8rem" href="ueber-mich.html">Meine Geschichte lesen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEWSLETTER ============ -->
+  <section class="newsletter section" id="newsletter">
+    <div class="wrap inner">
+      <div class="reveal">
+        <span class="eyebrow" style="color:var(--neon)">Newsletter</span>
+        <h2 class="display-lg">Post aus dem Bulli.</h2>
+        <p style="margin-top:0.8rem;color:#e4e6d5">Einmal im Monat: neue Routen, Stellplatz-Perlen und DIY-Anleitungen. Kein Spam, versprochen — abmelden geht jederzeit.</p>
+      </div>
+      <form class="reveal" data-delay="1" method="post" action="#">
+        <div class="row">
+          <input type="email" name="email" required placeholder="deine@email.de" aria-label="E-Mail-Adresse">
+          <button class="btn btn-neon" type="submit">Anmelden</button>
+        </div>
+        <label class="check">
+          <input type="checkbox" required>
+          <span>Ich möchte den Newsletter erhalten und habe die <a href="datenschutz.html" style="color:var(--neon)">Datenschutzerklärung</a> gelesen. (DSGVO-Einwilligung)</span>
+        </label>
+        <p class="note"></p>
+      </form>
     </div>
   </section>
 
@@ -229,62 +230,56 @@
     <div class="wrap">
       <div class="footer-grid">
         <div>
-          <a href="#hero" class="logo">Tussy<em>&nbsp;Van</em></a>
-          <p>Handgebaute Premium-Camper aus dem Schwarzwald. Für Menschen, die draußen leben.</p>
+          <a class="logo" href="index.html"><b>Tussy&nbsp;<em>Van</em></b></a>
+          <p style="margin-top:0.8rem">Vanlife, Reiserouten und Schraubertipps aus dem blauen VW T4 — unterwegs in ganz Europa.</p>
         </div>
         <div>
-          <h4>Modelle</h4>
+          <h4>Entdecken</h4>
           <ul>
-            <li><a href="#produkte">Tussy One</a></li>
-            <li><a href="#produkte">Tussy Expedition</a></li>
-            <li><a href="#produkte">Tussy Grand</a></li>
+            <li><a href="reiseziele.html">Reiseziele</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="ueber-mich.html">Über mich</a></li>
           </ul>
         </div>
         <div>
-          <h4>Unternehmen</h4>
+          <h4>Folge mir</h4>
           <ul>
-            <li><a href="#story">Unsere Story</a></li>
-            <li><a href="#features">Ausstattung</a></li>
-            <li><a href="#kontakt">Kontakt</a></li>
+            <li><a href="https://www.youtube.com/@tussyvan" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a></li>
           </ul>
         </div>
         <div>
-          <h4>Folge uns</h4>
+          <h4>Rechtliches</h4>
           <ul>
-            <li><a href="#" rel="noopener">Instagram</a></li>
-            <li><a href="#" rel="noopener">YouTube</a></li>
-            <li><a href="#" rel="noopener">Pinterest</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 Tussy Van GmbH. Alle Rechte vorbehalten.</span>
+        <span>© 2026 Tussy Van · Mit 💙 aus dem Bulli</span>
         <nav>
-          <a href="#">Impressum</a>
-          <a href="#">Datenschutz</a>
-          <a href="#">AGB</a>
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
         </nav>
       </div>
     </div>
   </footer>
 
+  <!-- ============ COOKIE-BANNER ============ -->
+  <div class="cookie-banner" role="dialog" aria-label="Cookie-Einstellungen">
+    <h3>🍪 Kurz gefragt:</h3>
+    <p>Diese Seite nutzt nur technisch notwendige Speicherung. YouTube-Videos werden erst nach deiner Zustimmung geladen (dabei überträgt Google Daten). Was darf's sein?</p>
+    <div class="row">
+      <button class="btn btn-neon" data-consent="all">Alles okay</button>
+      <button class="btn" data-consent="essential">Nur notwendig</button>
+      <a class="btn" href="datenschutz.html" style="box-shadow:none;border-width:2px">Mehr Infos</a>
+    </div>
+  </div>
+
   <script src="js/lenis.min.js"></script>
-  <script>
-    window.SCRUB_SECTIONS = [
-      {
-        section: "#hero",
-        frameCount: 160,
-        bg: "#07100b",
-        framePath: function (i) { return "frames/hero/frame_" + String(i).padStart(4, "0") + ".jpg"; }
-      },
-      {
-        section: "#story",
-        frameCount: 160,
-        bg: "#0a0d09",
-        framePath: function (i) { return "frames/interior/frame_" + String(i).padStart(4, "0") + ".jpg"; }
-      }
-    ];
-  </script>
-  <script src="js/scroll-cinematic.js"></script>
+  <script src="js/destinations.js"></script>
+  <script src="js/site.js"></script>
 </body>
 </html>

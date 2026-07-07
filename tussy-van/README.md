@@ -1,12 +1,11 @@
-# Tussy Van — Cinematic Scroll Website
+# Tussy Van — Lifestyle- & Reise-Website
 
-Dark-Premium-Onepager für die Camper-Marke **Tussy Van** mit 3D-Scroll-Effekt:
-Zwei Higgsfield-generierte Szenen (Exterieur & Interieur) werden als Frame-Sequenzen
-per Canvas gescrubbt — Scrollen spielt die Kamerafahrt vor und zurück.
+Website zum YouTube-Kanal [@tussyvan](https://youtube.com/@tussyvan):
+Eine Frau reist mit ihrem blauen VW T4 durch Europa — Reiseziele, Blog
+(inkl. „Frau schraubt selbst"), animierte Europakarte mit mitfahrendem Bulli
+und DSGVO-Grundausstattung. Statisches HTML/CSS/JS, kein Build-Schritt.
 
-## Starten
-
-Kein Build nötig — statisches HTML/CSS/JS:
+## Lokal ansehen
 
 ```bash
 cd tussy-van
@@ -14,24 +13,39 @@ python3 -m http.server 8080
 # → http://localhost:8080
 ```
 
-## Struktur
+(Ein Server ist nötig, weil die Europakarte per `fetch` geladen wird.)
 
-| Pfad | Inhalt |
+## Wo ändere ich was?
+
+| Was | Wo |
 |---|---|
-| `index.html` | Sektionen: Hero, Produkte, Story, Features, CTA, Footer (+ `SCRUB_SECTIONS`-Konfiguration) |
-| `css/styles.css` | Dark-Premium-Theme (Dunkelgrün `#07100b`–`#234f38`, Rot `#c22a30`) |
-| `js/scroll-cinematic.js` | Scrub-Engine: Frame-Preload, Canvas-Cover-Draw, Overlay-Fades, Reveals, Card-Tilt |
-| `js/lenis.min.js` | Lenis Smooth Scroll (vendored) |
-| `frames/hero/`, `frames/interior/` | je 160 JPG-Frames (ffmpeg-Kamerafahrt aus den Keyframes) |
-| `assets/` | Higgsfield-Originalbilder (nano_banana) |
-| `img/` | Web-optimierte Produktbilder |
+| **YouTube-Kanal-ID** (aktiviert „Neueste Videos"-Playlist) | `js/site.js` → `CONFIG.youtubeChannelId` — die ID (beginnt mit `UC…`) findest du in YouTube Studio → Einstellungen → Kanal → Erweiterte Einstellungen |
+| **Newsletter-Anbieter** (Brevo, Mailchimp, …) | `js/site.js` → `CONFIG.newsletterAction` (Form-Action-URL des Anbieters eintragen) |
+| **Reiseziele** (Tipps, Stellplätze, Filter) | `js/destinations.js` — einfach Einträge kopieren/ändern |
+| **Blog-Beiträge** | Ordner `blog/` — bestehenden Artikel kopieren, Text ändern, auf `blog.html` und ggf. Startseite verlinken |
+| **Texte der Startseite / Über mich** | direkt in `index.html` / `ueber-mich.html` |
+| **Fotos** | `img/hero-tussy.jpg` (Startseite) und `img/tussy-bulli.jpg` (Über mich) ersetzen |
+| **Farben** | `css/site.css` → `:root`-Variablen (`--blue`, `--neon`, `--terra`, …) |
+| **Routen-Stationen der Karte** | `js/route-points.json` (Koordinaten) + passende Einträge in `js/destinations.js` (gleiche `id`) |
+| **Impressum / Datenschutz** | `impressum.html`, `datenschutz.html` — `[PLATZHALTER]` ersetzen! |
 
-## Frames neu generieren
+## Shop freischalten (vorbereitet)
 
-```bash
-ffmpeg -i assets/hero.png -vf "scale=7000:-2,zoompan=z='1+0.22*on/159':d=160:x='(iw-iw/zoom)*0.58':y='(ih-ih/zoom)*0.45':s=1408x792" -frames:v 160 -q:v 6 frames/hero/frame_%04d.jpg
-```
+`shop.html` existiert bereits, ist aber unverlinkt und per `noindex` versteckt.
+Zum Livegang: Hinweis-Kommentar am Dateianfang befolgen (Produkte bzw.
+Shopify-Buy-Button/WooCommerce-Embed einfügen, `noindex` entfernen,
+Nav-Link ergänzen).
 
-Sobald Higgsfield-Video-Credits verfügbar sind (Basic-Plan+), können die
-Standbild-Kamerafahrten durch echte Orbit-/Flythrough-Clips ersetzt werden:
-Clip generieren, dann `ffmpeg -i clip.mp4 -vf "fps=160/6,scale=1408:-2" -q:v 6 frames/hero/frame_%04d.jpg`.
+## DSGVO-Ausstattung
+
+- Cookie-Banner (nur technisch notwendige Speicherung; Entscheidung in `localStorage`)
+- YouTube als Zwei-Klick-Lösung über `youtube-nocookie.com`
+- Schriften lokal gehostet (kein Google-Fonts-CDN)
+- Impressum + Datenschutzerklärung als Vorlagen mit Platzhaltern
+
+## Technik
+
+- Statisch: HTML + CSS + Vanilla JS, Lenis Smooth Scroll (vendored)
+- Europakarte: aus Natural-Earth-Daten generiert (Public Domain), Route/Bulli in `js/site.js`
+- SEO: Meta/OG-Tags, JSON-LD, `sitemap.xml`, `robots.txt`
+- Der kleine Bulli am rechten Seitenrand fährt mit dem Scroll-Fortschritt

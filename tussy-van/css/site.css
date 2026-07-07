@@ -26,16 +26,16 @@
 :root {
   --blue: #2350b5;
   --blue-deep: #1a3a85;
-  --blue-ink: #14213d;
-  --neon: #c9d66a;
-  --neon-soft: #e9eec9;
-  --army: #6b7350;
-  --terra: #bd6b4e;
-  --camel: #5b8a94;
-  --paper: #f7f8fb;
-  --paper-2: #eaeef5;
-  --ink: #262a31;
-  --muted: #6d7378;
+  --blue-ink: #16233f;
+  --neon: #e9b95c;      /* Honig-Gold — warmer Hauptakzent */
+  --neon-soft: #f7e9c9;
+  --army: #798266;      /* Salbeigrün */
+  --terra: #c0704f;
+  --camel: #c78d7b;     /* zarte Alt-Rosé-Terrakotta */
+  --paper: #fbf9f6;
+  --paper-2: #f3efe9;
+  --ink: #2b2823;
+  --muted: #7a746b;
   --white: #ffffff;
   --font: "Outfit", system-ui, sans-serif;
   --hand: "Caveat", "Segoe Script", cursive;
@@ -112,7 +112,7 @@ h1, h2, h3 { font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; text-
 /* ---------- Header ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(247, 248, 251, 0.92); backdrop-filter: blur(10px);
+  background: rgba(251, 249, 246, 0.92); backdrop-filter: blur(10px);
   border-bottom: 3px solid var(--ink);
 }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; padding: 0.7rem 0; gap: 1rem; }
@@ -224,7 +224,7 @@ h1, h2, h3 { font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; text-
 .map-copy .hint { display: flex; align-items: center; gap: 0.6rem; margin-top: 1.4rem; color: var(--muted); font-size: 0.92rem; }
 .map-stage { position: relative; }
 .euromap { width: 100%; height: auto; display: block; }
-.euromap .countries path { fill: #ffffff; stroke: #b7c0cf; stroke-width: 0.7; }
+.euromap .countries path { fill: #ffffff; stroke: #c6bfb2; stroke-width: 0.7; }
 .euromap .countries path.visited { fill: #dfe7fb; stroke: var(--blue); stroke-width: 1; }
 .euromap .route {
   fill: none; stroke: var(--terra); stroke-width: 4; stroke-dasharray: 2 10;

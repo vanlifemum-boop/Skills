@@ -8,7 +8,7 @@
     // Kanal-ID (beginnt mit "UC...") eintragen, dann laedt die Video-Sektion
     // automatisch die neuesten Videos als Playlist. Zu finden unter:
     // YouTube Studio -> Einstellungen -> Kanal -> Erweiterte Einstellungen.
-    youtubeChannelId: "",
+    youtubeChannelId: "UCcUM-tEcaUAKm8ki0Q2qRxw",
     // Newsletter: Form-Action deines Anbieters (Mailchimp, Brevo, ...) eintragen.
     // Leer = Hinweis-Modus (Formular zeigt freundliche Meldung statt zu senden).
     newsletterAction: ""

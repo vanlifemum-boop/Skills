@@ -249,6 +249,7 @@ h1, h2, h3 { font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; text-
 /* ---------- Reiseziele Karten ---------- */
 .dest-filter { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-bottom: 2.2rem; }
 .chip {
+  display: inline-block; text-decoration: none;
   border: 3px solid var(--ink); background: var(--white); border-radius: 999px;
   font-family: var(--font); font-weight: 800; font-size: 0.85rem; padding: 0.45em 1.1em;
   cursor: pointer; box-shadow: 0.2rem 0.2rem 0 rgba(38,37,31,0.85);
@@ -306,6 +307,12 @@ h1, h2, h3 { font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; text-
   padding: 1.2rem 1.4rem; margin: 1.6rem 0; box-shadow: var(--shadow-sticker);
 }
 .prose .box b { display: block; margin-bottom: 0.3rem; }
+.prose details.kurzfassung summary { cursor: pointer; list-style: none; }
+.prose details.kurzfassung summary::before { content: "▸ "; }
+.prose details.kurzfassung[open] summary::before { content: "▾ "; }
+.prose details.kurzfassung summary b { display: inline; }
+.prose details.kurzfassung[open] summary { margin-bottom: 0.8rem; }
+.prose details.kurzfassung h2 { font-size: 1.15rem; margin: 1.2rem 0 0.5rem; }
 
 /* ---------- Über mich teaser ---------- */
 .about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }

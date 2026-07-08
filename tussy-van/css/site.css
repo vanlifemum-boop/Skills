@@ -27,13 +27,13 @@
   --blue: #2350b5;
   --blue-deep: #1a3a85;
   --blue-ink: #16233f;
-  --neon: #e9b95c;      /* Honig-Gold — warmer Hauptakzent */
-  --neon-soft: #f7e9c9;
-  --army: #f4c542;      /* warmes Sonnengelb */
+  --neon: #f2b52e;      /* sattes Sonnengold — warmer Hauptakzent */
+  --neon-soft: #fdeec4;
+  --army: #f7c73f;      /* warmes Sonnengelb */
   --terra: #c0704f;
   --camel: #c78d7b;     /* zarte Alt-Rosé-Terrakotta */
-  --paper: #f2f6fb;     /* helles Hellblau */
-  --paper-2: #e3ecf7;
+  --paper: #e7f0fb;     /* deutliches Himmelblau */
+  --paper-2: #d4e4f6;
   --ink: #2b2823;
   --muted: #7a746b;
   --white: #ffffff;
@@ -112,7 +112,7 @@ h1, h2, h3 { font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; text-
 /* ---------- Header ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(242, 246, 251, 0.92); backdrop-filter: blur(10px);
+  background: rgba(231, 240, 251, 0.92); backdrop-filter: blur(10px);
   border-bottom: 3px solid var(--ink);
 }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; padding: 0.7rem 0; gap: 1rem; }

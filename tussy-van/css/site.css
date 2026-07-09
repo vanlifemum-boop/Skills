@@ -92,7 +92,7 @@ h1, h2, h3 { font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; text-
 
 .sticker {
   display: inline-block; padding: 0.35em 0.9em;
-  background: var(--white); border: 3px solid var(--ink); border-radius: 999px;
+  background: var(--white); color: var(--ink); border: 3px solid var(--ink); border-radius: 999px;
   font-weight: 800; font-size: 0.85rem;
   box-shadow: var(--shadow-sticker);
   transform: rotate(-2deg);

@@ -277,10 +277,10 @@ window.TV_DESTINATIONS = [
   {
     id: "warschau", country: "polen", flag: "🇵🇱", name: "Warschau", region: "Hauptstadt Polens",
     color: "bg-blue",
-    blurb: "Wieder aufgebaute Altstadt, Wolkenkratzer daneben und grüne Weichsel-Ufer — Kontraste pur.",
+    blurb: "Wie ein Phönix aus der Asche: wieder aufgebaute Altstadt, Wolkenkratzer daneben, grüne Weichsel-Ufer und jede Menge Legenden — Kontraste pur.",
     stellplatz: "Campingplatz / Stellplatz nahe der Weichsel, mit Metro & Tram ins Zentrum.",
-    zeit: "Mai–September.",
-    tipp: "Am rechten Weichselufer (Praga) die Strand-Bars — Großstadt mit Sandstrand-Feeling."
+    zeit: "Mai–September — Mitte Mai (meist 3. Samstag) die kostenlose „Nacht der Museen\".",
+    tipp: "360-Grad-Blick vom Kulturpalast (30. Stock), der Dachgarten der Uni-Bibliothek (BUW) und die Legende der Goldenen Gans am Chopin-Museum."
   },
   {
     id: "posen", country: "polen", flag: "🇵🇱", name: "Posen / Poznań", region: "Zwischenstopp mit Charme",

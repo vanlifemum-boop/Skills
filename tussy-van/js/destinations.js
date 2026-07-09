@@ -293,10 +293,10 @@ window.TV_DESTINATIONS = [
   {
     id: "tschenstochau", country: "polen", flag: "🇵🇱", name: "Częstochowa / Tschenstochau", region: "Historischer Wallfahrtsort",
     color: "bg-terra",
-    blurb: "Der berühmte Wallfahrtsort mit dem Kloster Jasna Góra und der „Schwarzen Madonna\" — ein stiller, beeindruckender Zwischenstopp auf dem Weg in den Norden.",
+    blurb: "Das spirituelle Herz Polens: die Schwarze Madonna im Paulinerkloster auf dem Hügel Jasna Góra — magisches Klostergelände mit weitläufigem Park und lebendiger Altstadt gleich nebenan.",
     stellplatz: "Parkplätze und Stellplätze rund um Jasna Góra, von dort zu Fuß hoch zum Kloster.",
     zeit: "Mai–September; an hohen Feiertagen sehr voll mit Pilgern.",
-    tipp: "Zur stillen Zeit früh morgens hoch — der Blick über die Stadt vom Klosterberg lohnt sich."
+    tipp: "Zugang zum Gelände und zur Kapelle mit der Schwarzen Madonna ist kostenlos. Vom Bahnhof die kilometerlange Marien-Allee entlang direkt auf den Klosterberg zulaufen."
   },
   {
     id: "danzig", country: "polen", flag: "🇵🇱", name: "Danzig / Gdańsk", region: "Ostsee, Hanse & Bernstein",

@@ -12,10 +12,70 @@
   "y": 360.8
  },
  {
+  "id": "eckernfoerde",
+  "name": "Eckernförde, Deutschland",
+  "x": 409.6,
+  "y": 359.4
+ },
+ {
+  "id": "sylt",
+  "name": "Sylt, Deutschland",
+  "x": 390.3,
+  "y": 348.9
+ },
+ {
+  "id": "legoland",
+  "name": "Legoland Billund, Dänemark",
+  "x": 401.5,
+  "y": 331.2
+ },
+ {
+  "id": "hamburg",
+  "name": "Hamburg, Deutschland",
+  "x": 410.9,
+  "y": 379.9
+ },
+ {
+  "id": "carolinensiel",
+  "name": "Carolinensiel, Deutschland",
+  "x": 382.3,
+  "y": 375.6
+ },
+ {
+  "id": "norddeich",
+  "name": "Norden / Norddeich, Deutschland",
+  "x": 373.8,
+  "y": 377
+ },
+ {
   "id": "amsterdam",
   "name": "Amsterdam, Niederlande",
   "x": 341.6,
   "y": 401.8
+ },
+ {
+  "id": "duesseldorf",
+  "name": "Düsseldorf, Deutschland",
+  "x": 365,
+  "y": 429.1
+ },
+ {
+  "id": "koeln",
+  "name": "Köln, Deutschland",
+  "x": 367.2,
+  "y": 435.6
+ },
+ {
+  "id": "bonn",
+  "name": "Bonn, Deutschland",
+  "x": 368.8,
+  "y": 440.4
+ },
+ {
+  "id": "paris",
+  "name": "Paris, Frankreich",
+  "x": 297.2,
+  "y": 474.9
  },
  {
   "id": "normandie",
@@ -30,22 +90,28 @@
   "y": 583.5
  },
  {
-  "id": "porto",
-  "name": "Porto, Portugal",
-  "x": 94,
-  "y": 607.6
- },
- {
-  "id": "algarve",
-  "name": "Algarve, Portugal",
-  "x": 75.3,
-  "y": 697.2
- },
- {
   "id": "andalusien",
   "name": "Andalusien, Spanien",
   "x": 140.6,
   "y": 722.6
+ },
+ {
+  "id": "barcelona",
+  "name": "Barcelona, Spanien",
+  "x": 272.7,
+  "y": 639.3
+ },
+ {
+  "id": "calella",
+  "name": "Calella / Costa Brava, Spanien",
+  "x": 281.5,
+  "y": 635.4
+ },
+ {
+  "id": "marseille",
+  "name": "Marseille, Frankreich",
+  "x": 329.9,
+  "y": 602.7
  },
  {
   "id": "provence",
@@ -54,10 +120,34 @@
   "y": 597.7
  },
  {
-  "id": "gardasee",
-  "name": "Gardasee, Italien",
-  "x": 416.1,
-  "y": 556.1
+  "id": "genua",
+  "name": "Genua, Italien",
+  "x": 388.6,
+  "y": 581.8
+ },
+ {
+  "id": "pisa",
+  "name": "Pisa, Italien",
+  "x": 411.6,
+  "y": 597.9
+ },
+ {
+  "id": "florenz",
+  "name": "Florenz, Italien",
+  "x": 425.5,
+  "y": 597
+ },
+ {
+  "id": "rom",
+  "name": "Rom, Italien",
+  "x": 445.7,
+  "y": 638.7
+ },
+ {
+  "id": "venedig",
+  "name": "Venedig, Italien",
+  "x": 442.7,
+  "y": 559.9
  },
  {
   "id": "istrien",
@@ -66,9 +156,63 @@
   "y": 564.2
  },
  {
-  "id": "alpen",
+  "id": "gardasee",
+  "name": "Gardasee, Italien",
+  "x": 416.1,
+  "y": 556.1
+ },
+ {
+  "id": "bodensee",
+  "name": "Zeppelin Museum, Bodensee",
+  "x": 399.8,
+  "y": 510.2
+ },
+ {
+  "id": "tirol",
   "name": "Tirol, Österreich",
   "x": 428.2,
   "y": 519.2
+ },
+ {
+  "id": "leipzig",
+  "name": "Leipzig, Deutschland",
+  "x": 442.5,
+  "y": 429.2
+ },
+ {
+  "id": "dresden",
+  "name": "Dresden, Deutschland",
+  "x": 461.6,
+  "y": 435.3
+ },
+ {
+  "id": "berlin",
+  "name": "Berlin, Deutschland",
+  "x": 456.3,
+  "y": 402.9
+ },
+ {
+  "id": "breslau",
+  "name": "Breslau / Wrocław, Polen",
+  "x": 507.4,
+  "y": 431.9
+ },
+ {
+  "id": "krakau",
+  "name": "Kraków, Polen",
+  "x": 550,
+  "y": 451.5
+ },
+ {
+  "id": "warschau",
+  "name": "Warschau, Polen",
+  "x": 559.3,
+  "y": 402.1
+ },
+ {
+  "id": "posen",
+  "name": "Posen / Poznań, Polen",
+  "x": 503.9,
+  "y": 403.3
  }
 ]

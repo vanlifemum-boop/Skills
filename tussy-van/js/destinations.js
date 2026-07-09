@@ -269,10 +269,10 @@ window.TV_DESTINATIONS = [
   {
     id: "krakau", country: "polen", flag: "🇵🇱", name: "Kraków", region: "Königsstadt",
     color: "bg-terra",
-    blurb: "Mittelalterlicher Marktplatz, Wawel-Schloss und lebendiges Kazimierz — Polens schönste Altstadt.",
+    blurb: "Ehemalige Königsstadt mit riesigem Hauptmarkt und den prächtigen Tuchhallen (Sukiennice), dem Wawel-Schloss und märchenhaftem Flair — Polens schönste Altstadt.",
     stellplatz: "Camping Clepardia / Smok am Stadtrand, mit Tram/Bus ins Zentrum.",
-    zeit: "Mai–September; Altstadt ganzjährig stimmungsvoll.",
-    tipp: "Abends in Kazimierz durch die Bar- und Foodtruck-Höfe ziehen."
+    zeit: "Mai–September; die saisonalen Märkte (Ostern, Advent) sind ein Erlebnis.",
+    tipp: "Am Fuß des Wawel dem feuerspuckenden Drachen (Smok Wawelski) zusehen und auf dem Markt die selbstgemachten süßen Spezialitäten probieren."
   },
   {
     id: "warschau", country: "polen", flag: "🇵🇱", name: "Warschau", region: "Hauptstadt Polens",

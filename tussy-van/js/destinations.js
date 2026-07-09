@@ -289,5 +289,21 @@ window.TV_DESTINATIONS = [
     stellplatz: "Stellplatz / Camping am Malta-See, zu Fuß am Wasser, Tram ins Zentrum.",
     zeit: "Mai–September.",
     tipp: "Mittags um 12 zum Rathaus: die mechanischen Ziegenböcke stoßen die Köpfe zusammen."
+  },
+  {
+    id: "tschenstochau", country: "polen", flag: "🇵🇱", name: "Częstochowa / Tschenstochau", region: "Historischer Wallfahrtsort",
+    color: "bg-terra",
+    blurb: "Der berühmte Wallfahrtsort mit dem Kloster Jasna Góra und der „Schwarzen Madonna\" — ein stiller, beeindruckender Zwischenstopp auf dem Weg in den Norden.",
+    stellplatz: "Parkplätze und Stellplätze rund um Jasna Góra, von dort zu Fuß hoch zum Kloster.",
+    zeit: "Mai–September; an hohen Feiertagen sehr voll mit Pilgern.",
+    tipp: "Zur stillen Zeit früh morgens hoch — der Blick über die Stadt vom Klosterberg lohnt sich."
+  },
+  {
+    id: "danzig", country: "polen", flag: "🇵🇱", name: "Danzig / Gdańsk", region: "Ostsee & Hanse",
+    color: "bg-blue",
+    blurb: "Der krönende Norden dieser Reise: prächtige Hansestadt an der Ostsee, langer Markt, Backsteingotik und Bernstein — und das Meer gleich nebenan.",
+    stellplatz: "Stellplätze Richtung Strand (Brzeźno/Stogi), mit Tram bequem in die Altstadt.",
+    zeit: "Juni–September, dann ist die Ostsee am schönsten.",
+    tipp: "Am Langen Markt einen echten Bernstein suchen und barfuß am breiten Sandstrand von Brzeźno laufen."
   }
 ];

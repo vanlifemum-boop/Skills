@@ -175,6 +175,7 @@
 
       // Stationen
       var card = stage.querySelector(".map-card");
+      var destBase = stage.getAttribute("data-dest-base") || "reiseziele.html";
       var dests = window.TV_DESTINATIONS || [];
       pts.forEach(function (p) {
         var g = document.createElementNS(NS, "g");
@@ -194,7 +195,7 @@
             card.querySelector("h3").textContent = p.name;
             card.querySelector("p").textContent = dest ? dest.blurb : "";
             var link = card.querySelector("a");
-            link.href = "reiseziele.html#" + p.id;
+            link.href = destBase + "#" + p.id;
             card.classList.add("show");
           }
         });

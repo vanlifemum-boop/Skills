@@ -299,11 +299,11 @@ window.TV_DESTINATIONS = [
     tipp: "Zur stillen Zeit früh morgens hoch — der Blick über die Stadt vom Klosterberg lohnt sich."
   },
   {
-    id: "danzig", country: "polen", flag: "🇵🇱", name: "Danzig / Gdańsk", region: "Ostsee & Hanse",
+    id: "danzig", country: "polen", flag: "🇵🇱", name: "Danzig / Gdańsk", region: "Ostsee, Hanse & Bernstein",
     color: "bg-blue",
-    blurb: "Der krönende Norden dieser Reise: prächtige Hansestadt an der Ostsee, langer Markt, Backsteingotik und Bernstein — und das Meer gleich nebenan.",
-    stellplatz: "Stellplätze Richtung Strand (Brzeźno/Stogi), mit Tram bequem in die Altstadt.",
-    zeit: "Juni–September, dann ist die Ostsee am schönsten.",
-    tipp: "Am Langen Markt einen echten Bernstein suchen und barfuß am breiten Sandstrand von Brzeźno laufen."
+    blurb: "Traumhafte Altstadt mit Krantor und Mottlau-Flair — drumherum aber ehrlich viel grauer Beton. Die wahre Magie liegt in der ganzen „Dreistadt\" mit Sopot und Gdynia. Danzig war lange meine Basis in Polen, ich kenne hier jede Ecke.",
+    stellplatz: "Stellplätze Richtung Strand (Brzeźno/Stogi), von dort mit Tram/Zug bequem in die Altstadt und die Dreistadt.",
+    zeit: "Juni–September für die Ostsee — und der Weihnachtsmarkt im Advent ist ein magischer Geheimtipp.",
+    tipp: "Bernsteinmuseum in der Großen Mühle (Wielki Młyn), dann durch die Frauengasse (Ulica Mariacka) bummeln — und mit dem Zug nach Sopot (2 Stationen, Strand direkt am Bahnhof) und Gdynia."
   }
 ];

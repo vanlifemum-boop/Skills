@@ -301,9 +301,9 @@ window.TV_DESTINATIONS = [
   {
     id: "danzig", country: "polen", flag: "🇵🇱", name: "Danzig / Gdańsk", region: "Ostsee, Hanse & Bernstein",
     color: "bg-blue",
-    blurb: "Traumhafte Altstadt mit Krantor und Mottlau-Flair — drumherum aber ehrlich viel grauer Beton. Die wahre Magie liegt in der ganzen „Dreistadt\" mit Sopot und Gdynia. Danzig war lange meine Basis in Polen, ich kenne hier jede Ecke.",
+    blurb: "Traumhafte Altstadt mit Krantor und Mottlau-Flair — drumherum aber ehrlich viel grauer Beton. Die wahre Magie liegt in der ganzen „Dreistadt\" mit Sopot und Gdynia.",
     stellplatz: "Stellplätze Richtung Strand (Brzeźno/Stogi), von dort mit Tram/Zug bequem in die Altstadt und die Dreistadt.",
     zeit: "Juni–September für die Ostsee — und der Weihnachtsmarkt im Advent ist ein magischer Geheimtipp.",
-    tipp: "Bernsteinmuseum in der Großen Mühle (Wielki Młyn), dann durch die Frauengasse (Ulica Mariacka) bummeln — und mit dem Zug nach Sopot (2 Stationen, Strand direkt am Bahnhof) und Gdynia."
+    tipp: "Zwei Must-Sees: das Bernsteinmuseum in der Großen Mühle (Wielki Młyn) und das grandiose Museum des Zweiten Weltkriegs. Danach durch die Frauengasse (Ulica Mariacka) und mit dem Zug nach Sopot (2 Stationen, Strand am Bahnhof) und Gdynia."
   }
 ];

@@ -18,15 +18,15 @@
   /* ---------- kleiner Bulli als SVG (Seitenansicht, faehrt nach rechts) ---------- */
   var BULLI_SVG =
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 62" class="bulli-svg">' +
-    '<path d="M6 40 Q6 20 20 14 Q40 6 78 8 Q104 9 111 26 L114 38 Q115 46 108 47 L14 47 Q6 47 6 40 Z" fill="#1b49c8" stroke="#26251f" stroke-width="3"/>' +
-    '<path d="M8 36 L112 36 L114 38 Q115 46 108 47 L14 47 Q6 47 6 40 Z" fill="#10307e" stroke="#26251f" stroke-width="2"/>' +
-    '<path d="M22 16 Q38 10 58 10 L58 26 L20 26 Q19 20 22 16 Z" fill="#cfe6ff" stroke="#26251f" stroke-width="2.5"/>' +
-    '<path d="M64 10 L92 11 Q102 13 107 26 L64 26 Z" fill="#cfe6ff" stroke="#26251f" stroke-width="2.5"/>' +
-    '<circle cx="34" cy="47" r="9" fill="#26251f"/><circle cx="34" cy="47" r="4" fill="#c9c4b2"/>' +
-    '<circle cx="90" cy="47" r="9" fill="#26251f"/><circle cx="90" cy="47" r="4" fill="#c9c4b2"/>' +
-    '<circle cx="73" cy="31" r="3" fill="#d3e23c"/><circle cx="46" cy="31" r="2.4" fill="#d3e23c"/>' +
-    '<circle cx="58" cy="42" r="2.6" fill="#d3e23c"/><circle cx="24" cy="31" r="2" fill="#d3e23c"/>' +
-    '<rect x="108" y="30" width="6" height="5" rx="2" fill="#ffd76a" stroke="#26251f" stroke-width="1.5"/>' +
+    '<path d="M8 13 L90 13 L104 22 L114 30 L114 44 L8 44 Z" fill="#1b49c8" stroke="#26251f" stroke-width="3" stroke-linejoin="round"/>' +
+    '<path d="M8 35 L114 35 L114 44 L8 44 Z" fill="#10307e" stroke="#26251f" stroke-width="2" stroke-linejoin="round"/>' +
+    '<rect x="14" y="17" width="40" height="12" fill="#cfe6ff" stroke="#26251f" stroke-width="2.5"/>' +
+    '<path d="M60 17 L92 17 L103 26 L60 26 Z" fill="#cfe6ff" stroke="#26251f" stroke-width="2.5" stroke-linejoin="round"/>' +
+    '<circle cx="34" cy="46" r="9" fill="#26251f"/><circle cx="34" cy="46" r="4" fill="#c9c4b2"/>' +
+    '<circle cx="92" cy="46" r="9" fill="#26251f"/><circle cx="92" cy="46" r="4" fill="#c9c4b2"/>' +
+    '<circle cx="72" cy="32" r="3" fill="#ffff00"/><circle cx="46" cy="33" r="2.4" fill="#ffff00"/>' +
+    '<circle cx="58" cy="40" r="2.6" fill="#ffff00"/><circle cx="24" cy="32" r="2" fill="#ffff00"/>' +
+    '<rect x="109" y="31" width="5" height="5" fill="#ffd76a" stroke="#26251f" stroke-width="1.5"/>' +
     '</svg>';
   window.TV_BULLI_SVG = BULLI_SVG;
 

@@ -3,9 +3,9 @@
    Die id muss zur id in js/route-points.json passen (dann sitzt der Kartenpunkt richtig). */
 window.TV_DESTINATIONS = [
   {
-    id: "kolberg", country: "polen", flag: "🇵🇱", name: "Kołobrzeg & Ostseeküste", region: "mein Zuhause-Revier",
+    id: "kolberg", country: "polen", flag: "🇵🇱", name: "Kołobrzeg & Ostseeküste", region: "Ostsee-Liebe",
     color: "bg-blue",
-    blurb: "Weiße Strände, Kiefernwälder und der beste Sonnenuntergang direkt vor der Schiebetür — hier hat alles angefangen.",
+    blurb: "Weiße Strände, Kiefernwälder und der beste Sonnenuntergang direkt vor der Schiebetür — ein Ostsee-Klassiker, den ich immer wieder anfahre.",
     stellplatz: "Camping 78 Baltic direkt hinter der Düne, ruhig & bulli-freundlich.",
     zeit: "Mai–September, im Herbst herrlich leer.",
     tipp: "Abends an der Mole Fischbrötchen holen und aufs Wasser schauen."

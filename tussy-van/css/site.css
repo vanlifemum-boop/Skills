@@ -271,6 +271,9 @@ h1, h2, h3 { font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; text-
 .dest-card .head .flag { font-size: 1.9rem; line-height: 1; }
 .dest-card .head h3 { font-size: 1.35rem; margin-top: 0.4rem; }
 .dest-card .head .region { font-family: var(--hand); font-size: 1.25rem; opacity: 0.9; }
+/* Dark text on light-coloured headers (yellow/camel) so they stay readable */
+.dest-card .head.bg-army, .dest-card .head.bg-camel { color: var(--ink); }
+.dest-card .head.bg-army .region, .dest-card .head.bg-camel .region { opacity: 0.8; }
 .dest-card .body { padding: 1.2rem 1.4rem 1.5rem; display: grid; gap: 0.8rem; flex: 1; }
 .dest-card .body p { font-size: 0.93rem; color: var(--muted); }
 .dest-tips { display: grid; gap: 0.5rem; font-size: 0.88rem; }

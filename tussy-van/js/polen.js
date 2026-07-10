@@ -65,6 +65,80 @@ window.POLEN_DATA = [
     x: 567.1, y: 367, lx: 9, ly: -1,
     url: "reiseziele.html#masuren", meta: "Masuren · Natur & Aussicht",
     blurb: "Polens großes Seenland im Nordosten: über 2.000 Seen, Wälder und Kanäle — ein Traum zum Segeln, Kanufahren und für Natur pur. Eines der beliebtesten Reiseziele des Landes."
+  },
+
+  /* ---- 🏛️ Museen & Gedenkstätten (Sehenswertes) ---- */
+  {
+    id: "polin", name: "POLIN — Museum der Geschichte der polnischen Juden", region: "zentral",
+    kat: "museum", status: "sehenswert", x: 560.3, y: 403.2,
+    url: "https://www.google.com/maps/search/?api=1&query=POLIN+Museum+Warszawa", meta: "Warschau · Museum",
+    blurb: "Preisgekröntes Museum zur 1000-jährigen Geschichte der polnischen Juden — beeindruckende Architektur und eine der besten interaktiven Ausstellungen Europas."
+  },
+  {
+    id: "kopernik-waw", name: "Kopernikus-Wissenschaftszentrum", region: "zentral",
+    kat: "museum", status: "sehenswert", x: 560.8, y: 403.3,
+    url: "https://www.google.com/maps/search/?api=1&query=Centrum+Nauki+Kopernik+Warszawa", meta: "Warschau · Museum",
+    blurb: "Riesiges Mitmach-Wissenschaftszentrum an der Weichsel — hunderte Experimente zum Anfassen. Ein Hit für Familien und Neugierige."
+  },
+  {
+    id: "schindler", name: "Schindlers Fabrik (Fabryka Schindlera)", region: "sueden",
+    kat: "museum", status: "sehenswert", x: 547.8, y: 454.9,
+    url: "https://www.google.com/maps/search/?api=1&query=Fabryka+Schindlera+Krakow", meta: "Krakau · Museum",
+    blurb: "Bewegendes Museum im ehemaligen Werk von Oskar Schindler — erzählt eindringlich vom Krakau der Besatzungsjahre 1939–1945."
+  },
+  {
+    id: "auschwitz", name: "Gedenkstätte Auschwitz-Birkenau", region: "sueden",
+    kat: "museum", status: "sehenswert", x: 537.4, y: 456.2,
+    url: "https://www.google.com/maps/search/?api=1&query=Auschwitz-Birkenau+Memorial", meta: "Oświęcim · Gedenkstätte",
+    blurb: "Die Gedenkstätte des früheren deutschen KZ- und Vernichtungslagers — ein stiller, erschütternder Ort des Erinnerns. Eintritt frei, Zeitfenster vorab reservieren."
+  },
+  {
+    id: "wieliczka", name: "Salzbergwerk Wieliczka", region: "sueden",
+    kat: "museum", status: "sehenswert", x: 549.1, y: 456.2,
+    url: "https://www.google.com/maps/search/?api=1&query=Kopalnia+Soli+Wieliczka", meta: "Wieliczka · Bergwerk",
+    blurb: "UNESCO-Welterbe: ein jahrhundertealtes Salzbergwerk mit Kammern, unterirdischen Seen und einer kompletten Kapelle aus Salz — tief unter der Erde."
+  },
+  {
+    id: "ecs", name: "Europäisches Solidarność-Zentrum (ECS)", region: "norden",
+    kat: "museum", status: "sehenswert", x: 526.5, y: 357.4,
+    url: "https://www.google.com/maps/search/?api=1&query=Europejskie+Centrum+Solidarnosci+Gdansk", meta: "Danzig · Museum",
+    blurb: "Modernes Museum auf der Danziger Werft zur Solidarność-Bewegung, die den Fall des Eisernen Vorhangs mit anstieß. Dachterrasse mit Werftblick."
+  },
+  {
+    id: "wwii-danzig", name: "Museum des Zweiten Weltkriegs", region: "norden",
+    kat: "museum", status: "sehenswert", x: 526.4, y: 357.6,
+    url: "https://www.google.com/maps/search/?api=1&query=Muzeum+II+Wojny+Swiatowej+Gdansk", meta: "Danzig · Museum",
+    blurb: "Eines der beeindruckendsten Geschichtsmuseen Europas: die große Ausstellung liegt unter der Erde, der schiefe Turm ist weithin sichtbar."
+  },
+  {
+    id: "hydropolis", name: "Hydropolis", region: "westen",
+    kat: "museum", status: "sehenswert", x: 507.0, y: 433.8,
+    url: "https://www.google.com/maps/search/?api=1&query=Hydropolis+Wroclaw", meta: "Breslau · Museum",
+    blurb: "Interaktives Wasser-Erlebniszentrum in einem historischen Wasserspeicher — modern, familienfreundlich und rund ums Element Wasser."
+  },
+  {
+    id: "panorama-rac", name: "Panorama Racławicka", region: "westen",
+    kat: "museum", status: "sehenswert", x: 506.9, y: 433.9,
+    url: "https://www.google.com/maps/search/?api=1&query=Panorama+Raclawicka+Wroclaw", meta: "Breslau · Museum",
+    blurb: "Ein gewaltiges Rundgemälde (114 × 15 m) der Schlacht von Racławice — man steht mittendrin. Ein einzigartiges Kunsterlebnis."
+  },
+  {
+    id: "natmus-poznan", name: "Nationalmuseum Posen", region: "westen",
+    kat: "museum", status: "sehenswert", x: 504.3, y: 404.1,
+    url: "https://www.google.com/maps/search/?api=1&query=Muzeum+Narodowe+Poznan", meta: "Posen · Museum",
+    blurb: "Bedeutende Sammlung polnischer und europäischer Malerei am Rand des Alten Markts — von Alten Meistern bis zur Moderne."
+  },
+  {
+    id: "kopernik-torun", name: "Haus des Nikolaus Kopernikus (Toruń)", region: "zentral",
+    kat: "museum", status: "sehenswert", x: 526.9, y: 388.4,
+    url: "https://www.google.com/maps/search/?api=1&query=Dom+Mikolaja+Kopernika+Torun", meta: "Toruń · Museum",
+    blurb: "Im Geburtshaus des Astronomen Nikolaus Kopernikus in der gotischen Altstadt von Toruń — dazu die berühmten Toruńer Lebkuchen (Pierniki)."
+  },
+  {
+    id: "wolfsschanze", name: "Wolfsschanze / Wilczy Szaniec", region: "masuren",
+    kat: "museum", status: "sehenswert", x: 565.8, y: 360.6,
+    url: "https://www.google.com/maps/search/?api=1&query=Wilczy+Szaniec+Gierloz", meta: "Masuren · Gedenkort",
+    blurb: "Die Ruinen von Hitlers einstigem Führerhauptquartier im masurischen Wald — riesige gesprengte Bunker, Schauplatz des Attentats vom 20. Juli 1944."
   }
 ];
 
@@ -141,6 +215,7 @@ window.POLEN_STATUS = {
     a.className = "post-card";
     a.id = "pl-card-" + d.id;
     a.href = d.url;
+    if (/^https?:/.test(d.url)) { a.target = "_blank"; a.rel = "noopener"; }
     a.setAttribute("data-region", d.region);
     a.setAttribute("data-kat", d.kat || "");
     a.setAttribute("data-text", (d.name + " " + d.blurb + " " + d.meta + " " + km.label).toLowerCase());
@@ -258,12 +333,39 @@ window.POLEN_STATUS = {
       if (pl) pl.classList.add("pl");
       mapStage.appendChild(svg);
 
+      // De-Clustering: Punkte am selben Ort fächern in einem kleinen Ring auf.
+      // Abstandsbasiertes Gruppieren (Schwelle 5 Einheiten) — robust an Zellgrenzen.
+      var pos = {};
+      var clusters = [];
+      data.forEach(function (d) {
+        var found = null;
+        for (var i = 0; i < clusters.length; i++) {
+          var m = clusters[i][0], dx = m.x - d.x, dy = m.y - d.y;
+          if (dx * dx + dy * dy <= 25) { found = clusters[i]; break; }
+        }
+        if (found) found.push(d); else clusters.push([d]);
+      });
+      clusters.forEach(function (g) {
+        if (g.length === 1) { pos[g[0].id] = { x: g[0].x, y: g[0].y }; return; }
+        var center = null;
+        g.forEach(function (d) { if (!center && d.kat === "stadt") center = d; });
+        if (!center) center = g[0];
+        pos[center.id] = { x: center.x, y: center.y };
+        var others = g.filter(function (d) { return d !== center; });
+        var R = 7 + others.length * 0.6;
+        others.forEach(function (d, i) {
+          var ang = (Math.PI * 2 * i / others.length) - Math.PI / 2;
+          pos[d.id] = { x: center.x + R * Math.cos(ang), y: center.y + R * Math.sin(ang) };
+        });
+      });
+
       data.forEach(function (d) {
         var km = katMeta(d.kat);
+        var pp = pos[d.id] || { x: d.x, y: d.y };
         var g = document.createElementNS(NS, "g");
         g.setAttribute("class", "pl-pin " + (d.status || "ziel"));
         g.setAttribute("id", "pl-pin-" + d.id);
-        g.setAttribute("transform", "translate(" + d.x + "," + d.y + ")");
+        g.setAttribute("transform", "translate(" + pp.x + "," + pp.y + ")");
 
         var c = document.createElementNS(NS, "circle");
         c.setAttribute("class", "pl-pin-bg");
@@ -282,14 +384,17 @@ window.POLEN_STATUS = {
         title.textContent = d.name + " — " + km.label + " (" + stLabel + ")";
         g.appendChild(title);
 
-        var right = (d.lx || 9) > 0;
-        var t = document.createElementNS(NS, "text");
-        t.setAttribute("class", "pl-lbl");
-        t.setAttribute("x", right ? 11 : -11);
-        t.setAttribute("y", (d.ly || 0) + 2.2);
-        t.setAttribute("text-anchor", right ? "start" : "end");
-        t.textContent = d.short || d.name;
-        g.appendChild(t);
+        // Dauer-Label nur für Städte; POIs zeigen den Namen per Tooltip + in der Kachel.
+        if (d.kat === "stadt") {
+          var right = (d.lx || 9) > 0;
+          var t = document.createElementNS(NS, "text");
+          t.setAttribute("class", "pl-lbl");
+          t.setAttribute("x", right ? 11 : -11);
+          t.setAttribute("y", (d.ly || 0) + 2.2);
+          t.setAttribute("text-anchor", right ? "start" : "end");
+          t.textContent = d.short || d.name;
+          g.appendChild(t);
+        }
 
         g.style.cursor = "pointer";
         g.addEventListener("click", function () {

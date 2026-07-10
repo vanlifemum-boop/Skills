@@ -284,7 +284,7 @@ window.POLEN_STATUS = {
 (function () {
   "use strict";
   var NS = "http://www.w3.org/2000/svg";
-  var data = window.POLEN_DATA || [];
+  var data = (window.POLEN_DATA || []).concat(window.POLEN_CAMPER || []);
   var STATUS = window.POLEN_STATUS;
 
   // Kategorie-Lookup key -> {icon,label}

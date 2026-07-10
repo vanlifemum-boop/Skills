@@ -139,6 +139,80 @@ window.POLEN_DATA = [
     kat: "museum", status: "sehenswert", x: 565.8, y: 360.6,
     url: "https://www.google.com/maps/search/?api=1&query=Wilczy+Szaniec+Gierloz", meta: "Masuren · Gedenkort",
     blurb: "Die Ruinen von Hitlers einstigem Führerhauptquartier im masurischen Wald — riesige gesprengte Bunker, Schauplatz des Attentats vom 20. Juli 1944."
+  },
+
+  /* ---- ⛪ Kirchen, Klöster & Wallfahrt (Sehenswertes) ---- */
+  {
+    id: "marienk-krakau", name: "Marienkirche Krakau (Bazylika Mariacka)", region: "sueden",
+    kat: "sakral", status: "sehenswert", x: 547.5, y: 454.6,
+    url: "https://www.google.com/maps/search/?api=1&query=Bazylika+Mariacka+Krakow", meta: "Krakau · Kirche",
+    blurb: "Gotische Backsteinkirche am Hauptmarkt mit dem weltberühmten Hochaltar von Veit Stoß — zu jeder vollen Stunde erklingt vom Turm der Hejnał."
+  },
+  {
+    id: "wawel-kat", name: "Wawel-Kathedrale", region: "sueden",
+    kat: "sakral", status: "sehenswert", x: 547.4, y: 454.8,
+    url: "https://www.google.com/maps/search/?api=1&query=Katedra+Wawelska+Krakow", meta: "Krakau · Kirche",
+    blurb: "Krönungs- und Grabkirche der polnischen Könige auf dem Wawel-Hügel — nationales Heiligtum mit der berühmten Sigismund-Glocke."
+  },
+  {
+    id: "marienk-danzig", name: "Marienkirche Danzig (Bazylika Mariacka)", region: "norden",
+    kat: "sakral", status: "sehenswert", x: 526.5, y: 357.7,
+    url: "https://www.google.com/maps/search/?api=1&query=Bazylika+Mariacka+Gdansk", meta: "Danzig · Kirche",
+    blurb: "Eine der größten Backsteinkirchen der Welt — der Turm bietet einen weiten Blick über die Altstadt und die Mottlau."
+  },
+  {
+    id: "oliwa", name: "Kathedrale Oliwa", region: "norden",
+    kat: "sakral", status: "sehenswert", x: 525.2, y: 356.3,
+    url: "https://www.google.com/maps/search/?api=1&query=Katedra+Oliwska+Gdansk", meta: "Danzig · Kirche",
+    blurb: "Berühmt für ihre prächtige Barockorgel — regelmäßige Orgelkonzerte lassen die Kathedrale im Danziger Stadtteil Oliwa erklingen."
+  },
+  {
+    id: "swidnica", name: "Friedenskirche Schweidnitz (Świdnica)", region: "westen",
+    kat: "sakral", status: "sehenswert", x: 499.4, y: 440.5,
+    url: "https://www.google.com/maps/search/?api=1&query=Kosciol+Pokoju+Swidnica", meta: "Świdnica · Kirche",
+    blurb: "UNESCO-Welterbe: eine der größten Fachwerkkirchen Europas, komplett aus Holz und Lehm — ein evangelisches Meisterwerk aus dem 17. Jahrhundert."
+  },
+  {
+    id: "jawor", name: "Friedenskirche Jauer (Jawor)", region: "westen",
+    kat: "sakral", status: "sehenswert", x: 495.2, y: 436.1,
+    url: "https://www.google.com/maps/search/?api=1&query=Kosciol+Pokoju+Jawor", meta: "Jawor · Kirche",
+    blurb: "UNESCO-Welterbe: prächtige barocke Fachwerkkirche mit reich bemalten Emporen — der Schwesterbau der Schweidnitzer Friedenskirche."
+  },
+  {
+    id: "lichen", name: "Basilika Licheń", region: "zentral",
+    kat: "sakral", status: "sehenswert", x: 527.1, y: 404.4,
+    url: "https://www.google.com/maps/search/?api=1&query=Bazylika+Lichen+Stary", meta: "Licheń · Wallfahrt",
+    blurb: "Die größte Kirche Polens und eine der größten der Welt — ein gewaltiger Wallfahrtsort mit riesiger Kuppel und hohem Turm."
+  },
+  {
+    id: "debno", name: "Holzkirche Dębno (UNESCO)", region: "sueden",
+    kat: "sakral", status: "sehenswert", x: 550.6, y: 467.6,
+    url: "https://www.google.com/maps/search/?api=1&query=Kosciol+Debno+Podhalanskie", meta: "Dębno · Holzkirche",
+    blurb: "UNESCO-Welterbe: eine der schönsten gotischen Holzkirchen Südpolens, innen mit farbenprächtiger Bemalung aus dem 15. Jahrhundert."
+  },
+  {
+    id: "wang", name: "Wang-Kirche Karpacz", region: "sueden",
+    kat: "sakral", status: "sehenswert", x: 489.1, y: 442.9,
+    url: "https://www.google.com/maps/search/?api=1&query=Swiatynia+Wang+Karpacz", meta: "Karpacz · Kirche",
+    blurb: "Eine norwegische Stabkirche aus dem 12. Jahrhundert, im 19. Jh. ins Riesengebirge versetzt — ein außergewöhnliches Holzbauwerk in Karpacz."
+  },
+  {
+    id: "frombork", name: "Kathedrale Frombork (Frauenburg)", region: "norden",
+    kat: "sakral", status: "sehenswert", x: 540.7, y: 356.3,
+    url: "https://www.google.com/maps/search/?api=1&query=Bazylika+katedralna+Frombork", meta: "Frombork · Kirche",
+    blurb: "Die Kathedrale von Frauenburg, Wirkungsstätte des Astronomen Nikolaus Kopernikus, der hier begraben liegt — mit Museum und Aussichtsturm."
+  },
+  {
+    id: "gniezno", name: "Kathedrale Gniezno", region: "westen",
+    kat: "sakral", status: "sehenswert", x: 513.5, y: 400.4,
+    url: "https://www.google.com/maps/search/?api=1&query=Katedra+Gniezno", meta: "Gniezno · Kirche",
+    blurb: "Die erste Kathedrale Polens und historische Krönungskirche — mit der berühmten bronzenen Gnesener Tür aus dem 12. Jahrhundert."
+  },
+  {
+    id: "kalwaria", name: "Kalwaria Zebrzydowska", region: "sueden",
+    kat: "sakral", status: "sehenswert", x: 544.0, y: 459.4,
+    url: "https://www.google.com/maps/search/?api=1&query=Kalwaria+Zebrzydowska+Sanktuarium", meta: "Kalwaria · Wallfahrt",
+    blurb: "UNESCO-Welterbe: manieristischer Wallfahrtskomplex mit Kloster und einem Weg aus Kapellen in parkartiger Landschaft."
   }
 ];
 
@@ -352,7 +426,7 @@ window.POLEN_STATUS = {
         if (!center) center = g[0];
         pos[center.id] = { x: center.x, y: center.y };
         var others = g.filter(function (d) { return d !== center; });
-        var R = 7 + others.length * 0.6;
+        var R = 9 + others.length * 1.1;
         others.forEach(function (d, i) {
           var ang = (Math.PI * 2 * i / others.length) - Math.PI / 2;
           pos[d.id] = { x: center.x + R * Math.cos(ang), y: center.y + R * Math.sin(ang) };

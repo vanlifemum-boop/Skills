@@ -30,24 +30,31 @@
       <div class="section-head reveal">
         <span class="eyebrow">Polen-Serie 🇵🇱</span>
         <h1 class="display-xl">Sehenswertes in Polen.</h1>
-        <span class="hand">Klick auf die Karte, filter nach Region oder such dein Ziel</span>
-        <p class="lead" style="margin-top:1rem;max-width:44em">Polen hat mich immer wieder überrascht — von den weißen Ostseestränden im Norden bis zu den Königsstädten und Wallfahrtsorten im Süden. Hier sammle ich alles Sehenswerte an einem Ort. Es werden noch viele Beiträge dazukommen!</p>
+        <span class="hand">Klick auf die Karte, filter nach Region &amp; Kategorie oder such dein Ziel</span>
+        <p class="lead" style="margin-top:1rem;max-width:44em">Hier sammle ich Sehenswertes aus ganz Polen — von Orten, an denen ich selbst war, bis zu Zielen, die ganz oben auf meiner Liste stehen. Von den weißen Ostseestränden im Norden bis zu den Königsstädten und Bergen im Süden. Es kommen laufend neue dazu!</p>
       </div>
 
       <div class="pl-layout">
         <div class="pl-mapwrap reveal">
           <div data-pl-map="img/europe-map.svg" aria-label="Animierte Karte von Polen mit anklickbaren Orten"></div>
-          <div class="hint" style="justify-content:center">📍 Punkt anklicken — der passende Beitrag leuchtet auf</div>
+          <div class="hint" style="justify-content:center">📍 Punkt anklicken — der passende Ort leuchtet auf</div>
+          <details class="pl-legende">
+            <summary>Legende &amp; Kategorien</summary>
+            <div data-pl-legende></div>
+          </details>
         </div>
 
         <div class="reveal" data-delay="1">
           <div class="pl-search">
             <input type="search" data-pl-search placeholder="Ort oder Stichwort suchen …" aria-label="Orte durchsuchen">
           </div>
+          <span class="pl-filterlabel">Region</span>
           <div class="dest-filter" data-pl-filter></div>
+          <span class="pl-filterlabel">Kategorie</span>
+          <div class="dest-filter" data-pl-catfilter></div>
           <p class="pl-count" data-pl-count></p>
           <div class="pl-grid" data-pl-grid></div>
-          <p class="pl-empty" style="display:none">Für diese Auswahl habe ich noch keinen Ort — probier eine andere Region oder ein anderes Stichwort.</p>
+          <p class="pl-empty" style="display:none">Für diese Auswahl habe ich noch keinen Ort — probier eine andere Region, Kategorie oder ein anderes Stichwort.</p>
         </div>
       </div>
     </div>

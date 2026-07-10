@@ -266,13 +266,35 @@ h1, h2, h3 { font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; text-
 .pl-map .countries path { fill: #e2e9f3; stroke: #c4cede; stroke-width: 0.7; }
 .pl-map .countries path.pl { fill: #eaf2fd; stroke: var(--blue); stroke-width: 1.4; }
 .pl-pin { cursor: pointer; }
-.pl-pin circle { stroke: var(--ink); stroke-width: 2.5; transition: fill 0.2s; }
-.pl-pin.no-post circle { fill: #b7c3d5; }
-.pl-pin.has-post circle { fill: var(--neon); transform-box: fill-box; transform-origin: center; animation: plpulse 2.6s ease-in-out infinite; }
-.pl-pin:hover circle, .pl-pin.active circle { fill: var(--terra); }
-.pl-pin.dim { opacity: 0.25; }
-.pl-pin .pl-lbl { font-family: var(--font); font-weight: 800; font-size: 6px; fill: var(--ink); paint-order: stroke; stroke: #ffffff; stroke-width: 1.6px; }
-@keyframes plpulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.22); } }
+.pl-pin .pl-pin-bg { stroke: var(--ink); stroke-width: 2; transition: fill 0.2s; }
+.pl-pin.ziel .pl-pin-bg { fill: #cdd7e6; }
+.pl-pin.sehenswert .pl-pin-bg { fill: #7fb2ff; }
+.pl-pin.bericht .pl-pin-bg { fill: var(--neon); transform-box: fill-box; transform-origin: center; animation: plpulse 2.6s ease-in-out infinite; }
+.pl-pin:hover .pl-pin-bg, .pl-pin.active .pl-pin-bg { fill: var(--terra); }
+.pl-pin .pl-icon { font-size: 8.5px; pointer-events: none; }
+.pl-pin.dim { opacity: 0.28; }
+.pl-pin .pl-lbl { font-family: var(--font); font-weight: 800; font-size: 6px; fill: var(--ink); paint-order: stroke; stroke: #ffffff; stroke-width: 1.6px; pointer-events: none; }
+@keyframes plpulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.16); } }
+
+/* Kategorie-Filter-Chips */
+.chip-kat { font-size: 0.8rem; padding: 0.4em 0.9em; }
+.chip-kat.active { background: var(--terra); color: var(--white); }
+.pl-filterlabel { display: block; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0.2rem 0 0.6rem; }
+
+/* Legende */
+.pl-legende { margin-top: 1rem; border: 3px solid var(--ink); border-radius: 14px; background: var(--white); box-shadow: 0.25rem 0.25rem 0 rgba(38,37,31,0.85); padding: 0.6rem 1rem; }
+.pl-legende > summary { cursor: pointer; font-weight: 800; font-size: 0.95rem; list-style: none; }
+.pl-legende > summary::-webkit-details-marker { display: none; }
+.pl-legende > summary::before { content: "🗺️ "; }
+.pl-legende[open] > summary { margin-bottom: 0.5rem; }
+.pl-legende-status { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; margin: 0.2rem 0 0.7rem; font-size: 0.78rem; font-weight: 700; }
+.pl-dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--ink); vertical-align: -2px; margin-right: 0.15rem; }
+.pl-dot.bericht { background: var(--neon); } .pl-dot.sehenswert { background: #7fb2ff; } .pl-dot.ziel { background: #cdd7e6; }
+.pl-legende-grp { margin-top: 0.5rem; font-size: 0.82rem; }
+.pl-legende-grp b { font-size: 0.85rem; }
+.pl-legende-grp ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.15rem 0.8rem; margin: 0.35rem 0 0; padding: 0; }
+.pl-legende-grp li { display: flex; gap: 0.4rem; align-items: baseline; }
+.pl-lg-icon { width: 1.3em; text-align: center; flex-shrink: 0; }
 .pl-search { position: relative; margin-bottom: 1.4rem; }
 .pl-search input {
   width: 100%; font-family: var(--font); font-size: 1rem; padding: 0.75em 1em 0.75em 2.6em;

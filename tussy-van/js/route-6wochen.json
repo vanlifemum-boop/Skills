@@ -1,5 +1,5 @@
 [
- { "id": "koeln", "name": "Köln — Start & Ziel", "x": 367.2, "y": 435.6 },
+ { "id": "koeln", "name": "Köln — Start", "x": 367.2, "y": 435.6 },
  { "id": "bodensee", "name": "Bodensee — Langenargen & Zeppelin Museum", "x": 399.8, "y": 510.2 },
  { "id": "genua", "name": "Genua, Italien", "x": 388.6, "y": 581.8 },
  { "id": "pisa", "name": "Pisa, Italien", "x": 411.6, "y": 597.9 },
@@ -8,6 +8,5 @@
  { "id": "venedig", "name": "Venedig, Italien", "x": 442.7, "y": 559.9 },
  { "id": "tschenstochau", "name": "Częstochowa / Tschenstochau, Polen", "x": 533, "y": 445 },
  { "id": "krakau", "name": "Kraków / Krakau, Polen", "x": 550, "y": 451.5 },
- { "id": "danzig", "name": "Danzig / Gdańsk, Polen", "x": 528, "y": 358 },
- { "id": "koeln", "name": "Zurück in Köln", "x": 367.2, "y": 435.6 }
+ { "id": "danzig", "name": "Danzig / Gdańsk, Polen — Ziel an der Ostsee", "x": 528, "y": 358 }
 ]

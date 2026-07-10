@@ -1,0 +1,287 @@
+/* ==========================================================================
+   WowMoman — Marken-Stylesheet
+   Palette: Deep Teal + warmes Gold/Sand + Weiß. Edel, modern, nahbar.
+   Selbst-enthalten, keine externen Abhängigkeiten (läuft offline).
+   ========================================================================== */
+
+:root {
+  --teal-900: #0b2b2b;
+  --teal-800: #103a3a;
+  --teal-700: #16504e;
+  --teal-600: #1d6b66;
+  --teal-500: #2a8a82;
+  --gold-500: #c8a24a;
+  --gold-400: #d8b968;
+  --sand-200: #efe6d4;
+  --sand-100: #f7f1e6;
+  --white:    #ffffff;
+  --ink:      #14201f;
+  --muted:    #5c6b69;
+
+  --maxw: 1120px;
+  --radius: 18px;
+  --shadow: 0 18px 50px rgba(11, 43, 43, 0.14);
+  --font-head: "Georgia", "Times New Roman", serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--sand-100);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--teal-600); text-decoration: none; }
+a:hover { color: var(--gold-500); }
+
+h1, h2, h3 { font-family: var(--font-head); line-height: 1.15; font-weight: 700; }
+
+.container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 22px; }
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--gold-500);
+  font-family: var(--font-body);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
+}
+.btn-primary { background: var(--gold-500); color: var(--teal-900); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(200,162,74,.4); color: var(--teal-900); }
+.btn-ghost { background: transparent; color: var(--white); border-color: rgba(255,255,255,.6); }
+.btn-ghost:hover { background: rgba(255,255,255,.12); color: var(--white); }
+.btn-dark { background: var(--teal-700); color: var(--white); }
+.btn-dark:hover { background: var(--teal-600); color: var(--white); transform: translateY(-2px); }
+
+/* ---------- Navigation ---------- */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(11, 43, 43, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.nav .container { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+.brand { font-family: var(--font-head); font-weight: 700; font-size: 1.3rem; color: var(--white); letter-spacing: .01em; }
+.brand span { color: var(--gold-400); }
+.nav-links { display: flex; gap: 26px; align-items: center; }
+.nav-links a { color: rgba(255,255,255,.85); font-weight: 600; font-size: .95rem; }
+.nav-links a:hover, .nav-links a.active { color: var(--gold-400); }
+.nav-links .pill { border: 1px solid var(--gold-400); border-radius: 999px; padding: 7px 16px; color: var(--gold-400); }
+.nav-toggle { display: none; background: none; border: 0; color: var(--white); font-size: 1.6rem; cursor: pointer; }
+
+@media (max-width: 780px) {
+  .nav-toggle { display: block; }
+  .nav-links {
+    position: absolute; top: 68px; left: 0; right: 0;
+    flex-direction: column; gap: 0; background: var(--teal-900);
+    max-height: 0; overflow: hidden; transition: max-height .3s ease;
+  }
+  .nav-links.open { max-height: 420px; }
+  .nav-links a { width: 100%; padding: 16px 22px; border-top: 1px solid rgba(255,255,255,.06); }
+}
+
+/* ---------- Hero (Higgsfield-Video-Andockstelle) ---------- */
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex; align-items: center;
+  color: var(--white);
+  overflow: hidden;
+}
+/* Platzhalter-Hintergrund: wird später durch Higgsfield-Frame-Sequenz ersetzt.
+   #hero-media ist die Andockstelle für das scroll-cinematic Canvas. */
+.hero-media {
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    radial-gradient(1200px 600px at 70% 20%, rgba(200,162,74,.22), transparent 60%),
+    linear-gradient(135deg, var(--teal-900), var(--teal-700) 55%, var(--teal-800));
+}
+.hero-media::after {
+  content: "🎬 Platzhalter — hier kommt spaeter das Higgsfield-Kino-Video";
+  position: absolute; bottom: 16px; right: 18px;
+  font-size: .72rem; color: rgba(255,255,255,.45);
+  font-family: var(--font-body); letter-spacing: .04em;
+}
+.hero-media canvas { width: 100%; height: 100%; display: block; object-fit: cover; }
+.hero .container { position: relative; z-index: 2; max-width: 820px; }
+.hero h1 { font-size: clamp(2.4rem, 6vw, 4.4rem); margin: 14px 0 10px; }
+.hero .lead { font-size: clamp(1.05rem, 2.4vw, 1.4rem); color: rgba(255,255,255,.9); max-width: 640px; }
+.hero .sub { color: var(--gold-400); font-weight: 700; font-family: var(--font-head); font-style: italic; }
+.hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
+
+/* ---------- Sektionen ---------- */
+section { padding: 92px 0; }
+.section-head { max-width: 720px; margin-bottom: 46px; }
+.section-head h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 10px 0 12px; }
+.section-head p { color: var(--muted); font-size: 1.08rem; }
+
+.section-dark { background: var(--teal-900); color: var(--white); }
+.section-dark .section-head p { color: rgba(255,255,255,.8); }
+.section-sand { background: var(--sand-200); }
+
+/* ---------- Story ---------- */
+.story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: center; }
+.story-photo {
+  aspect-ratio: 4/5; border-radius: var(--radius);
+  background: linear-gradient(160deg, var(--teal-600), var(--teal-800));
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,.5); font-size: .85rem; text-align: center; padding: 20px;
+  box-shadow: var(--shadow);
+}
+.story blockquote { border-left: 3px solid var(--gold-500); margin: 22px 0; padding-left: 20px; font-style: italic; color: var(--teal-700); }
+@media (max-width: 780px) { .story-grid { grid-template-columns: 1fr; } }
+
+/* ---------- Saeulen / Karten ---------- */
+.cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+.card {
+  background: var(--white); border-radius: var(--radius); padding: 30px 26px;
+  box-shadow: var(--shadow); border-top: 4px solid var(--gold-500);
+}
+.card .num { font-family: var(--font-head); font-size: 2rem; color: var(--gold-500); }
+.card h3 { margin: 8px 0 10px; font-size: 1.2rem; }
+.card p { color: var(--muted); font-size: .97rem; margin: 0; }
+@media (max-width: 900px) { .cards { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .cards { grid-template-columns: 1fr; } }
+
+/* ---------- Affirmationen-Rotator ---------- */
+.affirmations { text-align: center; }
+.affirm-box {
+  max-width: 820px; margin: 0 auto; min-height: 150px;
+  display: flex; align-items: center; justify-content: center;
+}
+.affirm-text {
+  font-family: var(--font-head); font-style: italic; font-weight: 700;
+  font-size: clamp(1.4rem, 3.6vw, 2.3rem); color: var(--white);
+  transition: opacity .5s ease; opacity: 1;
+}
+.affirm-text.fade { opacity: 0; }
+.affirm-dots { display: flex; gap: 8px; justify-content: center; margin-top: 26px; }
+.affirm-dots button { width: 10px; height: 10px; border-radius: 50%; border: 0; background: rgba(255,255,255,.25); cursor: pointer; padding: 0; }
+.affirm-dots button.active { background: var(--gold-400); }
+
+/* ---------- Manifest / Keine Ausreden ---------- */
+.manifest { max-width: 780px; margin: 0 auto; text-align: center; }
+.manifest h2 { font-size: clamp(1.8rem, 4.5vw, 2.9rem); }
+.manifest .lead-quote { font-family: var(--font-head); font-style: italic; font-size: clamp(1.15rem, 2.8vw, 1.6rem); color: var(--gold-400); margin: 24px 0; }
+.manifest .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 34px; text-align: left; padding: 0; }
+.manifest .steps li {
+  list-style: none; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+  border-radius: 14px; padding: 18px; font-weight: 600;
+}
+.manifest .steps .k { color: var(--gold-400); font-family: var(--font-head); font-size: 1.5rem; display: block; }
+@media (max-width: 720px) { .manifest .steps { grid-template-columns: 1fr 1fr; } }
+
+/* ---------- Spiegel-Effekt ---------- */
+.mirror { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+.mirror .badge { display: inline-block; background: var(--gold-500); color: var(--teal-900); font-weight: 700; padding: 6px 14px; border-radius: 999px; font-size: .8rem; }
+@media (max-width: 780px) { .mirror { grid-template-columns: 1fr; } }
+
+/* ---------- Produkte / Shop ---------- */
+.products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.product {
+  background: var(--white); border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--shadow); display: flex; flex-direction: column;
+}
+.product .thumb { aspect-ratio: 16/10; background: linear-gradient(140deg, var(--teal-500), var(--teal-800)); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.55); font-size: .85rem; }
+.product .body { padding: 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.product .tier { font-size: .72rem; text-transform: uppercase; letter-spacing: .16em; font-weight: 700; color: var(--gold-500); }
+.product h3 { margin: 0; font-size: 1.25rem; }
+.product p { color: var(--muted); font-size: .95rem; margin: 0; flex: 1; }
+.product .price { font-family: var(--font-head); font-size: 1.5rem; color: var(--teal-700); }
+@media (max-width: 900px) { .products { grid-template-columns: 1fr; } }
+
+/* ---------- Werbung / Anzeigen-Slot ---------- */
+.ad-slot {
+  border: 1px dashed var(--gold-500);
+  background: repeating-linear-gradient(45deg, rgba(200,162,74,.06), rgba(200,162,74,.06) 12px, transparent 12px, transparent 24px);
+  border-radius: 14px; padding: 26px; text-align: center; color: var(--muted);
+  margin: 30px auto;
+}
+.ad-slot .label { font-size: .68rem; text-transform: uppercase; letter-spacing: .2em; color: var(--gold-500); font-weight: 700; }
+.ad-slot.leaderboard { min-height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+/* ---------- Affiliate-Karten ---------- */
+.affiliate { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.aff-card {
+  background: var(--white); border: 1px solid var(--sand-200); border-radius: 14px; padding: 20px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.aff-card .tag { align-self: flex-start; background: var(--sand-200); color: var(--teal-700); font-size: .66rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; padding: 4px 10px; border-radius: 999px; }
+.aff-card h4 { margin: 4px 0; font-family: var(--font-body); font-size: 1.05rem; }
+.aff-card p { color: var(--muted); font-size: .9rem; margin: 0; flex: 1; }
+.aff-note { font-size: .8rem; color: var(--muted); text-align: center; margin-top: 16px; }
+@media (max-width: 820px) { .affiliate { grid-template-columns: 1fr; } }
+
+/* ---------- Blog ---------- */
+.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.post {
+  background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
+  display: flex; flex-direction: column;
+}
+.post .cover { aspect-ratio: 16/9; background: linear-gradient(140deg, var(--teal-600), var(--teal-900)); display:flex; align-items:flex-end; padding: 16px; }
+.post .cat { background: var(--gold-500); color: var(--teal-900); font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; padding: 4px 10px; border-radius: 999px; }
+.post .body { padding: 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.post h3 { margin: 0; font-size: 1.2rem; }
+.post p { color: var(--muted); font-size: .93rem; margin: 0; flex: 1; }
+.post .more { font-weight: 700; color: var(--teal-600); }
+@media (max-width: 900px) { .blog-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 620px) { .blog-grid { grid-template-columns: 1fr; } }
+
+.rubrics { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+.rubrics span { background: var(--white); border: 1px solid var(--sand-200); border-radius: 999px; padding: 8px 16px; font-size: .85rem; font-weight: 600; color: var(--teal-700); }
+
+/* ---------- Artikel (Einzelseite) ---------- */
+.article { max-width: 760px; margin: 0 auto; }
+.article h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 8px 0 16px; }
+.article .meta { color: var(--muted); font-size: .9rem; margin-bottom: 30px; }
+.article p { font-size: 1.1rem; margin: 0 0 20px; }
+.article h2 { margin: 40px 0 14px; }
+.article blockquote { border-left: 4px solid var(--gold-500); background: var(--sand-100); padding: 18px 24px; margin: 26px 0; font-style: italic; border-radius: 0 12px 12px 0; }
+
+/* ---------- Newsletter / CTA ---------- */
+.cta-band { text-align: center; }
+.cta-band h2 { font-size: clamp(1.8rem, 4.5vw, 2.9rem); }
+.newsletter { display: flex; gap: 12px; max-width: 480px; margin: 24px auto 0; flex-wrap: wrap; justify-content: center; }
+.newsletter input {
+  flex: 1; min-width: 220px; padding: 15px 18px; border-radius: 999px; border: 1px solid rgba(255,255,255,.3);
+  background: rgba(255,255,255,.1); color: var(--white); font-size: 1rem;
+}
+.newsletter input::placeholder { color: rgba(255,255,255,.6); }
+
+/* ---------- Footer ---------- */
+footer { background: var(--teal-900); color: rgba(255,255,255,.75); padding: 54px 0 30px; }
+.foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 30px; }
+footer h4 { color: var(--white); font-family: var(--font-body); font-size: .9rem; text-transform: uppercase; letter-spacing: .12em; margin: 0 0 14px; }
+footer a { color: rgba(255,255,255,.75); display: block; padding: 4px 0; }
+footer a:hover { color: var(--gold-400); }
+.foot-bottom { border-top: 1px solid rgba(255,255,255,.1); margin-top: 36px; padding-top: 22px; font-size: .82rem; color: rgba(255,255,255,.5); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+@media (max-width: 720px) { .foot-grid { grid-template-columns: 1fr; } }
+
+/* ---------- Scroll-Reveal ---------- */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+/* ---------- Motto-Band ---------- */
+.motto { background: var(--gold-500); color: var(--teal-900); text-align: center; padding: 26px 0; }
+.motto p { margin: 0; font-family: var(--font-head); font-style: italic; font-size: clamp(1.1rem, 2.6vw, 1.5rem); font-weight: 700; }

@@ -305,5 +305,13 @@ window.TV_DESTINATIONS = [
     stellplatz: "Stellplätze Richtung Strand (Brzeźno/Stogi), von dort mit Tram/Zug bequem in die Altstadt und die Dreistadt.",
     zeit: "Juni–September für die Ostsee — und der Weihnachtsmarkt im Advent ist ein magischer Geheimtipp.",
     tipp: "Zwei Must-Sees: das Bernsteinmuseum in der Großen Mühle (Wielki Młyn) und das grandiose Museum des Zweiten Weltkriegs. Danach durch die Frauengasse (Ulica Mariacka) und mit dem Zug nach Sopot (2 Stationen, Strand am Bahnhof) und Gdynia."
+  },
+  {
+    id: "masuren", country: "polen", flag: "🇵🇱", name: "Masuren / Mazury", region: "Land der 2.000 Seen",
+    color: "bg-deep",
+    blurb: "Polens großes Seenland im Nordosten: über 2.000 Seen, dichte Wälder und verbindende Kanäle — ein Traum zum Segeln, Kanufahren und für Natur pur, und eines der beliebtesten Reiseziele des Landes.",
+    stellplatz: "Rund um die Seen viele Campingplätze, u. a. bei Mikołajki (Nikolaiken) und Giżycko (Lötzen) direkt am Wasser.",
+    zeit: "Mai–September – die Segel- und Paddelsaison; Hochsommer kann an den Hotspots voll werden.",
+    tipp: "Eine Kanu- oder Segeltour über die großen Seen (Śniardwy, Mamry) machen und in Mikołajki den Hafen genießen."
   }
 ];

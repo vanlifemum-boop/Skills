@@ -58,12 +58,20 @@ window.POLEN_DATA = [
     x: 550, y: 451.5, lx: 9, ly: 4,
     url: "blog/krakau-tuchhallen-drache.html", meta: "Süden · 6 Min.",
     blurb: "Tuchhallen, süße Markt-Sünden einer älteren Dame und der feuerspuckende Wawel-Drache samt Legende."
+  },
+  {
+    id: "masuren", name: "Masuren / Mazury", short: "Masuren", region: "masuren",
+    kat: "natur", status: "sehenswert",
+    x: 567.1, y: 367, lx: 9, ly: -1,
+    url: "reiseziele.html#masuren", meta: "Masuren · Natur & Aussicht",
+    blurb: "Polens großes Seenland im Nordosten: über 2.000 Seen, Wälder und Kanäle — ein Traum zum Segeln, Kanufahren und für Natur pur. Eines der beliebtesten Reiseziele des Landes."
   }
 ];
 
 window.POLEN_REGIONS = [
   { key: "alle", label: "Alle Regionen" },
   { key: "norden", label: "Norden & Ostsee" },
+  { key: "masuren", label: "Masuren" },
   { key: "zentral", label: "Zentralpolen" },
   { key: "westen", label: "Westen" },
   { key: "sueden", label: "Süden" }

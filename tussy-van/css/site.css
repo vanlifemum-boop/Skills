@@ -273,6 +273,7 @@ h1, h2, h3 { font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; text-
 .pl-pin:hover .pl-pin-bg, .pl-pin.active .pl-pin-bg { fill: var(--terra); }
 .pl-pin .pl-icon { font-size: 8.5px; pointer-events: none; }
 .pl-pin.dim { opacity: 0.28; }
+.pl-pin.pl-off { display: none; }
 .pl-pin .pl-lbl { font-family: var(--font); font-weight: 800; font-size: 6px; fill: var(--ink); paint-order: stroke; stroke: #ffffff; stroke-width: 1.6px; pointer-events: none; }
 @keyframes plpulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.16); } }
 

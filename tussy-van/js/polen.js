@@ -294,6 +294,9 @@ window.POLEN_STATUS = {
   });
 
   var state = { region: "alle", kats: {}, query: "" }; // kats: Set als Objekt, leer = alle
+  // Camper-Kategorien: erscheinen auf der Karte erst beim Filtern/Suchen (sonst zu voll).
+  var CAMPER_KATS = { camping: 1, camperservice: 1, entsorgung: 1, rastplatz: 1, waldpark: 1, biwak: 1, dusche: 1, waschsalon: 1 };
+  var camperTotal = data.filter(function (d) { return CAMPER_KATS[d.kat]; }).length;
 
   var mapStage = document.querySelector("[data-pl-map]");
   var grid = document.querySelector("[data-pl-grid]");
@@ -395,30 +398,28 @@ window.POLEN_STATUS = {
   }
 
   function apply() {
+    var filtering = state.region !== "alle" || !noKatFilter() || state.query !== "";
     var visible = 0;
     data.forEach(function (d) {
       var card = document.getElementById("pl-card-" + d.id);
       var okRegion = state.region === "alle" || d.region === state.region;
       var okKat = noKatFilter() || !!state.kats[d.kat];
       var okQuery = !state.query || card.getAttribute("data-text").indexOf(state.query) !== -1;
-      var show = okRegion && okKat && okQuery;
+      // Camper-Punkte nur zeigen, wenn gefiltert/gesucht wird — sonst nur die Highlights.
+      var camperOk = !CAMPER_KATS[d.kat] || filtering;
+      var show = okRegion && okKat && okQuery && camperOk;
       card.classList.toggle("hide", !show);
       if (show) visible++;
       var pin = document.getElementById("pl-pin-" + d.id);
-      if (pin) pin.classList.toggle("dim", !show);
+      if (pin) pin.classList.toggle("pl-off", !show);
     });
-    if (count) count.textContent = visible + (visible === 1 ? " Ort" : " Orte") + " gefunden";
+    if (count) {
+      count.textContent = filtering
+        ? visible + (visible === 1 ? " Ort" : " Orte") + " gefunden"
+        : visible + " Highlights · + " + camperTotal + " Camper-Stellplätze (filter nach Kategorie/Region oder such deinen Ort)";
+    }
     var empty = document.querySelector(".pl-empty");
     if (empty) empty.style.display = visible ? "none" : "block";
-  }
-
-  function resetFilters() {
-    state.region = "alle"; state.kats = {}; state.query = "";
-    if (search) search.value = "";
-    if (regRow) regRow.querySelectorAll(".chip").forEach(function (x) {
-      x.classList.toggle("active", x.getAttribute("data-region") === "alle");
-    });
-    if (katRow) katRow.querySelectorAll(".chip").forEach(function (x) { x.classList.remove("active"); });
   }
 
   /* --- Animierte Polen-Karte aus der Europakarte ableiten --- */
@@ -500,8 +501,6 @@ window.POLEN_STATUS = {
         g.addEventListener("click", function () {
           var card = document.getElementById("pl-card-" + d.id);
           if (!card) return;
-          resetFilters();
-          apply();
           svg.querySelectorAll(".pl-pin.active").forEach(function (p) { p.classList.remove("active"); });
           g.classList.add("active");
           card.classList.remove("flash");
@@ -511,6 +510,7 @@ window.POLEN_STATUS = {
         });
         svg.appendChild(g);
       });
+      apply(); // Pins existieren jetzt — Sichtbarkeit (u. a. Camper ausblenden) anwenden
     }).catch(function (err) { console.error("Polen-Karte konnte nicht geladen werden:", err); });
   }
 

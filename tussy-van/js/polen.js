@@ -213,6 +213,32 @@ window.POLEN_DATA = [
     kat: "sakral", status: "sehenswert", x: 544.0, y: 459.4,
     url: "https://www.google.com/maps/search/?api=1&query=Kalwaria+Zebrzydowska+Sanktuarium", meta: "Kalwaria · Wallfahrt",
     blurb: "UNESCO-Welterbe: manieristischer Wallfahrtskomplex mit Kloster und einem Weg aus Kapellen in parkartiger Landschaft."
+  },
+
+  /* ---- 🚽 MOPs mit Camper-Service (Ver-/Entsorgung & Wasser) — Auswahl, wird ergänzt ---- */
+  {
+    id: "mop-brwinow", name: "MOP Brwinów (A2)", region: "zentral",
+    kat: "entsorgung", status: "sehenswert", x: 556.6, y: 405.9,
+    url: "https://www.google.com/maps/search/?api=1&query=MOP+Brwinow+A2", meta: "A2 Ri. Warschau · Camper-Service",
+    blurb: "Rastplatz an der A2 mit Camper-freundlicher Ausstattung: frisches Wasser tanken sowie Grau- und Chemie-WC-Entsorgung. Angaben ohne Gewähr — bitte vor Ort prüfen."
+  },
+  {
+    id: "mop-wystepa", name: "MOP Występa (S7)", region: "sueden",
+    kat: "entsorgung", status: "sehenswert", x: 556.1, y: 432.7,
+    url: "https://www.google.com/maps/search/?api=1&query=MOP+Wystepa+S7", meta: "S7 bei Kielce · Camper-Service",
+    blurb: "Rastplatz an der S7 mit Entsorgungspunkt für flüssige Abwässer — praktisch für Camper und Wohnwagen. Angaben ohne Gewähr — bitte vor Ort prüfen."
+  },
+  {
+    id: "mop-machnacz", name: "MOP Machnacz (A1)", region: "zentral",
+    kat: "entsorgung", status: "sehenswert", x: 531.5, y: 397.0,
+    url: "https://www.google.com/maps/search/?api=1&query=MOP+Machnacz+A1", meta: "A1 bei Włocławek · Camper-Service",
+    blurb: "Rastplatz an der A1 mit Entsorgungspunkt für Abwasser — guter Stopp auf der Nord-Süd-Route. Angaben ohne Gewähr — bitte vor Ort prüfen."
+  },
+  {
+    id: "mop-krzyzanow", name: "MOP Krzyżanów (A1)", region: "zentral",
+    kat: "entsorgung", status: "sehenswert", x: 539.4, y: 405.3,
+    url: "https://www.google.com/maps/search/?api=1&query=MOP+Krzyzanow+A1", meta: "A1 bei Kutno · Camper-Service",
+    blurb: "Rastplatz an der A1 mit Entsorgungspunkt für Abwasser. Angaben ohne Gewähr — bitte vor Ort prüfen."
   }
 ];
 

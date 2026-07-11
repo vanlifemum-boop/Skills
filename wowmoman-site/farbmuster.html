@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WowMoman — Farb- &amp; Kugel-Vorschau</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+    .panel { position: relative; height: 100vh; min-height: 640px; overflow: hidden; display: flex; align-items: center; }
+    .balls { position: absolute; inset: 0; z-index: 1; }
+    .ball { position: absolute; border-radius: 50%; }
+    .content { position: relative; z-index: 3; max-width: 1120px; margin: 0 auto; padding: 0 48px; width: 100%; }
+    .pname { display: inline-block; font-size: .72rem; letter-spacing: .28em; text-transform: uppercase; font-weight: 700; padding: 7px 16px; border-radius: 999px; margin-bottom: 22px; }
+    .brand { font-family: Georgia, serif; font-weight: 700; font-size: 1.5rem; margin-bottom: 14px; }
+    h1 { font-family: Georgia, serif; font-size: clamp(2.6rem, 6vw, 4.6rem); line-height: 1.08; margin-bottom: 16px; }
+    .sub { font-family: Georgia, serif; font-style: italic; font-size: clamp(1.1rem, 2.4vw, 1.5rem); margin-bottom: 30px; max-width: 560px; }
+    .btn { display: inline-block; padding: 15px 32px; border-radius: 999px; font-weight: 700; font-size: 1rem; }
+    /* Swatch-Leiste */
+    .swatches { position: absolute; bottom: 26px; left: 48px; right: 48px; z-index: 3; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .chip { display: flex; align-items: center; gap: 8px; padding: 8px 12px 8px 8px; border-radius: 999px; font-size: .74rem; font-weight: 600; backdrop-filter: blur(6px); }
+    .dot { width: 20px; height: 20px; border-radius: 50%; box-shadow: inset -3px -3px 6px rgba(0,0,0,.3); }
+    .tagnum { position: absolute; top: 22px; right: 32px; z-index: 3; font-family: Georgia, serif; font-size: 3rem; font-weight: 700; opacity: .25; }
+    @media (max-width: 620px){ .content,.swatches{padding-left:24px;padding-right:24px;left:24px;right:24px;} }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    const PALETTES = [
+      {
+        name: "1 · Gold & Roségold",
+        bg: ["#17110f", "#2a1d1a"],
+        glow: "rgba(200,162,74,.30)",
+        balls: ["#c8a24a", "#c9868f", "#ead9b0", "#8a5a3c", "#d8b968"],
+        text: "#f6efe2", subCol: "#d8b968", pnameBg: "#c8a24a", pnameCol: "#17110f",
+        btnBg: "#c8a24a", btnCol: "#17110f", chipBg: "rgba(255,255,255,.08)", chipCol: "#f6efe2",
+        swatches: [["Gold","#c8a24a"],["Roségold","#c9868f"],["Champagner","#ead9b0"],["Basis","#17110f"],["Creme","#f6efe2"]]
+      },
+      {
+        name: "2 · Schwarz & Gold",
+        bg: ["#0e0e10", "#1c1c20"],
+        glow: "rgba(212,175,55,.28)",
+        balls: ["#d4af37", "#f0e2b8", "#3a3a40", "#b8942e", "#ffffff"],
+        text: "#ffffff", subCol: "#d4af37", pnameBg: "#d4af37", pnameCol: "#0e0e10",
+        btnBg: "#d4af37", btnCol: "#0e0e10", chipBg: "rgba(255,255,255,.08)", chipCol: "#ffffff",
+        swatches: [["Gold","#d4af37"],["Champagner","#f0e2b8"],["Graphit","#3a3a40"],["Schwarz","#0e0e10"],["Weiß","#ffffff"]]
+      },
+      {
+        name: "3 · Rosé & Bordeaux",
+        bg: ["#3a0e1e", "#521329"],
+        glow: "rgba(201,138,148,.30)",
+        balls: ["#c98a94", "#e8c3c8", "#7a1f3d", "#f7ece9", "#a84a63"],
+        text: "#f7ece9", subCol: "#e8c3c8", pnameBg: "#c98a94", pnameCol: "#3a0e1e",
+        btnBg: "#e8c3c8", btnCol: "#3a0e1e", chipBg: "rgba(255,255,255,.10)", chipCol: "#f7ece9",
+        swatches: [["Roségold","#c98a94"],["Blush","#e8c3c8"],["Bordeaux","#7a1f3d"],["Basis","#3a0e1e"],["Creme","#f7ece9"]]
+      },
+      {
+        name: "4 · Aubergine & Magenta",
+        bg: ["#2a1030", "#3d1745"],
+        glow: "rgba(224,71,154,.28)",
+        balls: ["#e0479a", "#7b3fa0", "#f3eef5", "#b53d8f", "#c98adf"],
+        text: "#f3eef5", subCol: "#e0479a", pnameBg: "#e0479a", pnameCol: "#2a1030",
+        btnBg: "#e0479a", btnCol: "#ffffff", chipBg: "rgba(255,255,255,.10)", chipCol: "#f3eef5",
+        swatches: [["Magenta","#e0479a"],["Violett","#7b3fa0"],["Aubergine","#2a1030"],["Off-White","#f3eef5"],["Pink","#c98adf"]]
+      }
+    ];
+
+    // feste, "schoen gestreute" Kugel-Layouts (bevorzugt rechts, Text bleibt links lesbar)
+    const LAYOUT = [
+      {x:72,y:18,s:150},{x:86,y:52,s:110},{x:63,y:70,s:90},{x:92,y:80,s:70},
+      {x:78,y:36,s:60},{x:55,y:30,s:48},{x:68,y:90,s:130},{x:48,y:82,s:64},
+      {x:83,y:8,s:52},{x:96,y:34,s:80},{x:60,y:48,s:40}
+    ];
+
+    function glossy(color){
+      return `radial-gradient(circle at 32% 26%, rgba(255,255,255,.92) 0%, ${color} 26%, rgba(0,0,0,.45) 120%)`;
+    }
+
+    const root = document.getElementById("root");
+    PALETTES.forEach((p, pi) => {
+      const panel = document.createElement("div");
+      panel.className = "panel";
+      panel.style.background = `radial-gradient(1100px 620px at 72% 26%, ${p.glow}, transparent 60%), linear-gradient(135deg, ${p.bg[0]}, ${p.bg[1]})`;
+
+      const balls = document.createElement("div");
+      balls.className = "balls";
+      LAYOUT.forEach((b, i) => {
+        const el = document.createElement("div");
+        el.className = "ball";
+        const col = p.balls[i % p.balls.length];
+        el.style.width = el.style.height = b.s + "px";
+        el.style.left = b.x + "%"; el.style.top = b.y + "%";
+        el.style.transform = "translate(-50%,-50%)";
+        el.style.background = glossy(col);
+        el.style.boxShadow = "inset -10px -12px 26px rgba(0,0,0,.35), 0 18px 40px rgba(0,0,0,.35)";
+        balls.appendChild(el);
+      });
+      panel.appendChild(balls);
+
+      const num = document.createElement("div");
+      num.className = "tagnum"; num.style.color = p.text; num.textContent = (pi+1);
+      panel.appendChild(num);
+
+      const content = document.createElement("div");
+      content.className = "content";
+      content.innerHTML = `
+        <span class="pname" style="background:${p.pnameBg};color:${p.pnameCol};">${p.name}</span>
+        <div class="brand" style="color:${p.text};">Wow<span style="color:${p.subCol};">Moman</span></div>
+        <h1 style="color:${p.text};">Ich gehe jetzt leben!</h1>
+        <p class="sub" style="color:${p.subCol};">Vegetierst du noch vor dich hin – oder kommst du mit?</p>
+        <a class="btn" style="background:${p.btnBg};color:${p.btnCol};">Jetzt kostenlos starten</a>
+      `;
+      panel.appendChild(content);
+
+      const sw = document.createElement("div");
+      sw.className = "swatches";
+      p.swatches.forEach(([label, hex]) => {
+        const c = document.createElement("span");
+        c.className = "chip";
+        c.style.background = p.chipBg; c.style.color = p.chipCol;
+        c.innerHTML = `<span class="dot" style="background:${hex};"></span>${label} <span style="opacity:.6;">${hex}</span>`;
+        sw.appendChild(c);
+      });
+      panel.appendChild(sw);
+
+      root.appendChild(panel);
+    });
+  </script>
+</body>
+</html>

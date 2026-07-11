@@ -294,6 +294,15 @@ window.POLEN_STATUS = {
   });
 
   var state = { region: "alle", kats: {}, query: "" }; // kats: Set als Objekt, leer = alle
+  // data-preselect-kat="entsorgung" (auch kommagetrennt) am Karten-Container
+  // aktiviert Kategorien schon beim Laden — z. B. für die Entsorgungs-Seite.
+  var preEl = document.querySelector("[data-preselect-kat]");
+  if (preEl) {
+    preEl.getAttribute("data-preselect-kat").split(",").forEach(function (k) {
+      k = k.trim();
+      if (k) state.kats[k] = true;
+    });
+  }
   // Camper-Kategorien: erscheinen auf der Karte erst beim Filtern/Suchen (sonst zu voll).
   var CAMPER_KATS = { camping: 1, camperservice: 1, entsorgung: 1, rastplatz: 1, waldpark: 1, biwak: 1, dusche: 1, waschsalon: 1 };
   var camperTotal = data.filter(function (d) { return CAMPER_KATS[d.kat]; }).length;
@@ -360,7 +369,7 @@ window.POLEN_STATUS = {
     });
     present.forEach(function (it) {
       var b = document.createElement("button");
-      b.className = "chip chip-kat";
+      b.className = "chip chip-kat" + (state.kats[it.key] ? " active" : "");
       b.innerHTML = it.icon + " " + it.label;
       b.setAttribute("data-kat", it.key);
       b.addEventListener("click", function () {

@@ -126,6 +126,8 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.15; font-weight: 700;
 }
 .hero-media canvas { width: 100%; height: 100%; display: block; object-fit: cover; }
 .hero-media.has-ballpit::after { content: none; }
+/* Schwebende Kugel-Ebene ueber der ganzen Seite (unter der Nav) */
+#ballpit-layer canvas { width: 100%; height: 100%; display: block; }
 /* Lesbarkeits-Overlay ueber den Kugeln, unter dem Text */
 .hero-media.has-ballpit::before {
   content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;

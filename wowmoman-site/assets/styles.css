@@ -98,7 +98,7 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.15; font-weight: 700;
     flex-direction: column; gap: 0; background: var(--teal-900);
     max-height: 0; overflow: hidden; transition: max-height .3s ease;
   }
-  .nav-links.open { max-height: 420px; }
+  .nav-links.open { max-height: 560px; }
   .nav-links a { width: 100%; padding: 16px 22px; border-top: 1px solid rgba(255,255,255,.06); }
 }
 

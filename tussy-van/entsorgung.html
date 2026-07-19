@@ -70,8 +70,16 @@
         </ul>
         <p>Mehr zum Thema: <a href="blog/polen-legal-uebernachten.html">Wo darf man in Polen legal übernachten? →</a> · <a href="ratgeber/camping-knigge.html">Der Camping-Knigge →</a> · <a href="blog/trockentrenntoilette-erfahrung.html">Meine Erfahrung mit der Trockentrenntoilette →</a></p>
 
-        <h2 id="europa">🌍 Entsorgungsstationen in Europa — meine Länder-Auswahl</h2>
-        <p>Für unterwegs habe ich dir pro Land eine <b>Handvoll bewährter Stationen</b> herausgesucht — von Kopenhagen bis zur Algarve. Das ist bewusst eine kuratierte Auswahl (keine vollständige Liste!): Jeder Eintrag führt direkt zu Google Maps. Für Polen nutz am besten die <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">Karte oben</a> — da habe ich die Stationen einzeln eingetragen. Alle Angaben ohne Gewähr, bitte vor der Anfahrt kurz prüfen.</p>
+        <h2 id="europa">🌍 Entsorgungsstationen in Europa — die Karte</h2>
+        <p>Für unterwegs habe ich dir pro Land eine <b>Auswahl bewährter Stationen</b> herausgesucht — von Kopenhagen bis zur Algarve. Klick ein Land an, um hineinzuzoomen, und klick einen Pin, um die Station direkt in Google Maps zu öffnen. Für Polen nutz am besten die Detail-Karte oben. Alle Angaben ohne Gewähr, bitte vor der Anfahrt kurz prüfen.</p>
+
+        <div class="dest-filter" data-eu-filter style="justify-content:center"></div>
+        <div class="eu-mapwrap">
+          <div data-eu-map="img/europe-map.svg" aria-label="Europakarte mit Entsorgungsstationen für Camper"></div>
+        </div>
+        <p class="eu-count" data-eu-count></p>
+
+        <h3>Die Stationen als Liste nach Ländern</h3>
 
         <details class="box">
           <summary><b>🇩🇪 Deutschland</b> — Auswahl nach Bundesland</summary>
@@ -236,6 +244,8 @@
   <script src="js/lenis.min.js"></script>
   <script src="js/polen-camper.js"></script>
   <script src="js/polen.js"></script>
+  <script src="js/entsorgung-europa-daten.js"></script>
+  <script src="js/entsorgung-europa.js"></script>
   <script src="js/site.js"></script>
 </body>
 </html>

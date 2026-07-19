@@ -492,3 +492,13 @@ h1, h2, h3 { font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; text-
   .marquee-track { animation: none; }
   .wobble:hover { animation: none; }
 }
+
+/* Europa-Entsorgungskarte */
+.eu-mapwrap { max-width: 620px; margin: 1.2rem auto; }
+.pl-map .countries path.eu-land { fill: #eaf2fd; stroke: var(--blue); stroke-width: 0.9; }
+.eu-pin { cursor: pointer; }
+.eu-pin circle { fill: #7fb2ff; stroke: var(--ink); stroke-width: 1.3; transition: fill 0.2s; }
+.eu-pin:hover circle { fill: var(--terra); }
+.eu-pin text { font-size: 5.5px; pointer-events: none; }
+.eu-pin.off { display: none; }
+.eu-count { font-weight: 700; color: var(--muted); margin: 0.6rem 0 0.2rem; text-align: center; }

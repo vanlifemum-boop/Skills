@@ -60,6 +60,55 @@ window.POLEN_DATA = [
     blurb: "Tuchhallen, süße Markt-Sünden einer älteren Dame und der feuerspuckende Wawel-Drache samt Legende."
   },
   {
+    id: "torun", name: "Toruń / Thorn", short: "Toruń", region: "zentral",
+    kat: "stadt", status: "ziel",
+    x: 526.8, y: 388.3, lx: -9, ly: -1,
+    url: "https://www.google.com/maps/search/?api=1&query=Torun+Stare+Miasto", meta: "Zentralpolen",
+    blurb: "Gotische Altstadt (UNESCO), Geburtsstadt von Kopernikus — und Heimat der berühmten Lebkuchen (Pierniki)."
+  },
+  {
+    id: "zakopane", name: "Zakopane", short: "Zakopane", region: "sueden",
+    kat: "stadt", status: "ziel",
+    x: 548.2, y: 472.1, lx: -9, ly: 3,
+    url: "https://www.google.com/maps/search/?api=1&query=Zakopane", meta: "Süden · Tatra",
+    blurb: "Polens Wintersport-Hauptstadt am Fuß der Hohen Tatra — Holzarchitektur, Krupówki-Flaniermeile und Oscypek-Käse vom Grill."
+  },
+  {
+    id: "szczecin", name: "Stettin / Szczecin", short: "Stettin", region: "westen",
+    kat: "stadt", status: "ziel",
+    x: 470.8, y: 383.3, lx: 9, ly: -1,
+    url: "https://www.google.com/maps/search/?api=1&query=Szczecin+Waly+Chrobrego", meta: "Westen · Oder",
+    blurb: "Hafenstadt an der Oder mit der prächtigen Hakenterrasse (Wały Chrobrego) und viel maritimem Flair — perfekt für den Grenz-Stopp."
+  },
+  {
+    id: "lublin", name: "Lublin", short: "Lublin", region: "zentral",
+    kat: "stadt", status: "ziel",
+    x: 582.7, y: 424.5, lx: 9, ly: -1,
+    url: "https://www.google.com/maps/search/?api=1&query=Lublin+Stare+Miasto", meta: "Osten",
+    blurb: "Der Geheimtipp im Osten: verwinkelte Renaissance-Altstadt, Burg mit byzantinischen Fresken und junge Kulturszene."
+  },
+  {
+    id: "lodz", name: "Łódź", short: "Łódź", region: "zentral",
+    kat: "stadt", status: "ziel",
+    x: 539.6, y: 416.2, lx: -9, ly: -1,
+    url: "https://www.google.com/maps/search/?api=1&query=Lodz+Piotrkowska", meta: "Zentralpolen",
+    blurb: "Vom Industrie-Manchester zur Street-Art-Stadt: die endlose Piotrkowska-Straße, Lofts in alten Fabriken und Filmgeschichte."
+  },
+  {
+    id: "sandomierz", name: "Sandomierz", short: "Sandomierz", region: "sueden",
+    kat: "stadt", status: "ziel",
+    x: 571.9, y: 438.3, lx: 9, ly: -1,
+    url: "https://www.google.com/maps/search/?api=1&query=Sandomierz+Rynek", meta: "Südosten",
+    blurb: "Eines der schönsten Kleinstädtchen Polens: Renaissance-Marktplatz auf dem Hügel über der Weichsel, unterirdische Gänge inklusive."
+  },
+  {
+    id: "kazimierz-dolny", name: "Kazimierz Dolny", short: "Kazimierz D.", region: "zentral",
+    kat: "stadt", status: "ziel",
+    x: 574.2, y: 423.3, lx: -9, ly: 3,
+    url: "https://www.google.com/maps/search/?api=1&query=Kazimierz+Dolny+Rynek", meta: "Osten · Weichsel",
+    blurb: "Künstlerstädtchen an der Weichsel mit Renaissance-Markt, Burgruine und dem berühmten Hahn-Gebäck (Kogut) aus der Bäckerei."
+  },
+  {
     id: "masuren", name: "Masuren / Mazury", short: "Masuren", region: "masuren",
     kat: "natur", status: "sehenswert",
     x: 567.1, y: 367, lx: 9, ly: -1,
@@ -213,6 +262,156 @@ window.POLEN_DATA = [
     kat: "sakral", status: "sehenswert", x: 544.0, y: 459.4,
     url: "https://www.google.com/maps/search/?api=1&query=Kalwaria+Zebrzydowska+Sanktuarium", meta: "Kalwaria · Wallfahrt",
     blurb: "UNESCO-Welterbe: manieristischer Wallfahrtskomplex mit Kloster und einem Weg aus Kapellen in parkartiger Landschaft."
+  },
+
+  /* ---- 🏰 Burgen & Schlösser (Sehenswertes) ---- */
+  {
+    id: "malbork", name: "Marienburg / Zamek w Malborku", region: "norden",
+    kat: "burg", status: "sehenswert", x: 531.9, y: 364.3,
+    url: "https://www.google.com/maps/search/?api=1&query=Zamek+w+Malborku", meta: "Malbork · UNESCO",
+    blurb: "Die größte Backsteinburg der Welt — gewaltiger Sitz des Deutschen Ordens an der Nogat. Für die Besichtigung ruhig einen halben Tag einplanen."
+  },
+  {
+    id: "wawel-schloss", name: "Wawel-Schloss Krakau", region: "sueden",
+    kat: "burg", status: "sehenswert", x: 547.4, y: 454.8,
+    url: "https://www.google.com/maps/search/?api=1&query=Zamek+Krolewski+na+Wawelu", meta: "Krakau · Schloss",
+    blurb: "Die Königsresidenz auf dem Wawel-Hügel: Renaissance-Arkadenhof, Kronschatz und unten am Fluss die Drachenhöhle samt feuerspuckendem Drachen."
+  },
+  {
+    id: "ksiaz", name: "Schloss Fürstenstein / Zamek Książ", region: "westen",
+    kat: "burg", status: "sehenswert", x: 496.7, y: 440.7,
+    url: "https://www.google.com/maps/search/?api=1&query=Zamek+Ksiaz+Walbrzych", meta: "Wałbrzych · Schloss",
+    blurb: "Polens drittgrößtes Schloss thront über einer Waldschlucht — mit geheimnisvollen Nazi-Tunneln aus dem Projekt „Riese“ im Untergrund."
+  },
+  {
+    id: "moszna", name: "Schloss Moszna", region: "sueden",
+    kat: "burg", status: "sehenswert", x: 520.1, y: 448.0,
+    url: "https://www.google.com/maps/search/?api=1&query=Zamek+Moszna", meta: "Oppelner Land · Schloss",
+    blurb: "Das Märchenschloss mit 99 Türmen — sieht aus wie aus einem Disney-Film und ist ein Traum für Fotos, besonders zur Azaleen-Blüte."
+  },
+  {
+    id: "czocha", name: "Burg Czocha (Tzschocha)", region: "westen",
+    kat: "burg", status: "sehenswert", x: 483.0, y: 437.5,
+    url: "https://www.google.com/maps/search/?api=1&query=Zamek+Czocha", meta: "Niederschlesien · Burg",
+    blurb: "Verwinkelte Ritterburg über dem Stausee mit Geheimgängen und Falltüren — hier finden sogar echte „Zauberschul“-Events statt."
+  },
+  {
+    id: "ogrodzieniec", name: "Burgruine Ogrodzieniec", region: "sueden",
+    kat: "burg", status: "sehenswert", x: 541.9, y: 446.0,
+    url: "https://www.google.com/maps/search/?api=1&query=Zamek+Ogrodzieniec", meta: "Adlerhorst-Route · Ruine",
+    blurb: "Die spektakulärste Ruine der „Adlerhorst-Route“: Kalkfelsen und Mauern verschmelzen zu einer Kulisse wie aus „The Witcher“."
+  },
+  {
+    id: "niedzica", name: "Burg Niedzica am Czorsztyn-See", region: "sueden",
+    kat: "burg", status: "sehenswert", x: 553.1, y: 469.0,
+    url: "https://www.google.com/maps/search/?api=1&query=Zamek+Niedzica", meta: "Pieninen · Burg",
+    blurb: "Bilderbuchburg hoch über dem türkisen Czorsztyn-Stausee — mit Inka-Schatz-Legende und Blick auf die Pieninen."
+  },
+  {
+    id: "wilanow", name: "Schloss Wilanów", region: "zentral",
+    kat: "burg", status: "sehenswert", x: 561.7, y: 405.0,
+    url: "https://www.google.com/maps/search/?api=1&query=Palac+w+Wilanowie", meta: "Warschau · Schloss",
+    blurb: "Das „polnische Versailles“ am Stadtrand von Warschau: Barockresidenz von König Jan III. Sobieski mit prachtvollem Garten."
+  },
+  {
+    id: "lancut", name: "Schloss Łańcut", region: "sueden",
+    kat: "burg", status: "sehenswert", x: 579.0, y: 451.9,
+    url: "https://www.google.com/maps/search/?api=1&query=Zamek+w+Lancucie", meta: "Karpatenvorland · Schloss",
+    blurb: "Eine der prächtigsten Magnaten-Residenzen Polens — mit Kutschensammlung, Orangerie und englischem Landschaftspark."
+  },
+  {
+    id: "lidzbark", name: "Burg Lidzbark Warmiński (Heilsberg)", region: "masuren",
+    kat: "burg", status: "sehenswert", x: 553.2, y: 360.6,
+    url: "https://www.google.com/maps/search/?api=1&query=Zamek+Lidzbark+Warminski", meta: "Ermland · Burg",
+    blurb: "Perfekt erhaltene gotische Bischofsburg im Ermland — hier lebte und arbeitete auch Kopernikus. Ein Backstein-Juwel abseits der Massen."
+  },
+
+  /* ---- 🏞️ Natur & Aussicht (Sehenswertes) ---- */
+  {
+    id: "morskie-oko", name: "Morskie Oko (Hohe Tatra)", region: "sueden",
+    kat: "natur", status: "sehenswert", x: 549.9, y: 474.2,
+    url: "https://www.google.com/maps/search/?api=1&query=Morskie+Oko", meta: "Tatra · Bergsee",
+    blurb: "Polens berühmtester Bergsee, umringt von Zweitausendern — der Weg hinauf ist breit und gut machbar. Früh starten, die Tatra ist beliebt!"
+  },
+  {
+    id: "slowinski", name: "Wanderdünen im Słowiński-Nationalpark", region: "norden",
+    kat: "natur", status: "sehenswert", x: 511.1, y: 349.6,
+    url: "https://www.google.com/maps/search/?api=1&query=Wydma+Lacka+Slowinski+Park+Narodowy", meta: "Łeba · Ostsee",
+    blurb: "Bis zu 40 Meter hohe Sanddünen, die jedes Jahr weiterwandern — Sahara-Feeling direkt an der Ostsee bei Łeba."
+  },
+  {
+    id: "bialowieza", name: "Białowieża-Urwald", region: "masuren",
+    kat: "natur", status: "sehenswert", x: 599.5, y: 389.6,
+    url: "https://www.google.com/maps/search/?api=1&query=Bialowieski+Park+Narodowy", meta: "Podlasie · UNESCO",
+    blurb: "Europas letzter Tiefland-Urwald und Heimat der freilebenden Wisente — ein Stück Wildnis, das es so nirgendwo sonst mehr gibt."
+  },
+  {
+    id: "bieszczady", name: "Bieszczady-Berge", region: "sueden",
+    kat: "natur", status: "sehenswert", x: 584.5, y: 472.5,
+    url: "https://www.google.com/maps/search/?api=1&query=Polonina+Wetlinska+Bieszczady", meta: "Südosten · Berge",
+    blurb: "Polens wilder Südosten: baumfreie Bergwiesen (Połoniny), Wölfe, Bären und der dunkelste Sternenhimmel des Landes."
+  },
+  {
+    id: "sniezka", name: "Schneekoppe / Śnieżka (Riesengebirge)", region: "sueden",
+    kat: "natur", status: "sehenswert", x: 489.2, y: 443.8,
+    url: "https://www.google.com/maps/search/?api=1&query=Sniezka+Karpacz", meta: "Riesengebirge · Gipfel",
+    blurb: "Der höchste Gipfel des Riesengebirges (1.603 m) mit den markanten „Ufo“-Bauten obendrauf — Aufstieg ab Karpacz."
+  },
+  {
+    id: "ojcow", name: "Ojców-Nationalpark", region: "sueden",
+    kat: "natur", status: "sehenswert", x: 545.9, y: 451.3,
+    url: "https://www.google.com/maps/search/?api=1&query=Ojcowski+Park+Narodowy", meta: "bei Krakau · Natur",
+    blurb: "Polens kleinster Nationalpark direkt vor den Toren Krakaus: Kalkfelsen, Höhlen, die „Herkuleskeule“ und eine Kapelle überm Bach."
+  },
+  {
+    id: "dunajec", name: "Dunajec-Durchbruch (Floßfahrt)", region: "sueden",
+    kat: "natur", status: "sehenswert", x: 554.2, y: 469.4,
+    url: "https://www.google.com/maps/search/?api=1&query=Splyw+Dunajcem+Sromowce", meta: "Pieninen · Fluss",
+    blurb: "Mit dem traditionellen Holzfloß durch die Felsenschlucht der Pieninen — seit über 180 Jahren ein Klassiker, geführt von Goralen-Flößern."
+  },
+  {
+    id: "hel", name: "Halbinsel Hel", region: "norden",
+    kat: "natur", status: "sehenswert", x: 528.5, y: 351.5,
+    url: "https://www.google.com/maps/search/?api=1&query=Polwysep+Helski", meta: "Ostsee · Halbinsel",
+    blurb: "35 Kilometer schmale Sandzunge in der Ostsee — Strände auf beiden Seiten, Kitesurfer-Paradies und die Robbenstation in Hel."
+  },
+
+  /* ---- ℹ️ Sehenswürdigkeiten & ⭐ Kurioses (Sehenswertes) ---- */
+  {
+    id: "sopot-molo", name: "Molo in Sopot", region: "norden",
+    kat: "sehens", status: "sehenswert", x: 525.3, y: 355.5,
+    url: "https://www.google.com/maps/search/?api=1&query=Molo+w+Sopocie", meta: "Sopot · Seebrücke",
+    blurb: "Die längste Holzseebrücke Europas (über 500 m) — dazu der Kurort-Charme von Sopot und gleich daneben das schiefe „Krzywy Domek“."
+  },
+  {
+    id: "westerplatte", name: "Westerplatte", region: "norden",
+    kat: "sehens", status: "sehenswert", x: 526.7, y: 356.3,
+    url: "https://www.google.com/maps/search/?api=1&query=Westerplatte+Gdansk", meta: "Danzig · Gedenkort",
+    blurb: "Hier begann am 1. September 1939 der Zweite Weltkrieg — heute Gedenkstätte mit Denkmal und Ruinen an der Hafeneinfahrt Danzigs."
+  },
+  {
+    id: "elblag-kanal", name: "Oberländischer Kanal (Kanał Elbląski)", region: "norden",
+    kat: "sehens", status: "sehenswert", x: 543.4, y: 367.3,
+    url: "https://www.google.com/maps/search/?api=1&query=Kanal+Elblaski+pochylnie", meta: "Ermland · Technik-Wunder",
+    blurb: "Das Technikdenkmal: Hier fahren Schiffe auf Schienen über Wiesen — fünf „geneigte Ebenen“ ziehen sie über Land von See zu See."
+  },
+  {
+    id: "krzywy-las", name: "Der Krumme Wald (Krzywy Las)", region: "westen",
+    kat: "sonstige", status: "sehenswert", x: 469.9, y: 387.7,
+    url: "https://www.google.com/maps/search/?api=1&query=Krzywy+Las+Gryfino", meta: "bei Gryfino · Kuriosum",
+    blurb: "Rund 100 Kiefern, die alle im selben mysteriösen Bogen wachsen — bis heute weiß niemand sicher, warum. Perfekter Foto-Stopp."
+  },
+  {
+    id: "zalipie", name: "Zalipie — das bemalte Dorf", region: "sueden",
+    kat: "sonstige", status: "sehenswert", x: 559.8, y: 449.9,
+    url: "https://www.google.com/maps/search/?api=1&query=Zalipie+malowana+wies", meta: "Kleinpolen · Kuriosum",
+    blurb: "Im „bemalten Dorf“ sind Häuser, Brunnen und sogar Hundehütten mit Blumenmustern verziert — eine lebendige Volkskunst-Tradition."
+  },
+  {
+    id: "energylandia", name: "Energylandia (Freizeitpark)", region: "sueden",
+    kat: "sonstige", status: "sehenswert", x: 540.6, y: 456.7,
+    url: "https://www.google.com/maps/search/?api=1&query=Energylandia+Zator", meta: "Zator · Freizeitpark",
+    blurb: "Polens größter Freizeitpark mit einigen der schnellsten Achterbahnen Europas — der Familien-Stopp zwischen Krakau und Auschwitz."
   },
 
   /* ---- 🚽 MOPs mit Camper-Service (Ver-/Entsorgung & Wasser) — Auswahl, wird ergänzt ---- */
@@ -477,15 +676,18 @@ window.POLEN_STATUS = {
         g.setAttribute("id", "pl-pin-" + d.id);
         g.setAttribute("transform", "translate(" + pp.x + "," + pp.y + ")");
 
+        // Städte-Pins etwas größer als POI-Pins — hält die volle Karte lesbar.
+        var isCity = d.kat === "stadt";
         var c = document.createElementNS(NS, "circle");
         c.setAttribute("class", "pl-pin-bg");
-        c.setAttribute("r", "8.5");
+        c.setAttribute("r", isCity ? "8.5" : "6.5");
         g.appendChild(c);
 
         var icon = document.createElementNS(NS, "text");
         icon.setAttribute("class", "pl-icon");
         icon.setAttribute("text-anchor", "middle");
-        icon.setAttribute("y", "3.4");
+        icon.setAttribute("y", isCity ? "3.4" : "2.6");
+        if (!isCity) icon.style.fontSize = "6.5px";
         icon.textContent = km.icon;
         g.appendChild(icon);
 

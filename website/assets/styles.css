@@ -1,0 +1,741 @@
+/* =========================================================================
+   Kleine Füße, große Welt — zentrales Design-System
+   Ein warmherziger, kindgerecht-verspielter Familien-Reiseblog.
+   Vanilla CSS, mobile-first, ohne Framework.
+   ========================================================================= */
+
+/* ---------- Design-Tokens (Farbwelt, Typo, Abstände) ---------- */
+:root {
+  /* Farbwelt: warmes Terracotta, Sandtöne, kräftiges Blau als Akzent */
+  --terracotta:      #d9694a;
+  --terracotta-dark: #b84f33;
+  --sand:            #f6ecdd;
+  --sand-deep:       #ecdcc3;
+  --creme:           #fffaf3;
+  --blau:            #1f6f9e;
+  --blau-hell:       #3a95c9;
+  --blau-tief:       #144d70;
+  --sonne:           #f4b24a;   /* warmer Gelb-Akzent */
+  --blatt:           #7ba05b;   /* dezentes Grün */
+
+  --text:            #35281f;   /* warmes Dunkelbraun statt hartem Schwarz */
+  --text-soft:       #6b5a4c;
+  --weiss:           #ffffff;
+
+  /* Schrift */
+  --font-head: "Baloo 2", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Nunito", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  /* Formen & Schatten */
+  --radius-sm: 10px;
+  --radius:    18px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+  --shadow-soft: 0 8px 24px rgba(120, 78, 54, 0.12);
+  --shadow-card: 0 12px 32px rgba(120, 78, 54, 0.16);
+  --shadow-lift: 0 20px 44px rgba(120, 78, 54, 0.22);
+
+  /* Layout */
+  --maxw: 1160px;
+  --gap:  clamp(1rem, 3vw, 2rem);
+}
+
+/* ---------- Reset / Grundlagen ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--creme);
+  line-height: 1.65;
+  font-size: 1.05rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-head);
+  line-height: 1.15;
+  color: var(--text);
+  margin: 0 0 0.5em;
+  font-weight: 700;
+}
+h1 { font-size: clamp(2rem, 5vw, 3.25rem); }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
+h3 { font-size: clamp(1.25rem, 2.5vw, 1.6rem); }
+
+p { margin: 0 0 1rem; }
+
+a { color: var(--blau); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+img { max-width: 100%; display: block; }
+
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+.section { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
+.section--sand { background: var(--sand); }
+.section--blau { background: var(--blau); color: var(--weiss); }
+.section--blau h1, .section--blau h2, .section--blau h3 { color: var(--weiss); }
+
+.text-center { text-align: center; }
+.lead { font-size: 1.2rem; color: var(--text-soft); max-width: 60ch; }
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-head);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--terracotta);
+  margin-bottom: 0.4rem;
+}
+.section--blau .eyebrow { color: var(--sonne); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  text-decoration: none;
+}
+.btn:hover { text-decoration: none; transform: translateY(-2px); }
+.btn--primary { background: var(--terracotta); color: var(--weiss); box-shadow: var(--shadow-soft); }
+.btn--primary:hover { background: var(--terracotta-dark); box-shadow: var(--shadow-card); }
+.btn--blau { background: var(--blau); color: var(--weiss); box-shadow: var(--shadow-soft); }
+.btn--blau:hover { background: var(--blau-tief); }
+.btn--ghost { background: var(--weiss); color: var(--terracotta); box-shadow: var(--shadow-soft); }
+.btn--sonne { background: var(--sonne); color: var(--text); }
+
+/* ---------- Kopfzeile / Navigation ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 250, 243, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 2px solid var(--sand-deep);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 0.6rem;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--text);
+  text-decoration: none;
+  line-height: 1.05;
+}
+.brand:hover { text-decoration: none; }
+.brand small {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--text-soft);
+  letter-spacing: 0.02em;
+}
+.brand__logo { width: 46px; height: 46px; flex: none; }
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+.nav__links a {
+  display: block;
+  padding: 0.45rem 0.7rem;
+  border-radius: var(--radius-pill);
+  color: var(--text);
+  font-weight: 700;
+  font-size: 0.95rem;
+  font-family: var(--font-head);
+}
+.nav__links a:hover { background: var(--sand); text-decoration: none; }
+.nav__links a[aria-current="page"] { background: var(--terracotta); color: var(--weiss); }
+
+.nav__toggle {
+  display: none;
+  background: var(--sand);
+  border: none;
+  border-radius: var(--radius-sm);
+  width: 46px; height: 46px;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .nav__toggle { display: inline-flex; align-items: center; justify-content: center; }
+  .nav__links {
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--creme);
+    /* Padding/Border NUR im geöffneten Zustand — sonst würde der Innenabstand
+       trotz max-height:0 einen sichtbaren Streifen unter dem Header erzeugen. */
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .nav__links.is-open {
+    max-height: 80vh;
+    padding: 0.5rem;
+    border-bottom: 2px solid var(--sand-deep);
+  }
+  .nav__links a { padding: 0.75rem 1rem; }
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--sand) 0%, var(--creme) 100%);
+  padding-block: clamp(2.5rem, 7vw, 5rem);
+}
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+}
+@media (max-width: 820px) { .hero__grid { grid-template-columns: 1fr; } }
+.hero h1 { margin-bottom: 0.3rem; }
+.hero .tagline {
+  font-family: var(--font-head);
+  font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+  color: var(--terracotta);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.hero__cta { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.4rem; }
+
+/* ---------- Karten & Raster ---------- */
+.grid {
+  display: grid;
+  gap: var(--gap);
+}
+.grid--2 { grid-template-columns: repeat(2, 1fr); }
+.grid--3 { grid-template-columns: repeat(3, 1fr); }
+.grid--4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 900px) { .grid--3, .grid--4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) { .grid--2, .grid--3, .grid--4 { grid-template-columns: 1fr; } }
+
+.card {
+  background: var(--weiss);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); }
+.card__body { padding: 1.2rem 1.3rem 1.4rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
+.card__title { margin: 0; font-size: 1.25rem; }
+.card__text { color: var(--text-soft); margin: 0; font-size: 0.98rem; }
+.card__foot { margin-top: auto; padding-top: 0.6rem; }
+
+/* Tag-Chips */
+.tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.2rem 0; }
+.tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: var(--font-head);
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-pill);
+  background: var(--sand);
+  color: var(--text-soft);
+}
+.tag--jahreszeit { background: #fbe6cf; color: #a5642a; }
+.tag--fahrzeug  { background: #d9ecf6; color: var(--blau-tief); }
+.tag--region    { background: #e4efd8; color: #4f6b34; }
+.tag--thema     { background: #f2ddea; color: #96417a; }
+
+/* ---------- Illustrations-Platzhalter ----------
+   Gestaltete Fläche als Stellvertreter für spätere KI-Comic-Bilder.
+   Der Text im Platzhalter beschreibt das gewünschte Motiv. */
+.ph {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.2rem;
+  min-height: 180px;
+  color: var(--blau-tief);
+  font-family: var(--font-head);
+  font-weight: 700;
+  background:
+    repeating-linear-gradient(45deg, rgba(217,105,74,0.06) 0 12px, transparent 12px 24px),
+    linear-gradient(135deg, var(--sand) 0%, var(--sand-deep) 100%);
+  border: 2px dashed var(--terracotta);
+  border-radius: var(--radius);
+}
+.ph::before {
+  content: "🎨";
+  position: absolute;
+  top: 10px; left: 14px;
+  font-size: 1.2rem;
+}
+.ph span { max-width: 30ch; font-size: 0.95rem; line-height: 1.4; }
+.ph--wide { min-height: 260px; }
+.ph--tall { min-height: 340px; }
+
+/* ---------- Fußspuren-Trenner ---------- */
+.divider {
+  border: 0;
+  height: 40px;
+  margin: 0;
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: 120px 40px;
+  /* zwei kleine Fußabdrücke als SVG-Data-URI */
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='40' viewBox='0 0 120 40'><g fill='%23d9694a' opacity='0.55'><ellipse cx='24' cy='16' rx='7' ry='10'/><circle cx='18' cy='7' r='2.2'/><circle cx='24' cy='5' r='2.4'/><circle cx='30' cy='7' r='2.2'/><ellipse cx='60' cy='24' rx='7' ry='10'/><circle cx='54' cy='15' r='2.2'/><circle cx='60' cy='13' r='2.4'/><circle cx='66' cy='15' r='2.2'/><ellipse cx='96' cy='16' rx='7' ry='10'/><circle cx='90' cy='7' r='2.2'/><circle cx='96' cy='5' r='2.4'/><circle cx='102' cy='7' r='2.2'/></g></svg>");
+}
+
+/* ---------- Affiliate-Kennzeichnung ---------- */
+.affiliate {
+  border-left: 4px solid var(--sonne);
+  background: #fff6e6;
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1.1rem;
+  font-size: 0.95rem;
+}
+.affiliate strong { color: var(--terracotta-dark); }
+.affiliate-note { font-size: 0.82rem; color: var(--text-soft); }
+
+/* ---------- Newsletter-Block ---------- */
+.newsletter {
+  background: linear-gradient(135deg, var(--blau) 0%, var(--blau-hell) 100%);
+  color: var(--weiss);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.6rem, 4vw, 2.6rem);
+  box-shadow: var(--shadow-card);
+}
+.newsletter h2, .newsletter h3 { color: var(--weiss); }
+.newsletter p { color: rgba(255,255,255,0.9); }
+.form-row { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 1rem; }
+.form-row input[type="text"],
+.form-row input[type="email"] {
+  flex: 1 1 220px;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: var(--radius-pill);
+  font: inherit;
+}
+.form-hint { font-size: 0.8rem; color: rgba(255,255,255,0.85); margin-top: 0.7rem; }
+.form-status { margin-top: 0.8rem; font-weight: 700; min-height: 1.2em; }
+
+/* Formular auf hellem Grund */
+.form-card {
+  background: var(--weiss);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.4rem, 4vw, 2.2rem);
+  box-shadow: var(--shadow-card);
+}
+.form-card label { display: block; font-weight: 700; font-family: var(--font-head); margin-bottom: 0.3rem; }
+.form-card input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--sand-deep);
+  border-radius: var(--radius-sm);
+  font: inherit;
+  margin-bottom: 0.9rem;
+}
+.form-card input:focus { outline: none; border-color: var(--blau); }
+
+/* ---------- Filterleiste (Reise-Archiv) ---------- */
+.filterbar {
+  background: var(--weiss);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  padding: 1.2rem;
+  margin-bottom: 1.6rem;
+}
+.filter-group { margin-bottom: 0.9rem; }
+.filter-group:last-child { margin-bottom: 0; }
+.filter-group__label {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  display: block;
+  color: var(--text-soft);
+}
+.chip-row { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.chip {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--sand-deep);
+  background: var(--weiss);
+  color: var(--text-soft);
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+.chip:hover { border-color: var(--terracotta); color: var(--terracotta); }
+.chip[aria-pressed="true"] { background: var(--terracotta); border-color: var(--terracotta); color: var(--weiss); }
+.filter-meta { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-top: 0.4rem; }
+.filter-count { font-weight: 700; color: var(--text-soft); }
+.filter-empty {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: var(--text-soft);
+  font-family: var(--font-head);
+  font-weight: 700;
+}
+
+/* ---------- Interaktive Weltkarte ---------- */
+.map-wrap { position: relative; max-width: 760px; margin-inline: auto; }
+.map-svg { width: 100%; height: auto; }
+.map-pin {
+  cursor: pointer;
+  transition: transform 0.15s ease;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+}
+.map-pin:hover, .map-pin:focus { transform: scale(1.25); outline: none; }
+.map-pin circle { fill: var(--terracotta); stroke: var(--weiss); stroke-width: 2; }
+.map-pin.is-active circle { fill: var(--blau); }
+.map-popup {
+  position: absolute;
+  min-width: 220px;
+  max-width: 260px;
+  background: var(--weiss);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lift);
+  padding: 1rem;
+  transform: translate(-50%, -110%);
+  display: none;
+  z-index: 5;
+}
+.map-popup.is-visible { display: block; }
+.map-popup h4 { margin: 0 0 0.3rem; }
+.map-popup p { margin: 0 0 0.6rem; font-size: 0.9rem; color: var(--text-soft); }
+
+/* ---------- Musterreise (Story-Seite) ---------- */
+.story { max-width: 760px; margin-inline: auto; }
+.story__block { margin-bottom: 2.4rem; }
+.story__step {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-head);
+  color: var(--terracotta);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.5rem;
+}
+.story__step span.num {
+  display: inline-grid;
+  place-items: center;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: var(--terracotta);
+  color: var(--weiss);
+  font-size: 0.95rem;
+}
+/* Dialog Mama & Thadeo */
+.dialog { display: flex; flex-direction: column; gap: 0.8rem; }
+.bubble {
+  max-width: 82%;
+  padding: 0.85rem 1.1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  position: relative;
+}
+.bubble .who { display: block; font-family: var(--font-head); font-weight: 800; font-size: 0.85rem; margin-bottom: 0.15rem; }
+.bubble--mama { align-self: flex-start; background: var(--sand); border-bottom-left-radius: 4px; }
+.bubble--mama .who { color: var(--terracotta); }
+.bubble--kind { align-self: flex-end; background: #d9ecf6; border-bottom-right-radius: 4px; }
+.bubble--kind .who { color: var(--blau-tief); }
+
+/* Video-Embed-Platzhalter */
+.embed {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--blau-tief), var(--blau));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--weiss);
+  text-align: center;
+  font-family: var(--font-head);
+  font-weight: 700;
+}
+.embed::after {
+  content: "▶";
+  position: absolute;
+  width: 64px; height: 64px;
+  display: grid; place-items: center;
+  background: rgba(255,255,255,0.9);
+  color: var(--terracotta);
+  border-radius: 50%;
+  font-size: 1.4rem;
+  padding-left: 4px;
+}
+
+/* ---------- Reise des Monats (Highlight-Karte) ---------- */
+.feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: var(--weiss);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+@media (max-width: 720px) { .feature { grid-template-columns: 1fr; } }
+.feature__body { padding: clamp(1.4rem, 4vw, 2.4rem); display: flex; flex-direction: column; gap: 0.6rem; justify-content: center; }
+.feature .ph { border-radius: 0; min-height: 260px; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--blau-tief);
+  color: rgba(255,255,255,0.85);
+  padding-block: 2.5rem 1.5rem;
+  margin-top: 2rem;
+}
+.site-footer a { color: #cfe6f2; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2rem; }
+@media (max-width: 720px) { .footer-grid { grid-template-columns: 1fr; } }
+.site-footer h4 { color: var(--weiss); margin-bottom: 0.6rem; }
+.footer-links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.35rem; }
+.social { display: flex; gap: 0.6rem; margin-top: 0.6rem; }
+.social a {
+  width: 40px; height: 40px;
+  display: grid; place-items: center;
+  background: rgba(255,255,255,0.12);
+  border-radius: 50%;
+  font-size: 1.1rem;
+}
+.social a:hover { background: rgba(255,255,255,0.25); text-decoration: none; }
+.footer-legal {
+  border-top: 1px solid rgba(255,255,255,0.18);
+  margin-top: 1.6rem;
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ---------- Hinweis-Boxen ---------- */
+.notice {
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+.notice--warn { background: #fdecec; border: 2px solid #e6a2a2; color: #8a3a3a; }
+.notice--info { background: #e7f2f8; border: 2px solid #a9d1e5; color: var(--blau-tief); }
+
+/* ---------- Kleine Deko-Animationen (sparsam) ---------- */
+.cloud {
+  position: absolute;
+  opacity: 0.85;
+  animation: drift 22s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+.cloud--2 { animation-duration: 30s; }
+@keyframes drift {
+  from { transform: translateX(0); }
+  to   { transform: translateX(28px); }
+}
+.wiggle { animation: wiggle 4s ease-in-out infinite; transform-origin: bottom center; }
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-2deg); }
+  50%      { transform: rotate(2deg); }
+}
+
+/* Scroll-Reveal (per main.js aktiviert).
+   Nur ausblenden, wenn JS aktiv ist (Klasse .js am <html>). Ohne JS bleibt
+   alles sichtbar — wichtig für SEO und Barrierefreiheit. */
+.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.js .reveal.is-visible { opacity: 1; transform: none; }
+
+/* Barrierefreiheit: Animationen respektieren die Nutzerpräferenz */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* Skip-Link */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--terracotta);
+  color: var(--weiss);
+  padding: 0.6rem 1rem;
+  border-radius: 0 0 var(--radius-sm) 0;
+  z-index: 100;
+}
+.skip-link:focus { left: 0; }
+
+/* Hilfsklassen */
+.mt-0 { margin-top: 0; }
+.mb-0 { margin-bottom: 0; }
+.stack > * + * { margin-top: 1rem; }
+.pill-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+/* =========================================================================
+   COMIC-LOOK — kräftige Outlines, harte Versatz-Schatten, Ben-Day-Punkte
+   Der Nutzer wünscht einen ausgeprägten Comic-/Zeichentrick-Stil.
+   ========================================================================= */
+
+/* Comic-Panel: dicke dunkle Kontur + harter, versetzter Schatten (wie ein
+   gezeichneter Bilderrahmen). Als Zusatzklasse auf Karten/Flächen nutzbar. */
+.comic {
+  border: 3px solid var(--text) !important;
+  box-shadow: 7px 7px 0 rgba(53, 40, 31, 0.22) !important;
+}
+.comic:hover { box-shadow: 9px 9px 0 rgba(53, 40, 31, 0.28) !important; }
+
+/* Karten & Platzhalter bekommen dezente Comic-Konturen für den Zeichentrick-Look */
+.card { border: 2.5px solid var(--text); box-shadow: 6px 6px 0 rgba(53,40,31,0.16); }
+.card:hover { box-shadow: 9px 9px 0 rgba(53,40,31,0.22); }
+.ph { border-width: 3px; }
+
+/* Halbton-/Ben-Day-Punktetextur als Deko (z. B. hinter Überschriften) */
+.halftone {
+  position: relative;
+}
+.halftone::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(217,105,74,0.28) 22%, transparent 24%);
+  background-size: 14px 14px;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+.halftone > * { position: relative; z-index: 1; }
+
+/* Comic-„POW"-Titelband */
+.comic-title {
+  display: inline-block;
+  background: var(--sonne);
+  color: var(--text);
+  padding: 0.15em 0.6em;
+  border: 3px solid var(--text);
+  border-radius: 8px;
+  box-shadow: 5px 5px 0 rgba(53,40,31,0.25);
+  transform: rotate(-1.5deg);
+}
+
+/* -------------------------------------------------------------------------
+   Expand-Galerie (inspiriert von 21st.dev „expand cards")
+   Horizontale Reihe von Comic-Panels: das aktive Panel zieht auf,
+   die anderen schrumpfen. Hover auf Desktop, Klick/Tap auf Touch.
+   ------------------------------------------------------------------------- */
+.expand-gallery {
+  display: flex;
+  gap: 0.9rem;
+  height: 360px;
+}
+.expand-panel {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  border: 3px solid var(--text);
+  box-shadow: 6px 6px 0 rgba(53,40,31,0.20);
+  transition: flex-grow 0.45s cubic-bezier(.22,.61,.36,1);
+  /* farbiger Comic-Verlauf als Bildersatz-Hintergrund */
+  background: var(--panel-bg, linear-gradient(135deg, var(--sand), var(--sand-deep)));
+  display: flex;
+  align-items: flex-end;
+}
+/* Ben-Day-Punkte über jedem Panel für den Comic-Look */
+.expand-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.35) 20%, transparent 22%);
+  background-size: 16px 16px;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+.expand-panel:hover,
+.expand-panel:focus-visible,
+.expand-panel.is-active {
+  flex-grow: 5;
+  outline: none;
+}
+.expand-panel__label {
+  position: relative;
+  width: 100%;
+  padding: 1rem 1.1rem;
+  background: linear-gradient(0deg, rgba(53,40,31,0.72), transparent);
+  color: #fff;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+.expand-panel__label small {
+  display: block;
+  font-weight: 600;
+  font-size: 0.78rem;
+  opacity: 0.9;
+  margin-top: 0.15rem;
+}
+/* Motiv-Beschriftung (für spätere KI-Bilder) mittig im Panel */
+.expand-panel__motif {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 1rem;
+  color: var(--blau-tief);
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* Mobil: vertikale Comic-Panels, aktives Panel wird höher */
+@media (max-width: 680px) {
+  .expand-gallery { flex-direction: column; height: auto; }
+  .expand-panel { height: 90px; transition: height 0.4s ease; }
+  .expand-panel:hover,
+  .expand-panel:focus-visible,
+  .expand-panel.is-active { height: 240px; flex-grow: 1; }
+}

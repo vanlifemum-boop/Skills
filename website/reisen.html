@@ -1,0 +1,142 @@
+<!-- =====================================================================
+     Kleine Füße, große Welt — Reise-Archiv mit Filter-System (Kernfeature)
+     ===================================================================== -->
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reise-Archiv — Kleine Füße, große Welt</title>
+  <meta name="description" content="Alle Traumreisen von Mama & Thadeo auf einen Blick. Filtere nach Jahreszeit, Fahrzeug und Region und finde die passende Reisegeschichte für euch." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Kleine Füße, große Welt – zur Startseite">
+        <svg class="brand__logo" viewBox="0 0 64 64" role="img" aria-hidden="true" focusable="false">
+          <circle cx="32" cy="32" r="30" fill="#1f6f9e"/>
+          <path d="M14 24c6-3 12 1 18-1s10-4 16-1c-1 6-4 10-9 13-4 2-9 2-13 1-6-1-11-6-12-11z" fill="#7ba05b"/>
+          <path d="M20 44c5 2 9 0 14 1s8 3 12 1c-3 5-9 8-15 8-8 0-13-4-11-11z" fill="#7ba05b"/>
+          <g fill="#f6ecdd">
+            <ellipse cx="27" cy="30" rx="3.4" ry="4.8"/>
+            <circle cx="24.4" cy="24.8" r="1.1"/><circle cx="27" cy="24" r="1.2"/><circle cx="29.6" cy="24.8" r="1.1"/>
+            <ellipse cx="37" cy="38" rx="3.4" ry="4.8"/>
+            <circle cx="34.4" cy="32.8" r="1.1"/><circle cx="37" cy="32" r="1.2"/><circle cx="39.6" cy="32.8" r="1.1"/>
+          </g>
+        </svg>
+        <span>Kleine Füße, große Welt<small>Die Welt mit Kleinkindaugen sehen</small></span>
+      </a>
+      <button class="nav__toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-links">☰</button>
+      <nav aria-label="Hauptnavigation">
+        <ul class="nav__links" id="nav-links">
+          <li><a href="index.html">Start</a></li>
+          <li><a href="reisen.html" aria-current="page">Reisen</a></li>
+          <li><a href="reisearten.html">Reisearten</a></li>
+          <li><a href="ratgeber.html">Ratgeber</a></li>
+          <li><a href="weltkarte.html">Weltkarte</a></li>
+          <li><a href="ausmalbilder.html">Ausmalbilder</a></li>
+          <li><a href="videos.html">Videos</a></li>
+          <li><a href="buecherregal.html">Bücher</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section section--sand">
+      <div class="container">
+        <span class="eyebrow">Reise-Archiv</span>
+        <h1>Alle Traumreisen von Mama &amp; Thadeo</h1>
+        <p class="lead">
+          Wähle Jahreszeit, Fahrzeug und Region — die Liste passt sich sofort an.
+          Alle drei Filter wirken zusammen (UND-Verknüpfung), damit du genau die
+          Geschichte findest, die zu eurem nächsten Abenteuer passt.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- Filterleiste wird von filter.js befüllt -->
+        <div class="filterbar" id="filterbar" role="group" aria-label="Reisen filtern"></div>
+
+        <div class="filter-meta">
+          <p class="filter-count" id="filter-count" role="status" aria-live="polite">Alle Reisen</p>
+        </div>
+
+        <!-- Kartenraster wird von filter.js befüllt -->
+        <div class="grid grid--3" id="reise-grid" style="margin-top:1rem"></div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <section class="section">
+      <div class="container">
+        <div class="newsletter reveal">
+          <h2>Neue Reise, sobald sie erzählt ist</h2>
+          <p>Trag dich ein und bekomme jede neue Traumreise als Erste:r ins Postfach.</p>
+          <form data-fake novalidate>
+            <div class="form-row">
+              <input type="text" name="name" placeholder="Dein Name (optional)" autocomplete="name" />
+              <input type="email" name="email" placeholder="Deine E-Mail-Adresse" autocomplete="email" required aria-label="E-Mail-Adresse" />
+              <button class="btn btn--sonne" type="submit">Anmelden</button>
+            </div>
+            <p class="form-hint">Double-Opt-In: Du erhältst zuerst eine Bestätigungs-Mail. Details in der <a href="datenschutz.html" style="color:#fff;text-decoration:underline">Datenschutzerklärung</a>.</p>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Kleine Füße, große Welt</h4>
+          <p>Warmherzige Traumreisen für Familien mit den Allerkleinsten. Reisen mit Kleinkind ist machbar und schön.</p>
+          <div class="social">
+            <a href="#" aria-label="Instagram" title="Instagram">📷</a>
+            <a href="#" aria-label="YouTube" title="YouTube">▶️</a>
+            <a href="#" aria-label="Pinterest" title="Pinterest">📌</a>
+          </div>
+        </div>
+        <div>
+          <h4>Entdecken</h4>
+          <ul class="footer-links">
+            <li><a href="reisen.html">Reise-Archiv</a></li>
+            <li><a href="reisearten.html">Reisearten</a></li>
+            <li><a href="ratgeber.html">Ratgeber</a></li>
+            <li><a href="weltkarte.html">Weltkarte</a></li>
+            <li><a href="buecherregal.html">Thadeos Bücherregal</a></li>
+            <li><a href="shop.html">Shop</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Rechtliches</h4>
+          <ul class="footer-links">
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutzerklärung</a></li>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <span>© <span id="year">2026</span> Kleine Füße, große Welt</span>
+        <span>*Affiliate-Link / Werbung</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+  <script src="assets/filter.js"></script>
+</body>
+</html>

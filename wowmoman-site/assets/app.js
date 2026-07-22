@@ -39,7 +39,16 @@
       "Geld fließt zu mir, weil ich Werte schaffe und mutig verkaufe.",
       "Jeder Tag ist ein guter Tag, um neu anzufangen.",
       "Ich stehe wie der Phönix aus der Asche auf: stärker, besser, phänomenal.",
-      "Ich brauche keine Erlaubnis, um mein Leben zu leben. Ich gehe jetzt leben."
+      "Ich brauche keine Erlaubnis, um mein Leben zu leben. Ich gehe jetzt leben.",
+      "Ich bin eine Gewinnerin, denn ich treffe Entscheidungen rasch und bleibe lange dabei.",
+      "Ich bin tatkräftig und umsetzungsstark. Lieber beginne ich unvollkommen, als perfekt zu zögern.",
+      "Ich werde immer stärker; ich bin voller Stärke und Kraft. Ich gebe niemals auf.",
+      "Ich bin eine Schöpferin und erschaffe mir das Leben, das ich haben will.",
+      "Ich bin mutig und gehe trotz Angst vorwärts.",
+      "Ich bin Reichtum, ich bin Wohlstand, ich bin Überfluss. Ich bin ein Geldmagnet.",
+      "Ich bin auf dem Weg, Millionärin zu sein. Alles Große braucht Zeit.",
+      "Ich akzeptiere keine Ausreden; ich suche Lösungen.",
+      "Ich bin die Gestalterin meines Lebens."
     ];
     var idx = 0;
     var dots = [];

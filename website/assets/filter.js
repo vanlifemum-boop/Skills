@@ -84,6 +84,13 @@
       illu: "Comic: Camper am Waldrand, Thadeo mit Kastanien",
       jahreszeit: "Herbst", fahrzeug: "Camper", region: "Deutschland",
       href: "ratgeber-herbstcamping.html"
+    },
+    {
+      titel: "Der schiefe Turm von Pisa",
+      kurz: "Mit dem Auto in die Toskana: Thadeo & Bobo besuchen den schiefen Turm und die Piazza dei Miracoli.",
+      illu: "Comic: Thadeo hält scheinbar den schiefen Turm von Pisa",
+      jahreszeit: "Sommer", fahrzeug: "Auto", region: "Europa",
+      href: "buch-pisa.html"
     }
   ];
 

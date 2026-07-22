@@ -111,9 +111,14 @@ If unsure, default to one **hero orbit/fly-through** + one **reveal/parallax** c
 - `docs/` is a **self-contained live demo** (`docs/index.html`) that renders the scroll-scrub
   effect with **procedural canvas scenes** (`docs/demo-scene.js`) — no generated frames, so it
   works with zero binary assets. It includes the working booking function.
-- `.github/workflows/pages.yml` publishes `docs/` to **GitHub Pages** on push (uses
-  `configure-pages` with `enablement:true`, so Pages turns on automatically the first time it
-  runs — no manual settings change). Live URL: `https://<owner>.github.io/<repo>/`.
+- `.github/workflows/pages.yml` publishes `docs/` to **GitHub Pages** on push. Live URL:
+  `https://<owner>.github.io/<repo>/`.
+  - **Enable Pages once:** repo **Settings → Pages → Build and deployment → Source: "GitHub
+    Actions"**. The Actions token usually can't turn Pages on by itself (`enablement:true` then
+    fails with *"Resource not accessible by integration"*), so this one manual flip is required;
+    after it, re-run the workflow and every push deploys.
+  - **Private repos:** GitHub Pages on a *private* repo needs a paid plan (Pro/Team/Enterprise).
+    On a free plan, make the repo public first, or host the demo elsewhere.
 - To showcase a *real* build instead of the procedural demo, drop the generated `frames/` into
   `docs/` and swap the `render:` sections for `framePath:` in `docs/index.html`.
 

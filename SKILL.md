@@ -13,6 +13,7 @@ clip. Add Lenis smooth scroll + scroll-synced overlay copy and it reads as premi
 The "3D" comes entirely from the source video — which we generate with Higgsfield.
 
 Stack: plain **HTML + CSS + JS + Lenis** (zero build, runs from any static server).
+**Lenis is vendored** at `templates/vendor/lenis.min.js` — no CDN, works fully offline.
 
 ## Prerequisites
 - **Higgsfield MCP** connected + credits (~$1–2 / site). This is the only thing the user must set up.
@@ -73,10 +74,16 @@ If unsure, default to one **hero orbit/fly-through** + one **reveal/parallax** c
 - One folder per clip (e.g. `frames/spin`, `frames/explode`).
 
 ### 6. Build the site from templates/
-- Copy `templates/index.html`, `styles.css`, `scroll-cinematic.js` into the project.
+- Copy `templates/index.html`, `styles.css`, `scroll-cinematic.js`, `booking.js`, and
+  `vendor/lenis.min.js` into the project (keep the `vendor/` path so Lenis loads locally).
 - Edit the `SCRUB_SECTIONS` config (bottom of index.html) — one entry per clip:
   `{ section:"#hero", frameCount:179, bg:"#0a0a12", framePath:(i)=>\`frames/spin/frame_${String(i).padStart(4,"0")}.jpg\` }`.
 - Write brand copy, palette (CSS vars), benefit/colorway/feature sections, stats, CTA.
+- **Booking function** (already wired in the template): the `#booking` section + `booking.js`
+  give a self-contained appointment form — validation, an inline confirmation, a downloadable
+  `.ics` calendar invite, and a pre-filled `mailto:` fallback (no backend needed). Configure via
+  the inline `window.BOOKING_CONFIG` block (business name, email, services, duration). For real
+  submissions set `endpoint` to a Formspree/API URL; it POSTs JSON and still falls back gracefully.
 - **Hue-shift trick** for product variants/colorways (no extra generation):
   `ffmpeg -i base.png -vf "hue=h=120:s=1.15" variant.png`.
 
@@ -100,8 +107,28 @@ If unsure, default to one **hero orbit/fly-through** + one **reveal/parallax** c
   pixel sampling, and view live in a real browser.
 - `python http.server` previews die when idle — the `.command` launcher is the durable demo.
 
+## Live demo + GitHub Pages
+- `docs/` now contains the **GutachtenKompass client website** (9 static German pages, built
+  from the uploaded brief), not the generic scroll-scrub demo. The Pages workflow below
+  publishes it unchanged. The generic demo building blocks live on in `templates/`
+  (`demo-scene.js` provides procedural canvas scenes if you want a zero-asset scrub preview).
+- `.github/workflows/pages.yml` publishes `docs/` to **GitHub Pages** on push. Live URL:
+  `https://<owner>.github.io/<repo>/`.
+  - **Enable Pages once:** repo **Settings → Pages → Build and deployment → Source: "GitHub
+    Actions"**. The Actions token usually can't turn Pages on by itself (`enablement:true` then
+    fails with *"Resource not accessible by integration"*), so this one manual flip is required;
+    after it, re-run the workflow and every push deploys.
+  - **Private repos:** GitHub Pages on a *private* repo needs a paid plan (Pro/Team/Enterprise).
+    On a free plan, make the repo public first, or host the demo elsewhere.
+- To showcase a *real* build instead of the procedural demo, drop the generated `frames/` into
+  `docs/` and swap the `render:` sections for `framePath:` in `docs/index.html`.
+
 ## Files
 - `templates/index.html`, `styles.css`, `scroll-cinematic.js` — multi-section scrub site.
+- `templates/booking.js` — self-contained booking form (validation, `.ics`, mailto, optional POST).
+- `templates/vendor/lenis.min.js` — vendored Lenis smooth-scroll (no CDN).
+- `templates/demo-scene.js` — procedural canvas scenes for a no-asset preview.
 - `templates/CinematicReveal.tsx` — React/Next drop-in (optional).
 - `templates/Launch Demo.command` — double-click localhost launcher.
-- `scripts/extract-frames.sh`, `scripts/compress-frames.sh` — the ffmpeg pipeline.
+- `scripts/ensure-ffmpeg.sh`, `scripts/extract-frames.sh`, `scripts/compress-frames.sh` — the ffmpeg pipeline.
+- `docs/` + `.github/workflows/pages.yml` — the live GitHub Pages demo.

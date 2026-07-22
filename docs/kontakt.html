@@ -65,10 +65,23 @@
               </div>
               <div class="field">
                 <label for="bk-time">Wunschuhrzeit</label>
-                <input id="bk-time" name="time" type="time" />
+                <select id="bk-time" name="time">
+                  <option value="" disabled selected>Bitte wählen …</option>
+                  <optgroup label="Vormittags (10–12 Uhr)">
+                    <option value="10:00">10:00 Uhr</option>
+                    <option value="10:30">10:30 Uhr</option>
+                    <option value="11:00">11:00 Uhr</option>
+                    <option value="11:30">11:30 Uhr</option>
+                  </optgroup>
+                  <optgroup label="Abends (20–21 Uhr)">
+                    <option value="20:00">20:00 Uhr</option>
+                    <option value="20:30">20:30 Uhr</option>
+                  </optgroup>
+                </select>
                 <span class="field__error"></span>
               </div>
             </div>
+            <p class="lead-hinweis" style="margin-top:-10px">Telefonisch/online erreichbar: vormittags 10–12 Uhr und abends 20–21 Uhr.</p>
 
             <div class="field-row">
               <div class="field">
@@ -106,7 +119,8 @@
         <h2 class="display" data-reveal>Lieber schreiben?</h2>
         <ul class="liste" data-reveal>
           <li>E-Mail: <span class="ph">[PLATZHALTER: E-Mail-Adresse]</span></li>
-          <li>Erreichbarkeit: <span class="ph">[PLATZHALTER: z. B. „Wir antworten in der Regel innerhalb von 24 Stunden."]</span></li>
+          <li>Telefonisch/online erreichbar: vormittags 10–12 Uhr und abends 20–21 Uhr</li>
+          <li>Auf E-Mails antworten wir in der Regel <span class="ph">[PLATZHALTER: z. B. „innerhalb von 24 Stunden"]</span></li>
         </ul>
         <p class="muted" data-reveal>Bitte schicke uns keine Verfahrensakten unaufgefordert per E-Mail — was wir brauchen, besprechen wir im ersten Gespräch.</p>
       </div>
@@ -173,8 +187,8 @@
         "Erstgespräch (150 €, 45 Min.)",
         "Strategiegespräch komplett (ab 850 €)",
         "Online-Beratung: Verhalten bei einem Gutachten (175 €, 2 Std.)",
-        "Notfall-Begleitung (kurzfristig)",
-        "Gruppencoaching — Interesse",
+        "Notfall-Begleitung — SOS-Dienst (180 €)",
+        "Gruppencoaching (175 € pro Person)",
       ],
       endpoint: null, // [PLATZHALTER: optionaler Formular-Service, z. B. Formspree-URL]
       strings: {

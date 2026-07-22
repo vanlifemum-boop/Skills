@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt &amp; Terminbuchung — GutachtenKompass</title>
+  <meta name="description" content="Buche dein kostenloses Kennenlerngespräch oder frage eine Begleitung an — vertraulich und unverbindlich." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23111111'/%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%231F6F6B' stroke-width='2.5'/%3E%3Cpath d='M16 6.5 19 16l-3 9.5L13 16Z' fill='%23E8A93D'/%3E%3Cpath d='M16 6.5 19 16h-6Z' fill='%23D6392E'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="index.html">Gutachten<span>Kompass</span></a>
+      <button class="burger" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a href="wer-wir-sind.html">Wer wir sind</a>
+        <a href="angebote.html">Angebote</a>
+        <a href="soforthilfe.html">Soforthilfe</a>
+        <a href="fragen.html">Fragen &amp; Antworten</a>
+        <a class="btn" href="kontakt.html">Termin buchen</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inhalt">
+
+    <!-- ================= HERO ================= -->
+    <section class="sec sec--weiss hero sec--kompakt">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Kontakt &amp; Terminbuchung</p>
+        <h1 class="display" data-reveal>Der erste Schritt ist der schwerste. Mach ihn trotzdem.</h1>
+        <p class="hero__sub" data-reveal>Wähle einen Wunschtermin für dein kostenloses Kennenlerngespräch — oder frage direkt eine Begleitung an. Du bekommst eine Bestätigung und kannst dir den Termin in deinen Kalender legen.</p>
+      </div>
+    </section>
+
+    <!-- ================= BUCHUNG ================= -->
+    <!-- Alternative: Statt des Formulars kann hier später ein Buchungstool
+         (z. B. Calendly-Inline-Embed) eingesetzt werden — dann diesen
+         Abschnitt durch das Embed-Snippet des Anbieters ersetzen und
+         booking.js aus den Skripten unten entfernen. -->
+    <section class="sec sec--weiss sec--kompakt" style="padding-top:0">
+      <div class="container">
+        <div class="formkarte" data-reveal>
+          <form id="booking-form" class="booking__form" novalidate>
+            <div class="field">
+              <label for="bk-service">Anliegen</label>
+              <select id="bk-service" name="service">
+                <option value="" disabled selected>Bitte wählen …</option>
+                <!-- Optionen kommen aus BOOKING_CONFIG.services (siehe unten) -->
+              </select>
+              <span class="field__error"></span>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="bk-date">Wunschdatum</label>
+                <input id="bk-date" name="date" type="date" />
+                <span class="field__error"></span>
+              </div>
+              <div class="field">
+                <label for="bk-time">Wunschuhrzeit</label>
+                <input id="bk-time" name="time" type="time" />
+                <span class="field__error"></span>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="bk-name">Name</label>
+                <input id="bk-name" name="name" type="text" autocomplete="name" placeholder="Dein Name (gern auch nur Vorname)" />
+                <span class="field__error"></span>
+              </div>
+              <div class="field">
+                <label for="bk-email">E-Mail</label>
+                <input id="bk-email" name="email" type="email" autocomplete="email" placeholder="deine@email.de" />
+                <span class="field__error"></span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="bk-notes">Was sollten wir vorab wissen? <span class="field__opt">(optional)</span></label>
+              <textarea id="bk-notes" name="notes" rows="3" placeholder="Nur so viel, wie du teilen möchtest."></textarea>
+            </div>
+
+            <button type="submit" class="btn booking__submit">Termin anfragen</button>
+          </form>
+          <div id="booking-result" class="booking__result" hidden></div>
+        </div>
+
+        <div class="hinweis hinweis--petrol" style="margin-top:30px" data-reveal>
+          <p><strong>Vertraulich, versprochen:</strong> Deine Anfrage lesen nur wir zwei. Keine Weitergabe an Dritte, keine Newsletter, keine Verpflichtung.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= KONTAKTDATEN ================= -->
+    <section class="sec sec--schwarz">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Direkter Kontakt</p>
+        <h2 class="display" data-reveal>Lieber schreiben?</h2>
+        <ul class="liste" data-reveal>
+          <li>E-Mail: <span class="ph">[PLATZHALTER: E-Mail-Adresse]</span></li>
+          <li>Erreichbarkeit: <span class="ph">[PLATZHALTER: z. B. „Wir antworten in der Regel innerhalb von 24 Stunden."]</span></li>
+        </ul>
+        <p class="muted" data-reveal>Bitte schicke uns keine Verfahrensakten unaufgefordert per E-Mail — was wir brauchen, besprechen wir im ersten Gespräch.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__claim">Fachwissen. Erfahrung. <span>Herz.</span></p>
+      <div class="footer__grid">
+        <div>
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="kontakt.html">Termin buchen</a></li>
+            <li><span class="ph">[PLATZHALTER: E-Mail-Adresse]</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Seiten</h4>
+          <ul>
+            <li><a href="wer-wir-sind.html">Wer wir sind</a></li>
+            <li><a href="angebote.html">Angebote</a></li>
+            <li><a href="soforthilfe.html">Soforthilfe</a></li>
+            <li><a href="fragen.html">Fragen &amp; Antworten</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Social</h4>
+          <ul>
+            <li><span class="ph">[PLATZHALTER: Instagram-Link]</span></li>
+            <li><span class="ph">[PLATZHALTER: weitere Kanäle]</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Rechtliches</h4>
+          <ul>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+            <li><a href="agb.html">AGB</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__meta">
+        <span>© <span data-jahr></span> GutachtenKompass</span>
+        <span>Wir begleiten und bereiten vor — wir erstellen keine familiengerichtlichen Gutachten.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="datenschutz-hinweis" class="notice" hidden>
+    <p>Diese Website setzt keine Tracking-Cookies. Mehr dazu in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+    <button class="btn btn--petrol" type="button">Verstanden</button>
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+    window.BOOKING_CONFIG = {
+      businessName: "GutachtenKompass",
+      email: "kontakt@example.de", // [PLATZHALTER: echte E-Mail-Adresse eintragen]
+      durationMinutes: 30,
+      locale: "de-DE",
+      services: [
+        "Kostenloses Kennenlerngespräch (30 Min.)",
+        "Einzelcoaching (1:1)",
+        "Notfall-Begleitung (kurzfristig)",
+        "Gruppencoaching — Interesse",
+        "Live-Workshop — Interesse",
+      ],
+      endpoint: null, // [PLATZHALTER: optionaler Formular-Service, z. B. Formspree-URL]
+      strings: {
+        errService: "Bitte wähle ein Anliegen aus.",
+        errDate: "Bitte wähle ein Datum.",
+        errTime: "Bitte wähle eine Uhrzeit.",
+        errName: "Bitte sag uns, wie wir dich ansprechen dürfen.",
+        errEmail: "Bitte gib deine E-Mail-Adresse an.",
+        errEmailBad: "Diese E-Mail-Adresse sieht nicht vollständig aus.",
+        errPast: "Bitte wähle einen Termin in der Zukunft.",
+        confirmTitle: "Deine Anfrage ist angekommen",
+        confirmNote: "Wir melden uns zur Bestätigung per E-Mail an",
+        addToCalendar: "Zum Kalender hinzufügen",
+        emailRequest: "Anfrage zusätzlich per E-Mail senden",
+        bookAgain: "Weitere Anfrage stellen",
+        mailSubject: "Terminanfrage",
+        mailThanks: "Vielen Dank!",
+        labelService: "Anliegen",
+        labelDate: "Datum",
+        labelTime: "Uhrzeit",
+        labelName: "Name",
+        labelEmail: "E-Mail",
+        labelNotes: "Anmerkungen",
+      },
+    };
+  </script>
+  <script src="booking.js"></script>
+</body>
+</html>

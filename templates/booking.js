@@ -25,6 +25,7 @@
 (function () {
   "use strict";
 
+  const userCfg = window.BOOKING_CONFIG || {};
   const cfg = Object.assign(
     {
       businessName: "BRAND",
@@ -32,8 +33,36 @@
       durationMinutes: 60,
       services: ["Consultation", "Full session", "Quick call"],
       endpoint: null,
+      locale: undefined, // e.g. "de-DE"; defaults to the browser locale
     },
-    window.BOOKING_CONFIG || {}
+    userCfg
+  );
+
+  // All user-facing text, overridable via BOOKING_CONFIG.strings for localization.
+  const S = Object.assign(
+    {
+      errService: "Please choose a service.",
+      errDate: "Pick a date.",
+      errTime: "Pick a time.",
+      errName: "Your name, please.",
+      errEmail: "Your email, please.",
+      errEmailBad: "That email looks off.",
+      errPast: "Please pick a future date/time.",
+      confirmTitle: "You're booked in",
+      confirmNote: "We'll confirm by email at",
+      addToCalendar: "Add to calendar",
+      emailRequest: "Email us the request",
+      bookAgain: "Make another booking",
+      mailSubject: "Booking request",
+      mailThanks: "Thanks!",
+      labelService: "Service",
+      labelDate: "Date",
+      labelTime: "Time",
+      labelName: "Name",
+      labelEmail: "Email",
+      labelNotes: "Notes",
+    },
+    userCfg.strings || {}
   );
 
   function ready(fn) {
@@ -99,17 +128,16 @@
   }
 
   function mailtoLink(booking) {
-    const subject = `Booking request: ${booking.service} — ${booking.date} ${booking.time}`;
+    const subject = `${S.mailSubject}: ${booking.service} — ${booking.date} ${booking.time}`;
     const body =
       `Hi ${cfg.businessName},\n\n` +
-      `I'd like to book:\n` +
-      `• Service: ${booking.service}\n` +
-      `• Date: ${booking.date}\n` +
-      `• Time: ${booking.time}\n` +
-      `• Name: ${booking.name}\n` +
-      `• Email: ${booking.email}\n` +
-      (booking.notes ? `• Notes: ${booking.notes}\n` : "") +
-      `\nThanks!`;
+      `• ${S.labelService}: ${booking.service}\n` +
+      `• ${S.labelDate}: ${booking.date}\n` +
+      `• ${S.labelTime}: ${booking.time}\n` +
+      `• ${S.labelName}: ${booking.name}\n` +
+      `• ${S.labelEmail}: ${booking.email}\n` +
+      (booking.notes ? `• ${S.labelNotes}: ${booking.notes}\n` : "") +
+      `\n${S.mailThanks}`;
     return `mailto:${cfg.email}?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;
@@ -132,22 +160,22 @@
 
   function validate(form, booking) {
     let ok = true;
-    ok = fieldError(form, "service", booking.service ? "" : "Please choose a service.") && ok;
-    ok = fieldError(form, "date", booking.date ? "" : "Pick a date.") && ok;
-    ok = fieldError(form, "time", booking.time ? "" : "Pick a time.") && ok;
-    ok = fieldError(form, "name", booking.name ? "" : "Your name, please.") && ok;
+    ok = fieldError(form, "service", booking.service ? "" : S.errService) && ok;
+    ok = fieldError(form, "date", booking.date ? "" : S.errDate) && ok;
+    ok = fieldError(form, "time", booking.time ? "" : S.errTime) && ok;
+    ok = fieldError(form, "name", booking.name ? "" : S.errName) && ok;
     ok =
       fieldError(
         form,
         "email",
-        !booking.email ? "Your email, please." : !validEmail(booking.email) ? "That email looks off." : ""
+        !booking.email ? S.errEmail : !validEmail(booking.email) ? S.errEmailBad : ""
       ) && ok;
 
     // Date must not be in the past.
     if (booking.date && booking.time) {
       const when = new Date(`${booking.date}T${booking.time}`);
       if (when.getTime() < Date.now()) {
-        ok = fieldError(form, "date", "Please pick a future date/time.") && ok;
+        ok = fieldError(form, "date", S.errPast) && ok;
       }
     }
     return ok;
@@ -166,7 +194,7 @@
   }
 
   function showConfirmation(form, result, booking, icsText) {
-    const pretty = new Date(`${booking.date}T${booking.time}`).toLocaleString(undefined, {
+    const pretty = new Date(`${booking.date}T${booking.time}`).toLocaleString(cfg.locale, {
       weekday: "long",
       year: "numeric",
       month: "long",
@@ -179,13 +207,13 @@
     result.innerHTML = `
       <div class="booking-confirm" role="status">
         <div class="booking-confirm__check" aria-hidden="true">✓</div>
-        <h3>You're booked in${booking.name ? ", " + escapeHTML(booking.name.split(" ")[0]) : ""}!</h3>
+        <h3>${S.confirmTitle}${booking.name ? ", " + escapeHTML(booking.name.split(" ")[0]) : ""}!</h3>
         <p><strong>${escapeHTML(booking.service)}</strong><br>${escapeHTML(pretty)}</p>
-        <p class="booking-confirm__muted">We'll confirm by email at ${escapeHTML(booking.email)}.</p>
+        <p class="booking-confirm__muted">${S.confirmNote} ${escapeHTML(booking.email)}.</p>
         <div class="booking-confirm__actions">
-          <button type="button" class="btn" id="booking-ics">Add to calendar</button>
-          <a class="btn btn--ghost" id="booking-mail" href="${mailtoLink(booking)}">Email us the request</a>
-          <button type="button" class="btn btn--ghost" id="booking-again">Make another booking</button>
+          <button type="button" class="btn" id="booking-ics">${S.addToCalendar}</button>
+          <a class="btn btn--ghost" id="booking-mail" href="${mailtoLink(booking)}">${S.emailRequest}</a>
+          <button type="button" class="btn btn--ghost" id="booking-again">${S.bookAgain}</button>
         </div>
       </div>`;
     result.querySelector("#booking-ics").addEventListener("click", () =>

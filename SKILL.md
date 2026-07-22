@@ -108,9 +108,10 @@ If unsure, default to one **hero orbit/fly-through** + one **reveal/parallax** c
 - `python http.server` previews die when idle — the `.command` launcher is the durable demo.
 
 ## Live demo + GitHub Pages
-- `docs/` is a **self-contained live demo** (`docs/index.html`) that renders the scroll-scrub
-  effect with **procedural canvas scenes** (`docs/demo-scene.js`) — no generated frames, so it
-  works with zero binary assets. It includes the working booking function.
+- `docs/` now contains the **GutachtenKompass client website** (9 static German pages, built
+  from the uploaded brief), not the generic scroll-scrub demo. The Pages workflow below
+  publishes it unchanged. The generic demo building blocks live on in `templates/`
+  (`demo-scene.js` provides procedural canvas scenes if you want a zero-asset scrub preview).
 - `.github/workflows/pages.yml` publishes `docs/` to **GitHub Pages** on push. Live URL:
   `https://<owner>.github.io/<repo>/`.
   - **Enable Pages once:** repo **Settings → Pages → Build and deployment → Source: "GitHub

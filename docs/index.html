@@ -1,205 +1,206 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aurora — scroll-cinematic live demo</title>
-  <meta name="description" content="Live demo of the scroll-cinematic skill: canvas scroll-scrub hero, reveal, and a working booking function. Procedural scenes, zero binary assets." />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236c7bff'/%3E%3Cstop offset='1' stop-color='%23b06cff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='%230a0a12'/%3E%3Ccircle cx='16' cy='16' r='9' fill='url(%23g)'/%3E%3C/svg%3E" />
+  <title>GutachtenKompass — Begleitung bei Jugendamt &amp; Familiengericht</title>
+  <meta name="description" content="Zwei staatlich anerkannte Pädagoginnen begleiten Eltern in Jugendamt- und Familiengerichtsverfahren — mit Fachwissen, eigener Erfahrung und auf Augenhöhe." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23111111'/%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%231F6F6B' stroke-width='2.5'/%3E%3Cpath d='M16 6.5 19 16l-3 9.5L13 16Z' fill='%23E8A93D'/%3E%3Cpath d='M16 6.5 19 16h-6Z' fill='%23D6392E'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- ============ NAV ============ -->
-  <nav class="nav">
-    <div class="nav__brand">AURORA</div>
-    <div class="nav__links">
-      <a href="#features">Features</a>
-      <a href="#colorways">Colorways</a>
-      <a href="#stats">Impact</a>
-      <a href="#booking">Book</a>
-    </div>
-  </nav>
+  <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
 
-  <!-- ============ HERO (scrub section 1 — procedural turntable) ============ -->
-  <section id="hero" class="stage">
-    <div class="stage__sticky">
-      <canvas class="stage__canvas"></canvas>
-      <div class="stage__overlay">
-        <div class="container">
-          <div class="line" data-in="0.00" data-out="0.35">
-            <p class="eyebrow">Live demo · scroll-cinematic</p>
-            <h1 class="headline">Scroll<br />to spin</h1>
-          </div>
-          <div class="line" data-in="0.38" data-out="0.72">
-            <p class="subhead">
-              This orb is drawn frame-by-frame on a canvas and scrubbed by your
-              scroll position — the same technique the skill wires to
-              Higgsfield-rendered clips.
-            </p>
-          </div>
-          <div class="line" data-in="0.75" data-out="1.00">
-            <p class="eyebrow">Keep scrolling ↓</p>
-          </div>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="index.html">Gutachten<span>Kompass</span></a>
+      <button class="burger" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a href="wer-wir-sind.html">Wer wir sind</a>
+        <a href="angebote.html">Angebote</a>
+        <a href="soforthilfe.html">Soforthilfe</a>
+        <a href="fragen.html">Fragen &amp; Antworten</a>
+        <a class="btn" href="kontakt.html">Termin buchen</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inhalt">
+
+    <!-- ================= HERO ================= -->
+    <section class="sec sec--weiss hero">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Begleitung bei Jugendamt &amp; Familiengericht</p>
+        <h1 class="display" data-reveal>Wir sind Gutachten&shy;Kompass.</h1>
+        <p class="gross" data-reveal><strong>Zwei Pädagoginnen. Zwei Mütter, die selbst durch Jugendamt und Familiengericht gegangen sind.</strong></p>
+        <p class="hero__sub" data-reveal>Wir wissen, wovon wir sprechen — und begleiten dich mit Fachwissen und echter Erfahrung zurück in deine Handlungsfähigkeit.</p>
+        <div class="btn-zeile" data-reveal>
+          <a class="btn" href="kontakt.html">Termin buchen</a>
+          <a class="btn btn--petrol" href="wer-wir-sind.html">Wer wir sind</a>
+        </div>
+        <div class="hero__badges" data-reveal>
+          <span class="badge">Fachwissen. Erfahrung. Herz.</span>
+          <span class="badge badge--petrol">Auf Augenhöhe.</span>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ FEATURES ============ -->
-  <section id="features" class="section">
-    <div class="container">
-      <div class="section__head" data-reveal>
-        <p class="section__eyebrow">What you're looking at</p>
-        <h2 class="section__title">A canvas scroll-scrub, no video tag</h2>
-        <p class="section__lead">Every section below is real, running code from the skill's templates.</p>
-      </div>
-      <div class="grid">
-        <div class="card" data-reveal><h3>Scroll-scrubbed</h3><p>Frame index follows scroll progress, forward and backward, on a Lenis smooth-scroll loop.</p></div>
-        <div class="card" data-reveal><h3>Zero build</h3><p>Plain HTML, CSS and JS. Lenis is vendored locally — nothing loads from a CDN.</p></div>
-        <div class="card" data-reveal><h3>Booking built in</h3><p>The form further down validates, confirms, and emits a calendar invite — all client-side.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SECOND SCRUB SECTION — procedural assemble ============ -->
-  <section id="reveal" class="stage">
-    <div class="stage__sticky">
-      <canvas class="stage__canvas"></canvas>
-      <div class="stage__overlay">
-        <div class="container">
-          <div class="line" data-in="0.10" data-out="0.55">
-            <p class="eyebrow">Reveal / assemble</p>
-            <h2 class="headline">Scroll<br />to build</h2>
-          </div>
-          <div class="line" data-in="0.58" data-out="1.00">
-            <p class="subhead">Scattered shards converge as you scroll — a second cinematic beat.</p>
-          </div>
+    <!-- ================= SO ARBEITEN WIR ================= -->
+    <section class="sec sec--schwarz">
+      <div class="container">
+        <p class="eyebrow" data-reveal>So arbeiten wir</p>
+        <h2 class="display" data-reveal>Klar. Ruhig. An deiner Seite.</h2>
+        <p class="gross" data-reveal>Ein Verfahren rund um dein Kind ist einer der belastendsten Momente, die es gibt. Wir sortieren mit dir, was gerade passiert, bereiten dich auf Gespräche und Termine vor und helfen dir, klar und strategisch aufzutreten — ohne dich zu verbiegen.</p>
+        <div class="hinweis hinweis--petrol" data-reveal>
+          <p><strong>Zur Klarheit:</strong> Wir begleiten und bereiten vor. Familiengerichtliche Gutachten erstellen ausschließlich gerichtlich bestellte Sachverständige — das tun wir nicht, und das würden wir auch nie behaupten.</p>
+        </div>
+        <div class="btn-zeile" data-reveal>
+          <a class="btn btn--outline" href="wer-wir-sind.html">Mehr über uns und unsere Haltung</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ COLORWAYS ============ -->
-  <section id="colorways" class="section section--alt">
-    <div class="container">
-      <div class="section__head" data-reveal>
-        <p class="section__eyebrow">Make it yours</p>
-        <h2 class="section__title">Every colorway</h2>
-      </div>
-      <div class="colorways">
-        <div class="swatch" data-reveal style="background:linear-gradient(160deg,#6c7bff,#3a1e9e)">Cosmic</div>
-        <div class="swatch" data-reveal style="background:linear-gradient(160deg,#ff6c9c,#9e1e4a)">Ember</div>
-        <div class="swatch" data-reveal style="background:linear-gradient(160deg,#6cffb0,#1e9e6a)">Mint</div>
-        <div class="swatch" data-reveal style="background:linear-gradient(160deg,#ffd06c,#9e6a1e)">Amber</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ STATS ============ -->
-  <section id="stats" class="section">
-    <div class="container">
-      <div class="stats">
-        <div data-reveal><div class="stat__num">180</div><div class="stat__label">Frames scrubbed</div></div>
-        <div data-reveal><div class="stat__num">0</div><div class="stat__label">Binary assets</div></div>
-        <div data-reveal><div class="stat__num">1</div><div class="stat__label">Prompt to build</div></div>
-        <div data-reveal><div class="stat__num">60fps</div><div class="stat__label">rAF loop</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ BOOKING ============ -->
-  <section id="booking" class="section section--alt">
-    <div class="container booking">
-      <div class="section__head" data-reveal>
-        <p class="section__eyebrow">Book now</p>
-        <h2 class="section__title">Reserve your spot</h2>
-        <p class="section__lead">Pick a service and a time — you'll get an instant confirmation and a calendar invite. (Demo: nothing is sent to a server.)</p>
-      </div>
-
-      <form id="booking-form" class="booking__form" data-reveal novalidate>
-        <div class="field">
-          <label for="bk-service">Service</label>
-          <select id="bk-service" name="service">
-            <option value="" disabled selected>Choose a service…</option>
-          </select>
-          <span class="field__error"></span>
+    <!-- ================= FÜR WEN ================= -->
+    <section class="sec sec--petrol">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Für wen?</p>
+        <h2 class="display" data-reveal>Wenn du dich hier wiederfindest, bist du richtig.</h2>
+        <div class="idquotes">
+          <blockquote class="idquote" data-reveal>„So wie bisher geht es nicht weiter."</blockquote>
+          <blockquote class="idquote" data-reveal>„Ich muss klarer und strategischer auftreten."</blockquote>
+          <blockquote class="idquote" data-reveal>„Ich will mein Kind schützen, ohne mich selbst zu verlieren."</blockquote>
         </div>
+        <p class="gross" style="margin-top:36px" data-reveal>Für Mütter <strong>und</strong> Väter — vor oder mitten in einem Verfahren, konfrontiert mit Umgang, Sorgerecht, einem familiengerichtlichen Gutachten oder Verdachtsmomenten rund um das Kindeswohl.</p>
+      </div>
+    </section>
 
-        <div class="field-row">
-          <div class="field">
-            <label for="bk-date">Date</label>
-            <input id="bk-date" name="date" type="date" />
-            <span class="field__error"></span>
-          </div>
-          <div class="field">
-            <label for="bk-time">Time</label>
-            <input id="bk-time" name="time" type="time" />
-            <span class="field__error"></span>
-          </div>
+    <!-- ================= ANGEBOTE (Kacheln) ================= -->
+    <section class="sec sec--weiss">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Unsere Angebote</p>
+        <h2 class="display" data-reveal>Begleitung, die zu deiner Situation passt.</h2>
+        <div class="tiles">
+          <a class="tile" href="angebote.html#einzelcoaching" data-reveal>
+            <div class="tile__media tile__media--petrol" role="img" aria-label="Bildplatzhalter">Foto-Platzhalter:<br />symbolische Fotografie<br />(z.&nbsp;B. Hände, Weg, Landschaft)</div>
+            <div class="tile__body">
+              <h3>Einzelcoaching (1:1)</h3>
+              <p>Deine Situation, dein Tempo — Vorbereitung auf Gespräche, Termine und Anhörungen.</p>
+              <span class="tile__link">Mehr erfahren →</span>
+            </div>
+          </a>
+          <a class="tile" href="angebote.html#notfall" data-reveal>
+            <div class="tile__media tile__media--ocker" role="img" aria-label="Bildplatzhalter">Foto-Platzhalter:<br />symbolische Fotografie<br />(z.&nbsp;B. Kompass, Leuchtturm)</div>
+            <div class="tile__body">
+              <h3>Notfall-Begleitung</h3>
+              <p>Wenn es schnell gehen muss: kurzfristige Orientierung vor einem akuten Termin.</p>
+              <span class="tile__link">Mehr erfahren →</span>
+            </div>
+          </a>
+          <a class="tile" href="angebote.html#workshop" data-reveal>
+            <div class="tile__media" role="img" aria-label="Bildplatzhalter">Foto-Platzhalter:<br />Workshop-Situation<br />(ohne erkennbare Gesichter)</div>
+            <div class="tile__body">
+              <h3>Live-Workshop</h3>
+              <p>In kleiner Gruppe: innere Ruhe und äußere Klarheit für dein Verfahren.</p>
+              <span class="tile__link">Mehr erfahren →</span>
+            </div>
+          </a>
+          <a class="tile" href="angebote.html#leitfaden" data-reveal>
+            <div class="tile__media tile__media--petrol" role="img" aria-label="Bildplatzhalter">Grafik-Platzhalter:<br />Cover des PDF-Leitfadens</div>
+            <div class="tile__body">
+              <h3>Kostenloser Leitfaden</h3>
+              <p><span class="ph">[PLATZHALTER: Titel des PDF-Leitfadens]</span> — als Download für den Start.</p>
+              <span class="tile__link">Mehr erfahren →</span>
+            </div>
+          </a>
         </div>
+      </div>
+    </section>
 
-        <div class="field-row">
-          <div class="field">
-            <label for="bk-name">Name</label>
-            <input id="bk-name" name="name" type="text" autocomplete="name" placeholder="Jane Doe" />
-            <span class="field__error"></span>
-          </div>
-          <div class="field">
-            <label for="bk-email">Email</label>
-            <input id="bk-email" name="email" type="email" autocomplete="email" placeholder="jane@email.com" />
-            <span class="field__error"></span>
-          </div>
+    <!-- ================= GROSSZITAT ================= -->
+    <section class="sec sec--ocker">
+      <div class="container">
+        <blockquote class="bigquote" data-reveal>
+          <span class="ph">[PLATZHALTER: echtes Kundenzitat — z.&nbsp;B. „Zum ersten Mal seit Monaten hatte ich das Gefühl, nicht mehr allein durch dieses Verfahren zu gehen."]</span>
+          <footer>— Klientin, <span class="ph">[PLATZHALTER: Kontext, anonymisiert]</span></footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ================= 3 SCHRITTE ================= -->
+    <section class="sec sec--schwarz">
+      <div class="container">
+        <p class="eyebrow" data-reveal>So geht es jetzt weiter</p>
+        <h2 class="display" data-reveal>Drei Schritte zu mehr Klarheit.</h2>
+        <ol class="steps">
+          <li data-reveal>
+            <h3>Kennenlerngespräch buchen</h3>
+            <p>Kostenlos und unverbindlich — du erzählst, wir hören zu.</p>
+          </li>
+          <li data-reveal>
+            <h3>Schauen, ob die Chemie stimmt</h3>
+            <p>Vertrauen ist bei diesem Thema alles. Ihr entscheidet gemeinsam, ob es passt.</p>
+          </li>
+          <li data-reveal>
+            <h3>Individuelles Vorgehen erarbeiten</h3>
+            <p>Wir entwickeln mit dir ein Konzept, das zu deiner Situation und deinem Verfahren passt.</p>
+          </li>
+        </ol>
+        <div class="btn-zeile" data-reveal>
+          <a class="btn" href="kontakt.html">Kostenloses Kennenlerngespräch buchen</a>
         </div>
+      </div>
+    </section>
 
-        <div class="field">
-          <label for="bk-notes">Notes <span class="field__opt">(optional)</span></label>
-          <textarea id="bk-notes" name="notes" rows="3" placeholder="Anything we should know?"></textarea>
-        </div>
-
-        <button type="submit" class="btn booking__submit">Request booking</button>
-      </form>
-
-      <div id="booking-result" class="booking__result" hidden></div>
-    </div>
-  </section>
-
-  <!-- ============ CTA ============ -->
-  <section id="cta" class="cta">
-    <div class="container">
-      <h2 class="section__title" data-reveal>Build your own from one prompt</h2>
-      <a href="https://github.com/vanlifemum-boop/Skills" class="btn" data-reveal>See the skill on GitHub</a>
-    </div>
-  </section>
+  </main>
 
   <footer class="footer">
-    <div class="container">© <span id="year"></span> Aurora — a scroll-cinematic demo. Procedural scenes; swap in Higgsfield frames for the real thing.</div>
+    <div class="container">
+      <p class="footer__claim">Fachwissen. Erfahrung. <span>Herz.</span></p>
+      <div class="footer__grid">
+        <div>
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="kontakt.html">Termin buchen</a></li>
+            <li><span class="ph">[PLATZHALTER: E-Mail-Adresse]</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Seiten</h4>
+          <ul>
+            <li><a href="wer-wir-sind.html">Wer wir sind</a></li>
+            <li><a href="angebote.html">Angebote</a></li>
+            <li><a href="soforthilfe.html">Soforthilfe</a></li>
+            <li><a href="fragen.html">Fragen &amp; Antworten</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Social</h4>
+          <ul>
+            <li><span class="ph">[PLATZHALTER: Instagram-Link]</span></li>
+            <li><span class="ph">[PLATZHALTER: weitere Kanäle]</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Rechtliches</h4>
+          <ul>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+            <li><a href="agb.html">AGB</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__meta">
+        <span>© <span data-jahr></span> GutachtenKompass</span>
+        <span>Wir begleiten und bereiten vor — wir erstellen keine familiengerichtlichen Gutachten.</span>
+      </div>
+    </div>
   </footer>
 
-  <!-- ============ Lenis smooth scroll (vendored) ============ -->
-  <script src="vendor/lenis.min.js"></script>
+  <div id="datenschutz-hinweis" class="notice" hidden>
+    <p>Diese Website setzt keine Tracking-Cookies. Mehr dazu in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+    <button class="btn btn--petrol" type="button">Verstanden</button>
+  </div>
 
-  <!-- ============ Demo scenes + scrub config ============ -->
-  <script src="demo-scene.js"></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-    // Procedural render sections — no framePath, no JPGs.
-    window.SCRUB_SECTIONS = [
-      { section: "#hero",   bg: "#0a0a12", render: window.DemoScenes.turntable },
-      { section: "#reveal", bg: "#0a0a12", render: window.DemoScenes.assemble },
-    ];
-  </script>
-  <script src="scroll-cinematic.js"></script>
-
-  <!-- ============ Booking config ============ -->
-  <script>
-    window.BOOKING_CONFIG = {
-      businessName: "Aurora",
-      email: "hello@example.com",
-      durationMinutes: 60,
-      services: ["Discovery call (30 min)", "Full session (60 min)", "Deep dive (90 min)"],
-      endpoint: null,
-    };
-  </script>
-  <script src="booking.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>

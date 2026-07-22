@@ -1,0 +1,261 @@
+/* scroll-cinematic — base styles.
+ * Palette is driven by CSS vars; override in :root per brand.
+ */
+:root {
+  --bg:        #0a0a12;
+  --bg-2:      #11111d;
+  --fg:        #f4f4f8;
+  --muted:     #a7a7b8;
+  --accent:    #6c7bff;
+  --accent-2:  #b06cff;
+  --line:      rgba(255, 255, 255, 0.09);
+  --max:       1160px;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto,
+               Helvetica, Arial, sans-serif;
+  --font-disp: var(--font-sans);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: auto; /* Lenis handles smoothing */
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; }
+
+.container {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: clamp(20px, 5vw, 48px);
+}
+
+/* ---------- Nav ---------- */
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px clamp(20px, 5vw, 48px);
+  backdrop-filter: blur(10px);
+  background: linear-gradient(to bottom, rgba(10, 10, 18, 0.7), rgba(10, 10, 18, 0));
+}
+.nav__brand {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-size: 1.05rem;
+}
+.nav__links { display: flex; gap: clamp(14px, 3vw, 32px); }
+.nav__links a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.92rem;
+  transition: color 0.2s ease;
+}
+.nav__links a:hover { color: var(--fg); }
+
+/* ---------- Scrub stage (sticky canvas) ---------- */
+.stage {
+  position: relative;
+  height: 500vh; /* scroll length; tune 420–600vh per clip */
+}
+.stage__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+.stage__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.stage__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+.stage__overlay .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Copy lines fade via [data-in]/[data-out] (engine sets opacity/transform). */
+.line {
+  opacity: 0;
+  will-change: opacity, transform;
+  max-width: 640px;
+}
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.75rem;
+  color: var(--accent);
+  margin: 0 0 14px;
+}
+.headline {
+  font-family: var(--font-disp);
+  font-weight: 800;
+  font-size: clamp(2.6rem, 8vw, 6rem);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  margin: 0 0 18px;
+}
+.subhead {
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Vignette for text legibility over bright frames */
+.stage__sticky::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(120% 100% at 20% 50%,
+              rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 55%);
+}
+
+/* ---------- Standard sections ---------- */
+.section {
+  position: relative;
+  padding: clamp(80px, 14vh, 160px) 0;
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+}
+.section--alt { background: var(--bg-2); }
+
+.section__head { max-width: 720px; margin-bottom: 56px; }
+.section__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-size: 0.72rem;
+  color: var(--accent-2);
+  margin: 0 0 12px;
+}
+.section__title {
+  font-family: var(--font-disp);
+  font-weight: 800;
+  font-size: clamp(1.9rem, 4.5vw, 3.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 14px;
+}
+.section__lead { color: var(--muted); font-size: 1.1rem; line-height: 1.6; margin: 0; }
+
+/* Cards / grid */
+.grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.card {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.02);
+}
+.card h3 { margin: 0 0 10px; font-size: 1.15rem; }
+.card p { margin: 0; color: var(--muted); line-height: 1.55; }
+
+/* Colorways */
+.colorways {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.swatch {
+  aspect-ratio: 4 / 5;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: flex-end;
+  padding: 18px;
+  font-weight: 600;
+  overflow: hidden;
+}
+
+/* Stats */
+.stats {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  text-align: center;
+}
+.stat__num {
+  font-family: var(--font-disp);
+  font-weight: 800;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1;
+}
+.stat__label { color: var(--muted); margin-top: 8px; font-size: 0.95rem; }
+
+/* CTA */
+.cta {
+  text-align: center;
+  padding: clamp(90px, 16vh, 180px) 0;
+  background:
+    radial-gradient(80% 120% at 50% 0%, rgba(108, 123, 255, 0.18), transparent 60%),
+    var(--bg);
+}
+.cta .section__title { margin-bottom: 22px; }
+.btn {
+  display: inline-block;
+  padding: 15px 34px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(108, 123, 255, 0.35); }
+
+/* Footer */
+.footer {
+  padding: 48px 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+  border-top: 1px solid var(--line);
+}
+
+/* ---------- Reveal-on-scroll ---------- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-reveal].is-visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .line { opacity: 1 !important; transform: none !important; }
+}

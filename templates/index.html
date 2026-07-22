@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BRAND — cinematic scroll</title>
+  <meta name="description" content="One-line description of the site/subject." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ============ NAV ============ -->
+  <nav class="nav">
+    <div class="nav__brand">BRAND</div>
+    <div class="nav__links">
+      <a href="#features">Features</a>
+      <a href="#colorways">Colorways</a>
+      <a href="#stats">Impact</a>
+      <a href="#cta">Get it</a>
+    </div>
+  </nav>
+
+  <!-- ============ HERO (scrub section 1) ============ -->
+  <section id="hero" class="stage">
+    <div class="stage__sticky">
+      <canvas class="stage__canvas"></canvas>
+      <div class="stage__overlay">
+        <div class="container">
+          <div class="line" data-in="0.00" data-out="0.35">
+            <p class="eyebrow">Introducing</p>
+            <h1 class="headline">The&nbsp;Product<br />Reimagined</h1>
+          </div>
+          <div class="line" data-in="0.38" data-out="0.72">
+            <p class="subhead">
+              A single sentence that sells the subject — the feeling, not the spec.
+            </p>
+          </div>
+          <div class="line" data-in="0.75" data-out="1.00">
+            <p class="eyebrow">Scroll to explore ↓</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section id="features" class="section">
+    <div class="container">
+      <div class="section__head" data-reveal>
+        <p class="section__eyebrow">Why it matters</p>
+        <h2 class="section__title">Built around three ideas</h2>
+        <p class="section__lead">Replace with benefit-led copy specific to the subject.</p>
+      </div>
+      <div class="grid">
+        <div class="card" data-reveal><h3>Benefit one</h3><p>What it does for the user, in plain language.</p></div>
+        <div class="card" data-reveal><h3>Benefit two</h3><p>What it does for the user, in plain language.</p></div>
+        <div class="card" data-reveal><h3>Benefit three</h3><p>What it does for the user, in plain language.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECOND SCRUB SECTION (optional; e.g. explode/reveal) ============ -->
+  <section id="reveal" class="stage">
+    <div class="stage__sticky">
+      <canvas class="stage__canvas"></canvas>
+      <div class="stage__overlay">
+        <div class="container">
+          <div class="line" data-in="0.10" data-out="0.55">
+            <p class="eyebrow">Under the surface</p>
+            <h2 class="headline">Every&nbsp;detail</h2>
+          </div>
+          <div class="line" data-in="0.58" data-out="1.00">
+            <p class="subhead">A second cinematic beat — reveal, explode, or fly-through.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COLORWAYS ============ -->
+  <section id="colorways" class="section section--alt">
+    <div class="container">
+      <div class="section__head" data-reveal>
+        <p class="section__eyebrow">Make it yours</p>
+        <h2 class="section__title">Every colorway</h2>
+      </div>
+      <div class="colorways">
+        <div class="swatch" data-reveal style="background:linear-gradient(160deg,#6c7bff,#3a1e9e)">Cosmic</div>
+        <div class="swatch" data-reveal style="background:linear-gradient(160deg,#ff6c9c,#9e1e4a)">Ember</div>
+        <div class="swatch" data-reveal style="background:linear-gradient(160deg,#6cffb0,#1e9e6a)">Mint</div>
+        <div class="swatch" data-reveal style="background:linear-gradient(160deg,#ffd06c,#9e6a1e)">Amber</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section id="stats" class="section">
+    <div class="container">
+      <div class="stats">
+        <div data-reveal><div class="stat__num">99%</div><div class="stat__label">Some metric</div></div>
+        <div data-reveal><div class="stat__num">2×</div><div class="stat__label">Some metric</div></div>
+        <div data-reveal><div class="stat__num">10k+</div><div class="stat__label">Some metric</div></div>
+        <div data-reveal><div class="stat__num">4.9★</div><div class="stat__label">Some metric</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section id="cta" class="cta">
+    <div class="container">
+      <h2 class="section__title" data-reveal>Ready when you are</h2>
+      <a href="#" class="btn" data-reveal>Get started</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">© <span id="year"></span> BRAND. Built with scroll-cinematic.</div>
+  </footer>
+
+  <!-- ============ Lenis smooth scroll ============ -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <!-- ============ Scrub config — one entry per clip ============ -->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    // Set frameCount to the number of frames in each folder (ls frames/spin | wc -l).
+    window.SCRUB_SECTIONS = [
+      {
+        section: "#hero",
+        frameCount: 179,
+        bg: "#0a0a12",
+        framePath: (i) => `frames/spin/frame_${String(i).padStart(4, "0")}.jpg`,
+      },
+      {
+        section: "#reveal",
+        frameCount: 179,
+        bg: "#0a0a12",
+        framePath: (i) => `frames/explode/frame_${String(i).padStart(4, "0")}.jpg`,
+      },
+    ];
+  </script>
+  <script src="scroll-cinematic.js"></script>
+</body>
+</html>

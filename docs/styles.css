@@ -585,6 +585,56 @@ ul.liste li { margin-bottom: 0.5em; }
 .prose { max-width: 720px; }
 .prose h2 { font-size: 1.5rem; margin-top: 1.6em; }
 .prose h3 { margin-top: 1.3em; }
+.prose h4 {
+  margin: 1.3em 0 0.5em;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--petrol);
+}
+.prose ol.liste { padding-left: 1.4em; }
+.prose hr { border: 0; border-top: 1px solid var(--linie); margin: 2.2em 0; }
+.prose strong { color: var(--text); }
+
+/* Wide tables scroll in their own box; page body never scrolls sideways. */
+.table-scroll { overflow-x: auto; max-width: 100%; margin: 1.2em 0; }
+.prose table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 480px;
+  font-size: 0.95rem;
+}
+.prose th, .prose td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--linie);
+  vertical-align: top;
+}
+.prose th {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  border-bottom: 2px solid var(--linie);
+}
+
+/* Inline paragraph-style glossary entries */
+.glossar { margin: 0; }
+.glossar dt { font-weight: 700; margin-top: 0.9em; }
+.glossar dd { margin: 0.15em 0 0 0; color: var(--muted); }
+
+/* Table of contents */
+.toc {
+  columns: 2;
+  column-gap: 32px;
+  list-style: decimal;
+  padding-left: 1.3em;
+  max-width: 620px;
+}
+.toc li { break-inside: avoid; margin-bottom: 0.4em; }
+.toc a { text-decoration: none; color: var(--petrol); font-weight: 600; }
+.toc a:hover { text-decoration: underline; }
+@media (max-width: 560px) { .toc { columns: 1; } }
 
 /* ================================ Footer ================================ */
 .footer {

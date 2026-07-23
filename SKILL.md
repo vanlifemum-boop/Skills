@@ -108,11 +108,12 @@ If unsure, default to one **hero orbit/fly-through** + one **reveal/parallax** c
 - `python http.server` previews die when idle — the `.command` launcher is the durable demo.
 
 ## Live demo + GitHub Pages
-- `docs/` now contains the **GutachtenKompass client website** (9 static German pages, built
+- `docs/` now contains the **GutachtenKompass client website** (10 static German pages, built
   from the uploaded brief), not the generic scroll-scrub demo. The Pages workflow below
   publishes it unchanged. The generic demo building blocks live on in `templates/`
   (`demo-scene.js` provides procedural canvas scenes if you want a zero-asset scrub preview).
-- `.github/workflows/pages.yml` publishes `docs/` to **GitHub Pages** on push. Live URL:
+- `.github/workflows/pages.yml` publishes `docs/` to **GitHub Pages** on push. Custom domain:
+  `https://gutachtenkompass.eu/` (via `docs/CNAME`); GitHub Pages default still works too:
   `https://<owner>.github.io/<repo>/`.
   - **Enable Pages once:** repo **Settings → Pages → Build and deployment → Source: "GitHub
     Actions"**. The Actions token usually can't turn Pages on by itself (`enablement:true` then

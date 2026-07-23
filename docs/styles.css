@@ -675,6 +675,15 @@ ul.liste li { margin-bottom: 0.5em; }
   flex-wrap: wrap;
   gap: 8px 24px;
 }
+/* Rechtliche Pflichtlinks: bewusst unauffällig, aber weiterhin auf jeder Seite
+   direkt anklickbar (§ 5 DDG verlangt leichte Auffindbarkeit — nicht verstecken). */
+.footer__legal a {
+  color: var(--muted-invers);
+  text-decoration: underline;
+  text-decoration-color: rgba(184, 181, 175, 0.4);
+  text-underline-offset: 2px;
+}
+.footer__legal a:hover { color: var(--weiss); text-decoration-color: currentColor; }
 
 /* ========================= Hinweisleiste (Datenschutz) ================== */
 .notice {

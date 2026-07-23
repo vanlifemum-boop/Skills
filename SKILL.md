@@ -113,8 +113,9 @@ If unsure, default to one **hero orbit/fly-through** + one **reveal/parallax** c
   publishes it unchanged. The generic demo building blocks live on in `templates/`
   (`demo-scene.js` provides procedural canvas scenes if you want a zero-asset scrub preview).
 - `.github/workflows/pages.yml` publishes `docs/` to **GitHub Pages** on push. Custom domain:
-  `https://gutachtenkompass.eu/` (via `docs/CNAME`); GitHub Pages default still works too:
-  `https://<owner>.github.io/<repo>/`.
+  `https://www.gutachtenkompass.eu/` (via `docs/CNAME`, matching the domain configured in
+  Settings → Pages so future deploys don't conflict with it); GitHub Pages default still works
+  too: `https://<owner>.github.io/<repo>/`.
   - **Enable Pages once:** repo **Settings → Pages → Build and deployment → Source: "GitHub
     Actions"**. The Actions token usually can't turn Pages on by itself (`enablement:true` then
     fails with *"Resource not accessible by integration"*), so this one manual flip is required;

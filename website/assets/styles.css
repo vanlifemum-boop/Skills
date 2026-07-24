@@ -6,20 +6,22 @@
 
 /* ---------- Design-Tokens (Farbwelt, Typo, Abstände) ---------- */
 :root {
-  /* Farbwelt: warmes Terracotta, Sandtöne, kräftiges Blau als Akzent */
-  --terracotta:      #d9694a;
-  --terracotta-dark: #b84f33;
-  --sand:            #f6ecdd;
-  --sand-deep:       #ecdcc3;
-  --creme:           #fffaf3;
-  --blau:            #1f6f9e;
-  --blau-hell:       #3a95c9;
-  --blau-tief:       #144d70;
-  --sonne:           #f4b24a;   /* warmer Gelb-Akzent */
-  --blatt:           #7ba05b;   /* dezentes Grün */
+  /* Farbwelt „Weltkarte & Geld": Meer-Blau, Land-/Geld-Grün, Münz-Gold.
+     Die Variablennamen bleiben aus Kompatibilität erhalten; --terracotta ist
+     jetzt die grüne Primärfarbe (Land/Geld), --blau das Meer, --sonne das Gold. */
+  --terracotta:      #2e9e6b;   /* Primär: Land-/Geld-Grün */
+  --terracotta-dark: #227a52;
+  --sand:            #e7f1ec;   /* helles Papier mit Grün-/Blaustich */
+  --sand-deep:       #d2e6dd;
+  --creme:           #f4faf7;
+  --blau:            #1f77a8;   /* Meer / Weltkugel */
+  --blau-hell:       #3ba0cf;
+  --blau-tief:       #124e6e;
+  --sonne:           #e6b43c;   /* Münzen / Geld-Gold */
+  --blatt:           #4f9d5d;   /* zusätzliches Grün */
 
-  --text:            #35281f;   /* warmes Dunkelbraun statt hartem Schwarz */
-  --text-soft:       #6b5a4c;
+  --text:            #21343a;   /* dunkles Petrol statt Braun */
+  --text-soft:       #4c6167;
   --weiss:           #ffffff;
 
   /* Schrift */
@@ -31,9 +33,9 @@
   --radius:    18px;
   --radius-lg: 28px;
   --radius-pill: 999px;
-  --shadow-soft: 0 8px 24px rgba(120, 78, 54, 0.12);
-  --shadow-card: 0 12px 32px rgba(120, 78, 54, 0.16);
-  --shadow-lift: 0 20px 44px rgba(120, 78, 54, 0.22);
+  --shadow-soft: 0 8px 24px rgba(24, 60, 70, 0.12);
+  --shadow-card: 0 12px 32px rgba(24, 60, 70, 0.16);
+  --shadow-lift: 0 20px 44px rgba(24, 60, 70, 0.22);
 
   /* Layout */
   --maxw: 1160px;
@@ -293,7 +295,7 @@ img { max-width: 100%; display: block; }
   font-family: var(--font-head);
   font-weight: 700;
   background:
-    repeating-linear-gradient(45deg, rgba(217,105,74,0.06) 0 12px, transparent 12px 24px),
+    repeating-linear-gradient(45deg, rgba(31,119,168,0.07) 0 12px, transparent 12px 24px),
     linear-gradient(135deg, var(--sand) 0%, var(--sand-deep) 100%);
   border: 2px dashed var(--terracotta);
   border-radius: var(--radius);
@@ -317,7 +319,7 @@ img { max-width: 100%; display: block; }
   background-position: center;
   background-size: 120px 40px;
   /* zwei kleine Fußabdrücke als SVG-Data-URI */
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='40' viewBox='0 0 120 40'><g fill='%23d9694a' opacity='0.55'><ellipse cx='24' cy='16' rx='7' ry='10'/><circle cx='18' cy='7' r='2.2'/><circle cx='24' cy='5' r='2.4'/><circle cx='30' cy='7' r='2.2'/><ellipse cx='60' cy='24' rx='7' ry='10'/><circle cx='54' cy='15' r='2.2'/><circle cx='60' cy='13' r='2.4'/><circle cx='66' cy='15' r='2.2'/><ellipse cx='96' cy='16' rx='7' ry='10'/><circle cx='90' cy='7' r='2.2'/><circle cx='96' cy='5' r='2.4'/><circle cx='102' cy='7' r='2.2'/></g></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='40' viewBox='0 0 120 40'><g fill='%232e9e6b' opacity='0.6'><ellipse cx='24' cy='16' rx='7' ry='10'/><circle cx='18' cy='7' r='2.2'/><circle cx='24' cy='5' r='2.4'/><circle cx='30' cy='7' r='2.2'/><ellipse cx='60' cy='24' rx='7' ry='10'/><circle cx='54' cy='15' r='2.2'/><circle cx='60' cy='13' r='2.4'/><circle cx='66' cy='15' r='2.2'/><ellipse cx='96' cy='16' rx='7' ry='10'/><circle cx='90' cy='7' r='2.2'/><circle cx='96' cy='5' r='2.4'/><circle cx='102' cy='7' r='2.2'/></g></svg>");
 }
 
 /* ---------- Affiliate-Kennzeichnung ---------- */
@@ -424,7 +426,7 @@ img { max-width: 100%; display: block; }
   transform-origin: center bottom;
 }
 .map-pin:hover, .map-pin:focus { transform: scale(1.25); outline: none; }
-.map-pin circle { fill: var(--terracotta); stroke: var(--weiss); stroke-width: 2; }
+.map-pin circle { fill: var(--sonne); stroke: var(--weiss); stroke-width: 2; }
 .map-pin.is-active circle { fill: var(--blau); }
 .map-popup {
   position: absolute;
@@ -654,8 +656,8 @@ img { max-width: 100%; display: block; }
 .comic:hover { box-shadow: 9px 9px 0 rgba(53, 40, 31, 0.28) !important; }
 
 /* Karten & Platzhalter bekommen dezente Comic-Konturen für den Zeichentrick-Look */
-.card { border: 2.5px solid var(--text); box-shadow: 6px 6px 0 rgba(53,40,31,0.16); }
-.card:hover { box-shadow: 9px 9px 0 rgba(53,40,31,0.22); }
+.card { border: 2.5px solid var(--text); box-shadow: 6px 6px 0 rgba(20,45,52,0.16); }
+.card:hover { box-shadow: 9px 9px 0 rgba(20,45,52,0.22); }
 .ph { border-width: 3px; }
 
 /* Halbton-/Ben-Day-Punktetextur als Deko (z. B. hinter Überschriften) */
@@ -666,7 +668,7 @@ img { max-width: 100%; display: block; }
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(217,105,74,0.28) 22%, transparent 24%);
+  background-image: radial-gradient(rgba(46,158,107,0.28) 22%, transparent 24%);
   background-size: 14px 14px;
   opacity: 0.5;
   pointer-events: none;
@@ -682,7 +684,7 @@ img { max-width: 100%; display: block; }
   padding: 0.15em 0.6em;
   border: 3px solid var(--text);
   border-radius: 8px;
-  box-shadow: 5px 5px 0 rgba(53,40,31,0.25);
+  box-shadow: 5px 5px 0 rgba(20,45,52,0.25);
   transform: rotate(-1.5deg);
 }
 
@@ -704,7 +706,7 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
   cursor: pointer;
   border: 3px solid var(--text);
-  box-shadow: 6px 6px 0 rgba(53,40,31,0.20);
+  box-shadow: 6px 6px 0 rgba(20,45,52,0.20);
   transition: flex-grow 0.45s cubic-bezier(.22,.61,.36,1);
   /* farbiger Comic-Verlauf als Bildersatz-Hintergrund */
   background: var(--panel-bg, linear-gradient(135deg, var(--sand), var(--sand-deep)));
@@ -731,7 +733,7 @@ img { max-width: 100%; display: block; }
   position: relative;
   width: 100%;
   padding: 1rem 1.1rem;
-  background: linear-gradient(0deg, rgba(53,40,31,0.72), transparent);
+  background: linear-gradient(0deg, rgba(20,45,52,0.72), transparent);
   color: #fff;
   font-family: var(--font-head);
   font-weight: 800;

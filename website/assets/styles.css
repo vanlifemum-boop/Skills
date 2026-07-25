@@ -9,15 +9,15 @@
   /* Farbwelt „Weltkarte & Geld": Meer-Blau, Land-/Geld-Grün, Münz-Gold.
      Die Variablennamen bleiben aus Kompatibilität erhalten; --terracotta ist
      jetzt die grüne Primärfarbe (Land/Geld), --blau das Meer, --sonne das Gold. */
-  --terracotta:      #57c79a;   /* Primär: pastelliges Geld-/Land-Grün (Hauptfarbe) */
-  --terracotta-dark: #3fae82;   /* für Hover / etwas kräftiger */
-  --sand:            #e6f5ee;   /* zartes Mint-Papier */
-  --sand-deep:       #d3ecdf;
-  --creme:           #f5fcf8;
+  --terracotta:      #f2cf6a;   /* HAUPTFARBE: pastelliges Gold für Flächen/Buttons */
+  --terracotta-dark: #9a7b1e;   /* dunkles Gold für Akzent-TEXTE (auf Weiß lesbar) */
+  --sand:            #eef3ec;   /* zartes Papier, leicht warm */
+  --sand-deep:       #e2ebd9;
+  --creme:           #f8fbf5;
   --blau:            #4aa3cb;   /* Meer / Weltkugel (Pastellblau) */
   --blau-hell:       #7cc3e2;
   --blau-tief:       #2f7fa6;
-  --sonne:           #f2d27f;   /* Münzen / Geld-Gold (Pastellgold) */
+  --sonne:           #57c79a;   /* AKZENT: Pastellgrün (früher die Hauptfarbe) */
   --blatt:           #86cfa8;   /* zusätzliches Pastellgrün */
 
   --text:            #2b4a43;   /* weiches Dunkelgrün-Petrol, gut lesbar */
@@ -117,7 +117,7 @@ img { max-width: 100%; display: block; }
 .btn:hover { text-decoration: none; transform: translateY(-2px); }
 /* Pastell-Buttons: dunkler Text auf sanften Flächen bleibt gut lesbar */
 .btn--primary { background: var(--terracotta); color: var(--text); box-shadow: var(--shadow-soft); }
-.btn--primary:hover { background: var(--terracotta-dark); box-shadow: var(--shadow-card); }
+.btn--primary:hover { background: #e9c04d; box-shadow: var(--shadow-card); }
 .btn--blau { background: var(--blau); color: var(--text); box-shadow: var(--shadow-soft); }
 .btn--blau:hover { background: var(--blau-hell); }
 .btn--ghost { background: var(--weiss); color: var(--terracotta-dark); box-shadow: var(--shadow-soft); }
@@ -233,7 +233,7 @@ img { max-width: 100%; display: block; }
 .hero .tagline {
   font-family: var(--font-head);
   font-size: clamp(1.2rem, 2.6vw, 1.6rem);
-  color: var(--terracotta);
+  color: var(--terracotta-dark);
   font-weight: 700;
   margin-bottom: 1rem;
 }
@@ -406,7 +406,7 @@ img { max-width: 100%; display: block; }
   cursor: pointer;
   transition: all 0.12s ease;
 }
-.chip:hover { border-color: var(--terracotta); color: var(--terracotta); }
+.chip:hover { border-color: var(--terracotta-dark); color: var(--terracotta-dark); }
 .chip[aria-pressed="true"] { background: var(--terracotta); border-color: var(--terracotta); color: var(--text); }
 .filter-meta { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-top: 0.4rem; }
 .filter-count { font-weight: 700; color: var(--text-soft); }
@@ -479,7 +479,7 @@ img { max-width: 100%; display: block; }
 }
 .bubble .who { display: block; font-family: var(--font-head); font-weight: 800; font-size: 0.85rem; margin-bottom: 0.15rem; }
 .bubble--mama { align-self: flex-start; background: var(--sand); border-bottom-left-radius: 4px; }
-.bubble--mama .who { color: var(--terracotta); }
+.bubble--mama .who { color: var(--terracotta-dark); }
 .bubble--kind { align-self: flex-end; background: #d9ecf6; border-bottom-right-radius: 4px; }
 .bubble--kind .who { color: var(--blau-tief); }
 

@@ -1,0 +1,47 @@
+Ich habe Hermes Agent als Docker-Container auf diesem Server laufen.
+  Hermes hat einen Befehl "hermes dashboard", der ein lokales Web-UI
+  zur Verwaltung von Config, API Keys und Sessions startet (Default
+  Port 9119, gebunden an 127.0.0.1). Da Hermes auf einem Server laeuft,
+  komme ich vom PC zuhause nicht ans Dashboard ohne SSH-Tunnel. Bitte
+  richte das mit Tailscale ein, damit ich es dauerhaft vom Browser auf
+  meinem PC erreichen kann.
+
+  Anforderungen:
+  - Das Dashboard exposed API Keys -> es darf NICHT oeffentlich
+    erreichbar sein (kein Reverse-Proxy-Eintrag, keine Port-Mappings
+    auf der oeffentlichen Server-IP). Tailscale ist die einzige
+    Bruecke nach aussen.
+  - Das Dashboard soll als eigener, persistenter Service laufen
+    (nicht via `docker exec`, der bei Container-Restart weg ist).
+  - Aenderungen nur additiv (z.B. docker-compose.override.yml oder
+    ein Sidecar-Setup) - originale Compose-/Config-Dateien nicht
+    modifizieren.
+  - Vom PC will ich das Dashboard per Hostname (Magic DNS) erreichen,
+    z.B. http://hermes-dashboard:9119
+
+  Wichtig fuer den Ablauf:
+  - Geh Schritt fuer Schritt mit mir durch, eins nach dem anderen,
+    und warte jeweils auf meine Bestaetigung bevor du zum naechsten
+    Schritt gehst.
+  - Schau dir zuerst den laufenden Hermes-Container und das Compose-
+    Setup an und mach mir einen Vorschlag, bevor du etwas aenderst.
+  - Ich habe noch keinen Tailscale Account. Erklaere mir vollstaendig
+    und in eigenen Schritten:
+    - wie ich den Account erstelle (welche Seite, welche Buttons)
+    - wie ich den RICHTIGEN Key-Typ generiere (Auth Key, NICHT API
+      Access Token - der Unterschied ist wichtig) und welche
+      Optionen ich anhaken muss (Reusable, Ephemeral, etc.)
+    - wie ich Tailscale auf meinem PC installiere
+  - Den Auth Key trage ich selbst ein, damit er nicht im Chat landet.
+    Sag mir dafuer den konkreten Befehl (z.B. wie ich ein zweites
+    Terminal/SSH-Fenster aufmache, mit welchem Editor ich die Datei
+    oeffne, wohin genau der Key gehoert, wie ich speichere). Ich
+    kenne mich mit der Shell nicht gut aus - bitte keine Schritte
+    ueberspringen.
+  - Wenn ich versehentlich ein Geheimnis in den Chat paste, sag mir
+    Bescheid und leite mich an, es zu revoken bevor wir weitermachen.
+
+  Am Ende verifiziere bitte vom Server aus, dass das Dashboard ueber
+  die Tailscale-IP erreichbar ist, und gib mir die genaue URL, die ich
+  im Browser auf meinem PC oeffnen soll. Sag mir auch kurz, was nach
+  Server-Reboot oder PC-Reboot passiert.

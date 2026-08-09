@@ -3,6 +3,8 @@
 Claude-Code-Skills, die in **allen** Projekten gelten sollen. Jeder Skill ist ein eigener
 Ordner mit einer `SKILL.md` darin — genau so erwartet Claude Code es.
 
+## Eigene Skills und Sprache
+
 | Skill | wofür |
 |---|---|
 | [`media-skill`](media-skill/) | Bilder, Videos und Sprache über die kie.ai-API — mit Kostenvoranschlag, Ablage unter `~/Medien/` und lokaler Galerie |
@@ -10,9 +12,22 @@ Ordner mit einer `SKILL.md` darin — genau so erwartet Claude Code es.
 | [`grill-me`](grill-me/) | löchert dich mit Fragen, bis ein Plan wirklich steht |
 | [`vermenschlichen`](vermenschlichen/) | Schreibregeln für deutsche Texte, die nicht nach KI klingen — greift bei allem, was auf Deutsch geschrieben wird |
 
-`vermenschlichen` ist übernommen aus [LOGIN-TB/claude-skills](https://github.com/LOGIN-TB/claude-skills)
-(MIT). Herkunft und Abgleich mit der Quelle stehen in
-[`vermenschlichen/HERKUNFT.md`](vermenschlichen/HERKUNFT.md).
+## Arbeiten mit Claude (englisch)
+
+| Skill | wofür |
+|---|---|
+| [`writing-for-agents`](writing-for-agents/) | Anweisungen für Agenten schreiben — hilfreich, wenn du weitere Skills baust |
+| [`research`](research/) | eine Frage gegen belastbare Primärquellen untersuchen |
+| [`handoff`](handoff/) | ein Gespräch für einen anderen Agenten zusammenfassen |
+| [`wait-what`](wait-what/) | „das kam nicht an" — Claude formuliert neu |
+| [`to-questionnaire`](to-questionnaire/) | eine offene Entscheidung als Fragebogen an andere geben |
+| [`prototype`](prototype/) | Wegwerf-Prototyp, um eine Entwurfsfrage zu beantworten |
+| [`diagnosing-bugs`](diagnosing-bugs/) | Fehlersuche bei hartnäckigen Bugs |
+| [`resolving-merge-conflicts`](resolving-merge-conflicts/) | Merge- und Rebase-Konflikte auflösen |
+| [`git-guardrails-claude-code`](git-guardrails-claude-code/) | Hooks, die gefährliche git-Befehle blockieren |
+| [`tdd`](tdd/) | testgetriebene Entwicklung |
+| [`security-audit`](security-audit/) | Codebasis auf ausnutzbare Sicherheitslücken prüfen |
+| [`watch`](watch/) | ein Video ansehen und Fragen dazu beantworten (braucht `yt-dlp` und `ffmpeg`) |
 
 ## Marketing (englisch)
 
@@ -38,10 +53,25 @@ Zwölf Skills aus [coreyhaines31/marketingskills](https://github.com/coreyhaines
 im Projekt an — Zielgruppe, Positionierung, Angebot. Alle anderen lesen die Datei, statt dich
 jedes Mal dasselbe zu fragen.
 
-Herkunft, was ich verändert habe und wie du weitere Skills nachziehst:
-[`HERKUNFT-marketingskills.md`](HERKUNFT-marketingskills.md).
 Das Verzeichnis [`../tools/`](../tools/) im Repo-Wurzelverzeichnis gehört dazu — mehrere
 dieser Skills verlinken dorthin.
+
+## Woher die fremden Skills stammen
+
+Alles, was nicht von uns ist, steht mit Quelle, übernommenem Stand und meinen Abweichungen
+in [`HERKUNFT.md`](HERKUNFT.md). Die Lizenztexte liegen in [`lizenzen/`](lizenzen/).
+
+## HyperFrames
+
+Die 19 HyperFrames-Skills (Motion Graphics, Videoschnitt) sind bewusst **nicht** hier
+einkopiert — sie bringen einen eigenen Installer mit, der sie aktuell hält:
+
+```bash
+npx skills add heygen-com/hyperframes            # Kernsatz, interaktive Auswahl
+npx skills add heygen-com/hyperframes --all --full-depth   # alle 19
+```
+
+Braucht Node 22+ und ffmpeg. Der [`schulung`](schulung/)-Skill setzt sie voraus.
 
 ## Installieren
 

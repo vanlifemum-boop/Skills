@@ -13,8 +13,8 @@
 | **Zielgruppe** | Eltern, gegen bzw. über die ein Gutachten läuft oder ansteht. Kein Vorwissen vorausgesetzt, hohe emotionale Belastung vorausgesetzt |
 | **Sprache** | Deutsch |
 | **Ansprache** | Duzend, warm, klar — der Ton der GutachtenKompass-Website |
-| **Dauer** | ~60–70 Minuten, in mehreren Sitzungen durcharbeitbar (Fortschritt wird gespeichert) |
-| **Struktur** | 12 Level · je ein Lernblock plus eine Interaktion · Abschluss-Check · Merkblatt |
+| **Dauer** | ~70–75 Minuten, in mehreren Sitzungen durcharbeitbar (Fortschritt wird gespeichert) |
+| **Struktur** | 13 Level · je ein Lernblock plus eine Interaktion · Abschluss-Check · Merkblatt |
 | **Format** | Eine offline lauffähige HTML-Datei, per Doppelklick startbar, teilbar per Mail/Drive |
 | **Einsatz** | Bezahltes Selbstlern-Produkt |
 | **Guide-Figur** | Eine leuchtende **Kompassrose** — abstraktes Objekt, kein Mensch. Begleitet durch alle Level |
@@ -31,7 +31,7 @@ vorbereitet wurdest, verlieren alle deine Angaben an Gewicht — auch die zutref
 Deine wirksame Vorbereitung besteht aus vier Dingen: **Du kennst den Ablauf. Du kennst deine
 Rechte. Du bist ausgeruht und organisiert. Und du antwortest wahrheitsgemäß.**
 
-Der Hebel liegt nicht in der Untersuchung. Er liegt in Level 2 (deine Rechte) und Level 12
+Der Hebel liegt nicht in der Untersuchung. Er liegt in Level 2 (deine Rechte) und Level 13
 (die Stellungnahme).
 
 ---
@@ -63,20 +63,22 @@ weißt, wer was entscheidet, was dir zusteht, was die eingesetzten Methoden kön
 
 | # | Titel | Merksatz | Medium | Interaktion | XP |
 |---|---|---|---|---|---|
-| 1 | Wer entscheidet hier eigentlich? | Ein Gutachten ist ein Beweismittel, kein Urteil. | Animation | Beweisfrage prüfen | 100 |
-| 2 | Was dir zusteht | Eine Blankoerklärung öffnet deine komplette Krankengeschichte. | Animation + Bild | Szenario-Karten | 120 |
-| 3 | Deine Chronologie | Nur Tatsachen. Datiert. Belegt. | Animation | Tatsache oder Bewertung? | 100 |
+| 1 | Wer entscheidet hier eigentlich? | Ein Gutachten ist ein Beweismittel, kein Urteil. | Animation + Bild | Beweisfrage prüfen | 100 |
+| 2 | Was dir zusteht | Eine Blankoerklärung öffnet deine komplette Krankengeschichte. | Animation + Bild | Szenario-Karten | 140 |
+| 3 | Deine Chronologie | Nur Tatsachen. Datiert. Belegt. | Animation + Bild | Tatsache oder Bewertung? | 100 |
 | 4 | Der Ablauf und die harten Fragen | Leugnen von Belegtem ist der teuerste Fehler. | Animation + Bild | Zeitleiste + Entscheidung | 120 |
-| 5 | Fragebögen: was sie messen und was nicht | Belastung ist kein Beweis für Unfähigkeit. | Animation | Was wiegt schwerer? | 140 |
+| 5 | Fragebögen: was sie messen und was nicht | Belastung ist kein Beweis für Unfähigkeit. | Animation + Bild | Was wiegt schwerer? | 140 |
 | 6 | Die Interaktionsbeobachtung | Bewertet wird nicht Perfektion, sondern Reparatur. | Animation + Bild | Die Szene kippt | 140 |
-| 7 | Dein Kind | Kinder erzählen zuverlässig, dass sie etwas erzählen sollten. | Animation | Rapid-Fire | 100 |
-| 8 | Wenn deine Lage besonders ist | Kritik am Verfahren und Kooperation im Alltag sind kein Widerspruch. | Bild | Fallauswahl | 120 |
-| 9 | Was die Kita sieht (Bayern) | Ein Entwicklungsbericht beschreibt dein Kind, nicht dich. | Animation | Bericht entschlüsseln | 120 |
-| 10 | Was die Kita weitergeben darf (Bayern) | Ohne deine Einwilligung geht die Kita-Dokumentation nicht an Dritte. | Animation | Irrtum oder Fakt | 120 |
-| 11 | Das Gedächtnisprotokoll | Zwanzig Minuten am selben Tag entscheiden später den Fall. | Animation | Protokoll vervollständigen | 100 |
-| 12 | Nach dem Gutachten | Fünf präzise belegte Einwände wirken stärker als vierzig empörte. | Animation + Bild | Vier-Farben-Lektüre | 160 |
+| 7 | Was in welchem Alter normal ist | Entwicklung verläuft in Spannen, nicht auf Termine. | Animation + Bild | Normal oder Befund? | 120 |
+| 8 | Dein Kind | Kinder erzählen zuverlässig, dass sie etwas erzählen sollten. | Animation + Bild | Rapid-Fire | 100 |
+| 9 | Wenn deine Lage besonders ist | Kritik am Verfahren und Kooperation im Alltag sind kein Widerspruch. | Animation + Bild | Fallauswahl | 120 |
+| 10 | Was die Kita sieht (Bayern) | Ein Entwicklungsbericht beschreibt dein Kind, nicht dich. | Animation + Bild | Bericht entschlüsseln | 120 |
+| 11 | Was die Kita weitergeben darf (Bayern) | Ohne deine Einwilligung geht die Kita-Dokumentation nicht an Dritte. | Animation + Bild | Irrtum oder Fakt | 120 |
+| 12 | Das Gedächtnisprotokoll | Zwanzig Minuten am selben Tag entscheiden später den Fall. | Animation + Bild | Protokoll vervollständigen | 100 |
+| 13 | Nach dem Gutachten | Fünf präzise belegte Einwände wirken stärker als vierzig empörte. | Animation + Bild | Vier-Farben-Lektüre | 160 |
 
-Level-Abschluss zusätzlich je +25 XP. Gesamt erreichbar: **1740 XP.**
+Level-Abschluss zusätzlich je +25 XP (13 × 25 = 325). Interaktionen zusammen 1580 XP.
+Gesamt erreichbar: **1905 XP.**
 
 ---
 
@@ -132,7 +134,7 @@ Trennung von Befund und Bewertung, Nachvollziehbarkeit der Schlussfolgerungen, O
 eingesetzten Verfahren. Er liegt seit September 2025 in **3., überarbeiteter Auflage** vor und
 wurde dabei ausdrücklich um Datenschutzanforderungen erweitert. Formal ist er unverbindlich,
 faktisch ist er der Maßstab. Lass dir die aktuelle Fassung von deiner anwaltlichen Vertretung
-geben — sie ist dein Prüfraster für Level 12.
+geben — sie ist dein Prüfraster für Level 13.
 
 **Und das Wichtigste:** Ein Gutachten ist ein Beweismittel, kein Urteil. Das Gericht ist nicht
 daran gebunden. Es muss sich damit auseinandersetzen, darf ihm folgen — darf ihm aber auch
@@ -151,6 +153,8 @@ vor allem dann, wenn eine gut gearbeitete Stellungnahme nachvollziehbare Schwäc
 `ANIMATION` — Vier Kästen erscheinen nacheinander: Gericht (ordnet an), Jugendamt (regt an),
 Sachverständige (arbeiten ab), Gutachten (ein Beweismittel unter mehreren). Zum Schluss fährt
 eine Linie vom Gutachten zum Gericht und stoppt vor einem Schild „nicht bindend".
+`BILD` — `{{IMG_L1}}`: Ein einzelnes gesiegeltes Dokument auf einem langen leeren Tisch, ein
+Stuhl, hohes Fensterlicht. Keine lesbare Schrift.
 
 #### Interaktion — „Prüfe die Beweisfrage" (Finde die Schwachstellen)
 
@@ -211,6 +215,76 @@ deinen Fall weiß als du — und in dem du auf Vorwürfe reagieren musst, die du
 hörst. Lies die Akte mit einem Marker und notiere zu jedem falschen oder unvollständigen Punkt:
 *Was steht da? Was ist richtig? Welcher Nachweis belegt das?*
 
+##### Zwei Akten, zwei Wege
+
+Hier verwechseln viele Eltern zwei völlig verschiedene Dinge. Es gibt **zwei Akten**, und für
+jede gilt ein eigenes Regelwerk.
+
+Die **Gerichtsakte** liegt beim Familiengericht. Einsicht läuft über deine Anwältin oder deinen
+Anwalt. Das ist der Weg, den der vorige Absatz beschreibt.
+
+Die **Jugendamtsakte** ist etwas anderes. Sie liegt bei einer Behörde, und Behörden folgen dem
+Sozialverwaltungsverfahrensrecht. Die Grundlage ist **§ 25 Abs. 1 Satz 1 SGB X**:
+
+> „Die Behörde hat den Beteiligten Einsicht in die das Verfahren betreffenden Akten zu gestatten,
+> soweit deren Kenntnis zur Geltendmachung oder Verteidigung ihrer rechtlichen Interessen
+> erforderlich ist."
+
+Lies den Satz genau, denn er enthält die beiden Bedingungen, an denen sich alles entscheidet:
+**„den Beteiligten"** und **„das Verfahren betreffenden"**. Kein Anspruch auf alles, was das
+Jugendamt jemals über deine Familie gesammelt hat — sondern auf die Akten des konkreten
+Verfahrens, und nur, wenn du Beteiligter bist.
+
+**Die entscheidende Frage ist also nicht dein Sorgerecht, sondern deine Beteiligtenstellung.**
+Das ist der Punkt, an dem die meisten Gespräche mit dem Jugendamt schieflaufen — auf beiden
+Seiten. Wer Beteiligter ist, steht in **§ 12 Abs. 1 SGB X**: Antragsteller und Antragsgegner;
+diejenigen, an die die Behörde einen Verwaltungsakt richten will oder gerichtet hat; diejenigen,
+mit denen sie einen öffentlich-rechtlichen Vertrag schließen will oder geschlossen hat; und
+diejenigen, die nach Absatz 2 hinzugezogen worden sind.
+
+Und dieser **Absatz 2 ist dein Hebel**, wenn du nicht ohnehin schon Beteiligter bist. Er kennt
+zwei Stufen:
+
+- **Kann-Hinzuziehung** (Satz 1): Die Behörde *kann* von Amts wegen oder **auf Antrag**
+  diejenigen hinzuziehen, deren rechtliche Interessen durch den Ausgang des Verfahrens berührt
+  werden können.
+- **Muss-Hinzuziehung** (Satz 2): Hat der Ausgang des Verfahrens **rechtsgestaltende Wirkung**
+  für einen Dritten, ist dieser **auf Antrag hinzuzuziehen** — kein Ermessen. Die Behörde muss
+  ihn außerdem von der Einleitung des Verfahrens benachrichtigen, soweit sie ihn kennt.
+
+Der praktische Unterschied: Ein Antrag auf Hinzuziehung ist etwas anderes als die Bitte, mal in
+die Akte schauen zu dürfen. Er ist ein förmlicher Antrag, über den entschieden werden muss — und
+eine Ablehnung muss begründet werden. Damit hast du entweder die Beteiligtenstellung oder eine
+begründete Ablehnung, gegen die du vorgehen kannst. Beides ist besser als ein mündliches Nein.
+
+**Mit Sorgerecht.** Betrifft das Verfahren deine Eltern- oder Sorgerechtsposition unmittelbar,
+bist du in aller Regel Beteiligter — dann ist § 25 Abs. 1 SGB X die direkte Grundlage.
+
+**Ohne Sorgerecht.** Es gibt **keinen** automatischen Anspruch auf die gesamte Jugendamtsakte,
+nur weil du Vater oder Mutter bist. Das ist die Enttäuschung. Die gute Nachricht daneben:
+Beteiligter eines konkreten Verfahrens kannst du trotzdem sein oder werden — über den Antrag nach
+§ 12 Abs. 2. Und unabhängig vom Sorgerecht stehen dir zwei weitere Dinge zu:
+
+- **§ 18 Abs. 3 SGB VIII** gibt Eltern, anderen Umgangsberechtigten und Personen, in deren Obhut
+  sich das Kind befindet, einen **Anspruch auf Beratung und Unterstützung bei der Ausübung des
+  Umgangsrechts**. Das Jugendamt soll dabei ausdrücklich auch bei der Auskunft über die
+  persönlichen Verhältnisse des Kindes vermitteln.
+- **§ 1686 BGB** gibt dir gegenüber dem **anderen Elternteil** — nicht gegenüber dem Jugendamt —
+  einen Anspruch auf Auskunft über die persönlichen Verhältnisse des Kindes, bei berechtigtem
+  Interesse und soweit es dem Kindeswohl nicht widerspricht. Berechtigtes Interesse liegt in der
+  Regel vor, wenn du keine andere zumutbare Möglichkeit hast, dich über die Entwicklung deines
+  Kindes zu informieren.
+
+**Grenzen, die auch für Beteiligte gelten.** Entwürfe zu Entscheidungen und Arbeiten zu ihrer
+unmittelbaren Vorbereitung sind bis zum Abschluss des Verwaltungsverfahrens ausgenommen. Und wo
+Daten Dritter in der Akte stehen — etwa Angaben des anderen Elternteils oder von Meldepersonen —
+wird geschwärzt. Eine geschwärzte Akte ist deshalb nicht automatisch eine rechtswidrige Akte.
+
+> **Und der ehrliche Zusatz:** Das ist die Rechtslage, nicht die Alltagspraxis. Akteneinsicht beim
+> Jugendamt dauert, wird verzögert, wird manchmal schlicht ignoriert. Stell den Antrag trotzdem —
+> **schriftlich, mit Datum, mit Bezug auf § 25 SGB X, und behalte eine Kopie.** Der schriftliche
+> Antrag ist auch dann etwas wert, wenn er abgelehnt wird: Er ist dokumentiert.
+
 **Ablehnung wegen Befangenheit.** Bei konkreten Anhaltspunkten für Voreingenommenheit kannst du
 die sachverständige Person ablehnen. Wichtig: **unverzüglich**, sobald du den Grund kennst —
 nicht erst nach Vorlage des Gutachtens. Wer wartet, verliert das Recht in der Regel.
@@ -219,7 +293,7 @@ Ein unerwünschtes Ergebnis begründet **keine** Befangenheit. Auch fachliche Fe
 reichen meist nicht. Tragfähig sind: abwertende oder feindselige Äußerungen, Vorwegnahme des
 Ergebnisses im Gespräch, persönliche oder berufliche Verbindungen zu Beteiligten, die Weigerung,
 deine Angaben überhaupt aufzunehmen, deutliche Ungleichbehandlung der Elternteile. Dafür
-brauchst du Dokumentation — siehe Level 11.
+brauchst du Dokumentation — siehe Level 12.
 
 **Schweigepflichtentbindungen — der unterschätzte Punkt.** Du wirst gebeten, Erklärungen zu
 unterschreiben, die Ärzte, Therapeuten, Kita, Schule und ggf. Kliniken von der Schweigepflicht
@@ -271,8 +345,10 @@ ein Mangel.
 
 #### Medienplan
 
-`ANIMATION` — Sechs Rechte-Karten klappen nacheinander auf, jede mit Symbol. Die
-Schweigepflicht-Karte bleibt am Ende allein stehen und pulsiert in Ocker.
+`ANIMATION` — Sieben Rechte-Karten klappen nacheinander auf, jede mit Symbol. Bei der
+Akteneinsicht-Karte teilt sich das Bild kurz in zwei Aktendeckel — „Gericht" und „Jugendamt" —
+mit je einem eigenen Weg. Die Schweigepflicht-Karte bleibt am Ende allein stehen und pulsiert in
+Ocker.
 `BILD` — `{{IMG_L2}}`: Ein Stapel Formulare auf einem Tisch, warmes Seitenlicht, eine Karte
 liegt hervorgehoben obenauf. Keine lesbare Schrift.
 
@@ -287,7 +363,7 @@ Pro Karte wählst du eine Handlung; danach erscheint die Konsequenz.
   Verfahren nichts zu tun haben. Ein Widerruf wirkt nur für die Zukunft.
 - *B: Sagen, dass du das anwaltlich prüfen lässt und begrenzt nachreichst.* → **Richtig.** Das ist
   keine Verweigerung, sondern ein normaler Vorbehalt. Du kannst die Entbindung auf einzelne
-  Stellen, Zeiträume und Themen begrenzen. (**25 XP**)
+  Stellen, Zeiträume und Themen begrenzen. (**20 XP**)
 
 **Karte 2.** Die sachverständige Person sagt im Erstgespräch: „Bei Müttern wie Ihnen weiß man ja,
 wie das ausgeht."
@@ -296,7 +372,7 @@ wie das ausgeht."
   zu Ende und lass unverzüglich einen Ablehnungsantrag prüfen.
 - *B: Die Äußerung wörtlich notieren und unverzüglich anwaltlich Ablehnung prüfen lassen.* →
   **Richtig.** Das ist ein tragfähiger Anhaltspunkt — Vorwegnahme des Ergebnisses. Entscheidend
-  ist „unverzüglich": Wer bis nach dem Gutachten wartet, verliert das Recht. (**25 XP**)
+  ist „unverzüglich": Wer bis nach dem Gutachten wartet, verliert das Recht. (**20 XP**)
 
 **Karte 3.** Du bist überzeugt, dass das Gutachten gegen dich ausgehen wird, und willst nicht
 mehr teilnehmen.
@@ -305,13 +381,13 @@ mehr teilnehmen.
   Gegenseite. Und es wirkt.
 - *B: Anwaltlich beraten lassen und ggf. schriftlich begründet gegenüber dem Gericht erklären.* →
   **Richtig.** Nie spontan, nie im Termin, nie durch Fernbleiben. Und: Eine Teilverweigerung ist
-  möglich — Exploration ja, einzelne Testverfahren nein. (**25 XP**)
+  möglich — Exploration ja, einzelne Testverfahren nein. (**20 XP**)
 
 **Karte 4.** Du willst das Gespräch mit dem Handy mitschneiden, um etwas in der Hand zu haben.
 - *A: Heimlich aufnehmen.* → **Falsch, und gefährlich.** Heimliche Tonaufnahmen des nicht
   öffentlich gesprochenen Wortes sind strafbar und schaden dir im Verfahren massiv.
 - *B: Vorher schriftlich anfragen und die Antwort dokumentieren.* → **Richtig.** Auch wenn die
-  Antwort Nein lautet, hast du etwas gewonnen: eine dokumentierte Anfrage. (**25 XP**)
+  Antwort Nein lautet, hast du etwas gewonnen: eine dokumentierte Anfrage. (**20 XP**)
 
 **Karte 5.** Im Gutachten steht ein Befund zu deiner „Belastbarkeit", ohne dass ein Verfahren
 genannt wird.
@@ -320,9 +396,21 @@ genannt wird.
   Verfahren gehört.
 - *B: Die vollständige Benennung aller eingesetzten Verfahren verlangen.* → **Richtig.** Ein
   Befund ohne benannte Methode ist nicht überprüfbar — und das ist selbst schon ein Mangel, den
-  du in der Stellungnahme benennen kannst. (**25 XP**)
+  du in der Stellungnahme benennen kannst. (**20 XP**)
 
-Alle fünf richtig ohne Fehlversuch: **+ 20 XP Bonus** (gesamt 120 XP).
+**Karte 6.** Du hast kein Sorgerecht. Beim Jugendamt läuft ein Verfahren, in dem es um deinen Umgang
+geht. Du bittest am Telefon um Akteneinsicht und bekommst zu hören: „Ohne Sorgerecht geht das nicht."
+- *A: Das hinnehmen — ohne Sorgerecht hast du eben keine Rechte.* → **Falsch, und ein teurer Irrtum.**
+  Über die Akteneinsicht entscheidet nicht das Sorgerecht, sondern die Beteiligtenstellung nach
+  § 12 SGB X. Ein mündliches Nein am Telefon ist außerdem keine Entscheidung, gegen die du vorgehen
+  könntest.
+- *B: Schriftlich Hinzuziehung nach § 12 Abs. 2 SGB X beantragen und Akteneinsicht nach § 25 SGB X
+  verlangen.* → **Richtig.** Damit erzwingst du eine Entscheidung. Berührt der Ausgang des Verfahrens
+  deine rechtlichen Interessen, kann die Behörde dich hinzuziehen; hat er rechtsgestaltende Wirkung
+  für dich, **muss** sie es auf Antrag tun. Und eine Ablehnung ist begründungspflichtig und
+  dokumentiert. (**20 XP**)
+
+Alle sechs richtig ohne Fehlversuch: **+ 20 XP Bonus** (gesamt 140 XP).
 
 ---
 
@@ -385,6 +473,8 @@ ist ein völlig anderer und viel erreichbarerer Anspruch.
 
 `ANIMATION` — Eine leere Tabelle mit vier Spalten baut sich auf; Zeilen füllen sich nacheinander;
 eine Zeile mit Adjektiven wird rot markiert und durch eine sachliche Formulierung ersetzt.
+`BILD` — `{{IMG_L3}}`: Datierte Karteikarten in exakter Reihe auf dunklem Holz, eine noch halb
+im Schatten. Keine lesbare Schrift.
 
 #### Interaktion — „Tatsache oder Bewertung?" (Sortieraufgabe, 8 Karten)
 
@@ -441,7 +531,7 @@ gibt und ob es sicher ist. Aufräumen ist erlaubt und normal. Ein steriler Vorze
 eher befremdlich als überzeugend.
 
 **4. Gespräch mit dem Kind.** Altersangepasst, ohne Elternteil im Raum, bei kleinen Kindern über
-Spiel. Mehr dazu in Level 7.
+Spiel. Mehr dazu in Level 8.
 
 **5. Interaktionsbeobachtung.** Level 6.
 
@@ -451,7 +541,7 @@ Spiel. Mehr dazu in Level 7.
 Grundlage deiner Entbindungserklärung. **Frag nach, welche Auskünfte eingeholt wurden und was
 darin steht.** Fremdauskünfte gehen häufig unkommentiert ins Gutachten ein, obwohl sie
 ihrerseits auf Hörensagen beruhen können. Wie das speziell bei der Kita geregelt ist, siehst du
-in Level 10.
+in Level 11.
 
 #### Umgang mit belastenden Fragen
 
@@ -613,7 +703,7 @@ und in der Sache falsch:
 
 #### Prüfpunkte für deine spätere Stellungnahme
 
-Diese Liste wandert ins Merkblatt und wird in Level 12 wieder aufgegriffen:
+Diese Liste wandert ins Merkblatt und wird in Level 13 wieder aufgegriffen:
 
 - Sind alle Verfahren namentlich und mit Auflage/Version benannt?
 - Ist angegeben, wann und unter welchen Bedingungen sie durchgeführt wurden?
@@ -644,6 +734,8 @@ Diese Liste wandert ins Merkblatt und wird in Level 12 wieder aufgegriffen:
 auffälligen durch, färbt dabei aber auch viele unauffällige ein. Beschriftung „falsch positiv"
 erscheint. Danach zwei Waagschalen: links „erhöhter Belastungswert", rechts „Befund über das
 Antwortverhalten" — rechts sinkt deutlich tiefer.
+`BILD` — `{{IMG_L5}}`: Ein Stapel linierter Bögen, dahinter eine weiche Glockenkurve aus Licht,
+ein roter Punkt weit außen. Keine lesbare Schrift, keine Testinhalte.
 
 #### Interaktion — „Was wiegt schwerer?" (Vorhersage-Spiel mit Balken)
 
@@ -781,7 +873,177 @@ Maximal 140 XP inklusive Level-Bonus.
 
 ---
 
-### LEVEL 7 — Dein Kind
+### LEVEL 7 — Was in welchem Alter normal ist
+
+**Lernziel:** Du kannst den Entwicklungsstand deines Kindes altersangemessen beschreiben und
+normale Entwicklung von einem Befund unterscheiden.
+
+**Merksatz:** *Entwicklung verläuft in Spannen, nicht auf Termine.*
+
+> **Geltungshinweis:** Dieses Level behandelt die Altersspanne **0 bis 6 Jahre** — die Spanne, in
+> der Kita-Berichte und Interaktionsbeobachtungen die größte Rolle spielen. Für Schulkinder und
+> Jugendliche gelten andere Maßstäbe; dazu findest du hier bewusst nichts, statt Halbwissen.
+
+#### Lehrtext
+
+**Warum das hier steht.** Dieses Level ist keine Elternschule. Es steht hier, weil
+Entwicklungswissen an genau drei Stellen im Verfahren über dich entscheidet:
+
+1. **In der Exploration.** „Erzählen Sie mir einen typischen Tag mit Ihrem Kind." Wer sein Kind
+   konkret und altersbezogen beschreiben kann, hinterlässt einen anderen Eindruck als jemand, der
+   allgemein bleibt. Ob deine Erwartungen zum Alter deines Kindes passen, ist ein anerkanntes
+   Kriterium der Erziehungsfähigkeit — und es wird abgefragt.
+2. **In der Interaktionsbeobachtung.** Was in einer Szene überhaupt gelingen kann, hängt am Alter.
+   Ein Zweijähriger, der beim Aufräumen kippt, zeigt Autonomieentwicklung, kein Erziehungsdefizit.
+3. **In deiner Stellungnahme.** Das ist der häufigste angreifbare Punkt in Gutachten überhaupt:
+   **altersnormatives Verhalten, das als Belastungssymptom gedeutet wird.** Wer die Spanne kennt,
+   kann das benennen — sachlich, mit Quelle.
+
+##### Meilenstein und Grenzstein — der wichtigste Unterschied in diesem Level
+
+Fast alle Übersichten, die du im Internet findest, nennen **Meilensteine**: das Alter, in dem ein
+Kind im *Durchschnitt* etwas kann. Freies Laufen zum Beispiel im Mittel mit **13 Monaten**.
+
+Das ist die Zahl, die Eltern nachts wachhält — und sie ist die falsche Zahl. Denn zum Durchschnitt
+gehört die Streuung: Manche Kinder laufen mit 11 Monaten, andere mit 18. Beide sind unauffällig.
+
+Fachlich zählt deshalb nicht der Meilenstein, sondern der **Grenzstein**: das Alter, bis zu dem
+die allermeisten Kinder (meist 90–95 %) eine Fähigkeit erreicht haben. Erst wenn ein Grenzstein
+überschritten wird, ist Abklärung angezeigt — nicht Alarm, sondern Abklärung.
+
+> **Das ist der Merksatz dieses Levels, und er ist wörtlich gemeint:** Entwicklung verläuft in
+> Spannen, nicht auf Termine. Ein Kind, das später läuft oder später spricht, ist kein Fall.
+
+##### Die drei Altersspannen
+
+**0–1 Jahr — Vertrauen aufbauen und erste Bewegungen lernen**
+
+| Bereich | Was sich entwickelt |
+|---|---|
+| Körper | Rasches Wachstum; Kopf halten, Drehen, Sitzen, Krabbeln, Stehen, erste Schritte; Greifen und Festhalten |
+| Kognition | Lernen über Sinne und Bewegung (sensomotorische Phase nach Piaget); Erkennen vertrauter Personen; **Objektpermanenz** — Dinge existieren weiter, auch wenn man sie nicht sieht |
+| Sozial-emotional | Aufbau einer sicheren Bindung an die Bezugspersonen; Lächeln, Freude, **Fremdeln** |
+| Sprache | Lallen ab etwa dem 6. Monat; erste Wörter gegen Ende des ersten Jahres |
+
+**1–3 Jahre — Laufen, Sprechen und den eigenen Willen entwickeln**
+
+| Bereich | Was sich entwickelt |
+|---|---|
+| Körper | Sicheres Gehen, Rennen, Klettern; Malen, Bauen, Essen mit dem Löffel |
+| Kognition | Neugier und Erkundung; Beginn des symbolischen Denkens; einfache Ursache-Wirkung |
+| Sozial-emotional | Entwicklung des eigenen Willens (**Autonomiephase**, umgangssprachlich „Trotzphase"); erste Freundschaften; Nachahmung von Erwachsenen |
+| Sprache | Schneller Wortschatzaufbau; Zwei- bis Dreiwortsätze (etwa ab 18–24 Monaten); einfache Fragen |
+
+**3–6 Jahre — Selbstständig werden, spielen, lernen**
+
+| Bereich | Was sich entwickelt |
+|---|---|
+| Körper | Koordination und Gleichgewicht; Hüpfen, Balancieren, Radfahren; Schneiden, Malen, erste Schreibübungen |
+| Kognition | Fantasie und **Rollenspiel**; Gedächtnis und Konzentration; erstes Mengen- und Zahlenverständnis; zunehmend logisches Denken |
+| Sozial-emotional | Regeln verstehen und einhalten; Empathie und Mitgefühl; zunehmende Selbstständigkeit; Konflikte werden häufiger sprachlich gelöst |
+| Sprache | Vollständige Sätze; sicherere Grammatik; Geschichten erzählen, Fragen beantworten |
+
+**Die Entwicklungsaufgaben quer über alle drei Spannen:** sichere Bindung, Grob- und Feinmotorik,
+Sprache, Denken und Lernen, Selbstständigkeit, soziale Kompetenz und Empathie — und **Spielen als
+wichtigste Form des Lernens**. Diesen letzten Punkt merk dir für Level 6: Wenn in einer
+Interaktionsbeobachtung gespielt wird, ist das keine Beschäftigungstherapie, sondern der Ort, an
+dem bei kleinen Kindern Entwicklung überhaupt sichtbar wird.
+
+##### Zwei Fehldeutungen, die im Verfahren real vorkommen
+
+**„Das Kind fremdelte beim Termin — Hinweis auf eine unsichere Bindung."** Falsch, und zwar
+grundlegend. **Fremdeln ist ein Zeichen von Bindung, nicht ihr Gegenteil.** Ein Kind, das im
+zweiten Lebenshalbjahr bei einer fremden Person weint, sich wegdreht und zur Bezugsperson
+zurückwill, zeigt exakt das, was in diesem Alter zu erwarten ist: Es unterscheidet vertraut von
+fremd. Bemerkenswert wäre das Gegenteil — ein Kleinkind, das wahllos zu jeder fremden Person geht.
+Wenn Fremdeln in einem Gutachten als Defizit gedeutet wird, ist das ein Punkt für deine
+Stellungnahme.
+
+**„Das Kind nässt seit den Terminen wieder ein — Beleg für die Belastung durch den Vater/die
+Mutter."** Vorsicht, in beide Richtungen. Rückschritte unter Belastung sind in diesem Alter normal
+und häufig — das steht schon in Level 8. Sie belegen, dass das Kind belastet ist. Sie belegen
+**nicht**, *wer* oder *was* es belastet. Diese Lücke zwischen Symptom und Ursache ist eine der
+häufigsten unsauberen Stellen in Gutachten. Und sie gilt auch dann, wenn die Deutung dir gerade
+in den Kram passen würde.
+
+##### Alter und Kinderaussagen
+
+Was ein Kind sagt, wiegt im Verfahren schwer. Wie es gedeutet werden darf, hängt am Alter:
+
+- **Zeitangaben sind vor dem Schulalter unzuverlässig.** „Gestern" kann letzte Woche heißen,
+  „immer" kann zweimal heißen. Aus solchen Angaben eine Chronologie zu bauen, trägt nicht.
+- **Im Rollenspielalter (3–6) mischen sich Fantasie und Erinnerung.** Das ist Entwicklung, keine
+  Lüge — und es ist auch kein Grund, dem Kind nicht zu glauben. Es begrenzt nur, was aus einer
+  einzelnen Äußerung abgeleitet werden darf.
+- **Kinder in diesem Alter sind suggestibel.** Wie gefragt wird, beeinflusst, was erinnert wird.
+  Deshalb gibt es für Kinderbefragungen methodische Standards — und deshalb ist es so schädlich,
+  wenn du mit deinem Kind übst. Das führt direkt in Level 8.
+
+##### Der Schutzriegel — bitte einmal ernsthaft lesen
+
+Eine Alterstabelle ist die Stelle, an der eine Schulung wie diese kippen kann. Deshalb drei Sätze,
+die genauso wichtig sind wie die Tabellen darüber:
+
+1. **Das hier ist kein Screening.** Es ist eine Orientierung, damit du Fachsprache einordnen
+   kannst. Es ist kein Instrument, mit dem du dein Kind einstufst.
+2. **Wenn du dir Sorgen machst, gehört das zur Kinderärztin** — zu den U-Untersuchungen, zur
+   Frühförderung, in die Logopädie. Nicht in eine Stellungnahme und nicht in dieses Level.
+3. **Und der unangenehme Punkt:** Benutze den Entwicklungsstand deines Kindes nicht als Waffe
+   gegen den anderen Elternteil. „Bei mir spricht sie mehr" ist kein Argument, es ist ein Befund
+   über zwei Kontexte (siehe Level 10). Elternteile, die Entwicklungsauffälligkeiten des eigenen
+   Kindes im Verfahren instrumentalisieren, fallen damit auf — und es fällt auf sie zurück.
+
+#### Intro-Text (~40 s)
+
+> Gleich siehst du drei Tabellen mit Altersangaben. Bevor du sie liest, eine Warnung: Diese Zahlen
+> sind Durchschnittswerte, keine Termine. Manche Kinder laufen mit elf Monaten, manche mit
+> achtzehn — beide sind völlig unauffällig. Wir schauen uns an, was in welchem Alter erwartbar ist,
+> und vor allem: wie oft im Verfahren aus völlig normaler Entwicklung ein Befund gemacht wird.
+
+#### Medienplan
+
+`ANIMATION` — Ein Maßstab, dessen Teilstriche keine scharfen Linien sind, sondern weiche
+leuchtende Bänder, die einander überlappen. Ein Punkt wandert hindurch und liegt mal früher, mal
+später — und bleibt immer innerhalb des Bandes.
+`BILD` — `{{IMG_L7}}`: derselbe Maßstab als Objekt, dunkle Bühne, Ocker-Licht. Keine lesbare
+Schrift, keine Zahlen.
+
+#### Interaktion — „Normal oder Befund?" (8 Karten)
+
+Jede Karte nennt ein Alter und eine Beobachtung. Drei Antwortmöglichkeiten:
+**A: altersnormativ** · **B: auffällig, gehört abgeklärt** · **C: sagt nichts über die Eltern aus**
+
+Mehrfachauswahl ist möglich und bei einigen Karten auch richtig — A und C schließen sich nicht aus.
+
+| # | Alter | Beobachtung | Richtig | Feedback |
+|---|---|---|---|---|
+| 1 | 2 Jahre | Wirft sich beim Anziehen schreiend auf den Boden | A + C | Autonomiephase. Genau das Alter dafür. Sagt nichts über Erziehung. |
+| 2 | 11 Monate | Weint beim Gutachtertermin, dreht sich weg, will auf den Arm | A + C | **Fremdeln — ein Zeichen von Bindung, nicht ihr Gegenteil.** |
+| 3 | 5 Jahre | Erzählt eine ausgeschmückte, teils widersprüchliche Geschichte über den Umgangstag | A | Rollenspielalter: Fantasie und Erinnerung mischen sich. Keine Lüge — aber auch keine belastbare Chronologie. |
+| 4 | 3 Jahre | Nässt nach dem ersten Termin wieder ein | A + C | Rückschritt unter Belastung, in diesem Alter häufig. Belegt Belastung — nicht deren Ursache. |
+| 5 | 4 Jahre | Spricht ausschließlich in Einwortäußerungen, kaum verständlich | B | Hier ist ein Grenzstein deutlich überschritten. Kein Verfahrensthema — ein Thema für die Kinderärztin. |
+| 6 | 18 Monate | Läuft noch nicht frei | A | Innerhalb der normalen Spanne (etwa 11–18 Monate). Beim nächsten U-Termin ansprechen, mehr nicht. |
+| 7 | 6 Jahre | Kann im Streit mit anderen Kindern nachgeben und sich entschuldigen | A | Altersgemäße soziale Kompetenz. Positiv, aber kein Beleg für die Überlegenheit eines Elternteils. |
+| 8 | 9 Monate | Sucht ein Spielzeug, das unter einer Decke verschwunden ist | A | Objektpermanenz — ein normaler kognitiver Entwicklungsschritt. |
+
+**Auswertung**
+- 8/8 korrekt: **120 XP** · 6–7 korrekt: **80 XP** · darunter: Wiederholung angeboten, dann 50 XP
+- Karten 2 und 4 zählen doppelt in der Rückmeldung: Wer sie richtig hat, bekommt den Hinweis, dass
+  genau diese beiden Fehldeutungen in Gutachten am häufigsten vorkommen.
+- **Abschlussfrage (ohne XP, nur Rückmeldung):** „Dein Kind hat einen Entwicklungsrückstand, den
+  der andere Elternteil nie ernst genommen hat. Bringst du das ins Verfahren ein?" — Beide
+  Antworten führen zu derselben Rückmeldung: Ja, wenn es um die *Versorgung* des Kindes geht
+  (versäumte U-Untersuchungen, abgelehnte Frühförderung) — belegt, datiert, sachlich. Nein, wenn
+  es darum geht, den Entwicklungsstand als Beleg für die bessere Elternschaft zu benutzen. Der
+  Unterschied liegt nicht im Inhalt, sondern in der Absicht — und die ist sichtbar.
+
+**Quellen für dieses Level:** Bayerischer Bildungs- und Erziehungsplan (Basiskompetenzen,
+Resilienz) · BZgA, kindergesundheit-info.de (motorische und sprachliche Entwicklung, Spannweiten)
+· Grenzsteinkonzept nach Michaelis · Schneider/Lindenberger, Entwicklungspsychologie (Standardwerk)
+
+---
+
+### LEVEL 8 — Dein Kind
 
 **Lernziel:** Du kannst dein Kind altersangemessen vorbereiten, ohne es zu instruieren.
 
@@ -826,6 +1088,8 @@ Verbündeter. Das ist hart formuliert, aber es schützt euch beide.
 
 `ANIMATION` — Zwei Sprechblasen nebeneinander: links ein kurzer, ruhiger Satz, der stehen bleibt;
 rechts stapeln sich Sätze übereinander, bis sie kippen und verblassen.
+`BILD` — `{{IMG_L8}}`: Eine kleine Kinderjacke an einem Haken neben einer angelehnten Tür,
+warmes Licht dahinter. Kein Kind im Bild.
 
 #### Interaktion — Rapid-Fire (10 Aussagen, 6 Sekunden je Aussage)
 
@@ -851,7 +1115,7 @@ und wird als offen markiert.
 
 ---
 
-### LEVEL 8 — Wenn deine Lage besonders ist
+### LEVEL 9 — Wenn deine Lage besonders ist
 
 **Lernziel:** Du erkennst die Besonderheit deiner eigenen Konstellation und kannst den passenden
 Hebel benennen.
@@ -904,7 +1168,10 @@ werden.
 
 #### Medienplan
 
-`BILD` — `{{IMG_L8}}`: Sechs abstrakte Wegmarken auf dunklem Grund, jede mit anderer Kontur, eine
+`ANIMATION` — Sechs Wege laufen aus verschiedenen Richtungen auf einen gemeinsamen Punkt zu. Beim
+Überfahren leuchtet jeweils einer auf, die anderen treten zurück — und am Zielpunkt steht bei
+allen dieselbe Zeile: *Kritik am Verfahren und Kooperation im Alltag sind kein Widerspruch.*
+`BILD` — `{{IMG_L9}}`: Sechs abstrakte Wegmarken auf dunklem Grund, jede mit anderer Kontur, eine
 davon hervorgehoben. Keine Menschen, keine lesbare Schrift.
 
 #### Interaktion — Fallauswahl
@@ -937,7 +1204,7 @@ Maximal 120 XP.
 
 ---
 
-### LEVEL 9 — Was die Kita sieht (Bayern)
+### LEVEL 10 — Was die Kita sieht (Bayern)
 
 **Lernziel:** Du kannst einen Kita-Entwicklungsbericht lesen und die Sprache der Basiskompetenzen
 einordnen.
@@ -947,7 +1214,7 @@ einordnen.
 > **Geltungshinweis in der Schulung sichtbar:** Dieses und das folgende Level beziehen sich auf
 > den **Bayerischen Bildungs- und Erziehungsplan (BayBEP)**. In anderen Bundesländern gelten
 > eigene Bildungspläne — die Grundlogik ist ähnlich, die Bezeichnungen unterscheiden sich. Die
-> Datenschutzregeln in Level 10 gelten dagegen bundesweit, weil sie aus dem SGB VIII stammen.
+> Datenschutzregeln in Level 11 gelten dagegen bundesweit, weil sie aus dem SGB VIII stammen.
 
 #### Lehrtext
 
@@ -1027,6 +1294,8 @@ verlangen, dass deine Sicht mit aufgenommen wird.
 `ANIMATION` — Ein Blatt „Entwicklungsbericht" scrollt vorbei; sieben Fachbegriffe leuchten
 nacheinander auf und ziehen jeweils eine Erklärungskarte heraus. Am Schluss teilt sich das Bild in
 zwei Felder: „in der Einrichtung" und „in der Familie" — beide gefüllt, keines durchgestrichen.
+`BILD` — `{{IMG_L10}}`: Eine Wand aus kleinen Kita-Fächern, weiches Tageslicht, daneben ein
+aufgeschlagenes Beobachtungsheft mit unleserlichen Federstrichen.
 
 #### Interaktion — „Bericht entschlüsseln" (Zuordnung, 7 Begriffe)
 
@@ -1058,7 +1327,7 @@ Zuordnungskarten wie in der Tabelle oben. Fehlzuordnungen springen zurück, korr
 
 ---
 
-### LEVEL 10 — Was die Kita weitergeben darf (Bayern)
+### LEVEL 11 — Was die Kita weitergeben darf (Bayern)
 
 **Lernziel:** Du kannst erklären, welche Daten die Kita ohne deine Einwilligung weitergeben darf
 und welche nicht.
@@ -1129,6 +1398,8 @@ eines Kindes in der Einrichtung haben nicht zwingend ihre Ursache zu Hause.
 `ANIMATION` — Ein Aktenordner „Dokumentation über dein Kind". Drei Pfeile gehen ab: einer ins Team
 (grün, offen), einer ans Jugendamt (ocker, mit Bedingung beschriftet), einer zu „Dritte" — dieser
 stößt gegen ein Schloss, das sich erst öffnet, wenn eine Unterschrift-Karte eingesetzt wird.
+`BILD` — `{{IMG_L11}}`: Ein Dokument in einem Türspalt, die Tür halb geschlossen, scharfe
+Lichtkante. Keine lesbare Schrift.
 
 #### Interaktion — Irrtum oder Fakt (6 Flip-Karten)
 
@@ -1149,7 +1420,7 @@ Verweigerung. Das ist dein Recht."
 
 ---
 
-### LEVEL 11 — Das Gedächtnisprotokoll
+### LEVEL 12 — Das Gedächtnisprotokoll
 
 **Lernziel:** Du kannst nach jedem Termin ein verwertbares Gedächtnisprotokoll schreiben.
 
@@ -1200,6 +1471,8 @@ rekonstruieren kann, was dir gesagt wurde.
 
 `ANIMATION` — Ein Protokollformular füllt sich Feld für Feld; zwei Felder („Wer hat geführt",
 „Instruktionen wörtlich") bleiben leer und pulsieren in Ocker, bis sie zuletzt gefüllt werden.
+`BILD` — `{{IMG_L12}}`: Ein aufgeschlagenes Notizbuch, ein Stift, eine Uhr am Bildrand,
+Abendlicht. Keine lesbare Schrift.
 
 #### Interaktion — „Protokoll vervollständigen"
 
@@ -1222,7 +1495,7 @@ weißt, was wirklich gesagt wurde."
 
 ---
 
-### LEVEL 12 — Nach dem Gutachten
+### LEVEL 13 — Nach dem Gutachten
 
 **Lernziel:** Du kannst ein Gutachten mit einem Prüfraster durchgehen und eine sachliche, belegte
 Stellungnahme aufbauen.
@@ -1334,7 +1607,7 @@ Rüge:
 (eigene Erhebung), ocker (Bewertung), weiß (Schlussfolgerung). Dann zieht eine Linie von einer
 Schlussfolgerung nach unten — und landet nicht in petrol, sondern in grau. Text: „Die tragende
 Schlussfolgerung beruht auf keiner eigenen Erhebung."
-`BILD` — `{{IMG_L12}}`: Ein Dokumentenstapel auf einem Tisch, vier Marker daneben,
+`BILD` — `{{IMG_L13}}`: Ein Dokumentenstapel auf einem Tisch, vier Marker daneben,
 Morgenlicht. Keine lesbare Schrift.
 
 #### Interaktion — Vier-Farben-Lektüre
@@ -1362,7 +1635,7 @@ Acht Sätze aus einem **fiktiven** Gutachten müssen einer der vier Kategorien z
 
 ## 5. Abschluss-Check
 
-12 Fragen, gemischte Formate. **Fragen und Antwortreihenfolge werden bei jedem Durchlauf neu
+14 Fragen, gemischte Formate. **Fragen und Antwortreihenfolge werden bei jedem Durchlauf neu
 gemischt.** Auswertung mit Themenhinweisen zu falschen Antworten, Wiederholung jederzeit möglich.
 
 | # | Frage | Richtig | Ablenker | Bei Fehler: Hinweis |
@@ -1376,23 +1649,28 @@ gemischt.** Auswertung mit Themenhinweisen zu falschen Antworten, Wiederholung j
 | 7 | Was ist ein Screening? | Ein Grobfilter mit systematisch vielen falsch positiven Ergebnissen | Ein diagnostisches Verfahren · Ein Nachweis einer Gefährdung | Level 5 |
 | 8 | Was wiegt im Gutachten schwerer? | Ein Befund über beschönigendes Antwortverhalten | Ein erhöhter Belastungswert | Level 5 |
 | 9 | Was ist in einer Interaktionsbeobachtung fachlich am interessantesten? | Wie du eine gekippte Situation wieder auffängst | Dass alles reibungslos läuft · Dass das Kind gehorcht | Level 6 |
-| 10 | Wem gegenüber darf die Kita Beobachtungsdaten ohne Einwilligung austauschen? | Fachkräften derselben Einrichtung | Der sachverständigen Person · Dem Träger · Der Schule | Level 10 |
-| 11 | Wann schreibst du dein Gedächtnisprotokoll? | Am selben Tag | Innerhalb einer Woche · Wenn das Gutachten vorliegt | Level 11 |
-| 12 | Was ist beim Prüfen eines Gutachtens der zentrale Prüfstein? | Ob Alternativerklärungen geprüft und begründet verworfen wurden | Ob dir das Ergebnis gefällt · Ob es lang genug ist | Level 12 |
+| 10 | Wem gegenüber darf die Kita Beobachtungsdaten ohne Einwilligung austauschen? | Fachkräften derselben Einrichtung | Der sachverständigen Person · Dem Träger · Der Schule | Level 11 |
+| 11 | Wann schreibst du dein Gedächtnisprotokoll? | Am selben Tag | Innerhalb einer Woche · Wenn das Gutachten vorliegt | Level 12 |
+| 12 | Was ist beim Prüfen eines Gutachtens der zentrale Prüfstein? | Ob Alternativerklärungen geprüft und begründet verworfen wurden | Ob dir das Ergebnis gefällt · Ob es lang genug ist | Level 13 |
+| 13 | Wovon hängt die Akteneinsicht in die **Jugendamtsakte** ab? | Von deiner Beteiligtenstellung nach § 12 SGB X | Vom Sorgerecht · Vom Wohnort · Von der Zustimmung des anderen Elternteils | Level 2 |
+| 14 | Ein elf Monate altes Kind weint beim Gutachtertermin und will zur Mutter. Was ist das? | Fremdeln — ein normales Zeichen von Bindung | Ein Hinweis auf eine unsichere Bindung · Ein Zeichen von Überforderung der Mutter | Level 7 |
 
-**Bewertung:** 12/12 → „Du bist vorbereitet." · 9–11 → „Sitzt im Kern." · unter 9 → gezielte
+**Bewertung:** 14/14 → „Du bist vorbereitet." · 11–13 → „Sitzt im Kern." · unter 11 → gezielte
 Wiederholung der markierten Level wird angeboten.
 
 ---
 
 ## 6. Zusammenfassung / Merkblatt (druckbar)
 
-Der Abschluss-Screen zeigt alle zwölf Merksätze, den XP-Stand, das Ergebnis des Abschluss-Checks —
-und darunter das **druckbare Merkblatt** (Print-CSS, ohne Navigation, ohne Farbflächen):
+Der Abschluss-Screen zeigt alle dreizehn Merksätze, den XP-Stand, das Ergebnis des
+Abschluss-Checks — und darunter das **druckbare Merkblatt** (Print-CSS, ohne Navigation, ohne
+Farbflächen):
 
-1. **Die zwölf Merksätze** in Reihenfolge.
+1. **Die dreizehn Merksätze** in Reihenfolge.
 2. **Checkliste vor dem ersten Termin** — Beweisbeschluss vorliegend · Name, Qualifikation,
-   Institut notiert · Akteneinsicht erfolgt und durchgearbeitet · anwaltliche Beratung zur
+   Institut notiert · Akteneinsicht **Gerichtsakte** erfolgt und durchgearbeitet · bei laufendem
+   Jugendamtsverfahren: Akteneinsicht nach § 25 SGB X **schriftlich** beantragt, ggf. mit Antrag
+   auf Hinzuziehung nach § 12 Abs. 2 SGB X · anwaltliche Beratung zur
    Mitwirkung · Entbindungserklärungen geprüft, nicht blanko unterschrieben · eigene Chronologie
    erstellt · Unterlagen sortiert und kopiert · Nachweise über wahrgenommene Hilfen · Widersprüche
    zur Akte identifiziert · eigene Fragen notiert · Termin auf gute Tageszeit fürs Kind gelegt ·
@@ -1407,7 +1685,11 @@ und darunter das **druckbare Merkblatt** (Print-CSS, ohne Navigation, ohne Farbf
    · Prüfraster durchgearbeitet · Terminangaben gegen eigene Liste geprüft · Testkapitel gegen die
    Prüfpunkte aus Level 5 geprüft · Stellungnahme mit Seitenverweisen und Belegen · Ergänzungsfragen
    formuliert · Antrag auf mündliche Erläuterung geprüft · alles anwaltlich eingereicht.
-6. **Vorlage Gedächtnisprotokoll** (die Feldliste aus Level 11 zum Abschreiben oder Ausdrucken).
+6. **Vorlage Gedächtnisprotokoll** (die Feldliste aus Level 12 zum Abschreiben oder Ausdrucken).
+7. **Entwicklungsübersicht 0–6 Jahre** (eine halbe Seite, die drei Altersspannen aus Level 7 als
+   kompakte Tabelle) — mit dem Schutzriegel als fett gesetzter Kopfzeile: *Durchschnittswerte,
+   keine Termine. Spannen sind breit. Kein Screening. Bei Sorgen zur Kinderärztin, nicht in die
+   Stellungnahme.*
 
 **Abschluss-Screen-Text (Handbuch-Kapitel 12, geduzt):**
 
@@ -1442,7 +1724,24 @@ eine eigene fachkundige Person. · **Basiskompetenzen** — Im Bayerischen Bildu
 Erziehungsplan die grundlegenden Fähigkeiten, die ein Kind zur Auseinandersetzung mit seiner
 Umwelt befähigen. · **Resilienz** — Widerstandsfähigkeit; zeigt sich erst unter belastenden
 Lebensumständen. · **H-MIM** — Heidelberger Marschak-Interaktionsmethode, ein strukturiertes
-Verfahren zur Beobachtung der Interaktion zwischen Bezugsperson und Kind.
+Verfahren zur Beobachtung der Interaktion zwischen Bezugsperson und Kind. ·
+**Beteiligter (§ 12 SGB X)** — Wer in einem Behördenverfahren Antragsteller oder Adressat ist oder
+hinzugezogen wurde. Nicht dasselbe wie sorgeberechtigt — und die Voraussetzung für Akteneinsicht
+beim Jugendamt. · **Hinzuziehung (§ 12 Abs. 2 SGB X)** — Antrag, mit dem du Beteiligter eines
+Behördenverfahrens wirst. Bei rechtsgestaltender Wirkung für dich muss die Behörde dem Antrag
+stattgeben. · **Akteneinsicht (§ 25 SGB X)** — Anspruch von Beteiligten auf Einsicht in die
+Akten des laufenden Verfahrens, soweit das zur Wahrnehmung ihrer rechtlichen Interessen
+erforderlich ist. · **Auskunftsanspruch (§ 1686 BGB)** — Anspruch gegen den **anderen Elternteil**
+auf Auskunft über die persönlichen Verhältnisse des Kindes, bei berechtigtem Interesse. ·
+**Meilenstein / Grenzstein** — Meilenstein ist das Durchschnittsalter für eine Fähigkeit;
+Grenzstein das Alter, bis zu dem sie die allermeisten Kinder erreicht haben. Erst ein
+überschrittener Grenzstein ist ein Anlass zur Abklärung. · **Objektpermanenz** — Die Einsicht des
+Säuglings, dass Dinge weiter existieren, auch wenn er sie nicht sieht. · **Sensomotorische Phase**
+— Nach Piaget die erste Entwicklungsstufe: Lernen über Sinne und Bewegung. ·
+**Autonomiephase** — Umgangssprachlich „Trotzphase"; die Entwicklung des eigenen Willens etwa
+zwischen 1 und 3 Jahren. · **Fremdeln** — Die Zurückhaltung gegenüber fremden Personen im zweiten
+Lebenshalbjahr. Ein Zeichen gelungener Bindung, **kein** Bindungsdefizit. · **Altersnormativ** —
+Für das Alter erwartbar; kein Befund und kein Symptom.
 
 ---
 
@@ -1460,7 +1759,7 @@ Verfahren zur Beobachtung der Interaktion zwischen Bezugsperson und Kind.
 > Interesse: Sie wird durch Kontrollskalen erkannt und im Gutachten als eingeschränkte Offenheit
 > dokumentiert. Antworte wahrheitsgemäß — das ist auch die wirksamere Strategie.
 >
-> **Zu Level 9 und 10:** Diese beziehen sich auf den Bayerischen Bildungs- und Erziehungsplan. In
+> **Zu Level 10 und 11:** Diese beziehen sich auf den Bayerischen Bildungs- und Erziehungsplan. In
 > anderen Bundesländern gelten eigene Bildungspläne. Die datenschutzrechtlichen Regeln (§§ 64, 65
 > SGB VIII) gelten bundesweit.
 
@@ -1470,42 +1769,131 @@ Verfahren zur Beobachtung der Interaktion zwischen Bezugsperson und Kind.
 
 | Quelle | Verwendung | Stand |
 |---|---|---|
-| GutachtenKompass, *Familienpsychologisches Gutachten — Handbuch zur Vorbereitung für Eltern*, 14 Kapitel | Primärquelle für Level 1–8, 11, 12, Merkblatt, Glossar | vorgelegt August 2026 |
-| *Der Bayerische Bildungs- und Erziehungsplan für Kinder in Tageseinrichtungen bis zur Einschulung*, 7. Auflage 2016, Bayerisches Staatsministerium / Staatsinstitut für Frühpädagogik, Cornelsen | Level 9 und 10 (Basiskompetenzen, Resilienz, Erziehungspartnerschaft, Beobachtung und Datenschutz) | 7. Aufl. 2016 |
-| *Mindestanforderungen an die Qualität von Sachverständigengutachten im Kindschaftsrecht*, 3., überarbeitete Auflage, Arbeitsgruppe Familienrechtliche Gutachten | Level 1 (Qualitätsstandards) und Level 12 (Prüfraster) | veröffentlicht 17.09.2025, online bei der BRAK |
-| FamFG (insb. § 163), SGB VIII (insb. §§ 8a, 22a Abs. 2, 27 ff., 64, 65), GG Art. 6 Abs. 2, BayKiBiG Art. 14 | Rechtsverweise durchgehend | geltendes Recht, August 2026 |
+| GutachtenKompass, *Familienpsychologisches Gutachten — Handbuch zur Vorbereitung für Eltern*, 14 Kapitel | Primärquelle für Level 1–6, 8, 9, 12, 13, Merkblatt, Glossar | vorgelegt August 2026 |
+| *Der Bayerische Bildungs- und Erziehungsplan für Kinder in Tageseinrichtungen bis zur Einschulung*, 7. Auflage 2016, Bayerisches Staatsministerium / Staatsinstitut für Frühpädagogik, Cornelsen | Level 10 und 11 (Basiskompetenzen, Resilienz, Erziehungspartnerschaft, Beobachtung und Datenschutz); Level 7 (Entwicklungsaufgaben) | 7. Aufl. 2016 |
+| *Mindestanforderungen an die Qualität von Sachverständigengutachten im Kindschaftsrecht*, 3., überarbeitete Auflage, Arbeitsgruppe Familienrechtliche Gutachten | Level 1 (Qualitätsstandards) und Level 13 (Prüfraster) | veröffentlicht 17.09.2025, online bei der BRAK |
+| FamFG (insb. § 163), SGB VIII (insb. §§ 8a, 18 Abs. 3, 22a Abs. 2, 27 ff., 64, 65), GG Art. 6 Abs. 2, BayKiBiG Art. 14 | Rechtsverweise durchgehend | geltendes Recht, August 2026 |
+| **SGB X §§ 12, 25** (Beteiligte, Akteneinsicht) und **§ 1686 BGB** (Auskunft über die persönlichen Verhältnisse des Kindes) | Level 2, Block „Zwei Akten, zwei Wege"; Glossar | Wortlaut geprüft August 2026 |
+| **BZgA, kindergesundheit-info.de** (motorische und sprachliche Entwicklung, Spannweiten) sowie das **Grenzsteinkonzept** nach Michaelis | Level 7: Altersangaben und die Unterscheidung Meilenstein/Grenzstein | abgerufen August 2026 |
 | Kindschaftsrechtsmodernisierungsgesetz (KiMoG) | **nicht** eingearbeitet — Referentenentwurf, Stand 11.05.2026, nicht in Kraft | als Ausblick erwähnt |
 | EBI, ESF, EBSK (Hogrefe); H-MIM (Franke/Schulte-Hötzel, TheraplayPRESS) | Level 5 und 6: Benennung, Konstrukt, Bauart, Grenzen. **Keine Wiedergabe von Items, Skalen oder Auswertungsschlüsseln** | Verlagsangaben |
-| Schneider/Lindenberger, *Entwicklungspsychologie*, 8. Aufl. 2018, Beltz | als Standardwerk zitierbar; die vorgelegte Datei enthält nur Titelei und Verzeichnisse, keine Sachkapitel | 8. Aufl. 2018 |
+| Schneider/Lindenberger, *Entwicklungspsychologie*, 8. Aufl. 2018, Beltz | als Standardwerk in Level 7 genannt; die vorgelegte Datei enthält nur Titelei und Verzeichnisse, die Inhalte stammen daher aus der Zulieferung und den geprüften Quellen darüber | 8. Aufl. 2018 |
 
 ---
 
-## 10. Produktionsschätzung
+## 10. Bildplan
+
+### Das Grundprinzip: keine Menschen
+
+Bei diesem Thema kippt jede generierte Person sofort ins Kitschige oder ins Anklagende — weinende
+Kinder, strenge Gutachterinnen, zerstrittene Paare. Die Bildwelt besteht deshalb aus **stillen
+Objektszenen**: ein Gegenstand, eine Lichtquelle, ein dunkler Raum. Das ist ruhiger, altert besser
+und verträgt sich mit einem Produkt, das Eltern in einer Ausnahmesituation kaufen.
+
+Keine Gesichter, keine Hände, keine Gerichtssaal-Klischees — und ausdrücklich **kein
+Richterhammer**, den es im deutschen Verfahren ohnehin nicht gibt.
+
+### Der Anker
+
+Zuerst entsteht **ein** Referenzbild der Kompassrose (2 Kandidaten). Es wird ausgewählt und geht
+dann als `image_references` in **jede** weitere Generation. Nur so bleiben Licht, Material und
+Farbstimmung über 16 Bilder hinweg gleich. Ohne diesen Anker entstehen 16 hübsche Einzelbilder,
+die zusammen nach Stockfoto-Sammelsurium aussehen.
+
+> **Referenzprompt:** a weathered brass compass rose object resting on a dark matte surface,
+> patinated teal-petrol metal with warm ocher inlay, the needle faintly self-illuminated, single
+> soft key light from upper left, deep shadow, volumetric haze, macro editorial still life
+
+### Gemeinsamer Stil-Block
+
+Wird an **jeden** Prompt unverändert angehängt:
+
+> cinematic still life, dark desaturated interior, deep petrol-teal ambient light with a single
+> warm ocher key light, volumetric haze, shallow depth of field, subtle film grain, muted
+> restrained palette, calm and quiet mood, no people, no faces, no hands, no readable text, no
+> letters, no captions, no logos, no watermarks, 16:9
+
+Rot (`#d6392e`) kommt **nur** in den beiden Warnmotiven vor (Level 2 und 5) und dort als einzelner
+kleiner Akzent — sonst verliert es seine Signalwirkung.
+
+### Die 16 Motive
+
+**Jedes Level bekommt ein Bild.** Die Medienpläne in Abschnitt 4 sahen ursprünglich nur für
+sechs Level ein `BILD` vor, den Rest nur als Animation. Für ein verkauftes Produkt ist das
+ungleichmäßig — Level ohne Bild wirken wie unfertige Level. Die Animationen bleiben, jedes Level
+bekommt zusätzlich sein Motiv. Das ist der Grund für 16 statt 9 Bilder.
+
+| Platzhalter | Ort | Motiv | Warum dieses Motiv |
+|---|---|---|---|
+| `{{IMG_HERO}}` | Startscreen | Die Kompassrose frei im dunklen Raum, Nadel leuchtend, Staub im Licht | Markenbild, setzt den Ton |
+| `{{IMG_L1}}` | Level 1 | Ein einzelnes gesiegeltes Dokument auf einem langen leeren Tisch, ein Stuhl, hohes Fensterlicht | Der Beweisbeschluss ist der Startpunkt — der Raum ist leer, nicht bedrohlich |
+| `{{IMG_L2}}` | Level 2 | Formular in Nahaufnahme, die Unterschriftszeile als breite leere Fläche, ein roter Faden daneben | Die Blankoerklärung — die Leere *ist* das Motiv |
+| `{{IMG_L3}}` | Level 3 | Datierte Karteikarten in exakter Reihe auf dunklem Holz, eine noch halb im Schatten | Ordnung als Handlung, nicht als Zustand |
+| `{{IMG_L4}}` | Level 4 | Zwei leere Stühle einander gegenüber, nur einer im Licht | Die Explorationssituation ohne Personen |
+| `{{IMG_L5}}` | Level 5 | Stapel linierter Bögen, dahinter eine weiche Glockenkurve aus Licht, ein roter Punkt weit außen | Normstichprobe und Ausreißer — abstrakt, ohne Testinhalt |
+| `{{IMG_L6}}` | Level 6 | Umgekippter Holzklotzturm auf einem Spielteppich, drei Klötze bereits wieder gestapelt | „Nicht Perfektion, sondern Reparatur" — wörtlich im Bild |
+| `{{IMG_L7}}` | Level 7 | Ein Maßstab, dessen Teilstriche keine Linien sind, sondern weiche leuchtende Bänder | „Spannen, nicht Termine" — das Bild trägt den Schutzriegel |
+| `{{IMG_L8}}` | Level 8 | Eine kleine Kinderjacke an einem Haken neben einer angelehnten Tür, warmes Licht dahinter | Anwesenheit des Kindes ohne Kind — das einzige emotional warme Motiv |
+| `{{IMG_L9}}` | Level 9 | Sechs abstrakte Wegmarken auf dunklem Grund, jede mit anderer Kontur, eine hervorgehoben | Sechs Konstellationen, sechs Hebel |
+| `{{IMG_L10}}` | Level 10 | Wand aus kleinen Kita-Fächern, weiches Tageslicht, ein aufgeschlagenes Beobachtungsheft mit unleserlichen Federstrichen | Der Ort, an dem beobachtet wird |
+| `{{IMG_L11}}` | Level 11 | Ein Dokument in einem Türspalt, die Tür halb geschlossen, Lichtkante | Einwilligung: die Tür öffnest nur du |
+| `{{IMG_L12}}` | Level 12 | Aufgeschlagenes Notizbuch, Stift, eine Uhr am Rand, Abendlicht | Zwanzig Minuten am selben Tag |
+| `{{IMG_L13}}` | Level 13 | Ein Dokumentenstapel auf einem Tisch, vier farbige Marker daneben, Morgenlicht | Die Vier-Farben-Lektüre als Objekt |
+| `{{IMG_END}}` | Abschluss | Morgenlicht durch ein Fenster, die Kompassrose ruhig liegend, Nadel stabil | Ende der Bewegung, kein Triumph |
+| `{{IMG_PRINT}}` | Merkblatt-Kopf | Aufsicht auf gedruckte Blätter, Klemmbrett, Stift, sehr aufgeräumt | Signalisiert „zum Ausdrucken" |
+
+### Ablauf der Produktion
+
+Referenzbild und Auswahl zuerst. Dann **zwei Testmotive** — Level 6 und Level 10, das dunkelste
+und das hellste — gegen den Anker prüfen. Erst wenn beide sitzen, laufen die übrigen 13 als Batch.
+Bricht die Stilkonsistenz, wird der Stil-Block korrigiert, nicht das Einzelbild nachgebessert.
+
+Danach jedes Bild auf **~80 KB** komprimieren (WebP, sonst JPEG q≈78) und als Base64-Data-URI in
+den Platzhalter setzen. 16 Bilder à 80 KB ergeben ~1,3 MB zusätzlich — die Ein-Datei-Auslieferung
+bleibt damit tragfähig.
+
+**Abnahmekriterien je Bild:** kein lesbarer Text · keine Gesichter oder Hände · Farbstimmung deckt
+sich mit dem Anker · wirkt weder anklagend noch rührselig · gibt keine Verfahrensinhalte falsch
+wieder.
+
+### Kostenschätzung
 
 | Posten | Credits |
 |---|---|
 | Teil 1 — dieses Curriculum | **0** |
-| Teil 2 — HTML-Schulung mit CSS/SVG-Animationen, 12 Level, Interaktionen, Merkblatt | **0** |
-| Teil 3 — Referenzbild Kompassrose (`gpt_image_2`, 1k, high, 2 Kandidaten) | ~8 |
-| Teil 3 — 4 Szenenbilder (`{{IMG_L2}}`, `{{IMG_L4}}`, `{{IMG_L6}}`, `{{IMG_L8}}`, `{{IMG_L12}}`) | ~20 |
-| Teil 3 — Abschlussbild | ~4 |
-| **Summe Bilder** | **~32** |
+| Teil 2 — HTML-Schulung mit CSS/SVG-Animationen, 13 Level, Interaktionen, Merkblatt | **0** |
+| Referenzbild Kompassrose (`gpt_image_2`, 1k, `high`, 2 Kandidaten) | ~8 |
+| 16 Motive à ~4 | ~64 |
+| Reserve für Nachzieher und Neuversuche (~5 Bilder) | ~20 |
+| **Summe Bildwelt** | **~92** |
 
-Aktueller Higgsfield-Stand: **0,38 Credits.** Die Schulung entsteht deshalb zuerst vollständig ohne
-Credits; die Bilder kommen zum Schluss dazu, sobald aufgeladen ist. Voiceover (~0,4 Credits je
-Szene) und Seedance-Videos (9 Credits pro Sekunde) sind nicht eingeplant — die Schulung ist
-lesend-interaktiv aufgebaut und funktioniert ohne sie vollständig.
+Optional, nicht eingeplant: 15 Voiceover (~6 Credits) und ein Eröffnungsfilm per Seedance
+(9 Credits pro Sekunde, ~135 für 15 s). Die Schulung ist lesend-interaktiv aufgebaut und
+funktioniert ohne beides vollständig.
+
+> **Zwei Blocker, beide außerhalb des Codes:**
+> 1. **Guthaben** — Higgsfield steht bei **0,38 Credits**. Top-up-Pakete gibt es für diesen Account
+>    nicht, Guthaben nur über ein Abo (PLUS: €49/Monat, 1.000 Credits, monatlich kündbar).
+> 2. **Verbindung** — der Higgsfield-Connector ist derzeit getrennt; die Generierungs-Tools sind
+>    nicht ansprechbar. Neu autorisieren lässt er sich nur über die claude.ai-Connector-
+>    Einstellungen bzw. eine interaktive Sitzung.
+>
+> Teil 1 und Teil 2 sind davon nicht betroffen.
 
 ---
 
 ## 11. Was du vor der Freigabe prüfen solltest
 
-- Decken die zwölf Level ab, was in eurer Beratung tatsächlich vorkommt — fehlt etwas
+- Decken die dreizehn Level ab, was in eurer Beratung tatsächlich vorkommt — fehlt etwas
   Handlungsrelevantes?
-- Stimmen Fakten und Rechtsstand? Besonders: die Paragraphenverweise in Level 2, 10 und 12.
+- Stimmen Fakten und Rechtsstand? Besonders: die Paragraphenverweise in Level 2, 11 und 13.
 - Passt der geduzte Ton? Das Handbuch siezt — hier ist alles auf Du umgeschrieben.
 - Ist die Grenze bei EBI/ESF/EBSK/H-MIM so richtig gezogen (benennen und erklären, keine Items)?
-- Sind die Bayern-Level 9 und 10 im richtigen Umfang, oder soll das Thema größer oder kleiner
+- Sind die Bayern-Level 10 und 11 im richtigen Umfang, oder soll das Thema größer oder kleiner
   werden?
-- Ist die geschätzte Dauer von 60–70 Minuten realistisch für eure Zielgruppe?
-- Geht die Credit-Schätzung von ~32 für die Bilder in Ordnung?
+- Ist die geschätzte Dauer von 70–75 Minuten realistisch für eure Zielgruppe?
+- Geht die Credit-Schätzung von ~92 für die vollständige Bildwelt in Ordnung?
+- **Level 7:** Sitzt der Schutzriegel fest genug? Es ist die einzige Stelle, an der die Schulung
+  in eine Selbstdiagnose kippen könnte. Und: Reicht die Spanne 0–6, oder braucht ihr Schulkinder?
+- **Level 2, Block „Zwei Akten, zwei Wege":** Deckt sich das mit dem, was ihr in der Beratung
+  erlebt — insbesondere die Erfahrung, dass Jugendämter Akteneinsicht faktisch verzögern?

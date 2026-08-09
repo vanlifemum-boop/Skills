@@ -41,6 +41,35 @@ Der Key gehört auf keinen Fall in `.mcp.json` — dieses Repo ist öffentlich.
 
 Key erhältlich unter https://kie.ai → API Keys.
 
+### Netzwerkfreigabe (zwingend)
+
+Der Key allein reicht nicht. Cloud-Sessions laufen standardmäßig mit der
+Zugriffsstufe **Trusted**, die nur eine feste Allowlist erlaubt (Paket-
+Registries, GitHub, Cloud-SDKs). `api.kie.ai` steht dort nicht drauf, und der
+Proxy blockt die Verbindung, bevor sie kie.ai überhaupt erreicht:
+
+```
+curl: (56) CONNECT tunnel failed, response 403
+```
+
+Der MCP-Server meldet das als `HTTP 403: The provider returned an invalid
+response` — das sieht nach einem ungültigen Key aus, ist aber die Netzsperre.
+
+Im selben Umgebungsdialog **Network access** auf **Custom** stellen und unter
+**Allowed domains** ergänzen:
+
+```
+api.kie.ai
+*.kie.ai
+```
+
+Dabei **Also include default list of common package managers** ankreuzen,
+sonst fällt die restliche Allowlist weg.
+
+Falls das Herunterladen fertiger Bilder oder Videos danach immer noch
+scheitert: kie.ai liefert die Dateien über einen eigenen CDN-Host. Den
+Hostnamen aus der zurückgegebenen URL ablesen und ebenfalls eintragen.
+
 ## Prüfen, ob es läuft
 
 ```

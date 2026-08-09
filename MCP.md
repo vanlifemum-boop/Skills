@@ -23,6 +23,10 @@ antippen (einen direkten Link oder eine Einstellungsseite dafür gibt es
 nicht), bei der Umgebung das Zahnrad wählen, im Feld **Environment
 variables** eine Zeile `KIE_AI_API_KEY=dein_key` ergänzen, speichern.
 
+Nicht zu verwechseln mit den Einstellungen der Claude-App (Profil,
+Abrechnung, Konnektoren …) — dort gibt es die Umgebungsauswahl nicht. Sie
+sitzt ausschließlich in der Code-Oberfläche über dem Eingabefeld.
+
 Die Werte werden einmalig beim Session-Start kopiert — laufende Sessions
 behalten ihre alten Werte, die Änderung greift erst in der nächsten Session.
 

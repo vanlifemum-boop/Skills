@@ -76,16 +76,32 @@ Das Quell-Repo enthält zusätzlich Hooks; der Skill braucht sie nicht, sie sind
 
 ## mattpocock/skills
 
-Elf von 35: `writing-for-agents`, `research`, `handoff`, `wait-what`, `diagnosing-bugs`,
+Vierzehn von 35: `writing-for-agents`, `research`, `handoff`, `wait-what`, `diagnosing-bugs`,
 `resolving-merge-conflicts`, `git-guardrails-claude-code`, `to-questionnaire`, `prototype`,
-`tdd`, `wizard`.
+`tdd`, `wizard`, `writing-fragments`, `writing-shape`, `writing-beats`.
 
 `writing-for-agents` ist der nützlichste davon, wenn du weiter eigene Skills baust — er
 beschreibt, wie man Anweisungen für Agenten schreibt.
 
+### Das Schreib-Trio ist Beta
+
+`writing-fragments`, `writing-shape` und `writing-beats` liegen im Quell-Repo unter
+`in-progress/`. Der Autor nennt sie ausdrücklich Beta und behält sich vor, sie ohne
+Vorwarnung zu ändern oder zu löschen. Deshalb sind sie hier **einkopiert** und nicht
+verlinkt — verschwinden sie drüben, bleibt dir dieser Stand erhalten.
+
+Sie greifen ineinander: `writing-fragments` sammelt im Gespräch Rohmaterial in eine
+Markdown-Datei, ohne schon zu gliedern. `writing-shape` formt daraus Absatz für Absatz
+einen Text. `writing-beats` ist die Alternative dazu — es baut denselben Stoff als Abfolge
+von Beats, bei der du nach jedem Beat entscheidest, wohin es geht.
+
+Sie sind auf Englisch und beschreiben einen Arbeitsablauf, keine Sprachregeln — Claude
+schreibt damit trotzdem deutsche Texte. `vermenschlichen` bleibt zuständig für die Frage,
+wie der fertige deutsche Satz klingt.
+
 Weggelassen:
 
-- **`deprecated/` und `in-progress/`** — vom Autor selbst als überholt bzw. unfertig markiert.
+- **`deprecated/`** — vom Autor selbst als überholt markiert. Enthält nur noch eine README.
 - **Skills, die sein eigenes Setup brauchen:** `setup-matt-pocock-skills`, `ask-matt`,
   `migrate-to-shoehorn`, `to-spec`, `to-tickets`, `implement`, `triage` und `wayfinder` setzen
   seinen Issue-Tracker oder seine Werkzeuge voraus.
@@ -99,9 +115,8 @@ Weggelassen:
   gerade arbeitest.
 - **`setup-pre-commit`** — richtet Husky, lint-staged und Prettier ein. Eigenständig und
   brauchbar, sobald ein JS/TS-Projekt dazukommt.
-- **`in-progress/`** (6 Stück) — der Autor nennt sie Beta und behält sich vor, sie ohne
-  Vorwarnung zu ändern oder zu löschen. Interessant darunter das Schreib-Trio
-  `writing-fragments`, `writing-shape` und `writing-beats`. Nachziehen einzeln mit
+- **Der Rest aus `in-progress/`** — `loop-me` (du hast `grill-mich` und `/loop`),
+  `claude-handoff` und `setup-ts-deep-modules`. Einzeln nachziehbar mit
   `npx skills@latest add mattpocock/skills --skill=<name>`.
 
 ---

@@ -20,6 +20,9 @@ Ordner mit einer `SKILL.md` darin — genau so erwartet Claude Code es.
 | [`research`](research/) | eine Frage gegen belastbare Primärquellen untersuchen |
 | [`handoff`](handoff/) | ein Gespräch für einen anderen Agenten zusammenfassen |
 | [`wait-what`](wait-what/) | „das kam nicht an" — Claude formuliert neu |
+| [`writing-fragments`](writing-fragments/) | Rohmaterial für einen Text zusammentragen, noch ohne Gliederung |
+| [`writing-shape`](writing-shape/) | aus dem Rohmaterial Absatz für Absatz einen Text formen |
+| [`writing-beats`](writing-beats/) | denselben Stoff stattdessen als Abfolge von Beats bauen |
 | [`to-questionnaire`](to-questionnaire/) | eine offene Entscheidung als Fragebogen an andere geben |
 | [`prototype`](prototype/) | Wegwerf-Prototyp, um eine Entwurfsfrage zu beantworten |
 | [`wizard`](wizard/) | interaktiver bash-Assistent für Schritte, die nur ein Mensch tun kann |
@@ -29,6 +32,11 @@ Ordner mit einer `SKILL.md` darin — genau so erwartet Claude Code es.
 | [`tdd`](tdd/) | testgetriebene Entwicklung |
 | [`security-audit`](security-audit/) | Codebasis auf ausnutzbare Sicherheitslücken prüfen |
 | [`watch`](watch/) | ein Video ansehen und Fragen dazu beantworten (braucht `yt-dlp` und `ffmpeg`) |
+
+Die drei `writing-*`-Skills gehören zusammen: erst `writing-fragments` (Material sammeln),
+dann entweder `writing-shape` (Absatz für Absatz) oder `writing-beats` (als Beats). Sie sind
+im Quell-Repo als Beta markiert und deshalb hier fest einkopiert. Für die Frage, wie der
+fertige deutsche Satz klingt, bleibt [`vermenschlichen`](vermenschlichen/) zuständig.
 
 ## Marketing (englisch)
 

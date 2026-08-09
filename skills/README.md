@@ -29,6 +29,7 @@ Ordner mit einer `SKILL.md` darin — genau so erwartet Claude Code es.
 | [`diagnosing-bugs`](diagnosing-bugs/) | Fehlersuche bei hartnäckigen Bugs |
 | [`resolving-merge-conflicts`](resolving-merge-conflicts/) | Merge- und Rebase-Konflikte auflösen |
 | [`git-guardrails-claude-code`](git-guardrails-claude-code/) | Hooks, die gefährliche git-Befehle blockieren |
+| [`setup-pre-commit`](setup-pre-commit/) | Husky, lint-staged und Prettier in einem JS/TS-Projekt einrichten |
 | [`tdd`](tdd/) | testgetriebene Entwicklung |
 | [`security-audit`](security-audit/) | Codebasis auf ausnutzbare Sicherheitslücken prüfen |
 | [`watch`](watch/) | ein Video ansehen und Fragen dazu beantworten (braucht `yt-dlp` und `ffmpeg`) |

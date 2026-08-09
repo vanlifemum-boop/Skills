@@ -76,12 +76,17 @@ Das Quell-Repo enthält zusätzlich Hooks; der Skill braucht sie nicht, sie sind
 
 ## mattpocock/skills
 
-Vierzehn von 35: `writing-for-agents`, `research`, `handoff`, `wait-what`, `diagnosing-bugs`,
+Fünfzehn von 35: `writing-for-agents`, `research`, `handoff`, `wait-what`, `diagnosing-bugs`,
 `resolving-merge-conflicts`, `git-guardrails-claude-code`, `to-questionnaire`, `prototype`,
-`tdd`, `wizard`, `writing-fragments`, `writing-shape`, `writing-beats`.
+`tdd`, `wizard`, `writing-fragments`, `writing-shape`, `writing-beats`,
+`setup-pre-commit`.
 
 `writing-for-agents` ist der nützlichste davon, wenn du weiter eigene Skills baust — er
 beschreibt, wie man Anweisungen für Agenten schreibt.
+
+`setup-pre-commit` installiert Husky, lint-staged und Prettier und hängt typecheck und
+test in den Hook. Er erkennt den Paketmanager selbst (npm, pnpm, yarn, bun) und greift nur
+in JS/TS-Projekten — in allem anderen hat er nichts zu tun.
 
 ### Das Schreib-Trio ist Beta
 
@@ -111,13 +116,13 @@ Weggelassen:
 - **`scaffold-exercises`** — fest auf `pnpm ai-hero-cli` verdrahtet, das Kurswerkzeug des Autors.
 - **Reine Software-Architektur:** `codebase-design`, `domain-modeling`,
   `improve-codebase-architecture` und `setup-ts-deep-modules`. Sie hängen an keinem fremden
-  Setup und liessen sich jederzeit nachziehen — sie passen nur nicht zu dem, woran du
+  Setup und ließen sich jederzeit nachziehen — sie passen nur nicht zu dem, woran du
   gerade arbeitest.
-- **`setup-pre-commit`** — richtet Husky, lint-staged und Prettier ein. Eigenständig und
-  brauchbar, sobald ein JS/TS-Projekt dazukommt.
-- **Der Rest aus `in-progress/`** — `loop-me` (du hast `grill-mich` und `/loop`),
-  `claude-handoff` und `setup-ts-deep-modules`. Einzeln nachziehbar mit
-  `npx skills@latest add mattpocock/skills --skill=<name>`.
+- **`loop-me`** — du hast `grill-mich` und den eingebauten `/loop`.
+
+Die drei Zuletztgenannten (`claude-handoff`, `setup-ts-deep-modules`, `loop-me`) liegen
+ebenfalls unter `in-progress/`. Einzeln nachziehbar mit
+`npx skills@latest add mattpocock/skills --skill=<name>`.
 
 ---
 

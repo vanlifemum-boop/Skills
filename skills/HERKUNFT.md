@@ -90,9 +90,19 @@ Weggelassen:
   `migrate-to-shoehorn`, `to-spec`, `to-tickets`, `implement`, `triage` und `wayfinder` setzen
   seinen Issue-Tracker oder seine Werkzeuge voraus.
 - **Dopplungen mit dem, was du schon hast:** `grill-me`, `grilling` und `grill-with-docs`
-  (du hast `grill-mich`), `code-review` (eingebaut), `teach` (du hast `learn`).
-- `codebase-design` und `domain-modeling`, weil sie auf `implement` aufbauen und tief in
-  Software-Architektur gehen.
+  (du hast `grill-mich`), `code-review` (eingebaut), `teach` (du hast `learn`),
+  `claude-handoff` (du hast `handoff`).
+- **`scaffold-exercises`** — fest auf `pnpm ai-hero-cli` verdrahtet, das Kurswerkzeug des Autors.
+- **Reine Software-Architektur:** `codebase-design`, `domain-modeling`,
+  `improve-codebase-architecture` und `setup-ts-deep-modules`. Sie hängen an keinem fremden
+  Setup und liessen sich jederzeit nachziehen — sie passen nur nicht zu dem, woran du
+  gerade arbeitest.
+- **`setup-pre-commit`** — richtet Husky, lint-staged und Prettier ein. Eigenständig und
+  brauchbar, sobald ein JS/TS-Projekt dazukommt.
+- **`in-progress/`** (6 Stück) — der Autor nennt sie Beta und behält sich vor, sie ohne
+  Vorwarnung zu ändern oder zu löschen. Interessant darunter das Schreib-Trio
+  `writing-fragments`, `writing-shape` und `writing-beats`. Nachziehen einzeln mit
+  `npx skills@latest add mattpocock/skills --skill=<name>`.
 
 ---
 

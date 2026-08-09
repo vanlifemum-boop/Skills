@@ -22,6 +22,7 @@ Ordner mit einer `SKILL.md` darin — genau so erwartet Claude Code es.
 | [`wait-what`](wait-what/) | „das kam nicht an" — Claude formuliert neu |
 | [`to-questionnaire`](to-questionnaire/) | eine offene Entscheidung als Fragebogen an andere geben |
 | [`prototype`](prototype/) | Wegwerf-Prototyp, um eine Entwurfsfrage zu beantworten |
+| [`wizard`](wizard/) | interaktiver bash-Assistent für Schritte, die nur ein Mensch tun kann |
 | [`diagnosing-bugs`](diagnosing-bugs/) | Fehlersuche bei hartnäckigen Bugs |
 | [`resolving-merge-conflicts`](resolving-merge-conflicts/) | Merge- und Rebase-Konflikte auflösen |
 | [`git-guardrails-claude-code`](git-guardrails-claude-code/) | Hooks, die gefährliche git-Befehle blockieren |

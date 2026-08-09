@@ -76,9 +76,9 @@ Das Quell-Repo enthält zusätzlich Hooks; der Skill braucht sie nicht, sie sind
 
 ## mattpocock/skills
 
-Zehn von 35: `writing-for-agents`, `research`, `handoff`, `wait-what`, `diagnosing-bugs`,
+Elf von 35: `writing-for-agents`, `research`, `handoff`, `wait-what`, `diagnosing-bugs`,
 `resolving-merge-conflicts`, `git-guardrails-claude-code`, `to-questionnaire`, `prototype`,
-`tdd`.
+`tdd`, `wizard`.
 
 `writing-for-agents` ist der nützlichste davon, wenn du weiter eigene Skills baust — er
 beschreibt, wie man Anweisungen für Agenten schreibt.

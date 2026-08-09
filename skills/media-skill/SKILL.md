@@ -21,6 +21,26 @@ export KIE_API_KEY='...'      # dauerhaft in ~/.zshrc bzw. ~/.bashrc
 Der Schlüssel kommt **immer** aus der Umgebung — nie aus einer Datei, nie in einer Ausgabe,
 nie in einen Commit. Fehlt er, sag das und hör auf; rate nicht herum.
 
+## Freigegebene Domains
+
+Läuft Claude Code in einer Sandbox oder hinter einer Netzwerk-Allowlist, müssen diese Hosts
+erreichbar sein — sonst scheitert jeder Aufruf, bevor er anfängt:
+
+| Domain       | wofür                                        |
+|--------------|----------------------------------------------|
+| `api.kie.ai` | alle API-Aufrufe (`/jobs/createTask`, Status, Guthaben) |
+| `kie.ai`     | Preisliste und Modell-Slugs nachsehen        |
+| `*.kie.ai`   | weitere Subdomains derselben Plattform       |
+
+Im Projekt sind sie in `.claude/settings.json` eingetragen — unter `permissions.allow` als
+`WebFetch(domain:…)` und unter `sandbox.network.allowedDomains`. Für die Umgebung von
+Claude Code on the web gehören dieselben drei Einträge zusätzlich in die Netzwerk-Allowlist
+der Umgebung; `.claude/settings.json` konfiguriert diese nicht mit.
+
+Die **Ergebnis-URLs** liefert kie.ai auf eigenen CDN-Hosts aus, die nicht immer unter
+`kie.ai` liegen. Bricht der Download mit einem Netzwerkfehler ab, obwohl der Auftrag
+fertig ist: den Host aus der Fehlermeldung ablesen und ebenfalls freigeben.
+
 ---
 
 ## Alles hängt an einer Frage: Hat der Nutzer ein Modell genannt?

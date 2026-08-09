@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:kie.ai)",
+      "WebFetch(domain:api.kie.ai)"
+    ]
+  },
+  "sandbox": {
+    "network": {
+      "allowedDomains": [
+        "kie.ai",
+        "*.kie.ai",
+        "api.kie.ai"
+      ]
+    }
+  }
+}

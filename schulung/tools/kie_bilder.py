@@ -17,7 +17,7 @@ Der Lauf ist resumierbar: Jeder abgeschlossene Task landet in state.json und
 wird beim naechsten Start uebersprungen. Ein Abbruch kostet also nichts doppelt.
 
 Aufruf:
-    export KIE_API_KEY=...
+    export KIE_AI_API_KEY=...
     python3 kie_bilder.py ref
     # Kandidat aussuchen, irgendwo oeffentlich abrufbar ablegen, dann:
     python3 kie_bilder.py motive --ref-url https://…/REF_1.png
@@ -86,14 +86,17 @@ def input_block(prompt: str, ref_url: str | None) -> dict:
 
 
 def api_key() -> str:
-    key = os.environ.get("KIE_API_KEY", "").strip()
-    if not key:
-        sys.exit(
-            "KIE_API_KEY ist nicht gesetzt.\n"
-            "  export KIE_API_KEY=dein_schluessel\n"
-            "Den Schluessel nicht ins Repo schreiben und nicht in Chats einfuegen."
-        )
-    return key
+    # KIE_AI_API_KEY ist der Name, den auch der offizielle MCP-Server erwartet.
+    # KIE_API_KEY wird als Zweitname akzeptiert, damit beide Schreibweisen gehen.
+    for name in ("KIE_AI_API_KEY", "KIE_API_KEY"):
+        key = os.environ.get(name, "").strip()
+        if key:
+            return key
+    sys.exit(
+        "Kein API-Schluessel gesetzt.\n"
+        "  export KIE_AI_API_KEY=dein_schluessel\n"
+        "Den Schluessel nicht ins Repo schreiben und nicht in Chats einfuegen."
+    )
 
 
 def request(method: str, url: str, body: dict | None = None, tries: int = 5) -> dict:

@@ -1885,10 +1885,24 @@ Das ist der eigentliche Gewinn des Wechsels: Bei Higgsfield gab es für diesen A
 Einzelkäufe, Guthaben nur über ein Abo für **49 €/Monat**. Über kie.ai kostet die komplette
 Bildwelt **unter 3 $**, ohne Abo.
 
-> **Ein Blocker bleibt, und er liegt nicht am Skript:** Diese Arbeitsumgebung erreicht
-> `api.kie.ai` nicht — das Gateway beantwortet die Verbindung mit **403 (Policy-Denial)**. Die
-> Generierung läuft deshalb entweder lokal (Skript, API-Key als Umgebungsvariable) oder erst,
-> nachdem `api.kie.ai` in der Netzwerkrichtlinie der Umgebung freigegeben wurde.
+> **Ein Blocker bleibt, und er liegt nicht am Skript:** Diese Arbeitsumgebung erreicht kie.ai
+> nicht — das Gateway beantwortet jede Verbindung mit **403 (Policy-Denial)**. Die Generierung
+> läuft deshalb entweder lokal oder erst nach Freigabe in der Netzwerkrichtlinie der Umgebung
+> (Network access → Custom). Freizugeben sind **nicht nur** `api.kie.ai`, sondern auch die Hosts,
+> auf denen die fertigen Bilder liegen — sonst scheitert der Download trotz gelungener
+> Generierung:
+>
+> ```
+> api.kie.ai
+> proxy.kie.ai
+> kieai.redpandaai.co
+> tempfile.aiquickdraw.com
+> *.kie.ai
+> ```
+>
+> Dabei den Haken „Also include default list of common package managers" gesetzt lassen.
+> Dasselbe gilt für den offiziellen MCP-Server (`@felores/kie-ai-mcp-server`) — er läuft im
+> selben Container und nutzt denselben Netzwerkausgang.
 >
 > Teil 1 und Teil 2 sind davon nicht betroffen.
 

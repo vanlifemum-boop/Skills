@@ -16,7 +16,7 @@ Stockfoto-Sammelsurium aussehen.
 ## Ablauf
 
 ```bash
-export KIE_API_KEY=dein_schluessel        # nicht ins Repo, nicht in Chats
+export KIE_AI_API_KEY=dein_schluessel     # nicht ins Repo, nicht in Chats
 cd schulung/tools
 
 # 1) Referenzbild, zwei Kandidaten
@@ -48,6 +48,42 @@ das in die Platzhalter der HTML-Schulung eingesetzt wird.
 - **`--neu`** überschreibt bereits erzeugte Motive.
 - Backoff bei `429` und `5xx`, damit ein Rate-Limit den Lauf nicht abbricht.
 
+## Netzwerk-Allowlist
+
+Wenn das in einer Claude-Cloud-Umgebung laufen soll, reicht `api.kie.ai` **nicht**. kie.ai legt
+die fertigen Bilder auf eigenen Hosts ab, und der Download scheitert sonst, obwohl die
+Generierung geklappt hat. Diese Hosts stecken im offiziellen MCP-Server von kie.ai und sind alle
+nötig:
+
+```
+api.kie.ai
+proxy.kie.ai
+kieai.redpandaai.co
+tempfile.aiquickdraw.com
+*.kie.ai
+```
+
+Bei **Network access → Custom** eintragen und den Haken *„Also include default list of common
+package managers"* **gesetzt lassen** — sonst fehlen PyPI und npm, und Pillow lässt sich nicht
+mehr installieren.
+
+## Alternative: der offizielle MCP-Server
+
+Es gibt einen fertigen MCP-Server, der dieselbe API abdeckt und zusätzlich Video, Musik und
+Sprache kann:
+
+```bash
+claude mcp add kie-ai --env KIE_AI_API_KEY=… -- npx -y @felores/kie-ai-mcp-server
+```
+
+Er bringt unter anderem `nano_banana_image` mit und erwartet Bildreferenzen im Feld `image_urls`
+— dieselbe Konvention, die dieses Skript nutzt. Für einen reinen Bilderlauf tut es das Skript
+hier genauso und ist besser nachvollziehbar (resumierbar, `--dry-run`, feste Prompts in
+`prompts.json`). Der MCP-Server lohnt sich, sobald Voiceover oder Video dazukommen.
+
+**Beide Wege brauchen dieselbe Allowlist.** Der MCP-Server läuft lokal im Container und geht
+über denselben Netzwerkausgang.
+
 ## Die eine Stelle, die klemmen kann
 
 kie.ai bündelt viele Modelle, und die **Feldnamen im `input`-Block unterscheiden sich je
@@ -63,7 +99,9 @@ export KIE_MODEL=google/nano-banana-2     # anderes Modell
 export KIE_REF_FIELD=input_image          # anderer Feldname für die Referenz
 ```
 
-Gegenprüfen unter <https://docs.kie.ai/> beim jeweiligen Modell.
+`image_urls` als Standard ist inzwischen bestätigt — der offizielle MCP-Server nutzt denselben
+Feldnamen. Bekannte Modellkennungen dort: `nano-banana`, `nano-banana-2`, `nano-banana-2-lite`,
+`nano-banana-edit`. Gegenprüfen unter <https://docs.kie.ai/> beim jeweiligen Modell.
 
 ## Kosten
 

@@ -1,0 +1,96 @@
+{
+  "_comment": "Bildplan der Gutachten-Schulung. Der style_block wird an JEDEN Prompt angehaengt. Das Referenzbild entsteht zuerst und geht danach als Bildreferenz in jede weitere Generation.",
+
+  "style_block": "cinematic still life, dark desaturated interior, deep petrol-teal ambient light with a single warm ocher key light, volumetric haze, shallow depth of field, subtle film grain, muted restrained palette, calm and quiet mood, no people, no faces, no hands, no readable text, no letters, no captions, no logos, no watermarks, 16:9",
+
+  "reference": {
+    "id": "REF",
+    "prompt": "a weathered brass compass rose object resting on a dark matte surface, patinated teal-petrol metal with warm ocher inlay, the needle faintly self-illuminated, single soft key light from upper left, deep shadow, volumetric haze, macro editorial still life",
+    "candidates": 2
+  },
+
+  "motifs": [
+    {
+      "id": "IMG_HERO",
+      "level": "Startscreen",
+      "prompt": "the brass compass rose floating in an empty dark room, needle glowing softly, fine dust suspended in the single beam of light, wide empty space around it"
+    },
+    {
+      "id": "IMG_L1",
+      "level": 1,
+      "prompt": "a single wax-sealed document lying on a very long empty wooden table, one empty chair, tall window light falling from high above, vast emptiness around the paper"
+    },
+    {
+      "id": "IMG_L2",
+      "level": 2,
+      "prompt": "extreme close-up of a printed form, the signature line an unnaturally wide empty band across the frame, a single thin red thread lying beside it, warm side light",
+      "accent": "one small red accent only"
+    },
+    {
+      "id": "IMG_L3",
+      "level": 3,
+      "prompt": "index cards laid out in a precise straight row on dark wood, evenly spaced, the last one still half in shadow, raking light along the row"
+    },
+    {
+      "id": "IMG_L4",
+      "level": 4,
+      "prompt": "two empty chairs facing each other in a bare room, only one of them lit by a narrow beam, the other in deep shadow"
+    },
+    {
+      "id": "IMG_L5",
+      "level": 5,
+      "prompt": "a stack of blank ruled paper sheets, behind them a soft luminous bell curve of light rising from the surface, one small red point of light far out on the right tail",
+      "accent": "one small red accent only"
+    },
+    {
+      "id": "IMG_L6",
+      "level": 6,
+      "prompt": "a toppled tower of wooden blocks on a soft play mat, three blocks already carefully restacked beside the fallen ones, warm low light, quiet aftermath"
+    },
+    {
+      "id": "IMG_L7",
+      "level": 7,
+      "prompt": "a measuring scale where the gradations are not sharp lines but wide soft glowing bands that overlap each other, a small point of light resting inside one of the bands"
+    },
+    {
+      "id": "IMG_L8",
+      "level": 8,
+      "prompt": "a small child's coat hanging on a low hook beside a door left ajar, warm light spilling through the gap, no child present"
+    },
+    {
+      "id": "IMG_L9",
+      "level": 9,
+      "prompt": "six abstract trail markers of different silhouettes standing on dark ground, one of them lit brighter than the rest, the others receding into haze"
+    },
+    {
+      "id": "IMG_L10",
+      "level": 10,
+      "prompt": "a wall of small kindergarten cubby compartments in soft daylight, beside it an open observation notebook filled with indistinct illegible pen strokes"
+    },
+    {
+      "id": "IMG_L11",
+      "level": 11,
+      "prompt": "a document held in the narrow gap of a half-closed door, a hard bright edge of light along the door frame, the rest in shadow"
+    },
+    {
+      "id": "IMG_L12",
+      "level": 12,
+      "prompt": "an open notebook and a pen on a desk, a clock at the edge of the frame, late evening light, quiet and unhurried"
+    },
+    {
+      "id": "IMG_L13",
+      "level": 13,
+      "prompt": "a thick stack of documents on a table with four coloured marker pens fanned out beside it, early morning light"
+    },
+    {
+      "id": "IMG_END",
+      "level": "Abschluss",
+      "prompt": "morning light through a window falling onto the brass compass rose lying still and level on a surface, the needle steady, calm and settled"
+    },
+    {
+      "id": "IMG_PRINT",
+      "level": "Merkblatt",
+      "prompt": "top-down view of printed sheets on a clipboard with a pen laid neatly across them, very orderly, even soft light"
+    }
+  ]
+}

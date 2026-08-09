@@ -1796,7 +1796,7 @@ Richterhammer**, den es im deutschen Verfahren ohnehin nicht gibt.
 ### Der Anker
 
 Zuerst entsteht **ein** Referenzbild der Kompassrose (2 Kandidaten). Es wird ausgewählt und geht
-dann als `image_references` in **jede** weitere Generation. Nur so bleiben Licht, Material und
+dann als Bildreferenz in **jede** weitere Generation. Nur so bleiben Licht, Material und
 Farbstimmung über 16 Bilder hinweg gleich. Ohne diesen Anker entstehen 16 hübsche Einzelbilder,
 die zusammen nach Stockfoto-Sammelsurium aussehen.
 
@@ -1856,29 +1856,46 @@ bleibt damit tragfähig.
 sich mit dem Anker · wirkt weder anklagend noch rührselig · gibt keine Verfahrensinhalte falsch
 wieder.
 
-### Kostenschätzung
+### Produktion über kie.ai
 
-| Posten | Credits |
+Die Bilder entstehen über **kie.ai**, nicht über Higgsfield. Das ändert an Motiven, Stil-Block
+und Abnahmekriterien nichts — nur an Werkzeug und Kosten, und beides zum Besseren.
+
+Das Skript dazu liegt im Repo: **`schulung/tools/kie_bilder.py`** mit dem Bildplan als Daten in
+`prompts.json` und einer Anleitung in `tools/README.md`. Es arbeitet in drei Phasen —
+Referenzbild, Motive mit Referenz, Komprimierung auf ~80 KB und Ausgabe als Data-URIs. Der Lauf
+ist resumierbar, ein Abbruch kostet nichts doppelt, und `--dry-run` zeigt die fertigen Prompts,
+ohne etwas zu senden.
+
+| Posten | Kosten |
 |---|---|
 | Teil 1 — dieses Curriculum | **0** |
 | Teil 2 — HTML-Schulung mit CSS/SVG-Animationen, 13 Level, Interaktionen, Merkblatt | **0** |
-| Referenzbild Kompassrose (`gpt_image_2`, 1k, `high`, 2 Kandidaten) | ~8 |
-| 16 Motive à ~4 | ~64 |
-| Reserve für Nachzieher und Neuversuche (~5 Bilder) | ~20 |
-| **Summe Bildwelt** | **~92** |
+| Referenzbild Kompassrose, 2 Kandidaten | ~0,25 $ |
+| 16 Motive | ~1,90 $ |
+| Reserve für Nachzieher und Neuversuche (~5 Bilder) | ~0,60 $ |
+| **Summe Bildwelt** | **~2,80 $** |
 
-Optional, nicht eingeplant: 15 Voiceover (~6 Credits) und ein Eröffnungsfilm per Seedance
-(9 Credits pro Sekunde, ~135 für 15 s). Die Schulung ist lesend-interaktiv aufgebaut und
-funktioniert ohne beides vollständig.
+Grundlage: `google/nano-banana-pro`, rund 0,12 $ je Bild. Mit `google/nano-banana-2` (1K) sind es
+etwa 0,04–0,07 $ je Bild und damit ~1,20 $ für alles. Empfehlung: **Pro für das Referenzbild und
+die zwei Testmotive** — dort fällt die Stilentscheidung —, danach die günstigere Variante, wenn
+der Anker sitzt. Preise im eigenen Dashboard gegenprüfen, sie ändern sich.
 
-> **Zwei Blocker, beide außerhalb des Codes:**
-> 1. **Guthaben** — Higgsfield steht bei **0,38 Credits**. Top-up-Pakete gibt es für diesen Account
->    nicht, Guthaben nur über ein Abo (PLUS: €49/Monat, 1.000 Credits, monatlich kündbar).
-> 2. **Verbindung** — der Higgsfield-Connector ist derzeit getrennt; die Generierungs-Tools sind
->    nicht ansprechbar. Neu autorisieren lässt er sich nur über die claude.ai-Connector-
->    Einstellungen bzw. eine interaktive Sitzung.
+Das ist der eigentliche Gewinn des Wechsels: Bei Higgsfield gab es für diesen Account keine
+Einzelkäufe, Guthaben nur über ein Abo für **49 €/Monat**. Über kie.ai kostet die komplette
+Bildwelt **unter 3 $**, ohne Abo.
+
+> **Ein Blocker bleibt, und er liegt nicht am Skript:** Diese Arbeitsumgebung erreicht
+> `api.kie.ai` nicht — das Gateway beantwortet die Verbindung mit **403 (Policy-Denial)**. Die
+> Generierung läuft deshalb entweder lokal (Skript, API-Key als Umgebungsvariable) oder erst,
+> nachdem `api.kie.ai` in der Netzwerkrichtlinie der Umgebung freigegeben wurde.
 >
 > Teil 1 und Teil 2 sind davon nicht betroffen.
+
+**Später mit demselben Werkzeug möglich:** kie.ai führt auch Sprach- und Videomodelle. Die
+Voiceover (15 Level-Intros) und ein möglicher Eröffnungsfilm laufen über dieselbe
+`createTask`/`recordInfo`-Mechanik — das Skript ist so gebaut, dass nur Modell und `input`-Block
+getauscht werden müssen. Eingeplant ist beides nicht; die Schulung funktioniert ohne vollständig.
 
 ---
 
@@ -1892,7 +1909,7 @@ funktioniert ohne beides vollständig.
 - Sind die Bayern-Level 10 und 11 im richtigen Umfang, oder soll das Thema größer oder kleiner
   werden?
 - Ist die geschätzte Dauer von 70–75 Minuten realistisch für eure Zielgruppe?
-- Geht die Credit-Schätzung von ~92 für die vollständige Bildwelt in Ordnung?
+- Geht die Kostenschätzung von ~2,80 $ über kie.ai für die vollständige Bildwelt in Ordnung?
 - **Level 7:** Sitzt der Schutzriegel fest genug? Es ist die einzige Stelle, an der die Schulung
   in eine Selbstdiagnose kippen könnte. Und: Reicht die Spanne 0–6, oder braucht ihr Schulkinder?
 - **Level 2, Block „Zwei Akten, zwei Wege":** Deckt sich das mit dem, was ihr in der Beratung

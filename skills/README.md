@@ -8,6 +8,11 @@ Ordner mit einer `SKILL.md` darin — genau so erwartet Claude Code es.
 | [`media-skill`](media-skill/) | Bilder, Videos und Sprache über die kie.ai-API — mit Kostenvoranschlag, Ablage unter `~/Medien/` und lokaler Galerie |
 | [`schulung`](schulung/) | interaktive Lerneinheit als eine einzige HTML-Datei (Higgsfield + HyperFrames) |
 | [`grill-me`](grill-me/) | löchert dich mit Fragen, bis ein Plan wirklich steht |
+| [`vermenschlichen`](vermenschlichen/) | Schreibregeln für deutsche Texte, die nicht nach KI klingen — greift bei allem, was auf Deutsch geschrieben wird |
+
+`vermenschlichen` ist übernommen aus [LOGIN-TB/claude-skills](https://github.com/LOGIN-TB/claude-skills)
+(MIT). Herkunft und Abgleich mit der Quelle stehen in
+[`vermenschlichen/HERKUNFT.md`](vermenschlichen/HERKUNFT.md).
 
 ## Installieren
 

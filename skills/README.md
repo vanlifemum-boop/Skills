@@ -14,6 +14,35 @@ Ordner mit einer `SKILL.md` darin — genau so erwartet Claude Code es.
 (MIT). Herkunft und Abgleich mit der Quelle stehen in
 [`vermenschlichen/HERKUNFT.md`](vermenschlichen/HERKUNFT.md).
 
+## Marketing (englisch)
+
+Zwölf Skills aus [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills)
+(MIT). Sie sind auf Englisch — Claude antwortet dir trotzdem auf Deutsch.
+
+| Skill | wofür |
+|---|---|
+| [`product-marketing`](product-marketing/) | **zuerst anwenden** — legt `.agents/product-marketing.md` an, das alle anderen lesen |
+| [`offers`](offers/) | Angebote und Pakete gestalten, Garantien, Bonusaufbau |
+| [`lead-magnets`](lead-magnets/) | Leitfäden und Downloads zur Adressgewinnung |
+| [`cro`](cro/) | Conversion auf Seiten und in Formularen |
+| [`customer-research`](customer-research/) | Kundenforschung führen und auswerten |
+| [`content-strategy`](content-strategy/) | entscheiden, welche Inhalte entstehen sollen |
+| [`emails`](emails/) | Sequenzen, Willkommensstrecken, automatisierte Strecken |
+| [`marketing-psychology`](marketing-psychology/) | psychologische Prinzipien und Denkmodelle |
+| [`launch`](launch/) | Produkt- und Buchveröffentlichungen planen |
+| [`site-architecture`](site-architecture/) | Seitenhierarchie, Navigation, URL-Struktur |
+| [`referrals`](referrals/) | Empfehlungs- und Partnerprogramme |
+| [`community-marketing`](community-marketing/) | Gruppen und Gemeinschaften aufbauen |
+
+**Fang mit `product-marketing` an.** Der Skill legt einmalig `.agents/product-marketing.md`
+im Projekt an — Zielgruppe, Positionierung, Angebot. Alle anderen lesen die Datei, statt dich
+jedes Mal dasselbe zu fragen.
+
+Herkunft, was ich verändert habe und wie du weitere Skills nachziehst:
+[`HERKUNFT-marketingskills.md`](HERKUNFT-marketingskills.md).
+Das Verzeichnis [`../tools/`](../tools/) im Repo-Wurzelverzeichnis gehört dazu — mehrere
+dieser Skills verlinken dorthin.
+
 ## Installieren
 
 ```bash

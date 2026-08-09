@@ -17,9 +17,23 @@ beim Start ab. Der Key steht bewusst **nicht** in `.mcp.json`; dort steht nur
 die Referenz `${KIE_AI_API_KEY}`, die Claude Code beim Start aus der Umgebung
 auflöst.
 
-Den Key hinterlegst du einmalig als Umgebungsvariable deiner Claude-Code-
-Umgebung (claude.ai/code → Environments → Environment variables). Danach ist er
-in jeder Session dieses Repos verfügbar.
+Den Key hinterlegst du einmalig als Umgebungsvariable deiner Cloud-Umgebung:
+auf claude.ai/code das Wolken-Symbol in der Zeile über dem Eingabefeld
+antippen (einen direkten Link oder eine Einstellungsseite dafür gibt es
+nicht), bei der Umgebung das Zahnrad wählen, im Feld **Environment
+variables** eine Zeile `KIE_AI_API_KEY=dein_key` ergänzen, speichern.
+
+Die Werte werden einmalig beim Session-Start kopiert — laufende Sessions
+behalten ihre alten Werte, die Änderung greift erst in der nächsten Session.
+
+**Zur Vorsicht:** Cloud-Umgebungen haben keinen Secrets-Store. Die Doku rät
+deshalb generell davon ab, API-Keys dort abzulegen, weil jeder, der die
+Umgebung nutzt, die Werte lesen kann. Bei einer rein persönlichen Umgebung
+ist das der eigene Account, und eine Alternative gibt es derzeit nicht. Zwei
+Konsequenzen: die Umgebung nicht mit anderen teilen, und beim Teilen von
+Sessions daran denken, dass der Key im Session-Verlauf auftauchen kann.
+
+Der Key gehört auf keinen Fall in `.mcp.json` — dieses Repo ist öffentlich.
 
 Key erhältlich unter https://kie.ai → API Keys.
 

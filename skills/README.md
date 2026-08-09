@@ -112,6 +112,59 @@ python3 skills/media-skill/scripts/kie.py preis --modell gpt-image-2-text-to-ima
 python3 skills/media-skill/scripts/kie.py guthaben
 ```
 
+## Global nutzen
+
+Die Skills sollen überall gelten, nicht nur in diesem Repo. Je nachdem, wo Claude läuft,
+führt ein anderer Weg dahin.
+
+### Lokal — jedes Projekt auf dem eigenen Rechner
+
+Einmal klonen, einmal installieren:
+
+```bash
+git clone https://github.com/vanlifemum-boop/Skills.git ~/Skills
+bash ~/Skills/skills/installieren.sh
+```
+
+Das ist der oben beschriebene Symlink-Weg; `git pull` reicht danach für Aktualisierungen.
+Den `KIE_API_KEY` dazu in `~/.zshrc` bzw. `~/.bashrc` setzen.
+
+### Cloud-Sitzungen — claude.ai/code, Handy, App
+
+Eine Cloud-Sitzung sieht nur die Skills aus dem Repo, das gerade ausgecheckt ist. Der
+`media-skill` taucht dort also nur auf, wenn die Sitzung ausgerechnet in diesem Repo läuft.
+
+Damit er in **jedem** Repo verfügbar ist, gehört dieses Skript in das Feld **Setup-Skript**
+der Cloud-Umgebung. Es läuft bei jedem Sitzungsstart, bevor Claude Code startet:
+
+```bash
+#!/bin/bash
+set -euo pipefail
+[ -d "$HOME/.skills-repo" ] || git clone --depth 1 \
+  https://github.com/vanlifemum-boop/Skills.git "$HOME/.skills-repo"
+bash "$HOME/.skills-repo/skills/installieren.sh"
+```
+
+Die Umgebung wird auf claude.ai/code über das Wolken-Symbol über dem Eingabefeld bearbeitet
+— eine eigene Einstellungsseite dafür gibt es nicht. Dort gehören auch hin:
+
+- **Netzwerkzugriff** auf `Benutzerdefiniert`, mit den Domains aus
+  [`media-skill/SKILL.md`](media-skill/SKILL.md#freigegebene-domains) und gesetztem Häkchen
+  „Auch Standardliste gängiger Paketmanager einschließen".
+- **Umgebungsvariablen**: `KIE_API_KEY=…` als eigene Zeile. Achtung, das Feld ist kein
+  Geheimnis-Speicher — der Wert ist für jeden sichtbar, der die Umgebung nutzt. Eine
+  persönliche Umgebung dafür nehmen, keine geteilte.
+
+Beim Start einer neuen Sitzung die passende Umgebung im Umschalter auswählen; laufende
+Sitzungen behalten ihre alte Konfiguration.
+
+### Normale Chats auf claude.ai
+
+Dort läuft der `media-skill` **nicht**. Er setzt Claude Code voraus: Python-Skripte, Ablage
+unter `~/Medien/`, Schlüssel aus der Umgebung. Für Chats führt der Weg über den
+kie.ai-MCP-Server — Connector-Verkehr läuft über Anthropics Server und braucht die
+Domain-Freigabe gar nicht erst.
+
 ## Einen weiteren Skill hinzufügen
 
 1. Ordner anlegen: `skills/mein-skill/`

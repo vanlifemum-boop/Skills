@@ -1635,7 +1635,7 @@ Acht Sätze aus einem **fiktiven** Gutachten müssen einer der vier Kategorien z
 
 ## 5. Abschluss-Check
 
-14 Fragen, gemischte Formate. **Fragen und Antwortreihenfolge werden bei jedem Durchlauf neu
+15 Fragen, gemischte Formate. **Fragen und Antwortreihenfolge werden bei jedem Durchlauf neu
 gemischt.** Auswertung mit Themenhinweisen zu falschen Antworten, Wiederholung jederzeit möglich.
 
 | # | Frage | Richtig | Ablenker | Bei Fehler: Hinweis |
@@ -1654,8 +1654,9 @@ gemischt.** Auswertung mit Themenhinweisen zu falschen Antworten, Wiederholung j
 | 12 | Was ist beim Prüfen eines Gutachtens der zentrale Prüfstein? | Ob Alternativerklärungen geprüft und begründet verworfen wurden | Ob dir das Ergebnis gefällt · Ob es lang genug ist | Level 13 |
 | 13 | Wovon hängt die Akteneinsicht in die **Jugendamtsakte** ab? | Von deiner Beteiligtenstellung nach § 12 SGB X | Vom Sorgerecht · Vom Wohnort · Von der Zustimmung des anderen Elternteils | Level 2 |
 | 14 | Ein elf Monate altes Kind weint beim Gutachtertermin und will zur Mutter. Was ist das? | Fremdeln — ein normales Zeichen von Bindung | Ein Hinweis auf eine unsichere Bindung · Ein Zeichen von Überforderung der Mutter | Level 7 |
+| 15 | Was passiert, wenn du mit deinem Kind übst, was es sagen soll? | Kinder erzählen zuverlässig, dass sie etwas erzählen sollten | Das Kind wirkt sicherer · Es hat keine Auswirkungen | Level 8 |
 
-**Bewertung:** 14/14 → „Du bist vorbereitet." · 11–13 → „Sitzt im Kern." · unter 11 → gezielte
+**Bewertung:** 15/15 → „Du bist vorbereitet." · 12–14 → „Sitzt im Kern." · unter 12 → gezielte
 Wiederholung der markierten Level wird angeboten.
 
 ---

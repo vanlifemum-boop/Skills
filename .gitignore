@@ -1,1 +1,5 @@
+__pycache__/
+*.pyc
+
+# Generierte Bilder der Schulung (entstehen lokal über schulung/tools/kie_bilder.py)
 schulung/tools/out/

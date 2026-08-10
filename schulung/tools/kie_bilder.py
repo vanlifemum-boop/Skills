@@ -58,13 +58,16 @@ PROMPTS_PATH = HERE / "prompts.json"
 #   google/nano-banana-2     ~0.04-0.07 USD je Bild bei 1K, guenstigste Option
 # ---------------------------------------------------------------------------
 
-MODELL = os.environ.get("KIE_MODEL", "google/nano-banana-pro")
+MODELL = os.environ.get("KIE_MODEL", "nano-banana-pro")
 SEITENVERHAELTNIS = "16:9"
 BILDGROESSE = "1K"
 
 # Feld, unter dem das Modell Bildreferenzen erwartet. Bei einigen Modellen
 # heisst es image_urls, bei anderen input_image oder reference_images.
 REF_FELD = os.environ.get("KIE_REF_FIELD", "image_urls")
+
+# Gegen den 403 des Ablage-CDN beim Herunterladen der fertigen Bilder.
+UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36"
 
 
 def input_block(prompt: str, ref_url: str | None) -> dict:
@@ -172,7 +175,11 @@ def auf_ergebnis_warten(task_id: str, max_sekunden: int = 600) -> list[str]:
 
 def herunterladen(url: str, ziel: Path) -> None:
     ziel.parent.mkdir(parents=True, exist_ok=True)
-    with urllib.request.urlopen(url, timeout=180) as r, open(ziel, "wb") as f:
+    # Der Ablage-CDN weist den Standard-User-Agent von urllib mit 403 ab.
+    # Ein gewoehnlicher Browser-UA genuegt, sonst ist das Bild zwar erzeugt
+    # und bezahlt, aber nicht abholbar.
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=180) as r, open(ziel, "wb") as f:
         f.write(r.read())
 
 
@@ -237,8 +244,11 @@ def phase_ref(args) -> None:
         print(f"  {schluessel}: fertig → {ziel}")
 
     print(
-        "\nJetzt einen Kandidaten aussuchen und Phase 2 damit starten:\n"
-        "  python3 kie_bilder.py motive --ref out/REF_1.png"
+        "\nJetzt einen Kandidaten aussuchen und Phase 2 damit starten.\n"
+        "Die URL steht in out/state.json — kie.ai liefert die Bilder bereits\n"
+        "oeffentlich aus, ein eigener Upload ist nicht noetig:\n"
+        "  python3 kie_bilder.py motive --ref-url \"$(python3 -c \""
+        "import json;print(json.load(open('out/state.json'))['fertig']['REF_1']['url'])\")\""
     )
 
 

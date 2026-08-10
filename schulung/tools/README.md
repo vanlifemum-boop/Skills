@@ -22,8 +22,9 @@ cd schulung/tools
 # 1) Referenzbild, zwei Kandidaten
 python3 kie_bilder.py ref
 
-# 2) Kandidaten ansehen (out/REF_1.png, out/REF_2.png), einen aussuchen
-#    und irgendwo ablegen, wo kie.ai ihn per URL abrufen kann
+# 2) Kandidaten ansehen (out/REF_1.png, out/REF_2.png) und einen aussuchen.
+#    Ein eigener Upload ist NICHT noetig: kie.ai liefert das erzeugte Bild
+#    bereits oeffentlich aus, die URL steht in out/state.json.
 
 # 3) Erst zwei Testmotive gegen den Anker prüfen — das dunkelste und das hellste
 python3 kie_bilder.py motive --ref-url https://…/REF_1.png --nur IMG_L6,IMG_L10
@@ -31,7 +32,8 @@ python3 kie_bilder.py motive --ref-url https://…/REF_1.png --nur IMG_L6,IMG_L1
 # 4) Wenn beide sitzen: der Rest
 python3 kie_bilder.py motive --ref-url https://…/REF_1.png
 
-# 5) Komprimieren und als Data-URIs ausgeben
+# 5) Komprimieren und als Data-URIs ausgeben (braucht Pillow)
+pip install Pillow
 python3 kie_bilder.py pack
 ```
 
@@ -95,9 +97,14 @@ Falls die API einen Parameter ablehnt, sind das die beiden Schrauben — beide p
 variable, ohne das Skript anzufassen:
 
 ```bash
-export KIE_MODEL=google/nano-banana-2     # anderes Modell
+export KIE_MODEL=nano-banana-2            # anderes Modell
 export KIE_REF_FIELD=input_image          # anderer Feldname für die Referenz
 ```
+
+**Das Präfix ist uneinheitlich — nicht raten, sondern probieren.** Am 10.08.2026 gegen die
+API geprüft: `nano-banana-pro`, `nano-banana-2` und `google/nano-banana` werden akzeptiert,
+`google/nano-banana-pro`, `google/nano-banana-2` und `nano-banana` dagegen mit 422 abgelehnt.
+Ein abgelehnter `createTask` kostet nichts, Durchprobieren ist also gefahrlos.
 
 `image_urls` als Standard ist inzwischen bestätigt — der offizielle MCP-Server nutzt denselben
 Feldnamen. Bekannte Modellkennungen dort: `nano-banana`, `nano-banana-2`, `nano-banana-2-lite`,
@@ -109,8 +116,11 @@ Grober Rahmen aus der Recherche — **im eigenen Dashboard gegenprüfen**, Preis
 
 | Modell | ca. je Bild | 23 Generationen (16 Motive + 2 Kandidaten + 5 Nachzieher) |
 |---|---|---|
-| `google/nano-banana-pro` | ~0,12 $ | ~2,80 $ |
-| `google/nano-banana-2` (1K) | ~0,04–0,07 $ | ~1,20 $ |
+| `nano-banana-pro` | 18 Credits (~0,077 $) | ~1,80 $ |
+| `nano-banana-2` (1K) | ~0,04–0,07 $ | ~1,20 $ |
+
+Gemessen am 10.08.2026: ein Pro-Bild kostet 18 Credits, der komplette Lauf
+(2 Kandidaten + 16 Motive + 1 Nachzieher) 372 Credits ≈ 1,60 $.
 
 Empfehlung: **Nano Banana Pro** für das Referenzbild und die zwei Testmotive, weil dort die
 Stilentscheidung fällt. Für den Rest reicht die günstigere Variante, wenn der Anker sitzt.

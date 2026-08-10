@@ -498,9 +498,17 @@ def _endung_je_typ(typ):
 
 
 def _datei_holen(url, ziel):
+    # Die Ergebnis-CDNs von kie.ai liegen hinter Cloudflare und weisen den
+    # Standard-User-Agent von urllib mit HTTP 403 ab. Deshalb hier ein
+    # browserüblicher User-Agent — ohne ihn scheitert jeder Download.
+    bitte = urllib.request.Request(url, headers={
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+                      "(KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+        "Accept": "*/*",
+    })
     for versuch in range(1, VERSUCHE + 1):
         try:
-            with urllib.request.urlopen(url, timeout=300) as antwort, \
+            with urllib.request.urlopen(bitte, timeout=300) as antwort, \
                     open(ziel, "wb") as datei:
                 while True:
                     brocken = antwort.read(65536)

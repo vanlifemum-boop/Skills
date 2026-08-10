@@ -42,6 +42,10 @@ from pathlib import Path
 BASE = "https://api.kie.ai/api/v1/jobs"
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "out"
+# Die Master gehoeren nach out/master/. Die .gitignore versioniert genau diesen
+# Unterordner (plus bilder.json und state.json) und ignoriert out/* sonst —
+# direkt in out/ abgelegte Master waeren nach dem naechsten Klon verloren.
+MASTER = OUT / "master"
 STATE_PATH = OUT / "state.json"
 PROMPTS_PATH = HERE / "prompts.json"
 
@@ -237,7 +241,7 @@ def phase_ref(args) -> None:
         print(f"  {schluessel}: Task wird angelegt …")
         task_id = task_anlegen(prompt, None)
         urls = auf_ergebnis_warten(task_id)
-        ziel = OUT / f"{schluessel}.png"
+        ziel = MASTER / f"{schluessel}.png"
         herunterladen(urls[0], ziel)
         state["fertig"][schluessel] = {"task": task_id, "url": urls[0], "datei": str(ziel)}
         state_sichern(state)
@@ -292,7 +296,7 @@ def phase_motive(args) -> None:
 
         task_id = task_anlegen(prompt, ref_url)
         urls = auf_ergebnis_warten(task_id)
-        ziel = OUT / f"{schluessel}.png"
+        ziel = MASTER / f"{schluessel}.png"
         herunterladen(urls[0], ziel)
         state["fertig"][schluessel] = {"task": task_id, "url": urls[0], "datei": str(ziel)}
         state_sichern(state)
@@ -310,9 +314,16 @@ def phase_pack(args) -> None:
     except ImportError:
         sys.exit("Pillow fehlt:  pip install Pillow")
 
-    dateien = sorted(OUT.glob("IMG_*.png"))
+    # Frisch erzeugte Master sind PNG, die versionierten sind WebP — beide zulassen,
+    # damit pack auch nach einem frischen Klon ohne Neugenerierung laeuft.
+    dateien = sorted(
+        [d for d in MASTER.glob("IMG_*.*") if d.suffix.lower() in (".png", ".webp", ".jpg", ".jpeg")]
+    )
     if not dateien:
-        sys.exit(f"Keine IMG_*.png in {OUT} — erst Phase 2 laufen lassen.")
+        sys.exit(
+            f"Keine Master in {MASTER} — erst Phase 2 laufen lassen.\n"
+            "Liegen aeltere Master direkt in out/? Dann nach out/master/ verschieben."
+        )
 
     ziel_bytes = args.kb * 1024
     ergebnis: dict[str, str] = {}

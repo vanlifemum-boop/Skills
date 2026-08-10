@@ -40,6 +40,25 @@ python3 kie_bilder.py pack
 Ergebnis: **`out/bilder.json`** — ein Objekt `{"IMG_L1": "data:image/webp;base64,…", …}`,
 das in die Platzhalter der HTML-Schulung eingesetzt wird.
 
+## Was wo landet — und was davon ins Repo gehört
+
+```
+out/master/     die Master in voller Auflösung (2 Referenzkandidaten + 16 Motive)  → versioniert
+out/bilder.json die einsetzfertigen Data-URIs                                       → versioniert
+out/state.json  Task-IDs und Quell-URLs, macht den Lauf nachvollziehbar             → versioniert
+out/…           alles Übrige: Zwischenstände, Downloads, Caches                     → ignoriert
+```
+
+Die `.gitignore` im Wurzelverzeichnis setzt das durch (`out/*` plus drei Ausnahmen). **Deshalb
+schreibt das Skript die Master nach `out/master/`, nicht direkt nach `out/`** — dort wären sie
+von der Regel erfasst und nach dem nächsten Klon verloren, obwohl sie Guthaben gekostet haben.
+
+`pack` akzeptiert in `out/master/` sowohl `.png` (frisch erzeugt) als auch `.webp` (die
+versionierte Sicherung). Damit lässt sich `bilder.json` nach einem frischen Klon neu erzeugen,
+ohne ein einziges Bild noch einmal zu bezahlen.
+
+`state.json` enthält Task-IDs und Quell-URLs, **keinen API-Schlüssel**.
+
 ## Was das Skript für dich mitdenkt
 
 - **Resumierbar.** Jeder fertige Task landet in `out/state.json` und wird beim nächsten Start

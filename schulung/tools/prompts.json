@@ -1,19 +1,17 @@
 {
   "_comment": "Bildplan der Gutachten-Schulung. Der style_block wird an JEDEN Prompt angehaengt. Das Referenzbild entsteht zuerst und geht danach als Bildreferenz in jede weitere Generation.",
-
   "style_block": "cinematic still life, dark desaturated interior, deep petrol-teal ambient light with a single warm ocher key light, volumetric haze, shallow depth of field, subtle film grain, muted restrained palette, calm and quiet mood, no people, no faces, no hands, no readable text, no letters, no captions, no logos, no watermarks, 16:9",
-
   "reference": {
     "id": "REF",
     "prompt": "a weathered brass compass rose object resting on a dark matte surface, patinated teal-petrol metal with warm ocher inlay, the needle faintly self-illuminated, single soft key light from upper left, deep shadow, volumetric haze, macro editorial still life",
     "candidates": 2
   },
-
   "motifs": [
     {
       "id": "IMG_HERO",
       "level": "Startscreen",
-      "prompt": "the brass compass rose floating in an empty dark room, needle glowing softly, fine dust suspended in the single beam of light, wide empty space around it"
+      "prompt": "the brass compass rose floating in an empty dark room, needle glowing softly, fine dust suspended in the single beam of light, wide empty space around it",
+      "zusatz": "the same patinated brass compass rose disc as in the reference image"
     },
     {
       "id": "IMG_L1",
@@ -23,8 +21,10 @@
     {
       "id": "IMG_L2",
       "level": 2,
-      "prompt": "extreme close-up of a printed form, the signature line an unnaturally wide empty band across the frame, a single thin red thread lying beside it, warm side light",
-      "accent": "one small red accent only"
+      "prompt": "extreme close-up of a printed form lying flat, the signature line an unnaturally wide empty pale band running across the frame, completely blank and unmarked, a single thin red thread lying loosely beside it, warm side light",
+      "accent": "one small red accent only",
+      "zusatz": "well-kept intact interior, clean undamaged walls, no peeling paint, no rubble, no decay, no abandonment",
+      "nachgezogen": "Abnahme 10.08.2026"
     },
     {
       "id": "IMG_L3",
@@ -34,7 +34,9 @@
     {
       "id": "IMG_L4",
       "level": 4,
-      "prompt": "two empty chairs facing each other in a bare room, only one of them lit by a narrow beam, the other in deep shadow"
+      "prompt": "two simple empty wooden chairs facing each other in a plain quiet consulting room, soft daylight from a side window, a small side table, calm neutral atmosphere, one chair slightly brighter than the other",
+      "zusatz": "well-kept intact interior, clean undamaged walls, no peeling paint, no rubble, no decay, no abandonment",
+      "nachgezogen": "Abnahme 10.08.2026"
     },
     {
       "id": "IMG_L5",
@@ -50,17 +52,23 @@
     {
       "id": "IMG_L7",
       "level": 7,
-      "prompt": "a measuring scale where the gradations are not sharp lines but wide soft glowing bands that overlap each other, a small point of light resting inside one of the bands"
+      "prompt": "a horizontal measuring rule seen close up, its gradations rendered not as sharp engraved lines but as wide soft luminous bands that blur into one another and overlap, a single small point of warm light resting inside one of the bands",
+      "zusatz": "well-kept intact interior, clean undamaged walls, no peeling paint, no rubble, no decay, no abandonment",
+      "nachgezogen": "Abnahme 10.08.2026"
     },
     {
       "id": "IMG_L8",
       "level": 8,
-      "prompt": "a small child's coat hanging on a low hook beside a door left ajar, warm light spilling through the gap, no child present"
+      "prompt": "a small child's coat hanging on a low wooden hook in a tidy well-kept hallway, a door left ajar beside it with warm inviting light spilling through the gap, clean painted walls, homely and safe, no child present",
+      "zusatz": "well-kept intact interior, clean undamaged walls, no peeling paint, no rubble, no decay, no abandonment",
+      "nachgezogen": "Abnahme 10.08.2026"
     },
     {
       "id": "IMG_L9",
       "level": 9,
-      "prompt": "six abstract trail markers of different silhouettes standing on dark ground, one of them lit brighter than the rest, the others receding into haze"
+      "prompt": "six smooth abstract markers of different silhouettes standing upright on a clean polished floor indoors, arranged in a loose row, one of them lit brighter than the rest, the others softly receding, no soil, no ground, no outdoor setting",
+      "zusatz": "well-kept intact interior, clean undamaged walls, no peeling paint, no rubble, no decay, no abandonment",
+      "nachgezogen": "Abnahme 10.08.2026"
     },
     {
       "id": "IMG_L10",
@@ -92,5 +100,6 @@
       "level": "Merkblatt",
       "prompt": "top-down view of printed sheets on a clipboard with a pen laid neatly across them, very orderly, even soft light"
     }
-  ]
+  ],
+  "style_block_innenraum": "well-kept intact interior, clean undamaged walls, no peeling paint, no rubble, no decay, no abandonment"
 }

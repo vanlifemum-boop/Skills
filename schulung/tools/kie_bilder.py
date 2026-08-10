@@ -207,10 +207,15 @@ def plan_laden() -> dict:
     return json.loads(PROMPTS_PATH.read_text(encoding="utf-8"))
 
 
-def vollprompt(plan: dict, prompt: str, akzent: str | None = None) -> str:
+def vollprompt(plan: dict, prompt: str, *extras: str | None) -> str:
+    """Motivprompt + optionale Zusaetze + gemeinsamer Stil-Block.
+
+    Zusaetze kommen aus den Feldern "accent" (sparsamer Farbakzent) und
+    "zusatz" (motivspezifische Korrektur, etwa gegen verfallen wirkende
+    Innenraeume). Der Stil-Block steht immer am Ende.
+    """
     teile = [prompt.strip().rstrip(".")]
-    if akzent:
-        teile.append(akzent)
+    teile += [e.strip().rstrip(".") for e in extras if e]
     teile.append(plan["style_block"])
     return ", ".join(teile)
 
@@ -288,7 +293,7 @@ def phase_motive(args) -> None:
             print(f"  {schluessel}: bereits vorhanden, uebersprungen")
             continue
 
-        prompt = vollprompt(plan, m["prompt"], m.get("accent"))
+        prompt = vollprompt(plan, m["prompt"], m.get("accent"), m.get("zusatz"))
         print(f"  {schluessel} (Level {m['level']})")
         if args.dry_run:
             print(f"      {prompt[:170]}…")

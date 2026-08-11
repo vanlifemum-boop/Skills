@@ -50,7 +50,20 @@ gehören in `FENSTER`, nicht in `timing.json` (das wird überschrieben).
 
 ## Kosten
 
-Zwölf Clips à 8 s, 720p, `bytedance/seedance-1.5-pro`: 28 Credits je Clip,
-336 Credits ≈ 1,45 €. Dazu zwei Testläufe (28,4 Credits) und ein leerer
-Fehlversuch, der trotzdem 14,4 Credits reserviert hat. Abgerechnet wird über
-`skills/media-skill`; der Nachweis je Datei steht in `~/Medien/*/meta.json`.
+Tatsächlich verbraucht: **470,4 Credits ≈ 2,02 €** (588 → 117,6).
+
+| Posten | Credits |
+|---|---|
+| 12 Clips à 8 s, 720p, `bytedance/seedance-1.5-pro` | 336 |
+| Ein Clip neu, weil der Download abgeschnitten ankam | 28 |
+| Zwei Testläufe (grok 6 s, seedance 4 s) | 28,4 |
+| Leerer Auftrag beim Schema-Suchen — angenommen, nie fertig geworden, trotzdem berechnet | 14,4 |
+| Rest: Preisunterschiede und Reservierungen | 63,6 |
+
+Die 14,4 Credits für den leeren Auftrag waren ein Fehler: `createTask` nimmt
+auch unvollständige Eingaben an und reserviert sofort. Merksatz steht in
+`skills/media-skill/references/modelle.md`.
+
+Der Nachweis je Datei steht in `~/Medien/2026-08-11-gutachten-troll/meta.json`,
+seit diesem Lauf mit `task_id` — damit ein misslungener Download nachgeholt
+werden kann, statt neu bezahlt zu werden.

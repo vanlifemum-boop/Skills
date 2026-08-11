@@ -515,7 +515,8 @@ def zielordner(projekt, wurzel=None):
     return ordner
 
 
-def herunterladen_und_protokollieren(urls, ordner, modell, prompt, typ, credits):
+def herunterladen_und_protokollieren(urls, ordner, modell, prompt, typ, credits,
+                                     task_id=None):
     """Lädt die Ergebnisse herunter UND schreibt meta.json im selben Schritt fort.
 
     Die Ergebnis-URLs von kie.ai verfallen nach 24 Stunden — deshalb sofort.
@@ -551,6 +552,9 @@ def herunterladen_und_protokollieren(urls, ordner, modell, prompt, typ, credits)
         eintrag = {
             "zeit": datetime.now().replace(microsecond=0).isoformat(),
             "datei": name,
+            # Ohne die Auftragsnummer lässt sich ein fehlgeschlagener Download
+            # nicht nachholen — dann muss neu erzeugt und neu bezahlt werden.
+            "task_id": task_id,
             "typ": typ,
             "modell": modell,
             "prompt": prompt,
@@ -593,11 +597,21 @@ def _datei_holen(url, ziel):
         try:
             with urllib.request.urlopen(bitte, timeout=300) as antwort, \
                     open(ziel, "wb") as datei:
+                erwartet = antwort.headers.get("Content-Length")
+                geschrieben = 0
                 while True:
                     brocken = antwort.read(65536)
                     if not brocken:
                         break
                     datei.write(brocken)
+                    geschrieben += len(brocken)
+            # Ein abgebrochener Download hinterlässt eine Datei, die sich öffnen
+            # lässt und trotzdem unbrauchbar ist (kein moov-Atom). Lieber hier
+            # auffallen als drei Stunden später im Schnitt.
+            if erwartet is not None and geschrieben != int(erwartet):
+                ziel.unlink(missing_ok=True)
+                raise urllib.error.URLError(
+                    f"unvollständig: {geschrieben} von {erwartet} Bytes")
             return
         except (urllib.error.HTTPError, urllib.error.URLError) as fehler:
             if versuch < VERSUCHE:
@@ -632,7 +646,8 @@ def befehl_holen(args):
     ordner = zielordner(args.projekt, args.wurzel)
     herunterladen_und_protokollieren(
         urls, ordner, modell, args.prompt or "(nachgeladen)",
-        TYP_JE_ART.get(art, "video"), daten.get("creditsConsumed") or 0)
+        TYP_JE_ART.get(art, "video"), daten.get("creditsConsumed") or 0,
+        task_id=args.task_id)
     return 0
 
 
@@ -689,7 +704,8 @@ def befehl_erzeugen(args):
 
     credits = verbraucht if verbraucht is not None else geschaetzt
     ordner = zielordner(args.projekt, args.wurzel)
-    herunterladen_und_protokollieren(urls, ordner, args.modell, args.prompt, typ, credits)
+    herunterladen_und_protokollieren(urls, ordner, args.modell, args.prompt, typ,
+                                     credits, task_id=task_id)
 
     print(f"Abgerechnet: {zahl(float(credits))} Credits · "
           f"{euro(float(credits) * EUR_JE_CREDIT)} €")

@@ -84,21 +84,18 @@ def umbrechen(text, breite):
     """Weicher Umbruch auf höchstens zwei Zeilen — mehr verdeckt zu viel Bild."""
     if len(text) <= breite:
         return text
+    # Auf zwei möglichst gleich lange Zeilen brechen. Ein gieriger Umbruch ergäbe
+    # „… WIRKLICHKEIT NICHT" / „REIN," — technisch richtig, optisch schief.
     woerter = text.split()
-    zeilen, aktuell = [], ""
-    for wort in woerter:
-        probe = f"{aktuell} {wort}".strip()
-        if len(probe) > breite and aktuell:
-            zeilen.append(aktuell)
-            aktuell = wort
-        else:
-            aktuell = probe
-    zeilen.append(aktuell)
-    if len(zeilen) > 2:
-        # Gleichmäßig auf zwei Zeilen umlegen, statt drei kurze zu stapeln.
-        mitte = len(woerter) // 2
-        zeilen = [" ".join(woerter[:mitte]), " ".join(woerter[mitte:])]
-    return "\\N".join(zeilen)
+    bester, beste_kosten = None, None
+    for schnitt in range(1, len(woerter)):
+        oben = " ".join(woerter[:schnitt])
+        unten = " ".join(woerter[schnitt:])
+        zu_lang = max(len(oben), len(unten)) > breite
+        kosten = abs(len(oben) - len(unten)) + (1000 if zu_lang else 0)
+        if beste_kosten is None or kosten < beste_kosten:
+            bester, beste_kosten = (oben, unten), kosten
+    return "\\N".join(bester) if bester else text
 
 
 def einfaerben(text):

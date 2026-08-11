@@ -107,6 +107,11 @@ def ausschnitt_bild(schluessel, feld, format_name, breite, hoehe):
                            int(poster.height * POSTER_FAKTOR)), Image.LANCZOS)
     w, h = gross.size
 
+    # Das Poster trägt oben seinen Titel und unten den Claim. Beides gehört nicht
+    # in eine Kamerafahrt — sonst steht angeschnittene Plakatschrift im Bild,
+    # während unten schon der Songtext läuft. Also nur der Bereich dazwischen.
+    band_oben, band_unten = 0.205 * h, 0.885 * h
+
     x, y, bw, bh = feld
     mx, my = (x + bw / 2) * w, (y + bh / 2) * h
     kw, kh = bw * w, bh * h
@@ -118,10 +123,12 @@ def ausschnitt_bild(schluessel, feld, format_name, breite, hoehe):
     else:
         kh = kw / verhaeltnis
 
-    # In den Bildrand zurückschieben, statt schwarze Ränder zu erzeugen.
-    kw, kh = min(kw, w), min(kh, h)
+    # In Bild und Band zurückschieben, statt schwarze Ränder zu erzeugen.
+    kh = min(kh, band_unten - band_oben)
+    kw = min(kh * verhaeltnis, w)
+    kh = kw / verhaeltnis
     links = min(max(mx - kw / 2, 0), w - kw)
-    oben = min(max(my - kh / 2, 0), h - kh)
+    oben = min(max(my - kh / 2, band_oben), band_unten - kh)
 
     bild = gross.crop((int(links), int(oben), int(links + kw), int(oben + kh)))
     # Reichlich Reserve für die Fahrt: zoompan zoomt in das Bild hinein.
@@ -184,7 +191,7 @@ def teil_bauen(teil, nummer, format_name, breite, hoehe, ausschnitte):
 # Stufe 3 — zusammensetzen
 # ---------------------------------------------------------------------------
 
-def zusammensetzen(teile, format_name, ziel, dauer):
+def zusammensetzen(teile, format_name, ziel, dauer, crf, hoechstrate):
     liste = BAU / "teile" / format_name / "liste.txt"
     liste.write_text("".join(f"file '{p.resolve()}'\n" for p in teile), encoding="utf-8")
 
@@ -199,7 +206,8 @@ def zusammensetzen(teile, format_name, ziel, dauer):
           "-i", str(audio),
           "-vf", f"ass='{ass}':fontsdir='{schriften}',{blende}",
           "-map", "0:v", "-map", "1:a",
-          "-c:v", "libx264", "-preset", "medium", "-crf", "20",
+          "-c:v", "libx264", "-preset", "medium", "-crf", str(crf),
+          "-maxrate", f"{hoechstrate}k", "-bufsize", f"{hoechstrate * 2}k",
           "-pix_fmt", "yuv420p", "-r", str(FPS),
           "-c:a", "aac", "-b:a", "192k",
           "-t", f"{dauer:.3f}", "-movflags", "+faststart", str(ziel)], still=False)
@@ -211,6 +219,10 @@ def main():
     p.add_argument("--format", choices=sorted(FORMATE), default="16-9")
     p.add_argument("--nur-teile", help="nur diese Teilenummern bauen, z. B. 0,1,2")
     p.add_argument("--ziel")
+    p.add_argument("--crf", type=int, default=23,
+                   help="Bildqualität: kleiner ist besser und größer (Standard 23)")
+    p.add_argument("--hoechstrate", type=int, default=2600,
+                   help="Spitzenbitrate in kbit/s — deckelt die Dateigröße")
     args = p.parse_args()
 
     FF = ffmpeg()
@@ -245,7 +257,8 @@ def main():
 
     ziel = Path(args.ziel) if args.ziel else HIER / f"gutachten-troll_{args.format}.mp4"
     print(f"Stufe 3: zusammensetzen → {ziel.name}")
-    zusammensetzen(gebaut, args.format, ziel, plan["dauer"])
+    zusammensetzen(gebaut, args.format, ziel, plan["dauer"], args.crf,
+                   args.hoechstrate)
     print(f"fertig: {ziel} ({ziel.stat().st_size / 1e6:.1f} MB)")
     return 0
 

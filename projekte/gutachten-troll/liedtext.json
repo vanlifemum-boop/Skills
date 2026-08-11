@@ -1,0 +1,844 @@
+{
+  "titel": "Der Gutachten-Troll",
+  "zeilen_gesamt": 95,
+  "abschnitte": [
+    {
+      "name": "intro",
+      "art": "gesprochen",
+      "zeilen": [
+        {
+          "text": "Tief im Wald, ganz wunderbar,",
+          "effekt": false,
+          "silben": 7,
+          "nr": 0,
+          "abschnitt": "intro",
+          "art": "gesprochen"
+        },
+        {
+          "text": "sitzt ein Troll seit vielen Jahr'n.",
+          "effekt": false,
+          "silben": 7,
+          "nr": 1,
+          "abschnitt": "intro",
+          "art": "gesprochen"
+        },
+        {
+          "text": "Vor ihm Akten, Blatt für Blatt,",
+          "effekt": false,
+          "silben": 7,
+          "nr": 2,
+          "abschnitt": "intro",
+          "art": "gesprochen"
+        },
+        {
+          "text": "weil er für alles Antworten hat.",
+          "effekt": false,
+          "silben": 9,
+          "nr": 3,
+          "abschnitt": "intro",
+          "art": "gesprochen"
+        },
+        {
+          "text": "Er nimmt den Stift, schaut wichtig drein:",
+          "effekt": false,
+          "silben": 8,
+          "nr": 4,
+          "abschnitt": "intro",
+          "art": "gesprochen"
+        },
+        {
+          "text": "„So, das muss wissenschaftlich sein!\"",
+          "effekt": false,
+          "silben": 8,
+          "nr": 5,
+          "abschnitt": "intro",
+          "art": "gesprochen"
+        },
+        {
+          "text": "Er blättert kurz und sagt dann prompt:",
+          "effekt": false,
+          "silben": 8,
+          "nr": 6,
+          "abschnitt": "intro",
+          "art": "gesprochen"
+        },
+        {
+          "text": "„Ich weiß schon, was dabei herauskommt!\"",
+          "effekt": false,
+          "silben": 9,
+          "nr": 7,
+          "abschnitt": "intro",
+          "art": "gesprochen"
+        }
+      ]
+    },
+    {
+      "name": "strophe-1",
+      "art": "gesungen",
+      "zeilen": [
+        {
+          "text": "Der Gutachten-Troll sitzt am Tisch,",
+          "effekt": false,
+          "silben": 8,
+          "nr": 8,
+          "abschnitt": "strophe-1",
+          "art": "gesungen"
+        },
+        {
+          "text": "sein Aktenberg wird täglich frisch.",
+          "effekt": false,
+          "silben": 8,
+          "nr": 9,
+          "abschnitt": "strophe-1",
+          "art": "gesungen"
+        },
+        {
+          "text": "Kaffee links und Stempel rechts,",
+          "effekt": false,
+          "silben": 7,
+          "nr": 10,
+          "abschnitt": "strophe-1",
+          "art": "gesungen"
+        },
+        {
+          "text": "Objektivität – natürlich echt!",
+          "effekt": false,
+          "silben": 9,
+          "nr": 11,
+          "abschnitt": "strophe-1",
+          "art": "gesungen"
+        },
+        {
+          "text": "Er liest die Akte, Seite drei,",
+          "effekt": false,
+          "silben": 6,
+          "nr": 12,
+          "abschnitt": "strophe-1",
+          "art": "gesungen"
+        },
+        {
+          "text": "macht einen Haken: „Bin dabei!\"",
+          "effekt": false,
+          "silben": 8,
+          "nr": 13,
+          "abschnitt": "strophe-1",
+          "art": "gesungen"
+        },
+        {
+          "text": "Seite vier – er nickt ganz schlau:",
+          "effekt": false,
+          "silben": 6,
+          "nr": 14,
+          "abschnitt": "strophe-1",
+          "art": "gesungen"
+        },
+        {
+          "text": "„Interessant … ich weiß es genau!\"",
+          "effekt": false,
+          "silben": 9,
+          "nr": 15,
+          "abschnitt": "strophe-1",
+          "art": "gesungen"
+        }
+      ]
+    },
+    {
+      "name": "pre-chorus-1",
+      "art": "gesungen",
+      "zeilen": [
+        {
+          "text": "Mama sagt: „Ich liebe mein Kind!\"",
+          "effekt": false,
+          "silben": 7,
+          "nr": 16,
+          "abschnitt": "pre-chorus-1",
+          "art": "gesungen"
+        },
+        {
+          "text": "Der Troll schreibt: „Emotionen sind!\"",
+          "effekt": false,
+          "silben": 8,
+          "nr": 17,
+          "abschnitt": "pre-chorus-1",
+          "art": "gesungen"
+        },
+        {
+          "text": "Papa sagt: „Ich will Kontakt!\"",
+          "effekt": false,
+          "silben": 7,
+          "nr": 18,
+          "abschnitt": "pre-chorus-1",
+          "art": "gesungen"
+        },
+        {
+          "text": "Der Troll notiert: „Zu viel gepackt!\"",
+          "effekt": false,
+          "silben": 8,
+          "nr": 19,
+          "abschnitt": "pre-chorus-1",
+          "art": "gesungen"
+        },
+        {
+          "text": "Das Kind sagt: „Ich will nach Haus!\"",
+          "effekt": false,
+          "silben": 7,
+          "nr": 20,
+          "abschnitt": "pre-chorus-1",
+          "art": "gesungen"
+        },
+        {
+          "text": "Der Troll sagt: „Das werte ich jetzt aus!\"",
+          "effekt": false,
+          "silben": 8,
+          "nr": 21,
+          "abschnitt": "pre-chorus-1",
+          "art": "gesungen"
+        }
+      ]
+    },
+    {
+      "name": "refrain-1",
+      "art": "gesungen",
+      "zeilen": [
+        {
+          "text": "Oh, Gutachten-Troll, Gutachten-Troll,",
+          "effekt": false,
+          "silben": 9,
+          "nr": 22,
+          "abschnitt": "refrain-1",
+          "art": "gesungen"
+        },
+        {
+          "text": "dein Aktenordner ist randvoll!",
+          "effekt": false,
+          "silben": 8,
+          "nr": 23,
+          "abschnitt": "refrain-1",
+          "art": "gesungen"
+        },
+        {
+          "text": "Du hast die Antwort längst parat,",
+          "effekt": false,
+          "silben": 8,
+          "nr": 24,
+          "abschnitt": "refrain-1",
+          "art": "gesungen"
+        },
+        {
+          "text": "bevor überhaupt jemand gefragt!",
+          "effekt": false,
+          "silben": 9,
+          "nr": 25,
+          "abschnitt": "refrain-1",
+          "art": "gesungen"
+        },
+        {
+          "text": "Oh, Gutachten-Troll, was machst du bloß?",
+          "effekt": false,
+          "silben": 9,
+          "nr": 26,
+          "abschnitt": "refrain-1",
+          "art": "gesungen"
+        },
+        {
+          "text": "Dein Stempel wird schon riesengroß!",
+          "effekt": false,
+          "silben": 8,
+          "nr": 27,
+          "abschnitt": "refrain-1",
+          "art": "gesungen"
+        },
+        {
+          "text": "Und passt die Wirklichkeit nicht rein,",
+          "effekt": false,
+          "silben": 8,
+          "nr": 28,
+          "abschnitt": "refrain-1",
+          "art": "gesungen"
+        },
+        {
+          "text": "muss sie eben kleiner sein!",
+          "effekt": false,
+          "silben": 7,
+          "nr": 29,
+          "abschnitt": "refrain-1",
+          "art": "gesungen"
+        }
+      ]
+    },
+    {
+      "name": "strophe-2",
+      "art": "gesungen",
+      "zeilen": [
+        {
+          "text": "Der Troll besitzt ein Zauberbuch,",
+          "effekt": false,
+          "silben": 8,
+          "nr": 30,
+          "abschnitt": "strophe-2",
+          "art": "gesungen"
+        },
+        {
+          "text": "mit jedem Satz kommt ein Versuch.",
+          "effekt": false,
+          "silben": 8,
+          "nr": 31,
+          "abschnitt": "strophe-2",
+          "art": "gesungen"
+        },
+        {
+          "text": "„Auffällig\", „möglicherweise\",",
+          "effekt": false,
+          "silben": 7,
+          "nr": 32,
+          "abschnitt": "strophe-2",
+          "art": "gesungen"
+        },
+        {
+          "text": "„könnte sein\" – auf diese Weise.",
+          "effekt": false,
+          "silben": 5,
+          "nr": 33,
+          "abschnitt": "strophe-2",
+          "art": "gesungen"
+        },
+        {
+          "text": "„Nicht ausreichend reflektiert!\"",
+          "effekt": false,
+          "silben": 7,
+          "nr": 34,
+          "abschnitt": "strophe-2",
+          "art": "gesungen"
+        },
+        {
+          "text": "„Ambivalent!\" – ganz kompliziert!",
+          "effekt": false,
+          "silben": 8,
+          "nr": 35,
+          "abschnitt": "strophe-2",
+          "art": "gesungen"
+        },
+        {
+          "text": "„Bindung eventuell gestört!\"",
+          "effekt": false,
+          "silben": 7,
+          "nr": 36,
+          "abschnitt": "strophe-2",
+          "art": "gesungen"
+        },
+        {
+          "text": "Obwohl er kaum ein Wort gehört.",
+          "effekt": false,
+          "silben": 8,
+          "nr": 37,
+          "abschnitt": "strophe-2",
+          "art": "gesungen"
+        }
+      ]
+    },
+    {
+      "name": "pre-chorus-2",
+      "art": "gesungen",
+      "zeilen": [
+        {
+          "text": "Dann wird nochmal ganz tief geschaut,",
+          "effekt": false,
+          "silben": 8,
+          "nr": 38,
+          "abschnitt": "pre-chorus-2",
+          "art": "gesungen"
+        },
+        {
+          "text": "die Stirn gerunzelt, streng gebaut.",
+          "effekt": false,
+          "silben": 8,
+          "nr": 39,
+          "abschnitt": "pre-chorus-2",
+          "art": "gesungen"
+        },
+        {
+          "text": "Er schreibt drei Seiten – voller Mut:",
+          "effekt": false,
+          "silben": 8,
+          "nr": 40,
+          "abschnitt": "pre-chorus-2",
+          "art": "gesungen"
+        },
+        {
+          "text": "„Das Gesamtbild ist … insgesamt gut.\"",
+          "effekt": false,
+          "silben": 9,
+          "nr": 41,
+          "abschnitt": "pre-chorus-2",
+          "art": "gesungen"
+        }
+      ]
+    },
+    {
+      "name": "refrain-2",
+      "art": "gesungen",
+      "zeilen": [
+        {
+          "text": "Oh, Gutachten-Troll, Gutachten-Troll,",
+          "effekt": false,
+          "silben": 9,
+          "nr": 42,
+          "abschnitt": "refrain-2",
+          "art": "gesungen"
+        },
+        {
+          "text": "dein Aktenordner ist randvoll!",
+          "effekt": false,
+          "silben": 8,
+          "nr": 43,
+          "abschnitt": "refrain-2",
+          "art": "gesungen"
+        },
+        {
+          "text": "Du misst Vertrauen, Liebe, Mut,",
+          "effekt": false,
+          "silben": 6,
+          "nr": 44,
+          "abschnitt": "refrain-2",
+          "art": "gesungen"
+        },
+        {
+          "text": "mit Lineal und Stempel – tut das gut?",
+          "effekt": false,
+          "silben": 9,
+          "nr": 45,
+          "abschnitt": "refrain-2",
+          "art": "gesungen"
+        },
+        {
+          "text": "Oh, Gutachten-Troll, komm gib es zu,",
+          "effekt": false,
+          "silben": 9,
+          "nr": 46,
+          "abschnitt": "refrain-2",
+          "art": "gesungen"
+        },
+        {
+          "text": "manchmal wär Zuhören schon klüger als du!",
+          "effekt": false,
+          "silben": 11,
+          "nr": 47,
+          "abschnitt": "refrain-2",
+          "art": "gesungen"
+        },
+        {
+          "text": "Denn Papier kann vieles schreiben,",
+          "effekt": false,
+          "silben": 8,
+          "nr": 48,
+          "abschnitt": "refrain-2",
+          "art": "gesungen"
+        },
+        {
+          "text": "aber Menschen lassen sich nicht beschreiben!",
+          "effekt": false,
+          "silben": 11,
+          "nr": 49,
+          "abschnitt": "refrain-2",
+          "art": "gesungen"
+        }
+      ]
+    },
+    {
+      "name": "bridge",
+      "art": "gesprochen",
+      "zeilen": [
+        {
+          "text": "„Objektiv!\"",
+          "effekt": false,
+          "silben": 3,
+          "nr": 50,
+          "abschnitt": "bridge",
+          "art": "gesprochen"
+        },
+        {
+          "text": "„Neutral!\"",
+          "effekt": false,
+          "silben": 2,
+          "nr": 51,
+          "abschnitt": "bridge",
+          "art": "gesprochen"
+        },
+        {
+          "text": "„Wissenschaftlich!\"",
+          "effekt": false,
+          "silben": 4,
+          "nr": 52,
+          "abschnitt": "bridge",
+          "art": "gesprochen"
+        },
+        {
+          "text": "„…steht jedenfalls hier.\"",
+          "effekt": false,
+          "silben": 5,
+          "nr": 53,
+          "abschnitt": "bridge",
+          "art": "gesprochen"
+        }
+      ]
+    },
+    {
+      "name": "break",
+      "art": "effekt",
+      "zeilen": [
+        {
+          "text": "Stempel!",
+          "effekt": false,
+          "silben": 2,
+          "nr": 54,
+          "abschnitt": "break",
+          "art": "effekt"
+        },
+        {
+          "text": "KRAWUMM!",
+          "effekt": true,
+          "silben": 2,
+          "nr": 55,
+          "abschnitt": "break",
+          "art": "effekt"
+        },
+        {
+          "text": "Aktenordner!",
+          "effekt": false,
+          "silben": 4,
+          "nr": 56,
+          "abschnitt": "break",
+          "art": "effekt"
+        },
+        {
+          "text": "KLAPP!",
+          "effekt": true,
+          "silben": 1,
+          "nr": 57,
+          "abschnitt": "break",
+          "art": "effekt"
+        },
+        {
+          "text": "Noch ein Fragebogen!",
+          "effekt": false,
+          "silben": 6,
+          "nr": 58,
+          "abschnitt": "break",
+          "art": "effekt"
+        },
+        {
+          "text": "RASCHEL!",
+          "effekt": true,
+          "silben": 2,
+          "nr": 59,
+          "abschnitt": "break",
+          "art": "effekt"
+        },
+        {
+          "text": "Und der Troll ruft:",
+          "effekt": false,
+          "silben": 4,
+          "nr": 60,
+          "abschnitt": "break",
+          "art": "effekt"
+        },
+        {
+          "text": "„Das ergibt sich aus dem Gesamtbild!\"",
+          "effekt": false,
+          "silben": 9,
+          "nr": 61,
+          "abschnitt": "break",
+          "art": "effekt"
+        }
+      ]
+    },
+    {
+      "name": "strophe-3",
+      "art": "gesungen",
+      "zeilen": [
+        {
+          "text": "Der Troll schaut stolz auf sein Papier,",
+          "effekt": false,
+          "silben": 8,
+          "nr": 62,
+          "abschnitt": "strophe-3",
+          "art": "gesungen"
+        },
+        {
+          "text": "„Hundert Seiten – das reicht mir hier!\"",
+          "effekt": false,
+          "silben": 8,
+          "nr": 63,
+          "abschnitt": "strophe-3",
+          "art": "gesungen"
+        },
+        {
+          "text": "Doch irgendwo am Seitenrand",
+          "effekt": false,
+          "silben": 8,
+          "nr": 64,
+          "abschnitt": "strophe-3",
+          "art": "gesungen"
+        },
+        {
+          "text": "steht klein: „Vermutung, unbekannt.\"",
+          "effekt": false,
+          "silben": 8,
+          "nr": 65,
+          "abschnitt": "strophe-3",
+          "art": "gesungen"
+        },
+        {
+          "text": "Er hebt den Stempel voller Kraft,",
+          "effekt": false,
+          "silben": 8,
+          "nr": 66,
+          "abschnitt": "strophe-3",
+          "art": "gesungen"
+        },
+        {
+          "text": "weil ein Stempel Eindruck schafft.",
+          "effekt": false,
+          "silben": 7,
+          "nr": 67,
+          "abschnitt": "strophe-3",
+          "art": "gesungen"
+        },
+        {
+          "text": "Doch plötzlich fragt ein kleiner Wicht:",
+          "effekt": false,
+          "silben": 8,
+          "nr": 68,
+          "abschnitt": "strophe-3",
+          "art": "gesungen"
+        },
+        {
+          "text": "„Woher weißt du das eigentlich?\"",
+          "effekt": false,
+          "silben": 8,
+          "nr": 69,
+          "abschnitt": "strophe-3",
+          "art": "gesungen"
+        }
+      ]
+    },
+    {
+      "name": "strophe-3-bruch",
+      "art": "gesprochen",
+      "zeilen": [
+        {
+          "text": "Der Troll wird still …",
+          "effekt": false,
+          "silben": 4,
+          "nr": 70,
+          "abschnitt": "strophe-3-bruch",
+          "art": "gesprochen"
+        },
+        {
+          "text": "Der Troll wird blass …",
+          "effekt": false,
+          "silben": 4,
+          "nr": 71,
+          "abschnitt": "strophe-3-bruch",
+          "art": "gesprochen"
+        },
+        {
+          "text": "Er sucht ganz hektisch nach etwas.",
+          "effekt": false,
+          "silben": 8,
+          "nr": 72,
+          "abschnitt": "strophe-3-bruch",
+          "art": "gesprochen"
+        },
+        {
+          "text": "Dann sagt er:",
+          "effekt": false,
+          "silben": 3,
+          "nr": 73,
+          "abschnitt": "strophe-3-bruch",
+          "art": "gesprochen"
+        },
+        {
+          "text": "„Das … äh … ergibt sich.\"",
+          "effekt": false,
+          "silben": 5,
+          "nr": 74,
+          "abschnitt": "strophe-3-bruch",
+          "art": "gesprochen"
+        }
+      ]
+    },
+    {
+      "name": "refrain-3",
+      "art": "gesungen",
+      "zeilen": [
+        {
+          "text": "Oh, Gutachten-Troll, Gutachten-Troll,",
+          "effekt": false,
+          "silben": 9,
+          "nr": 75,
+          "abschnitt": "refrain-3",
+          "art": "gesungen"
+        },
+        {
+          "text": "dein Aktenordner ist randvoll!",
+          "effekt": false,
+          "silben": 8,
+          "nr": 76,
+          "abschnitt": "refrain-3",
+          "art": "gesungen"
+        },
+        {
+          "text": "Doch Wahrheit passt in keine Norm,",
+          "effekt": false,
+          "silben": 7,
+          "nr": 77,
+          "abschnitt": "refrain-3",
+          "art": "gesungen"
+        },
+        {
+          "text": "und Menschen sind kein Formular!",
+          "effekt": false,
+          "silben": 8,
+          "nr": 78,
+          "abschnitt": "refrain-3",
+          "art": "gesungen"
+        },
+        {
+          "text": "Oh, Gutachten-Troll, hör einmal zu:",
+          "effekt": false,
+          "silben": 9,
+          "nr": 79,
+          "abschnitt": "refrain-3",
+          "art": "gesungen"
+        },
+        {
+          "text": "Hinter jeder Akte leben Menschen dazu!",
+          "effekt": false,
+          "silben": 11,
+          "nr": 80,
+          "abschnitt": "refrain-3",
+          "art": "gesungen"
+        },
+        {
+          "text": "Ein Gutachten ist kein Zauberstab,",
+          "effekt": false,
+          "silben": 9,
+          "nr": 81,
+          "abschnitt": "refrain-3",
+          "art": "gesungen"
+        },
+        {
+          "text": "und ein Stempel macht noch keine Wahrheit wahr!",
+          "effekt": false,
+          "silben": 10,
+          "nr": 82,
+          "abschnitt": "refrain-3",
+          "art": "gesungen"
+        },
+        {
+          "text": "Oh, Gutachten-Troll, jetzt wird's bekannt:",
+          "effekt": false,
+          "silben": 9,
+          "nr": 83,
+          "abschnitt": "refrain-3",
+          "art": "gesungen"
+        },
+        {
+          "text": "Die Wirklichkeit hat keinen Aktenrand!",
+          "effekt": false,
+          "silben": 10,
+          "nr": 84,
+          "abschnitt": "refrain-3",
+          "art": "gesungen"
+        },
+        {
+          "text": "Du kannst noch hundert Seiten schreiben –",
+          "effekt": false,
+          "silben": 9,
+          "nr": 85,
+          "abschnitt": "refrain-3",
+          "art": "gesungen"
+        },
+        {
+          "text": "Menschen lassen sich nicht in Kästchen treiben!",
+          "effekt": false,
+          "silben": 11,
+          "nr": 86,
+          "abschnitt": "refrain-3",
+          "art": "gesungen"
+        }
+      ]
+    },
+    {
+      "name": "outro",
+      "art": "gesprochen",
+      "zeilen": [
+        {
+          "text": "Der Troll klappt seinen Ordner zu.",
+          "effekt": false,
+          "silben": 8,
+          "nr": 87,
+          "abschnitt": "outro",
+          "art": "gesprochen"
+        },
+        {
+          "text": "Er schaut auf den Stempel.",
+          "effekt": false,
+          "silben": 6,
+          "nr": 88,
+          "abschnitt": "outro",
+          "art": "gesprochen"
+        },
+        {
+          "text": "Dann auf die Akte.",
+          "effekt": false,
+          "silben": 4,
+          "nr": 89,
+          "abschnitt": "outro",
+          "art": "gesprochen"
+        },
+        {
+          "text": "Dann auf den Kaffee.",
+          "effekt": false,
+          "silben": 5,
+          "nr": 90,
+          "abschnitt": "outro",
+          "art": "gesprochen"
+        },
+        {
+          "text": "Und sagt:",
+          "effekt": false,
+          "silben": 2,
+          "nr": 91,
+          "abschnitt": "outro",
+          "art": "gesprochen"
+        },
+        {
+          "text": "„Morgen mache ich ein Gutachten darüber,",
+          "effekt": false,
+          "silben": 11,
+          "nr": 92,
+          "abschnitt": "outro",
+          "art": "gesprochen"
+        },
+        {
+          "text": "warum ich heute so viele Gutachten gemacht habe.\"",
+          "effekt": false,
+          "silben": 12,
+          "nr": 93,
+          "abschnitt": "outro",
+          "art": "gesprochen"
+        },
+        {
+          "text": "„Hihihihi …\"",
+          "effekt": false,
+          "silben": 4,
+          "nr": 94,
+          "abschnitt": "outro",
+          "art": "gesprochen"
+        }
+      ]
+    }
+  ]
+}

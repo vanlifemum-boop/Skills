@@ -31,6 +31,9 @@ erreichbar sein — sonst scheitert jeder Aufruf, bevor er anfängt:
 | `api.kie.ai` | alle API-Aufrufe (`/jobs/createTask`, Status, Guthaben) |
 | `kie.ai`     | Preisliste und Modell-Slugs nachsehen        |
 | `*.kie.ai`   | weitere Subdomains derselben Plattform       |
+| `docs.kie.ai` | Eingabeschema je Modell — die einzige verlässliche Quelle |
+| `kieai.redpandaai.co` | Datei-Upload (`hochladen`, `--bild`)  |
+| `tempfile.aiquickdraw.com` | Ergebnis-Downloads             |
 
 Im Projekt sind sie in `.claude/settings.json` eingetragen — unter `permissions.allow` als
 `WebFetch(domain:…)` und unter `sandbox.network.allowedDomains`. Für die Umgebung von
@@ -106,6 +109,8 @@ Nie eine Zahl aus dem Kopf oder aus `references/modelle.md` abschreiben — imme
 | Schritt | Befehl |
 |---|---|
 | Guthaben prüfen | `python3 scripts/kie.py guthaben` |
+| Bild hochladen (gibt URL aus) | `python3 scripts/kie.py hochladen bild.jpg` |
+| Ergebnis nachladen | `python3 scripts/kie.py holen TASKID --projekt name` |
 | Preistabelle ansehen | `python3 scripts/kie.py modelle` |
 | Kosten ausrechnen | `python3 scripts/kie.py preis --modell M …` |
 | Erzeugen + laden + protokollieren | `python3 scripts/kie.py erzeugen --modell M --prompt "…" --projekt name` |
@@ -132,11 +137,14 @@ python3 scripts/kie.py erzeugen \
   --prompt "Ein Keramikbecher auf hellem Leinen, weiches Seitenlicht" \
   --projekt produktfotos
 
-# Ein Video — Prompt auf ENGLISCH, sonst wird er ignoriert
+# Ein Video aus einem Bild — Prompt auf ENGLISCH, sonst wird er ignoriert.
+# --bild lädt die lokale Datei hoch und setzt das Bildfeld, das DIESES Modell
+# erwartet (input_urls, image_urls, image_url — siehe references/modelle.md).
 python3 scripts/kie.py erzeugen \
-  --modell grok-imagine/image-to-video --aufloesung 720p --sekunden 8 \
+  --modell bytedance/seedance-1.5-pro --aufloesung 720p --sekunden 8 \
+  --bild ~/Bilder/becher.jpg --extra '{"aspect_ratio": "16:9"}' \
   --prompt "Slow push-in on the mug, warm morning light" \
-  --projekt werbeclip --extra '{"image_url": "https://…"}'
+  --projekt werbeclip
 
 # Sprache — EIN Text, Absätze durch Leerzeilen
 python3 scripts/kie.py erzeugen \

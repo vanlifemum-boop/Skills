@@ -1,0 +1,265 @@
+{
+ "dauer": 365.72,
+ "ausschnitte": {
+  "gesicht": [
+   0.28,
+   0.17,
+   0.46,
+   0.36
+  ],
+  "stempelhand": [
+   0.22,
+   0.38,
+   0.34,
+   0.3
+  ],
+  "ergebnis": [
+   0.28,
+   0.6,
+   0.48,
+   0.24
+  ],
+  "ordner": [
+   0.0,
+   0.24,
+   0.26,
+   0.42
+  ],
+  "tasse": [
+   0.02,
+   0.6,
+   0.28,
+   0.26
+  ],
+  "minitroll": [
+   0.72,
+   0.34,
+   0.28,
+   0.28
+  ],
+  "schild": [
+   0.7,
+   0.2,
+   0.3,
+   0.22
+  ],
+  "schreibtisch": [
+   0.18,
+   0.52,
+   0.64,
+   0.4
+  ]
+ },
+ "teile": [
+  {
+   "von": 0.0,
+   "bis": 4.0,
+   "typ": "grafik",
+   "quelle": "titel"
+  },
+  {
+   "von": 4.0,
+   "bis": 20.4,
+   "typ": "clip",
+   "quelle": "intro-wald"
+  },
+  {
+   "von": 20.4,
+   "bis": 34.4,
+   "typ": "clip",
+   "quelle": "aktenberg"
+  },
+  {
+   "von": 34.4,
+   "bis": 40.4,
+   "typ": "poster",
+   "quelle": "tasse"
+  },
+  {
+   "von": 40.4,
+   "bis": 44.5,
+   "typ": "clip",
+   "quelle": "aktenberg"
+  },
+  {
+   "von": 44.5,
+   "bis": 56.5,
+   "typ": "clip",
+   "quelle": "akten-schilder"
+  },
+  {
+   "von": 56.5,
+   "bis": 70.5,
+   "typ": "clip",
+   "quelle": "stempel-schlag"
+  },
+  {
+   "von": 70.5,
+   "bis": 76.5,
+   "typ": "poster",
+   "quelle": "ergebnis"
+  },
+  {
+   "von": 76.5,
+   "bis": 86.5,
+   "typ": "clip",
+   "quelle": "stempel-schlag"
+  },
+  {
+   "von": 86.5,
+   "bis": 100.5,
+   "typ": "clip",
+   "quelle": "zauberbuch"
+  },
+  {
+   "von": 100.5,
+   "bis": 106.5,
+   "typ": "poster",
+   "quelle": "gesicht"
+  },
+  {
+   "von": 106.5,
+   "bis": 110.5,
+   "typ": "clip",
+   "quelle": "zauberbuch"
+  },
+  {
+   "von": 110.5,
+   "bis": 116.5,
+   "typ": "poster",
+   "quelle": "gesicht"
+  },
+  {
+   "von": 116.5,
+   "bis": 119.5,
+   "typ": "poster",
+   "quelle": "gesicht"
+  },
+  {
+   "von": 119.5,
+   "bis": 133.5,
+   "typ": "clip",
+   "quelle": "lineal-messen"
+  },
+  {
+   "von": 133.5,
+   "bis": 139.5,
+   "typ": "poster",
+   "quelle": "stempelhand"
+  },
+  {
+   "von": 139.5,
+   "bis": 150.5,
+   "typ": "clip",
+   "quelle": "lineal-messen"
+  },
+  {
+   "von": 150.5,
+   "bis": 164.5,
+   "typ": "clip",
+   "quelle": "wissenschaftlich-neutral"
+  },
+  {
+   "von": 164.5,
+   "bis": 171.5,
+   "typ": "poster",
+   "quelle": "schild"
+  },
+  {
+   "von": 171.5,
+   "bis": 187.5,
+   "typ": "clip",
+   "quelle": "papierexplosion"
+  },
+  {
+   "von": 187.5,
+   "bis": 203.5,
+   "typ": "clip",
+   "quelle": "kleiner-wicht"
+  },
+  {
+   "von": 203.5,
+   "bis": 217.5,
+   "typ": "clip",
+   "quelle": "troll-wird-blass"
+  },
+  {
+   "von": 217.5,
+   "bis": 223.0,
+   "typ": "poster",
+   "quelle": "gesicht"
+  },
+  {
+   "von": 223.0,
+   "bis": 237.0,
+   "typ": "clip",
+   "quelle": "finale-weit"
+  },
+  {
+   "von": 237.0,
+   "bis": 243.0,
+   "typ": "grafik",
+   "quelle": "akte-wahrheit"
+  },
+  {
+   "von": 243.0,
+   "bis": 257.0,
+   "typ": "clip",
+   "quelle": "finale-weit"
+  },
+  {
+   "von": 257.0,
+   "bis": 263.0,
+   "typ": "poster",
+   "quelle": "ergebnis"
+  },
+  {
+   "von": 263.0,
+   "bis": 277.0,
+   "typ": "clip",
+   "quelle": "finale-weit"
+  },
+  {
+   "von": 277.0,
+   "bis": 279.5,
+   "typ": "poster",
+   "quelle": "schreibtisch"
+  },
+  {
+   "von": 279.5,
+   "bis": 293.5,
+   "typ": "clip",
+   "quelle": "outro-ordner-zu"
+  },
+  {
+   "von": 293.5,
+   "bis": 299.5,
+   "typ": "poster",
+   "quelle": "tasse"
+  },
+  {
+   "von": 299.5,
+   "bis": 313.5,
+   "typ": "clip",
+   "quelle": "outro-ordner-zu"
+  },
+  {
+   "von": 313.5,
+   "bis": 319.5,
+   "typ": "poster",
+   "quelle": "ergebnis"
+  },
+  {
+   "von": 319.5,
+   "bis": 332.0,
+   "typ": "clip",
+   "quelle": "outro-ordner-zu"
+  },
+  {
+   "von": 332.0,
+   "bis": 365.72,
+   "typ": "grafik",
+   "quelle": "schluss"
+  }
+ ]
+}

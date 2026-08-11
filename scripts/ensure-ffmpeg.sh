@@ -4,7 +4,8 @@
 # Order of preference:
 #   1. system ffmpeg on PATH
 #   2. previously downloaded static binary at /tmp/ffmpeg-bin/ffmpeg
-#   3. download a static build for this OS/arch into /tmp/ffmpeg-bin/ffmpeg
+#   3. the static build shipped by the imageio-ffmpeg wheel (PyPI)
+#   4. download a static build for this OS/arch into /tmp/ffmpeg-bin/ffmpeg
 set -euo pipefail
 
 BIN_DIR="/tmp/ffmpeg-bin"
@@ -24,6 +25,21 @@ if [ -x "$BIN" ]; then
   log "using cached static ffmpeg: $BIN"
   echo "$BIN"
   exit 0
+fi
+
+# 3. imageio-ffmpeg from PyPI. Sandboxes commonly allow pypi.org while blocking the
+#    download hosts used below, so this is the more reliable route there. Its wheel
+#    carries a full static build (libass, libfreetype, zoompan, xfade, libx264).
+if command -v python3 >/dev/null 2>&1; then
+  IIO_FF="$(python3 -c 'import imageio_ffmpeg; print(imageio_ffmpeg.get_ffmpeg_exe())' 2>/dev/null || true)"
+  if [ -z "$IIO_FF" ] && python3 -m pip install --quiet imageio-ffmpeg >/dev/null 2>&1; then
+    IIO_FF="$(python3 -c 'import imageio_ffmpeg; print(imageio_ffmpeg.get_ffmpeg_exe())' 2>/dev/null || true)"
+  fi
+  if [ -n "$IIO_FF" ] && [ -x "$IIO_FF" ]; then
+    log "using imageio-ffmpeg build: $IIO_FF"
+    echo "$IIO_FF"
+    exit 0
+  fi
 fi
 
 mkdir -p "$BIN_DIR"

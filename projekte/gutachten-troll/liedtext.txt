@@ -1,0 +1,128 @@
+# Der Gutachten-Troll — Songtext als Quelle für liedtext.json
+#
+# Format:
+#   == abschnitt | art        Abschnittskopf. art: gesungen | gesprochen | effekt
+#   Zeilen darunter sind je eine Textzeile.
+#   Eine Zeile, die mit * beginnt, ist ein Effektwort (KRAWUMM!) — groß und kurz.
+#   Leerzeilen und #-Zeilen werden überlesen.
+
+== intro | gesprochen
+Tief im Wald, ganz wunderbar,
+sitzt ein Troll seit vielen Jahr'n.
+Vor ihm Akten, Blatt für Blatt,
+weil er für alles Antworten hat.
+Er nimmt den Stift, schaut wichtig drein:
+„So, das muss wissenschaftlich sein!"
+Er blättert kurz und sagt dann prompt:
+„Ich weiß schon, was dabei herauskommt!"
+
+== strophe-1 | gesungen
+Der Gutachten-Troll sitzt am Tisch,
+sein Aktenberg wird täglich frisch.
+Kaffee links und Stempel rechts,
+Objektivität – natürlich echt!
+Er liest die Akte, Seite drei,
+macht einen Haken: „Bin dabei!"
+Seite vier – er nickt ganz schlau:
+„Interessant … ich weiß es genau!"
+
+== pre-chorus-1 | gesungen
+Mama sagt: „Ich liebe mein Kind!"
+Der Troll schreibt: „Emotionen sind!"
+Papa sagt: „Ich will Kontakt!"
+Der Troll notiert: „Zu viel gepackt!"
+Das Kind sagt: „Ich will nach Haus!"
+Der Troll sagt: „Das werte ich jetzt aus!"
+
+== refrain-1 | gesungen
+Oh, Gutachten-Troll, Gutachten-Troll,
+dein Aktenordner ist randvoll!
+Du hast die Antwort längst parat,
+bevor überhaupt jemand gefragt!
+Oh, Gutachten-Troll, was machst du bloß?
+Dein Stempel wird schon riesengroß!
+Und passt die Wirklichkeit nicht rein,
+muss sie eben kleiner sein!
+
+== strophe-2 | gesungen
+Der Troll besitzt ein Zauberbuch,
+mit jedem Satz kommt ein Versuch.
+„Auffällig", „möglicherweise",
+„könnte sein" – auf diese Weise.
+„Nicht ausreichend reflektiert!"
+„Ambivalent!" – ganz kompliziert!
+„Bindung eventuell gestört!"
+Obwohl er kaum ein Wort gehört.
+
+== pre-chorus-2 | gesungen
+Dann wird nochmal ganz tief geschaut,
+die Stirn gerunzelt, streng gebaut.
+Er schreibt drei Seiten – voller Mut:
+„Das Gesamtbild ist … insgesamt gut."
+
+== refrain-2 | gesungen
+Oh, Gutachten-Troll, Gutachten-Troll,
+dein Aktenordner ist randvoll!
+Du misst Vertrauen, Liebe, Mut,
+mit Lineal und Stempel – tut das gut?
+Oh, Gutachten-Troll, komm gib es zu,
+manchmal wär Zuhören schon klüger als du!
+Denn Papier kann vieles schreiben,
+aber Menschen lassen sich nicht beschreiben!
+
+== bridge | gesprochen
+„Objektiv!"
+„Neutral!"
+„Wissenschaftlich!"
+„…steht jedenfalls hier."
+
+== break | effekt
+Stempel!
+*KRAWUMM!
+Aktenordner!
+*KLAPP!
+Noch ein Fragebogen!
+*RASCHEL!
+Und der Troll ruft:
+„Das ergibt sich aus dem Gesamtbild!"
+
+== strophe-3 | gesungen
+Der Troll schaut stolz auf sein Papier,
+„Hundert Seiten – das reicht mir hier!"
+Doch irgendwo am Seitenrand
+steht klein: „Vermutung, unbekannt."
+Er hebt den Stempel voller Kraft,
+weil ein Stempel Eindruck schafft.
+Doch plötzlich fragt ein kleiner Wicht:
+„Woher weißt du das eigentlich?"
+
+== strophe-3-bruch | gesprochen
+Der Troll wird still …
+Der Troll wird blass …
+Er sucht ganz hektisch nach etwas.
+Dann sagt er:
+„Das … äh … ergibt sich."
+
+== refrain-3 | gesungen
+Oh, Gutachten-Troll, Gutachten-Troll,
+dein Aktenordner ist randvoll!
+Doch Wahrheit passt in keine Norm,
+und Menschen sind kein Formular!
+Oh, Gutachten-Troll, hör einmal zu:
+Hinter jeder Akte leben Menschen dazu!
+Ein Gutachten ist kein Zauberstab,
+und ein Stempel macht noch keine Wahrheit wahr!
+Oh, Gutachten-Troll, jetzt wird's bekannt:
+Die Wirklichkeit hat keinen Aktenrand!
+Du kannst noch hundert Seiten schreiben –
+Menschen lassen sich nicht in Kästchen treiben!
+
+== outro | gesprochen
+Der Troll klappt seinen Ordner zu.
+Er schaut auf den Stempel.
+Dann auf die Akte.
+Dann auf den Kaffee.
+Und sagt:
+„Morgen mache ich ein Gutachten darüber,
+warum ich heute so viele Gutachten gemacht habe."
+„Hihihihi …"

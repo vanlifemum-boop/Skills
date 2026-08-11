@@ -63,15 +63,35 @@ deshalb steht die Kostenfrage im Skill ganz vorn.
 Deshalb lädt `kie.py erzeugen` sofort herunter und schreibt im selben Schritt `meta.json`
 fort. Niemals eine kie.ai-URL „für später" notieren — sie ist morgen tot.
 
+**Das Eingangsbild heißt bei jedem Modell anders — und ein falscher Name
+kostet still Geld.** Wird das Feld nicht erkannt, ignoriert das Modell das Bild
+kommentarlos, erzeugt irgendetwas aus dem Prompt und rechnet voll ab. Gemessen:
+
+| Modell | Feld | Form |
+|---|---|---|
+| `bytedance/seedance-1.5-pro` | `input_urls` | Liste, 0–2 Bilder |
+| `bytedance/seedance-2` | `input_urls` | Liste |
+| `grok-imagine/image-to-video` | `image_urls` | Liste, bis 7 Bilder |
+| `gpt-image-2-image-to-image` | `image_urls` | Liste |
+| `google/nano-banana-edit` | `image_urls` | Liste |
+
+`kie.py --bild DATEI` setzt das richtige Feld selbst (Tabelle `BILDFELD` im
+Skript) und lädt die Datei vorher hoch. Wer `--extra` von Hand baut, muss den
+Namen bei `docs.kie.ai/market/<hersteller>/<modell>` nachsehen.
+
 **Videomodelle verstehen nur englische Prompts.**
 Deutsche Prompts werden schlicht ignoriert, das Ergebnis hat dann nichts mit dem Auftrag zu
 tun — und kostet trotzdem. Vor jedem Video-Auftrag den Prompt ins Englische übersetzen. Bei
 Bild und Ton ist Deutsch in Ordnung.
 
-**`duration` hat je Modell einen anderen Typ.**
-Bei `grok-imagine` ist es ein **Text** (`"8"`), bei `veo3.1` eine **Zahl** (`8`) — und dort
-sind nur 4, 6 oder 8 erlaubt. `kie.py` setzt das richtig; wer `--extra` benutzt, muss selbst
-aufpassen.
+**`duration` hat je Modell einen anderen Typ und andere Grenzen.**
+Bei `grok-imagine` ein **Text** (`"6"`, erlaubt 6–30), bei `veo3.1` und den
+seedance-Modellen eine **Zahl** — `veo3.1` nur 4, 6 oder 8, `seedance-1.5-pro`
+4 bis 12. Ein unerlaubter Wert bringt „Value must be within the specified range".
+`kie.py` setzt Typ und Grenzen richtig; wer `--extra` benutzt, muss selbst aufpassen.
+
+**`aspect_ratio` ist bei seedance Pflicht.** Fehlt es, antwortet die API mit
+„This field is required" — ohne zu sagen, welches Feld gemeint ist.
 
 **`google/gemini-2-5-pro-tts` schneidet mehrere `dialogue_turns` ab.**
 Es kommen nur die ersten rund neun Sekunden an, der Rest fehlt kommentarlos. Deshalb: **ein**
@@ -88,6 +108,17 @@ Status: GET /api/v1/generate/record-info?taskId=...
 ```
 
 **HTTP 402 heißt: Guthaben leer.** Auf kie.ai aufladen. `kie.py guthaben` zeigt den Stand.
+
+**Ein angenommener Auftrag kostet, auch wenn er nie fertig wird.** `createTask`
+reserviert die Credits sofort. Ein Auftrag mit leerem `input` wurde angenommen,
+blieb auf `waiting` stehen und hielt trotzdem 14,4 Credits fest. Also nie mit
+halben Aufträgen herumprobieren — Schema vorher in der Doku nachlesen.
+
+**Upload- und Ergebnis-Host stehen hinter Cloudflare.** Ohne Browser-User-Agent
+antworten sie mit **403 (Fehlercode 1010)** — der `Python-urllib`-Standardkopf
+reicht nicht. `kie.py` schickt deshalb bei Upload und Download einen
+Browser-Kopf mit. Bricht ein Download trotzdem ab: `kie.py holen <taskId>
+--projekt NAME` lädt das Ergebnis nach, statt es neu zu erzeugen.
 
 **Preise ändern sich häufig.** Vor größeren Läufen auf **kie.ai/pricing** nachsehen und die
 Tabelle hier sowie `PREISE` in `kie.py` angleichen, wenn etwas abweicht.

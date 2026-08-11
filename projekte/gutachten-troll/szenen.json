@@ -1,0 +1,82 @@
+{
+  "modell": "bytedance/seedance-1.5-pro",
+  "aufloesung": "720p",
+  "sekunden": 8,
+  "seitenverhaeltnis": "16:9",
+  "hinweis": "Prompts auf Englisch — Videomodelle ignorieren deutsche Prompts und kosten trotzdem. Jeder Prompt endet mit der Anweisung, Stil, Figur und Beschriftungen des Posters zu halten; das ist der Grund, warum die Clips im selben Bild bleiben.",
+  "stiltreue": "Keep the exact illustration style, character design, props, colours and all German signage from the source image. Photoreal cinematic lighting, warm desk lamp, dusty office. No new text, no captions, no watermarks.",
+  "szenen": [
+    {
+      "name": "intro-wald",
+      "abschnitt": "intro",
+      "beschreibung": "Kamera schiebt durch das dunkle Büro auf den Schreibtisch zu, Staub, Lampe flackert",
+      "prompt": "Slow cinematic push-in through the dim cluttered office toward the green troll sitting behind his desk of files. Dust motes drift through the warm lamp light, the desk lamp flickers gently, papers breathe. The troll sits still, waiting."
+    },
+    {
+      "name": "aktenberg",
+      "abschnitt": "strophe-1",
+      "beschreibung": "Aktenberg wächst, Kaffee dampft, Troll blättert",
+      "prompt": "The troll flips through a thick file with one hand while steam curls from the coffee mug beside him. The stack of folders behind him is tall and heavy. He nods to himself, self-satisfied. Slow drift of the camera to the left."
+    },
+    {
+      "name": "akten-schilder",
+      "abschnitt": "pre-chorus-1",
+      "beschreibung": "Nahaufnahme der Ordnerrücken MUTTER / VATER / KIND / WAHRHEIT",
+      "prompt": "Slow vertical camera tilt down the spines of the labelled binders on the left, each label crisp and legible, shallow depth of field. The troll's hand enters frame and taps one of the labels. Dust drifts in the lamp light."
+    },
+    {
+      "name": "stempel-schlag",
+      "abschnitt": "refrain-1",
+      "beschreibung": "Stempel knallt auf den Papierstapel, Blätter springen hoch",
+      "prompt": "The troll raises the wooden stamp high and slams it down onto the paper stack. Loose sheets jump into the air and settle. He grins widely, delighted with himself. Slight camera shake on the impact, then steady."
+    },
+    {
+      "name": "zauberbuch",
+      "abschnitt": "strophe-2",
+      "beschreibung": "Das Zauberbuch, Seiten blättern von selbst",
+      "prompt": "An old heavy book on the desk in front of the troll, its pages turning by themselves as he reads with raised eyebrows and pushes his round glasses up his nose. Warm lamp light, floating dust, gentle camera push-in on the book."
+    },
+    {
+      "name": "lineal-messen",
+      "abschnitt": "refrain-2",
+      "beschreibung": "Troll misst Papiere mit dem Lineal, Kamera fährt zurück",
+      "prompt": "The troll holds a wooden ruler against a sheet of paper, measuring it with exaggerated seriousness, then writes something down. The camera slowly pulls back to reveal the whole desk buried in files."
+    },
+    {
+      "name": "wissenschaftlich-neutral",
+      "abschnitt": "bridge",
+      "beschreibung": "Troll zeigt stolz auf das Schild, das Schild schwingt leicht",
+      "prompt": "The troll leans back and points proudly up at the handwritten sign on the wall behind him; the sign sways slightly on its nail. He folds his arms, smug. Slow push-in toward the sign."
+    },
+    {
+      "name": "papierexplosion",
+      "abschnitt": "break",
+      "beschreibung": "KRAWUMM — Stempel, Ordner klappt, Papier fliegt",
+      "prompt": "Rapid action: the stamp hits the desk hard, a heavy binder snaps shut, and a burst of loose paper flies up across the frame in slow motion. The troll's ears flap with the impact. Dramatic lamp light, flying dust."
+    },
+    {
+      "name": "kleiner-wicht",
+      "abschnitt": "strophe-3",
+      "beschreibung": "Der kleine pinkhaarige Troll schaut hoch und fragt",
+      "prompt": "Close on the small pink-haired troll doll on the stamp box at the right; it slowly turns its head and looks up at the big troll, questioning. Then cut wide: the big troll's grin freezes. Shallow depth of field, warm light."
+    },
+    {
+      "name": "troll-wird-blass",
+      "abschnitt": "strophe-3-bruch",
+      "beschreibung": "Troll erstarrt, wird blass, sucht hektisch in den Papieren",
+      "prompt": "The troll's smile drops. He goes pale and stiff, eyes wide behind his glasses, then rummages hectically through the papers on the desk, sheets scattering. The lamp light dims slightly. Slow push-in on his worried face."
+    },
+    {
+      "name": "finale-weit",
+      "abschnitt": "refrain-3",
+      "beschreibung": "Große Schlussfahrt über den ganzen Schreibtisch",
+      "prompt": "Wide sweeping camera move across the entire desk: mountains of files, the coffee mug, the stamp, the small pink troll, and the big troll in the middle raising both hands helplessly. Loose papers drift through the air. Grand, cinematic."
+    },
+    {
+      "name": "outro-ordner-zu",
+      "abschnitt": "outro",
+      "beschreibung": "Ordner klappt zu, Blick auf Stempel, Akte, Kaffee, dann Lachen",
+      "prompt": "The troll closes the heavy binder in front of him, looks at the stamp, then at the file, then at his coffee mug. He picks up the mug, smirks to himself and chuckles. The lamp light warms. Slow, quiet camera drift, end on his face."
+    }
+  ]
+}

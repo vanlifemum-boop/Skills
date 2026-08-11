@@ -1,0 +1,7 @@
+# Ausgangsmaterial und Renderausgaben bleiben draußen — nur Code, Text und Timing
+# gehören ins Repo. Die MP3 ist das Werk des Nutzers, die Videos sind zu groß.
+material/
+bauplatz/
+*.mp4
+*.mov
+*.wav

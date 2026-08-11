@@ -14,6 +14,7 @@ niemals aus einer Datei.
 """
 
 import argparse
+import base64
 import json
 import os
 import re
@@ -31,6 +32,15 @@ from pathlib import Path
 # --------------------------------------------------------------------------
 
 BASIS = "https://api.kie.ai/api/v1"
+
+# Eigener Host für Datei-Uploads. Bild-zu-Video und Bild-zu-Bild brauchen eine
+# öffentlich erreichbare URL — eine lokale Datei nimmt kie.ai nicht an.
+UPLOAD = "https://kieai.redpandaai.co/api/file-base64-upload"
+
+# Der Upload-Host steht hinter Cloudflare und weist Anfragen ohne erkennbaren
+# Browser-Kopf mit 403 (Fehlercode 1010) ab.
+BROWSER_KOPF = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+                "(KHTML, like Gecko) Chrome/126.0 Safari/537.36")
 
 # 200 Credits = 1 US-Dollar. Ein Credit sind rund 0,0043 Euro.
 EUR_JE_CREDIT = 0.0043
@@ -133,6 +143,19 @@ PREISE = {
         "je_1000_zeichen": 12,
         "notiz": "nach Zeichen abgerechnet; Model-Slug beim ersten Lauf bestätigen",
     },
+}
+
+# Wie das Eingangsbild bei diesem Modell heißt. Die Namen gehen quer durch den
+# Zoo — wer hier daneben liegt, bekommt ein Ergebnis, das das Bild schlicht
+# ignoriert, und zahlt trotzdem. Nachzusehen unter docs.kie.ai/market/<modell>.
+BILDFELD = {
+    "grok-imagine/image-to-video": ("image_urls", "liste"),
+    "bytedance/seedance-1.5-pro": ("input_urls", "liste"),
+    "bytedance/seedance-2": ("input_urls", "liste"),
+    "kling-3-0": ("image_url", "einzeln"),
+    "gpt-image-2-image-to-image": ("image_urls", "liste"),
+    "google/nano-banana-edit": ("image_urls", "liste"),
+    "veo3.1": ("imageUrls", "liste"),
 }
 
 # Welcher Dateityp gehört zu welcher Preisart — für meta.json.
@@ -361,6 +384,71 @@ def anfrage(pfad, daten=None, params=None):
     return inhalt.get("data") or {}
 
 
+def hochladen(datei, ordner="uploads"):
+    """Lädt eine lokale Datei hoch und gibt die öffentliche URL zurück.
+
+    Bild-zu-Video und Bild-zu-Bild brauchen eine URL, keinen Dateipfad. Die URL
+    liegt auf tempfile.redpandaai.co und ist für kie.ai erreichbar — sie muss es
+    nicht zwingend auch für dich sein.
+    """
+    pfad = Path(datei).expanduser()
+    if not pfad.is_file():
+        raise Abbruch(f"Datei nicht gefunden: {pfad}")
+
+    endung = pfad.suffix.lower()
+    mime = {".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png",
+            ".webp": "image/webp", ".mp4": "video/mp4", ".mp3": "audio/mpeg",
+            ".wav": "audio/wav"}.get(endung, "application/octet-stream")
+
+    inhalt = base64.b64encode(pfad.read_bytes()).decode("ascii")
+    rumpf = json.dumps({
+        "base64Data": f"data:{mime};base64,{inhalt}",
+        "uploadPath": ordner,
+        "fileName": pfad.name,
+    }).encode("utf-8")
+
+    bitte = urllib.request.Request(UPLOAD, data=rumpf, headers={
+        "Authorization": f"Bearer {schluessel()}",
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "User-Agent": BROWSER_KOPF,
+    }, method="POST")
+
+    for versuch in range(1, VERSUCHE + 1):
+        try:
+            with urllib.request.urlopen(bitte, timeout=300) as antwort:
+                daten = json.loads(antwort.read().decode("utf-8"))
+            break
+        except urllib.error.HTTPError as fehler:
+            if fehler.code == 403:
+                raise Abbruch("HTTP 403 vom Upload-Host — fehlender oder "
+                              "abgelehnter User-Agent.")
+            if fehler.code in WIEDERHOLBAR and versuch < VERSUCHE:
+                time.sleep(2 ** versuch)
+                continue
+            raise Abbruch(f"HTTP {fehler.code} beim Upload: {fehler.reason}")
+        except urllib.error.URLError as fehler:
+            if versuch < VERSUCHE:
+                time.sleep(2 ** versuch)
+                continue
+            raise Abbruch(f"Keine Verbindung zum Upload-Host: {fehler.reason}")
+    else:
+        raise Abbruch("Upload nach mehreren Versuchen gescheitert.")
+
+    if not daten.get("success"):
+        raise Abbruch(f"Upload abgelehnt: {daten.get('msg') or 'ohne Angabe'}")
+    url = (daten.get("data") or {}).get("downloadUrl")
+    if not url:
+        raise Abbruch("Upload ohne downloadUrl in der Antwort.")
+    return url
+
+
+def befehl_hochladen(args):
+    url = hochladen(args.datei, args.ordner)
+    print(url)
+    return 0
+
+
 def befehl_guthaben(_args):
     daten = anfrage("/chat/credit")
     # Die Antwort ist je nach Konto mal eine blanke Zahl, mal ein Objekt.
@@ -498,9 +586,12 @@ def _endung_je_typ(typ):
 
 
 def _datei_holen(url, ziel):
+    # Das Ergebnis-CDN steht hinter Cloudflare und weist den urllib-Standardkopf
+    # mit 403 ab — ohne Browser-Kopf ist das Ergebnis bezahlt, aber unerreichbar.
+    bitte = urllib.request.Request(url, headers={"User-Agent": BROWSER_KOPF})
     for versuch in range(1, VERSUCHE + 1):
         try:
-            with urllib.request.urlopen(url, timeout=300) as antwort, \
+            with urllib.request.urlopen(bitte, timeout=300) as antwort, \
                     open(ziel, "wb") as datei:
                 while True:
                     brocken = antwort.read(65536)
@@ -516,6 +607,33 @@ def _datei_holen(url, ziel):
                 f"Download gescheitert: {fehler}\n"
                 "  Achtung: die Ergebnis-URLs verfallen nach 24 Stunden."
             )
+
+
+def befehl_holen(args):
+    """Ergebnis eines fertigen Auftrags nachladen.
+
+    Rettungsanker: schlägt der Download fehl (Netz, Cloudflare, volle Platte),
+    ist der Auftrag trotzdem bezahlt. Statt neu zu erzeugen, hier nachholen —
+    solange die 24 Stunden nicht um sind.
+    """
+    daten = anfrage("/jobs/recordInfo", params={"taskId": args.task_id})
+    zustand = daten.get("state")
+    if zustand != "success":
+        raise Abbruch(f"Auftrag {args.task_id} steht auf '{zustand}', nicht auf 'success'.")
+
+    roh = daten.get("resultJson") or "{}"
+    ergebnis = json.loads(roh) if isinstance(roh, str) else roh
+    urls = ergebnis.get("resultUrls") or []
+    if not urls:
+        raise Abbruch("Auftrag fertig, aber ohne resultUrls.")
+
+    modell = daten.get("model") or "unbekannt"
+    art = PREISE.get(modell, {}).get("art", "video_sek")
+    ordner = zielordner(args.projekt, args.wurzel)
+    herunterladen_und_protokollieren(
+        urls, ordner, modell, args.prompt or "(nachgeladen)",
+        TYP_JE_ART.get(art, "video"), daten.get("creditsConsumed") or 0)
+    return 0
 
 
 def befehl_erzeugen(args):
@@ -540,9 +658,22 @@ def befehl_erzeugen(args):
         eingabe["image_size" if art == "bild" else "resolution"] = args.aufloesung
     if args.sekunden is not None and art in ("video_sek", "video_clip"):
         # Bei veo3.1 eine ZAHL, bei grok-imagine ein TEXT — siehe references/modelle.md.
-        eingabe["duration"] = int(args.sekunden) if args.modell == "veo3.1" else str(int(args.sekunden))
+        # Zahl oder Text — je Modell verschieden, siehe references/modelle.md.
+        als_zahl = args.modell in ("veo3.1", "bytedance/seedance-1.5-pro",
+                                   "bytedance/seedance-2")
+        eingabe["duration"] = int(args.sekunden) if als_zahl else str(int(args.sekunden))
     if args.anzahl > 1 and art == "bild":
         eingabe["num_images"] = args.anzahl
+    if args.bild:
+        # Bequemer Weg für Bild-zu-Video und Bild-zu-Bild: lokale Datei, kein URL-Gefummel.
+        feld, form = BILDFELD.get(args.modell, ("image_url", "einzeln"))
+        if args.modell not in BILDFELD:
+            print(f"  Hinweis: Bildfeld für {args.modell} nicht hinterlegt, nehme "
+                  f"'image_url' — bei docs.kie.ai/market nachsehen, wenn das Bild "
+                  f"ignoriert wird.", file=sys.stderr)
+        url = hochladen(args.bild, f"eingang/{args.projekt}")
+        eingabe[feld] = [url] if form == "liste" else url
+        print(f"  Bild hochgeladen ({feld}): {url}")
     if args.extra:
         try:
             eingabe.update(json.loads(args.extra))
@@ -589,6 +720,18 @@ def parser_bauen():
     mo = unter.add_parser("modelle", help="Preistabelle drucken")
     mo.set_defaults(funktion=befehl_modelle)
 
+    ho = unter.add_parser("hochladen", help="lokale Datei hochladen, gibt die öffentliche URL aus")
+    ho.add_argument("datei")
+    ho.add_argument("--ordner", default="uploads", help="Ablagepfad auf dem Upload-Host")
+    ho.set_defaults(funktion=befehl_hochladen)
+
+    hl = unter.add_parser("holen", help="Ergebnis eines fertigen Auftrags nachladen")
+    hl.add_argument("task_id")
+    hl.add_argument("--projekt", required=True)
+    hl.add_argument("--prompt", help="für das Protokoll in meta.json")
+    hl.add_argument("--wurzel")
+    hl.set_defaults(funktion=befehl_holen)
+
     gu = unter.add_parser("guthaben", help="verbleibendes Guthaben abfragen")
     gu.set_defaults(funktion=befehl_guthaben)
 
@@ -601,6 +744,7 @@ def parser_bauen():
     er.add_argument("--sekunden", type=float)
     er.add_argument("--zeichen", type=int)
     er.add_argument("--variante")
+    er.add_argument("--bild", help="lokale Bilddatei — wird hochgeladen und als image_url gesetzt")
     er.add_argument("--extra", help="weitere input-Felder als JSON, z. B. '{\"image_url\": \"...\"}'")
     er.add_argument("--wurzel", help="abweichende Ablage statt ~/Medien")
     er.set_defaults(funktion=befehl_erzeugen)

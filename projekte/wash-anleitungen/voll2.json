@@ -1,0 +1,518 @@
+[
+ {
+  "datei": "blatta-strich-00-titel.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png",
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/shower.jpg"
+  ],
+  "prompt": "Titelbild einer Instagram-Anleitung, feine dünne schwarze Strichzeichnung auf cremeweißem Papier ohne Schattierung. Bildmitte: die Handbrause groß. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Oben links das Wortzeichen „WaSH Innovation“. Darunter groß und fett serifenlos buchstabengetreu: „POCKET SHOWER“ und kleiner darunter: „Duschen, wo du willst — in 8 Schritten startklar.“ Hochformat 4:5, viel weißer Rand, keine weiteren Farben."
+ },
+ {
+  "datei": "blatta-strich-01.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png",
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/shower.jpg"
+  ],
+  "prompt": "Das Produktfoto-Referenzbild gibt die Produktform vor, das zweite Referenzbild den Zeichenstil. Zeichne eine Seite einer Bedienungsanleitung: feine, gleichmäßig dünne schwarze Konturlinien, keine Schattierung, keine Grauflächen, cremeweißes Papier, die Illustration in einem quadratischen dünnen Rahmen. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Alles außer der blauen Kappe bleibt reine schwarze Strichzeichnung. Bildinhalt: ein hängender Wasserbeutel von vorn, unten ein kleines Ventil, von rechts kommt der Schlauch mit der Handbrause, ein dicker Pfeil zeigt vom Schlauch auf das Ventil. Darunter ein schwarz gefüllter Kreis mit weißer Ziffer 1, daneben in schlanker serifenloser Schrift buchstabengetreu mit Umlauten: „Ventil und Wasserbeutel mit dem transparenten Schlauch verbinden.“ Oben links das Wortzeichen „WaSH Innovation“. Hochformat 4:5, großzügiger weißer Rand, technische Piktogramm-Ästhetik, kein Foto."
+ },
+ {
+  "datei": "blatta-strich-02.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png",
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/shower.jpg"
+  ],
+  "prompt": "Das Produktfoto-Referenzbild gibt die Produktform vor, das zweite Referenzbild den Zeichenstil. Zeichne eine Seite einer Bedienungsanleitung: feine, gleichmäßig dünne schwarze Konturlinien, keine Schattierung, keine Grauflächen, cremeweißes Papier, die Illustration in einem quadratischen dünnen Rahmen. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Alles außer der blauen Kappe bleibt reine schwarze Strichzeichnung. Bildinhalt: der Wasserbeutel von vorn, die Oberseite am Klemmverschluss leicht geöffnet, von links oben fallen vier feine parallele Wasserlinien hinein. Darunter ein schwarz gefüllter Kreis mit weißer Ziffer 2, daneben in schlanker serifenloser Schrift buchstabengetreu mit Umlauten: „Oberseite leicht öffnen und Wasser einfüllen.“ Oben links das Wortzeichen „WaSH Innovation“. Hochformat 4:5, großzügiger weißer Rand, technische Piktogramm-Ästhetik, kein Foto."
+ },
+ {
+  "datei": "blatta-strich-03.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png",
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/shower.jpg"
+  ],
+  "prompt": "Das Produktfoto-Referenzbild gibt die Produktform vor, das zweite Referenzbild den Zeichenstil. Zeichne eine Seite einer Bedienungsanleitung: feine, gleichmäßig dünne schwarze Konturlinien, keine Schattierung, keine Grauflächen, cremeweißes Papier, die Illustration in einem quadratischen dünnen Rahmen. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Alles außer der blauen Kappe bleibt reine schwarze Strichzeichnung. Bildinhalt: zwei Hände greifen die geöffnete Oberseite des Beutels und rollen sie ein, daneben ein großer gebogener Pfeil und die Angabe 3x. Darunter ein schwarz gefüllter Kreis mit weißer Ziffer 3, daneben in schlanker serifenloser Schrift buchstabengetreu mit Umlauten: „Oberseite dreimal fest einrollen.“ Oben links das Wortzeichen „WaSH Innovation“. Hochformat 4:5, großzügiger weißer Rand, technische Piktogramm-Ästhetik, kein Foto."
+ },
+ {
+  "datei": "blatta-strich-04.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png",
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/shower.jpg"
+  ],
+  "prompt": "Das Produktfoto-Referenzbild gibt die Produktform vor, das zweite Referenzbild den Zeichenstil. Zeichne eine Seite einer Bedienungsanleitung: feine, gleichmäßig dünne schwarze Konturlinien, keine Schattierung, keine Grauflächen, cremeweißes Papier, die Illustration in einem quadratischen dünnen Rahmen. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Alles außer der blauen Kappe bleibt reine schwarze Strichzeichnung. Bildinhalt: zwei Hände drücken die beiden Steckschnallen an den Enden des Riemens zusammen, zwei kräftige Pfeile zeigen aufeinander zu, dazwischen das Wort CLICK in Großbuchstaben. Darunter ein schwarz gefüllter Kreis mit weißer Ziffer 4, daneben in schlanker serifenloser Schrift buchstabengetreu mit Umlauten: „Verschluss zusammendrücken, bis er hörbar klickt.“ Oben links das Wortzeichen „WaSH Innovation“. Hochformat 4:5, großzügiger weißer Rand, technische Piktogramm-Ästhetik, kein Foto."
+ },
+ {
+  "datei": "blatta-strich-05.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png",
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/shower.jpg"
+  ],
+  "prompt": "Das Produktfoto-Referenzbild gibt die Produktform vor, das zweite Referenzbild den Zeichenstil. Zeichne eine Seite einer Bedienungsanleitung: feine, gleichmäßig dünne schwarze Konturlinien, keine Schattierung, keine Grauflächen, cremeweißes Papier, die Illustration in einem quadratischen dünnen Rahmen. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Alles außer der blauen Kappe bleibt reine schwarze Strichzeichnung. Bildinhalt: der gefüllte Wasserbeutel hängt an einem Ast, eine dünne Leine läuft durch einen Karabiner nach oben, ein Pfeil zeigt nach oben, unten hängt der Schlauch mit der Handbrause herab. Darunter ein schwarz gefüllter Kreis mit weißer Ziffer 5, daneben in schlanker serifenloser Schrift buchstabengetreu mit Umlauten: „Beutel möglichst hoch aufhängen und die Leine durch den oberen Karabiner führen.“ Oben links das Wortzeichen „WaSH Innovation“. Hochformat 4:5, großzügiger weißer Rand, technische Piktogramm-Ästhetik, kein Foto."
+ },
+ {
+  "datei": "blatta-strich-06.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png",
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/shower.jpg"
+  ],
+  "prompt": "Das Produktfoto-Referenzbild gibt die Produktform vor, das zweite Referenzbild den Zeichenstil. Zeichne eine Seite einer Bedienungsanleitung: feine, gleichmäßig dünne schwarze Konturlinien, keine Schattierung, keine Grauflächen, cremeweißes Papier, die Illustration in einem quadratischen dünnen Rahmen. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Alles außer der blauen Kappe bleibt reine schwarze Strichzeichnung. Bildinhalt: Nahaufnahme des unteren Karabiners am Beutel mit durchgeführter Leine und kleinem Klemmstopper, ein Pfeil zeigt die Zugrichtung. Darunter ein schwarz gefüllter Kreis mit weißer Ziffer 6, daneben in schlanker serifenloser Schrift buchstabengetreu mit Umlauten: „Leine durch den unteren Karabiner ziehen und die Höhe mit dem Stopper fixieren.“ Oben links das Wortzeichen „WaSH Innovation“. Hochformat 4:5, großzügiger weißer Rand, technische Piktogramm-Ästhetik, kein Foto."
+ },
+ {
+  "datei": "blatta-strich-07.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png",
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/shower.jpg"
+  ],
+  "prompt": "Das Produktfoto-Referenzbild gibt die Produktform vor, das zweite Referenzbild den Zeichenstil. Zeichne eine Seite einer Bedienungsanleitung: feine, gleichmäßig dünne schwarze Konturlinien, keine Schattierung, keine Grauflächen, cremeweißes Papier, die Illustration in einem quadratischen dünnen Rahmen. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Alles außer der blauen Kappe bleibt reine schwarze Strichzeichnung. Bildinhalt: die Handbrause von der Seite mit angestecktem Schlauch, ein dicker schwarzer Pfeil drückt seitlich auf den schwarzen Knopf, darunter ein feiner Wasserstrahl aus kurzen Linien. Darunter ein schwarz gefüllter Kreis mit weißer Ziffer 7, daneben in schlanker serifenloser Schrift buchstabengetreu mit Umlauten: „Zum Starten den Knopf drücken. Nochmal drücken stoppt das Wasser.“ Oben links das Wortzeichen „WaSH Innovation“. Hochformat 4:5, großzügiger weißer Rand, technische Piktogramm-Ästhetik, kein Foto."
+ },
+ {
+  "datei": "blatta-strich-08.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png",
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/shower.jpg"
+  ],
+  "prompt": "Das Produktfoto-Referenzbild gibt die Produktform vor, das zweite Referenzbild den Zeichenstil. Zeichne eine Seite einer Bedienungsanleitung: feine, gleichmäßig dünne schwarze Konturlinien, keine Schattierung, keine Grauflächen, cremeweißes Papier, die Illustration in einem quadratischen dünnen Rahmen. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Alles außer der blauen Kappe bleibt reine schwarze Strichzeichnung. Bildinhalt: die Handbrause in einer Hand, Wasser fällt in feinen Linien nach unten, daneben der aufgehängte Beutel im Hintergrund. Darunter ein schwarz gefüllter Kreis mit weißer Ziffer 8, daneben in schlanker serifenloser Schrift buchstabengetreu mit Umlauten: „Fertig. Viel Spaß beim Duschen!“ Oben links das Wortzeichen „WaSH Innovation“. Hochformat 4:5, großzügiger weißer Rand, technische Piktogramm-Ästhetik, kein Foto."
+ },
+ {
+  "datei": "blatta-foto-00-titel.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png"
+  ],
+  "prompt": "Fotorealistisches Titelbild im Hochformat 4:5 von genau dem Produkt aus dem Referenzbild, aber in Blau. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Die Handbrause liegt freigestellt vor warmem, weich beleuchtetem Naturhintergrund, Wassertropfen auf der Oberfläche. Unten groß in weißer serifenloser Schrift buchstabengetreu: „POCKET SHOWER“ und kleiner darunter „Duschen, wo du willst — in 8 Schritten startklar.“ Sonst keine Schrift, kein Wasserzeichen."
+ },
+ {
+  "datei": "blatta-foto-01.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png"
+  ],
+  "prompt": "Fotorealistisches Produktfoto im Hochformat 4:5 von genau dem Produkt aus dem Referenzbild, aber in Blau. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Bildinhalt: der weiße Wasserbeutel liegt auf einem Holztisch, zwei Hände stecken den transparenten Schlauch der blauen Handbrause auf das Ventil. Warmes weiches Tageslicht, ruhiger unscharfer Hintergrund in Sand- und Grüntönen, flache Tiefenschärfe, hochwertiger Markenlook, keine Menschen im Bild außer Händen. Unten links ein schwarz gefüllter Kreis mit weißer Ziffer 1, daneben in schwarzer serifenloser Schrift buchstabengetreu mit Umlauten: „Ventil und Wasserbeutel mit dem transparenten Schlauch verbinden.“ Sonst keine Schrift, kein Wasserzeichen."
+ },
+ {
+  "datei": "blatta-foto-02.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png"
+  ],
+  "prompt": "Fotorealistisches Produktfoto im Hochformat 4:5 von genau dem Produkt aus dem Referenzbild, aber in Blau. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Bildinhalt: Wasser läuft aus einem Kanister in die geöffnete Oberseite des weißen Wasserbeutels, Hände halten den Beutel offen. Warmes weiches Tageslicht, ruhiger unscharfer Hintergrund in Sand- und Grüntönen, flache Tiefenschärfe, hochwertiger Markenlook, keine Menschen im Bild außer Händen. Unten links ein schwarz gefüllter Kreis mit weißer Ziffer 2, daneben in schwarzer serifenloser Schrift buchstabengetreu mit Umlauten: „Oberseite leicht öffnen und Wasser einfüllen.“ Sonst keine Schrift, kein Wasserzeichen."
+ },
+ {
+  "datei": "blatta-foto-03.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png"
+  ],
+  "prompt": "Fotorealistisches Produktfoto im Hochformat 4:5 von genau dem Produkt aus dem Referenzbild, aber in Blau. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Bildinhalt: zwei Hände rollen die Oberseite des gefüllten Wasserbeutels fest ein. Warmes weiches Tageslicht, ruhiger unscharfer Hintergrund in Sand- und Grüntönen, flache Tiefenschärfe, hochwertiger Markenlook, keine Menschen im Bild außer Händen. Unten links ein schwarz gefüllter Kreis mit weißer Ziffer 3, daneben in schwarzer serifenloser Schrift buchstabengetreu mit Umlauten: „Oberseite dreimal fest einrollen.“ Sonst keine Schrift, kein Wasserzeichen."
+ },
+ {
+  "datei": "blatta-foto-04.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png"
+  ],
+  "prompt": "Fotorealistisches Produktfoto im Hochformat 4:5 von genau dem Produkt aus dem Referenzbild, aber in Blau. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Bildinhalt: Nahaufnahme: zwei Hände klicken die schwarze Steckschnalle des Trageriemens am Wasserbeutel zusammen. Warmes weiches Tageslicht, ruhiger unscharfer Hintergrund in Sand- und Grüntönen, flache Tiefenschärfe, hochwertiger Markenlook, keine Menschen im Bild außer Händen. Unten links ein schwarz gefüllter Kreis mit weißer Ziffer 4, daneben in schwarzer serifenloser Schrift buchstabengetreu mit Umlauten: „Verschluss zusammendrücken, bis er hörbar klickt.“ Sonst keine Schrift, kein Wasserzeichen."
+ },
+ {
+  "datei": "blatta-foto-05.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png"
+  ],
+  "prompt": "Fotorealistisches Produktfoto im Hochformat 4:5 von genau dem Produkt aus dem Referenzbild, aber in Blau. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Bildinhalt: der gefüllte weiße Wasserbeutel hängt an einem Ast, die blaue Handbrause baumelt am Schlauch darunter. Warmes weiches Tageslicht, ruhiger unscharfer Hintergrund in Sand- und Grüntönen, flache Tiefenschärfe, hochwertiger Markenlook, keine Menschen im Bild außer Händen. Unten links ein schwarz gefüllter Kreis mit weißer Ziffer 5, daneben in schwarzer serifenloser Schrift buchstabengetreu mit Umlauten: „Beutel möglichst hoch aufhängen und die Leine durch den oberen Karabiner führen.“ Sonst keine Schrift, kein Wasserzeichen."
+ },
+ {
+  "datei": "blatta-foto-06.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png"
+  ],
+  "prompt": "Fotorealistisches Produktfoto im Hochformat 4:5 von genau dem Produkt aus dem Referenzbild, aber in Blau. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Bildinhalt: Nahaufnahme einer Hand am unteren Karabiner des Beutels, die die Leine durch den Klemmstopper zieht. Warmes weiches Tageslicht, ruhiger unscharfer Hintergrund in Sand- und Grüntönen, flache Tiefenschärfe, hochwertiger Markenlook, keine Menschen im Bild außer Händen. Unten links ein schwarz gefüllter Kreis mit weißer Ziffer 6, daneben in schwarzer serifenloser Schrift buchstabengetreu mit Umlauten: „Leine durch den unteren Karabiner ziehen und die Höhe mit dem Stopper fixieren.“ Sonst keine Schrift, kein Wasserzeichen."
+ },
+ {
+  "datei": "blatta-foto-07.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png"
+  ],
+  "prompt": "Fotorealistisches Produktfoto im Hochformat 4:5 von genau dem Produkt aus dem Referenzbild, aber in Blau. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Bildinhalt: eine Hand hält die blaue Handbrause, der Daumen drückt den schwarzen Knopf, ein feiner Wasserstrahl tritt aus. Warmes weiches Tageslicht, ruhiger unscharfer Hintergrund in Sand- und Grüntönen, flache Tiefenschärfe, hochwertiger Markenlook, keine Menschen im Bild außer Händen. Unten links ein schwarz gefüllter Kreis mit weißer Ziffer 7, daneben in schwarzer serifenloser Schrift buchstabengetreu mit Umlauten: „Zum Starten den Knopf drücken. Nochmal drücken stoppt das Wasser.“ Sonst keine Schrift, kein Wasserzeichen."
+ },
+ {
+  "datei": "blatta-foto-08.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png"
+  ],
+  "prompt": "Fotorealistisches Produktfoto im Hochformat 4:5 von genau dem Produkt aus dem Referenzbild, aber in Blau. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Bildinhalt: die blaue Handbrause sprüht Wasser vor einer sonnigen Naturkulisse, Wassertropfen glitzern im Gegenlicht. Warmes weiches Tageslicht, ruhiger unscharfer Hintergrund in Sand- und Grüntönen, flache Tiefenschärfe, hochwertiger Markenlook, keine Menschen im Bild außer Händen. Unten links ein schwarz gefüllter Kreis mit weißer Ziffer 8, daneben in schwarzer serifenloser Schrift buchstabengetreu mit Umlauten: „Fertig. Viel Spaß beim Duschen!“ Sonst keine Schrift, kein Wasserzeichen."
+ },
+ {
+  "datei": "blatta-a4-strich.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "4k",
+  "ratio": "3:4",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png",
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/shower.jpg"
+  ],
+  "prompt": "Ein komplettes Anleitungsblatt im Hochformat A4, exakt im Layout des zweiten Referenzbildes: cremeweißes Papier, oben links das Wortzeichen „WaSH Innovation“, darunter der Produktname „POCKET SHOWER“ und das Wort „BEDIENUNGSANLEITUNG“. Darunter ein sauberes Raster aus 8 gleich großen, dünn umrandeten quadratischen Illustrationen in feiner schwarzer Strichzeichnung ohne Schattierung; unter jeder ein schwarz gefüllter Kreis mit weißer Ziffer und eine kurze deutsche Bildunterschrift in schlanker serifenloser Schrift mit korrekten Umlauten. Die Schritte lauten: 1. Ventil und Wasserbeutel mit dem transparenten Schlauch verbinden. | 2. Oberseite leicht öffnen und Wasser einfüllen. | 3. Oberseite dreimal fest einrollen. | 4. Verschluss zusammendrücken, bis er hörbar klickt. | 5. Beutel möglichst hoch aufhängen und die Leine durch den oberen Karabiner führen. | 6. Leine durch den unteren Karabiner ziehen und die Höhe mit dem Stopper fixieren. | 7. Zum Starten den Knopf drücken. Nochmal drücken stoppt das Wasser. | 8. Fertig. Viel Spaß beim Duschen! Unten rechts klein „washinnovation.com“. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Einziges farbiges Element im ganzen Blatt ist diese blaue Kappe. Scharfe, gut lesbare Typografie, Druckqualität, keine Fotos."
+ },
+ {
+  "datei": "blattb-strich-00-titel.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png",
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/shower.jpg"
+  ],
+  "prompt": "Titelbild einer Instagram-Anleitung, feine dünne schwarze Strichzeichnung auf cremeweißem Papier ohne Schattierung. Bildmitte: die Handbrause groß. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Oben links das Wortzeichen „WaSH Innovation“. Darunter groß und fett serifenlos buchstabengetreu: „POCKET BATH+“ und kleiner darunter: „Ein Gerät, drei Anwendungen: Hahn, Dusche, Bidet.“ Hochformat 4:5, viel weißer Rand, keine weiteren Farben."
+ },
+ {
+  "datei": "blattb-strich-anwendung1-hahn.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png",
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/bathplus.jpg"
+  ],
+  "prompt": "Das Produktfoto-Referenzbild gibt die Produktform vor, das zweite Referenzbild den Zeichenstil. Zeichne eine Seite einer Bedienungsanleitung: feine, gleichmäßig dünne schwarze Konturlinien, keine Schattierung, keine Grauflächen, cremeweißes Papier, die Illustration in einem quadratischen dünnen Rahmen. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Alles außer der blauen Kappe bleibt reine schwarze Strichzeichnung. Bildinhalt: ein waagerechter Wasserhahn, darunter zwei Hände, die im feinen Strahl gewaschen werden. Darunter ein Wort in schlanker serifenloser Schrift buchstabengetreu mit Umlauten: „ANWENDUNGSART: HAHN“ Oben links das Wortzeichen „WaSH Innovation“. Hochformat 4:5, großzügiger weißer Rand, technische Piktogramm-Ästhetik, kein Foto."
+ },
+ {
+  "datei": "blattb-strich-anwendung2-dusche.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png",
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/bathplus.jpg"
+  ],
+  "prompt": "Das Produktfoto-Referenzbild gibt die Produktform vor, das zweite Referenzbild den Zeichenstil. Zeichne eine Seite einer Bedienungsanleitung: feine, gleichmäßig dünne schwarze Konturlinien, keine Schattierung, keine Grauflächen, cremeweißes Papier, die Illustration in einem quadratischen dünnen Rahmen. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Alles außer der blauen Kappe bleibt reine schwarze Strichzeichnung. Bildinhalt: eine Person von hinten unter der Handbrause, Wasser läuft in feinen Linien über Schultern und Rücken. Darunter ein Wort in schlanker serifenloser Schrift buchstabengetreu mit Umlauten: „ANWENDUNGSART: DUSCHE“ Oben links das Wortzeichen „WaSH Innovation“. Hochformat 4:5, großzügiger weißer Rand, technische Piktogramm-Ästhetik, kein Foto."
+ },
+ {
+  "datei": "blattb-strich-anwendung3-bidet.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png",
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/bathplus.jpg"
+  ],
+  "prompt": "Das Produktfoto-Referenzbild gibt die Produktform vor, das zweite Referenzbild den Zeichenstil. Zeichne eine Seite einer Bedienungsanleitung: feine, gleichmäßig dünne schwarze Konturlinien, keine Schattierung, keine Grauflächen, cremeweißes Papier, die Illustration in einem quadratischen dünnen Rahmen. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Alles außer der blauen Kappe bleibt reine schwarze Strichzeichnung. Bildinhalt: eine sitzende Person seitlich angedeutet, die Handbrause von unten mit feinem Strahl. Darunter ein Wort in schlanker serifenloser Schrift buchstabengetreu mit Umlauten: „ANWENDUNGSART: BIDET“ Oben links das Wortzeichen „WaSH Innovation“. Hochformat 4:5, großzügiger weißer Rand, technische Piktogramm-Ästhetik, kein Foto."
+ },
+ {
+  "datei": "blattb-strich-01.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png",
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/bathplus.jpg"
+  ],
+  "prompt": "Das Produktfoto-Referenzbild gibt die Produktform vor, das zweite Referenzbild den Zeichenstil. Zeichne eine Seite einer Bedienungsanleitung: feine, gleichmäßig dünne schwarze Konturlinien, keine Schattierung, keine Grauflächen, cremeweißes Papier, die Illustration in einem quadratischen dünnen Rahmen. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Alles außer der blauen Kappe bleibt reine schwarze Strichzeichnung. Bildinhalt: die Handbrause senkrecht, ein gebogener Pfeil mit der Ziffer 1 zeigt die Drehung um 90 Grad, ein gerader Pfeil mit der Ziffer 2 zeigt nach oben das Herausziehen der Düse. Darunter ein schwarz gefüllter Kreis mit weißer Ziffer 1, daneben in schlanker serifenloser Schrift buchstabengetreu mit Umlauten: „Je nach Verwendungszweck die Düse wechseln: um 90 Grad drehen und nach oben herausziehen.“ Oben links das Wortzeichen „WaSH Innovation“. Hochformat 4:5, großzügiger weißer Rand, technische Piktogramm-Ästhetik, kein Foto."
+ },
+ {
+  "datei": "blattb-strich-02.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png",
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/bathplus.jpg"
+  ],
+  "prompt": "Das Produktfoto-Referenzbild gibt die Produktform vor, das zweite Referenzbild den Zeichenstil. Zeichne eine Seite einer Bedienungsanleitung: feine, gleichmäßig dünne schwarze Konturlinien, keine Schattierung, keine Grauflächen, cremeweißes Papier, die Illustration in einem quadratischen dünnen Rahmen. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Alles außer der blauen Kappe bleibt reine schwarze Strichzeichnung. Bildinhalt: eine abgesetzte Düse schwebt über der Öffnung der Handbrause, ein gerader Pfeil mit Ziffer 1 zeigt das Einsetzen, ein gebogener Pfeil mit Ziffer 2 die Drehung. Darunter ein schwarz gefüllter Kreis mit weißer Ziffer 2, daneben in schlanker serifenloser Schrift buchstabengetreu mit Umlauten: „Neue Düse einsetzen und um 90 Grad drehen, bis sie einrastet.“ Oben links das Wortzeichen „WaSH Innovation“. Hochformat 4:5, großzügiger weißer Rand, technische Piktogramm-Ästhetik, kein Foto."
+ },
+ {
+  "datei": "blattb-strich-03.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png",
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/bathplus.jpg"
+  ],
+  "prompt": "Das Produktfoto-Referenzbild gibt die Produktform vor, das zweite Referenzbild den Zeichenstil. Zeichne eine Seite einer Bedienungsanleitung: feine, gleichmäßig dünne schwarze Konturlinien, keine Schattierung, keine Grauflächen, cremeweißes Papier, die Illustration in einem quadratischen dünnen Rahmen. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Alles außer der blauen Kappe bleibt reine schwarze Strichzeichnung. Bildinhalt: eine zweigeteilte Bildtafel: oben eine Fliesenwand mit Pfeil und eine Schraube, unten Holzlatten mit Pfeil und ein Magnet sowie ein Saugnapf. Darunter ein schwarz gefüllter Kreis mit weißer Ziffer 3, daneben in schlanker serifenloser Schrift buchstabengetreu mit Umlauten: „Halterung mit Schraube, Magnet oder Saugnapf befestigen — je nach Untergrund.“ Oben links das Wortzeichen „WaSH Innovation“. Hochformat 4:5, großzügiger weißer Rand, technische Piktogramm-Ästhetik, kein Foto."
+ },
+ {
+  "datei": "blattb-foto-00-titel.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png"
+  ],
+  "prompt": "Fotorealistisches Titelbild im Hochformat 4:5 von genau dem Produkt aus dem Referenzbild, aber in Blau. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Die Handbrause liegt freigestellt vor warmem, weich beleuchtetem Naturhintergrund, Wassertropfen auf der Oberfläche. Unten groß in weißer serifenloser Schrift buchstabengetreu: „POCKET BATH+“ und kleiner darunter „Ein Gerät, drei Anwendungen: Hahn, Dusche, Bidet.“ Sonst keine Schrift, kein Wasserzeichen."
+ },
+ {
+  "datei": "blattb-foto-anwendung1-hahn.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png"
+  ],
+  "prompt": "Fotorealistisches Produktfoto im Hochformat 4:5 von genau dem Produkt aus dem Referenzbild, aber in Blau. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Bildinhalt: die blaue Handbrause an einem Wasserhahn montiert, ein feiner Strahl läuft über zwei Hände. Warmes weiches Tageslicht, ruhiger unscharfer Hintergrund in Sand- und Grüntönen, flache Tiefenschärfe, hochwertiger Markenlook, keine Menschen im Bild außer Händen. Unten links ein Wort in schwarzer serifenloser Schrift buchstabengetreu mit Umlauten: „ANWENDUNGSART: HAHN“ Sonst keine Schrift, kein Wasserzeichen."
+ },
+ {
+  "datei": "blattb-foto-anwendung2-dusche.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png"
+  ],
+  "prompt": "Fotorealistisches Produktfoto im Hochformat 4:5 von genau dem Produkt aus dem Referenzbild, aber in Blau. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Bildinhalt: die blaue Handbrause sprüht Wasser in einer hellen Duschkabine. Warmes weiches Tageslicht, ruhiger unscharfer Hintergrund in Sand- und Grüntönen, flache Tiefenschärfe, hochwertiger Markenlook, keine Menschen im Bild außer Händen. Unten links ein Wort in schwarzer serifenloser Schrift buchstabengetreu mit Umlauten: „ANWENDUNGSART: DUSCHE“ Sonst keine Schrift, kein Wasserzeichen."
+ },
+ {
+  "datei": "blattb-foto-anwendung3-bidet.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png"
+  ],
+  "prompt": "Fotorealistisches Produktfoto im Hochformat 4:5 von genau dem Produkt aus dem Referenzbild, aber in Blau. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Bildinhalt: die blaue Handbrause hängt in einer Halterung neben einer weißen Toilette. Warmes weiches Tageslicht, ruhiger unscharfer Hintergrund in Sand- und Grüntönen, flache Tiefenschärfe, hochwertiger Markenlook, keine Menschen im Bild außer Händen. Unten links ein Wort in schwarzer serifenloser Schrift buchstabengetreu mit Umlauten: „ANWENDUNGSART: BIDET“ Sonst keine Schrift, kein Wasserzeichen."
+ },
+ {
+  "datei": "blattb-foto-01.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png"
+  ],
+  "prompt": "Fotorealistisches Produktfoto im Hochformat 4:5 von genau dem Produkt aus dem Referenzbild, aber in Blau. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Bildinhalt: zwei Hände drehen die blaue Kappe der Handbrause und ziehen die Düse nach oben heraus. Warmes weiches Tageslicht, ruhiger unscharfer Hintergrund in Sand- und Grüntönen, flache Tiefenschärfe, hochwertiger Markenlook, keine Menschen im Bild außer Händen. Unten links ein schwarz gefüllter Kreis mit weißer Ziffer 1, daneben in schwarzer serifenloser Schrift buchstabengetreu mit Umlauten: „Je nach Verwendungszweck die Düse wechseln: um 90 Grad drehen und nach oben herausziehen.“ Sonst keine Schrift, kein Wasserzeichen."
+ },
+ {
+  "datei": "blattb-foto-02.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png"
+  ],
+  "prompt": "Fotorealistisches Produktfoto im Hochformat 4:5 von genau dem Produkt aus dem Referenzbild, aber in Blau. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Bildinhalt: eine Hand setzt eine neue Düse in die blaue Kappe der Handbrause ein. Warmes weiches Tageslicht, ruhiger unscharfer Hintergrund in Sand- und Grüntönen, flache Tiefenschärfe, hochwertiger Markenlook, keine Menschen im Bild außer Händen. Unten links ein schwarz gefüllter Kreis mit weißer Ziffer 2, daneben in schwarzer serifenloser Schrift buchstabengetreu mit Umlauten: „Neue Düse einsetzen und um 90 Grad drehen, bis sie einrastet.“ Sonst keine Schrift, kein Wasserzeichen."
+ },
+ {
+  "datei": "blattb-foto-03.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png"
+  ],
+  "prompt": "Fotorealistisches Produktfoto im Hochformat 4:5 von genau dem Produkt aus dem Referenzbild, aber in Blau. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Bildinhalt: die Wandhalterung der Handbrause klebt mit Saugnapf an einer hellen Fliesenwand, daneben liegen Schraube und Magnet. Warmes weiches Tageslicht, ruhiger unscharfer Hintergrund in Sand- und Grüntönen, flache Tiefenschärfe, hochwertiger Markenlook, keine Menschen im Bild außer Händen. Unten links ein schwarz gefüllter Kreis mit weißer Ziffer 3, daneben in schwarzer serifenloser Schrift buchstabengetreu mit Umlauten: „Halterung mit Schraube, Magnet oder Saugnapf befestigen — je nach Untergrund.“ Sonst keine Schrift, kein Wasserzeichen."
+ },
+ {
+  "datei": "blattb-a4-strich.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "4k",
+  "ratio": "3:4",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png",
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/bathplus.jpg"
+  ],
+  "prompt": "Ein komplettes Anleitungsblatt im Hochformat A4, exakt im Layout des zweiten Referenzbildes: cremeweißes Papier, oben links das Wortzeichen „WaSH Innovation“, darunter der Produktname „POCKET BATH+“ und das Wort „BEDIENUNGSANLEITUNG“. Darunter ein sauberes Raster aus 6 gleich großen, dünn umrandeten quadratischen Illustrationen in feiner schwarzer Strichzeichnung ohne Schattierung; unter jeder ein schwarz gefüllter Kreis mit weißer Ziffer und eine kurze deutsche Bildunterschrift in schlanker serifenloser Schrift mit korrekten Umlauten. Die Schritte lauten: 1. Je nach Verwendungszweck die Düse wechseln: um 90 Grad drehen und nach oben herausziehen. | 2. Neue Düse einsetzen und um 90 Grad drehen, bis sie einrastet. | 3. Halterung mit Schraube, Magnet oder Saugnapf befestigen — je nach Untergrund. Unten rechts klein „washinnovation.com“. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Einziges farbiges Element im ganzen Blatt ist diese blaue Kappe. Scharfe, gut lesbare Typografie, Druckqualität, keine Fotos."
+ },
+ {
+  "datei": "blattc-strich-00-titel.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png",
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/shower.jpg"
+  ],
+  "prompt": "Titelbild einer Instagram-Anleitung, feine dünne schwarze Strichzeichnung auf cremeweißem Papier ohne Schattierung. Bildmitte: die Handbrause groß. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Oben links das Wortzeichen „WaSH Innovation“. Darunter groß und fett serifenlos buchstabengetreu: „BOTTLE SHOWER MINI“ und kleiner darunter: „Jede Wasserflasche wird zur Dusche.“ Hochformat 4:5, viel weißer Rand, keine weiteren Farben."
+ },
+ {
+  "datei": "blattc-strich-01.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png",
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/bottlemini.jpg"
+  ],
+  "prompt": "Das Produktfoto-Referenzbild gibt die Produktform vor, das zweite Referenzbild den Zeichenstil. Zeichne eine Seite einer Bedienungsanleitung: feine, gleichmäßig dünne schwarze Konturlinien, keine Schattierung, keine Grauflächen, cremeweißes Papier, die Illustration in einem quadratischen dünnen Rahmen. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Alles außer der blauen Kappe bleibt reine schwarze Strichzeichnung. Bildinhalt: ein Netzbeutel links und eine Wasserflasche rechts, ein dicker Pfeil zeigt vom Beutel zur Flasche. Darunter ein schwarz gefüllter Kreis mit weißer Ziffer 1, daneben in schlanker serifenloser Schrift buchstabengetreu mit Umlauten: „Den Beutel über die Wasserflasche ziehen; das Band mit dem Haken liegt unten an der Flasche.“ Oben links das Wortzeichen „WaSH Innovation“. Hochformat 4:5, großzügiger weißer Rand, technische Piktogramm-Ästhetik, kein Foto."
+ },
+ {
+  "datei": "blattc-strich-02.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png",
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/bottlemini.jpg"
+  ],
+  "prompt": "Das Produktfoto-Referenzbild gibt die Produktform vor, das zweite Referenzbild den Zeichenstil. Zeichne eine Seite einer Bedienungsanleitung: feine, gleichmäßig dünne schwarze Konturlinien, keine Schattierung, keine Grauflächen, cremeweißes Papier, die Illustration in einem quadratischen dünnen Rahmen. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Alles außer der blauen Kappe bleibt reine schwarze Strichzeichnung. Bildinhalt: die Flasche liegend im Beutel, ein dicker Pfeil zeigt nach unten am Zugband. Darunter ein schwarz gefüllter Kreis mit weißer Ziffer 2, daneben in schlanker serifenloser Schrift buchstabengetreu mit Umlauten: „Den Beutel nach unten straffziehen, bis er die Flasche fest umschließt.“ Oben links das Wortzeichen „WaSH Innovation“. Hochformat 4:5, großzügiger weißer Rand, technische Piktogramm-Ästhetik, kein Foto."
+ },
+ {
+  "datei": "blattc-strich-03.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png",
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/bottlemini.jpg"
+  ],
+  "prompt": "Das Produktfoto-Referenzbild gibt die Produktform vor, das zweite Referenzbild den Zeichenstil. Zeichne eine Seite einer Bedienungsanleitung: feine, gleichmäßig dünne schwarze Konturlinien, keine Schattierung, keine Grauflächen, cremeweißes Papier, die Illustration in einem quadratischen dünnen Rahmen. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Alles außer der blauen Kappe bleibt reine schwarze Strichzeichnung. Bildinhalt: die eingepackte Flasche rechts, links der geschwungene Schlauch mit der Handbrause, ein Pfeil zeigt zum Ventil. Darunter ein schwarz gefüllter Kreis mit weißer Ziffer 3, daneben in schlanker serifenloser Schrift buchstabengetreu mit Umlauten: „Handbrause mit Schlauch an das Ventil der Flasche stecken.“ Oben links das Wortzeichen „WaSH Innovation“. Hochformat 4:5, großzügiger weißer Rand, technische Piktogramm-Ästhetik, kein Foto."
+ },
+ {
+  "datei": "blattc-strich-04.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png",
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/bottlemini.jpg"
+  ],
+  "prompt": "Das Produktfoto-Referenzbild gibt die Produktform vor, das zweite Referenzbild den Zeichenstil. Zeichne eine Seite einer Bedienungsanleitung: feine, gleichmäßig dünne schwarze Konturlinien, keine Schattierung, keine Grauflächen, cremeweißes Papier, die Illustration in einem quadratischen dünnen Rahmen. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Alles außer der blauen Kappe bleibt reine schwarze Strichzeichnung. Bildinhalt: die eingepackte Flasche hängt kopfüber an einem Haken an einer Kante, ein gebogener Pfeil zeigt das Umdrehen. Darunter ein schwarz gefüllter Kreis mit weißer Ziffer 4, daneben in schlanker serifenloser Schrift buchstabengetreu mit Umlauten: „Die Flasche kopfüber am Haken aufhängen.“ Oben links das Wortzeichen „WaSH Innovation“. Hochformat 4:5, großzügiger weißer Rand, technische Piktogramm-Ästhetik, kein Foto."
+ },
+ {
+  "datei": "blattc-strich-05.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png",
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/bottlemini.jpg"
+  ],
+  "prompt": "Das Produktfoto-Referenzbild gibt die Produktform vor, das zweite Referenzbild den Zeichenstil. Zeichne eine Seite einer Bedienungsanleitung: feine, gleichmäßig dünne schwarze Konturlinien, keine Schattierung, keine Grauflächen, cremeweißes Papier, die Illustration in einem quadratischen dünnen Rahmen. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Alles außer der blauen Kappe bleibt reine schwarze Strichzeichnung. Bildinhalt: die Handbrause von der Seite, ein dicker Pfeil drückt auf den schwarzen Knopf, darunter ein feiner Wasserstrahl. Darunter ein schwarz gefüllter Kreis mit weißer Ziffer 5, daneben in schlanker serifenloser Schrift buchstabengetreu mit Umlauten: „Zum Starten den Knopf drücken. Nochmal drücken stoppt das Wasser.“ Oben links das Wortzeichen „WaSH Innovation“. Hochformat 4:5, großzügiger weißer Rand, technische Piktogramm-Ästhetik, kein Foto."
+ },
+ {
+  "datei": "blattc-strich-06.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png",
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/bottlemini.jpg"
+  ],
+  "prompt": "Das Produktfoto-Referenzbild gibt die Produktform vor, das zweite Referenzbild den Zeichenstil. Zeichne eine Seite einer Bedienungsanleitung: feine, gleichmäßig dünne schwarze Konturlinien, keine Schattierung, keine Grauflächen, cremeweißes Papier, die Illustration in einem quadratischen dünnen Rahmen. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Alles außer der blauen Kappe bleibt reine schwarze Strichzeichnung. Bildinhalt: die hängende Flasche und die hochgehaltene Handbrause, ein gebogener Pfeil zeigt das Wasser zurück in die Flasche. Darunter ein schwarz gefüllter Kreis mit weißer Ziffer 6, daneben in schlanker serifenloser Schrift buchstabengetreu mit Umlauten: „Nach dem Duschen den Knopf drücken, bis das Wasser in die Flasche zurückfließt.“ Oben links das Wortzeichen „WaSH Innovation“. Hochformat 4:5, großzügiger weißer Rand, technische Piktogramm-Ästhetik, kein Foto."
+ },
+ {
+  "datei": "blattc-foto-00-titel.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png"
+  ],
+  "prompt": "Fotorealistisches Titelbild im Hochformat 4:5 von genau dem Produkt aus dem Referenzbild, aber in Blau. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Die Handbrause liegt freigestellt vor warmem, weich beleuchtetem Naturhintergrund, Wassertropfen auf der Oberfläche. Unten groß in weißer serifenloser Schrift buchstabengetreu: „BOTTLE SHOWER MINI“ und kleiner darunter „Jede Wasserflasche wird zur Dusche.“ Sonst keine Schrift, kein Wasserzeichen."
+ },
+ {
+  "datei": "blattc-foto-01.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png"
+  ],
+  "prompt": "Fotorealistisches Produktfoto im Hochformat 4:5 von genau dem Produkt aus dem Referenzbild, aber in Blau. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Bildinhalt: zwei Hände ziehen einen weißen Stoffbeutel über eine durchsichtige Wasserflasche. Warmes weiches Tageslicht, ruhiger unscharfer Hintergrund in Sand- und Grüntönen, flache Tiefenschärfe, hochwertiger Markenlook, keine Menschen im Bild außer Händen. Unten links ein schwarz gefüllter Kreis mit weißer Ziffer 1, daneben in schwarzer serifenloser Schrift buchstabengetreu mit Umlauten: „Den Beutel über die Wasserflasche ziehen; das Band mit dem Haken liegt unten an der Flasche.“ Sonst keine Schrift, kein Wasserzeichen."
+ },
+ {
+  "datei": "blattc-foto-02.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png"
+  ],
+  "prompt": "Fotorealistisches Produktfoto im Hochformat 4:5 von genau dem Produkt aus dem Referenzbild, aber in Blau. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Bildinhalt: eine Hand zieht das Band des Beutels stramm um die Wasserflasche. Warmes weiches Tageslicht, ruhiger unscharfer Hintergrund in Sand- und Grüntönen, flache Tiefenschärfe, hochwertiger Markenlook, keine Menschen im Bild außer Händen. Unten links ein schwarz gefüllter Kreis mit weißer Ziffer 2, daneben in schwarzer serifenloser Schrift buchstabengetreu mit Umlauten: „Den Beutel nach unten straffziehen, bis er die Flasche fest umschließt.“ Sonst keine Schrift, kein Wasserzeichen."
+ },
+ {
+  "datei": "blattc-foto-03.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png"
+  ],
+  "prompt": "Fotorealistisches Produktfoto im Hochformat 4:5 von genau dem Produkt aus dem Referenzbild, aber in Blau. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Bildinhalt: eine Hand steckt den transparenten Schlauch der blauen Handbrause auf das Ventil der eingepackten Flasche. Warmes weiches Tageslicht, ruhiger unscharfer Hintergrund in Sand- und Grüntönen, flache Tiefenschärfe, hochwertiger Markenlook, keine Menschen im Bild außer Händen. Unten links ein schwarz gefüllter Kreis mit weißer Ziffer 3, daneben in schwarzer serifenloser Schrift buchstabengetreu mit Umlauten: „Handbrause mit Schlauch an das Ventil der Flasche stecken.“ Sonst keine Schrift, kein Wasserzeichen."
+ },
+ {
+  "datei": "blattc-foto-04.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png"
+  ],
+  "prompt": "Fotorealistisches Produktfoto im Hochformat 4:5 von genau dem Produkt aus dem Referenzbild, aber in Blau. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Bildinhalt: die eingepackte Wasserflasche hängt kopfüber an einem Haken an einer Holzkante, die blaue Handbrause baumelt darunter. Warmes weiches Tageslicht, ruhiger unscharfer Hintergrund in Sand- und Grüntönen, flache Tiefenschärfe, hochwertiger Markenlook, keine Menschen im Bild außer Händen. Unten links ein schwarz gefüllter Kreis mit weißer Ziffer 4, daneben in schwarzer serifenloser Schrift buchstabengetreu mit Umlauten: „Die Flasche kopfüber am Haken aufhängen.“ Sonst keine Schrift, kein Wasserzeichen."
+ },
+ {
+  "datei": "blattc-foto-05.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png"
+  ],
+  "prompt": "Fotorealistisches Produktfoto im Hochformat 4:5 von genau dem Produkt aus dem Referenzbild, aber in Blau. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Bildinhalt: eine Hand hält die blaue Handbrause, der Daumen drückt den schwarzen Knopf, feiner Wasserstrahl. Warmes weiches Tageslicht, ruhiger unscharfer Hintergrund in Sand- und Grüntönen, flache Tiefenschärfe, hochwertiger Markenlook, keine Menschen im Bild außer Händen. Unten links ein schwarz gefüllter Kreis mit weißer Ziffer 5, daneben in schwarzer serifenloser Schrift buchstabengetreu mit Umlauten: „Zum Starten den Knopf drücken. Nochmal drücken stoppt das Wasser.“ Sonst keine Schrift, kein Wasserzeichen."
+ },
+ {
+  "datei": "blattc-foto-06.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "2k",
+  "ratio": "4:5",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png"
+  ],
+  "prompt": "Fotorealistisches Produktfoto im Hochformat 4:5 von genau dem Produkt aus dem Referenzbild, aber in Blau. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Bildinhalt: eine Hand hält die blaue Handbrause über die hängende Flasche, das Wasser läuft durch den Schlauch zurück. Warmes weiches Tageslicht, ruhiger unscharfer Hintergrund in Sand- und Grüntönen, flache Tiefenschärfe, hochwertiger Markenlook, keine Menschen im Bild außer Händen. Unten links ein schwarz gefüllter Kreis mit weißer Ziffer 6, daneben in schwarzer serifenloser Schrift buchstabengetreu mit Umlauten: „Nach dem Duschen den Knopf drücken, bis das Wasser in die Flasche zurückfließt.“ Sonst keine Schrift, kein Wasserzeichen."
+ },
+ {
+  "datei": "blattc-a4-strich.png",
+  "modell": "gpt-image-2-image-to-image",
+  "size": "4k",
+  "ratio": "3:4",
+  "refs": [
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/produkt-blau-master.png",
+   "https://tempfile.redpandaai.co/kieai/11621781/images/wash/bottlemini.jpg"
+  ],
+  "prompt": "Ein komplettes Anleitungsblatt im Hochformat A4, exakt im Layout des zweiten Referenzbildes: cremeweißes Papier, oben links das Wortzeichen „WaSH Innovation“, darunter der Produktname „BOTTLE SHOWER MINI“ und das Wort „BEDIENUNGSANLEITUNG“. Darunter ein sauberes Raster aus 6 gleich großen, dünn umrandeten quadratischen Illustrationen in feiner schwarzer Strichzeichnung ohne Schattierung; unter jeder ein schwarz gefüllter Kreis mit weißer Ziffer und eine kurze deutsche Bildunterschrift in schlanker serifenloser Schrift mit korrekten Umlauten. Die Schritte lauten: 1. Den Beutel über die Wasserflasche ziehen; das Band mit dem Haken liegt unten an der Flasche. | 2. Den Beutel nach unten straffziehen, bis er die Flasche fest umschließt. | 3. Handbrause mit Schlauch an das Ventil der Flasche stecken. | 4. Die Flasche kopfüber am Haken aufhängen. | 5. Zum Starten den Knopf drücken. Nochmal drücken stoppt das Wasser. | 6. Nach dem Duschen den Knopf drücken, bis das Wasser in die Flasche zurückfließt. Unten rechts klein „washinnovation.com“. Die Handbrause hat exakt die Form aus dem Produktfoto-Referenzbild: schlanker, leicht konischer weißer Kunststoffgriff, unten ein kleiner Schlauchstutzen; oben eine kantige, rechtwinklig abgesetzte Kappe mit schmalem Aufhängeschlitz, seitlich daran ein runder schwarzer Druckknopf. Diese Kappe ist kräftig BLAU, genau im Blauton des Referenzbildes. Ausdrücklich KEINE runde Duschbrause und kein flacher Duschteller — die Form darf nicht vom Produktfoto abweichen. Einziges farbiges Element im ganzen Blatt ist diese blaue Kappe. Scharfe, gut lesbare Typografie, Druckqualität, keine Fotos."
+ }
+]

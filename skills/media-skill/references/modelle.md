@@ -87,6 +87,31 @@ POST /api/v1/generate
 Status: GET /api/v1/generate/record-info?taskId=...
 ```
 
+**Referenzbilder müssen erst hochgeladen werden.**
+Bild-zu-Bild-Modelle nehmen nur URLs, keine lokalen Dateien. Der Upload läuft über einen
+eigenen Host:
+
+```
+POST https://kieai.redpandaai.co/api/file-base64-upload
+  {"base64Data": "data:image/jpeg;base64,…", "uploadPath": "images/projekt",
+   "fileName": "ref01.jpg"}
+→ data.downloadUrl
+```
+
+Ohne `User-Agent`-Header antwortet der Host mit **HTTP 403 (Cloudflare 1010)** — urllib
+schickt von sich aus keinen brauchbaren. Der Host gehört in dieselbe Netzwerk-Allowlist wie
+`api.kie.ai`.
+
+**Bildmodelle setzen Text buchstabengetreu.**
+Steht „druecken" im Prompt, steht „druecken" im Bild. Deutsche Prompts also **mit** Umlauten
+schreiben. Fotorealistische Prompts korrigieren still, Strichzeichnungen nicht.
+
+**Die Produktform kommt nicht aus dem Prompt.**
+Soll ein reales Produkt wiedererkennbar sein, reicht keine Beschreibung — das Modell erfindet
+die naheliegende Form. Erst ein Produktfoto als Referenz bindet die Form. Muss zusätzlich
+etwas daran geändert werden (etwa eine Farbe), lohnt der Umweg über **ein** Masterbild per
+`google/nano-banana-edit` (4 Credits), das dann als Referenz in alle weiteren Aufträge geht.
+
 **HTTP 402 heißt: Guthaben leer.** Auf kie.ai aufladen. `kie.py guthaben` zeigt den Stand.
 
 **Preise ändern sich häufig.** Vor größeren Läufen auf **kie.ai/pricing** nachsehen und die

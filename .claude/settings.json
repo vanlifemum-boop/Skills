@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:kie.ai)",
-      "WebFetch(domain:api.kie.ai)"
+      "WebFetch(domain:api.kie.ai)",
+      "WebFetch(domain:kieai.redpandaai.co)"
     ]
   },
   "sandbox": {
@@ -10,7 +11,9 @@
       "allowedDomains": [
         "kie.ai",
         "*.kie.ai",
-        "api.kie.ai"
+        "api.kie.ai",
+        "kieai.redpandaai.co",
+        "tempfile.redpandaai.co"
       ]
     }
   }

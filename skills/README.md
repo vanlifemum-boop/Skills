@@ -96,6 +96,15 @@ Installieren nötig. Danach Claude Code einmal neu starten.
 Ein bereits vorhandener echter Ordner unter `~/.claude/skills/` wird nie überschrieben,
 sondern gemeldet und übersprungen.
 
+Im selben Lauf wird [`vorgaben.md`](vorgaben.md) nach `~/.claude/CLAUDE.md` verlinkt — die
+stehenden Anweisungen, die Claude in **jeder** Sitzung mitliest (etwa: Bilder und Videos
+immer über kie.ai). Liegt dort schon eine echte Datei, bleibt sie unangetastet; der Installer
+nennt dann die Zeile, mit der man die Vorgaben von Hand einbindet:
+
+```text
+@~/Skills/skills/vorgaben.md
+```
+
 ## Für media-skill: den Schlüssel setzen
 
 ```bash

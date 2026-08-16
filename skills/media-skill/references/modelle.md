@@ -48,6 +48,10 @@ deshalb steht die Kostenfrage im Skill ganz vorn.
 |---|---|---|---|---|
 | `veo3.1` (1080p) | 35 | 65 | 255 | **nur 4, 6 oder 8 Sekunden** |
 
+`veo3.1` hat einen **eigenen Endpunkt** und läuft nicht über `kie.py erzeugen` —
+siehe die Falle weiter unten. Der Preis gilt **je Clip, unabhängig von der Länge**:
+vier Sekunden kosten so viel wie acht. Also acht erzeugen und im Schnitt kürzen.
+
 ## Ton
 
 | Modell | Preis | wofür |
@@ -73,9 +77,51 @@ Bei `grok-imagine` ist es ein **Text** (`"8"`), bei `veo3.1` eine **Zahl** (`8`)
 sind nur 4, 6 oder 8 erlaubt. `kie.py` setzt das richtig; wer `--extra` benutzt, muss selbst
 aufpassen.
 
-**`google/gemini-2-5-pro-tts` schneidet mehrere `dialogue_turns` ab.**
-Es kommen nur die ersten rund neun Sekunden an, der Rest fehlt kommentarlos. Deshalb: **ein**
-Text übergeben, Absätze durch Leerzeilen trennen. Keine `dialogue_turns`-Liste bauen.
+**`google/gemini-2-5-pro-tts` nimmt kein `prompt`.**
+`kie.py erzeugen` schickt `prompt` und läuft damit in eine Kette von 422ern
+(„speakers …", dann „speaker_id …", dann „voice_name …"). Die Eingabe muss so aussehen:
+
+```json
+{"language": "de-DE",
+ "speakers": [{"speaker_id": "Speaker 1", "voice_name": "Sulafat"}],
+ "dialogue_turns": [{"speaker_id": "Speaker 1", "text": "…"}]}
+```
+
+`speaker_id` muss wörtlich **„Speaker N"** heißen — ein sprechender Name wie
+„Erzählerin" wird abgelehnt. Fertiger Aufrufer: `projekte/244-tage/tts.py`.
+
+**Und genau EIN `dialogue_turn`.**
+Mehrere Turns schneidet das Modell nach rund neun Sekunden kommentarlos ab, der Rest
+fehlt und ist trotzdem bezahlt. Also den ganzen Text in einen einzigen Turn, Absätze
+durch Leerzeilen.
+
+**Ton und Video kommen von verschiedenen Hosts.**
+Videos liegen auf `tempfile.aiquickdraw.com`, Sprachdateien auf `file.aiquickdraw.com`.
+Wer nur den ersten freigeschaltet hat, bekommt beim Ton `CONNECT tunnel failed, 403`.
+Beide Hosts gehören in die Netzwerk-Allowlist der Umgebung — in
+`.claude/settings.json` einzutragen reicht dafür **nicht**.
+
+**Veo 3.1 läuft nicht über `/jobs/createTask`.**
+Wie Suno hat Veo bei kie.ai einen eigenen Endpunkt. `kie.py erzeugen --modell veo3.1`
+scheitert deshalb mit `422: The model name you specified is not supported` — bevor
+Credits fließen, immerhin. Die Slugs heißen dort anders: `veo3_lite`, `veo3_fast`,
+`veo3` (Quality). Ein einsatzfertiger Aufrufer liegt in `projekte/244-tage/veo.py`;
+er benutzt Download, Dateinamen und `meta.json` unverändert aus `kie.py` weiter.
+
+```
+POST /api/v1/veo/generate
+  {"prompt": "...", "model": "veo3_lite", "aspect_ratio": "9:16",
+   "duration": 8, "resolution": "1080p", "generationType": "TEXT_2_VIDEO"}
+Status: GET /api/v1/veo/record-info?taskId=...
+  successFlag 0 = läuft, 1 = fertig; die URLs stehen in response.resultUrls
+```
+
+**Der Download braucht unter Umständen `curl`.**
+Die Ergebnisse liegen auf `tempfile.aiquickdraw.com`, nicht unter `kie.ai`. Hinter
+einem Agenten-Proxy antwortet dieser Host auf Pythons `urllib` mit **HTTP 403**, auf
+`curl` dagegen mit 200. Wer das trifft, hängt sich in `kie._datei_holen` ein und lädt
+mit `curl` — so macht es `projekte/244-tage/veo.py`. Wichtig, weil die URLs nach
+24 Stunden verfallen: sonst ist der Auftrag bezahlt und die Datei weg.
 
 **Suno läuft nicht über `/jobs/createTask`.**
 Musik ist ein eigener Weg, den `kie.py` bewusst nicht abdeckt:

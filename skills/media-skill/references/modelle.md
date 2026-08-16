@@ -88,7 +88,7 @@ aufpassen.
 ```
 
 `speaker_id` muss wörtlich **„Speaker N"** heißen — ein sprechender Name wie
-„Erzählerin" wird abgelehnt. Fertiger Aufrufer: `projekte/244-tage/tts.py`.
+„Erzählerin" wird abgelehnt. Fertiger Aufrufer: `skills/media-skill/scripts/tts.py`.
 
 **Und genau EIN `dialogue_turn`.**
 Mehrere Turns schneidet das Modell nach rund neun Sekunden kommentarlos ab, der Rest
@@ -105,7 +105,7 @@ Beide Hosts gehören in die Netzwerk-Allowlist der Umgebung — in
 Wie Suno hat Veo bei kie.ai einen eigenen Endpunkt. `kie.py erzeugen --modell veo3.1`
 scheitert deshalb mit `422: The model name you specified is not supported` — bevor
 Credits fließen, immerhin. Die Slugs heißen dort anders: `veo3_lite`, `veo3_fast`,
-`veo3` (Quality). Ein einsatzfertiger Aufrufer liegt in `projekte/244-tage/veo.py`;
+`veo3` (Quality). Ein einsatzfertiger Aufrufer liegt in `skills/media-skill/scripts/veo.py`;
 er benutzt Download, Dateinamen und `meta.json` unverändert aus `kie.py` weiter.
 
 ```
@@ -116,11 +116,26 @@ Status: GET /api/v1/veo/record-info?taskId=...
   successFlag 0 = läuft, 1 = fertig; die URLs stehen in response.resultUrls
 ```
 
+**Referenzbilder sind bei Serien jeden Umweg wert.**
+`generationType: "REFERENCE_2_VIDEO"` zusammen mit `imageUrls` (bis zu drei öffentlich
+erreichbare URLs) gibt Stil und Gesichter vor. Ein wortgleicher Figurenblock im Prompt
+schafft das nicht: er hält den Stil ungefähr, die Gesichter gar nicht. Der billige Weg
+ist deshalb **erst ein Standbild, dann die Clips**:
+
+| | Preis | wofür |
+|---|---|---|
+| `gpt-image-2-text-to-image`, 2K | ~6 Credits | Stil prüfen, Figuren festlegen, Referenz liefern |
+| `veo3.1 lite`, 1080p | 35 Credits | der eigentliche Versuch |
+
+Sechsmal billiger — jede Unsicherheit gehört zuerst ans Bild. `veo.py --referenz URL`
+macht genau das. Zwei Fallen: die Bild-URL lebt nur **24 Stunden**, und an Motive **ohne
+Personen** gehört **keine** Personenreferenz — sonst stehen die Leute im leeren Zimmer.
+
 **Der Download braucht unter Umständen `curl`.**
 Die Ergebnisse liegen auf `tempfile.aiquickdraw.com`, nicht unter `kie.ai`. Hinter
 einem Agenten-Proxy antwortet dieser Host auf Pythons `urllib` mit **HTTP 403**, auf
 `curl` dagegen mit 200. Wer das trifft, hängt sich in `kie._datei_holen` ein und lädt
-mit `curl` — so macht es `projekte/244-tage/veo.py`. Wichtig, weil die URLs nach
+mit `curl` — so macht es `skills/media-skill/scripts/veo.py`. Wichtig, weil die URLs nach
 24 Stunden verfallen: sonst ist der Auftrag bezahlt und die Datei weg.
 
 **Suno läuft nicht über `/jobs/createTask`.**

@@ -179,6 +179,6 @@ Geld kosten, wenn man sie nicht kennt — vor allem:
   durch Leerzeilen.
 - **Suno** für Musik läuft über einen ganz anderen Endpunkt, nicht über `/jobs/createTask`.
 - **Veo 3.1** genauso: eigener Endpunkt, eigene Slugs (`veo3_lite`, `veo3_fast`, `veo3`).
-  `erzeugen --modell veo3.1` scheitert mit 422. Fertiger Aufrufer: `projekte/244-tage/veo.py`.
+  `erzeugen --modell veo3.1` scheitert mit 422. Fertiger Aufrufer: `skills/media-skill/scripts/veo.py`.
 - **HTTP 402** heißt: Guthaben leer.
 - Preise ändern sich häufig — vor größeren Läufen auf `kie.ai/pricing` schauen.

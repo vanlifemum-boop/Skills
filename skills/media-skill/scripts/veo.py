@@ -16,6 +16,11 @@ Der API-Schlüssel kommt IMMER aus der Umgebungsvariable KIE_API_KEY.
 
     python3 veo.py --prompt "…" --projekt 244-tage
     python3 veo.py --prompt "…" --variante fast --sekunden 6
+    python3 veo.py --prompt "…" --referenz https://…/bild.png
+
+Mit `--referenz` schaltet der Auftrag auf REFERENCE_2_VIDEO um: das Bild gibt Stil
+und Gesichter vor. Das ist der verlässlichste Weg, eine Serie zusammenzuhalten —
+ein Standbild kostet 6 Credits, ein misslungener Clip 35.
 """
 
 import argparse
@@ -27,9 +32,9 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
-# Die bewährten Bausteine aus dem media-skill weiterverwenden statt nachbauen.
-SKILL = Path(__file__).resolve().parents[2] / "skills" / "media-skill" / "scripts"
-sys.path.insert(0, str(SKILL))
+# Die bewährten Bausteine aus kie.py weiterverwenden statt nachbauen — es liegt
+# im selben Ordner.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 import kie  # noqa: E402
 
 ENDPUNKT = "https://api.kie.ai/api/v1/veo"
@@ -91,19 +96,30 @@ def _anfrage(pfad, daten=None):
     raise kie.Abbruch("Aufruf nach mehreren Versuchen aufgegeben.")
 
 
-def erzeugen(prompt, variante, sekunden, aufloesung, seitenverhaeltnis, projekt):
+def erzeugen(prompt, variante, sekunden, aufloesung, seitenverhaeltnis, projekt,
+             referenzen=None):
     modell, credits = VARIANTEN[variante]
     print(f"veo3.1 ({variante}): 1 × {credits} Credits · "
           f"{kie.euro(credits * kie.EUR_JE_CREDIT)} €")
 
-    antwort = _anfrage("/generate", {
+    eingabe = {
         "prompt": prompt,
         "model": modell,
         "aspect_ratio": seitenverhaeltnis,
         "duration": int(sekunden),
         "resolution": aufloesung,
         "generationType": "TEXT_2_VIDEO",
-    })
+    }
+    if referenzen:
+        # Referenzbilder halten Stil und Gesichter über eine ganze Serie zusammen —
+        # verlässlicher als ein wortgleicher Figurenblock im Prompt. Die URLs müssen
+        # öffentlich erreichbar sein; eine frische kie.ai-Ergebnis-URL tut es, aber
+        # nur 24 Stunden lang.
+        eingabe["generationType"] = "REFERENCE_2_VIDEO"
+        eingabe["imageUrls"] = referenzen[:3]
+        print(f"  {len(referenzen[:3])} Referenzbild(er)")
+
+    antwort = _anfrage("/generate", eingabe)
     if antwort.get("code") != 200:
         raise kie.Abbruch(f"Auftrag abgelehnt: {antwort.get('msg')}")
     auftrag = antwort["data"]["taskId"]
@@ -143,11 +159,14 @@ def main():
     zerleger.add_argument("--sekunden", type=int, default=8, choices=(4, 6, 8))
     zerleger.add_argument("--aufloesung", default="1080p")
     zerleger.add_argument("--seitenverhaeltnis", default="9:16")
+    zerleger.add_argument("--referenz", action="append", metavar="URL",
+                          help="Referenzbild-URL, bis zu dreimal angebbar")
     args = zerleger.parse_args()
 
     try:
         erzeugen(args.prompt, args.variante, args.sekunden,
-                 args.aufloesung, args.seitenverhaeltnis, args.projekt)
+                 args.aufloesung, args.seitenverhaeltnis, args.projekt,
+                 referenzen=args.referenz)
     except kie.Abbruch as fehler:
         print(f"Fehler: {fehler}", file=sys.stderr)
         sys.exit(1)

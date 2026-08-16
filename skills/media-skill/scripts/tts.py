@@ -27,8 +27,7 @@ import argparse
 import sys
 from pathlib import Path
 
-SKILL = Path(__file__).resolve().parents[2] / "skills" / "media-skill" / "scripts"
-sys.path.insert(0, str(SKILL))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 import kie  # noqa: E402
 
 from veo import _mit_curl_holen  # noqa: E402

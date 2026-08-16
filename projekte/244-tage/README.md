@@ -27,10 +27,10 @@ Die Videodateien selbst liegen unter `~/Medien/JJJJ-MM-TT-244-tage/` und gehöre
 export KIE_API_KEY='…'
 
 # 1. Die fünf Clips (Prompts stehen in prompts.md)
-python3 projekte/244-tage/veo.py --projekt 244-tage --prompt "<Prompt aus prompts.md>"
+python3 skills/media-skill/scripts/veo.py --projekt 244-tage --prompt "<Prompt aus prompts.md>"
 
 # 2. Die Stimme
-python3 projekte/244-tage/tts.py --projekt 244-tage
+python3 skills/media-skill/scripts/tts.py --projekt 244-tage
 
 # 3. Der Schnitt
 bash projekte/244-tage/bauen.sh

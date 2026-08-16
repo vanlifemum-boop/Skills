@@ -19,8 +19,8 @@ Bei Sprache ist Deutsch als Prompt in Ordnung — anders als bei Video.
 ## Der Aufruf
 
 ```bash
-python3 projekte/244-tage/tts.py --projekt 244-tage
-python3 projekte/244-tage/tts.py --projekt 244-tage --stimme Achernar   # weichere Stimme
+python3 skills/media-skill/scripts/tts.py --projekt 244-tage
+python3 skills/media-skill/scripts/tts.py --projekt 244-tage --stimme Achernar   # weichere Stimme
 ```
 
 **Nicht** `kie.py erzeugen --modell google/gemini-2-5-pro-tts`: das schickt `prompt`,

@@ -26,11 +26,16 @@ nie in einen Commit. Fehlt er, sag das und hör auf; rate nicht herum.
 Läuft Claude Code in einer Sandbox oder hinter einer Netzwerk-Allowlist, müssen diese Hosts
 erreichbar sein — sonst scheitert jeder Aufruf, bevor er anfängt:
 
-| Domain       | wofür                                        |
-|--------------|----------------------------------------------|
-| `api.kie.ai` | alle API-Aufrufe (`/jobs/createTask`, Status, Guthaben) |
-| `kie.ai`     | Preisliste und Modell-Slugs nachsehen        |
-| `*.kie.ai`   | weitere Subdomains derselben Plattform       |
+| Domain               | wofür                                        |
+|----------------------|----------------------------------------------|
+| `api.kie.ai`         | alle API-Aufrufe (`/jobs/createTask`, Status, Guthaben) |
+| `kie.ai`             | Preisliste und Modell-Slugs nachsehen        |
+| `*.kie.ai`           | weitere Subdomains derselben Plattform       |
+| `*.aiquickdraw.com`  | **die Ergebnisdateien** — Videos auf `tempfile.…`, Sprache auf `file.…` |
+
+Der letzte Eintrag wird gern vergessen: die API antwortet dann sauber, der Auftrag ist
+bezahlt, und erst der Download scheitert mit `CONNECT tunnel failed, 403`. Nach
+24 Stunden ist die Datei weg.
 
 Im Projekt sind sie in `.claude/settings.json` eingetragen — unter `permissions.allow` als
 `WebFetch(domain:…)` und unter `sandbox.network.allowedDomains`. Für die Umgebung von

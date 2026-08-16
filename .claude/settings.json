@@ -10,7 +10,8 @@
       "allowedDomains": [
         "kie.ai",
         "*.kie.ai",
-        "api.kie.ai"
+        "api.kie.ai",
+        "*.aiquickdraw.com"
       ]
     }
   }

@@ -19,18 +19,32 @@ Bei Sprache ist Deutsch als Prompt in Ordnung — anders als bei Video.
 ## Der Aufruf
 
 ```bash
-python3 skills/media-skill/scripts/kie.py erzeugen \
-  --modell google/gemini-2-5-pro-tts --sekunden 32 --projekt 244-tage \
-  --prompt "Vor 244 Tagen holten zwei Frauen mein Kind. Er durfte mitnehmen, was er tragen konnte: seinen Teddy und drei Bücher.
-
-Seitdem zähle ich. 244 Tage, in denen ein Platz in meinem Leben leer geblieben ist. Mein Kind wächst weiter — und ich verpasse Momente, die ich niemals zurückbekomme.
-
-Ich will keine Tage mehr zählen. Ich will einfach nur wieder Mama sein. 244 Tage sind genug."
+python3 projekte/244-tage/tts.py --projekt 244-tage
+python3 projekte/244-tage/tts.py --projekt 244-tage --stimme Achernar   # weichere Stimme
 ```
 
-**Die Falle:** ein einziger Text, Absätze durch Leerzeilen. Wer eine
-`dialogue_turns`-Liste baut, bekommt kommentarlos nur die ersten rund neun Sekunden
-zurück — bezahlt aber alles (`skills/media-skill/references/modelle.md`).
+**Nicht** `kie.py erzeugen --modell google/gemini-2-5-pro-tts`: das schickt `prompt`,
+und das Modell will etwas anderes. Man läuft in drei 422er nacheinander, bis klar wird,
+wie die Eingabe wirklich aussehen muss:
+
+```json
+{"language": "de-DE",
+ "speakers": [{"speaker_id": "Speaker 1", "voice_name": "Sulafat"}],
+ "dialogue_turns": [{"speaker_id": "Speaker 1", "text": "…"}]}
+```
+
+`speaker_id` muss wörtlich **„Speaker N"** heißen — „Erzählerin" wird abgelehnt. Und es
+bleibt bei **einem einzigen** Turn: mehrere schneidet das Modell nach rund neun Sekunden
+kommentarlos ab und berechnet trotzdem alles.
+
+## Der Ton fehlt im fertigen Reel noch
+
+Die Datei wurde erzeugt, ließ sich hier aber nicht laden: Sprachdateien liegen auf
+`file.aiquickdraw.com`, und dieser Host wird von der Netzwerk-Richtlinie der Umgebung
+abgewiesen (`CONNECT tunnel failed, 403`) — Videos gehen durch, weil sie auf
+`tempfile.aiquickdraw.com` liegen. Entweder den Host in der **Allowlist der Umgebung**
+freigeben (nicht in `.claude/settings.json`, die steuert das nicht) und `tts.py` erneut
+laufen lassen, oder den Text selbst einsprechen.
 
 ## Besser als jede KI-Stimme
 

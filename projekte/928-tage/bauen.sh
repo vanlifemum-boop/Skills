@@ -16,13 +16,13 @@ trap 'rm -rf "$ARBEIT"' EXIT
 
 command -v ffmpeg >/dev/null || { echo "ffmpeg fehlt: apt-get install -y ffmpeg"; exit 1; }
 
-# Bild 1 wird bewusst KURZ gehalten: in Sekunde 5 öffnet der Vater die Tür, und
-# dahinter steht niemand — Veo animiert einen leeren Hausflur. Das widerspricht
-# Bild 2, wo die Beamten schon in der Wohnung sind. Der Schnitt liegt deshalb
-# vor dem Öffnen: es klingelt, er geht hin, Schnitt. Die Sekunden gehen an
-# Bild 2, den Sturm.
+# Bild 1 endet nach 3,5 Sekunden. Ab Sekunde 4 dreht der Vater sich um und hält
+# plötzlich ein Schutzschild in der Hand — das gehört der Polizei, nicht ihm.
+# Neu erzeugen hätte 35 Credits gekostet, wegschneiden kostet nichts.
+# Die gewonnenen Sekunden gehen an Bild 2, den Sturm.
 # Bild 5 läuft voll durch, weil sie am Fenster das Bild ist, auf dem man stehenbleibt.
-LAENGEN=(5 8 6 6 8)
+# Mehr als 8 Sekunden hat kein Quellclip — Veo liefert maximal acht.
+LAENGEN=(3.5 8 7 7 8)
 
 echo "Clips kürzen …"
 for i in 1 2 3 4 5; do
@@ -61,12 +61,12 @@ Style: Stark,DejaVu Sans,76,&H00FFFFFF,&H00000000,&HC8000000,1,0,1,5,2,2,90,90,3
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:00.60,0:00:04.60,Haupt,,0,0,0,,Morgens um sieben\Nklingelte es an der Tür.
-Dialogue: 0,0:00:05.60,0:00:12.60,Stark,,0,0,0,,Zehn Beamte\Nin unserer Wohnung.
-Dialogue: 0,0:00:13.50,0:00:18.50,Stark,,0,0,0,,Sie trugen mein Kind hinaus.
-Dialogue: 0,0:00:19.50,0:00:24.50,Haupt,,0,0,0,,Ein Beschluss in meiner Hand.\NSeitdem: 928 Tage.
-Dialogue: 0,0:00:25.50,0:00:29.50,Haupt,,0,0,0,,Kein Anruf. Kein Besuch.
-Dialogue: 0,0:00:29.80,0:00:33.00,Stark,,0,0,0,,928 Tage sind genug.
+Dialogue: 0,0:00:00.40,0:00:03.30,Haupt,,0,0,0,,Morgens um sieben\Nklingelte es an der Tür.
+Dialogue: 0,0:00:04.30,0:00:11.30,Stark,,0,0,0,,Zehn Beamte\Nin unserer Wohnung.
+Dialogue: 0,0:00:12.30,0:00:18.20,Stark,,0,0,0,,Sie trugen mein Kind hinaus.
+Dialogue: 0,0:00:19.30,0:00:25.20,Haupt,,0,0,0,,Ein Beschluss in meiner Hand.\NSeitdem: 928 Tage.
+Dialogue: 0,0:00:26.30,0:00:30.00,Haupt,,0,0,0,,Kein Anruf. Kein Besuch.
+Dialogue: 0,0:00:30.30,0:00:33.50,Stark,,0,0,0,,928 Tage sind genug.
 ASS
 
 echo "Text einbrennen …"

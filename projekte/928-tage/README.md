@@ -61,6 +61,17 @@ Wer eine Bewegung beschreibt („steht auf und geht zur Tür"), bekommt beide Zu
 einem Bild. Besser den **Endzustand** beschreiben: „steht schon an der Tür, sein Stuhl ist
 leer".
 
+**Schrift im Bild: mal Kauderwelsch, mal erstaunlich sauber.**
+Auf dem Beschluss in Bild 4 steht `OLG FRANKFURT` gestochen lesbar, weil es ausdrücklich
+im Prompt stand. Verlassen kann man sich darauf nicht — aber ausprobieren lohnt, wenn ein
+Wort im Bild etwas erzählt.
+
+**Requisiten wandern zur falschen Person.**
+In Bild 1 hielt der Vater plötzlich das Schutzschild in der Hand, das im Prompt der
+Polizei gehörte. Ab Sekunde 4, davor sauber. Statt 35 Credits für einen neuen Versuch
+endet der Clip jetzt nach 3,5 Sekunden. Bei einem Fehler, der erst spät im Clip auftaucht,
+ist der Schnitt immer die erste Antwort, nicht die Neuerzeugung.
+
 **Beschriftungen auf Uniformen lassen sich nicht wegverneinen.**
 `no writing, no letters, no patches, no emblems, no badges, no insignia` stand am Ende
 viermal im Prompt — auf den Westen stand trotzdem „Police". Bei Polizeimotiven ist das
@@ -77,11 +88,19 @@ nicht neu erzeugen.
 | Erster Durchlauf: 4 Clips (Bild 3 vom Filter blockiert, kostenfrei) | 140 |
 | 2 Versuche für Bild 3 | 70 |
 | Zweiter Durchlauf mit korrigierter Mutter: 5 Clips | 175 |
-| **Summe** | **403 Cr · rund 1,73 €** |
+| Korrekturen an Bild 1 und 3 (Vater doppelt, zwei Jungen, Huckepack) | 210 |
+| Dritter Durchlauf nach der genauen Ablauf-Schilderung: 5 Clips | 175 |
+| **Summe** | **rund 780 Cr · gut 3 €** |
 
-Das teuerste der drei Videos, und der Grund steht oben: eine Figurbeschreibung, die erst
-nach fünf fertigen Clips beanstandet wurde. Zum Vergleich: Video 1 kostete 315, Video 2
-nur 228 Credits.
+Mehr als Video 1 und 2 zusammen (315 und 228 Credits). Und fast alles davon war
+vermeidbar — die Gründe stehen unten. Der wichtigste: **der genaue Ablauf lag erst nach
+zwei kompletten Durchläufen auf dem Tisch.** Wer die Szenenfolge Satz für Satz vorher
+aufschreibt, spart mehr Credits als jede Prompt-Feinheit.
+
+Und eine Warnung zur Buchhaltung: `veo.py` rechnet mit 35 Credits je Clip, weil der
+Veo-Endpunkt die tatsächlich abgerechneten Credits **nicht** zurückmeldet. Real war es
+mehr. Wer den Stand wissen will, fragt `kie.py guthaben` — Schätzungen aus dem Skript
+laufen sonst weit auseinander.
 
 ## Die Leitplanken — nicht wegoptimieren
 

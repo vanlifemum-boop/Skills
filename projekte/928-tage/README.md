@@ -47,6 +47,28 @@ schlank. Erst „a plus-size young mother in her early thirties, full-figured an
 heavy-set, round full face" traf es. Das kostete fünf Clips à 35 Credits — beim nächsten
 Video wird Statur und Alter am 6-Credit-Standbild geklärt, bevor irgendein Clip läuft.
 
+**Zwei Figuren, wo eine stehen sollte.**
+Bild 1 zeigte den Vater gleichzeitig sitzend am Tisch und stehend an der Tür — der Prompt
+sagte „alle drei sitzen" **und** „der Vater steht auf". Das Modell malt in so einem Fall
+beides. Der nächste Versuch setzte dann zwei Jungen an den Tisch. Erst eine ausdrückliche
+Personenzählung hat es gelöst:
+
+> `Exactly three people are in the scene and no one else: one mother seated, exactly one
+> boy seated beside her, one father standing at the door. A single child only, no other
+> children, no other adults.`
+
+Wer eine Bewegung beschreibt („steht auf und geht zur Tür"), bekommt beide Zustände in
+einem Bild. Besser den **Endzustand** beschreiben: „steht schon an der Tür, sein Stuhl ist
+leer".
+
+**Beschriftungen auf Uniformen lassen sich nicht wegverneinen.**
+`no writing, no letters, no patches, no emblems, no badges, no insignia` stand am Ende
+viermal im Prompt — auf den Westen stand trotzdem „Police". Bei Polizeimotiven ist das
+offenbar so fest im Modell verankert, dass Negativangaben nicht greifen. Es blieb stehen,
+weil englisches „Police" ohne Wappen keine bestimmte deutsche Behörde bezeichnet — genau
+das war die Leitplanke, nicht das Wort an sich. Wo es stört: im Schnitt wegschneiden,
+nicht neu erzeugen.
+
 ## Was gekostet wurde
 
 | Posten | Credits |

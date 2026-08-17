@@ -466,11 +466,16 @@ def herunterladen_und_protokollieren(urls, ordner, modell, prompt, typ, credits)
             "typ": typ,
             "modell": modell,
             "prompt": prompt,
+            # Die Quell-URL wird mitgeschrieben, weil ein frisch erzeugtes Bild als
+            # Referenz für Videoclips taugt (veo.py --referenz) — dafür braucht man
+            # die URL, nicht die lokale Datei. Sie lebt nur 24 Stunden.
+            "quelle": url,
             "credits": round(je_datei, 2),
             "eur": round(je_datei * EUR_JE_CREDIT, 4),
         }
         neue.append(eintrag)
         print(f"  {ziel}")
+        print(f"    Quelle (24 h gültig, taugt als --referenz): {url}")
         nummer += 1
 
     # Anhängen, nicht überschreiben.

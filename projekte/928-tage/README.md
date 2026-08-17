@@ -109,7 +109,11 @@ laufen sonst weit auseinander.
 - **Keine Waffen, kein Blut.** `No weapons drawn, no blood` gehört in den Prompt für
   Bild 2. Ohne das kippt die Szene ins Actionhafte, und Instagram drosselt
   Gewaltdarstellungen.
-- **Das Gericht wird im Video nicht benannt**, das Blatt in Bild 4 bleibt leer.
+- **Das Gericht darf benannt werden** — auf ihren ausdrücklichen Wunsch steht
+  `OLG FRANKFURT` auf dem Beschluss in Bild 4. Ursprünglich war ein leeres Blatt geplant,
+  weil erfundene Aktenzeichen wie Kauderwelsch aussehen und ein lesbares Dokument in
+  einem laufenden Verfahren riskant sein kann. Sie hat das abgewogen und entschieden;
+  es ist ihre Geschichte und ihr Verfahren.
 - **Der Missbrauch im Heim kommt nicht ins Video** — weder als Bild noch als Einblendung.
   In der Bildunterschrift steht ein einziger zurückhaltender Satz, dessen zweite Hälfte
   die wichtigere ist: dass sie nicht mehr dazu schreibt.

@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Datenschutzerklärung — GutachtenKompass</title>
-  <meta name="description" content="Datenschutzerklärung der Website GutachtenKompass." />
-  <meta name="robots" content="noindex" />
+  <title>Sachverständigen-Suche — GutachtenKompass</title>
+  <meta name="description" content="Öffentlich auffindbare Kontaktdaten von Sachverständigen im Familienrecht nachschlagen — durchsuchbar nach Name oder Ort." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23111111'/%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%231F6F6B' stroke-width='2.5'/%3E%3Cpath d='M16 6.5 19 16l-3 9.5L13 16Z' fill='%23E8A93D'/%3E%3Cpath d='M16 6.5 19 16h-6Z' fill='%23D6392E'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -27,35 +26,39 @@
   </header>
 
   <main id="inhalt">
-    <section class="sec sec--weiss sec--kompakt">
-      <div class="container prose">
-        <p class="eyebrow">Rechtliches</p>
-        <h1 class="display">Datenschutzerklärung</h1>
 
-        <div class="hinweis">
-          <p><strong>Hinweis:</strong> Dieses Dokument ist ein Grundgerüst mit Platzhaltern. Vor Veröffentlichung von einer Fachperson (Datenschutz/Recht) prüfen und vervollständigen lassen.</p>
-        </div>
-
-        <h2>Kurz zusammengefasst</h2>
-        <ul class="liste">
-          <li>Diese Website setzt <strong>keine Tracking-Cookies</strong> und keine Analyse-Tools ein.</li>
-          <li>Es werden nur Daten verarbeitet, die du uns aktiv über Formulare schickst (Terminanfrage, Leitfaden-Anforderung).</li>
-          <li>Deine Angaben werden ausschließlich zur Bearbeitung deiner Anfrage genutzt und nicht an Dritte weitergegeben.</li>
-        </ul>
-
-        <h2>Verantwortliche Stelle</h2>
-        <p><span class="ph">[PLATZHALTER: Name, Anschrift, E-Mail — identisch mit Impressum]</span></p>
-
-        <h2>Hosting</h2>
-        <p>Diese Website wird bei <span class="ph">[PLATZHALTER: Hoster, z. B. GitHub Pages (GitHub Inc.) — inkl. Hinweis auf Server-Logfiles und ggf. Drittlandübermittlung]</span> gehostet.</p>
-
-        <h2>Formulare</h2>
-        <p>Terminanfragen und Leitfaden-Anforderungen werden über <span class="ph">[PLATZHALTER: Formular-Dienst, z. B. Formspree, inkl. Rechtsgrundlage Art. 6 Abs. 1 lit. b DSGVO und Speicherdauer]</span> verarbeitet.</p>
-
-        <h2>Deine Rechte</h2>
-        <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch sowie das Recht auf Beschwerde bei einer Aufsichtsbehörde. <span class="ph">[PLATZHALTER: zuständige Aufsichtsbehörde ergänzen]</span></p>
+    <!-- ================= HERO ================= -->
+    <section class="sec sec--petrol hero">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Nachschlagewerk</p>
+        <h1 class="display" data-reveal>Sachverständige im Familienrecht finden.</h1>
+        <p class="hero__sub" data-reveal>Wurde dir im Verfahren bereits ein Name genannt, oder suchst du allgemein nach Sachverständigen in deiner Nähe? Hier findest du öffentlich auffindbare Kontaktdaten — durchsuchbar nach Name oder Ort.</p>
       </div>
     </section>
+
+    <!-- ================= HINWEIS / QUELLE ================= -->
+    <section class="sec sec--weiss sec--kompakt">
+      <div class="container prose">
+        <div class="hinweis" data-reveal>
+          <p><strong>Wichtig, bevor du die Liste nutzt:</strong></p>
+          <p>Diese Übersicht enthält ausschließlich sachliche, öffentlich auffindbare berufliche Kontaktdaten (Name, Ort, Adresse, Telefon, E-Mail) von Sachverständigen, die familienpsychologische Gutachten erstellen. Zusammengestellt wurde sie ursprünglich von <a href="https://www.vaterlos.eu/" target="_blank" rel="noopener noreferrer">vaterlos.eu</a>; wir haben die Daten weder selbst recherchiert noch geprüft oder aktualisiert — sie können veraltet, unvollständig oder fehlerhaft sein.</p>
+          <p>Die Aufnahme in diese Liste ist <strong>keine Bewertung, Empfehlung oder Kritik</strong> unsererseits. Wir kennen die meisten gelisteten Personen nicht persönlich und äußern uns hier nicht zu ihrer fachlichen Qualität. Bewusst nicht übernommen haben wir Nutzerkommentare und -bewertungen der Quelle — diese sind unverifizierte Einzelmeinungen, die wir nicht verbreiten möchten.</p>
+          <p>Bist du selbst hier gelistet und möchtest eine Korrektur oder die Entfernung deines Eintrags? Schreib uns: <span class="ph">[PLATZHALTER: E-Mail-Adresse]</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SUCHE ================= -->
+    <section class="sec sec--weiss">
+      <div class="container">
+        <label class="skip-link" for="gs-suche">Nach Name oder Ort suchen</label>
+        <input id="gs-suche" class="gs-suchfeld" type="search" placeholder="Name oder Ort eingeben …" autocomplete="off" data-reveal />
+        <p id="gs-anzahl" class="gs-anzahl" data-reveal></p>
+        <p id="gs-leer" class="gs-leer" hidden>Keine Treffer. Versuch es mit einem anderen Namen oder Ort.</p>
+        <div id="gs-liste" class="gs-liste"></div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
@@ -100,6 +103,8 @@
     <button class="btn btn--petrol" type="button">Verstanden</button>
   </div>
 
+  <script src="gutachter-daten.js"></script>
+  <script src="gutachter.js"></script>
   <script src="main.js"></script>
 </body>
 </html>

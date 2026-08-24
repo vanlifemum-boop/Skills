@@ -1,0 +1,711 @@
+{
+  "serie": "Recht erklärt für Eltern",
+  "folge": 1,
+  "titel": "Die Inobhutnahme – was muss passieren, was darf nicht passieren und was können Eltern tun?",
+  "stand": "2026-08-24",
+  "pruefstand": "juristisch ungeprüft – vor Veröffentlichung durch Fachanwalt/Fachanwältin für Familienrecht gegenzulesen",
+  "format_youtube": "16:9",
+  "format_reel": "9:16",
+  "bilddeckung": 0.45,
+  "kapitel": [
+    {
+      "nr": 0,
+      "titel": "Kaltstart",
+      "bilddeckung": 0.95,
+      "sprechertext": "Ein Anruf, ein Klingeln an der Tür, und plötzlich ist das eigene Kind nicht mehr zu Hause. Für Eltern ist das ein Ausnahmezustand. Rechtlich ist es ein Verfahren – mit klaren Voraussetzungen, klaren Pflichten und klaren Fristen. In dieser Folge gehen wir dieses Verfahren Schritt für Schritt durch: Was muss passieren, was darf nicht passieren, und was können Eltern tun.",
+      "einblendungen": [
+        "Recht erklärt für Eltern",
+        "Folge 1: Die Inobhutnahme"
+      ],
+      "belege": [
+        "§ 42 SGB VIII"
+      ],
+      "szenen": [
+        {
+          "id": "k00-s1",
+          "sekunden": 8,
+          "visual_prompt": "Empty children's room in a German apartment, late afternoon light through the window, a schoolbag left on the floor, no people, quiet documentary framing, shallow depth of field"
+        },
+        {
+          "id": "k00-s2",
+          "sekunden": 8,
+          "visual_prompt": "Close-up of an adult hand holding a mobile phone that shows an incoming call, blurred kitchen background, no readable text on screen, serious documentary mood"
+        },
+        {
+          "id": "k00-s3",
+          "sekunden": 8,
+          "visual_prompt": "Slow push-in on a plain office door with an anonymous nameplate in a German public building, neutral corridor lighting, no readable signage, no people"
+        }
+      ]
+    },
+    {
+      "nr": 1,
+      "titel": "Was ist eine Inobhutnahme?",
+      "sprechertext": "Die Inobhutnahme steht in Paragraf 42 des Achten Buchs Sozialgesetzbuch. Sie ist eine vorläufige Schutzmaßnahme des Jugendamts. Sie ist kein Urteil, keine Entscheidung über das Sorgerecht und keine Feststellung, dass Eltern versagt haben. Das Jugendamt nimmt ein Kind vorübergehend in seine Obhut und bringt es an einem anderen Ort unter: in einer Bereitschaftspflegefamilie, in einer Einrichtung oder bei einer geeigneten Person. Zwei Punkte sind dabei entscheidend. Erstens: Die Inobhutnahme ist ein Verwaltungsakt. Sie ist damit überprüfbar – sie ist keine Maßnahme, die man einfach hinnehmen muss. Zweitens: Sie ist von vornherein als vorläufig gedacht. Nach Absatz 4 endet sie mit der Übergabe des Kindes an die Sorgeberechtigten oder mit der Entscheidung über eine Hilfe. Ein Dauerzustand ist sie rechtlich nicht.",
+      "einblendungen": [
+        "§ 42 SGB VIII – Inobhutnahme",
+        "vorläufige Schutzmaßnahme",
+        "Verwaltungsakt = überprüfbar",
+        "§ 42 Abs. 4 SGB VIII – Ende der Maßnahme"
+      ],
+      "belege": [
+        "§ 42 Abs. 1 SGB VIII",
+        "§ 42 Abs. 4 SGB VIII"
+      ],
+      "szenen": [
+        {
+          "id": "k01-s1",
+          "sekunden": 8,
+          "visual_prompt": "Printed German law book open on a wooden desk, pages in soft focus, warm reading lamp, no readable paragraph text, calm educational documentary style"
+        },
+        {
+          "id": "k01-s2",
+          "sekunden": 8,
+          "visual_prompt": "Bereitschaftspflege setting: a tidy guest room with a made bed and a small suitcase, soft daylight, no people, respectful and neutral, German interior"
+        },
+        {
+          "id": "k01-s3",
+          "sekunden": 8,
+          "visual_prompt": "Official envelope and a stamped document lying on a kitchen table, blurred illegible text, morning light, serious documentary realism"
+        }
+      ]
+    },
+    {
+      "nr": 2,
+      "titel": "Wann darf das Jugendamt ein Kind in Obhut nehmen?",
+      "sprechertext": "Paragraf 42 Absatz 1 nennt drei Fälle. Erstens: Das Kind oder der Jugendliche bittet selbst um Obhut. Zweitens: Es besteht eine dringende Gefahr für das Wohl des Kindes – und zusätzlich muss eine von zwei Bedingungen erfüllt sein. Entweder die Personensorgeberechtigten widersprechen nicht, oder eine Entscheidung des Familiengerichts kann nicht rechtzeitig eingeholt werden. Drittens: Ein ausländisches Kind kommt unbegleitet nach Deutschland. Der zweite Fall ist der, um den es in Familien fast immer geht. Und er hat zwei Stufen, die in der Praxis oft zusammengezogen werden. Die dringende Gefahr allein reicht nicht aus. Es muss auch begründet werden, warum das Familiengericht nicht rechtzeitig entscheiden konnte. Familiengerichte haben Eildienste. Wenn zwischen dem ersten Hinweis und der Maßnahme Tage oder Wochen liegen, ist die Frage berechtigt, warum in dieser Zeit kein Antrag beim Familiengericht gestellt wurde. Diese Frage ist keine Unverschämtheit. Sie ist genau die Frage, die das Gesetz stellt.",
+      "einblendungen": [
+        "§ 42 Abs. 1 S. 1 Nr. 1–3 SGB VIII",
+        "Nr. 2: dringende Gefahr",
+        "UND: kein Widerspruch ODER Gericht nicht rechtzeitig erreichbar",
+        "Familiengerichte haben Eildienste"
+      ],
+      "belege": [
+        "§ 42 Abs. 1 S. 1 Nr. 1 SGB VIII",
+        "§ 42 Abs. 1 S. 1 Nr. 2 Buchst. a und b SGB VIII",
+        "§ 42 Abs. 1 S. 1 Nr. 3 SGB VIII"
+      ],
+      "szenen": [
+        {
+          "id": "k02-s1",
+          "sekunden": 8,
+          "visual_prompt": "Three plain numbered index cards fanned out on a grey desk surface, no readable writing, overhead light, minimal educational still life"
+        },
+        {
+          "id": "k02-s2",
+          "sekunden": 8,
+          "visual_prompt": "Wall clock in a bare institutional corridor showing late evening, motion-blurred figure passing far in the background, unidentifiable, documentary realism"
+        },
+        {
+          "id": "k02-s3",
+          "sekunden": 8,
+          "visual_prompt": "Exterior of a generic German courthouse building at dusk, stone steps and glass doors, no signage, no identifiable people, calm wide shot"
+        },
+        {
+          "id": "k02-s4",
+          "sekunden": 8,
+          "visual_prompt": "Calendar page on a desk with several days circled in pencil, shallow focus, no readable text, quiet investigative mood"
+        }
+      ]
+    },
+    {
+      "nr": 3,
+      "titel": "Was muss vor und bei der Maßnahme geprüft werden?",
+      "sprechertext": "Vor der Inobhutnahme steht die Gefährdungseinschätzung nach Paragraf 8a. Das Gesetz verlangt dafür mehr als den Eindruck einer einzelnen Person. Es müssen gewichtige Anhaltspunkte für eine Gefährdung vorliegen. Die Einschätzung erfolgt im Zusammenwirken mehrerer Fachkräfte. Die Fachkräfte müssen sich – soweit fachlich erforderlich – einen unmittelbaren Eindruck vom Kind und von seiner persönlichen Umgebung verschaffen. Und Eltern und Kind sind einzubeziehen, soweit dadurch der wirksame Schutz des Kindes nicht in Frage gestellt wird. Der zweite Prüfschritt ist die Verhältnismäßigkeit. Die Trennung eines Kindes von seiner Familie ist der schwerste Eingriff, den das Kinderschutzrecht kennt. Sie ist nur zulässig, wenn der Gefahr nicht auf andere Weise begegnet werden kann. Andere Wege sind zum Beispiel ambulante Hilfen, eine Schutzvereinbarung mit den Eltern, die vorübergehende Unterbringung bei Verwandten oder das Herausnehmen der gefährdenden Person aus dem Haushalt statt des Kindes. Ob diese milderen Mittel geprüft wurden, muss nachvollziehbar sein. Nicht, weil es eine Formalität wäre – sondern weil dieser Maßstab in Paragraf 1666a des Bürgerlichen Gesetzbuchs steht.",
+      "einblendungen": [
+        "§ 8a SGB VIII – Schutzauftrag",
+        "gewichtige Anhaltspunkte",
+        "Zusammenwirken mehrerer Fachkräfte",
+        "unmittelbarer Eindruck vom Kind",
+        "§ 1666a BGB – Verhältnismäßigkeit",
+        "mildere Mittel zuerst"
+      ],
+      "belege": [
+        "§ 8a Abs. 1 SGB VIII",
+        "§ 8a Abs. 2 SGB VIII",
+        "§ 1666 BGB",
+        "§ 1666a BGB"
+      ],
+      "szenen": [
+        {
+          "id": "k03-s1",
+          "sekunden": 8,
+          "visual_prompt": "Four anonymous professionals seated around a plain meeting table seen from behind and above, faces not visible, folders and notepads, neutral office lighting"
+        },
+        {
+          "id": "k03-s2",
+          "sekunden": 8,
+          "visual_prompt": "Front door of a German apartment building from the inside hallway, daylight through frosted glass, no people, quiet documentary framing"
+        },
+        {
+          "id": "k03-s3",
+          "sekunden": 8,
+          "visual_prompt": "Balance scale made of simple wood and metal on a neutral background, one side slightly lower, soft studio light, clean legal metaphor"
+        },
+        {
+          "id": "k03-s4",
+          "sekunden": 8,
+          "visual_prompt": "A staircase of five ascending steps rendered as a minimal paper diagram on a desk, top-down, soft shadows, educational infographic style, no text"
+        }
+      ]
+    },
+    {
+      "nr": 4,
+      "titel": "Was muss den Eltern erklärt werden?",
+      "sprechertext": "Nach Paragraf 42 Absatz 3 hat das Jugendamt die Personensorge- oder Erziehungsberechtigten unverzüglich von der Inobhutnahme zu unterrichten. Und es hat mit ihnen das Gefährdungsrisiko abzuschätzen. Unverzüglich heißt: ohne schuldhaftes Zögern. Nicht am nächsten Werktag, wenn ein Anruf am selben Abend möglich gewesen wäre. Die Unterrichtung ist außerdem mehr als der Satz, dass das Kind nicht mehr zu Hause ist. Eltern sollen erfahren, worauf sich die Einschätzung stützt, wie es weitergeht, und dass sie der Maßnahme widersprechen können. Weil die Inobhutnahme ein Verwaltungsakt ist, gehört zu ihr auch eine Begründung und eine Rechtsbehelfsbelehrung. Deshalb ein sehr praktischer Rat: Bitten Sie um eine schriftliche Bestätigung der Maßnahme mit Datum, Uhrzeit, Rechtsgrundlage und Begründung. Freundlich, sachlich, aber ausdrücklich. Was mündlich gesagt wurde, ist Wochen später kaum noch zu belegen.",
+      "einblendungen": [
+        "§ 42 Abs. 3 S. 1 SGB VIII",
+        "unverzüglich = ohne schuldhaftes Zögern",
+        "gemeinsame Abschätzung des Gefährdungsrisikos",
+        "Schriftliche Bestätigung verlangen"
+      ],
+      "belege": [
+        "§ 42 Abs. 3 S. 1 SGB VIII",
+        "§ 35 SGB X (Begründung)",
+        "§ 36 SGB X (Rechtsbehelfsbelehrung)"
+      ],
+      "szenen": [
+        {
+          "id": "k04-s1",
+          "sekunden": 8,
+          "visual_prompt": "Two adults sitting across a table in a plain municipal office, seen from chest height with faces out of frame, folder open between them, neutral daylight"
+        },
+        {
+          "id": "k04-s2",
+          "sekunden": 8,
+          "visual_prompt": "Close-up of a hand writing the time and date at the top of a blank notepad page, ballpoint pen, kitchen table, warm lamp light, handwriting not readable"
+        },
+        {
+          "id": "k04-s3",
+          "sekunden": 8,
+          "visual_prompt": "Official letterhead document being placed on a table, crisp paper, blurred body text, formal German administrative aesthetic, no logos"
+        }
+      ]
+    },
+    {
+      "nr": 5,
+      "titel": "Welche Rechte haben Eltern?",
+      "sprechertext": "Das Wichtigste zuerst: Die Inobhutnahme entzieht Ihnen nicht das Sorgerecht. Das Jugendamt darf während der Maßnahme nur die Rechtshandlungen vornehmen, die zum Wohl des Kindes notwendig sind – und dabei ist Ihr mutmaßlicher Wille angemessen zu berücksichtigen. Über das Sorgerecht entscheidet allein das Familiengericht. Daraus folgen mehrere konkrete Rechte. Sie haben das Recht, der Maßnahme zu widersprechen. Sie haben Anspruch auf Beteiligung an der Hilfeplanung nach Paragraf 36. Sie haben das Recht auf Akteneinsicht nach Paragraf 25 des Zehnten Buchs Sozialgesetzbuch. Sie dürfen jederzeit eine Anwältin oder einen Anwalt einschalten – und wenn das Geld dafür fehlt, gibt es Beratungshilfe und Verfahrenskostenhilfe. Sie haben Anspruch auf Beratung und Unterstützung, auch während der Trennung. Und das Umgangsrecht besteht fort: Ein vollständiger Ausschluss des Umgangs ist eine Entscheidung, die dem Familiengericht vorbehalten ist. Kurzfristige Einschränkungen aus einem akuten Schutzbedürfnis müssen begründet und befristet sein. Ein Punkt, der oft überrascht: Eltern können nach den Paragrafen 91 und folgende zu den Kosten der Unterbringung herangezogen werden. Das ist unangenehm, aber es ist gesetzlich vorgesehen – und kein Zeichen dafür, dass eine Entscheidung schon gefallen wäre.",
+      "einblendungen": [
+        "Sorgerecht bleibt bei den Eltern",
+        "§ 42 Abs. 2 S. 4 SGB VIII – nur Notvertretung",
+        "§ 25 SGB X – Akteneinsicht",
+        "§ 36 SGB VIII – Beteiligung an der Hilfeplanung",
+        "§ 1684 BGB – Umgang",
+        "§§ 91 ff. SGB VIII – Kostenbeitrag"
+      ],
+      "belege": [
+        "§ 42 Abs. 2 S. 4 SGB VIII",
+        "§ 25 SGB X",
+        "§ 36 SGB VIII",
+        "§ 18 SGB VIII",
+        "§ 1684 BGB",
+        "§§ 91 ff. SGB VIII"
+      ],
+      "szenen": [
+        {
+          "id": "k05-s1",
+          "sekunden": 8,
+          "visual_prompt": "A parent's hands resting protectively on a closed folder at a table, no face visible, soft window light, dignified and calm"
+        },
+        {
+          "id": "k05-s2",
+          "sekunden": 8,
+          "visual_prompt": "Row of labelled archive folders on a shelf in an administrative office, spines blurred and unreadable, cool neutral light"
+        },
+        {
+          "id": "k05-s3",
+          "sekunden": 8,
+          "visual_prompt": "Empty consultation room with two chairs facing each other and a small table, plants by the window, warm and non-threatening, no people"
+        },
+        {
+          "id": "k05-s4",
+          "sekunden": 8,
+          "visual_prompt": "Two adult hands and one child's hand near each other on a park bench armrest, only hands in frame, gentle afternoon light, respectful"
+        }
+      ]
+    },
+    {
+      "nr": 6,
+      "titel": "Welche Rechte hat das Kind?",
+      "sprechertext": "Kinder sind in diesem Verfahren keine Sache, über die verhandelt wird. Sie haben eigene Rechte. Nach Paragraf 42 Absatz 2 muss das Jugendamt die Situation, die zur Inobhutnahme geführt hat, zusammen mit dem Kind klären und ihm Möglichkeiten der Hilfe aufzeigen. Dem Kind ist unverzüglich Gelegenheit zu geben, eine Person seines Vertrauens zu benachrichtigen. Kinder und Jugendliche haben einen eigenen Anspruch auf Beratung – in Not- und Konfliktlagen auch ohne Kenntnis der Eltern. Sie müssen in Einrichtungen Beschwerdemöglichkeiten haben. Und in vielen Bundesländern gibt es Ombudsstellen nach Paragraf 9a, an die sich Kinder und Eltern unabhängig vom Jugendamt wenden können. Im gerichtlichen Verfahren kommt hinzu: Das Familiengericht verschafft sich einen persönlichen Eindruck vom Kind und hört es an. Kommt eine Trennung von der Familie in Betracht, wird dem Kind in der Regel ein Verfahrensbeistand zur Seite gestellt – ein eigener Interessenvertreter, unabhängig von Eltern und Jugendamt. Und eine Grenze, die im Gesetz sehr deutlich gezogen ist: Freiheitsentziehende Maßnahmen sind nur zulässig, wenn sie erforderlich sind, um eine Gefahr für Leib oder Leben abzuwenden. Ohne gerichtliche Entscheidung ist eine solche Freiheitsentziehung spätestens mit Ablauf des Tages nach ihrem Beginn zu beenden.",
+      "einblendungen": [
+        "§ 42 Abs. 2 SGB VIII",
+        "Vertrauensperson benachrichtigen",
+        "§ 8 Abs. 3 SGB VIII – eigener Beratungsanspruch",
+        "§ 9a SGB VIII – Ombudsstellen",
+        "§ 158 FamFG – Verfahrensbeistand",
+        "§ 42 Abs. 5 SGB VIII – enge Grenzen"
+      ],
+      "belege": [
+        "§ 42 Abs. 2 SGB VIII",
+        "§ 42 Abs. 5 SGB VIII",
+        "§ 8 Abs. 3 SGB VIII",
+        "§ 9a SGB VIII",
+        "§ 45 Abs. 2 Nr. 4 SGB VIII",
+        "§ 158 FamFG",
+        "§ 159 FamFG"
+      ],
+      "szenen": [
+        {
+          "id": "k06-s1",
+          "sekunden": 8,
+          "visual_prompt": "Child's backpack and a small stuffed animal on a chair in a bright room, no people, gentle daylight, respectful and non-dramatic"
+        },
+        {
+          "id": "k06-s2",
+          "sekunden": 8,
+          "visual_prompt": "Old-fashioned telephone handset on a wall in a care facility hallway, cord hanging down, soft light, no people, quiet mood"
+        },
+        {
+          "id": "k06-s3",
+          "sekunden": 8,
+          "visual_prompt": "Empty child-sized chair beside a larger chair in a plain room, symmetrical composition, soft window light, calm educational framing"
+        },
+        {
+          "id": "k06-s4",
+          "sekunden": 8,
+          "visual_prompt": "A door left deliberately open in a bright corridor, light falling through the gap, no people, symbolic of freedom and limits"
+        }
+      ]
+    },
+    {
+      "nr": 7,
+      "titel": "Was muss dokumentiert werden?",
+      "sprechertext": "Die Akte ist in diesem Verfahren das Gedächtnis. Später – vor Gericht, bei der Akteneinsicht, in der Hilfeplanung – zählt vor allem, was aufgeschrieben wurde. Nachvollziehbar sein sollte deshalb: Welche Anhaltspunkte lagen vor, von wem kamen sie und wann? Wer war an der Gefährdungseinschätzung beteiligt? Welchen unmittelbaren Eindruck haben die Fachkräfte vom Kind gewonnen? Welche milderen Mittel wurden geprüft, und warum wurden sie verworfen? Warum war die Sache so eilig, dass keine Entscheidung des Familiengerichts eingeholt werden konnte? Wann genau wurden die Eltern unterrichtet, mit welchem Inhalt, und wie haben sie reagiert? Haben die Eltern widersprochen – wann, gegenüber wem? Und was ist danach passiert? Für Eltern folgt daraus ein einfacher Merksatz: Was nicht dokumentiert ist, lässt sich später schwer belegen. Das gilt in beide Richtungen. Es gilt für Vorwürfe gegen Sie – und es gilt für Zusagen, die Ihnen gemacht wurden.",
+      "einblendungen": [
+        "Die Akte ist das Gedächtnis des Verfahrens",
+        "Anhaltspunkte · Beteiligte · Eindruck vom Kind",
+        "Mildere Mittel: geprüft und verworfen – warum?",
+        "Zeitpunkt der Elternunterrichtung",
+        "Widerspruch: wann, gegenüber wem?"
+      ],
+      "belege": [
+        "§ 8a Abs. 1 SGB VIII",
+        "§ 42 Abs. 3 SGB VIII",
+        "§ 25 SGB X"
+      ],
+      "szenen": [
+        {
+          "id": "k07-s1",
+          "sekunden": 8,
+          "visual_prompt": "Thick paper case file being opened on a desk, punched pages and dividers, text blurred and unreadable, cool office light"
+        },
+        {
+          "id": "k07-s2",
+          "sekunden": 8,
+          "visual_prompt": "Close-up of a date stamp being pressed onto a document, ink roller visible, no readable text, crisp administrative detail"
+        },
+        {
+          "id": "k07-s3",
+          "sekunden": 8,
+          "visual_prompt": "Gap in a row of archive folders where one folder is missing, shelf in a records room, muted light, subtle sense of something absent"
+        },
+        {
+          "id": "k07-s4",
+          "sekunden": 8,
+          "visual_prompt": "Timeline drawn by hand on a large sheet of paper with several marked points, top-down view, pencil and ruler, no readable words"
+        }
+      ]
+    },
+    {
+      "nr": 8,
+      "titel": "Was passiert, wenn Eltern widersprechen?",
+      "sprechertext": "Hier wird es entscheidend – und hier wird häufig etwas verwechselt. Das Wort Widerspruch hat in diesem Verfahren zwei Bedeutungen. Die erste steht in Paragraf 42 Absatz 3. Dieser Widerspruch ist formlos. Sie müssen nur deutlich machen, dass Sie mit der Inobhutnahme nicht einverstanden sind. Er löst sofort eine Pflicht des Jugendamts aus. Das Jugendamt muss dann unverzüglich eines von zwei Dingen tun: Entweder es gibt das Kind heraus – nämlich dann, wenn nach seiner Einschätzung keine Gefährdung besteht oder die Eltern bereit und in der Lage sind, die Gefährdung abzuwenden. Oder es ruft das Familiengericht an und lässt über die erforderlichen Maßnahmen entscheiden. Ein Drittes sieht das Gesetz nicht vor. Wochenlang abwarten, ohne das Gericht einzuschalten, gehört nicht zu den zulässigen Möglichkeiten. Dasselbe gilt übrigens, wenn die Eltern gar nicht erreichbar sind: Dann muss das Jugendamt das Gericht anrufen. Die zweite Bedeutung ist der förmliche Widerspruch gegen den Verwaltungsakt. Er richtet sich gegen die Inobhutnahme als behördliche Entscheidung und ist der Einstieg in die sozialgerichtliche Überprüfung. Dazu kommen wir noch. Praktisch heißt das: Sagen Sie klar, dass Sie widersprechen. Und schicken Sie den Widerspruch anschließend schriftlich hinterher, mit Datum und nachweisbarem Zugang. Schweigen hilft an dieser Stelle nicht – ohne Widerspruch fehlt der Auslöser, der das Jugendamt zum Handeln zwingt.",
+      "einblendungen": [
+        "Widerspruch nach § 42 Abs. 3 SGB VIII: formlos",
+        "Jugendamt muss dann: herausgeben ODER Gericht anrufen",
+        "Ein Drittes gibt es nicht",
+        "Förmlicher Widerspruch gegen den Verwaltungsakt",
+        "Schriftlich, datiert, mit Zugangsnachweis"
+      ],
+      "belege": [
+        "§ 42 Abs. 3 S. 2 Nr. 1 und 2 SGB VIII",
+        "§ 42 Abs. 3 S. 3 SGB VIII",
+        "§ 83 SGG"
+      ],
+      "szenen": [
+        {
+          "id": "k08-s1",
+          "sekunden": 8,
+          "visual_prompt": "Fork in a plain corridor splitting into two doorways, symmetrical composition, cool institutional light, no people, clear visual metaphor"
+        },
+        {
+          "id": "k08-s2",
+          "sekunden": 8,
+          "visual_prompt": "Hand signing a letter at a kitchen table and folding it into an envelope, signature not readable, warm evening lamp light"
+        },
+        {
+          "id": "k08-s3",
+          "sekunden": 8,
+          "visual_prompt": "Letter being handed across a post office counter, registered mail receipt in view, text blurred, everyday German setting, faces out of frame"
+        },
+        {
+          "id": "k08-s4",
+          "sekunden": 8,
+          "visual_prompt": "Wall clock with the second hand in motion in a plain office, tight framing, sense of urgency without drama"
+        },
+        {
+          "id": "k08-s5",
+          "sekunden": 8,
+          "visual_prompt": "Two empty in-trays on an office desk, one stacked with documents and one bare, side light, no readable paper, calm administrative still life"
+        }
+      ]
+    },
+    {
+      "nr": 9,
+      "titel": "Wann muss das Familiengericht eingeschaltet werden?",
+      "sprechertext": "Das Familiengericht kommt in zwei Situationen ins Spiel. Erstens, wenn Eltern widersprechen und das Jugendamt weiter von einer Gefährdung ausgeht. Zweitens, wenn das Jugendamt das Tätigwerden des Gerichts für erforderlich hält – etwa, weil Eltern an der Gefährdungseinschätzung nicht mitwirken. Vor Gericht geht es dann um die Paragrafen 1666 und 1666a des Bürgerlichen Gesetzbuchs: Welche Maßnahmen sind zur Abwendung der Gefahr erforderlich, und was ist das mildeste Mittel, das dafür genügt? In eiligen Fällen entscheidet das Gericht zunächst durch einstweilige Anordnung. Das ist eine vorläufige Entscheidung auf einer noch schmalen Tatsachengrundlage – nicht das Ende des Verfahrens. Das Verfahren selbst hat eigene Regeln, die Eltern kennen sollten. Es gilt ein Vorrang- und Beschleunigungsgebot: Die Sache soll in der Regel binnen eines Monats mit den Beteiligten erörtert werden. Die Eltern sind persönlich anzuhören. Das Kind wird angehört, und das Gericht verschafft sich einen persönlichen Eindruck. Kommt eine Trennung von der Familie in Betracht, wird dem Kind in der Regel ein Verfahrensbeistand bestellt. Und ein Punkt, der oft für Enttäuschung sorgt, weil er unbekannt ist: Das Familiengericht entscheidet über den Eingriff in das Sorgerecht. Es entscheidet nicht darüber, ob die Inobhutnahme des Jugendamts rechtmäßig war. Das sind zwei verschiedene Fragen vor zwei verschiedenen Gerichten.",
+      "einblendungen": [
+        "§ 1666, § 1666a BGB",
+        "§ 49 FamFG – einstweilige Anordnung",
+        "§ 155 FamFG – Termin binnen eines Monats",
+        "§ 160 FamFG – Anhörung der Eltern",
+        "§ 159 FamFG – Anhörung des Kindes",
+        "Zwei Fragen, zwei Gerichte"
+      ],
+      "belege": [
+        "§ 8a Abs. 2 SGB VIII",
+        "§ 1666 BGB",
+        "§ 1666a BGB",
+        "§ 49 FamFG",
+        "§ 155 FamFG",
+        "§ 157 FamFG",
+        "§ 158 FamFG",
+        "§ 159 FamFG",
+        "§ 160 FamFG",
+        "§ 162 FamFG"
+      ],
+      "szenen": [
+        {
+          "id": "k09-s1",
+          "sekunden": 8,
+          "visual_prompt": "Empty German family court hearing room with a plain table, chairs and no gallery, daylight through high windows, no people, no signage"
+        },
+        {
+          "id": "k09-s2",
+          "sekunden": 8,
+          "visual_prompt": "Judge's empty chair behind a wooden bench, folders stacked to one side, restrained documentary lighting, no emblems or coats of arms"
+        },
+        {
+          "id": "k09-s3",
+          "sekunden": 8,
+          "visual_prompt": "Court file with a coloured cover being carried down a corridor, hands only, motion blur in background, no readable labels"
+        },
+        {
+          "id": "k09-s4",
+          "sekunden": 8,
+          "visual_prompt": "Two separate doorways in one wall, clearly distinct, minimal architectural composition, cool even light, visual metaphor for two legal paths"
+        },
+        {
+          "id": "k09-s5",
+          "sekunden": 8,
+          "visual_prompt": "Wooden gavel resting unused beside a closed folder on a bench, soft directional light, restrained, no emblems"
+        }
+      ]
+    },
+    {
+      "nr": 10,
+      "titel": "Typische mögliche Fehler – und was sie rechtlich bedeuten",
+      "sprechertext": "Jetzt zu den Fehlern. Wichtig vorweg: Das sind mögliche Fehler, keine Unterstellung. Viele Verfahren laufen sauber. Aber wenn etwas schiefgeht, dann meistens an einer dieser Stellen. Erstens: Die Eilbedürftigkeit wird nicht begründet – es steht nirgends, warum das Familiengericht nicht rechtzeitig entscheiden konnte. Zweitens: Die Eltern werden zu spät oder nur bruchstückhaft unterrichtet. Drittens: Die Gefährdungseinschätzung erfolgt ohne das Zusammenwirken mehrerer Fachkräfte. Viertens: Niemand hat sich einen unmittelbaren Eindruck vom Kind verschafft. Fünftens: Mildere Mittel wurden nicht geprüft, oder die Prüfung steht nicht in der Akte. Sechstens: Nach einem Widerspruch geschieht wochenlang nichts – weder Herausgabe noch Antrag beim Familiengericht. Siebtens: Es gibt keine schriftliche Begründung und keine Rechtsbehelfsbelehrung. Achtens: Das Kind wird nicht altersgerecht informiert und bekommt keine Gelegenheit, eine Vertrauensperson zu benachrichtigen. Neuntens: Die Akteneinsicht wird verzögert oder pauschal verweigert. Zehntens: Die Maßnahme läuft weiter, obwohl die Gefährdungslage entfallen ist. Und jetzt der wichtigste Satz dieser Folge: Ein Verfahrensfehler führt nicht automatisch dazu, dass das Kind zurückkommt. Das Familiengericht entscheidet nach der aktuellen Lage – nach dem Wohl des Kindes heute, nicht nach der Frage, ob vor drei Wochen ein Formular gefehlt hat. Fehler wirken an anderer Stelle: Sie erschüttern die Grundlage einer Einschätzung, sie beeinflussen, wie belastbar ein Bericht ist, sie können zur Feststellung führen, dass die Maßnahme rechtswidrig war, und in seltenen Fällen können sie Amtshaftungsansprüche begründen. Und der Satz gilt auch umgekehrt: Ein formal fehlerfreies Verfahren beweist nicht, dass die Einschätzung inhaltlich richtig war. Verfahren und Sache sind zwei verschiedene Ebenen. Wer beide auseinanderhält, argumentiert deutlich stärker.",
+      "einblendungen": [
+        "Mögliche Fehler – keine Unterstellung",
+        "1 Eilbedürftigkeit nicht begründet",
+        "2 Eltern zu spät unterrichtet",
+        "3 keine kollegiale Gefährdungseinschätzung",
+        "4 kein Eindruck vom Kind",
+        "5 mildere Mittel ungeprüft",
+        "6 nach Widerspruch: nichts passiert",
+        "7 keine Begründung, keine Rechtsbehelfsbelehrung",
+        "8 Kind nicht informiert",
+        "9 Akteneinsicht verweigert",
+        "10 Maßnahme läuft ohne Anlass weiter",
+        "Fehler ≠ automatische Rückführung",
+        "Verfahren und Sache sind zwei Ebenen"
+      ],
+      "belege": [
+        "§ 8a SGB VIII",
+        "§ 42 Abs. 2 und 3 SGB VIII",
+        "§ 25 SGB X",
+        "§ 839 BGB",
+        "Art. 34 GG"
+      ],
+      "szenen": [
+        {
+          "id": "k10-s1",
+          "sekunden": 8,
+          "visual_prompt": "Checklist form on a clipboard with several boxes left blank, pen resting beside it, top-down, no readable text, plain desk"
+        },
+        {
+          "id": "k10-s2",
+          "sekunden": 8,
+          "visual_prompt": "Single sheet of paper missing from a bound file, gap between pages, close-up, cool light, subtle documentary detail"
+        },
+        {
+          "id": "k10-s3",
+          "sekunden": 8,
+          "visual_prompt": "Stack of ten plain cards on a neutral surface, top card slightly offset, overhead studio light, minimal educational still life"
+        },
+        {
+          "id": "k10-s4",
+          "sekunden": 8,
+          "visual_prompt": "Two transparent glass panes standing side by side on a table, light passing through both, abstract metaphor for two separate levels, studio lighting"
+        },
+        {
+          "id": "k10-s5",
+          "sekunden": 8,
+          "visual_prompt": "Magnifying glass lying on an open document, shallow depth of field, text unreadable, calm investigative mood"
+        },
+        {
+          "id": "k10-s6",
+          "sekunden": 8,
+          "visual_prompt": "Row of file drawers with one drawer pulled half open, records room, cool fluorescent light, no labels readable, no people"
+        }
+      ]
+    },
+    {
+      "nr": 11,
+      "titel": "Was können Eltern konkret tun?",
+      "sprechertext": "Was also tun, in der Situation selbst? Erstens: So ruhig bleiben, wie es irgend geht. Nicht, weil Ihre Empörung unberechtigt wäre – sondern weil jede Eskalation vor dem Kind später gegen Sie verwendet wird und dem Kind zusätzlich schadet. Zweitens: Fragen Sie nach Namen, Dienststelle und Rechtsgrundlage. Schreiben Sie mit. Notieren Sie Uhrzeiten und wer anwesend war. Drittens: Sagen Sie ausdrücklich, ob Sie widersprechen – und reichen Sie den Widerspruch schriftlich nach. Viertens: Verlangen Sie eine schriftliche Bestätigung der Maßnahme mit Begründung. Fünftens: Nehmen Sie so früh wie möglich anwaltliche Hilfe in Anspruch, am besten im Familienrecht. Fragen Sie nach Beratungshilfe und Verfahrenskostenhilfe, wenn die Kosten ein Problem sind. Sechstens: Beantragen Sie Akteneinsicht – schriftlich und mit Datum. Siebtens: Bleiben Sie für Ihr Kind verlässlich erreichbar. Halten Sie Umgangstermine ein, auch wenn sie kurz und schwierig sind. Achtens: Nehmen Sie Termine beim Jugendamt wahr und wirken Sie mit. Mitwirkung ist kein Schuldeingeständnis. Sie ist die stärkste Grundlage für eine Rückführung. Und neuntens: Holen Sie sich Unterstützung von außen – eine Ombudsstelle, eine unabhängige Beratungsstelle, einen Elternverband. Niemand sollte dieses Verfahren allein durchstehen.",
+      "einblendungen": [
+        "Ruhig bleiben – vor dem Kind besonders",
+        "Namen, Dienststelle, Rechtsgrundlage notieren",
+        "Widerspruch aussprechen und schriftlich nachreichen",
+        "Anwalt · Beratungshilfe · Verfahrenskostenhilfe",
+        "Akteneinsicht schriftlich beantragen",
+        "Mitwirkung ist kein Schuldeingeständnis",
+        "Ombudsstelle einschalten"
+      ],
+      "belege": [
+        "§ 42 Abs. 3 SGB VIII",
+        "§ 25 SGB X",
+        "§ 18 SGB VIII",
+        "§ 9a SGB VIII",
+        "§ 36 SGB VIII",
+        "§ 1684 BGB"
+      ],
+      "szenen": [
+        {
+          "id": "k11-s1",
+          "sekunden": 8,
+          "visual_prompt": "Adult taking a slow breath at a kitchen window, seen from behind in silhouette, morning light, calm and dignified, face not visible"
+        },
+        {
+          "id": "k11-s2",
+          "sekunden": 8,
+          "visual_prompt": "Small notebook and pen on a table with a wristwatch beside it, top-down, warm light, handwriting not readable"
+        },
+        {
+          "id": "k11-s3",
+          "sekunden": 8,
+          "visual_prompt": "Waiting area of a law office, two chairs, bookshelf with legal volumes in soft focus, no people, professional and reassuring"
+        },
+        {
+          "id": "k11-s4",
+          "sekunden": 8,
+          "visual_prompt": "Marked appointment in a paper calendar, pen resting on the page, close-up, no readable text, everyday German household"
+        },
+        {
+          "id": "k11-s5",
+          "sekunden": 8,
+          "visual_prompt": "Support group setting: circle of empty chairs in a community room, soft daylight, no people, warm and non-institutional"
+        }
+      ]
+    },
+    {
+      "nr": 12,
+      "titel": "Unterlagen sichern und Vorgänge dokumentieren",
+      "sprechertext": "Dokumentation ist keine Bürokratie. Sie ist der Teil des Verfahrens, den Sie selbst in der Hand haben. Führen Sie eine Chronologie: Datum, Uhrzeit, wer war beteiligt, was wurde gesagt, wer war dabei. Schreiben Sie sie am selben Tag – Erinnerungen verblassen schneller, als man denkt, und ein Eintrag vom selben Abend ist deutlich überzeugender als eine Rekonstruktion nach acht Wochen. Heben Sie jedes Schreiben auf und notieren Sie darauf das Eingangsdatum. Führen Sie Kommunikation möglichst schriftlich. Nach wichtigen Telefonaten schicken Sie eine kurze, sachliche Gesprächsnotiz per E-Mail: Was habe ich verstanden, was wurde vereinbart. Das ist höflich, es ist nützlich – und es erzeugt einen Nachweis. Sammeln Sie Belege, die Ihre Sicht stützen: Arztberichte, Schulbescheinigungen, Nachweise über Hilfen, die Sie angenommen haben, Fotos von Wohnverhältnissen, wenn diese Thema sind. Und eine klare Warnung: Keine heimlichen Tonaufnahmen von Gesprächen. Das ist nach Paragraf 201 des Strafgesetzbuchs strafbar, im Verfahren regelmäßig nicht verwertbar – und es beschädigt Ihre Glaubwürdigkeit genau dort, wo Sie sie am dringendsten brauchen. Legen Sie alles in einer klaren Ordnung ab: Chronologie, Schriftverkehr, Belege, Gerichtsunterlagen. Wenn Ihre Anwältin oder Ihr Anwalt später in zwei Stunden den Überblick hat statt in zwei Wochen, hat sich diese Arbeit bereits bezahlt gemacht.",
+      "einblendungen": [
+        "Chronologie: Datum · Uhrzeit · Beteiligte · Inhalt",
+        "Am selben Tag notieren",
+        "Nach Telefonaten: Gesprächsnotiz per E-Mail",
+        "Eingangsdatum auf jedem Schreiben",
+        "Keine heimlichen Aufnahmen – § 201 StGB"
+      ],
+      "belege": [
+        "§ 201 StGB",
+        "§ 25 SGB X"
+      ],
+      "szenen": [
+        {
+          "id": "k12-s1",
+          "sekunden": 8,
+          "visual_prompt": "Neatly labelled ring binders standing on a home desk, dividers visible, evening lamp light, no readable labels"
+        },
+        {
+          "id": "k12-s2",
+          "sekunden": 8,
+          "visual_prompt": "Hand writing in a dated notebook late in the evening, cup of tea beside it, warm lamp, handwriting not readable"
+        },
+        {
+          "id": "k12-s3",
+          "sekunden": 8,
+          "visual_prompt": "Laptop screen showing a blank email draft window, blurred and unreadable, desk in a German home, soft evening light"
+        },
+        {
+          "id": "k12-s4",
+          "sekunden": 8,
+          "visual_prompt": "Smartphone lying face down on a table beside a folder, deliberate and quiet composition, warm light, symbolic of not recording"
+        },
+        {
+          "id": "k12-s5",
+          "sekunden": 8,
+          "visual_prompt": "Shoebox of collected letters and receipts on a living room floor, lid beside it, warm lamp light, no readable text"
+        }
+      ]
+    },
+    {
+      "nr": 13,
+      "titel": "Rechtliche Überprüfung und mögliche Rechtsmittel",
+      "sprechertext": "Zum Schluss die Wege der Überprüfung. Halten Sie zwei Stränge sauber auseinander – das ist der Punkt, an dem die meiste Kraft verlorengeht. Der erste Strang ist das Familiengericht. Dort geht es um das Sorgerecht und darum, wo das Kind lebt. Eine einstweilige Anordnung ist in Familiensachen grundsätzlich nicht anfechtbar. Es gibt aber wirksame Ansatzpunkte: Sie können beantragen, dass mündlich verhandelt wird. Sie können beantragen, dass das Gericht das Hauptsacheverfahren einleitet. Und Sie können eine Abänderung beantragen, wenn sich die Umstände geändert haben. Hat das Gericht aufgrund einer mündlichen Erörterung über die Entziehung der elterlichen Sorge entschieden, ist dagegen die Beschwerde möglich. Der zweite Strang betrifft die Inobhutnahme selbst als behördliche Entscheidung. Hier führt der Weg über den förmlichen Widerspruch und anschließend zum Sozialgericht. Ist die Maßnahme zu diesem Zeitpunkt bereits beendet, kann trotzdem gerichtlich festgestellt werden, dass sie rechtswidrig war – das ist keine akademische Frage, sondern kann für spätere Verfahren und für Ersatzansprüche erheblich sein. Daneben gibt es Wege, die keine Rechtsmittel im engeren Sinn sind, aber Wirkung entfalten können: die Dienstaufsichtsbeschwerde, die Fachaufsicht, die Ombudsstelle, die Petition. Und schließlich die Amtshaftung nach Paragraf 839 des Bürgerlichen Gesetzbuchs in Verbindung mit Artikel 34 des Grundgesetzes. Dafür sind die Hürden hoch: Es braucht eine schuldhafte Amtspflichtverletzung und einen daraus entstandenen Schaden. Zuständig ist das Landgericht, und dort besteht Anwaltszwang. Für alle diese Wege gilt: Fristen laufen, oft ab Zustellung. Wer wartet, verliert Möglichkeiten, die sich nicht zurückholen lassen.",
+      "einblendungen": [
+        "Zwei Stränge sauber trennen",
+        "Familiengericht: Sorgerecht",
+        "§ 54 Abs. 2 FamFG – mündliche Verhandlung beantragen",
+        "§ 52 Abs. 2 FamFG – Hauptsacheverfahren einleiten",
+        "§ 57 FamFG – Beschwerde nur im Ausnahmefall",
+        "Sozialgericht: War die Inobhutnahme rechtmäßig?",
+        "§ 839 BGB, Art. 34 GG – Amtshaftung",
+        "Fristen laufen ab Zustellung"
+      ],
+      "belege": [
+        "§ 52 Abs. 2 FamFG",
+        "§ 54 Abs. 1 und 2 FamFG",
+        "§ 57 FamFG",
+        "§ 83 SGG",
+        "§ 131 Abs. 1 S. 3 SGG",
+        "§ 51 Abs. 1 Nr. 6a SGG",
+        "§ 839 BGB",
+        "Art. 34 GG"
+      ],
+      "szenen": [
+        {
+          "id": "k13-s1",
+          "sekunden": 8,
+          "visual_prompt": "Two parallel paths in a park diverging around a hedge, autumn light, no people, calm metaphorical wide shot"
+        },
+        {
+          "id": "k13-s2",
+          "sekunden": 8,
+          "visual_prompt": "Court decision document in an opened envelope on a table, delivery date stamp visible but unreadable, cool daylight"
+        },
+        {
+          "id": "k13-s3",
+          "sekunden": 8,
+          "visual_prompt": "Exterior of a plain German social court building, modern architecture, overcast sky, no signage, no identifiable people"
+        },
+        {
+          "id": "k13-s4",
+          "sekunden": 8,
+          "visual_prompt": "Hourglass on a desk beside a stack of documents, most sand already fallen, soft side light, restrained symbolism"
+        },
+        {
+          "id": "k13-s5",
+          "sekunden": 8,
+          "visual_prompt": "Long corridor with numbered doors receding into depth, institutional but clean, no signage readable, no people, quiet perspective shot"
+        }
+      ]
+    },
+    {
+      "nr": 14,
+      "titel": "Ausblick und Hinweis",
+      "sprechertext": "In der nächsten Folge nehmen wir uns den Zeitraum vor, in dem die meisten Fehler passieren und die meisten Weichen gestellt werden: die ersten vierundzwanzig Stunden nach einer Inobhutnahme. Wer muss in dieser Zeit was tun, welche Fristen laufen bereits, und welche Schritte sind am ersten Tag wirklich wichtig? Ein Hinweis zum Schluss, und der ist ernst gemeint: Dieses Video erklärt die allgemeine Rechtslage. Es ist keine Rechtsberatung und kann sie nicht ersetzen. Jeder Fall hat eigene Tatsachen, und an denen entscheidet sich alles. Wenn Sie betroffen sind, holen Sie sich anwaltliche Hilfe – und zwar früh.",
+      "einblendungen": [
+        "Nächste Folge: Die ersten 24 Stunden",
+        "Allgemeine Information – keine Rechtsberatung",
+        "Im Einzelfall: anwaltliche Hilfe, und zwar früh"
+      ],
+      "belege": [],
+      "szenen": [
+        {
+          "id": "k14-s1",
+          "sekunden": 8,
+          "visual_prompt": "Sunrise over a quiet German residential street, empty pavement, soft warm light, hopeful but restrained documentary tone"
+        },
+        {
+          "id": "k14-s2",
+          "sekunden": 8,
+          "visual_prompt": "Clean neutral background plate for closing titles, subtle paper texture, soft vignette, no text, no people"
+        }
+      ]
+    }
+  ],
+  "reels": [
+    {
+      "nr": 1,
+      "titel": "Was ist eine Inobhutnahme?",
+      "aus_kapitel": [
+        1
+      ],
+      "hook": "Eine Inobhutnahme ist kein Urteil. Sie ist ein Verwaltungsakt – und der ist überprüfbar.",
+      "kernsatz": "§ 42 SGB VIII: vorläufige Schutzmaßnahme, keine Sorgerechtsentscheidung."
+    },
+    {
+      "nr": 2,
+      "titel": "Welche Voraussetzungen müssen geprüft werden?",
+      "aus_kapitel": [
+        2,
+        3
+      ],
+      "hook": "Dringende Gefahr allein reicht nicht aus.",
+      "kernsatz": "Es muss auch begründet sein, warum das Familiengericht nicht rechtzeitig entscheiden konnte."
+    },
+    {
+      "nr": 3,
+      "titel": "Was müssen Eltern erfahren?",
+      "aus_kapitel": [
+        4
+      ],
+      "hook": "Unverzüglich heißt nicht: nächste Woche.",
+      "kernsatz": "§ 42 Abs. 3 SGB VIII: Unterrichtung ohne schuldhaftes Zögern – plus gemeinsame Risikoabschätzung."
+    },
+    {
+      "nr": 4,
+      "titel": "Was muss dokumentiert werden?",
+      "aus_kapitel": [
+        7
+      ],
+      "hook": "Was nicht in der Akte steht, ist später kaum zu belegen.",
+      "kernsatz": "Anhaltspunkte, beteiligte Fachkräfte, geprüfte mildere Mittel, Zeitpunkt der Elternunterrichtung."
+    },
+    {
+      "nr": 5,
+      "titel": "Was passiert bei Widerspruch?",
+      "aus_kapitel": [
+        8
+      ],
+      "hook": "Nach Ihrem Widerspruch hat das Jugendamt genau zwei Möglichkeiten.",
+      "kernsatz": "Herausgeben oder das Familiengericht anrufen. Ein Drittes sieht § 42 Abs. 3 SGB VIII nicht vor."
+    },
+    {
+      "nr": 6,
+      "titel": "Wann wird das Familiengericht wichtig?",
+      "aus_kapitel": [
+        9
+      ],
+      "hook": "Das Familiengericht prüft nicht, ob die Inobhutnahme rechtmäßig war.",
+      "kernsatz": "Es entscheidet über den Eingriff ins Sorgerecht. Die Rechtmäßigkeit prüft das Sozialgericht."
+    },
+    {
+      "nr": 7,
+      "titel": "Was tun, wenn Unterlagen fehlen?",
+      "aus_kapitel": [
+        7,
+        10
+      ],
+      "hook": "Ein Verfahrensfehler bringt Ihr Kind nicht automatisch zurück.",
+      "kernsatz": "Aber er erschüttert die Grundlage der Einschätzung – Verfahren und Sache sind zwei Ebenen."
+    },
+    {
+      "nr": 8,
+      "titel": "Die ersten Schritte nach einer Maßnahme",
+      "aus_kapitel": [
+        11,
+        12
+      ],
+      "hook": "Fünf Dinge, die am ersten Tag zählen.",
+      "kernsatz": "Namen notieren, widersprechen, schriftliche Begründung verlangen, Akteneinsicht beantragen, Anwalt einschalten."
+    }
+  ]
+}

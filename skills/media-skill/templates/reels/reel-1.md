@@ -2,7 +2,8 @@
 
 **Cover:** `WARNUNG AN BETROFFENE MÜTTER`  
 **Länge:** 24 Sekunden (3 Clips à 8 s)  
-**Kosten:** siehe Clip-Bibliothek — dieses Reel benutzt 3 Clips, davon werden einige auch von anderen Reels verwendet und nur einmal erzeugt.
+**Fertige Datei:** `~/Medien/JJJJ-MM-TT-tatort-fake-mami/reel-1.mp4`  
+**Kosten:** siehe `clip-bibliothek.md` — dieses Reel benutzt 3 Clips, davon werden einige auch von anderen Reels verwendet und nur einmal erzeugt.
 
 ---
 
@@ -14,25 +15,7 @@
 | 0:08–0:16 | `B02` | `beleg-b2-leck.png` | WhatsApp: „Irgendwo ist ein Leck passiert" |
 | 0:16–0:24 | `C07` | `kanal-motiv.png` | Kanal-Motiv als Abbinder — **einmal erzeugt, in allen sechs Reels verwendet** |
 
-### Prompts
-
-**`C01`** — `cover-reel1-warnung.png`
-
-```
-Extremely slow push-in on the centre of the frame, barely perceptible. Serious, calm, documentary tone. No fast motion, no shake, no whip pans, no flicker. Dark navy background, red and cyan accent glow, cinematic grade, 9:16 vertical. Do not add, alter, remove or invent any text, letters, numbers, logos or faces. Keep all existing lettering perfectly sharp, legible and unchanged.
-```
-
-**`B02`** — `beleg-b2-leck.png`
-
-```
-Very slow vertical drift downward with subtle depth parallax between the chat bubbles and the background. Serious, calm, documentary tone. No fast motion, no shake, no whip pans, no flicker. Dark navy background, red and cyan accent glow, cinematic grade, 9:16 vertical. Do not add, alter, remove or invent any text, letters, numbers, logos or faces. Keep all existing lettering perfectly sharp, legible and unchanged.
-```
-
-**`C07`** — `kanal-motiv.png`
-
-```
-Slow pull-back, the frame settles and comes to a complete rest. Serious, calm, documentary tone. No fast motion, no shake, no whip pans, no flicker. Dark navy background, red and cyan accent glow, cinematic grade, 9:16 vertical. Do not add, alter, remove or invent any text, letters, numbers, logos or faces. Keep all existing lettering perfectly sharp, legible and unchanged.
-```
+Prompts, Kosten und Einfrier-Bereiche je Clip stehen in `clip-bibliothek.md`.
 
 ---
 

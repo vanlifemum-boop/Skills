@@ -2,7 +2,8 @@
 
 **Cover:** `BEWEISE SICHERN. DATEN SCHÜTZEN.`  
 **Länge:** 32 Sekunden (4 Clips à 8 s)  
-**Kosten:** siehe Clip-Bibliothek — dieses Reel benutzt 4 Clips, davon werden einige auch von anderen Reels verwendet und nur einmal erzeugt.
+**Fertige Datei:** `~/Medien/JJJJ-MM-TT-tatort-fake-mami/reel-5.mp4`  
+**Kosten:** siehe `clip-bibliothek.md` — dieses Reel benutzt 4 Clips, davon werden einige auch von anderen Reels verwendet und nur einmal erzeugt.
 
 ---
 
@@ -15,31 +16,7 @@
 | 0:16–0:24 | `B05` | `beleg-b5-gruppe-anonym.png` | Gruppe „Mütter Netzwerk Deutschland", viele Entfernungen — Avatar abgedeckt |
 | 0:24–0:32 | `C07` | `kanal-motiv.png` | Kanal-Motiv als Abbinder — **einmal erzeugt, in allen sechs Reels verwendet** |
 
-### Prompts
-
-**`C04`** — `cover-reel5-beweise.png`
-
-```
-Extremely slow push-in on the centre of the frame, barely perceptible. Serious, calm, documentary tone. No fast motion, no shake, no whip pans, no flicker. Dark navy background, red and cyan accent glow, cinematic grade, 9:16 vertical. Do not add, alter, remove or invent any text, letters, numbers, logos or faces. Keep all existing lettering perfectly sharp, legible and unchanged.
-```
-
-**`B03`** — `beleg-b3-0906.png`
-
-```
-Very slow vertical drift downward with subtle depth parallax between the chat bubbles and the background. Serious, calm, documentary tone. No fast motion, no shake, no whip pans, no flicker. Dark navy background, red and cyan accent glow, cinematic grade, 9:16 vertical. Do not add, alter, remove or invent any text, letters, numbers, logos or faces. Keep all existing lettering perfectly sharp, legible and unchanged.
-```
-
-**`B05`** — `beleg-b5-gruppe-anonym.png`
-
-```
-Very slow vertical drift downward with subtle depth parallax between the chat bubbles and the background. Serious, calm, documentary tone. No fast motion, no shake, no whip pans, no flicker. Dark navy background, red and cyan accent glow, cinematic grade, 9:16 vertical. Do not add, alter, remove or invent any text, letters, numbers, logos or faces. Keep all existing lettering perfectly sharp, legible and unchanged.
-```
-
-**`C07`** — `kanal-motiv.png`
-
-```
-Slow pull-back, the frame settles and comes to a complete rest. Serious, calm, documentary tone. No fast motion, no shake, no whip pans, no flicker. Dark navy background, red and cyan accent glow, cinematic grade, 9:16 vertical. Do not add, alter, remove or invent any text, letters, numbers, logos or faces. Keep all existing lettering perfectly sharp, legible and unchanged.
-```
+Prompts, Kosten und Einfrier-Bereiche je Clip stehen in `clip-bibliothek.md`.
 
 ---
 

@@ -159,12 +159,29 @@ Zwei Werkzeuge gehören dazu, beide **kostenlos**:
 ```bash
 python3 scripts/schwaerzen.py QUELLE.png ZIEL-anonym.png --kasten 95,98,172,180
 python3 scripts/kie.py hochladen BILD.png --ordner images/projekt
+python3 scripts/schwenk.py BILD.png ZIEL.mp4 --sekunden 8
+python3 scripts/einfrieren.py CLIP.mp4 ORIGINAL.png ZIEL.mp4 --bereich 120,2,610,100
+python3 scripts/zusammensetzen.py reel.mp4 clip1.mp4 clip2.mp4 clip3.mp4
 ```
 
-`schwaerzen.py` deckt Gesichter, Namen und Nummern ab und lässt die Quelldatei
-unverändert — das Original bleibt Beweismittel. `hochladen` liefert die öffentliche URL,
-die Image-to-Video-Modelle für `image_url` brauchen; der Upload-Host ist ein anderer als
-die API und verlangt eine Browser-Kennung, das erledigt `kie.py` selbst.
+Nur `hochladen` spricht mit kie.ai — alles andere läuft lokal und **kostet nichts**:
+
+- `schwaerzen.py` deckt Gesichter, Namen und Nummern ab und lässt die Quelldatei
+  unverändert; das Original bleibt Beweismittel.
+- `hochladen` liefert die öffentliche URL, die Image-to-Video für `input_urls` braucht.
+  Der Upload-Host ist ein anderer als die API und verlangt eine Browser-Kennung —
+  das erledigt `kie.py` selbst.
+- `schwenk.py` macht aus einem Standbild einen ruhigen 9:16-Clip. **Für Belege der
+  einzige vertretbare Weg:** ein Video-Modell kann Zeichen umschreiben und macht aus
+  einem Beweis eine Fälschung, ein Schwenk kann das nicht.
+- `einfrieren.py` holt Bildbereiche aus dem Original als feste Ebene in den Clip zurück.
+  Feine Schrift überlebt kein Video-Modell — nach zwei Sekunden steht dort ein anderes
+  Wort. Der Kasten muss großzügig sein, sonst lugt die Modellfassung darunter hervor.
+- `zusammensetzen.py` hängt die Clips zum fertigen Reel aneinander.
+
+`schwenk.py`, `einfrieren.py` und `zusammensetzen.py` brauchen ffmpeg. Fehlt es im
+System, genügt `pip install imageio-ffmpeg` — die Skripte finden das mitgelieferte
+Binary von allein.
 
 ## Die Galerie
 

@@ -20,7 +20,7 @@ import tempfile
 from pathlib import Path
 
 try:
-    from PIL import Image
+    from PIL import Image, ImageDraw, ImageFilter
 except ImportError:
     sys.exit("Fehler: Pillow fehlt. Installieren mit:  pip install Pillow")
 
@@ -53,20 +53,30 @@ def masse(ffmpeg, video):
     sys.exit("Fehler: Bildmaße des Clips nicht gefunden.")
 
 
-def einfrieren(video, standbild, ziel, bereiche):
+def einfrieren(video, standbild, ziel, bereiche, weich=8):
     ffmpeg = ffmpeg_pfad()
     breite, hoehe = masse(ffmpeg, video)
 
     # Das Standbild auf die Clipgröße bringen, damit die Bereiche passen.
-    quelle = Image.open(standbild).convert("RGBA").resize((breite, hoehe), Image.LANCZOS)
-    ebene = Image.new("RGBA", (breite, hoehe), (0, 0, 0, 0))
+    quelle = Image.open(standbild).convert("RGB").resize((breite, hoehe), Image.LANCZOS)
+
+    # Eine gemeinsame Maske fuer alle Bereiche. Weiche Kanten, damit sich kein
+    # Rechteck abzeichnet: hart eingesetzte Kaesten sieht man als Helligkeitskante.
+    maske = Image.new("L", (breite, hoehe), 0)
+    stift = ImageDraw.Draw(maske)
     for text in bereiche:
         teile = [int(w) for w in text.split(",")]
         if len(teile) != 4:
             sys.exit(f"Fehler: Bereich braucht vier Werte: {text!r}")
         l, o, r, u = teile
-        ebene.paste(quelle.crop((l, o, r, u)), (l, o))
-        print(f"  eingefroren: {l},{o} bis {r},{u}")
+        # Innen voll deckend; der Verlauf entsteht durch das Weichzeichnen danach.
+        stift.rectangle([l + weich, o + weich, r - weich, u - weich], fill=255)
+        print(f"  eingefroren: {l},{o} bis {r},{u}  (Rand {weich} px weich)")
+    if weich:
+        maske = maske.filter(ImageFilter.GaussianBlur(weich / 2))
+
+    ebene = quelle.convert("RGBA")
+    ebene.putalpha(maske)
 
     with tempfile.TemporaryDirectory() as tmp:
         maske = Path(tmp) / "ebene.png"
@@ -93,12 +103,14 @@ def main():
     z.add_argument("ziel", help="Ausgabedatei")
     z.add_argument("--bereich", action="append", required=True, metavar="L,O,R,U",
                    help="links,oben,rechts,unten in Pixeln der CLIP-Größe")
+    z.add_argument("--weich", type=int, default=8,
+                   help="weicher Rand in Pixeln, damit sich kein Rechteck abzeichnet")
     args = z.parse_args()
 
     for pfad in (args.video, args.standbild):
         if not Path(pfad).is_file():
             sys.exit(f"Fehler: {pfad} gibt es nicht.")
-    einfrieren(args.video, args.standbild, args.ziel, args.bereich)
+    einfrieren(args.video, args.standbild, args.ziel, args.bereich, args.weich)
 
 
 if __name__ == "__main__":

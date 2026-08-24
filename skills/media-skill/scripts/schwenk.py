@@ -8,6 +8,7 @@ verändern oder erfinden, und aus einem Beweis wird eine Fälschung. Ein Schwenk
 Zwei Bewegungen:
     schwenk   langsam senkrecht über ein hohes Bild (Chatverläufe)
     zoom      ganz langsames Heranfahren (Cover, Einzelmotive)
+    zoomaus   ganz langsames Zurückfahren (Abbinder)
 
 Beispiel:
     python3 scripts/schwenk.py beleg.png beleg-clip.mp4 --sekunden 8
@@ -61,15 +62,17 @@ def bauen(quelle, ziel, sekunden, art, ruhe):
             print(f"  Schwenk über {weg} Pixel in {fahrt:g} s, "
                   f"je {ruhe:g} s Ruhe am Anfang und Ende")
 
-    if art == "zoom":
-        # Um 8 Prozent heranfahren, mittig, über die ganze Länge.
+    if art in ("zoom", "zoomaus"):
+        # Um 8 Prozent heran- oder zurückfahren, mittig, über die ganze Länge.
         gross_b, gross_h = BREITE * 3, HOEHE * 3
-        z = f"1+0.08*min(t/{sekunden},1)"
+        lauf = f"min(t/{sekunden},1)"
+        z = f"1+0.08*{lauf}" if art == "zoom" else f"1.08-0.08*{lauf}"
         kette = (f"scale={gross_b}:{gross_h}:force_original_aspect_ratio=increase:flags=lanczos,"
                  f"crop={gross_b}:{gross_h},"
                  f"crop=w='{gross_b}/({z})':h='{gross_h}/({z})':x='(iw-ow)/2':y='(ih-oh)/2',"
                  f"scale={BREITE}:{HOEHE}:flags=lanczos")
-        print(f"  Zoom auf 108 Prozent über {sekunden:g} s")
+        richtung = "auf 108" if art == "zoom" else "von 108 auf 100"
+        print(f"  Zoom {richtung} Prozent über {sekunden:g} s")
 
     ruf = subprocess.run([
         ffmpeg, "-hide_banner", "-loglevel", "error", "-y",
@@ -89,7 +92,7 @@ def main():
         description="Aus einem Standbild einen ruhigen 9:16-Clip machen — ohne KI.")
     z.add_argument("quelle", help="das Standbild")
     z.add_argument("ziel", help="Ausgabedatei .mp4")
-    z.add_argument("--art", choices=("schwenk", "zoom"), default="schwenk")
+    z.add_argument("--art", choices=("schwenk", "zoom", "zoomaus"), default="schwenk")
     z.add_argument("--sekunden", type=float, default=8.0)
     z.add_argument("--ruhe", type=float, default=1.0,
                    help="Standzeit am Anfang und Ende in Sekunden (nur beim Schwenk)")

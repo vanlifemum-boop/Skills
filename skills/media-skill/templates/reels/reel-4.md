@@ -2,7 +2,8 @@
 
 **Cover:** `PRÜFE, WEM DU DATEN GIBST`  
 **Länge:** 24 Sekunden (3 Clips à 8 s)  
-**Kosten:** siehe Clip-Bibliothek — dieses Reel benutzt 3 Clips, davon werden einige auch von anderen Reels verwendet und nur einmal erzeugt.
+**Fertige Datei:** `~/Medien/JJJJ-MM-TT-tatort-fake-mami/reel-4.mp4`  
+**Kosten:** siehe `clip-bibliothek.md` — dieses Reel benutzt 3 Clips, davon werden einige auch von anderen Reels verwendet und nur einmal erzeugt.
 
 > Für dieses Reel gibt es kein eigenes Cover. Der Hook läuft über das Kanal-Motiv; die Schlagzeile „PRÜFE, WEM DU DATEN GIBST" wird im Schnittprogramm daraufgesetzt.
 
@@ -16,25 +17,7 @@
 | 0:08–0:16 | `C04` | `cover-reel5-beweise.png` | Beweisumschlag, Kamera, Schutzschild |
 | 0:16–0:24 | `C07` | `kanal-motiv.png` | Kanal-Motiv als Abbinder — **einmal erzeugt, in allen sechs Reels verwendet** |
 
-### Prompts
-
-**`C06`** — `kanal-motiv.png`
-
-```
-Extremely slow push-in on the centre of the frame, barely perceptible. Serious, calm, documentary tone. No fast motion, no shake, no whip pans, no flicker. Dark navy background, red and cyan accent glow, cinematic grade, 9:16 vertical. Do not add, alter, remove or invent any text, letters, numbers, logos or faces. Keep all existing lettering perfectly sharp, legible and unchanged.
-```
-
-**`C04`** — `cover-reel5-beweise.png`
-
-```
-Extremely slow push-in on the centre of the frame, barely perceptible. Serious, calm, documentary tone. No fast motion, no shake, no whip pans, no flicker. Dark navy background, red and cyan accent glow, cinematic grade, 9:16 vertical. Do not add, alter, remove or invent any text, letters, numbers, logos or faces. Keep all existing lettering perfectly sharp, legible and unchanged.
-```
-
-**`C07`** — `kanal-motiv.png`
-
-```
-Slow pull-back, the frame settles and comes to a complete rest. Serious, calm, documentary tone. No fast motion, no shake, no whip pans, no flicker. Dark navy background, red and cyan accent glow, cinematic grade, 9:16 vertical. Do not add, alter, remove or invent any text, letters, numbers, logos or faces. Keep all existing lettering perfectly sharp, legible and unchanged.
-```
+Prompts, Kosten und Einfrier-Bereiche je Clip stehen in `clip-bibliothek.md`.
 
 ---
 

@@ -48,6 +48,9 @@ EUR_JE_CREDIT = 0.0043
 # Zwischen zwei Statusabfragen liegen acht Sekunden.
 WARTEZEIT = 8
 
+# Diese Modelle wollen "duration" als Zahl, alle anderen als Text.
+DAUER_ALS_ZAHL = {"veo3.1", "bytedance/seedance-1.5-pro", "bytedance/seedance-2"}
+
 # Rate Limit: 20 Anfragen je 10 Sekunden.
 LIMIT_ANFRAGEN = 20
 LIMIT_FENSTER = 10.0
@@ -508,9 +511,15 @@ def _endung_je_typ(typ):
 
 
 def _datei_holen(url, ziel):
+    # Die Ergebnisse liegen auf CDN-Hosts hinter Cloudflare. Ohne Browser-Kennung
+    # antworten die mit 403, obwohl der Auftrag laengst fertig und bezahlt ist.
+    bitte = urllib.request.Request(url, headers={
+        "User-Agent": BROWSER_KENNUNG,
+        "Accept": "*/*",
+    })
     for versuch in range(1, VERSUCHE + 1):
         try:
-            with urllib.request.urlopen(url, timeout=300) as antwort, \
+            with urllib.request.urlopen(bitte, timeout=300) as antwort, \
                     open(ziel, "wb") as datei:
                 while True:
                     brocken = antwort.read(65536)
@@ -549,8 +558,10 @@ def befehl_erzeugen(args):
     if args.aufloesung:
         eingabe["image_size" if art == "bild" else "resolution"] = args.aufloesung
     if args.sekunden is not None and art in ("video_sek", "video_clip"):
-        # Bei veo3.1 eine ZAHL, bei grok-imagine ein TEXT — siehe references/modelle.md.
-        eingabe["duration"] = int(args.sekunden) if args.modell == "veo3.1" else str(int(args.sekunden))
+        # Der Typ ist je Modell verschieden: ZAHL bei veo3.1 und seedance,
+        # TEXT bei grok-imagine. Siehe references/modelle.md.
+        eingabe["duration"] = (int(args.sekunden) if args.modell in DAUER_ALS_ZAHL
+                               else str(int(args.sekunden)))
     if args.anzahl > 1 and art == "bild":
         eingabe["num_images"] = args.anzahl
     if args.extra:

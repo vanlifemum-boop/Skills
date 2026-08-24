@@ -1,0 +1,59 @@
+# Reel 1 — Warnung an betroffene Mütter
+
+**Cover:** `WARNUNG AN BETROFFENE MÜTTER`  
+**Länge:** 24 Sekunden (3 Clips à 8 s)  
+**Kosten:** siehe Clip-Bibliothek — dieses Reel benutzt 3 Clips, davon werden einige auch von anderen Reels verwendet und nur einmal erzeugt.
+
+---
+
+## Die Clips
+
+| Zeit | Clip | Bild | Was zu sehen ist |
+|---|---|---|---|
+| 0:00–0:08 | `C01` | `cover-reel1-warnung.png` | Akte, Warndreieck, geschwärzte Blätter |
+| 0:08–0:16 | `B02` | `beleg-b2-leck.png` | WhatsApp: „Irgendwo ist ein Leck passiert" |
+| 0:16–0:24 | `C07` | `kanal-motiv.png` | Kanal-Motiv als Abbinder — **einmal erzeugt, in allen sechs Reels verwendet** |
+
+### Prompts
+
+**`C01`** — `cover-reel1-warnung.png`
+
+```
+Extremely slow push-in on the centre of the frame, barely perceptible. Serious, calm, documentary tone. No fast motion, no shake, no whip pans, no flicker. Dark navy background, red and cyan accent glow, cinematic grade, 9:16 vertical. Do not add, alter, remove or invent any text, letters, numbers, logos or faces. Keep all existing lettering perfectly sharp, legible and unchanged.
+```
+
+**`B02`** — `beleg-b2-leck.png`
+
+```
+Very slow vertical drift downward with subtle depth parallax between the chat bubbles and the background. Serious, calm, documentary tone. No fast motion, no shake, no whip pans, no flicker. Dark navy background, red and cyan accent glow, cinematic grade, 9:16 vertical. Do not add, alter, remove or invent any text, letters, numbers, logos or faces. Keep all existing lettering perfectly sharp, legible and unchanged.
+```
+
+**`C07`** — `kanal-motiv.png`
+
+```
+Slow pull-back, the frame settles and comes to a complete rest. Serious, calm, documentary tone. No fast motion, no shake, no whip pans, no flicker. Dark navy background, red and cyan accent glow, cinematic grade, 9:16 vertical. Do not add, alter, remove or invent any text, letters, numbers, logos or faces. Keep all existing lettering perfectly sharp, legible and unchanged.
+```
+
+---
+
+## Text-Einblendungen
+
+Im Schnittprogramm setzen, nicht vom Modell erzeugen lassen.
+Unteres Fünftel freilassen.
+
+| Von | Bis | Text | Farbe |
+|---|---|---|---|
+| 0:00 | 0:03 | WARNUNG AN BETROFFENE MÜTTER | weiß, groß |
+| 0:03 | 0:08 | Vertrauliches bleibt vertraulich. Punkt. | weiß |
+| 0:08 | 0:13 | Nach den vorliegenden Belegen wurden Interna | weiß |
+| 0:13 | 0:16 | einer betroffenen Mutter weitergegeben. | weiß |
+| 0:16 | 0:20 | KEINE HETZJAGD. ABER EINE KLARE WARNUNG. | rot |
+| 0:20 | 0:24 | Andere Mütter müssen wissen, wem sie Daten geben. | weiß |
+
+---
+
+## Caption
+
+> Dieser Beitrag dient der sachlichen Warnung und dem Schutz betroffener Mütter.
+> Keine Beleidigungen, Drohungen oder Kontaktaufnahme zu beteiligten Personen.
+> Private Daten werden gelöscht.

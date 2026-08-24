@@ -1,0 +1,62 @@
+# Reel 4 — So schützt du dich
+
+**Cover:** `PRÜFE, WEM DU DATEN GIBST`  
+**Länge:** 24 Sekunden (3 Clips à 8 s)  
+**Kosten:** siehe Clip-Bibliothek — dieses Reel benutzt 3 Clips, davon werden einige auch von anderen Reels verwendet und nur einmal erzeugt.
+
+> Für dieses Reel gibt es kein eigenes Cover. Der Hook läuft über das Kanal-Motiv; die Schlagzeile „PRÜFE, WEM DU DATEN GIBST" wird im Schnittprogramm daraufgesetzt.
+
+---
+
+## Die Clips
+
+| Zeit | Clip | Bild | Was zu sehen ist |
+|---|---|---|---|
+| 0:00–0:08 | `C06` | `kanal-motiv.png` | Kanal-Motiv: Schild, Lupe, Fingerabdruck |
+| 0:08–0:16 | `C04` | `cover-reel5-beweise.png` | Beweisumschlag, Kamera, Schutzschild |
+| 0:16–0:24 | `C07` | `kanal-motiv.png` | Kanal-Motiv als Abbinder — **einmal erzeugt, in allen sechs Reels verwendet** |
+
+### Prompts
+
+**`C06`** — `kanal-motiv.png`
+
+```
+Extremely slow push-in on the centre of the frame, barely perceptible. Serious, calm, documentary tone. No fast motion, no shake, no whip pans, no flicker. Dark navy background, red and cyan accent glow, cinematic grade, 9:16 vertical. Do not add, alter, remove or invent any text, letters, numbers, logos or faces. Keep all existing lettering perfectly sharp, legible and unchanged.
+```
+
+**`C04`** — `cover-reel5-beweise.png`
+
+```
+Extremely slow push-in on the centre of the frame, barely perceptible. Serious, calm, documentary tone. No fast motion, no shake, no whip pans, no flicker. Dark navy background, red and cyan accent glow, cinematic grade, 9:16 vertical. Do not add, alter, remove or invent any text, letters, numbers, logos or faces. Keep all existing lettering perfectly sharp, legible and unchanged.
+```
+
+**`C07`** — `kanal-motiv.png`
+
+```
+Slow pull-back, the frame settles and comes to a complete rest. Serious, calm, documentary tone. No fast motion, no shake, no whip pans, no flicker. Dark navy background, red and cyan accent glow, cinematic grade, 9:16 vertical. Do not add, alter, remove or invent any text, letters, numbers, logos or faces. Keep all existing lettering perfectly sharp, legible and unchanged.
+```
+
+---
+
+## Text-Einblendungen
+
+Im Schnittprogramm setzen, nicht vom Modell erzeugen lassen.
+Unteres Fünftel freilassen.
+
+| Von | Bis | Text | Farbe |
+|---|---|---|---|
+| 0:00 | 0:03 | PRÜFE, WEM DU DATEN GIBST | weiß, groß |
+| 0:03 | 0:06 | Drei Fragen, bevor du etwas teilst. | weiß |
+| 0:06 | 0:10 | 1 — Wer erhält die Informationen? | weiß |
+| 0:10 | 0:14 | 2 — Wofür werden sie gebraucht? | weiß |
+| 0:14 | 0:18 | 3 — Gibt es eine klare Zustimmung? | weiß |
+| 0:18 | 0:21 | VERTRAUEN JA. BLINDES VERTRAUEN NEIN. | rot |
+| 0:21 | 0:24 | So wenig wie möglich. So geschützt wie nötig. | cyan |
+
+---
+
+## Caption
+
+> Dieser Beitrag dient der sachlichen Warnung und dem Schutz betroffener Mütter.
+> Keine Beleidigungen, Drohungen oder Kontaktaufnahme zu beteiligten Personen.
+> Private Daten werden gelöscht.

@@ -7,6 +7,7 @@ Unterbefehle:
     preis      rechnet die Kosten eines Auftrags aus — ohne jeden API-Aufruf
     modelle    druckt die Preistabelle
     guthaben   fragt das verbleibende Guthaben ab
+    hochladen  lädt lokale Bilder hoch und gibt öffentliche URLs aus
     erzeugen   der komplette Dreisprung: Auftrag anlegen, warten, herunterladen
 
 Der API-Schlüssel kommt IMMER aus der Umgebungsvariable KIE_API_KEY,
@@ -14,6 +15,7 @@ niemals aus einer Datei.
 """
 
 import argparse
+import base64
 import json
 import os
 import re
@@ -31,6 +33,14 @@ from pathlib import Path
 # --------------------------------------------------------------------------
 
 BASIS = "https://api.kie.ai/api/v1"
+
+# Der Datei-Upload liegt auf einem eigenen Host, nicht unter api.kie.ai.
+UPLOAD_URL = "https://kieai.redpandaai.co/api/file-base64-upload"
+
+# Der Upload-Host steht hinter Cloudflare und lehnt Anfragen ohne
+# Browser-Kennung mit "error code: 1010" ab.
+BROWSER_KENNUNG = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+                   "(KHTML, like Gecko) Chrome/131.0 Safari/537.36")
 
 # 200 Credits = 1 US-Dollar. Ein Credit sind rund 0,0043 Euro.
 EUR_JE_CREDIT = 0.0043
@@ -570,6 +580,61 @@ def befehl_erzeugen(args):
 # --------------------------------------------------------------------------
 
 
+def hochladen(pfad, unterordner="images"):
+    """Eine lokale Datei zu kie.ai hochladen und die öffentliche URL zurückgeben.
+
+    Image-to-Video braucht eine erreichbare Adresse, keine lokale Datei.
+    Die Adresse ist zeitlich begrenzt gültig — also erst hochladen, dann sofort
+    den Auftrag anlegen, nicht für morgen notieren.
+    """
+    datei = Path(pfad)
+    if not datei.is_file():
+        raise Abbruch(f"{datei} gibt es nicht.")
+
+    endung = datei.suffix.lower().lstrip(".") or "png"
+    typ = {"jpg": "jpeg", "jpeg": "jpeg", "png": "png", "webp": "webp"}.get(endung, endung)
+    roh = base64.b64encode(datei.read_bytes()).decode("ascii")
+
+    rumpf = json.dumps({
+        "base64Data": f"data:image/{typ};base64,{roh}",
+        "uploadPath": unterordner,
+        "fileName": datei.name,
+    }).encode("utf-8")
+
+    bitte = urllib.request.Request(UPLOAD_URL, data=rumpf, method="POST", headers={
+        "Authorization": f"Bearer {schluessel()}",
+        "Content-Type": "application/json",
+        "User-Agent": BROWSER_KENNUNG,
+        "Accept": "*/*",
+    })
+
+    try:
+        with urllib.request.urlopen(bitte, timeout=180) as antwort:
+            inhalt = json.loads(antwort.read().decode("utf-8"))
+    except urllib.error.HTTPError as fehler:
+        if fehler.code == 403:
+            raise Abbruch("HTTP 403 vom Upload-Host — meist die fehlende Browser-Kennung "
+                          "oder eine Netzwerk-Sperre für kieai.redpandaai.co.")
+        raise Abbruch(f"HTTP {fehler.code} beim Hochladen: {fehler.reason}")
+    except urllib.error.URLError as fehler:
+        raise Abbruch(f"Keine Verbindung zum Upload-Host: {fehler.reason}")
+
+    if not inhalt.get("success"):
+        raise Abbruch(f"Upload abgelehnt: {inhalt.get('msg') or 'ohne Angabe'}")
+
+    url = (inhalt.get("data") or {}).get("downloadUrl")
+    if not url:
+        raise Abbruch("Upload lieferte keine downloadUrl zurück.")
+    return url
+
+
+def befehl_hochladen(args):
+    for pfad in args.dateien:
+        url = hochladen(pfad, args.ordner)
+        print(f"{Path(pfad).name}\t{url}")
+    return 0
+
+
 def parser_bauen():
     p = argparse.ArgumentParser(
         prog="kie.py",
@@ -591,6 +656,13 @@ def parser_bauen():
 
     gu = unter.add_parser("guthaben", help="verbleibendes Guthaben abfragen")
     gu.set_defaults(funktion=befehl_guthaben)
+
+    ho = unter.add_parser("hochladen",
+                          help="lokale Bilder hochladen, gibt öffentliche URLs aus")
+    ho.add_argument("dateien", nargs="+", help="ein oder mehrere lokale Bilder")
+    ho.add_argument("--ordner", default="images",
+                    help="Unterordner auf der Gegenseite (Standard: images)")
+    ho.set_defaults(funktion=befehl_hochladen)
 
     er = unter.add_parser("erzeugen", help="anlegen, warten, herunterladen, protokollieren")
     er.add_argument("--modell", required=True)

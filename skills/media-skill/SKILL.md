@@ -106,6 +106,7 @@ Nie eine Zahl aus dem Kopf oder aus `references/modelle.md` abschreiben — imme
 | Schritt | Befehl |
 |---|---|
 | Guthaben prüfen | `python3 scripts/kie.py guthaben` |
+| Bild hochladen | `python3 scripts/kie.py hochladen BILD.png` |
 | Preistabelle ansehen | `python3 scripts/kie.py modelle` |
 | Kosten ausrechnen | `python3 scripts/kie.py preis --modell M …` |
 | Erzeugen + laden + protokollieren | `python3 scripts/kie.py erzeugen --modell M --prompt "…" --projekt name` |
@@ -145,6 +146,25 @@ python3 scripts/kie.py erzeugen \
 ```
 
 ---
+
+## Reels aus Standbildern
+
+Soll aus fertigen Bildern eine Reihe kurzer Hochformat-Videos werden, steht der ganze
+Ablauf in `templates/instagram-reel-vorlage.md`: Aufbau eines Reels, Prompt-Baukasten auf
+Englisch, Einblendungs-Regeln und die Checkliste vor dem Posten. Die ausgefüllten Blätter
+der Serie „Tatort Fake Mami" liegen daneben in `templates/reels/`.
+
+Zwei Werkzeuge gehören dazu, beide **kostenlos**:
+
+```bash
+python3 scripts/schwaerzen.py QUELLE.png ZIEL-anonym.png --kasten 95,98,172,180
+python3 scripts/kie.py hochladen BILD.png --ordner images/projekt
+```
+
+`schwaerzen.py` deckt Gesichter, Namen und Nummern ab und lässt die Quelldatei
+unverändert — das Original bleibt Beweismittel. `hochladen` liefert die öffentliche URL,
+die Image-to-Video-Modelle für `image_url` brauchen; der Upload-Host ist ein anderer als
+die API und verlangt eine Browser-Kennung, das erledigt `kie.py` selbst.
 
 ## Die Galerie
 

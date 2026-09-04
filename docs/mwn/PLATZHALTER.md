@@ -25,6 +25,22 @@ Die `noindex`-Zeile steht dort, weil die Vorschau vorläufig unter der Domain
 eines anderen Projekts ausgeliefert wird. Unter der eigenen Domain muss sie raus,
 sonst findet die Seite niemand.
 
+### Warum die Vorschau noch nicht erreichbar ist
+
+Der Auslieferungslauf bricht auf einem Arbeitsbranch nach einer Sekunde ohne
+Protokoll ab. Das ist das Muster, wenn die GitHub-Umgebung `github-pages` nur
+Auslieferungen von `main` zulässt — derselbe Fehler ist im August auf dem
+vorherigen Arbeitsbranch aufgetreten, und erst der Merge nach `main` lief durch.
+
+Zwei Wege:
+
+1. **Einmalige Einstellung:** Repository → Settings → Environments →
+   `github-pages` → *Deployment branches and tags* → den Arbeitsbranch
+   hinzufügen. Danach ist die Vorschau bei jedem Push unter
+   `https://www.gutachtenkompass.eu/mwn/` zu sehen.
+2. **Oder** den Branch nach `main` mergen — dann liefert der bestehende
+   Lauf die Seite ohnehin aus.
+
 ---
 
 ## 2 · Impressum (`impressum.html`)

@@ -594,6 +594,15 @@ ul.liste li { margin-bottom: 0.5em; }
 }
 .prose ol.liste { padding-left: 1.4em; }
 .prose hr { border: 0; border-top: 1px solid var(--linie); margin: 2.2em 0; }
+.prose blockquote {
+  margin: 1.6em 0;
+  padding: 4px 0 4px 20px;
+  border-left: 4px solid var(--ocker);
+  font-family: var(--font-zitat);
+  font-style: italic;
+  color: var(--text);
+}
+.prose blockquote p:last-child { margin-bottom: 0; }
 .prose strong { color: var(--text); }
 
 /* Wide tables scroll in their own box; page body never scrolls sideways. */

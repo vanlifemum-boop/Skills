@@ -1,0 +1,576 @@
+/* =========================================================================
+   Neues Leben Masuren — Design-System
+
+   Bildsprache: Kiefernwald, Seetiefe, warmer Sand, Birkenrinde.
+   Bewusst weit weg vom Schwarz/Rot der anderen Seite in diesem Repo.
+   Schrift: Serif-Display (warm, bodenständig) über ruhiger Sans-Lauftype.
+   Keine externen Fonts, keine CDNs — die Seite lädt vollständig offline.
+   ========================================================================= */
+
+:root {
+  /* Grundfarben */
+  --kiefer: #1b3329;        /* dunkles Kiefernnadelgrün — tragende Dunkelfläche */
+  --kiefer-2: #24422f;
+  --seetiefe: #16404a;      /* kühles Wasserblau für Akzentflächen */
+  --birke: #faf7f0;         /* warmes Weiß — Standardhintergrund */
+  --sand: #ece2cf;          /* Sandbank — ruhige Zwischenflächen */
+  --bernstein: #a9631a;     /* Handlung: Buttons, wichtige Links */
+  --bernstein-hell: #c9801f;
+  --schilf: #5f7150;        /* zweiter Akzent, Natur */
+  --rost: #93452a;          /* Warnung / Platzhalter-Markierung */
+
+  /* Text */
+  --text: #1f2a24;
+  --gedaempft: #545f59;
+  --gedaempft-invers: #bcc8bf;
+  --linie: rgba(31, 42, 36, 0.16);
+  --linie-invers: rgba(250, 247, 240, 0.22);
+
+  /* Schrift */
+  --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua",
+                  Georgia, "Times New Roman", serif;
+  --font-text: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+               Arial, sans-serif;
+
+  /* Maße */
+  --max: 1140px;
+  --schmal: 760px;
+  --pad: clamp(20px, 5vw, 56px);
+  --header-h: 76px;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-text);
+  font-size: 1.06rem;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--birke);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+.container {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--pad);
+}
+.container--schmal { max-width: var(--schmal); }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 300;
+  background: var(--kiefer);
+  color: var(--birke);
+  padding: 12px 18px;
+  border-radius: 0 0 8px 0;
+}
+.skip-link:focus { left: 0; top: 0; }
+
+:focus-visible {
+  outline: 3px solid var(--bernstein);
+  outline-offset: 3px;
+}
+
+/* ============================== Kopfbereich ============================= */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 247, 240, 0.95);
+  backdrop-filter: saturate(140%) blur(8px);
+  border-bottom: 1px solid var(--linie);
+}
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: var(--header-h);
+}
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  line-height: 1.15;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo svg { flex: none; }
+.logo__text { display: block; }
+.logo b { font-weight: 400; display: block; }
+.logo__text > span {
+  display: block;
+  font-family: var(--font-text);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gedaempft);
+}
+
+.burger {
+  display: none;
+  font-size: 1.4rem;
+  line-height: 1;
+  background: none;
+  border: 1px solid var(--linie);
+  border-radius: 8px;
+  padding: 7px 13px;
+  cursor: pointer;
+  color: inherit;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.8vw, 22px);
+}
+.nav a:not(.btn) {
+  text-decoration: none;
+  font-size: 0.94rem;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+.nav a:not(.btn):hover { border-bottom-color: var(--bernstein); }
+.nav a.aktiv { border-bottom-color: var(--kiefer); font-weight: 600; }
+
+@media (max-width: 1000px) {
+  .burger { display: block; }
+  .nav {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: var(--header-h);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--birke);
+    border-bottom: 1px solid var(--linie);
+    padding: 8px var(--pad) 20px;
+  }
+  .nav.offen { display: flex; }
+  .nav a:not(.btn) {
+    padding: 13px 0;
+    border-bottom: 1px solid var(--linie);
+  }
+  .nav .btn { margin-top: 14px; text-align: center; }
+}
+
+/* ================================ Buttons =============================== */
+.btn {
+  display: inline-block;
+  background: var(--bernstein);
+  color: var(--birke);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.98rem;
+  padding: 13px 24px;
+  border: 2px solid var(--bernstein);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+.btn:hover { background: var(--bernstein-hell); border-color: var(--bernstein-hell); }
+.btn:active { transform: translateY(1px); }
+.btn[disabled] { opacity: 0.6; cursor: default; }
+
+.btn--kiefer { background: var(--kiefer); border-color: var(--kiefer); }
+.btn--kiefer:hover { background: var(--kiefer-2); border-color: var(--kiefer-2); }
+
+.btn--outline {
+  background: transparent;
+  color: var(--text);
+  border-color: currentColor;
+}
+.btn--outline:hover { background: rgba(31, 42, 36, 0.07); }
+
+.sec--kiefer .btn--outline,
+.sec--seetiefe .btn--outline,
+.hero .btn--outline { color: var(--birke); }
+.sec--kiefer .btn--outline:hover,
+.sec--seetiefe .btn--outline:hover,
+.hero .btn--outline:hover { background: rgba(250, 247, 240, 0.14); }
+
+.btn-zeile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+/* =============================== Sektionen ============================== */
+.sec { padding: clamp(56px, 9vw, 104px) 0; }
+.sec--birke { background: var(--birke); }
+.sec--sand { background: var(--sand); }
+.sec--kiefer { background: var(--kiefer); color: var(--birke); }
+.sec--seetiefe { background: var(--seetiefe); color: var(--birke); }
+.sec--kiefer .gedaempft,
+.sec--seetiefe .gedaempft { color: var(--gedaempft-invers); }
+.sec--eng { padding-block: clamp(40px, 6vw, 72px); }
+
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--bernstein);
+  margin: 0 0 14px;
+}
+.sec--kiefer .eyebrow,
+.sec--seetiefe .eyebrow,
+.hero .eyebrow { color: var(--bernstein-hell); }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  margin: 0 0 0.5em;
+}
+h1, .display { font-size: clamp(2.05rem, 5.2vw, 3.8rem); }
+h2 { font-size: clamp(1.65rem, 3.7vw, 2.6rem); }
+h3 { font-size: clamp(1.18rem, 2.1vw, 1.45rem); line-height: 1.25; }
+h4 { font-size: 1.06rem; line-height: 1.3; }
+
+p { margin: 0 0 1.1em; }
+.gross { font-size: clamp(1.08rem, 1.9vw, 1.3rem); line-height: 1.6; }
+.gedaempft { color: var(--gedaempft); }
+.klein { font-size: 0.89rem; }
+
+.lauftext { max-width: 68ch; }
+.lauftext h2 { margin-top: 1.7em; }
+.lauftext h3 { margin-top: 1.6em; }
+.lauftext ul, .lauftext ol { padding-left: 1.3em; margin: 0 0 1.2em; }
+.lauftext li { margin-bottom: 0.5em; }
+
+/* ================================= Hero ================================= */
+.hero {
+  position: relative;
+  padding-block: clamp(64px, 11vw, 128px);
+  background: var(--kiefer);
+  color: var(--birke);
+  overflow: hidden;
+}
+/* Abstrakte See-Landschaft aus reinen CSS-Verläufen — kein Fremdbild. */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 78% at 78% 6%, rgba(201, 128, 31, 0.32), transparent 62%),
+    radial-gradient(90% 62% at 10% 94%, rgba(22, 64, 74, 0.9), transparent 72%),
+    linear-gradient(180deg, #16281f 0%, #1b3329 52%, #16404a 100%);
+  z-index: 0;
+}
+.hero > .container { position: relative; z-index: 1; }
+.hero h1 { max-width: 17ch; }
+.hero__sub { max-width: 56ch; font-size: clamp(1.05rem, 1.8vw, 1.24rem); }
+
+.marken { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+.marke {
+  font-size: 0.83rem;
+  border: 1px solid var(--linie-invers);
+  border-radius: 999px;
+  padding: 7px 15px;
+}
+.sec--birke .marke, .sec--sand .marke { border-color: var(--linie); }
+
+/* ================================ Raster ================================ */
+.raster {
+  display: grid;
+  gap: clamp(18px, 2.4vw, 28px);
+  margin-top: 40px;
+}
+.raster--2 { grid-template-columns: repeat(auto-fit, minmax(285px, 1fr)); }
+.raster--3 { grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); }
+.raster--4 { grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); }
+
+.karte {
+  background: var(--birke);
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  padding: clamp(22px, 2.6vw, 30px);
+}
+.karte h3 { margin-bottom: 0.4em; }
+.karte > :last-child { margin-bottom: 0; }
+.sec--kiefer .karte,
+.sec--seetiefe .karte {
+  background: rgba(250, 247, 240, 0.07);
+  border-color: var(--linie-invers);
+}
+.sec--sand .karte { background: rgba(250, 247, 240, 0.75); }
+
+.karte__nr {
+  font-family: var(--font-display);
+  font-size: 2.3rem;
+  line-height: 1;
+  color: var(--bernstein);
+  display: block;
+  margin-bottom: 12px;
+}
+.sec--kiefer .karte__nr, .sec--seetiefe .karte__nr { color: var(--bernstein-hell); }
+
+/* ============================ Zwei-Spalten ============================== */
+.split {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+}
+.split--oben { align-items: start; }
+
+/* ========================= Bild-Platzhalterfläche ======================= */
+.bildfeld {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, #c7dae0 0%, #e6dac2 46%, #16404a 47%, #0e2b33 100%);
+  border: 1px solid var(--linie);
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+.bildfeld--breit { aspect-ratio: 16 / 9; }
+.bildfeld span {
+  background: rgba(250, 247, 240, 0.93);
+  color: var(--gedaempft);
+  font-size: 0.81rem;
+  letter-spacing: 0.05em;
+  padding: 8px 14px;
+  border-radius: 999px;
+  margin: 0 12px;
+}
+
+/* ============================== Platzhalter ============================= */
+/* Alles, was noch keine echten Daten sind, wird sichtbar so ausgezeichnet. */
+[data-platzhalter] {
+  background: rgba(147, 69, 42, 0.13);
+  box-shadow: 0 0 0 1px rgba(147, 69, 42, 0.34);
+  border-radius: 4px;
+  padding: 0 4px;
+  font-style: italic;
+}
+.sec--kiefer [data-platzhalter],
+.sec--seetiefe [data-platzhalter],
+.hero [data-platzhalter] {
+  background: rgba(201, 128, 31, 0.22);
+  box-shadow: 0 0 0 1px rgba(201, 128, 31, 0.5);
+}
+
+.hinweis {
+  border-left: 4px solid var(--bernstein);
+  background: rgba(169, 99, 26, 0.10);
+  border-radius: 0 10px 10px 0;
+  padding: 18px 22px;
+  margin: 28px 0;
+}
+.hinweis > :last-child { margin-bottom: 0; }
+.hinweis--rost { border-left-color: var(--rost); background: rgba(147, 69, 42, 0.11); }
+.hinweis--schilf { border-left-color: var(--schilf); background: rgba(95, 113, 80, 0.14); }
+.sec--kiefer .hinweis,
+.sec--seetiefe .hinweis { background: rgba(250, 247, 240, 0.09); }
+
+.beispiel-banner {
+  background: var(--rost);
+  color: var(--birke);
+  padding: 13px var(--pad);
+  font-size: 0.92rem;
+}
+.beispiel-banner p { margin: 0; max-width: var(--max); margin-inline: auto; }
+.beispiel-banner [data-platzhalter] {
+  background: rgba(250, 247, 240, 0.24);
+  box-shadow: 0 0 0 1px rgba(250, 247, 240, 0.5);
+}
+
+/* =============================== Tabellen =============================== */
+.tabelle-wrap { overflow-x: auto; margin: 28px 0; }
+table { width: 100%; border-collapse: collapse; font-size: 0.96rem; }
+.tabelle-wrap table { min-width: 480px; }
+caption { text-align: left; font-size: 0.89rem; color: var(--gedaempft); padding-bottom: 10px; }
+th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--linie); vertical-align: top; }
+th { font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; }
+td.zahl, th.zahl { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+tfoot td { font-weight: 700; border-top: 2px solid var(--linie); border-bottom: none; }
+
+/* ============================== Aufzählung ============================== */
+.liste-check { list-style: none; padding: 0; margin: 24px 0; }
+.liste-check li { position: relative; padding-left: 32px; margin-bottom: 12px; }
+.liste-check li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.6em;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  background: var(--schilf);
+}
+.sec--kiefer .liste-check li::before,
+.sec--seetiefe .liste-check li::before { background: var(--bernstein-hell); }
+
+/* ============================== Klapptexte ============================== */
+details { border-bottom: 1px solid var(--linie); padding: 4px 0; }
+.sec--kiefer details, .sec--seetiefe details { border-bottom-color: var(--linie-invers); }
+summary {
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  padding: 15px 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: baseline;
+}
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; color: var(--bernstein); font-size: 1.4rem; line-height: 1; }
+.sec--kiefer summary::after, .sec--seetiefe summary::after { color: var(--bernstein-hell); }
+details[open] summary::after { content: "\2013"; }
+details > *:not(summary) { margin-bottom: 1em; }
+
+/* ============================== Konfigurator ============================ */
+.konfig {
+  display: grid;
+  grid-template-columns: minmax(280px, 1.15fr) minmax(255px, 1fr);
+  gap: clamp(24px, 3.5vw, 44px);
+  align-items: start;
+  margin-top: 36px;
+}
+@media (max-width: 900px) { .konfig { grid-template-columns: 1fr; } }
+
+.konfig fieldset {
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  margin: 0 0 20px;
+  background: var(--birke);
+}
+.konfig legend { font-family: var(--font-display); font-size: 1.1rem; padding: 0 8px; }
+.option {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--linie);
+}
+.option:last-child { border-bottom: none; }
+.option input[type="checkbox"] {
+  margin-top: 6px;
+  width: 18px;
+  height: 18px;
+  flex: none;
+  accent-color: var(--bernstein);
+}
+.option label { flex: 1; cursor: pointer; }
+.option .preis { white-space: nowrap; font-variant-numeric: tabular-nums; font-weight: 600; }
+.option small { display: block; color: var(--gedaempft); font-size: 0.85rem; line-height: 1.45; }
+
+.feld { margin-bottom: 16px; }
+.feld label { display: block; font-weight: 600; font-size: 0.93rem; margin-bottom: 6px; }
+.feld input, .feld select, .feld textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 1rem;
+  padding: 11px 13px;
+  border: 1px solid var(--linie);
+  border-radius: 9px;
+  background: var(--birke);
+  color: inherit;
+}
+.feld textarea { min-height: 130px; resize: vertical; }
+.feld small { display: block; color: var(--gedaempft); font-size: 0.85rem; margin-top: 5px; }
+.pflicht { color: var(--rost); }
+
+.ergebnis {
+  position: sticky;
+  top: calc(var(--header-h) + 20px);
+  background: var(--kiefer);
+  color: var(--birke);
+  border-radius: var(--radius);
+  padding: clamp(22px, 2.6vw, 30px);
+}
+.ergebnis h3 { color: var(--birke); margin-bottom: 0.6em; }
+.ergebnis th, .ergebnis td { border-bottom-color: var(--linie-invers); padding: 9px 0; }
+.ergebnis th {
+  color: var(--birke);
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  padding-right: 14px;
+}
+.ergebnis tfoot td { border-top-color: var(--linie-invers); font-size: 1.1rem; }
+.ergebnis .summe { font-family: var(--font-display); }
+@media (max-width: 900px) { .ergebnis { position: static; } }
+
+/* ============================ Formular-Antwort ========================== */
+.form-antwort {
+  border: 1px solid var(--linie);
+  border-left: 4px solid var(--schilf);
+  border-radius: 0 10px 10px 0;
+  padding: 22px 24px;
+  background: rgba(95, 113, 80, 0.12);
+}
+.form-antwort > :last-child { margin-bottom: 0; }
+
+/* =============================== Fußbereich ============================= */
+.footer {
+  background: var(--kiefer);
+  color: var(--gedaempft-invers);
+  padding: clamp(48px, 6vw, 72px) 0 30px;
+  font-size: 0.93rem;
+}
+.footer a { color: var(--birke); }
+.footer h4 {
+  color: var(--birke);
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-family: var(--font-text);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.footer ul { list-style: none; padding: 0; margin: 0; }
+.footer li { margin-bottom: 9px; }
+.footer__unten {
+  margin-top: 40px;
+  padding-top: 22px;
+  border-top: 1px solid var(--linie-invers);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+/* ============================ Reveal-Animation ========================== */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+[data-reveal].sichtbar { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+}

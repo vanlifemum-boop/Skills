@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Was kostet ein Grundstück in Masuren? — Kostenrechner</title>
+  <meta name="description" content="Alle Kosten transparent: Grundstückspreis, Module, Grunderwerbsteuer PCC, Notar, Grundbuch und Übersetzer — mit Rechner für die eigene Zusammenstellung." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect width='34' height='34' rx='8' fill='%231b3329'/%3E%3Ccircle cx='24' cy='10.5' r='4' fill='%23c9801f'/%3E%3Cpath d='M11 22 L15.5 9 L20 22 Z' fill='%235f7150'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="index.html">
+        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" focusable="false">
+          <rect width="34" height="34" rx="8" fill="#1b3329" />
+          <circle cx="24" cy="10.5" r="4" fill="#c9801f" />
+          <path d="M11 22 L15.5 9 L20 22 Z" fill="#5f7150" />
+          <path d="M5 26c3-1.5 5-1.5 8 0s5 1.5 8 0 5-1.5 8 0" stroke="#faf7f0" stroke-width="1.6" fill="none" stroke-linecap="round" />
+        </svg>
+        <span class="logo__text"><b>Neues Leben Masuren</b><span>Grundstücke am See</span></span>
+      </a>
+      <button class="burger" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="hauptnav">☰</button>
+      <nav class="nav" id="hauptnav" aria-label="Hauptnavigation">
+        <a href="grundstuecke.html">Grundstücke</a>
+        <a href="haeuser.html">Häuser &amp; Module</a>
+        <a href="kosten.html">Kosten</a>
+        <a href="kaufablauf.html">Ablauf &amp; Notar</a>
+        <a href="leben-in-polen.html">Leben in Polen</a>
+        <a class="btn" href="kontakt.html">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inhalt">
+
+    <div class="beispiel-banner">
+      <p>
+        <strong>Beispielwerte.</strong> Der Rechner arbeitet mit Musterpreisen, damit ihr die
+        Struktur der Kosten seht. Verbindlich sind sie nicht — die
+        <span data-platzhalter="hinweis">markierten</span> Zahlen werden ersetzt, sobald die
+        echten Preise feststehen. Belegt und keine Platzhalter sind die 2 % Steuer (PCC) und
+        die Grundbuchgebühren.
+      </p>
+    </div>
+
+    <section class="sec hero">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Kosten</p>
+        <h1 data-reveal>Alles, was ihr zahlt. Auf einer Seite.</h1>
+        <p class="hero__sub gross" data-reveal>
+          Kein „ab"-Preis, hinter dem sich der Rest versteckt. Stellt euch eure Zusammenstellung
+          zusammen und seht sofort, was Grundstück, Module und Kaufnebenkosten zusammen ergeben.
+        </p>
+      </div>
+    </section>
+
+    <section class="sec sec--birke">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Rechner</p>
+        <h2 class="display" data-reveal>Stell dir deine Summe zusammen.</h2>
+        <p class="gross lauftext" data-reveal>
+          Wähl ein Grundstück und hak an, was ihr bei uns buchen wollt. Bausteine, die ihr
+          selbst baut, könnt ihr auf „selbst machen" setzen — sie erscheinen dann mit 0 € in
+          der Rechnung.
+        </p>
+
+        <noscript>
+          <div class="hinweis hinweis--rost">
+            <p>
+              Der Rechner braucht JavaScript. Alle Preise stehen aber auch in den Tabellen
+              weiter unten auf dieser Seite — dort könnt ihr sie von Hand zusammenzählen.
+            </p>
+          </div>
+        </noscript>
+
+        <div class="konfig" data-reveal>
+          <form id="konfigurator">
+            <fieldset id="feld-grundstueck">
+              <legend>Grundstück</legend>
+            </fieldset>
+            <div id="feld-module"></div>
+          </form>
+
+          <aside class="ergebnis" aria-live="polite">
+            <h3>Eure Zusammenstellung</h3>
+            <table>
+              <caption class="klein" style="color:inherit;opacity:0.75">
+                Alle Beträge gerundet, in Euro.
+              </caption>
+              <tbody id="ergebnis-zeilen"></tbody>
+              <tfoot>
+                <tr>
+                  <td>Gesamt</td>
+                  <td class="zahl summe" id="ergebnis-summe">—</td>
+                </tr>
+              </tfoot>
+            </table>
+            <p class="klein" style="margin-top:18px;opacity:0.85">
+              Unverbindliche Orientierung, kein Angebot. Laufende Kosten (Grundsteuer,
+              Versicherung, Wartung) sind nicht enthalten — sie stehen weiter unten.
+            </p>
+            <p style="margin-bottom:0">
+              <a class="btn" href="kontakt.html">Angebot dazu anfragen</a>
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec sec--sand" id="nebenkosten">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Kaufnebenkosten</p>
+        <h2 class="display" data-reveal>Was beim Kauf zusätzlich anfällt.</h2>
+        <p class="gross lauftext" data-reveal>
+          Diese Posten fallen einmalig beim Kauf des Grundstücks an — unabhängig davon, ob ihr
+          später baut. In Polen trägt sie üblicherweise der Käufer.
+        </p>
+
+        <div class="tabelle-wrap" data-reveal>
+          <table>
+            <caption>Bezogen auf den Kaufpreis des Grundstücks. Stand der Recherche: 2026.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Posten</th>
+                <th scope="col">Höhe</th>
+                <th scope="col">Was dahintersteckt</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Steuer PCC</th>
+                <td class="zahl">2 %</td>
+                <td>
+                  <em>Podatek od czynności cywilnoprawnych</em> — die polnische Steuer auf
+                  zivilrechtliche Handlungen, das Gegenstück zur deutschen Grunderwerbsteuer.
+                  Der Notar zieht sie beim Termin ein und führt sie ab.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Notarhonorar</th>
+                <td class="zahl"><span data-platzhalter="notarsatz">ca. 1,2 %</span></td>
+                <td>
+                  Gesetzlich gestaffelt (<em>taksa notarialna</em>) und mit steigendem Kaufpreis
+                  anteilig sinkend, zuzüglich Umsatzsteuer und Auslagen. Den genauen Betrag
+                  nennt euch der Notar vor dem Termin — verlangt ihn schriftlich.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Grundbuch</th>
+                <td class="zahl">300 PLN</td>
+                <td>
+                  Gerichtsgebühren: 200 PLN für die Eintragung des Eigentums, 100 PLN für das
+                  Anlegen eines Grundbuchblatts, falls noch keines existiert. Das sind rund 70 €.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Vereidigter Übersetzer</th>
+                <td class="zahl"><span data-platzhalter="uebersetzer">ca. 450 €</span></td>
+                <td>
+                  Wer die Urkunde nicht auf Polnisch versteht, braucht beim Termin einen
+                  vereidigten Übersetzer. Das ist kein Luxus, sondern schützt euch — und ist
+                  Voraussetzung für eine wirksame Beurkundung.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Maklercourtage</th>
+                <td class="zahl">entfällt</td>
+                <td>
+                  Ihr kauft direkt bei uns. Für den Erstkauf berechnen wir keine Courtage.
+                  Beim späteren <a href="wiederverkauf.html">Weiterverkauf</a> gelten eigene
+                  Konditionen.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="hinweis hinweis--rost" data-reveal>
+          <p>
+            <strong>Zwei Zahlen sind belegt, zwei sind geschätzt.</strong> Die 2 % PCC und die
+            300 PLN Grundbuchgebühren sind gesetzlich festgelegt. Notarhonorar und
+            Übersetzerkosten hängen vom Einzelfall ab — lasst sie euch vor dem Termin
+            schriftlich bestätigen und rechnet nicht mit unseren Beispielwerten.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec sec--kiefer">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Danach</p>
+        <h2 class="display" data-reveal>Laufende Kosten, an die kaum jemand denkt.</h2>
+        <p class="gross lauftext" data-reveal>
+          Der Kauf ist ein Betrag. Der Alltag ist ein Dauerauftrag. Diese Posten solltet ihr
+          vorher einplanen — die Beträge sind Erfahrungswerte und noch keine Zusage.
+        </p>
+        <div class="tabelle-wrap" data-reveal>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Posten</th>
+                <th scope="col" class="zahl">pro Jahr</th>
+                <th scope="col">Anmerkung</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Grundsteuer</th>
+                <td class="zahl"><span data-platzhalter="grundsteuer">ca. 120 €</span></td>
+                <td>Wird von der Gemeinde festgesetzt, abhängig von Fläche und Nutzungsart.</td>
+              </tr>
+              <tr>
+                <th scope="row">Gebäudeversicherung</th>
+                <td class="zahl"><span data-platzhalter="versicherung">ca. 250 €</span></td>
+                <td>Für ein Haus in Alleinlage; Angebote lohnen sich zu vergleichen.</td>
+              </tr>
+              <tr>
+                <th scope="row">Wartung Kläranlage</th>
+                <td class="zahl"><span data-platzhalter="wartung-klaeranlage">ca. 200 €</span></td>
+                <td>Regelmäßige Wartung und Entleerung sind vorgeschrieben.</td>
+              </tr>
+              <tr>
+                <th scope="row">Heizung (Holz/Strom)</th>
+                <td class="zahl"><span data-platzhalter="heizung">ca. 700 €</span></td>
+                <td>Stark abhängig von Haus, Dämmung und Winter. Holz ist in der Region gut verfügbar.</td>
+              </tr>
+              <tr>
+                <th scope="row">Internet</th>
+                <td class="zahl"><span data-platzhalter="internet">ca. 180 €</span></td>
+                <td>
+                  In Alleinlage meist über Mobilfunk oder Richtfunk. Prüft die Abdeckung
+                  unbedingt vor Ort — für Homeoffice und Homeschooling ist das entscheidend.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Grundstückspflege im Winter</th>
+                <td class="zahl"><span data-platzhalter="winterdienst-kosten">ca. 150 €</span></td>
+                <td>Wegräumung, falls ihr nicht dauerhaft vor Ort seid.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="btn-zeile" data-reveal>
+          <a class="btn" href="kontakt.html">Konkrete Zahlen für euren Fall anfragen</a>
+          <a class="btn btn--outline" href="kaufablauf.html">Wie der Kauf abläuft</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="raster raster--4" style="margin-top:0">
+        <div>
+          <h4>Angebot</h4>
+          <ul>
+            <li><a href="grundstuecke.html">Grundstücke am See</a></li>
+            <li><a href="haeuser.html">Häuser &amp; Autarkie-Module</a></li>
+            <li><a href="kosten.html">Kosten &amp; Rechner</a></li>
+            <li><a href="wiederverkauf.html">Weiterverkauf</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Vor dem Kauf</h4>
+          <ul>
+            <li><a href="kaufablauf.html">Ablauf &amp; Notar</a></li>
+            <li><a href="kosten.html#nebenkosten">Kaufnebenkosten</a></li>
+            <li><a href="grundstuecke.html#besichtigung">Besichtigung</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Leben vor Ort</h4>
+          <ul>
+            <li><a href="leben-in-polen.html">Leben in Polen</a></li>
+            <li><a href="olsztyn.html">Olsztyn / Allenstein</a></li>
+            <li><a href="schule.html">Schule &amp; Homeschooling</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="kontakt.html">Anfrage stellen</a></li>
+            <li><span data-platzhalter="email">deine@email.de</span></li>
+            <li><span data-platzhalter="telefon">+49 000 0000000</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="klein" style="margin-top:36px;max-width:70ch">
+        Diese Seite gibt Orientierung, aber keine Rechts-, Steuer- oder Finanzberatung.
+        Verbindlich sind allein der notarielle Kaufvertrag und die Auskünfte deines Notars,
+        Steuerberaters und der zuständigen Behörden.
+      </p>
+
+      <div class="footer__unten">
+        <span>&copy; <span data-jahr>2026</span> Neues Leben Masuren</span>
+        <span>
+          <a href="impressum.html">Impressum</a> &middot;
+          <a href="datenschutz.html">Datenschutz</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="kosten.js"></script>
+</body>
+</html>

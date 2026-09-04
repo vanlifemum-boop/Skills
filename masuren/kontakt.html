@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt — Neues Leben Masuren</title>
+  <meta name="description" content="Fragt Grundstücke, Module, Besichtigungstermine oder Unterlagen an. Wir antworten mit konkreten Zahlen statt mit einem Prospekt." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect width='34' height='34' rx='8' fill='%231b3329'/%3E%3Ccircle cx='24' cy='10.5' r='4' fill='%23c9801f'/%3E%3Cpath d='M11 22 L15.5 9 L20 22 Z' fill='%235f7150'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="index.html">
+        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" focusable="false">
+          <rect width="34" height="34" rx="8" fill="#1b3329" />
+          <circle cx="24" cy="10.5" r="4" fill="#c9801f" />
+          <path d="M11 22 L15.5 9 L20 22 Z" fill="#5f7150" />
+          <path d="M5 26c3-1.5 5-1.5 8 0s5 1.5 8 0 5-1.5 8 0" stroke="#faf7f0" stroke-width="1.6" fill="none" stroke-linecap="round" />
+        </svg>
+        <span class="logo__text"><b>Neues Leben Masuren</b><span>Grundstücke am See</span></span>
+      </a>
+      <button class="burger" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="hauptnav">☰</button>
+      <nav class="nav" id="hauptnav" aria-label="Hauptnavigation">
+        <a href="grundstuecke.html">Grundstücke</a>
+        <a href="haeuser.html">Häuser &amp; Module</a>
+        <a href="kosten.html">Kosten</a>
+        <a href="kaufablauf.html">Ablauf &amp; Notar</a>
+        <a href="leben-in-polen.html">Leben in Polen</a>
+        <a class="btn" href="kontakt.html">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inhalt">
+
+    <section class="sec hero">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Kontakt</p>
+        <h1 data-reveal>Erzählt uns, was ihr vorhabt.</h1>
+        <p class="hero__sub gross" data-reveal>
+          Je konkreter eure Nachricht, desto konkreter unsere Antwort. Und keine Sorge: Ihr
+          landet nicht in einem Newsletter, und wir rufen nicht ungefragt an.
+        </p>
+      </div>
+    </section>
+
+    <section class="sec sec--birke">
+      <div class="container">
+        <div class="split split--oben">
+          <div data-reveal>
+            <h2>Anfrage</h2>
+            <form class="anfrage-form" data-endpoint="[PLATZHALTER: https://formspree.io/f/DEIN-CODE]" novalidate>
+              <div class="feld">
+                <label for="f-name">Name <span class="pflicht" aria-hidden="true">*</span></label>
+                <input type="text" id="f-name" name="name" autocomplete="name" required />
+              </div>
+              <div class="feld">
+                <label for="f-email">E-Mail <span class="pflicht" aria-hidden="true">*</span></label>
+                <input type="email" id="f-email" name="email" autocomplete="email" required />
+              </div>
+              <div class="feld">
+                <label for="f-telefon">Telefon (freiwillig)</label>
+                <input type="tel" id="f-telefon" name="telefon" autocomplete="tel" />
+                <small>Nur, wenn ihr lieber telefoniert als schreibt.</small>
+              </div>
+              <div class="feld">
+                <label for="f-anliegen">Worum geht es? <span class="pflicht" aria-hidden="true">*</span></label>
+                <select id="f-anliegen" name="anliegen" required>
+                  <option value="Grundstück">Ein Grundstück</option>
+                  <option value="Grundstück mit Haus">Grundstück mit Haus</option>
+                  <option value="Module und Autarkie">Module und Autarkie</option>
+                  <option value="Besichtigungstermin">Besichtigungstermin</option>
+                  <option value="Beschulung">Frage zur Beschulung</option>
+                  <option value="Weiterverkauf">Weiterverkauf</option>
+                  <option value="Sonstiges">Etwas anderes</option>
+                </select>
+              </div>
+              <div class="feld">
+                <label for="f-personen">Wie viele seid ihr?</label>
+                <input type="text" id="f-personen" name="personen" placeholder="z. B. 2 Erwachsene, 2 Kinder (6 und 9)" />
+              </div>
+              <div class="feld">
+                <label for="f-zeitraum">Wann wollt ihr das erste Mal vorbeikommen?</label>
+                <input type="text" id="f-zeitraum" name="zeitraum" placeholder="z. B. Frühjahr, oder: noch offen" />
+              </div>
+              <div class="feld">
+                <label for="f-nachricht">Eure Nachricht <span class="pflicht" aria-hidden="true">*</span></label>
+                <textarea id="f-nachricht" name="nachricht" required
+                  placeholder="Was habt ihr vor? Zweites Zuhause, Ferienhaus oder ganz umziehen? Was ist euch wichtig, was macht euch Sorgen?"></textarea>
+              </div>
+              <div class="option">
+                <input type="checkbox" id="f-datenschutz" name="datenschutz" value="ja" required />
+                <label for="f-datenschutz">
+                  Ich bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage
+                  verarbeitet werden. <a href="datenschutz.html">Datenschutzerklärung</a>
+                  <span class="pflicht" aria-hidden="true">*</span>
+                </label>
+              </div>
+              <p class="klein gedaempft">Mit <span class="pflicht">*</span> gekennzeichnete Felder brauchen wir.</p>
+              <button class="btn" type="submit">Anfrage absenden</button>
+            </form>
+          </div>
+
+          <div data-reveal>
+            <div class="karte">
+              <h3>Direkt erreichen</h3>
+              <p>
+                E-Mail: <span data-platzhalter="email">deine@email.de</span><br />
+                Telefon: <span data-platzhalter="telefon">+49 000 0000000</span>
+              </p>
+              <p class="klein gedaempft">
+                Wir sind oft draußen auf den Grundstücken. Wenn wir nicht rangehen, schreibt
+                kurz — wir melden uns zurück.
+              </p>
+            </div>
+
+            <div class="hinweis hinweis--rost">
+              <p class="klein">
+                <strong>Hinweis zum Formular:</strong> Der automatische Versand ist noch nicht
+                eingerichtet. Wenn ihr auf „Absenden" klickt, wird nichts verschickt — ihr
+                bekommt stattdessen eine fertig ausgefüllte E-Mail angeboten, die ihr aus eurem
+                Mailprogramm abschicken könnt. Sobald der Versand steht, verschwindet dieser
+                Hinweis.
+              </p>
+            </div>
+
+            <div class="karte" style="margin-top:24px">
+              <h3>Was ihr von uns bekommt</h3>
+              <ul class="liste-check">
+                <li>Eine Antwort mit konkreten Zahlen, nicht mit „ab"-Preisen</li>
+                <li>Lage, Katasterauszug und Fotos der passenden Parzellen</li>
+                <li>Auf Wunsch einen Video-Termin, bevor ihr anreist</li>
+                <li>Keine Weitergabe eurer Daten an Dritte</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="raster raster--4" style="margin-top:0">
+        <div>
+          <h4>Angebot</h4>
+          <ul>
+            <li><a href="grundstuecke.html">Grundstücke am See</a></li>
+            <li><a href="haeuser.html">Häuser &amp; Autarkie-Module</a></li>
+            <li><a href="kosten.html">Kosten &amp; Rechner</a></li>
+            <li><a href="wiederverkauf.html">Weiterverkauf</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Vor dem Kauf</h4>
+          <ul>
+            <li><a href="kaufablauf.html">Ablauf &amp; Notar</a></li>
+            <li><a href="kosten.html#nebenkosten">Kaufnebenkosten</a></li>
+            <li><a href="grundstuecke.html#besichtigung">Besichtigung</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Leben vor Ort</h4>
+          <ul>
+            <li><a href="leben-in-polen.html">Leben in Polen</a></li>
+            <li><a href="olsztyn.html">Olsztyn / Allenstein</a></li>
+            <li><a href="schule.html">Schule &amp; Homeschooling</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="kontakt.html">Anfrage stellen</a></li>
+            <li><span data-platzhalter="email">deine@email.de</span></li>
+            <li><span data-platzhalter="telefon">+49 000 0000000</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="klein" style="margin-top:36px;max-width:70ch">
+        Diese Seite gibt Orientierung, aber keine Rechts-, Steuer- oder Finanzberatung.
+        Verbindlich sind allein der notarielle Kaufvertrag und die Auskünfte deines Notars,
+        Steuerberaters und der zuständigen Behörden.
+      </p>
+
+      <div class="footer__unten">
+        <span>&copy; <span data-jahr>2026</span> Neues Leben Masuren</span>
+        <span>
+          <a href="impressum.html">Impressum</a> &middot;
+          <a href="datenschutz.html">Datenschutz</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

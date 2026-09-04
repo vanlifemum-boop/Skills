@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- Vorschau unter fremder Domain: bis zum Umzug auf die eigene Adresse
+     soll die Seite nicht in Suchmaschinen auftauchen. Siehe PLATZHALTER.md. -->
+<meta name="robots" content="noindex, nofollow">
+<title>So bleibst du anonym — Mal wieder normal sein</title>
+<meta name="description" content="In einfacher Sprache: Was auf dieser Seite steht, was im Postfach liegt, wann es gelöscht wird — und wie du die Seite mit einem Klick verlässt.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233B2333'/%3E%3Cpath d='M16 25.5S6.5 19.8 6.5 13.6A5.1 5.1 0 0 1 16 10.9a5.1 5.1 0 0 1 9.5 2.7c0 6.2-9.5 11.9-9.5 11.9Z' fill='none' stroke='%23EBCDC6' stroke-width='2'/%3E%3Ccircle cx='16' cy='15.5' r='2.4' fill='%23B08544'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="design-tokens.css">
+<link rel="stylesheet" href="styles.css">
+<!-- Markiert, dass JavaScript läuft. Erst dann blendet styles.css
+     Abschnitte beim Scrollen ein — ohne Skript steht alles sofort da. -->
+<script>document.documentElement.className+=" js";</script>
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="marke" href="index.html">
+      <span class="dach">Mamis für Mamis</span>
+      Mal wieder<br><span>normal sein</span>
+    </a>
+    <nav class="haupt" aria-label="Hauptmenü">
+      <a href="termine.html">Termine</a>
+      <a href="begleitung.html">Begleitung</a>
+      <a href="einladung.html">Einladung</a>
+      <a href="mitgliedschaft.html">Mitgliedschaft</a>
+      <a href="index.html#anfrage">Anfrage schreiben</a>
+    </nav>
+    <button class="exit" id="exit" title="Schließt diese Seite sofort und ersetzt sie durch eine Wetterseite">Seite schnell verlassen</button>
+  </div>
+</header>
+
+<main id="inhalt">
+
+<section class="seitenkopf">
+  <div class="wrap">
+    <p class="eyebrow">In einfacher Sprache</p>
+    <h1>So schützen wir dich.</h1>
+    <p class="lead">Kurze Sätze, keine Fachwörter. Wenn du nur eine Seite hier liest, dann diese.</p>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <div class="text">
+      <h2>Auf dieser Seite steht niemand</h2>
+      <p>Es gibt keine Liste mit Menschen. Es gibt keine Profile. Es gibt keine Suche nach Personen.</p>
+      <p>Sichtbar sind nur Zahlen: wie viele Mamis in einer Gegend unterwegs sind, wann ein Termin ist, wie viele Plätze frei sind. Mehr nicht.</p>
+      <p class="stark">Es gibt hier nichts zu durchsuchen und nichts zu screenshotten, was gegen dich verwendet werden kann.</p>
+
+      <h2>Du brauchst kein Konto</h2>
+      <p>Kein Passwort. Keine Anmeldung. Nichts, was gestohlen werden kann.</p>
+
+      <h2>Deine Anfrage bleibt bei dir, bis du sie sendest</h2>
+      <p>Der Baukasten auf der Startseite schickt nichts ab. Er schreibt dir einen Text, den du siehst. Du kannst jedes Wort ändern. Du kannst ihn wieder löschen.</p>
+      <p>Erst wenn du selbst auf „senden“ drückst, geht er los. Du kannst ihn auch nur kopieren und über Signal oder WhatsApp schicken.</p>
+
+      <h2>Wir geben nichts weiter, bevor beide ja gesagt haben</h2>
+      <ol>
+        <li>Du schreibst uns.</li>
+        <li>Wir fragen bei jemandem an. Wir sagen dabei nicht, wie du heißt und wo genau du wohnst.</li>
+        <li>Sagt sie ja, fragen wir noch einmal bei dir nach.</li>
+        <li>Erst wenn <strong>du auch ja sagst</strong>, bringen wir euch zusammen.</li>
+      </ol>
+      <p>Ohne dein zweites Ja passiert nichts.</p>
+
+      <h2>Was wir speichern</h2>
+      <p>Deine Mail liegt in einem Postfach bei einem deutschen Anbieter. Sonst nirgends.</p>
+      <p>Daneben führen wir eine Tabelle für die Vermittlung. In dieser Tabelle steht <strong>kein Name und keine Mailadresse</strong> — nur ein Kürzel wie „A-041“, eine Region, ein Stichwort und ein Datum. Wenn diese Tabelle je in falsche Hände gerät, steht darin nichts über dich.</p>
+
+      <h2>Wann wir es löschen</h2>
+      <div class="tabelle-rollt">
+        <table class="tabelle">
+          <thead><tr><th scope="col">Was</th><th scope="col">Wann weg</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Deine Anfrage, wenn sie erledigt ist</th><td>nach 3 Monaten</td></tr>
+            <tr><th scope="row">Deine Anfrage, wenn niemand gefunden wurde</th><td>3 Monate nach der Absage</td></tr>
+            <tr><th scope="row">Anmeldung zu einem Termin</th><td>4 Wochen nach dem Termin</td></tr>
+            <tr><th scope="row">Meldung über einen Vorfall</th><td>nach 3 Jahren, getrennt abgelegt</td></tr>
+            <tr><th scope="row">Rechnungen und Mitgliedsdaten</th><td>10 Jahre — das schreibt das Gesetz vor</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Die zehn Jahre sind kein Ermessen und keine Bequemlichkeit. Wir schreiben sie hin, statt „wir löschen alles sofort“ zu behaupten — das wäre gelogen.</p>
+      <p>Du kannst uns jederzeit schreiben, dass wir deine Anfrage sofort löschen sollen. Ein Wort reicht, wir fragen nicht nach dem Grund.</p>
+
+      <h2>Die Seite schnell verlassen</h2>
+      <p>Oben rechts steht ein Knopf: <strong>Seite schnell verlassen</strong>. Ein Klick, und statt dieser Seite steht eine Wetterseite da. Der Zurück-Knopf führt nicht hierher.</p>
+      <p>Es geht auch mit der Tastatur: zweimal schnell hintereinander die Taste <strong>Esc</strong> drücken.</p>
+      <div class="hinweis warn">
+        <p><strong>Das reicht nicht immer.</strong> Der Verlauf deines Browsers merkt sich trotzdem, dass du hier warst. Wenn jemand an dein Handy oder deinen Rechner kommt, öffne diese Seite lieber in einem privaten Fenster — bei den meisten Browsern heißt das „Inkognito“ oder „Privates Fenster“. Dann bleibt hinterher nichts stehen.</p>
+      </div>
+
+      <h2>Drei kleine Dinge, die viel helfen</h2>
+      <ul>
+        <li><strong>Eine eigene Mailadresse</strong> nur für uns. Sie darf einen Fantasienamen haben.</li>
+        <li><strong>Schreib keine Namen, Adressen oder Aktenzeichen</strong> in deine Nachricht. Wir brauchen sie nicht.</li>
+        <li><strong>Sag uns, wie wir dich nennen sollen.</strong> Ein Fantasiename genügt uns vollkommen.</li>
+      </ul>
+
+      <h2>Was wir nie tun</h2>
+      <ul>
+        <li>Wir leiten deine Mail nicht weiter. Wir schreiben immer neu, nur mit dem Nötigsten.</li>
+        <li>Wir wollen keine Fotos aus deiner Akte und speichern keine Behördenschreiben.</li>
+        <li>Wir reden nicht über Dritte, die nicht gefragt wurden.</li>
+        <li>Wir stellen keine Fotos von Treffen online. Auch keine, auf denen „man nichts erkennt“.</li>
+      </ul>
+
+      <div class="hinweis warn luft-oben-m">
+        <p><strong>Eine Grenze gibt es.</strong> Wenn wir erfahren, dass ein Kind in akuter Gefahr ist, gilt kein Versprechen von Vertraulichkeit mehr. Das sagen wir dir vorher und nicht hinterher. Alles Weitere steht in den <a href="verhaltensregeln.html">Verhaltensregeln</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <div class="weiter">
+    <a href="datenschutz.html"><b>Die ausführliche Fassung</b><span>Datenschutzerklärung, vollständig.</span></a>
+    <a href="verhaltensregeln.html"><b>Verhaltensregeln</b><span>Was am Tisch und untereinander gilt.</span></a>
+    <a href="index.html#anfrage"><b>Jetzt schreiben</b><span>Ohne Namen, ohne Konto.</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <h4>Mitmachen</h4>
+        <ul>
+          <li><a href="index.html#anfrage">Anfrage schreiben</a></li>
+          <li><a href="termine.html">Termine</a></li>
+          <li><a href="stammtisch.html">Stammtisch gründen</a></li>
+          <li><a href="silvester.html">Die Auszeit über Silvester</a></li>
+          <li><a href="einladung.html">Einladung anfragen</a></li>
+          <li><a href="mitgliedschaft.html">Mitgliedschaft</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Schutz</h4>
+        <ul>
+          <li><a href="anonym.html">So bleibst du anonym</a></li>
+          <li><a href="verhaltensregeln.html">Verhaltensregeln</a></li>
+          <li><a href="begleitung.html">Was Begleitung ist</a></li>
+          <li><a href="datenschutz.html">Was wir speichern</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="teilnahmebedingungen.html">Teilnahmebedingungen <span class="f-entwurf">Entwurf</span></a></li>
+          <li><a href="widerruf.html">Widerruf <span class="f-entwurf">Entwurf</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Im Notfall</h4>
+        <ul class="notruf">
+          <li><span>Telefonseelsorge</span> <b>0800 111 0 111</b></li>
+          <li><span>Hilfetelefon Gewalt gegen Frauen</span> <b>116 016</b></li>
+          <li><span>Notruf</span> <b>112</b></li>
+        </ul>
+      </div>
+    </div>
+    <p class="f-schluss">
+      <span>Mamis für Mamis — Gemeinsam statt allein.</span>
+      <span>Alle Zahlen auf dieser Seite sind Beispiele. Vorschaufassung, noch nicht öffentlich.</span>
+    </p>
+  </div>
+</footer>
+
+<script src="daten.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

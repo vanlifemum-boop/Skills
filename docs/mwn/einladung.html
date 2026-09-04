@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- Vorschau unter fremder Domain: bis zum Umzug auf die eigene Adresse
+     soll die Seite nicht in Suchmaschinen auftauchen. Siehe PLATZHALTER.md. -->
+<meta name="robots" content="noindex, nofollow">
+<title>Ich lade dich ein — Mal wieder normal sein</title>
+<meta name="description" content="Wie das Einladen funktioniert: Wer nicht zahlen kann, wird eingeladen — ohne Nachweis und für die anderen nicht erkennbar. Wer kann, lädt jemanden mit ein.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233B2333'/%3E%3Cpath d='M16 25.5S6.5 19.8 6.5 13.6A5.1 5.1 0 0 1 16 10.9a5.1 5.1 0 0 1 9.5 2.7c0 6.2-9.5 11.9-9.5 11.9Z' fill='none' stroke='%23EBCDC6' stroke-width='2'/%3E%3Ccircle cx='16' cy='15.5' r='2.4' fill='%23B08544'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="design-tokens.css">
+<link rel="stylesheet" href="styles.css">
+<!-- Markiert, dass JavaScript läuft. Erst dann blendet styles.css
+     Abschnitte beim Scrollen ein — ohne Skript steht alles sofort da. -->
+<script>document.documentElement.className+=" js";</script>
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="marke" href="index.html">
+      <span class="dach">Mamis für Mamis</span>
+      Mal wieder<br><span>normal sein</span>
+    </a>
+    <nav class="haupt" aria-label="Hauptmenü">
+      <a href="termine.html">Termine</a>
+      <a href="begleitung.html">Begleitung</a>
+      <a href="einladung.html" aria-current="page">Einladung</a>
+      <a href="mitgliedschaft.html">Mitgliedschaft</a>
+      <a href="index.html#anfrage">Anfrage schreiben</a>
+    </nav>
+    <button class="exit" id="exit" title="Schließt diese Seite sofort und ersetzt sie durch eine Wetterseite">Seite schnell verlassen</button>
+  </div>
+</header>
+
+<main id="inhalt">
+
+<section class="seitenkopf">
+  <div class="wrap">
+    <p class="eyebrow">Für beide Seiten</p>
+    <h1>Ich lade dich ein.</h1>
+    <p class="lead">Am Tisch sitzen Frauen, die den vollen Beitrag gezahlt haben, und Frauen, die eingeladen wurden. Niemand weiß, wer wer ist. Das ist kein Detail — das ist der Unterschied zwischen Würde und Almosen.</p>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <div class="einladung">
+      <div class="text">
+        <h2>Wenn das Geld gerade nicht reicht</h2>
+        <p>Dann schreibst du uns einen Satz. Wirklich nur einen: <em>„Ich möchte kommen, aber der Beitrag geht diesen Monat nicht.“</em></p>
+        <p>Was <strong>nicht</strong> passiert: Wir fragen nicht nach. Wir wollen keinen Bescheid sehen, keinen Kontoauszug, keine Begründung. Es gibt kein Formular und keinen Antrag. Du musst dich nicht als bedürftig bezeichnen — das Wort kommt bei uns nicht vor.</p>
+        <p class="stark">Du bekommst eine Bestätigung wie alle anderen. Dort steht der Treffpunkt, die Uhrzeit und dass alles geregelt ist.</p>
+        <h3>Und am Abend selbst?</h3>
+        <p>Es gibt keine getrennte Abrechnung am Tisch. Auf der Teilnehmerliste steht dein Name wie jeder andere. Es gibt keine Markierung, keine Liste, keinen wissenden Blick. Wer eingeladen wurde, weiß nur eine Person — und die sitzt nicht mit am Tisch, um es jemandem zu erzählen.</p>
+        <div class="hinweis">
+          <p>Wenn du doch nicht kannst, sag einfach ab. Das ist kein Problem und kostet nichts. Es zählt auch nichts an, es merkt sich niemand etwas.</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="raster-karte">
+          <div class="raster-kopf">
+            <h2>Einladungen gerade</h2>
+            <span data-stand>Stand: —</span>
+          </div>
+          <div class="plaetze" id="plaetze" role="img"></div>
+          <div class="legende">
+            <span><i style="background:#B08544"></i> offen</span>
+            <span><i style="background:#D89E96"></i> vergeben</span>
+            <span><i style="border:1.5px dashed rgba(59,35,51,.4)"></i> nicht finanziert</span>
+          </div>
+          <p class="zone-info">Jeder Kreis ist ein Platz bei einem der nächsten Termine. <strong data-einladungen-offen>—</strong> davon sind bezahlt und noch frei. Du kannst dir einen davon nehmen.</p>
+        </div>
+        <p class="luft-oben-m"><a class="btn btn-primar" href="index.html?thema=einladung#anfrage">Einladung anfragen</a></p>
+      </div>
+    </div>
+
+    <div class="text luft-oben">
+      <h2>Wenn du jemanden mit einladen möchtest</h2>
+      <p>Auf jeder Rechnung steht eine Zeile mit einem Kästchen. Setzt du dort einen Haken, zahlst du fünfzehn Euro mehr und finanzierst damit einen ganzen Platz für eine Frau, die du nie kennenlernen wirst.</p>
+      <p>Du erfährst nicht, wer sie ist. Sie erfährt nicht, wer du bist. Beides ist Absicht.</p>
+
+      <div class="tabelle-rollt luft-oben-m">
+        <table class="tabelle">
+          <caption>So sieht eine Rechnung für einen Stammtisch aus. Beispielbeträge.</caption>
+          <thead>
+            <tr><th scope="col">Zeile</th><th scope="col">Betrag</th><th scope="col">Was dahintersteckt</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Teilnahme</th><td class="betrag">Selbstkosten</td><td>Deckt Lokal, Material und Organisation. Mehr nicht.</td></tr>
+            <tr><th scope="row">Trinkgeld</th><td class="betrag">+0 / 5 / 10 €</td><td>Freiwillig, ein Klick. Für den Aufwand dahinter.</td></tr>
+            <tr><th scope="row">Ich lade mit ein</th><td class="betrag">+15 €</td><td>Finanziert einen ganzen Platz für eine andere.</td></tr>
+            <tr><th scope="row">Eingeladen</th><td class="betrag">0 €</td><td>Erscheint als „bereits beglichen“. Sonst steht dort nichts.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="hinweis geld luft-oben-m">
+        <p><strong>Das ist keine Wohltätigkeit.</strong> Dahinter steht eine Firma. Was du zahlst, ist ein Beitrag, und du bekommst dafür eine Rechnung — keine Bescheinigung fürs Finanzamt, denn absetzen lässt sich davon nichts. Wir schreiben das lieber deutlich hin, als es zu verschweigen.</p>
+      </div>
+
+      <h2>Warum das so und nicht anders läuft</h2>
+      <p>Solidarität scheitert selten am Geld. Sie scheitert daran, dass man dafür die Hand heben muss, vor Leuten, die man mag. Deshalb gibt es hier keine Anträge, keine Prüfung, keine getrennten Listen. Ein Satz per Mail, und die Sache ist erledigt.</p>
+      <p>Wir wissen, dass das ausgenutzt werden könnte. Wir haben uns entschieden, das Risiko zu tragen — die Alternative wäre, allen anderen zu misstrauen.</p>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <div class="weiter">
+    <a href="index.html?thema=einladung#anfrage"><b>Einladung anfragen</b><span>Ein Satz reicht. Wirklich.</span></a>
+    <a href="index.html?thema=miteinladen#anfrage"><b>Jemanden mit einladen</b><span>Fünfzehn Euro, ein Platz.</span></a>
+    <a href="termine.html"><b>Termine ansehen</b><span>Wofür die Einladungen gedacht sind.</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <h4>Mitmachen</h4>
+        <ul>
+          <li><a href="index.html#anfrage">Anfrage schreiben</a></li>
+          <li><a href="termine.html">Termine</a></li>
+          <li><a href="stammtisch.html">Stammtisch gründen</a></li>
+          <li><a href="silvester.html">Die Auszeit über Silvester</a></li>
+          <li><a href="einladung.html">Einladung anfragen</a></li>
+          <li><a href="mitgliedschaft.html">Mitgliedschaft</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Schutz</h4>
+        <ul>
+          <li><a href="anonym.html">So bleibst du anonym</a></li>
+          <li><a href="verhaltensregeln.html">Verhaltensregeln</a></li>
+          <li><a href="begleitung.html">Was Begleitung ist</a></li>
+          <li><a href="datenschutz.html">Was wir speichern</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="teilnahmebedingungen.html">Teilnahmebedingungen <span class="f-entwurf">Entwurf</span></a></li>
+          <li><a href="widerruf.html">Widerruf <span class="f-entwurf">Entwurf</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Im Notfall</h4>
+        <ul class="notruf">
+          <li><span>Telefonseelsorge</span> <b>0800 111 0 111</b></li>
+          <li><span>Hilfetelefon Gewalt gegen Frauen</span> <b>116 016</b></li>
+          <li><span>Notruf</span> <b>112</b></li>
+        </ul>
+      </div>
+    </div>
+    <p class="f-schluss">
+      <span>Mamis für Mamis — Gemeinsam statt allein.</span>
+      <span>Alle Zahlen auf dieser Seite sind Beispiele. Vorschaufassung, noch nicht öffentlich.</span>
+    </p>
+  </div>
+</footer>
+
+<script src="daten.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

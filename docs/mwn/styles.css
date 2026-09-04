@@ -1,0 +1,439 @@
+/* =========================================================
+   MAL WIEDER NORMAL SEIN — Stylesheet
+   Reihenfolge auf jeder Seite: design-tokens.css, dann diese Datei.
+   Die Farb- und Typo-Werte stehen NICHT hier, sondern in den Tokens.
+
+   1  Schriften (selbst gehostet, kein CDN)
+   2  Grundlagen
+   3  Kopf und Navigation
+   4  Startseite
+   5  Anfrage-Baukasten
+   6  Fuß
+   7  Unterseiten
+   ========================================================= */
+
+/* ==== 1  SCHRIFTEN ====================================================
+   Selbst ausgeliefert aus fonts/. Lizenzen und Herkunft: fonts/OFL.txt.
+   Es geht kein Zeichen an fonts.googleapis.com — das ist Absicht.       */
+
+/* bricolage-grotesque — latin-ext */
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-weight: 400 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/bricolage-grotesque-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* bricolage-grotesque — latin */
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-weight: 400 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/bricolage-grotesque-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* instrument-sans — latin-ext */
+@font-face {
+  font-family: 'Instrument Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/instrument-sans-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* instrument-sans — latin */
+@font-face {
+  font-family: 'Instrument Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/instrument-sans-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* newsreader-italic — latin-ext */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: italic;
+  font-weight: 300 500;
+  font-display: swap;
+  src: url(fonts/newsreader-italic-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* newsreader-italic — latin */
+@font-face {
+  font-family: 'Newsreader';
+  font-style: italic;
+  font-weight: 300 500;
+  font-display: swap;
+  src: url(fonts/newsreader-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ==== 2  GRUNDLAGEN ================================================== */
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--milch);color:var(--pflaume);font-family:var(--font-body);
+  font-size:var(--step-0);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--font-display);line-height:1.03;letter-spacing:-.025em;margin:0;font-weight:800}
+p{margin:0 0 1em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--messing);outline-offset:3px;border-radius:4px}
+.wrap{width:min(100% - var(--gutter)*2,var(--breite));margin-inline:auto}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:var(--gutter);top:.5rem;z-index:99;background:var(--pflaume);color:var(--milch);padding:.6rem 1rem;border-radius:var(--radius-s)}
+
+/* ==== 3  KOPF UND NAVIGATION ========================================= */
+header.top{position:sticky;top:0;z-index:40;backdrop-filter:blur(10px);
+  background:color-mix(in srgb,var(--milch) 88%,transparent);border-bottom:var(--linie)}
+.top .wrap{display:flex;align-items:center;gap:var(--luft-m);min-height:4.2rem}
+.marke{font-family:var(--font-display);font-weight:800;font-size:var(--step--1);
+  letter-spacing:.14em;text-transform:uppercase;text-decoration:none;line-height:1.2;max-width:11rem}
+.marke > span{color:var(--messing)}
+/* Zwei Namen, klar getrennt: "Mamis für Mamis" ist die Dachmarke,
+   "Mal wieder normal sein" der Titel dieser Seite. */
+.marke .dach{display:block;color:var(--pflaume-weich);font-family:var(--font-body);
+  font-weight:600;font-size:.62rem;letter-spacing:.18em;margin-bottom:.25rem}
+nav.haupt{margin-left:auto;display:flex;gap:1.4rem;font-size:var(--step--1)}
+nav.haupt a{text-decoration:none;color:var(--pflaume-weich);padding-block:.4rem;
+  border-bottom:2px solid transparent;transition:color var(--schnell),border-color var(--schnell)}
+nav.haupt a:hover{color:var(--pflaume);border-color:var(--rose-satt)}
+nav.haupt a[aria-current="page"]{color:var(--pflaume);border-color:var(--messing)}
+
+/* Unter 58rem klappt die Navigation auf Knopfdruck auf. Ohne das wäre sie
+   auf dem Handy schlicht weg — bei dreizehn Seiten keine Option.
+   Knopf und data-klappbar setzt main.js: ohne JavaScript bleibt die
+   Navigation eine ganz normale, umbrechende Zeile. */
+.nav-schalter{display:none;align-items:center;gap:.5rem;margin-left:auto;
+  font-family:var(--font-body);font-size:var(--step--1);font-weight:600;cursor:pointer;
+  background:transparent;border:var(--linie);border-radius:999px;padding:.5rem .9rem;color:var(--pflaume)}
+.nav-schalter .balken{position:relative;width:1rem;height:2px;background:currentColor;
+  transition:background var(--schnell)}
+.nav-schalter .balken::before,.nav-schalter .balken::after{content:"";position:absolute;left:0;
+  width:100%;height:2px;background:currentColor;transition:transform var(--schnell) var(--ease)}
+.nav-schalter .balken::before{top:-5px}
+.nav-schalter .balken::after{top:5px}
+.nav-schalter[aria-expanded="true"] .balken{background:transparent}
+.nav-schalter[aria-expanded="true"] .balken::before{transform:translateY(5px) rotate(45deg)}
+.nav-schalter[aria-expanded="true"] .balken::after{transform:translateY(-5px) rotate(-45deg)}
+
+@media (max-width:58rem){
+  .top .wrap{position:relative;flex-wrap:wrap}
+  .nav-schalter{display:inline-flex}
+  .exit{order:3;margin-left:0}
+  nav.haupt{margin-left:0;flex-wrap:wrap;gap:.4rem 1.2rem;order:4;width:100%}
+  nav.haupt[data-klappbar]{display:none;position:absolute;left:0;right:0;top:100%;width:auto;
+    flex-direction:column;gap:0;background:var(--milch);border-bottom:var(--linie);
+    padding:.5rem var(--gutter) 1.25rem;box-shadow:var(--schatten)}
+  nav.haupt[data-klappbar].offen{display:flex}
+  nav.haupt[data-klappbar] a{padding-block:.8rem;border-bottom:var(--linie);
+    border-left:2px solid transparent}
+  nav.haupt[data-klappbar] a[aria-current="page"]{border-left-color:var(--messing);padding-left:.6rem}
+}
+.exit{margin-left:auto;font-size:var(--step--1);font-weight:600;border:var(--linie);
+  background:transparent;color:var(--pflaume-weich);padding:.5rem .9rem;border-radius:999px;cursor:pointer;
+  transition:background var(--schnell),color var(--schnell)}
+@media (min-width:58rem){.exit{margin-left:1.4rem}}
+.exit:hover{background:var(--pflaume);color:var(--milch)}
+
+/* ==== 4  STARTSEITE ================================================== */
+
+/* Hero */
+.hero{padding-block:clamp(3rem,9vw,6.5rem) var(--luft-l);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:auto -20% 28% 55%;height:38rem;
+  background:radial-gradient(closest-side,var(--rose) 0%,transparent 72%);opacity:.55;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+  gap:clamp(2rem,5vw,4rem);align-items:end;position:relative}
+@media (max-width:62rem){.hero-grid{grid-template-columns:1fr;align-items:start}}
+.eyebrow{font-size:var(--step--1);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--pflaume-weich);font-weight:600;margin-bottom:1.2rem;display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
+.eyebrow::before{content:"";width:2.2rem;height:1px;background:var(--messing)}
+h1{font-size:var(--step-4);max-width:14ch}
+h1 em{font-family:var(--font-voice);font-style:italic;font-weight:400;color:var(--messing);letter-spacing:-.01em}
+.hero p.lead{font-size:var(--step-1);color:var(--pflaume-weich);max-width:34ch;margin-top:1.4rem}
+.cta-reihe{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.2rem}
+.btn{font-family:var(--font-body);font-size:var(--step-0);font-weight:600;text-decoration:none;
+  padding:.95rem 1.6rem;border-radius:999px;border:2px solid var(--pflaume);cursor:pointer;
+  display:inline-flex;align-items:center;gap:.6rem;transition:transform var(--schnell) var(--ease),background var(--schnell),color var(--schnell)}
+.btn:hover{transform:translateY(-2px)}
+.btn-primar{background:var(--pflaume);color:var(--milch)}
+.btn-primar:hover{background:#4d2f43}
+.btn-zweit{background:transparent;color:var(--pflaume)}
+.btn-zweit:hover{background:var(--rose)}
+.btn-klein{padding:.6rem 1.1rem;font-size:var(--step--1);border-width:1px}
+.versprechen{margin-top:1.8rem;font-size:var(--step--1);color:var(--pflaume-weich);
+  display:flex;gap:.5rem;align-items:flex-start;max-width:40ch}
+.versprechen svg{flex:0 0 auto;margin-top:.15rem}
+
+/* Regionen-Raster */
+.raster-karte{background:var(--milch-tief);border:var(--linie);border-radius:var(--radius-l);
+  padding:clamp(1.25rem,3vw,1.8rem);box-shadow:var(--schatten)}
+.raster-kopf{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:1.1rem}
+.raster-kopf h2{font-size:var(--step-0);letter-spacing:0;font-weight:600;font-family:var(--font-body)}
+.raster-kopf span{font-size:var(--step--1);color:var(--pflaume-weich)}
+.raster{display:grid;grid-template-columns:repeat(5,1fr);gap:.5rem}
+.zone{aspect-ratio:1;border:none;border-radius:var(--radius-s);background:#fff;position:relative;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.15rem;cursor:pointer;
+  font-family:var(--font-display);color:var(--pflaume-weich);transition:transform var(--schnell) var(--ease),background var(--schnell)}
+.zone b{font-size:var(--step-1);font-weight:800;line-height:1}
+.zone i{font-style:normal;font-size:.62rem;font-family:var(--font-body);letter-spacing:.04em}
+.zone[data-aktiv="1"]{background:var(--rose);color:var(--pflaume)}
+.zone[data-aktiv="2"]{background:var(--rose-satt);color:var(--pflaume)}
+.zone:hover,.zone:focus-visible{transform:scale(1.09);z-index:2}
+.zone .punkt{position:absolute;top:.35rem;right:.35rem;width:.45rem;height:.45rem;border-radius:50%;background:var(--salbei)}
+.zone-info{margin-top:1rem;font-size:var(--step--1);color:var(--pflaume-weich);min-height:3.4em;
+  border-top:var(--linie);padding-top:.8rem}
+.zone-info strong{color:var(--pflaume);font-weight:600}
+
+/* Abschnitte */
+section{padding-block:var(--luft-l)}
+.sec-kopf{max-width:44ch;margin-bottom:clamp(2rem,4vw,3rem)}
+.sec-kopf h2{font-size:var(--step-3)}
+.sec-kopf p{color:var(--pflaume-weich);margin-top:1rem}
+.band{background:var(--milch-tief);border-block:var(--linie)}
+
+.regeln{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1px;background:rgba(59,35,51,.14);
+  border:var(--linie);border-radius:var(--radius-m);overflow:hidden}
+.regel{background:var(--milch);padding:clamp(1.4rem,3vw,2rem)}
+.regel h3{font-size:var(--step-1);margin-bottom:.5rem}
+.regel p{font-size:var(--step--1);color:var(--pflaume-weich);margin:0}
+.regel .nr{font-family:var(--font-voice);font-style:italic;color:var(--messing-tief);font-size:var(--step-1);display:block;margin-bottom:.6rem}
+
+.karten{display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:1.25rem}
+.karte{background:#fff;border:var(--linie);border-radius:var(--radius-m);padding:clamp(1.4rem,3vw,1.9rem);
+  display:flex;flex-direction:column;gap:.7rem}
+.karte h3{font-size:var(--step-1)}
+.karte p{font-size:var(--step--1);color:var(--pflaume-weich);margin:0}
+.karte ul{margin:0;padding-left:1.1rem;font-size:var(--step--1);color:var(--pflaume-weich)}
+.karte li{margin-bottom:.35rem}
+.karte .fuss{margin-top:auto;padding-top:1rem}
+.tag{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;padding:.2rem .55rem;
+  border-radius:var(--radius-s);background:var(--rose);color:var(--pflaume);display:inline-block}
+.tag.kinder{background:transparent;border:1px solid var(--salbei);color:var(--salbei-tief)}
+.tag.still{background:transparent;border:1px solid rgba(59,35,51,.25);color:var(--pflaume-weich)}
+
+.ablauf{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1.25rem;margin-top:2.5rem;counter-reset:s}
+.schritt{position:relative;padding-top:2.6rem;counter-increment:s}
+.schritt::before{content:counter(s,decimal-leading-zero);position:absolute;top:0;left:0;
+  font-family:var(--font-display);font-weight:800;font-size:var(--step-1);color:var(--messing)}
+.schritt::after{content:"";position:absolute;top:1.6rem;left:0;width:100%;height:1px;background:rgba(59,35,51,.14)}
+.schritt h3{font-size:var(--step-0);font-family:var(--font-body);font-weight:600;letter-spacing:0;margin-bottom:.4rem}
+.schritt p{font-size:var(--step--1);color:var(--pflaume-weich);margin:0}
+
+/* ==== 5  ANFRAGE-BAUKASTEN =========================================== */
+.bau{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,26rem);gap:clamp(1.5rem,4vw,2.5rem);align-items:start}
+@media (max-width:64rem){.bau{grid-template-columns:1fr}}
+.feldgruppe{margin-bottom:1.6rem}
+.feldgruppe > legend,.feldgruppe > h3{font-family:var(--font-body);font-weight:600;font-size:var(--step-0);
+  letter-spacing:0;margin:0 0 .7rem;padding:0}
+fieldset{border:0;padding:0;margin:0}
+.wahl{display:flex;flex-wrap:wrap;gap:.5rem}
+.wahl label{font-size:var(--step--1);padding:.5rem 1rem;border-radius:999px;border:1px solid rgba(59,35,51,.2);
+  cursor:pointer;color:var(--pflaume-weich);transition:all var(--schnell);background:#fff}
+.wahl input{position:absolute;opacity:0;width:0;height:0}
+.wahl input:checked + span,.wahl label:has(input:checked){background:var(--pflaume);color:var(--milch);border-color:var(--pflaume)}
+.wahl label:has(input:focus-visible){outline:3px solid var(--messing);outline-offset:2px}
+select,input[type=text],textarea{font-family:var(--font-body);font-size:var(--step-0);width:100%;
+  padding:.7rem .9rem;border:1px solid rgba(59,35,51,.25);border-radius:var(--radius-s);background:#fff;color:var(--pflaume)}
+textarea{min-height:6rem;resize:vertical}
+.vorschau{background:var(--pflaume);color:var(--milch);border-radius:var(--radius-l);padding:clamp(1.4rem,3vw,1.9rem);
+  position:sticky;top:5.5rem}
+.vorschau h3{color:var(--milch);font-size:var(--step-1);margin-bottom:.5rem}
+.vorschau p.hin{font-size:var(--step--1);color:rgba(251,244,240,.7)}
+.vorschau pre{font-family:var(--font-body);font-size:var(--step--1);white-space:pre-wrap;word-break:break-word;
+  background:rgba(251,244,240,.08);border-radius:var(--radius-s);padding:1rem;margin:1rem 0;max-height:19rem;overflow:auto;line-height:1.55}
+.vorschau .btn{width:100%;justify-content:center;margin-bottom:.6rem}
+.vorschau .btn-primar{background:var(--messing-tief);border-color:var(--messing-tief);color:var(--milch)}
+.vorschau .btn-zweit{color:var(--milch);border-color:rgba(251,244,240,.4)}
+.vorschau .btn-zweit:hover{background:rgba(251,244,240,.12)}
+.vorschau .klein{font-size:.75rem;color:rgba(251,244,240,.55);margin:.8rem 0 0}
+
+/* Einladungen */
+.einladung{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,21rem);gap:clamp(2rem,5vw,3.5rem);align-items:start}
+@media (max-width:60rem){.einladung{grid-template-columns:1fr}}
+.plaetze{display:grid;grid-template-columns:repeat(auto-fill,minmax(2.1rem,1fr));gap:.4rem;margin:1.8rem 0 1rem}
+.platz{aspect-ratio:1;border-radius:50%;border:1.5px dashed rgba(59,35,51,.28)}
+.platz.offen{background:var(--messing);border:1.5px solid var(--messing)}
+.platz.vergeben{background:var(--rose-satt);border:1.5px solid var(--rose-satt)}
+.legende{display:flex;flex-wrap:wrap;gap:1.2rem;font-size:var(--step--1);color:var(--pflaume-weich)}
+.legende span{display:flex;align-items:center;gap:.45rem}
+.legende i{width:.8rem;height:.8rem;border-radius:50%;display:inline-block}
+.stufen{display:flex;flex-direction:column;gap:.6rem;margin-top:1rem}
+.stufe{background:#fff;border:var(--linie);border-radius:var(--radius-m);padding:1rem 1.2rem;
+  display:grid;grid-template-columns:auto 1fr;gap:.2rem 1rem;align-items:baseline}
+.stufe b{font-family:var(--font-display);font-size:var(--step-1);color:var(--messing)}
+.stufe span{font-size:var(--step--1);color:var(--pflaume-weich);grid-column:2}
+.stufe strong{font-weight:600}
+
+/* Termine */
+.termine{display:flex;flex-direction:column;gap:1px;background:rgba(59,35,51,.14);border:var(--linie);border-radius:var(--radius-m);overflow:hidden}
+.termin{background:var(--milch);display:grid;grid-template-columns:5.5rem 1fr auto;gap:1.25rem;align-items:center;
+  padding:1.25rem clamp(1rem,3vw,1.6rem)}
+@media (max-width:46rem){.termin{grid-template-columns:1fr;gap:.6rem}}
+.datum{font-family:var(--font-display);font-weight:800;line-height:1;text-align:center}
+.datum b{display:block;font-size:var(--step-2)}
+.datum i{font-style:normal;font-size:var(--step--1);letter-spacing:.1em;text-transform:uppercase;color:var(--pflaume-weich)}
+.termin h3{font-size:var(--step-1);margin-bottom:.3rem}
+.termin .meta{font-size:var(--step--1);color:var(--pflaume-weich);display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;margin:0}
+
+.zitat{text-align:center;padding-block:clamp(4rem,10vw,7rem)}
+.zitat blockquote{margin:0 auto;max-width:20ch;font-family:var(--font-voice);font-style:italic;font-weight:300;
+  font-size:var(--step-4);line-height:1.05;letter-spacing:-.02em}
+.zitat p{margin-top:2rem;color:var(--pflaume-weich);max-width:46ch;margin-inline:auto}
+
+.zweispalt{display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:clamp(1.5rem,4vw,3rem)}
+.zweispalt ul{list-style:none;margin:0;padding:0}
+.zweispalt li{padding:.55rem 0;border-bottom:var(--linie)}
+.zweispalt h3{font-size:var(--step-1);margin-bottom:1rem}
+.zweispalt .nicht li{color:var(--pflaume-weich)}
+
+/* ==== 6  FUSS ======================================================== */
+footer{background:var(--pflaume);color:var(--milch);padding-block:var(--luft-l) 2rem;margin-top:var(--luft-l)}
+footer a{color:rgba(251,244,240,.75);text-decoration:none;border-bottom:1px solid transparent}
+footer a:hover{border-color:var(--messing);color:var(--milch)}
+.f-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:2rem}
+.f-grid h4{font-family:var(--font-display);font-size:var(--step-0);margin:0 0 .8rem}
+.f-grid ul{list-style:none;margin:0;padding:0;font-size:var(--step--1);line-height:2}
+.f-schluss{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(251,244,240,.18);
+  font-size:.78rem;color:rgba(251,244,240,.6);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+
+/* Einblenden beim Scrollen — NUR wenn JavaScript läuft.
+   Die Klasse .js setzt ein Einzeiler im <head>. Fehlt sie, weil das
+   Skript blockiert oder abgeschaltet ist, steht alles sofort da.
+   Vorher war der Text ohne JavaScript unsichtbar — das darf nicht sein. */
+.js [data-reveal]{opacity:0;transform:translateY(18px);
+  transition:opacity var(--langsam) var(--ease),transform var(--langsam) var(--ease)}
+.js [data-reveal].sichtbar{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js [data-reveal]{opacity:1;transform:none}}
+
+/* ==== 7  UNTERSEITEN ================================================= */
+
+/* Seitenkopf — die kleine Schwester des Hero. Gleiche Handschrift,
+   ein Drittel der Lautstärke. */
+.seitenkopf{padding-block:clamp(2.5rem,7vw,4.5rem) clamp(1.5rem,4vw,2.5rem);position:relative;overflow:hidden}
+.seitenkopf::before{content:"";position:absolute;inset:auto -25% 20% 62%;height:24rem;
+  background:radial-gradient(closest-side,var(--rose) 0%,transparent 72%);opacity:.45;pointer-events:none}
+.seitenkopf .wrap{position:relative}
+.seitenkopf h1{font-size:var(--step-3);max-width:20ch}
+.seitenkopf .lead{font-size:var(--step-1);color:var(--pflaume-weich);max-width:52ch;margin-top:1.2rem}
+
+/* Fließtext. Alles, was in .text steht, sitzt automatisch richtig —
+   damit dreizehn Seiten nicht dreizehn Sonderfälle werden. */
+.text{max-width:62ch}
+.text.breit{max-width:none}
+.text > * + *{margin-top:1.1em}
+.text h2{font-size:var(--step-2);margin-top:2.4em;max-width:24ch}
+.text h2:first-child{margin-top:0}
+.text h3{font-size:var(--step-1);margin-top:1.8em}
+.text p{margin-bottom:0;color:var(--pflaume-weich)}
+.text p.stark{color:var(--pflaume);font-size:var(--step-1);line-height:1.45}
+.text ul,.text ol{margin:0;padding-left:1.3rem;color:var(--pflaume-weich)}
+.text li + li{margin-top:.5rem}
+.text li::marker{color:var(--messing-tief)}
+.text a{color:var(--pflaume);text-decoration:underline;text-underline-offset:.18em;
+  text-decoration-color:var(--rose-satt);text-decoration-thickness:2px}
+.text a:hover{text-decoration-color:var(--messing)}
+.text strong{color:var(--pflaume);font-weight:600}
+.text dl{margin:0}
+.text dt{font-weight:600;margin-top:1.2em}
+.text dd{margin:.3em 0 0;color:var(--pflaume-weich)}
+
+/* Zwei Spalten für „so läuft es" neben „so läuft es nicht" */
+.paar{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:clamp(1.5rem,4vw,2.5rem);align-items:start}
+
+/* Hinweiskästen. Die Farbe sagt, worum es geht — siehe Zustands-Semantik
+   am Ende von design-tokens.css. Nicht mischen. */
+.hinweis{border-left:3px solid var(--salbei);background:color-mix(in srgb,var(--salbei) 8%,transparent);
+  padding:1.1rem 1.3rem;border-radius:0 var(--radius-s) var(--radius-s) 0;font-size:var(--step--1);
+  color:var(--pflaume-weich)}
+.hinweis > :last-child{margin-bottom:0}
+.hinweis strong{color:var(--pflaume)}
+.hinweis.geld{border-left-color:var(--messing);background:color-mix(in srgb,var(--messing) 9%,transparent)}
+.hinweis.warn{border-left-color:var(--warnung);background:color-mix(in srgb,var(--warnung) 8%,transparent)}
+.hinweis.stumm{border-left-color:var(--rose-satt);background:var(--milch-tief)}
+
+/* Der Satz zur Rechtsberatung. Steht auf jeder Seite mit Behördenbezug —
+   immer gleich formuliert, damit er nicht wie eine Ausrede wirkt. */
+.rechtssatz{display:flex;gap:.6rem;align-items:flex-start;font-size:var(--step--1);
+  color:var(--pflaume-weich);border-top:var(--linie);border-bottom:var(--linie);
+  padding-block:1rem;margin-block:2rem}
+.rechtssatz svg{flex:0 0 auto;margin-top:.2rem}
+
+/* Entwurfsband — für Seiten, die noch nicht geprüft sind. Bewusst laut. */
+.entwurf{background:var(--warnung);color:#fff;font-size:var(--step--1);padding:.8rem 0}
+.entwurf .wrap{display:flex;gap:.6rem;align-items:baseline;flex-wrap:wrap}
+.entwurf strong{font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:.72rem}
+
+/* Preistabellen */
+.tabelle{width:100%;border-collapse:collapse;font-size:var(--step--1);margin:0}
+.tabelle caption{text-align:left;font-size:var(--step--1);color:var(--pflaume-weich);padding-bottom:.7rem}
+.tabelle th,.tabelle td{text-align:left;padding:.8rem .6rem;border-bottom:var(--linie);vertical-align:top}
+.tabelle th{font-weight:600;color:var(--pflaume)}
+.tabelle thead th{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--pflaume-weich)}
+.tabelle td.betrag{font-family:var(--font-display);font-weight:800;color:var(--messing-tief);white-space:nowrap}
+.tabelle-rollt{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+/* Sprungmarken oben auf langen Textseiten */
+.inhalt-von-hier{background:var(--milch-tief);border:var(--linie);border-radius:var(--radius-m);
+  padding:1.1rem 1.3rem;font-size:var(--step--1);margin-bottom:2.5rem}
+.inhalt-von-hier h2{font-family:var(--font-body);font-size:var(--step--1);font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--pflaume-weich);margin:0 0 .7rem}
+.inhalt-von-hier ol{margin:0;padding-left:1.2rem;columns:2;column-gap:2rem}
+@media (max-width:38rem){.inhalt-von-hier ol{columns:1}}
+.inhalt-von-hier li{margin-bottom:.35rem;break-inside:avoid}
+
+/* Frage und Antwort */
+.frage{border-top:var(--linie);padding-block:1.3rem}
+.frage:last-of-type{border-bottom:var(--linie)}
+.frage h3{font-size:var(--step-1);margin-bottom:.6rem}
+.frage p{color:var(--pflaume-weich);margin-bottom:0}
+.frage p + p{margin-top:.8em}
+
+/* Fuß der Seite: weiter zu … */
+.weiter{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem;margin-top:var(--luft-l)}
+.weiter a{background:#fff;border:var(--linie);border-radius:var(--radius-m);padding:1.2rem 1.4rem;
+  text-decoration:none;display:block;transition:transform var(--schnell) var(--ease),border-color var(--schnell)}
+.weiter a:hover{transform:translateY(-2px);border-color:var(--rose-satt)}
+.weiter b{display:block;font-family:var(--font-display);font-size:var(--step-1);margin-bottom:.3rem}
+.weiter span{font-size:var(--step--1);color:var(--pflaume-weich)}
+
+/* Notfallnummern — im Fuß auf jeder Seite, hier für die Textseiten */
+.notruf{list-style:none;margin:0;padding:0;font-size:var(--step--1)}
+.notruf li{padding:.5rem 0;border-bottom:var(--linie);display:flex;justify-content:space-between;gap:1rem}
+.notruf li:last-child{border-bottom:0}
+.notruf b{font-family:var(--font-display);color:var(--pflaume)}
+
+/* Abstände, wo eine Klasse ehrlicher ist als ein leeres div */
+.luft-oben{margin-top:var(--luft-l)}
+.luft-oben-m{margin-top:var(--luft-m)}
+
+/* Kleinigkeiten, die aus dem Fließtext in die Datei gewandert sind —
+   im Prototyp standen sie noch als style="" im Markup. */
+.klein-grau{font-size:var(--step--1);color:var(--pflaume-weich)}
+.feldhinweis{font-size:var(--step--1);color:var(--pflaume-weich);margin:.6rem 0 0}
+.einladung-text{margin-top:1.5rem;max-width:46ch;color:var(--pflaume-weich);font-size:var(--step--1)}
+.text code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;
+  background:var(--milch-tief);padding:.12em .4em;border-radius:.3em}
+
+/* Platzhalter, die vor dem Livegang ersetzt werden müssen. Bewusst
+   auffällig — man soll sie nicht übersehen können. */
+.platzhalter{background:color-mix(in srgb,var(--warnung) 12%,transparent);
+  color:var(--warnung);font-weight:600;font-size:.92em;padding:.1em .4em;border-radius:.3em;
+  border:1px dashed color-mix(in srgb,var(--warnung) 45%,transparent)}
+
+/* Entwurfsmarke an den Links im Fuß */
+.f-entwurf{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;
+  border:1px solid rgba(251,244,240,.35);border-radius:.3em;padding:.05em .35em;
+  margin-left:.35em;color:rgba(251,244,240,.6)}

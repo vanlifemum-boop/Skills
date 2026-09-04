@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- Vorschau unter fremder Domain: bis zum Umzug auf die eigene Adresse
+     soll die Seite nicht in Suchmaschinen auftauchen. Siehe PLATZHALTER.md. -->
+<meta name="robots" content="noindex, nofollow">
+<title>Mal wieder normal sein — Mamis für Mamis</title>
+<meta name="description" content="Stammtische, Ausflüge, Auszeiten und Begleitung zu Terminen für Mütter, die gerade viel tragen. Auf dieser Seite steht niemand: keine Profile, keine Liste, keine Suche nach Personen.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233B2333'/%3E%3Cpath d='M16 25.5S6.5 19.8 6.5 13.6A5.1 5.1 0 0 1 16 10.9a5.1 5.1 0 0 1 9.5 2.7c0 6.2-9.5 11.9-9.5 11.9Z' fill='none' stroke='%23EBCDC6' stroke-width='2'/%3E%3Ccircle cx='16' cy='15.5' r='2.4' fill='%23B08544'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="design-tokens.css">
+<link rel="stylesheet" href="styles.css">
+<!-- Markiert, dass JavaScript läuft. Erst dann blendet styles.css
+     Abschnitte beim Scrollen ein — ohne Skript steht alles sofort da. -->
+<script>document.documentElement.className+=" js";</script>
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="marke" href="index.html">
+      <span class="dach">Mamis für Mamis</span>
+      Mal wieder<br><span>normal sein</span>
+    </a>
+    <nav class="haupt" aria-label="Hauptmenü">
+      <a href="termine.html">Termine</a>
+      <a href="begleitung.html">Begleitung</a>
+      <a href="einladung.html">Einladung</a>
+      <a href="mitgliedschaft.html">Mitgliedschaft</a>
+      <a href="index.html#anfrage">Anfrage schreiben</a>
+    </nav>
+    <button class="exit" id="exit" title="Schließt diese Seite sofort und ersetzt sie durch eine Wetterseite">Seite schnell verlassen</button>
+  </div>
+</header>
+
+<main id="inhalt">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Eltern-Stammtisch · Mamis für Mamis · Gemeinsam erleben</p>
+      <h1>Mal wieder <em>normal</em> sein.</h1>
+      <p class="lead">Ein Ort für Mütter, die gerade viel tragen. Kein Aktenordner. Kein Erklären. Einfach jemand, der mitkommt, mitfährt, mitlacht.</p>
+      <div class="cta-reihe">
+        <a class="btn btn-primar" href="#anfrage">Ich brauche jemanden</a>
+        <a class="btn btn-zweit" href="#anfrage">Ich möchte da sein</a>
+      </div>
+      <p class="versprechen">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1 2.5 3.3v4.2c0 3.3 2.3 6.4 5.5 7.5 3.2-1.1 5.5-4.2 5.5-7.5V3.3L8 1Z" fill="none" stroke="#6F8A6C" stroke-width="1.4"/></svg>
+        <span><strong>Auf dieser Seite steht niemand.</strong> Es gibt keine Liste, kein Profil, keine Suche nach Personen. Deine Anfrage kommt als E-Mail nur bei uns an — und wir fragen für dich weiter.</span>
+      </p>
+    </div>
+
+    <div class="raster-karte" data-reveal>
+      <div class="raster-kopf">
+        <h2>Wo gerade jemand ist</h2>
+        <span data-stand>Stand: —</span>
+      </div>
+      <div class="raster" id="raster" role="group" aria-label="Postleitzonen"></div>
+      <p class="zone-info" id="zoneinfo">Nur Zahlen, keine Personen. Diese Übersicht wird von Hand gepflegt — mehr als die Leitzone wird nirgendwo veröffentlicht.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-kopf" data-reveal>
+      <h2>Vier Sätze, die hier immer gelten</h2>
+      <p>Damit du weißt, worauf du dich einlässt, bevor du irgendetwas schreibst.</p>
+    </div>
+    <div class="regeln" data-reveal>
+      <div class="regel"><span class="nr">eins</span><h3>Nichts steht öffentlich</h3><p>Keine Profile, keine Einträge, keine Namen. Nur wir lesen deine Mail.</p></div>
+      <div class="regel"><span class="nr">zwei</span><h3>Du musst nichts erzählen</h3><p>Keine Geschichte, kein Nachweis, kein Aktenzeichen. Dazugehören reicht.</p></div>
+      <div class="regel"><span class="nr">drei</span><h3>Kinder dürfen mit</h3><p>Jeder Termin ist gekennzeichnet. Fast alle sind es.</p></div>
+      <div class="regel"><span class="nr">vier</span><h3>Kein Geld ist kein Grund</h3><p>Dann wirst du eingeladen. Auf der Rechnung sieht das niemand.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="anfrage">
+  <div class="wrap">
+    <div class="sec-kopf" data-reveal>
+      <h2>Schreib uns, was du brauchst</h2>
+      <p>Klick zusammen, was passt — daraus wird ein fertiger Text. Du entscheidest, ob du ihn abschickst, kopierst oder wieder löschst. Nichts davon verlässt deinen Bildschirm, bevor du auf senden drückst.</p>
+    </div>
+
+    <div class="bau">
+      <form id="baukasten" data-reveal>
+        <fieldset class="feldgruppe">
+          <legend>Ich schreibe, weil …</legend>
+          <div class="wahl" id="rolle">
+            <label><input type="radio" name="rolle" value="suche" checked><span>ich jemanden brauche</span></label>
+            <label><input type="radio" name="rolle" value="biete"><span>ich für andere da sein möchte</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="feldgruppe">
+          <legend id="katLabel">Worum geht es? (mehrere möglich)</legend>
+          <div class="wahl" id="kategorien"></div>
+        </fieldset>
+
+        <div class="feldgruppe">
+          <h3>Wo ungefähr?</h3>
+          <select id="zone" aria-label="Postleitzone">
+            <option value="">Bitte wählen</option>
+          </select>
+          <p class="feldhinweis">Die erste Ziffer deiner Postleitzahl reicht. Genauer musst du nichts sagen.</p>
+        </div>
+
+        <fieldset class="feldgruppe">
+          <legend>Kinder</legend>
+          <div class="wahl" id="kinder">
+            <label><input type="checkbox" id="kinderJa"><span>Kinder sind dabei</span></label>
+          </div>
+        </fieldset>
+
+        <div class="feldgruppe">
+          <h3>Möchtest du noch etwas dazu sagen? <span class="tag still">freiwillig</span></h3>
+          <textarea id="frei" placeholder="Ein oder zwei Sätze reichen. Bitte keine Namen, Adressen oder Aktenzeichen."></textarea>
+        </div>
+
+        <div class="feldgruppe">
+          <h3>Wie sollen wir dich nennen? <span class="tag still">freiwillig</span></h3>
+          <input type="text" id="name" placeholder="Ein Vorname oder ein Fantasiename">
+        </div>
+      </form>
+
+      <aside class="vorschau" data-reveal>
+        <h3>Deine Mail</h3>
+        <p class="hin">So kommt sie bei uns an. Du kannst jedes Wort vorher ändern.</p>
+        <pre id="text" aria-live="polite"></pre>
+        <button class="btn btn-primar" type="button" id="senden">Als E-Mail öffnen</button>
+        <button class="btn btn-zweit btn-klein" type="button" id="kopieren">Text kopieren</button>
+        <p class="klein">Antwort kommt innerhalb von zwei bis drei Tagen. Öffnet sich auf deinem Handy kein Mailprogramm, nimm „Text kopieren“ — der Text passt genauso in Signal oder WhatsApp.</p>
+      </aside>
+    </div>
+
+    <div class="ablauf" data-reveal>
+      <div class="schritt"><h3>Du schreibst uns</h3><p>Eine Mail, keine Anmeldung, kein Konto.</p></div>
+      <div class="schritt"><h3>Wir suchen von Hand</h3><p>Wir wissen, wer in deiner Ecke unterwegs ist, und fragen dort an.</p></div>
+      <div class="schritt"><h3>Wir fragen beide</h3><p>Erst dich, dann sie. Ohne Namen, ohne Ort.</p></div>
+      <div class="schritt"><h3>Beide sagen ja</h3><p>Dann stellen wir den Kontakt her — vorher nie.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="einladung">
+  <div class="wrap einladung">
+    <div>
+      <div class="sec-kopf" data-reveal style="margin-bottom:0">
+        <h2>Ich lade dich ein</h2>
+        <p>Jede Veranstaltung hat einen Preis, der die Kosten deckt. Auf der Rechnung stehen drei Zeilen: dein Beitrag, ein freiwilliger Aufschlag — und die Möglichkeit, jemanden mit einzuladen, den du nie kennenlernen wirst.</p>
+      </div>
+
+      <div class="plaetze" id="plaetze" role="img"></div>
+      <div class="legende">
+        <span><i style="background:#B08544"></i> offen — kannst du dir nehmen</span>
+        <span><i style="background:#D89E96"></i> schon vergeben</span>
+        <span><i style="border:1.5px dashed rgba(59,35,51,.4)"></i> noch nicht finanziert</span>
+      </div>
+
+      <p class="einladung-text">
+        Eine Einladung bekommst du mit einem Satz per Mail. Ohne Nachweis, ohne Bescheid, ohne Nachfrage. Auf der Teilnehmerliste, im Lokal und am Tisch ist nicht erkennbar, wer eingeladen wurde — dafür sorgen wir.
+      </p>
+      <p class="luft-oben-m">
+        <a class="btn btn-primar btn-klein" href="index.html?thema=einladung#anfrage">Einladung anfragen</a>
+        <a class="btn btn-zweit btn-klein" href="einladung.html">Wie das genau läuft</a>
+      </p>
+    </div>
+
+    <div data-reveal>
+      <div class="stufen">
+        <div class="stufe"><b>0 €</b><strong>Eingeladen</strong><span>Du kommst mit. Punkt.</span></div>
+        <div class="stufe"><b>+0 €</b><strong>Selbstkosten</strong><span>Du zahlst, was der Abend kostet.</span></div>
+        <div class="stufe"><b>+5 €</b><strong>Trinkgeld</strong><span>Für den Aufwand dahinter.</span></div>
+        <div class="stufe"><b>+15 €</b><strong>Ich lade mit ein</strong><span>Finanziert einen Platz für eine andere.</span></div>
+      </div>
+      <p class="klein-grau luft-oben-m">
+        Alles auf einer Rechnung, alles freiwillig, kein Feld ist Pflicht. Wer nichts anklickt, zahlt den Normalpreis und niemand fragt nach.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="mitglied">
+  <div class="wrap">
+    <div class="sec-kopf" data-reveal>
+      <h2>Oder du bist einfach dabei</h2>
+      <p>Eine monatliche Mitgliedschaft hält das Ganze am Laufen — und du bekommst mehr davon zurück, als du zahlst.</p>
+    </div>
+    <div class="karten" data-reveal>
+      <article class="karte">
+        <span class="tag">3 € im Monat</span>
+        <h3>Dabei</h3>
+        <ul>
+          <li>Termine erfährst du zuerst</li>
+          <li>Der monatliche Rundbrief</li>
+          <li>Kein Termin kostet dich extra Anmeldegebühr</li>
+        </ul>
+        <div class="fuss"><a class="btn btn-zweit btn-klein" href="mitgliedschaft.html">Was drin ist</a></div>
+      </article>
+      <article class="karte">
+        <span class="tag">7 € im Monat</span>
+        <h3>Mittendrin</h3>
+        <ul>
+          <li>Alles aus „Dabei“</li>
+          <li>Vermittlung einer Begleitung, so oft du sie brauchst</li>
+          <li>Vorrang bei Plätzen mit begrenzter Zahl</li>
+          <li>Die Vorlagen und Checklisten als Download</li>
+        </ul>
+        <div class="fuss"><a class="btn btn-primar btn-klein" href="mitgliedschaft.html">Was drin ist</a></div>
+      </article>
+      <article class="karte">
+        <span class="tag">15 € im Monat</span>
+        <h3>Ich trage mit</h3>
+        <ul>
+          <li>Alles aus „Mittendrin“</li>
+          <li>Dein Beitrag finanziert jeden Monat eine Einladung</li>
+          <li>Du bekommst, wenn du magst, eine Nachricht, wofür er gereicht hat</li>
+        </ul>
+        <div class="fuss"><a class="btn btn-zweit btn-klein" href="mitgliedschaft.html">Was drin ist</a></div>
+      </article>
+    </div>
+    <div class="hinweis geld luft-oben-m" style="max-width:60ch">
+      <p><strong>Die Mitgliedschaft ist noch nicht offen.</strong> Bevor der erste Beitrag abgebucht wird, müssen Umsatzsteuer, Betriebshaftpflicht und die Widerrufsbelehrung stehen. Was sie einmal enthalten wird, steht schon auf der <a href="mitgliedschaft.html">Seite zur Mitgliedschaft</a>.</p>
+    </div>
+    <p class="klein-grau luft-oben-m" style="max-width:60ch">
+      Monatlich kündbar. Keine Mindestlaufzeit. Wenn es gerade nicht geht, pausierst du — und bleibst trotzdem eingeladen. Wir beraten dich nicht rechtlich, weder für Geld noch umsonst. Wir organisieren, vermitteln und gehen mit.
+    </p>
+  </div>
+</section>
+
+<section class="band" id="termine">
+  <div class="wrap">
+    <div class="sec-kopf" data-reveal>
+      <h2>Was als Nächstes ansteht</h2>
+      <p>Öffentlich steht hier nur die Region. Wo genau wir uns treffen, steht in der Bestätigungsmail — und die bekommst du erst, wenn du angemeldet bist.</p>
+    </div>
+    <div class="termine" data-reveal data-termine="3" data-ziel="index.html#anfrage"></div>
+    <p class="luft-oben-m"><a class="btn btn-zweit btn-klein" href="termine.html">Alle Termine ansehen</a></p>
+
+    <div class="karten luft-oben" data-reveal>
+      <article class="karte">
+        <span class="tag">Selbst machen</span>
+        <h3>In deiner Region gibt es noch nichts?</h3>
+        <p>Dann fangen wir dort an. Du brauchst nichts weiter als ein Café und einen Termin — den Rest bekommst du von uns: Einladungstext, Aushang, Checkliste für das erste Treffen, jemanden zum Rückfragen und drei Einladungen für den Anfang.</p>
+        <div class="fuss"><a class="btn btn-primar btn-klein" href="stammtisch.html">Zum Starterkit</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="zitat">
+  <div class="wrap">
+    <blockquote data-reveal>Du musst nicht alles alleine schaffen.</blockquote>
+    <p data-reveal>Wir sind mehr als unsere Akten. Wir sind mehr als unsere Geschichten. Wir sind Eltern, wir sind Menschen — und wir dürfen auch wieder Freude erleben.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap zweispalt">
+    <div data-reveal>
+      <h3>Das sind wir</h3>
+      <ul>
+        <li>Gemeinschaft und Austausch</li>
+        <li>Begleitung als Mensch an deiner Seite</li>
+        <li>Stammtische, Ausflüge, Auszeiten</li>
+        <li>Einladungen für die, bei denen es gerade nicht reicht</li>
+        <li>Vermittlung von Mama zu Mama, von Hand</li>
+      </ul>
+    </div>
+    <div class="nicht" data-reveal>
+      <h3>Das sind wir nicht</h3>
+      <ul>
+        <li>Keine Rechtsberatung, keine Rechtsvertretung</li>
+        <li>Keine Therapie und keine Krisenhotline</li>
+        <li>Keine Jugendhilfe und kein Träger</li>
+        <li>Kein Netzwerk, in dem man dich finden kann</li>
+        <li>Kein Ort, an dem du dich rechtfertigen musst</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <h4>Mitmachen</h4>
+        <ul>
+          <li><a href="index.html#anfrage">Anfrage schreiben</a></li>
+          <li><a href="termine.html">Termine</a></li>
+          <li><a href="stammtisch.html">Stammtisch gründen</a></li>
+          <li><a href="silvester.html">Die Auszeit über Silvester</a></li>
+          <li><a href="einladung.html">Einladung anfragen</a></li>
+          <li><a href="mitgliedschaft.html">Mitgliedschaft</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Schutz</h4>
+        <ul>
+          <li><a href="anonym.html">So bleibst du anonym</a></li>
+          <li><a href="verhaltensregeln.html">Verhaltensregeln</a></li>
+          <li><a href="begleitung.html">Was Begleitung ist</a></li>
+          <li><a href="datenschutz.html">Was wir speichern</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="teilnahmebedingungen.html">Teilnahmebedingungen <span class="f-entwurf">Entwurf</span></a></li>
+          <li><a href="widerruf.html">Widerruf <span class="f-entwurf">Entwurf</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Im Notfall</h4>
+        <ul class="notruf">
+          <li><span>Telefonseelsorge</span> <b>0800 111 0 111</b></li>
+          <li><span>Hilfetelefon Gewalt gegen Frauen</span> <b>116 016</b></li>
+          <li><span>Notruf</span> <b>112</b></li>
+        </ul>
+      </div>
+    </div>
+    <p class="f-schluss">
+      <span>Mamis für Mamis — Gemeinsam statt allein.</span>
+      <span>Alle Zahlen auf dieser Seite sind Beispiele. Vorschaufassung, noch nicht öffentlich.</span>
+    </p>
+  </div>
+</footer>
+
+<script src="daten.js"></script>
+<script src="main.js"></script>
+<script src="anfrage.js"></script>
+</body>
+</html>

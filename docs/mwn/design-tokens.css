@@ -1,0 +1,77 @@
+/* =========================================================
+   MAL WIEDER NORMAL SEIN — Design-Tokens
+   Einzige Quelle der Wahrheit für Farbe, Typo, Raster, Motion.
+   Das Inline-Duplikat aus dem Prototyp ist aufgelöst: Jede Seite
+   bindet diese Datei ein, danach styles.css. Wer hier etwas ändert,
+   ändert es überall — genau so ist es gedacht.
+   ========================================================= */
+
+:root {
+  /* --- Farbe -------------------------------------------------
+     Vorgabe aus dem Konzept: Rosé, Beige/Creme, Gold, Naturtöne.
+     Bewusst NICHT das übliche Creme+Terrakotta-Schema:
+     Anker ist ein tiefes Pflaumenviolett statt Schwarz —
+     warm, aber ernsthaft. Salbei markiert ausschließlich
+     Sicherheits- und Bestätigungszustände.                    */
+  --milch:        #FBF4F0;  /* Seitenhintergrund              */
+  --milch-tief:   #F4E7E1;  /* abgesetzte Flächen             */
+  --rose:         #EBCDC6;  /* Karten, Chips, Flächen         */
+  --rose-satt:    #D89E96;  /* Hover, Fortschritt             */
+  --pflaume:      #3B2333;  /* Text, Anker, Primärbutton      */
+  --pflaume-weich:#6B4E5E;  /* Fließtext gedämpft             */
+  --messing:      #B08544;  /* Akzent, sparsam!               */
+  --salbei:       #6F8A6C;  /* geprüft / sicher / bestätigt   */
+
+  /* Dieselben zwei Farben, abgedunkelt für KLEINE Schrift.
+     Messing und Salbei sind schön, aber auf Milch nur 3,1:1 bzw. 3,5:1 —
+     das reicht für große, fette Schrift und für Flächen, nicht für
+     Fließtext oder Etiketten. Regel: groß und fett = --messing,
+     klein = --messing-tief. Nie umgekehrt.                      */
+  --messing-tief: #846433;  /* 4,5:1 auch auf Milch-tief      */
+  --salbei-tief:  #596F57;  /* 4,5:1 auch auf Milch-tief      */
+  --warnung:      #A2402F;  /* Fehler, Meldung                */
+
+  /* --- Typografie -------------------------------------------
+     Display: Bricolage Grotesque (leicht unperfekt, menschlich)
+     Fließtext: Instrument Sans (ruhig, gut lesbar, Umlaute ok)
+     Stimme: Newsreader Italic — nur für Zitate/Leitsätze.     */
+  --font-display: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
+  --font-body:    "Instrument Sans", system-ui, -apple-system, sans-serif;
+  --font-voice:   "Newsreader", Georgia, serif;
+
+  --step--1: clamp(0.82rem, 0.79rem + 0.15vw, 0.9rem);
+  --step-0:  clamp(1rem, 0.95rem + 0.25vw, 1.12rem);
+  --step-1:  clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --step-2:  clamp(1.6rem, 1.4rem + 1vw, 2.2rem);
+  --step-3:  clamp(2.1rem, 1.7rem + 2vw, 3.4rem);
+  --step-4:  clamp(2.8rem, 2rem + 4vw, 5.4rem);
+
+  /* --- Raster & Form ---------------------------------------- */
+  --breite:     72rem;
+  --gutter:     clamp(1.25rem, 4vw, 3rem);
+  --luft-s:     0.75rem;
+  --luft-m:     1.5rem;
+  --luft-l:     clamp(3rem, 8vw, 6rem);
+  --radius-s:   0.6rem;
+  --radius-m:   1.1rem;
+  --radius-l:   2rem;
+  --linie:      1px solid rgba(59, 35, 51, 0.14);
+  --schatten:   0 1px 2px rgba(59,35,51,.05), 0 12px 30px -18px rgba(59,35,51,.35);
+
+  /* --- Motion (Intensität 6/10) ----------------------------- */
+  --ease:       cubic-bezier(.22,.68,.36,1);
+  --schnell:    160ms;
+  --normal:     420ms;
+  --langsam:    900ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --schnell: 1ms; --normal: 1ms; --langsam: 1ms; }
+}
+
+/* --- Zustands-Semantik (verbindlich) ------------------------
+   salbei  = geprüft, beidseitig freigegeben, sicher
+   messing = Solidartopf, Geld, Platz bezahlt
+   rose    = Community, Angebot, Einladung
+   warnung = Meldung, Missbrauch, Fehler
+   Diese Zuordnung nie mischen — sie ist Teil der Bedienlogik. */

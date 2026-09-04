@@ -1,6 +1,7 @@
 name: Deploy demo to GitHub Pages
 
-# Publishes the ./docs folder (the scroll-cinematic live demo) to GitHub Pages.
+# Publishes the ./docs folder to GitHub Pages: GutachtenKompass at the root,
+# the "Mal wieder normal sein" preview under /mwn/.
 # Runs on the default branch and on the working branch so the page is viewable
 # before the PR is merged. `configure-pages` with enablement:true turns Pages on
 # automatically the first time this runs — no manual settings change needed.
@@ -10,6 +11,7 @@ on:
     branches:
       - main
       - claude/ethereal-dream-uploads-jnuddj
+      - claude/mamis-fur-mamis-website-yhb7sp
     paths:
       - "docs/**"
       - ".github/workflows/pages.yml"

@@ -1,0 +1,700 @@
+/* =========================================================================
+   Mittelfinger auf Reisen — Design-System
+   Haltung: Asphalt, Aufkleber, Straßenlinien. Nichts auf Hochglanz poliert.
+   Palette laut Konzept: Asphalt-Schwarz trägt, warmes Cremeweiß liest,
+   Signalorange handelt, Petrol steht für Natur und Camper, Sand akzentuiert.
+   ========================================================================= */
+
+@font-face {
+  font-family: "Archivo Black";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/archivo-black.woff2") format("woff2");
+}
+
+:root {
+  --asphalt: #14161a;
+  --asphalt-2: #1d2026;
+  --creme: #f4efe6;
+  --creme-2: #ece5d8;
+  --orange: #ff6a13;
+  --orange-dunkel: #e2540a;
+  --petrol: #0f5c58;
+  --petrol-hell: #157a74;
+  --sand: #f2c14e;
+
+  --text: #14161a;
+  --muted: #5c574d;            /* warmes Grau auf Creme */
+  --muted-invers: #a9a49a;
+  --linie: rgba(20, 22, 26, 0.16);
+
+  --font-display: "Archivo Black", "Arial Black", Arial, sans-serif;
+  --font-text: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               Helvetica, Arial, sans-serif;
+  --font-hand: "Segoe Script", "Bradley Hand", "Snell Roundhand", "Comic Sans MS", cursive;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --max: 1140px;
+  --pad: clamp(20px, 5vw, 48px);
+  --header-h: 72px;
+  --schatten-hart: 6px 6px 0 var(--asphalt);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-text);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--creme);
+  background: var(--asphalt);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+.container {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--pad);
+}
+.container--schmal { max-width: 780px; }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 200;
+  background: var(--orange);
+  color: var(--asphalt);
+  font-weight: 700;
+  padding: 12px 18px;
+}
+.skip-link:focus { left: 12px; top: 12px; }
+
+:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+/* =========================== Header / Navigation ======================== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--asphalt);
+  border-bottom: 1px solid rgba(244, 239, 230, 0.16);
+}
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: var(--header-h);
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  line-height: 1;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+.logo svg { flex: none; }
+.logo span { color: var(--orange); }
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.8vw, 22px);
+}
+.nav a:not(.btn) {
+  text-decoration: none;
+  font-size: 0.94rem;
+  font-weight: 600;
+  padding: 10px 2px;            /* großes Touch-Target */
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+}
+.nav a:not(.btn):hover { border-bottom-color: var(--sand); }
+.nav a.aktiv { border-bottom-color: var(--orange); }
+
+.burger {
+  display: none;
+  background: none;
+  border: 2px solid var(--creme);
+  border-radius: 8px;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1.35rem;
+  line-height: 1;
+  color: var(--creme);
+}
+
+@media (max-width: 1000px) {
+  .burger { display: grid; place-items: center; }
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--asphalt);
+    border-bottom: 1px solid rgba(244, 239, 230, 0.16);
+    padding: 8px var(--pad) 22px;
+    display: none;
+  }
+  .nav.offen { display: flex; }
+  .nav a:not(.btn) {
+    padding: 14px 4px;
+    border-bottom: 1px solid rgba(244, 239, 230, 0.14);
+    font-size: 1.05rem;
+  }
+  .nav .btn { margin-top: 14px; text-align: center; }
+}
+
+/* ================================ Sektionen ============================= */
+.sec { padding: clamp(60px, 10vh, 120px) 0; }
+.sec--kompakt { padding: clamp(40px, 6vh, 76px) 0; }
+
+.sec--asphalt { background: var(--asphalt); color: var(--creme); --smuted: var(--muted-invers); --sakzent: var(--orange); }
+.sec--creme   { background: var(--creme);   color: var(--text);  --smuted: var(--muted);        --sakzent: var(--petrol); }
+.sec--petrol  { background: var(--petrol);  color: var(--creme); --smuted: #b9d3d0;             --sakzent: var(--sand); }
+.sec--orange  { background: var(--orange);  color: var(--asphalt); --smuted: #59260a;           --sakzent: var(--asphalt); }
+
+/* Straßenlinie als Sektionstrenner: Asphaltband mit Mittelmarkierung */
+.strasse {
+  position: relative;
+  height: 28px;
+  background: var(--asphalt);
+}
+.strasse::after {
+  content: "";
+  position: absolute;
+  inset: 50% 0 auto 0;
+  height: 6px;
+  transform: translateY(-50%);
+  background: repeating-linear-gradient(
+    90deg,
+    var(--sand) 0 48px,
+    transparent 48px 96px
+  );
+}
+
+/* ================================ Typografie ============================ */
+h1, h2, h3 { margin: 0 0 0.5em; text-wrap: balance; }
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 0.98;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+  hyphens: auto;                 /* lange deutsche Komposita mobil trennen */
+}
+h1.display { font-size: clamp(2rem, 5.5vw, 4rem); }
+h2.display { font-size: clamp(1.8rem, 5vw, 3.4rem); }
+h3 { font-size: 1.18rem; line-height: 1.35; }
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  margin: 0 0 16px;
+  color: var(--sakzent, var(--orange));
+}
+
+p { margin: 0 0 1em; max-width: 68ch; }
+p.gross { font-size: clamp(1.12rem, 2.2vw, 1.38rem); line-height: 1.55; }
+.muted { color: var(--smuted, var(--muted)); }
+.zentriert { text-align: center; }
+.zentriert p, .zentriert .bigquote { margin-inline: auto; }
+
+ul.liste { padding-left: 1.2em; max-width: 68ch; }
+ul.liste li { margin-bottom: 0.5em; }
+
+/* Handschriftlicher Akzent — Ortsnamen, Notizen, Randbemerkungen */
+.hand {
+  font-family: var(--font-hand);
+  font-size: 1.25em;
+  line-height: 1.3;
+  color: var(--sakzent, var(--orange));
+  transform: rotate(-1.5deg);
+  display: inline-block;
+}
+
+/* Koordinaten */
+.koord {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  color: var(--smuted, var(--muted));
+}
+
+/* Sichtbarer Platzhalter — später durch echte Inhalte ersetzen */
+.ph {
+  display: inline-block;
+  border: 2px dashed var(--orange);
+  background: rgba(255, 106, 19, 0.14);
+  padding: 2px 10px;
+  border-radius: 6px;
+  font-size: 0.92em;
+  font-style: normal;
+}
+.hinweis-demo {
+  border: 2px dashed var(--orange);
+  background: rgba(255, 106, 19, 0.12);
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin: 0 0 30px;
+  font-size: 0.95rem;
+  max-width: 68ch;
+}
+.hinweis-demo p { margin: 0; }
+
+/* ================================= Buttons ============================== */
+.btn {
+  display: inline-block;
+  font-family: var(--font-text);
+  font-weight: 800;
+  font-size: 1rem;
+  text-decoration: none;
+  text-align: center;
+  border: 2px solid var(--asphalt);
+  border-radius: 10px;
+  padding: 14px 26px;
+  min-height: 48px;              /* Touch-Target */
+  cursor: pointer;
+  background: var(--orange);
+  color: var(--asphalt);
+  box-shadow: 4px 4px 0 var(--asphalt);
+  transition: transform 0.14s ease, box-shadow 0.14s ease, background-color 0.14s ease;
+}
+.btn:hover { background: var(--orange-dunkel); transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--asphalt); }
+.btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--asphalt); }
+
+.sec--asphalt .btn, .sec--petrol .btn { border-color: var(--creme); box-shadow: 4px 4px 0 var(--creme); }
+.sec--asphalt .btn:hover, .sec--petrol .btn:hover { box-shadow: 6px 6px 0 var(--creme); }
+.sec--asphalt .btn:active, .sec--petrol .btn:active { box-shadow: 1px 1px 0 var(--creme); }
+
+.btn--linie {
+  background: transparent;
+  color: currentColor;
+  border-color: currentColor;
+  box-shadow: none;
+}
+.btn--linie:hover { background: rgba(127, 127, 127, 0.16); box-shadow: none; }
+.sec--asphalt .btn--linie, .sec--petrol .btn--linie { box-shadow: none; }
+.sec--asphalt .btn--linie:hover, .sec--petrol .btn--linie:hover { box-shadow: none; }
+
+.btn--petrol { background: var(--petrol); color: var(--creme); }
+.btn--petrol:hover { background: var(--petrol-hell); }
+
+.btn-zeile { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+
+/* ============================= Sticker / Stempel ======================== */
+.sticker {
+  display: inline-block;
+  background: var(--sand);
+  color: var(--asphalt);
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding: 9px 16px;
+  border: 2px solid var(--asphalt);
+  border-radius: 999px;
+  transform: rotate(-2.5deg);
+}
+.sticker--orange { background: var(--orange); transform: rotate(1.8deg); }
+.sticker--petrol { background: var(--petrol); color: var(--creme); transform: rotate(-1deg); }
+
+.sticker-zeile { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+
+.stempel {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--orange);
+  border: 3px solid var(--orange);
+  border-radius: 8px;
+  padding: 6px 12px;
+  transform: rotate(-6deg);
+  opacity: 0.9;
+}
+
+/* ================================== Hero ================================ */
+.hero {
+  position: relative;
+  padding: clamp(48px, 9vh, 96px) 0 clamp(56px, 10vh, 110px);
+  background: var(--asphalt);
+  overflow: hidden;
+}
+.hero__grid {
+  display: grid;
+  gap: clamp(28px, 5vw, 56px);
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .hero__grid { grid-template-columns: 1fr; }
+}
+.hero .display { max-width: 100%; }
+.hero__motto {
+  font-size: clamp(1.3rem, 3.4vw, 2rem);
+  font-weight: 800;
+  margin: 18px 0 10px;
+  line-height: 1.18;
+  color: var(--orange);
+  max-width: 24ch;
+}
+.hero__sub { font-size: clamp(1.05rem, 2.2vw, 1.3rem); max-width: 46ch; }
+
+/* Bild-Platzhalter: bewusst als solcher erkennbar, keine Stock-Klischees */
+.foto {
+  position: relative;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 20px;
+  aspect-ratio: 4 / 3;
+  border: 2px solid rgba(244, 239, 230, 0.28);
+  border-radius: 14px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #8f8a80;
+  background: repeating-linear-gradient(-45deg, #22262c 0 14px, #1b1f24 14px 28px);
+  overflow: hidden;
+}
+.foto img { width: 100%; height: 100%; object-fit: cover; }
+.foto--hero { aspect-ratio: 5 / 4; box-shadow: var(--schatten-hart); border-color: var(--creme); }
+.foto--hoch { aspect-ratio: 3 / 4; }
+.sec--creme .foto {
+  border-color: var(--linie);
+  color: #6a6459;
+  background: repeating-linear-gradient(-45deg, var(--creme-2) 0 14px, #e2dacb 14px 28px);
+}
+.foto__label {
+  position: relative;
+  z-index: 1;
+  max-width: 26ch;
+}
+
+/* ================================ Kacheln =============================== */
+.kacheln {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-top: 40px;
+}
+.kachel {
+  display: flex;
+  flex-direction: column;
+  background: var(--creme);
+  color: var(--text);
+  border: 2px solid var(--asphalt);
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: var(--schatten-hart);
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+.sec--asphalt .kachel, .sec--petrol .kachel { box-shadow: 6px 6px 0 rgba(244, 239, 230, 0.9); }
+.kachel:hover { transform: translate(-3px, -3px); }
+.kachel__media {
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6a6459;
+  background: repeating-linear-gradient(-45deg, var(--creme-2) 0 14px, #e2dacb 14px 28px);
+  border-bottom: 2px solid var(--asphalt);
+}
+.kachel__media img { width: 100%; height: 100%; object-fit: cover; }
+.kachel__media--petrol { background: repeating-linear-gradient(-45deg, #d3e3e1 0 14px, #c4d8d6 14px 28px); color: #14514c; }
+.kachel__media--sand   { background: repeating-linear-gradient(-45deg, #f7e3b4 0 14px, #f0d79b 14px 28px); color: #6b4c10; }
+.kachel__body { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.kachel__body h3 { margin: 0; }
+.kachel__body p { margin: 0; color: var(--muted); font-size: 0.97rem; }
+.kachel__link { margin-top: auto; padding-top: 12px; font-weight: 800; color: var(--orange-dunkel); }
+
+/* =============================== Großzitat ============================== */
+.bigquote {
+  position: relative;
+  font-size: clamp(1.45rem, 4vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.3;
+  max-width: 22ch;
+  margin: 0;
+  padding-top: 44px;
+}
+.bigquote::before {
+  content: "\201E";
+  position: absolute;
+  top: -26px;
+  left: -8px;
+  font-family: var(--font-display);
+  font-size: 6rem;
+  line-height: 1;
+  color: var(--sakzent, var(--orange));
+}
+.bigquote footer {
+  margin-top: 20px;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--smuted, var(--muted));
+}
+
+/* ============================ Nummerierte Schritte ====================== */
+.schritte {
+  list-style: none;
+  counter-reset: schritt;
+  margin: 40px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+.schritte li { counter-increment: schritt; }
+.schritte li::before {
+  content: counter(schritt, decimal-leading-zero);
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5.5vw, 3.6rem);
+  line-height: 1;
+  margin-bottom: 10px;
+  color: var(--sakzent, var(--orange));
+}
+.schritte h3 { margin-bottom: 6px; }
+.schritte p { color: var(--smuted, var(--muted)); margin: 0; }
+
+/* ================================= Karte ================================ */
+.karte-wrap {
+  position: relative;
+  margin-top: 34px;
+  border: 2px solid var(--creme);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--asphalt-2);
+}
+.sec--creme .karte-wrap { border-color: var(--asphalt); }
+#karte { height: clamp(360px, 62vh, 620px); width: 100%; }
+#karte:empty { display: none; }
+
+.karte-consent {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  gap: 6px;
+  padding: clamp(36px, 8vh, 80px) var(--pad);
+  min-height: clamp(360px, 62vh, 620px);
+  background:
+    repeating-linear-gradient(-45deg, #1b1f24 0 16px, #22262c 16px 32px);
+  color: var(--creme);
+}
+.karte-consent p { max-width: 48ch; margin: 0 auto; color: var(--muted-invers); }
+.karte-consent p.karte-fehler {
+  padding: 20px;
+  max-width: 44ch;
+  color: var(--orange);
+  font-weight: 700;
+}
+
+/* Leaflet-Popups an die Marke anpassen */
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  border: 2px solid var(--asphalt);
+  background: var(--creme);
+  color: var(--text);
+}
+.leaflet-popup-content { margin: 14px 16px; font-family: var(--font-text); }
+.leaflet-popup-content h3 { margin: 0 0 4px; font-size: 1.05rem; }
+.leaflet-popup-content p { margin: 0 0 8px; font-size: 0.92rem; max-width: 34ch; }
+.leaflet-popup-content a { color: var(--orange-dunkel); font-weight: 800; }
+.leaflet-container a.leaflet-popup-close-button { color: var(--asphalt); }
+
+/* Ortsliste (zugleich Fallback, wenn die Karte nicht lädt) */
+.orte {
+  list-style: none;
+  margin: 34px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.ort {
+  border-left: 5px solid var(--orange);
+  background: rgba(244, 239, 230, 0.06);
+  padding: 16px 18px;
+  border-radius: 0 12px 12px 0;
+}
+.sec--creme .ort { background: var(--creme-2); }
+.ort h3 { margin: 0 0 2px; font-size: 1.05rem; }
+.ort p { margin: 8px 0 0; font-size: 0.95rem; color: var(--smuted, var(--muted)); }
+.ort a { font-weight: 800; color: var(--sakzent, var(--orange)); }
+
+/* ============================== Reisebericht ============================ */
+.beitrag { max-width: 720px; }
+.beitrag h2 { margin-top: 1.6em; }
+.beitrag h2:first-of-type { margin-top: 0.6em; }
+.beitrag__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  align-items: center;
+  margin: 0 0 28px;
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  letter-spacing: 0.05em;
+  color: var(--smuted, var(--muted));
+}
+.beitrag blockquote {
+  margin: 26px 0;
+  padding: 18px 22px;
+  border-left: 5px solid var(--orange);
+  background: rgba(255, 106, 19, 0.1);
+  border-radius: 0 12px 12px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.tipp {
+  border: 2px solid currentColor;
+  border-radius: 14px;
+  padding: 20px 22px;
+  margin: 30px 0;
+}
+.tipp h3 { margin: 0 0 8px; }
+.tipp p:last-child { margin-bottom: 0; }
+
+.blaettern {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 44px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(244, 239, 230, 0.2);
+}
+.sec--creme .blaettern { border-top-color: var(--linie); }
+
+/* ================================= Shop ================================= */
+.preis {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--text);
+}
+.kachel__body .preis { margin-top: 4px; }
+.shop-hinweis {
+  border: 2px solid currentColor;
+  border-radius: 14px;
+  padding: 20px 22px;
+  margin-top: 34px;
+}
+.shop-hinweis p:last-child { margin-bottom: 0; }
+
+/* ================================ Formular ============================== */
+.form { max-width: 640px; margin-top: 32px; display: grid; gap: 18px; }
+.feld { display: grid; gap: 6px; }
+.feld label { font-weight: 700; font-size: 0.95rem; }
+.feld input,
+.feld select,
+.feld textarea {
+  font: inherit;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--creme);
+  border: 2px solid var(--asphalt);
+  border-radius: 10px;
+  padding: 13px 14px;
+  min-height: 48px;
+  width: 100%;
+}
+.feld textarea { min-height: 150px; resize: vertical; }
+.feld small { color: var(--smuted, var(--muted)); font-size: 0.86rem; }
+.checkzeile { display: flex; gap: 12px; align-items: flex-start; }
+.checkzeile input { width: 22px; height: 22px; min-height: 0; flex: none; margin-top: 3px; accent-color: var(--orange); }
+.checkzeile label { font-weight: 400; font-size: 0.94rem; }
+.form-hinweis {
+  border-left: 5px solid var(--orange);
+  background: rgba(255, 106, 19, 0.12);
+  padding: 16px 18px;
+  border-radius: 0 12px 12px 0;
+  font-weight: 600;
+  max-width: 640px;
+}
+
+/* ================================ Footer ================================ */
+.footer {
+  background: var(--asphalt);
+  color: var(--creme);
+  padding: clamp(48px, 8vh, 80px) 0 30px;
+  border-top: 1px solid rgba(244, 239, 230, 0.16);
+}
+.footer__grid {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+.footer h3 {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--orange);
+  margin-bottom: 14px;
+}
+.footer ul { list-style: none; margin: 0; padding: 0; }
+.footer li { margin-bottom: 10px; }
+.footer a { text-decoration: none; }
+.footer a:hover { text-decoration: underline; text-decoration-color: var(--orange); }
+.footer p { color: var(--muted-invers); font-size: 0.95rem; }
+.footer__unten {
+  margin-top: 40px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(244, 239, 230, 0.16);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  color: var(--muted-invers);
+}
+
+/* ============================ Reveal-Animation ========================== */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+[data-reveal].sichtbar { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .btn, .kachel { transition: none; }
+}

@@ -1,17 +1,18 @@
-name: Deploy demo to GitHub Pages
+name: Website „Mittelfinger auf Reisen" veröffentlichen
 
-# Publishes the ./docs folder (the scroll-cinematic live demo) to GitHub Pages.
-# Runs on the default branch and on the working branch so the page is viewable
-# before the PR is merged. `configure-pages` with enablement:true turns Pages on
-# automatically the first time this runs — no manual settings change needed.
+# Veroeffentlicht sites/mittelfinger-auf-reisen/ ueber GitHub Pages.
+# Laeuft auf dem Standard-Branch und auf dem Arbeits-Branch, damit die Seite
+# schon vor dem Merge anzuschauen ist. `configure-pages` mit enablement:true
+# schaltet Pages beim ersten Lauf selbst frei — keine Handarbeit in den
+# Repository-Einstellungen noetig.
 
 on:
   push:
     branches:
       - main
-      - claude/ethereal-dream-uploads-jnuddj
+      - claude/mittelfinger-auf-reisen-sp7xcw
     paths:
-      - "docs/**"
+      - "sites/mittelfinger-auf-reisen/**"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -40,10 +41,10 @@ jobs:
         with:
           enablement: true
 
-      - name: Upload demo artifact
+      - name: Seite als Artefakt hochladen
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./docs
+          path: ./sites/mittelfinger-auf-reisen
 
       - name: Deploy to GitHub Pages
         id: deployment

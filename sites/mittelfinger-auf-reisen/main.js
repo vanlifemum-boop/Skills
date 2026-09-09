@@ -175,8 +175,8 @@
         html:
           '<svg width="30" height="40" viewBox="0 0 30 40" aria-hidden="true">' +
           '<path d="M15 39C15 39 28 23.5 28 14A13 13 0 1 0 2 14c0 9.5 13 25 13 25Z" ' +
-          'fill="' + (o.geplant ? "#f2c14e" : "#ff6a13") + '" stroke="#14161a" stroke-width="2.5"/>' +
-          '<circle cx="15" cy="14" r="4.5" fill="#14161a"/></svg>',
+          'fill="' + (o.geplant ? "#f5c518" : "#f2551f") + '" stroke="#16130f" stroke-width="2.5"/>' +
+          '<circle cx="15" cy="14" r="4.5" fill="#16130f"/></svg>',
         iconSize: [30, 40],
         iconAnchor: [15, 39],
         popupAnchor: [0, -34]

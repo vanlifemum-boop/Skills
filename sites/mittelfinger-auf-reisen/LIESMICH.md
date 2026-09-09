@@ -64,21 +64,34 @@ Wenn die Karte nicht lädt (kein Netz, Blocker), bleiben alle Orte als Liste
 darunter lesbar. Die Liste ist kein Notbehelf, sondern die barrierefreie
 Fassung derselben Daten.
 
-## Design
+## Design — „Reise-Zine auf Papier"
+
+Die Seite sieht aus wie ein selbstgemachtes Reiseheft: warmes Papier trägt
+alles, Schwarz ist Druckfarbe statt Hintergrund, Orange und Petrol liegen
+wie zwei Risographie-Durchgänge darüber — die großen Überschriften stehen
+absichtlich einen Hauch neben ihrer zweiten Farbe. Fotos sind mit
+Klebestreifen eingeklebt, Kacheln hängen leicht schief, Schatten sind hart
+und ohne Weichzeichner. Dunkel wird nur der Fuß.
 
 | Farbe | Wofür |
 |---|---|
-| Asphalt-Schwarz `#14161a` | Hintergrund, Navigation, starke Flächen |
-| Warmes Cremeweiß `#f4efe6` | Text und ruhige Inhaltsbereiche |
-| Signalorange `#ff6a13` | Schaltflächen, Kartenpins, Akzente |
-| Petrol `#0f5c58` | Natur-, Reise- und Camper-Abschnitte |
-| Sand `#f2c14e` | Aufkleber, Straßenlinien, zweiter Akzent |
+| Papier `#fbf7f0` / `#f3ebdd` | Grundton, im Wechsel für die Abschnitte |
+| Tinte `#16130f` | Schrift, Konturen, Schatten, Fußbereich |
+| Signalorange `#f2551f` | Schaltflächen, Kartenpins, Fehldruck-Versatz |
+| Orange dunkel `#a83409` | dieselbe Farbe für kleine Schrift (kontraststark) |
+| Petrol `#0e6b63` | Natur-, Reise- und Camper-Abschnitte |
+| Gelb `#f5c518` | Klebeband, Marker, Hinweise, Aufkleber |
 
 Überschriften in **Archivo Black** (liegt in `fonts/`, wird von diesem
 Server ausgeliefert — kein Google Fonts, das erspart ein Datenschutzproblem).
 Handschriftliche Akzente (`class="hand"`) nutzen die Systemschriften; wer
 eine echte Handschrift will, lädt sich z. B. Caveat herunter, legt sie nach
 `fonts/` und ergänzt ein `@font-face` in `styles.css`.
+
+Die vier Abschnittsflächen heißen `sec--papier`, `sec--papier2`,
+`sec--petrol` und `sec--orange` — jede setzt ihre eigenen lokalen Farbtokens,
+Überschriften und Schaltflächen passen sich automatisch an. Ein feines
+Papierkorn liegt als `body::after` über der ganzen Seite.
 
 Alle Kontraste sind gegen WCAG AA geprüft, Tastaturbedienung und
 `prefers-reduced-motion` funktionieren, Schaltflächen sind mindestens 48 px hoch.
@@ -87,10 +100,10 @@ Alle Kontraste sind gegen WCAG AA geprüft, Tastaturbedienung und
 
 Der Ordner ist eine fertige statische Seite — hochladen genügt.
 
-- **GitHub Pages:** Das `docs/`-Verzeichnis dieses Repos gehört bereits zu
-  einer anderen Seite. Für „Mittelfinger auf Reisen“ also den Inhalt dieses
-  Ordners in ein eigenes Repository legen (als `docs/` oder Repo-Wurzel) und
-  Pages dort aktivieren.
+- **GitHub Pages:** ist im Repo schon eingerichtet. Der Workflow
+  `.github/workflows/pages.yml` veröffentlicht genau diesen Ordner, sobald
+  hier etwas gepusht wird — auf `main` und auf dem Arbeits-Branch. Die
+  Adresse steht danach im Actions-Lauf und unter Settings → Pages.
 - **Netlify / Cloudflare Pages:** Ordner ins Dashboard ziehen, fertig.
   Kein Build-Befehl, kein Ausgabeverzeichnis.
 - **Klassischer Webspace:** per FTP hochladen.

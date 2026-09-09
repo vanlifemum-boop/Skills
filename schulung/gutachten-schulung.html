@@ -69,7 +69,9 @@ em{color:var(--ocker);font-style:normal;font-weight:600}
 .wrap{max-width:var(--max);margin:0 auto;padding:34px 20px 96px}
 .screen{display:none;animation:auf .4s ease both}
 .screen.active{display:block}
-@keyframes auf{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+/* Nur die Bewegung wird animiert, nicht die Deckkraft: Der Inhalt ist ab dem
+   ersten Frame lesbar — wichtig fuer Vorschaubilder und langsame Geraete. */
+@keyframes auf{from{transform:translateY(10px)}to{transform:none}}
 
 .karte{background:var(--karte);border:1px solid var(--linie);border-radius:var(--r);padding:22px}
 .karte+.karte{margin-top:14px}

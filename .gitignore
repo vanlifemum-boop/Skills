@@ -1,2 +1,13 @@
 __pycache__/
 *.pyc
+
+# Generierte Bilder der Schulung (entstehen lokal über schulung/tools/kie_bilder.py).
+# Die PNG-Master bleiben draußen — 127 MB, jederzeit aus den WebP-Mastern ersetzbar.
+schulung/tools/out/*
+
+# Die Sicherung dagegen wird versioniert: Die Bildwelt kostet echtes Guthaben,
+# und der Container ist flüchtig. master/ hält die volle Auflösung (2752×1536,
+# WebP q=95, 14,5 MB), bilder.json die einsetzfertigen Data-URIs.
+!schulung/tools/out/master/
+!schulung/tools/out/bilder.json
+!schulung/tools/out/state.json

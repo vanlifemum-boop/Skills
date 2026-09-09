@@ -1,8 +1,10 @@
 {
+  "enableAllProjectMcpServers": true,
   "permissions": {
     "allow": [
       "WebFetch(domain:kie.ai)",
-      "WebFetch(domain:api.kie.ai)"
+      "WebFetch(domain:api.kie.ai)",
+      "WebFetch(domain:docs.kie.ai)"
     ]
   },
   "sandbox": {
@@ -10,7 +12,11 @@
       "allowedDomains": [
         "kie.ai",
         "*.kie.ai",
-        "api.kie.ai"
+        "api.kie.ai",
+        "proxy.kie.ai",
+        "docs.kie.ai",
+        "kieai.redpandaai.co",
+        "tempfile.aiquickdraw.com"
       ]
     }
   }

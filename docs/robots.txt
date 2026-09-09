@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Nicht gelistete Vorschau der Schulung - nicht indexieren
+Disallow: /vorschau-6vhwuiyle0.html

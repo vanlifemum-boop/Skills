@@ -1,48 +1,36 @@
 /* =========================================================================
-   Mittelfinger auf Reisen — Design-System „Reise-Zine auf Papier"
-   Idee: ein selbstgemachtes Reise-Heft. Warmes Papier trägt alles, Schwarz
-   ist Druckfarbe statt Hintergrund, Orange und Petrol liegen wie zwei
-   Risographie-Durchgänge darüber — leicht versetzt, absichtlich nicht
-   perfekt im Register. Klebeband, Stempel und Randnotizen statt Hochglanz.
-   Dunkel wird nur noch der Fuß und ein einzelnes Schlussband pro Seite.
+   Mittelfinger auf Reisen
+   Weiß trägt die Seite. Der Auftakt sitzt auf einem Verlauf von Violett nach
+   Türkis — dort laufen drei gegenläufige Icon-Ringe in 3D-Perspektive.
+   Die Orbit-Mechanik stammt aus der Waitlist-Hero-Vorlage (React/Tailwind),
+   übernommen ist davon nur das CSS; Farben, Icons und Inhalte sind eigene.
    ========================================================================= */
 
-@font-face {
-  font-family: "Archivo Black";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("fonts/archivo-black.woff2") format("woff2");
-}
-
 :root {
-  --papier: #fbf7f0;         /* Grundton, warmes Papier */
-  --papier-2: #f3ebdd;       /* zweiter Papierton für Wechsel */
-  --papier-3: #e9dfcd;       /* Kanten, Platzhalterstreifen */
-  --tinte: #16130f;          /* Druckschwarz — Schrift, Linien, Fuß */
-  --orange: #f2551f;         /* erster Durchgang: Signal, Handlung */
-  --orange-tief: #c63f10;
-  --orange-text: #a83409;   /* dunkel genug fuer kleine Schrift auf Papier */
-  --petrol: #0e6b63;         /* zweiter Durchgang: Natur, Reise */
-  --petrol-hell: #14887e;
-  --gelb: #f5c518;           /* Klebeband, Marker */
+  --weiss: #ffffff;
+  --tinte: #18122b;             /* Schrift, Schwarz mit Violettstich */
+  --grau: #55506b;              /* Fließtext-Nebenton */
+  --grau-hell: #f6f4fb;         /* zarte Fläche zum Absetzen */
+  --linie: #e6e1f2;
 
-  --text: #16130f;
-  --muted: #6b6154;          /* warmes Grau auf Papier */
-  --muted-invers: #b6ac9b;
-  --linie: rgba(22, 19, 15, 0.2);
+  --violett: #5b21b6;
+  --violett-tief: #4c1d95;
+  --lila: #7c3aed;              /* Schaltflächen, Links */
+  --lila-hell: #a78bfa;
+  --lavendel: #ddd6fe;
 
-  --font-display: "Archivo Black", "Arial Black", Arial, sans-serif;
-  --font-text: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-               Helvetica, Arial, sans-serif;
-  --font-hand: "Segoe Script", "Bradley Hand", "Snell Roundhand", "Comic Sans MS", cursive;
+  --tuerkis: #14b8a6;           /* nur Flächen und Grafik */
+  --tuerkis-text: #0f766e;      /* dieselbe Farbe, kontraststark für Schrift */
+  --tuerkis-tief: #115e59;
+  --mint: #5eead4;
+
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-  --max: 1140px;
-  --pad: clamp(20px, 5vw, 48px);
-  --header-h: 72px;
-  --kante: 3px;                          /* Konturstärke, überall gleich */
-  --schatten: 6px 6px 0 var(--tinte);    /* harter Druckschatten, kein Blur */
+  --max: 1080px;
+  --pad: clamp(20px, 5vw, 44px);
+  --radius: 16px;
 }
 
 * { box-sizing: border-box; }
@@ -54,26 +42,14 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font-family: var(--font-text);
+  font-family: var(--font);
   font-size: 1.05rem;
   line-height: 1.65;
-  color: var(--text);
-  background: var(--papier);
+  color: var(--tinte);
+  background: var(--weiss);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
-}
-
-/* Papierkorn über der ganzen Seite — nimmt dem Weiß das Digitale */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 900;
-  pointer-events: none;
-  opacity: 0.05;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 img { max-width: 100%; display: block; }
@@ -85,694 +61,508 @@ a { color: inherit; }
   margin-inline: auto;
   padding-inline: var(--pad);
 }
-.container--schmal { max-width: 780px; }
+.container--schmal { max-width: 720px; }
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 
 .skip-link {
   position: absolute;
-  left: -9999px;
-  top: 0;
+  left: -9999px; top: 0;
   z-index: 1000;
-  background: var(--tinte);
-  color: var(--papier);
+  background: var(--lila);
+  color: #fff;
   font-weight: 700;
   padding: 12px 18px;
+  border-radius: 0 0 10px 0;
 }
-.skip-link:focus { left: 12px; top: 12px; }
+.skip-link:focus { left: 0; top: 0; }
 
-:focus-visible {
-  outline: 3px solid var(--orange);
-  outline-offset: 3px;
-}
-
-/* =========================== Header / Navigation ======================== */
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--papier);
-  border-bottom: var(--kante) solid var(--tinte);
-}
-.header__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  min-height: var(--header-h);
-}
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  line-height: 1.05;
-  text-decoration: none;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
-}
-.logo svg { flex: none; }
-.logo span { color: var(--orange-tief); }
-
-.nav {
-  display: flex;
-  align-items: center;
-  gap: clamp(10px, 1.8vw, 22px);
-}
-.nav a:not(.btn) {
-  text-decoration: none;
-  font-size: 0.94rem;
-  font-weight: 700;
-  padding: 10px 2px;            /* großes Touch-Target */
-  border-bottom: 3px solid transparent;
-  white-space: nowrap;
-}
-.nav a:not(.btn):hover { border-bottom-color: var(--gelb); }
-.nav a.aktiv { border-bottom-color: var(--orange); }
-
-.burger {
-  display: none;
-  background: var(--papier);
-  border: var(--kante) solid var(--tinte);
-  border-radius: 8px;
-  width: 48px;
-  height: 48px;
-  cursor: pointer;
-  padding: 0;
-  font-size: 1.3rem;
-  line-height: 1;
-  color: var(--tinte);
-}
-
-@media (max-width: 1000px) {
-  .burger { display: grid; place-items: center; }
-  .nav {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    background: var(--papier);
-    border-bottom: var(--kante) solid var(--tinte);
-    padding: 8px var(--pad) 22px;
-    display: none;
-  }
-  .nav.offen { display: flex; }
-  .nav a:not(.btn) {
-    padding: 14px 4px;
-    border-bottom: 1px solid var(--linie);
-    font-size: 1.05rem;
-  }
-  .nav .btn { margin-top: 14px; text-align: center; }
-}
-
-/* Der Schatten am Header-Knopf darf die Kopfkante nicht überlaufen */
-.header .btn { box-shadow: 3px 3px 0 var(--tinte); }
-.header .btn:hover { box-shadow: 5px 5px 0 var(--tinte); }
-
-/* ================================ Sektionen ============================= */
-/* Vier Flächen, drei davon hell. Jede setzt ihre eigenen lokalen Tokens.   */
-.sec { padding: clamp(56px, 9vh, 110px) 0; }
-.sec--kompakt { padding: clamp(38px, 6vh, 72px) 0; }
-
-.sec--papier {
-  background: var(--papier);
-  color: var(--text);
-  --smuted: var(--muted);
-  --sakzent: var(--petrol);
-  --sversatz: rgba(242, 85, 31, 0.42);
-}
-.sec--papier2 {
-  background: var(--papier-2);
-  color: var(--text);
-  --smuted: var(--muted);
-  --sakzent: var(--orange-text);
-  --sversatz: rgba(14, 107, 99, 0.34);
-}
-.sec--orange {
-  background: var(--orange);
-  color: var(--tinte);
-  --smuted: #5e2409;
-  --sakzent: var(--tinte);
-  --sversatz: rgba(251, 247, 240, 0.5);
-}
-.sec--petrol {
-  background: var(--petrol);
-  color: var(--papier);
-  --smuted: #bdd7d4;
-  --sakzent: var(--gelb);
-  --sversatz: rgba(245, 197, 24, 0.42);
-}
-.sec--tinte {
-  background: var(--tinte);
-  color: var(--papier);
-  --smuted: var(--muted-invers);
-  --sakzent: var(--gelb);
-  --sversatz: rgba(242, 85, 31, 0.6);
-}
-
-/* Perforationslinie zwischen zwei Abschnitten — wie eine Abrisskante */
-.strasse {
-  height: 0;
-  border-top: var(--kante) dashed rgba(22, 19, 15, 0.3);
-}
+:focus-visible { outline: 3px solid var(--lila); outline-offset: 3px; }
 
 /* ================================ Typografie ============================ */
 h1, h2, h3 { margin: 0 0 0.5em; text-wrap: balance; }
 
 .display {
-  font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: -0.02em;
+  font-weight: 800;
+  letter-spacing: -0.05em;
   line-height: 0.98;
+}
+h1.display { font-size: clamp(2.5rem, 7vw, 5rem); }
+h2.display { font-size: clamp(1.9rem, 4.6vw, 3.2rem); }
+h3 { font-size: 1.15rem; font-weight: 700; line-height: 1.35; }
+
+.kicker {
+  margin: 0 0 14px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  overflow-wrap: break-word;
-  hyphens: auto;                 /* lange deutsche Komposita mobil trennen */
-}
-h1.display { font-size: clamp(2rem, 5.5vw, 4rem); }
-h2.display { font-size: clamp(1.75rem, 4.6vw, 3.1rem); }
-h3 { font-size: 1.18rem; line-height: 1.35; }
-
-/* Der Fehldruck: die Überschrift liegt einen Hauch neben ihrer zweiten
-   Druckfarbe. Nur bei h1 — sonst wird es Krach statt Handschrift. */
-h1.display { text-shadow: 0.055em 0.05em 0 var(--sversatz, rgba(242, 85, 31, 0.42)); }
-
-.eyebrow {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 0.76rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
-  margin: 0 0 16px;
-  color: var(--sakzent, var(--petrol));
+  color: var(--tuerkis-text);
 }
 
-p { margin: 0 0 1em; max-width: 68ch; }
-p.gross { font-size: clamp(1.12rem, 2.2vw, 1.35rem); line-height: 1.55; }
-.muted { color: var(--smuted, var(--muted)); }
-.zentriert { text-align: center; }
-.zentriert p, .zentriert .bigquote { margin-inline: auto; }
-
-ul.liste { padding-left: 1.2em; max-width: 68ch; }
-ul.liste li { margin-bottom: 0.5em; }
-ul.liste li::marker { color: var(--sakzent, var(--orange)); }
-
-/* Handschriftliche Randnotiz */
-.hand {
-  font-family: var(--font-hand);
-  font-size: 1.25em;
-  line-height: 1.3;
-  color: var(--sakzent, var(--petrol));
-  rotate: -1.5deg;
-  display: inline-block;
-}
-
+p { margin: 0 0 1em; max-width: 66ch; }
+p.gross { font-size: clamp(1.1rem, 2.1vw, 1.3rem); line-height: 1.55; color: var(--grau); }
+.muted { color: var(--grau); }
 .koord {
   font-family: var(--font-mono);
-  font-size: 0.82rem;
-  letter-spacing: 0.06em;
-  color: var(--smuted, var(--muted));
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: var(--grau);
 }
 
-/* Platzhalter — sichtbar mit Marker durchgezogen */
-.ph {
-  display: inline-block;
-  padding: 1px 8px;
-  background: rgba(245, 197, 24, 0.55);
-  box-shadow: 0 0 0 1px rgba(22, 19, 15, 0.25);
-  color: var(--tinte);
-  font-style: normal;
-  font-size: 0.94em;
-}
-.hinweis-demo {
-  position: relative;
-  border: var(--kante) solid var(--tinte);
-  background: rgba(245, 197, 24, 0.32);
-  color: var(--tinte);
-  padding: 16px 20px;
-  margin: 0 0 30px;
-  max-width: 68ch;
-  font-size: 0.95rem;
-  rotate: -0.5deg;
-  box-shadow: var(--schatten);
-}
-.hinweis-demo p { margin: 0; }
+ul.liste { padding-left: 1.2em; max-width: 66ch; color: var(--grau); }
+ul.liste li { margin-bottom: 0.45em; }
+ul.liste li::marker { color: var(--tuerkis); }
 
 /* ================================= Buttons ============================== */
 .btn {
-  display: inline-block;
-  font-family: var(--font-text);
-  font-weight: 800;
-  font-size: 1rem;
-  text-decoration: none;
-  text-align: center;
-  border: var(--kante) solid var(--tinte);
-  border-radius: 0;              /* Zine heißt: Kanten, keine Pillen */
-  padding: 13px 26px;
-  min-height: 48px;              /* Touch-Target */
-  cursor: pointer;
-  background: var(--orange);
-  color: var(--tinte);
-  box-shadow: 5px 5px 0 var(--tinte);
-  transition: translate 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
-}
-.btn:hover { background: var(--gelb); translate: -2px -2px; box-shadow: 7px 7px 0 var(--tinte); }
-.btn:active { translate: 3px 3px; box-shadow: 1px 1px 0 var(--tinte); }
-
-.btn--linie { background: transparent; }
-.btn--linie:hover { background: rgba(22, 19, 15, 0.08); }
-
-.btn--petrol { background: var(--petrol); color: var(--papier); }
-.btn--petrol:hover { background: var(--petrol-hell); color: var(--papier); }
-
-/* Auf den dunklen Flächen kehrt sich die Kontur um */
-.sec--petrol .btn, .sec--tinte .btn {
-  border-color: var(--papier);
-  box-shadow: 5px 5px 0 var(--papier);
-}
-.sec--petrol .btn:hover, .sec--tinte .btn:hover { box-shadow: 7px 7px 0 var(--papier); }
-.sec--petrol .btn:active, .sec--tinte .btn:active { box-shadow: 1px 1px 0 var(--papier); }
-.sec--petrol .btn--linie, .sec--tinte .btn--linie { color: var(--papier); }
-.sec--petrol .btn--linie:hover, .sec--tinte .btn--linie:hover {
-  background: rgba(251, 247, 240, 0.14);
-  color: var(--papier);
-}
-
-.btn-zeile { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
-
-/* ============================ Aufkleber / Stempel ======================= */
-.sticker {
-  display: inline-block;
-  background: var(--gelb);
-  color: var(--tinte);
-  font-weight: 800;
-  font-size: 0.9rem;
-  padding: 8px 16px;
-  border: var(--kante) solid var(--tinte);
-  rotate: -2.5deg;
-  box-shadow: 3px 3px 0 rgba(22, 19, 15, 0.85);
-}
-.sticker--orange { background: var(--orange); rotate: 1.8deg; }
-.sticker--petrol { background: var(--petrol); color: var(--papier); rotate: -1deg; }
-
-.sticker-zeile { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
-
-.stempel {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--orange-tief);
-  border: 3px solid var(--orange-tief);
-  padding: 6px 12px;
-  rotate: -6deg;
-  opacity: 0.92;
-}
-.sec--petrol .stempel, .sec--tinte .stempel { color: var(--gelb); border-color: var(--gelb); }
-
-/* ================================== Hero ================================ */
-.hero {
-  position: relative;
-  padding: clamp(44px, 8vh, 88px) 0 clamp(52px, 9vh, 100px);
-  background: var(--papier);
-  --smuted: var(--muted);
-  --sakzent: var(--orange-tief);
-  --sversatz: rgba(14, 107, 99, 0.36);
-  overflow: hidden;
-}
-.hero__grid {
-  display: grid;
-  gap: clamp(28px, 5vw, 56px);
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 52px;
+  padding: 14px 26px;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: var(--lila);
+  color: #fff;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 10px 26px rgb(124 58 237 / 26%);
 }
-@media (max-width: 900px) {
-  .hero__grid { grid-template-columns: 1fr; }
-}
-.hero .display { max-width: 100%; }
-.hero__motto {
-  font-family: var(--font-display);
-  font-size: clamp(1.2rem, 3vw, 1.85rem);
-  line-height: 1.15;
-  text-transform: uppercase;
-  margin: 20px 0 12px;
-  color: var(--orange-tief);
-  max-width: 24ch;
-}
-.hero__sub { font-size: clamp(1.05rem, 2.2vw, 1.28rem); max-width: 46ch; }
+.btn:hover { background: #6d28d9; transform: translateY(-2px); box-shadow: 0 14px 32px rgb(124 58 237 / 32%); }
+.btn:active { transform: translateY(0); }
 
-/* ============================== Fotos / Platzhalter ===================== */
-/* Bilder sitzen wie eingeklebt: Kontur, harter Schatten, Klebestreifen an
-   den oberen Ecken. Fehlt ein Bild, bleibt der Streifenplatzhalter stehen. */
-.foto {
-  position: relative;
+.btn--linie {
+  background: transparent;
+  color: var(--tinte);
+  border-color: var(--linie);
+  box-shadow: none;
+}
+.btn--linie:hover { background: var(--grau-hell); border-color: var(--lila-hell); }
+
+/* Auf dem Verlauf im Auftakt */
+.hero .btn { box-shadow: 0 14px 34px rgb(0 0 0 / 28%); }
+.hero .btn--hell { background: #fff; color: var(--violett-tief); }
+.hero .btn--hell:hover { background: var(--lavendel); }
+.hero .btn--linie {
+  color: #fff;
+  border-color: rgb(255 255 255 / 55%);
+  box-shadow: none;
+}
+.hero .btn--linie:hover { background: rgb(255 255 255 / 14%); border-color: #fff; }
+
+.btn-zeile { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+
+/* ============================== Fingermarke ============================= */
+.finger {
   display: grid;
   place-items: center;
-  text-align: center;
-  padding: 20px;
-  aspect-ratio: 4 / 3;
-  border: var(--kante) solid var(--tinte);
-  box-shadow: var(--schatten);
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: #5f5748;
-  background: repeating-linear-gradient(-45deg, var(--papier-2) 0 14px, var(--papier-3) 14px 28px);
-  rotate: -0.8deg;
+  width: 66px;
+  height: 66px;
+  border-radius: 20px;
+  background: linear-gradient(150deg, rgb(255 255 255 / 22%), rgb(255 255 255 / 6%));
+  border: 1px solid rgb(255 255 255 / 26%);
+  box-shadow: 0 22px 50px rgb(0 0 0 / 34%), inset 0 1px rgb(255 255 255 / 26%);
 }
-.foto::before, .foto::after {
+.finger svg { width: 34px; height: 34px; }
+
+/* =================================================================== */
+/* AUFTAKT — Orbit-Szene                                               */
+/* Struktur und Bewegung aus der Vorlage: drei Ringe, der mittlere     */
+/* läuft rückwärts, nach außen mehr Unschärfe und weniger Deckkraft.   */
+/* =================================================================== */
+.hero {
+  isolation: isolate;
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  place-items: end center;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(circle at 50% -10%, rgb(94 234 212 / 18%), transparent 45%),
+    linear-gradient(158deg, var(--violett) 0%, #6d28d9 40%, var(--tuerkis-tief) 100%);
+}
+
+.orbit-scene {
+  position: absolute;
+  z-index: -4;
+  inset: -14% -10% 0;
+  overflow: hidden;
+  perspective: 1200px;
+  pointer-events: none;
+}
+
+.orbit-plane {
+  position: absolute;
+  inset: -13% 0 8%;
+  transform: rotateX(58deg) translateY(-9%);
+  transform-origin: center 70%;
+  transform-style: preserve-3d;
+}
+
+.orbit-ring {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: var(--diameter);
+  height: var(--diameter);
+  border: 1px solid rgb(255 255 255 / 8%);
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+  animation: orbit-spin var(--duration) linear infinite;
+}
+.orbit-ring:nth-child(2) { animation-direction: reverse; }
+
+.orbit-anchor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--tile-size);
+  height: var(--tile-size);
+  margin: calc(var(--tile-size) / -2);
+  transform: rotate(var(--angle)) translateX(var(--radius)) rotate(var(--counter-angle));
+  transform-style: preserve-3d;   /* sonst flacht der Anker die Kachel wieder ein */
+}
+
+.orbit-tile {
+  display: grid;
+  /* Die Ringebene liegt um 58 Grad gekippt. Die Kachel dreht denselben
+     Betrag zurück und schaut dadurch den Betrachter an, statt flach auf
+     der Scheibe zu liegen — sonst sind die Icons nicht zu erkennen. */
+  transform: rotateX(-58deg);
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  /* Unschärfe und Deckkraft sitzen auf der Kachel, nicht auf dem Ring.
+     Beides macht ein Element zur Gruppe und würde die 3D-Ebene einebnen —
+     die Kacheln lägen dann flach auf der Scheibe statt aufrecht zu stehen. */
+  filter: blur(var(--ring-blur, 0px));
+  opacity: var(--ring-opacity, 1);
+  border: 1px solid rgb(255 255 255 / 38%);
+  border-radius: 24%;
+  box-shadow: 0 16px 35px rgb(15 8 40 / 38%), inset 0 1px rgb(255 255 255 / 45%);
+  animation: icon-drift 5s ease-in-out infinite;
+  animation-delay: var(--float-delay);
+}
+.orbit-tile svg { width: 48%; height: 48%; }
+
+.hero-vignette {
+  position: absolute;
+  z-index: -3;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, transparent 12%, rgb(24 18 43 / 34%) 46%, rgb(24 18 43 / 78%) 82%),
+    radial-gradient(ellipse 70% 50% at 50% 78%, rgb(24 18 43 / 70%), transparent 70%),
+    radial-gradient(circle at center, transparent 22%, rgb(24 18 43 / 42%) 74%, rgb(24 18 43 / 76%) 110%);
+}
+
+.hero-grain {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  opacity: 0.06;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E");
+}
+
+/* Schleier hinter dem Text: die Ringe laufen sonst mitten durch die Zeilen */
+.hero__inhalt::before {
   content: "";
   position: absolute;
-  top: -13px;
-  width: 88px;
-  height: 25px;
-  background: rgba(245, 197, 24, 0.65);
-  box-shadow: 0 0 0 1px rgba(22, 19, 15, 0.18);
-}
-.foto::before { left: -6px; rotate: -26deg; }
-.foto::after { right: -6px; rotate: 26deg; }
-.foto img { width: 100%; height: 100%; object-fit: cover; }
-.foto--hero { aspect-ratio: 5 / 4; rotate: 1deg; }
-.foto--hoch { aspect-ratio: 3 / 4; }
-.foto__label { position: relative; z-index: 1; max-width: 26ch; }
-
-.sec--petrol .foto, .sec--tinte .foto {
-  border-color: var(--papier);
-  box-shadow: 6px 6px 0 var(--papier);
+  z-index: -1;
+  inset: 12% -12% 0 -12%;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 60% 56% at 50% 58%,
+    rgb(24 18 43 / 84%),
+    rgb(24 18 43 / 48%) 52%,
+    transparent 76%
+  );
 }
 
-/* ================================ Kacheln =============================== */
-.kacheln {
-  display: grid;
-  gap: 28px;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  margin-top: 40px;
-}
-.kachel {
+.hero__inhalt {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
-  background: var(--papier);
-  color: var(--text);
-  border: var(--kante) solid var(--tinte);
-  text-decoration: none;
-  box-shadow: var(--schatten);
-  rotate: -0.6deg;
-  transition: translate 0.14s ease, rotate 0.14s ease;
-}
-.kacheln .kachel:nth-child(even) { rotate: 0.7deg; }
-.kachel:hover { translate: -3px -3px; rotate: 0deg; }
-.sec--petrol .kachel, .sec--tinte .kachel { box-shadow: 6px 6px 0 var(--papier); }
-
-.kachel__media {
-  aspect-ratio: 4 / 3;
-  display: grid;
-  place-items: center;
-  padding: 16px;
+  align-items: center;
   text-align: center;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #5f5748;
-  background: repeating-linear-gradient(-45deg, var(--papier-2) 0 14px, var(--papier-3) 14px 28px);
-  border-bottom: var(--kante) solid var(--tinte);
+  justify-content: flex-end;
+  min-height: 100svh;
+  width: min(100%, 800px);
+  margin-inline: auto;
+  padding: 96px var(--pad) clamp(48px, 8vh, 88px);
 }
-.kachel__media img { width: 100%; height: 100%; object-fit: cover; }
-.kachel__media--petrol { background: repeating-linear-gradient(-45deg, #cfe0de 0 14px, #bfd4d1 14px 28px); color: #0c4f4a; }
-.kachel__media--sand   { background: repeating-linear-gradient(-45deg, #f8e6b6 0 14px, #f2d99b 14px 28px); color: #6b4c10; }
-.kachel__body { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
-.kachel__body h3 { margin: 0; }
-.kachel__body p { margin: 0; color: var(--muted); font-size: 0.97rem; }
-.kachel__link { margin-top: auto; padding-top: 12px; font-weight: 800; color: var(--orange-text); }
-
-/* =============================== Großzitat ============================== */
-.bigquote {
-  position: relative;
-  font-family: var(--font-display);
-  font-size: clamp(1.4rem, 3.6vw, 2.2rem);
-  line-height: 1.22;
+.hero__inhalt .kicker { color: var(--mint); }
+.hero__inhalt h1 { color: #fff; margin-top: 18px; }
+.hero__motto {
+  margin: 20px 0 0;
+  font-size: clamp(1.15rem, 2.6vw, 1.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--mint);
+}
+.hero__text {
+  margin: 14px 0 0;
+  max-width: 46ch;
+  color: rgb(255 255 255 / 82%);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+}
+.hero__runter {
+  margin-top: 40px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  max-width: 20ch;
-  margin: 0;
-  padding: 34px 0 0 0;
-}
-.bigquote::before {
-  content: "\201E";
-  position: absolute;
-  top: -22px;
-  left: -6px;
-  font-size: 5.5rem;
-  line-height: 1;
-  color: var(--sakzent, var(--orange));
-}
-.bigquote footer {
-  margin-top: 20px;
-  font-family: var(--font-text);
-  font-size: 0.95rem;
-  font-weight: 400;
-  text-transform: none;
-  color: var(--smuted, var(--muted));
+  color: rgb(255 255 255 / 62%);
+  text-decoration: none;
 }
 
-/* ============================ Nummerierte Schritte ====================== */
-.schritte {
-  list-style: none;
-  counter-reset: schritt;
-  margin: 40px 0 0;
-  padding: 0;
-  display: grid;
-  gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-}
-.schritte li { counter-increment: schritt; }
-.schritte li::before {
-  content: counter(schritt, decimal-leading-zero);
-  display: block;
-  font-family: var(--font-display);
-  font-size: clamp(2.4rem, 5.5vw, 3.4rem);
-  line-height: 1;
-  margin-bottom: 10px;
-  color: var(--sakzent, var(--orange));
-}
-.schritte h3 { margin-bottom: 6px; }
-.schritte p { color: var(--smuted, var(--muted)); margin: 0; }
+/* Auftritt der Auftakt-Elemente */
+.steigt { animation: hero-rise 700ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+.steigt-1 { animation-delay: 60ms; }
+.steigt-2 { animation-delay: 130ms; }
+.steigt-3 { animation-delay: 200ms; }
+.steigt-4 { animation-delay: 270ms; }
 
-/* ================================= Karte ================================ */
+@keyframes orbit-spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+@keyframes icon-drift {
+  0%, 100% { transform: translateY(-5px) rotateX(-58deg) rotate(-3deg); }
+  50%      { transform: translateY(6px) rotateX(-58deg) rotate(3deg); }
+}
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ================================ Abschnitte ============================ */
+.sec { padding: clamp(64px, 10vh, 118px) 0; }
+.sec--kompakt { padding: clamp(44px, 7vh, 78px) 0; }
+.sec--grau { background: var(--grau-hell); }
+.sec__kopf { margin-bottom: 36px; }
+
+/* ================================== Karte =============================== */
 .karte-wrap {
   position: relative;
-  margin-top: 34px;
-  border: var(--kante) solid var(--tinte);
-  box-shadow: var(--schatten);
+  border-radius: var(--radius);
   overflow: hidden;
-  background: var(--papier-2);
+  background: var(--grau-hell);
+  border: 1px solid var(--linie);
 }
-.sec--petrol .karte-wrap, .sec--tinte .karte-wrap {
-  border-color: var(--papier);
-  box-shadow: 6px 6px 0 var(--papier);
-}
-#karte { height: clamp(360px, 60vh, 600px); width: 100%; }
-#karte:empty { display: none; }
+#karte-flaeche { height: clamp(340px, 56vh, 540px); width: 100%; }
+#karte-flaeche:empty { display: none; }
 
 .karte-consent {
   display: grid;
   place-items: center;
   align-content: center;
+  gap: 12px;
   text-align: center;
-  gap: 14px;
-  padding: clamp(32px, 7vh, 64px) var(--pad);
-  min-height: clamp(360px, 60vh, 600px);
-  background: repeating-linear-gradient(-45deg, var(--papier-2) 0 16px, var(--papier-3) 16px 32px);
-  color: var(--text);
+  padding: clamp(32px, 6vh, 60px) var(--pad);
+  min-height: clamp(340px, 56vh, 540px);
+  background:
+    radial-gradient(circle at 50% 20%, rgb(167 139 250 / 16%), transparent 60%),
+    var(--grau-hell);
 }
-.karte-consent p { max-width: 48ch; margin: 0 auto; }
-.karte-consent p.muted { color: var(--muted); }
-.karte-consent p.karte-fehler {
-  max-width: 44ch;
-  color: var(--orange-text);
-  font-weight: 700;
-}
-.karte-consent .btn-zeile { margin-top: 8px; }
+.karte-consent p { max-width: 46ch; margin: 0 auto; color: var(--grau); }
+.karte-consent p.karte-fehler { color: #b91c1c; font-weight: 700; }
+.karte-consent .btn-zeile { margin-top: 6px; justify-content: center; }
 
-/* Leaflet-Popups ins Heft holen */
+/* Leaflet an die Farbwelt anpassen */
 .leaflet-popup-content-wrapper {
-  border-radius: 0;
-  border: var(--kante) solid var(--tinte);
-  background: var(--papier);
-  color: var(--text);
-  box-shadow: 5px 5px 0 rgba(22, 19, 15, 0.85);
+  border-radius: 14px;
+  border: 1px solid var(--linie);
+  box-shadow: 0 18px 44px rgb(24 18 43 / 22%);
 }
-.leaflet-popup-tip { background: var(--papier); border: var(--kante) solid var(--tinte); }
-.leaflet-popup-content { margin: 14px 16px; font-family: var(--font-text); }
+.leaflet-popup-content { margin: 15px 17px; font-family: var(--font); }
 .leaflet-popup-content h3 { margin: 0 0 4px; font-size: 1.05rem; }
-.leaflet-popup-content p { margin: 0 0 8px; font-size: 0.92rem; max-width: 34ch; }
-.leaflet-popup-content a { color: var(--orange-text); font-weight: 800; }
-.leaflet-container a.leaflet-popup-close-button { color: var(--tinte); }
+.leaflet-popup-content p { margin: 0; font-size: 0.92rem; max-width: 32ch; color: var(--grau); }
 
-/* Ortsliste — zugleich die Fassung ohne Karte */
-.orte {
-  list-style: none;
-  margin: 34px 0 0;
-  padding: 0;
-  display: grid;
-  gap: 18px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
+/* Ortskarte unter der Landkarte — zugleich die Fassung ohne Karte */
+.orte { list-style: none; margin: 22px 0 0; padding: 0; display: grid; gap: 16px; }
 .ort {
-  border: var(--kante) solid var(--tinte);
-  border-left-width: 10px;
-  border-left-color: var(--orange);
-  background: var(--papier);
-  color: var(--text);
-  padding: 16px 18px;
-  box-shadow: 4px 4px 0 rgba(22, 19, 15, 0.85);
-}
-.sec--papier2 .ort { background: var(--papier); }
-.sec--petrol .ort, .sec--tinte .ort {
-  border-color: var(--papier);
-  border-left-color: var(--gelb);
-  box-shadow: 4px 4px 0 rgba(251, 247, 240, 0.9);
-}
-.ort h3 { margin: 0 0 2px; font-size: 1.05rem; }
-.ort p { margin: 8px 0 0; font-size: 0.95rem; color: var(--muted); }
-.ort .koord { color: var(--muted); }
-.ort a { font-weight: 800; color: var(--orange-text); }
-
-/* ============================== Reisebericht ============================ */
-.beitrag { max-width: 720px; }
-.beitrag h2 { margin-top: 1.7em; }
-.beitrag h2:first-of-type { margin-top: 0.6em; }
-.beitrag__meta {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px 20px;
-  align-items: center;
-  margin: 0 0 28px;
-  font-family: var(--font-mono);
-  font-size: 0.84rem;
-  letter-spacing: 0.05em;
-  color: var(--smuted, var(--muted));
-}
-.beitrag blockquote {
-  margin: 28px 0;
-  padding: 18px 22px;
-  border: var(--kante) solid var(--tinte);
-  border-left-width: 10px;
-  border-left-color: var(--orange);
-  background: rgba(245, 197, 24, 0.22);
-  font-size: 1.1rem;
-  font-weight: 700;
-  rotate: -0.4deg;
-}
-.tipp {
-  border: var(--kante) solid currentColor;
-  background: rgba(14, 107, 99, 0.08);
+  gap: 16px;
+  align-items: flex-start;
   padding: 20px 22px;
-  margin: 32px 0;
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  background: var(--weiss);
 }
-.tipp h3 { margin: 0 0 8px; }
-.tipp p:last-child { margin-bottom: 0; }
-
-.blaettern {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 14px;
-  margin-top: 44px;
-  padding-top: 24px;
-  border-top: var(--kante) dashed var(--linie);
-}
-
-/* ================================= Shop ================================= */
-.preis { font-family: var(--font-display); font-size: 1.3rem; color: var(--text); }
-.kachel__body .preis { margin-top: 4px; }
-.shop-hinweis {
-  border: var(--kante) solid currentColor;
-  padding: 20px 22px;
-  margin-top: 36px;
-}
-.shop-hinweis p:last-child { margin-bottom: 0; }
-
-/* ================================ Formular ============================== */
-.form { max-width: 640px; margin-top: 32px; display: grid; gap: 18px; }
-.feld { display: grid; gap: 6px; }
-.feld label { font-weight: 700; font-size: 0.95rem; }
-.feld input,
-.feld select,
-.feld textarea {
-  font: inherit;
-  font-size: 1rem;
-  color: var(--text);
-  background: var(--papier);
-  border: var(--kante) solid var(--tinte);
-  border-radius: 0;
-  padding: 12px 14px;
-  min-height: 48px;
-  width: 100%;
-}
-.feld input:focus, .feld select:focus, .feld textarea:focus { background: #fff; }
-.feld textarea { min-height: 150px; resize: vertical; }
-.feld small { color: var(--smuted, var(--muted)); font-size: 0.86rem; }
-.checkzeile { display: flex; gap: 12px; align-items: flex-start; }
-.checkzeile input { width: 22px; height: 22px; min-height: 0; flex: none; margin-top: 3px; accent-color: var(--orange); }
-.checkzeile label { font-weight: 400; font-size: 0.94rem; }
-.form-hinweis {
-  border: var(--kante) solid var(--tinte);
-  background: rgba(245, 197, 24, 0.4);
-  color: var(--tinte);
-  padding: 16px 18px;
-  font-weight: 700;
-  max-width: 640px;
-  box-shadow: var(--schatten);
-}
-
-/* ================================ Footer ================================ */
-.footer {
-  background: var(--tinte);
-  color: var(--papier);
-  padding: clamp(46px, 8vh, 76px) 0 30px;
-  --smuted: var(--muted-invers);
-}
-.footer__grid {
+.ort__marke {
+  flex: none;
   display: grid;
-  gap: 32px;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--violett);
+  color: #fff;
 }
-.footer .logo span { color: var(--orange); }
-.footer h3 {
+.ort__marke svg { width: 24px; height: 24px; }
+.ort h3 { margin: 0 0 2px; }
+.ort p { margin: 6px 0 0; font-size: 0.96rem; color: var(--grau); }
+.ort__start {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--lavendel);
+  color: var(--violett-tief);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  vertical-align: 2px;
+}
+
+/* ================================== Blog ================================ */
+.beitraege { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; }
+.beitrag-karte {
+  display: block;
+  padding: 26px 28px;
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  background: var(--weiss);
+  text-decoration: none;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.beitrag-karte:hover {
+  transform: translateY(-3px);
+  border-color: var(--lila-hell);
+  box-shadow: 0 16px 38px rgb(24 18 43 / 10%);
+}
+.beitrag-karte h3 { margin: 6px 0 8px; font-size: clamp(1.2rem, 2.4vw, 1.6rem); font-weight: 800; letter-spacing: -0.02em; }
+.beitrag-karte p { margin: 0; color: var(--grau); }
+.beitrag-karte__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
   font-family: var(--font-mono);
   font-size: 0.76rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  color: var(--tuerkis-text);
+}
+.beitrag-karte__mehr { display: inline-block; margin-top: 14px; font-weight: 800; color: var(--lila); }
+
+.leer {
+  padding: 30px 28px;
+  border: 1px dashed var(--linie);
+  border-radius: var(--radius);
+  color: var(--grau);
+}
+
+/* ============================== Beitragsseite =========================== */
+.seitenkopf {
+  background:
+    radial-gradient(circle at 20% -20%, rgb(94 234 212 / 20%), transparent 55%),
+    linear-gradient(150deg, var(--violett-tief), var(--tuerkis-tief));
+  color: #fff;
+  padding: clamp(76px, 12vh, 130px) 0 clamp(44px, 7vh, 70px);
+}
+.seitenkopf .kicker { color: var(--mint); }
+.seitenkopf h1 { color: #fff; }
+.seitenkopf .koord { color: rgb(255 255 255 / 72%); }
+
+.artikel { max-width: 680px; }
+.artikel h2 { margin-top: 1.7em; font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; }
+.artikel h2:first-of-type { margin-top: 0.4em; }
+.artikel p { color: var(--grau); }
+.artikel blockquote {
+  margin: 26px 0;
+  padding: 18px 24px;
+  border-left: 4px solid var(--tuerkis);
+  background: var(--grau-hell);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--tinte);
+}
+.artikel blockquote p { margin: 0; color: inherit; }
+
+.zurueck { display: inline-block; margin-top: 40px; font-weight: 800; color: var(--lila); text-decoration: none; }
+.zurueck:hover { text-decoration: underline; }
+
+/* ================================= Footer =============================== */
+.footer {
+  background: var(--tinte);
+  color: rgb(255 255 255 / 80%);
+  padding: clamp(52px, 8vh, 84px) 0 32px;
+}
+.footer__grid { display: grid; gap: 32px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.footer h3 {
+  font-size: 0.74rem;
+  font-weight: 800;
   letter-spacing: 0.2em;
-  color: var(--gelb);
+  text-transform: uppercase;
+  color: var(--mint);
   margin-bottom: 14px;
 }
+.footer .marke { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: -0.02em; color: #fff; font-size: 1.05rem; }
+.footer .marke svg { width: 26px; height: 26px; color: var(--lila-hell); }
 .footer ul { list-style: none; margin: 0; padding: 0; }
 .footer li { margin-bottom: 10px; }
 .footer a { text-decoration: none; }
-.footer a:hover { text-decoration: underline; text-decoration-color: var(--orange); }
-.footer p { color: var(--muted-invers); font-size: 0.95rem; }
+.footer a:hover { text-decoration: underline; text-decoration-color: var(--lila-hell); }
+.footer p { color: rgb(255 255 255 / 64%); font-size: 0.95rem; }
 .footer__unten {
   margin-top: 40px;
   padding-top: 22px;
-  border-top: 1px solid rgba(251, 247, 240, 0.22);
+  border-top: 1px solid rgb(255 255 255 / 14%);
   display: flex;
   flex-wrap: wrap;
   gap: 10px 22px;
-  align-items: center;
   justify-content: space-between;
-  font-size: 0.88rem;
-  color: var(--muted-invers);
+  font-size: 0.86rem;
+  color: rgb(255 255 255 / 56%);
 }
 
-/* ============================ Reveal-Animation ========================== */
-[data-reveal] {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.45s ease, transform 0.45s ease;
+/* ============================ Kopfzeile (Unterseiten) =================== */
+.kopf {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
 }
-[data-reveal].sichtbar { opacity: 1; transform: none; }
+.kopf__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 68px; }
+.kopf a { color: #fff; text-decoration: none; font-weight: 800; letter-spacing: -0.02em; display: flex; align-items: center; gap: 10px; }
+.kopf svg { width: 24px; height: 24px; }
+
+/* ============================ Bewegung aus ============================== */
 @media (prefers-reduced-motion: reduce) {
-  [data-reveal] { opacity: 1; transform: none; transition: none; }
-  .btn, .kachel { transition: none; }
+  .orbit-ring,
+  .orbit-tile,
+  .steigt {
+    animation: none;
+  }
+  .steigt { opacity: 1; transform: none; }
+  .btn, .beitrag-karte { transition: none; }
+}
+
+/* ================================ Schmal ================================ */
+@media (max-width: 640px) {
+  .orbit-scene { inset: -6% -70% 0; }
+  .orbit-plane { inset-block: -4% 15%; transform: rotateX(61deg) translateY(-7%) scale(0.78); }
+  .hero__inhalt { padding-top: 84px; }
+  .ort { flex-direction: column; gap: 12px; }
+  .btn-zeile .btn { width: 100%; }
+  /* Auf dem Handy reicht die Höhe knapp — der Scroll-Hinweis fliegt raus,
+     die Schaltflächen darüber sagen ohnehin, wohin es geht. */
+  .hero__runter { display: none; }
 }

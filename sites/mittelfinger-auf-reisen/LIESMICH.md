@@ -1,122 +1,132 @@
 # Mittelfinger auf Reisen — Website
 
-Statische Website zum Reiseprojekt „Mittelfinger auf Reisen“.
-Kein Build, kein Framework, keine Abhängigkeiten: HTML, CSS und etwas
-JavaScript. Doppelklick auf `index.html` reicht zum Anschauen.
+Statische Website: HTML, CSS, etwas JavaScript. Kein Build, keine
+Abhängigkeiten, kein Framework. `index.html` im Browser öffnen genügt.
 
 > **Ich scheiß drauf. Ich fahr los.**
 > Gegen Konventionen. Für Freiheit.
 
-## Seiten
+## Dateien
 
-| Datei | Inhalt |
+| Datei | Rolle |
 |---|---|
-| `index.html` | Startseite: Hero, Botschaft, Kartenteaser, neueste Abenteuer, Scheiß-drauf-Momente, Mitmachen, nächster Stopp |
-| `karte.html` | Reisekarte mit allen Orten als Pins, darunter dieselben Orte als Liste |
-| `unterwegs.html` | Übersicht aller Reiseberichte |
-| `beitrag-*.html` | einzelne Reiseberichte (drei Beispiele) |
-| `warum-dieser-finger.html` | Entstehungsgeschichte und die Grundregel |
-| `ueber-mich.html` | Über mich |
-| `mitmachen.html` | Einsendeformular und Community-Regeln |
-| `shop.html` | Merch: Aufkleber, Shirt, Aufnäher, kleiner Reisefinger |
-| `kontakt.html` | Kontaktformular, E-Mail, Social Media |
+| `index.html` | die ganze Seite: Auftakt, Karte, Reise-Blog, Entstehungsgeschichte, Fuß |
+| `blog-start-wiesbaden.html` | erster Blogbeitrag |
 | `impressum.html`, `datenschutz.html` | Pflichtseiten |
-| `404.html` | Fehlerseite („Falsch abgebogen“) |
-
-Dazu: `styles.css` (Design-System), `main.js` (Verhalten),
-`orte.js` (**alle Orte**), `fonts/`, `bilder/`.
+| `404.html` | Fehlerseite |
+| `daten.js` | **Orte und Beiträge — die einzige Pflegestelle** |
+| `styles.css` | Design-System und die Orbit-Animation |
+| `main.js` | Animation aufbauen, Karte, Listen |
+| `bilder/` | Fotos, sobald welche da sind |
 
 ## Was du als Erstes machen solltest
 
-1. **Orte pflegen** — `orte.js` ist die einzige Stelle dafür. Karte,
-   Ortsliste und Startseiten-Teaser lesen alle daraus. Oben in der Datei
-   steht, was jedes Feld bedeutet.
-2. **Fotos ergänzen** — siehe `bilder/LIESMICH.md`.
-3. **Impressum und Datenschutz ausfüllen** — beide sind Vorlagen mit
+1. **Impressum und Datenschutz ausfüllen.** Beide sind Vorlagen mit
    `[eckigen Klammern]`. Ohne vollständiges Impressum sollte die Seite in
-   Deutschland nicht online gehen.
-4. **Formulare anschließen** — im HTML steht
-   `data-endpoint="[PLATZHALTER-FORMULAR-ENDPOINT]"` (in `kontakt.html` und
-   `mitmachen.html`). Trag dort die URL deines Formularanbieters ein, z. B.
-   von Formspree. Solange der Platzhalter drinsteht, sagt das Formular
-   ehrlich, dass der Versand noch nicht eingerichtet ist, statt Erfolg
-   vorzutäuschen.
-5. **Beispieltexte ersetzen** — die drei Reiseberichte und einige Absätze
-   sind als Beispiel markiert (oranger Kasten `hinweis-demo`). Wenn deine
-   eigenen Texte drinstehen, den Kasten löschen.
-6. **Platzhalter suchen** — alles, was noch fehlt, ist im Text orange
-   umrandet. Findbar mit:
+   Deutschland nicht online gehen. Das ist keine Rechtsberatung — im Zweifel
+   einmal prüfen lassen.
+2. **Kontaktweg festlegen.** Die Seite verzichtet bewusst auf
+   E-Mail-Adressen und Formulare. Gesetzlich ist trotzdem eine schnelle
+   elektronische Kontaktaufnahme vorgeschrieben; welcher Weg das ist, gehört
+   ins Impressum.
+3. **Social-Media-Profile eintragen**, sobald sie stehen — im Fuß von
+   `index.html` und in den Unterseiten (dort steht bisher nur ein Satz, kein
+   Link).
+4. **Orte und Beiträge ergänzen** — siehe unten.
 
-   ```bash
-   grep -rn "PLATZHALTER\|class=\"ph\"\|hinweis-demo" *.html
-   ```
+## Orte und Beiträge pflegen
 
-## Reisekarte
+Alles steht in `daten.js`, oben in der Datei ist jedes Feld erklärt.
 
-Die Karte nutzt [Leaflet](https://leafletjs.com/) und Kacheln von
-OpenStreetMap. Beides sind fremde Server, die dabei die IP-Adresse der
-Besucher sehen — deshalb lädt die Karte **erst nach einem Klick**, und die
-Entscheidung wird nur lokal im Browser gemerkt. Das ist der Grund, warum das
-etwas umständlicher gebaut ist als nötig: so bleibt die Seite ohne
+**Neuen Ort:** Block kopieren, Name, Land, Koordinaten und Datum eintragen.
+Die Karte setzt den Finger automatisch, die Liste darunter ebenso. `start:
+true` gibt es nur einmal — bei Wiesbaden.
+
+**Neuen Beitrag:** `blog-start-wiesbaden.html` kopieren, umbenennen, Texte
+ersetzen, dann in `daten.js` unter `BEITRAEGE` eintragen. Die Übersicht auf
+der Startseite sortiert nach Datum, das neueste zuerst.
+
+## Die Animation im Auftakt
+
+Drei Ringe aus Icon-Kacheln drehen sich auf einer gekippten Ebene, der
+mittlere gegenläufig. Nach außen werden die Kacheln unschärfer und blasser.
+Die Mechanik stammt aus der Waitlist-Hero-Vorlage (React/Tailwind);
+übernommen ist davon nur das CSS, alles andere ist eigen — die zwölf
+Reise-Icons sind selbst gezeichnete Inline-SVG, keine Icon-Bibliothek und
+kein CDN.
+
+Geschraubt wird an drei Stellen:
+
+- **`RINGE` in `main.js`** — Durchmesser, Umlaufdauer, Unschärfe, Deckkraft,
+  Anzahl der Kacheln je Ring.
+- **`ICONS` und `TOENE` in `main.js`** — welche Symbole und welche Farben.
+- **`.orbit-plane` in `styles.css`** — `rotateX(58deg)` bestimmt, wie stark
+  die Ebene gekippt ist.
+
+Zwei Dinge sehen technisch wie Umwege aus und sind keine: Unschärfe und
+Deckkraft sitzen auf den **Kacheln**, nicht auf dem Ring. Beides macht ein
+Element zur Gruppe und würde die 3D-Ebene einebnen — die Kacheln lägen dann
+flach auf der Scheibe, statt aufrecht zu stehen. Und `.orbit-tile` dreht mit
+`rotateX(-58deg)` die Kippung der Ebene wieder heraus, damit die Icons den
+Betrachter anschauen.
+
+Bei `prefers-reduced-motion: reduce` steht alles still — die Kacheln bleiben
+sichtbar und lesbar, sie bewegen sich nur nicht.
+
+## Die Karte
+
+Leaflet mit Kacheln von OpenStreetMap. Beides sind fremde Server, die dabei
+die IP-Adresse der Besucher sehen — deshalb lädt die Karte **erst nach einem
+Klick**, und die Entscheidung wird nur lokal im Browser gemerkt. Das ist der
+Grund, warum das umständlicher gebaut ist als nötig: so bleibt die Seite ohne
 Einwilligungsbanner sauber.
 
-Wenn die Karte nicht lädt (kein Netz, Blocker), bleiben alle Orte als Liste
+Lädt die Karte nicht (kein Netz, Blocker), bleiben die Orte als Liste
 darunter lesbar. Die Liste ist kein Notbehelf, sondern die barrierefreie
 Fassung derselben Daten.
 
-## Design — „Reise-Zine auf Papier"
+Der Marker ist der Mittelfinger selbst, kein Standard-Pin — gezeichnet in
+`fingerSvg()` in `main.js`, dieselbe Form wie Markenzeichen und Favicon.
 
-Die Seite sieht aus wie ein selbstgemachtes Reiseheft: warmes Papier trägt
-alles, Schwarz ist Druckfarbe statt Hintergrund, Orange und Petrol liegen
-wie zwei Risographie-Durchgänge darüber — die großen Überschriften stehen
-absichtlich einen Hauch neben ihrer zweiten Farbe. Fotos sind mit
-Klebestreifen eingeklebt, Kacheln hängen leicht schief, Schatten sind hart
-und ohne Weichzeichner. Dunkel wird nur der Fuß.
+## Farben und Schrift
 
 | Farbe | Wofür |
 |---|---|
-| Papier `#fbf7f0` / `#f3ebdd` | Grundton, im Wechsel für die Abschnitte |
-| Tinte `#16130f` | Schrift, Konturen, Schatten, Fußbereich |
-| Signalorange `#f2551f` | Schaltflächen, Kartenpins, Fehldruck-Versatz |
-| Orange dunkel `#a83409` | dieselbe Farbe für kleine Schrift (kontraststark) |
-| Petrol `#0e6b63` | Natur-, Reise- und Camper-Abschnitte |
-| Gelb `#f5c518` | Klebeband, Marker, Hinweise, Aufkleber |
+| Weiß `#ffffff` | Grund der ganzen Seite |
+| Tinte `#18122b` | Schrift und Fußbereich, Schwarz mit Violettstich |
+| Violett `#5b21b6` → Türkis `#115e59` | Verlauf im Auftakt |
+| Lila `#7c3aed` | Schaltflächen und Links |
+| Türkis `#0f766e` | zweiter Akzent, kontraststark genug für kleine Schrift |
+| Mint `#5eead4` | Akzent auf dunklem Grund |
 
-Überschriften in **Archivo Black** (liegt in `fonts/`, wird von diesem
-Server ausgeliefert — kein Google Fonts, das erspart ein Datenschutzproblem).
-Handschriftliche Akzente (`class="hand"`) nutzen die Systemschriften; wer
-eine echte Handschrift will, lädt sich z. B. Caveat herunter, legt sie nach
-`fonts/` und ergänzt ein `@font-face` in `styles.css`.
+Systemschriften, eng geführt und fett. Es werden keine Schriften nachgeladen —
+das spart einen Datenschutz-Absatz und eine Ladezeit.
 
-Die vier Abschnittsflächen heißen `sec--papier`, `sec--papier2`,
-`sec--petrol` und `sec--orange` — jede setzt ihre eigenen lokalen Farbtokens,
-Überschriften und Schaltflächen passen sich automatisch an. Ein feines
-Papierkorn liegt als `body::after` über der ganzen Seite.
-
-Alle Kontraste sind gegen WCAG AA geprüft, Tastaturbedienung und
-`prefers-reduced-motion` funktionieren, Schaltflächen sind mindestens 48 px hoch.
+Alle Kontraste sind gegen WCAG AA gerechnet (der niedrigste Wert liegt bei
+4,88 : 1). Tastaturbedienung, Skip-Link und `prefers-reduced-motion`
+funktionieren, Schaltflächen sind mindestens 52 px hoch.
 
 ## Veröffentlichen
 
-Der Ordner ist eine fertige statische Seite — hochladen genügt.
+Der Workflow `.github/workflows/pages.yml` im Repo veröffentlicht genau
+diesen Ordner über GitHub Pages, sobald hier etwas gepusht wird — auf `main`
+und auf dem Arbeits-Branch. Die Adresse steht danach im Actions-Lauf und
+unter Settings → Pages.
 
-- **GitHub Pages:** ist im Repo schon eingerichtet. Der Workflow
-  `.github/workflows/pages.yml` veröffentlicht genau diesen Ordner, sobald
-  hier etwas gepusht wird — auf `main` und auf dem Arbeits-Branch. Die
-  Adresse steht danach im Actions-Lauf und unter Settings → Pages.
-- **Netlify / Cloudflare Pages:** Ordner ins Dashboard ziehen, fertig.
-  Kein Build-Befehl, kein Ausgabeverzeichnis.
-- **Klassischer Webspace:** per FTP hochladen.
+Alternativ: Ordner zu Netlify oder Cloudflare Pages ziehen, kein
+Build-Befehl, kein Ausgabeverzeichnis. Oder klassisch per FTP hochladen.
 
-Lokal ansehen mit Live-Reload-freiem Minimalserver:
+Lokal ansehen:
 
 ```bash
 python3 -m http.server 8080
 ```
 
-## Später
+## Noch offen
 
-Vorgesehen, aber bewusst noch nicht gebaut: Community-Karte für Einsendungen,
-Newsletter, Abstimmung über das nächste Ziel, Video-Tagebuch, eigene Rubrik
-für Stellplätze. Die Struktur ist so angelegt, dass jedes davon eine weitere
-Seite plus ein paar Zeilen in `orte.js` ist.
+- [ ] Impressumsangaben eintragen
+- [ ] Kontaktweg festlegen und ins Impressum schreiben
+- [ ] Datenschutz: Hoster und Datum ergänzen
+- [ ] Social-Media-Profile verlinken
+- [ ] Fotos ergänzen (siehe `bilder/LIESMICH.md`)
+- [ ] weitere Orte und Beiträge in `daten.js`

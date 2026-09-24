@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Skydancer System Services</title>
+<meta name="description" content="Skydancer verbindet Kamera, SmartCamper, Internet, Sicherheit und Autarkie zu einem dokumentierten Fahrzeugkonzept für Ihr Reisemobil. Ein Ansprechpartner. Ein System. Eine geprüfte Übergabe." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230E1A2B'/%3E%3Cpath d='M5 21a11 11 0 0 1 22 0' fill='none' stroke='%23E8DCC8' stroke-width='2'/%3E%3Cellipse cx='16' cy='17' rx='12' ry='5' fill='none' stroke='%23C8733A' stroke-width='1.4' transform='rotate(-18 16 17)'/%3E%3Ccircle cx='26' cy='12' r='2.2' fill='%233FAE7A'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
+<style>
+/* Skydancer — Vorab-Onepager nach KONZEPT.md.
+   Bewusst ein einziger Look (Nachtblau mit Sandflächen), daher keine Dark/Light-Umschaltung:
+   alle Farben sind explizit gesetzt. */
+:root {
+  color-scheme: dark;
+  --nacht: #0E1A2B;
+  --nacht-2: #13233A;
+  --nacht-3: #1B2F4B;
+  --sand: #E8DCC8;
+  --sand-2: #F3ECDF;
+  --kupfer: #C8733A;
+  --kupfer-hell: #DA8A52;
+  --kupfer-dunkel: #8F4A1E;
+  --gruen: #3FAE7A;
+  --text: #E8DCC8;
+  --text-leise: #9DAEC2;
+  --tinte: #16202D;
+  --tinte-leise: #5A6573;
+  --linie: rgba(232, 220, 200, .14);
+  --linie-stark: rgba(232, 220, 200, .32);
+  --linie-sand: rgba(14, 26, 43, .16);
+
+  --f-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --f-text: "IBM Plex Sans", "Segoe UI", Roboto, Arial, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --s-1: clamp(2.6rem, 6.4vw, 5rem);
+  --s-2: clamp(1.9rem, 3.8vw, 2.9rem);
+  --s-3: clamp(1.25rem, 2vw, 1.5rem);
+  --s-body: 1.0625rem;
+  --s-klein: .875rem;
+  --s-label: .75rem;
+
+  --r: 6px;
+  --breite: 1180px;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+body {
+  margin: 0;
+  background: var(--nacht);
+  color: var(--text);
+  font-family: var(--f-text);
+  font-size: var(--s-body);
+  line-height: 1.6;
+  font-variant-numeric: tabular-nums;
+}
+img, svg { max-width: 100%; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--f-display); line-height: 1.08; margin: 0; text-wrap: balance; font-weight: 700; }
+h1 { font-size: var(--s-1); font-stretch: 88%; letter-spacing: -.015em; }
+h2 { font-size: var(--s-2); font-stretch: 92%; letter-spacing: -.01em; }
+h3 { font-size: var(--s-3); font-stretch: 100%; font-weight: 650; }
+p { margin: 0; }
+:focus-visible { outline: 2px solid var(--kupfer-hell); outline-offset: 3px; border-radius: 3px; }
+
+.wrap { max-width: var(--breite); margin-inline: auto; padding-inline: 20px; }
+.label {
+  font-family: var(--f-mono); font-size: var(--s-label); letter-spacing: .12em;
+  text-transform: uppercase; color: var(--text-leise);
+}
+.leise { color: var(--text-leise); }
+.skip { position: absolute; left: -999px; top: 0; }
+.skip:focus { left: 16px; top: 16px; z-index: 100; background: var(--sand); color: var(--nacht); padding: 8px 14px; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5em;
+  font: 600 .95rem/1 var(--f-text); text-decoration: none; cursor: pointer;
+  padding: .95em 1.4em; border-radius: var(--r); border: 1px solid transparent;
+  background: var(--kupfer); color: var(--nacht); transition: background .15s;
+}
+.btn:hover { background: var(--kupfer-hell); }
+.btn--linie { background: transparent; color: var(--text); border-color: var(--linie-stark); }
+.btn--linie:hover { background: rgba(232,220,200,.08); }
+.btn-zeile { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* Platzhalter: Inhalte, die erst mit echten Projekten kommen */
+.ph {
+  display: inline-block; font-family: var(--f-mono); font-size: .72rem; letter-spacing: .06em;
+  text-transform: uppercase; padding: .2em .6em; border: 1px dashed currentColor; border-radius: 3px; opacity: .75;
+}
+
+/* ================= Header ================= */
+.kopf {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: rgba(14, 26, 43, .92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--linie);
+}
+.kopf__innen { display: flex; align-items: center; gap: 24px; min-height: 68px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; margin-right: auto; }
+.logo svg { width: 34px; height: 34px; flex: none; }
+.logo b { font: 750 1.2rem/1 var(--f-display); font-stretch: 110%; letter-spacing: .02em; }
+.nav { display: flex; align-items: center; gap: 22px; }
+.nav a:not(.btn) { text-decoration: none; font-size: .92rem; color: var(--text-leise); }
+.nav a:not(.btn):hover { color: var(--text); }
+.nav .btn { padding: .75em 1.1em; font-size: .88rem; }
+@media (max-width: 960px) { .nav a:not(.btn) { display: none; } }
+@media (max-width: 560px) { .nav { display: none; } }
+
+/* ================= 1 Hero ================= */
+.hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--linie); }
+.hero__himmel { position: absolute; inset: 0; z-index: 0; }
+.hero__himmel svg { width: 100%; height: 100%; display: block; }
+.hero__innen {
+  position: relative; z-index: 1; display: grid; gap: 40px;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); align-items: end;
+  padding-block: clamp(56px, 9vw, 112px) clamp(40px, 6vw, 72px);
+}
+@media (max-width: 880px) { .hero__innen { grid-template-columns: minmax(0, 1fr); } }
+.hero__text { display: grid; gap: 22px; max-width: 40rem; }
+.hero__kern { font-family: var(--f-mono); font-size: .85rem; letter-spacing: .04em; color: var(--sand); display: flex; flex-wrap: wrap; gap: .3em 1.1em; }
+.hero__kern span::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--gruen); margin-right: .55em; vertical-align: .15em; }
+.hero__sub { font-size: 1.15rem; color: var(--text-leise); max-width: 34rem; }
+.einstiege { display: grid; gap: 10px; }
+.einstiege__liste { display: flex; flex-wrap: wrap; gap: 8px; }
+.einstieg {
+  font: 500 .9rem/1 var(--f-text); text-decoration: none; color: var(--sand);
+  padding: .7em 1em; border: 1px solid var(--linie-stark); border-radius: 100px; background: rgba(14,26,43,.5);
+}
+.einstieg:hover { border-color: var(--kupfer); color: var(--kupfer-hell); }
+
+/* Statustafel wie in der SmartCamper-App */
+.tafel {
+  background: rgba(19, 35, 58, .88); border: 1px solid var(--linie-stark); border-radius: 14px;
+  padding: 18px; display: grid; gap: 14px; box-shadow: 0 30px 60px -30px rgba(0,0,0,.6);
+  font-family: var(--f-mono); font-size: .8rem; max-width: 420px; justify-self: end; width: 100%;
+}
+@media (max-width: 880px) { .tafel { justify-self: start; } }
+.tafel__kopf { display: flex; justify-content: space-between; color: var(--text-leise); letter-spacing: .08em; text-transform: uppercase; font-size: .7rem; }
+.tafel__ok { color: var(--gruen); }
+.tafel__raster { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.kachel { border: 1px solid var(--linie); border-radius: 8px; padding: 10px 12px; display: grid; gap: 4px; }
+.kachel dt { color: var(--text-leise); font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; }
+.kachel dd { margin: 0; font-size: 1.15rem; color: var(--sand); }
+.kachel dd small { font-size: .72rem; color: var(--text-leise); }
+.balken { height: 3px; background: var(--linie); border-radius: 2px; overflow: hidden; }
+.balken i { display: block; height: 100%; background: var(--gruen); }
+.tafel__fuss { display: flex; justify-content: space-between; gap: 8px; color: var(--text-leise); font-size: .7rem; border-top: 1px solid var(--linie); padding-top: 10px; }
+.puls { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--gruen); margin-right: 6px; animation: puls 2.4s ease-in-out infinite; }
+@keyframes puls { 50% { opacity: .35; } }
+
+/* ================= 2 Vertrauensleiste ================= */
+.vertrauen { border-bottom: 1px solid var(--linie); background: var(--nacht-2); }
+.vertrauen__innen { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 36px; padding-block: 22px; }
+.marken { display: flex; flex-wrap: wrap; gap: 8px 28px; font: 600 .95rem/1 var(--f-display); font-stretch: 115%; letter-spacing: .08em; color: var(--sand); opacity: .85; }
+.vertrauen__zahlen { display: flex; flex-wrap: wrap; gap: 10px; margin-left: auto; color: var(--text-leise); }
+
+/* ================= Sektionen ================= */
+.sek { padding-block: clamp(72px, 10vw, 128px); }
+.sek--sand { background: var(--sand); color: var(--tinte); }
+.sek--sand .label, .sek--sand .leise { color: var(--tinte-leise); }
+.sek--tief { background: var(--nacht-2); }
+.sek__kopf { display: grid; gap: 16px; max-width: 44rem; margin-bottom: clamp(36px, 5vw, 56px); }
+.sek__kopf p { font-size: 1.1rem; }
+
+/* 3 Problem */
+.problem { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 80px); align-items: start; }
+@media (max-width: 820px) { .problem { grid-template-columns: minmax(0, 1fr); } }
+.chaos { display: grid; gap: 10px; }
+.chaos li {
+  list-style: none; display: grid; grid-template-columns: 7.5rem minmax(0, 1fr) auto; gap: 12px; align-items: baseline;
+  padding: 12px 0; border-bottom: 1px solid var(--linie-sand); font-size: .95rem;
+}
+.chaos ul { margin: 0; padding: 0; }
+.chaos .app { font-family: var(--f-mono); font-size: .78rem; color: var(--tinte-leise); }
+.chaos .wer { font-family: var(--f-mono); font-size: .78rem; color: var(--kupfer-dunkel); text-align: right; }
+@media (max-width: 480px) { .chaos li { grid-template-columns: minmax(0, 1fr); gap: 2px; } .chaos .wer { text-align: left; } }
+.unterschied { display: grid; gap: 22px; }
+.unterschied div { display: grid; gap: 4px; padding-left: 18px; border-left: 2px solid var(--kupfer); }
+.unterschied h3 { font-size: 1.1rem; }
+.unterschied p { color: var(--tinte-leise); font-size: .98rem; }
+
+/* 4 Bausteine */
+.bausteine { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1px; background: var(--linie); border: 1px solid var(--linie); border-radius: 10px; overflow: hidden; }
+.baustein { background: var(--nacht); padding: 26px 22px; display: flex; flex-direction: column; gap: 12px; }
+.baustein svg { width: 36px; height: 36px; color: var(--kupfer); }
+.baustein p { color: var(--text-leise); font-size: .95rem; flex: 1; }
+.baustein .preis { font-family: var(--f-mono); font-size: .8rem; color: var(--sand); border-top: 1px solid var(--linie); padding-top: 12px; }
+.baustein .preis small { display: block; color: var(--text-leise); font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; }
+.baustein a { font-size: .9rem; font-weight: 600; color: var(--kupfer-hell); text-decoration: none; }
+.baustein a:hover { text-decoration: underline; }
+.preishinweis { margin-top: 18px; font-size: var(--s-klein); color: var(--text-leise); }
+
+/* 5 Command Center */
+.cc { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+@media (max-width: 960px) { .cc { grid-template-columns: minmax(0, 1fr); } }
+.fahrzeug { position: relative; border: 1px solid var(--linie); border-radius: 12px; background:
+  linear-gradient(var(--linie) 1px, transparent 1px) 0 0 / 40px 40px,
+  linear-gradient(90deg, var(--linie) 1px, transparent 1px) 0 0 / 40px 40px, var(--nacht); overflow: hidden; }
+.fahrzeug svg { display: block; width: 100%; height: auto; }
+.fahrzeug__masze { position: absolute; left: 14px; top: 12px; font-family: var(--f-mono); font-size: .7rem; color: var(--text-leise); letter-spacing: .06em; }
+.hotspot {
+  position: absolute; transform: translate(-50%, -50%); width: 34px; height: 34px; border-radius: 50%;
+  border: 1.5px solid var(--kupfer); background: rgba(14,26,43,.85); color: var(--sand); cursor: pointer;
+  font: 600 .72rem/1 var(--f-mono); display: grid; place-items: center; padding: 0;
+}
+.hotspot::after { content: ""; position: absolute; inset: -7px; border-radius: 50%; border: 1px solid var(--kupfer); opacity: .5; animation: ring 2.8s ease-out infinite; }
+@keyframes ring { from { transform: scale(.7); opacity: .6; } to { transform: scale(1.4); opacity: 0; } }
+.hotspot[aria-pressed="true"] { background: var(--kupfer); color: var(--nacht); }
+.hotspot[aria-pressed="true"]::after { animation: none; opacity: 0; }
+@media (max-width: 520px) { .hotspot { width: 28px; height: 28px; } }
+.modul-legende { display: flex; flex-wrap: wrap; gap: 6px; padding: 12px 14px; border-top: 1px solid var(--linie); }
+.modul-legende button {
+  font: 500 .8rem/1 var(--f-text); color: var(--text-leise); background: none; cursor: pointer;
+  border: 1px solid var(--linie); border-radius: 100px; padding: .55em .85em;
+}
+.modul-legende button[aria-pressed="true"] { color: var(--sand); border-color: var(--kupfer); }
+.modul { border: 1px solid var(--linie); border-radius: 12px; padding: 24px; display: grid; gap: 14px; background: var(--nacht-2); }
+.modul ul { margin: 0; padding-left: 1.1em; color: var(--text-leise); display: grid; gap: 6px; font-size: .95rem; }
+.modul__status { font-family: var(--f-mono); font-size: .78rem; color: var(--gruen); }
+.cc__paket { margin-top: 24px; display: grid; gap: 14px; border-top: 1px solid var(--linie); padding-top: 22px; }
+.cc__preis { font: 700 clamp(1.7rem, 3vw, 2.2rem)/1 var(--f-display); font-stretch: 95%; color: var(--sand); }
+.cc__preis small { font: 400 .8rem/1.4 var(--f-text); color: var(--text-leise); display: block; margin-top: 6px; }
+
+.leiter { margin-top: clamp(48px, 6vw, 72px); overflow-x: auto; }
+.leiter table { width: 100%; min-width: 640px; border-collapse: collapse; font-size: .92rem; }
+.leiter th, .leiter td { text-align: left; padding: 14px 12px; border-bottom: 1px solid var(--linie); vertical-align: top; }
+.leiter th { font: 500 var(--s-label)/1.3 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--text-leise); }
+.leiter td:nth-child(3) { font-family: var(--f-mono); white-space: nowrap; color: var(--sand); }
+.leiter tr.empfohlen td { background: rgba(200,115,58,.09); }
+.leiter tr.empfohlen td:first-child { box-shadow: inset 2px 0 0 var(--kupfer); }
+.badge { font: 500 .66rem/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; background: var(--kupfer); color: var(--nacht); padding: .35em .55em; border-radius: 3px; margin-left: .5em; vertical-align: .15em; }
+
+/* 6 Ablauf */
+.ablauf { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; counter-reset: schritt; position: relative; }
+@media (max-width: 880px) { .ablauf { grid-template-columns: minmax(0, 1fr); } }
+.schritt { padding: 26px 22px 26px 0; border-top: 2px solid var(--tinte); display: grid; gap: 10px; align-content: start; }
+@media (max-width: 880px) { .schritt { padding-right: 0; } }
+.schritt__nr { font-family: var(--f-mono); font-size: .8rem; color: var(--kupfer-dunkel); letter-spacing: .08em; }
+.schritt p { color: var(--tinte-leise); font-size: .96rem; }
+.schritt .dauer { font-family: var(--f-mono); font-size: .75rem; color: var(--tinte); }
+.ablauf__cta { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+.sek--sand .btn--linie { color: var(--tinte); border-color: rgba(14,26,43,.35); }
+
+/* 7 Referenz */
+.referenz { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 64px); align-items: start; }
+@media (max-width: 880px) { .referenz { grid-template-columns: minmax(0, 1fr); } }
+.story { display: grid; gap: 18px; }
+.story dl { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 10px 16px; margin: 0; }
+.story dt { font-family: var(--f-mono); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--text-leise); padding-top: .2em; }
+.story dd { margin: 0; }
+.zitat { font: 500 1.25rem/1.4 var(--f-display); font-stretch: 95%; color: var(--sand); border-left: 2px solid var(--kupfer); padding-left: 18px; }
+.akte { border: 1px solid var(--linie-stark); border-radius: 10px; background: var(--nacht); font-family: var(--f-mono); font-size: .8rem; overflow: hidden; }
+.akte__kopf { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; padding: 14px 16px; border-bottom: 1px solid var(--linie); color: var(--text-leise); font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; }
+.akte__scroll { overflow-x: auto; }
+.akte table { width: 100%; border-collapse: collapse; min-width: 420px; }
+.akte th, .akte td { text-align: left; padding: 9px 16px; border-bottom: 1px solid var(--linie); }
+.akte th { color: var(--text-leise); font-weight: 400; font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; }
+.akte td.num { text-align: right; }
+.akte th.num { text-align: right; }
+.akte__fuss { padding: 12px 16px; color: var(--text-leise); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+
+/* 8 Konfigurator */
+.konf { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: clamp(32px, 5vw, 72px); align-items: start; }
+@media (max-width: 900px) { .konf { grid-template-columns: minmax(0, 1fr); } }
+.konf__info { display: grid; gap: 18px; }
+.konf__info ol { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; color: var(--tinte-leise); }
+.formular { background: var(--sand-2); border: 1px solid var(--linie-sand); border-radius: 12px; padding: clamp(20px, 3vw, 32px); display: grid; gap: 22px; color: var(--tinte); }
+.fortschritt { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+.fortschritt span { display: grid; gap: 6px; font: 500 .7rem/1.2 var(--f-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--tinte-leise); }
+.fortschritt span::before { content: ""; height: 3px; border-radius: 2px; background: var(--linie-sand); }
+.fortschritt span.fertig::before, .fortschritt span.aktiv::before { background: var(--kupfer); }
+.fortschritt span.aktiv { color: var(--tinte); }
+@media (max-width: 480px) { .fortschritt span { font-size: 0; gap: 0; } }
+fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 16px; min-width: 0; }
+legend { font: 700 1.3rem/1.2 var(--f-display); padding: 0; margin-bottom: 4px; }
+.feld { display: grid; gap: 6px; }
+.feld > label, .feld > .feld__titel { font-size: .85rem; font-weight: 600; }
+.feld small { color: var(--tinte-leise); font-size: .8rem; }
+.feldreihe { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+input[type="text"], input[type="tel"], input[type="number"], select, textarea {
+  font: 400 1rem/1.4 var(--f-text); color: var(--tinte); background: #fff; width: 100%;
+  border: 1px solid rgba(14,26,43,.25); border-radius: var(--r); padding: .7em .8em;
+  color-scheme: light;
+}
+textarea { min-height: 84px; resize: vertical; }
+input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--kupfer); outline-offset: 1px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { position: relative; }
+.chip input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.chip span { display: inline-block; padding: .6em 1em; border: 1px solid rgba(14,26,43,.25); border-radius: 100px; font-size: .9rem; background: #fff; }
+.chip input:checked + span { background: var(--nacht); color: var(--sand); border-color: var(--nacht); }
+.chip input:focus-visible + span { outline: 2px solid var(--kupfer); outline-offset: 2px; }
+.wahl { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px; }
+.wahl label { position: relative; display: grid; gap: 4px; padding: 14px; border: 1px solid rgba(14,26,43,.2); border-radius: 8px; background: #fff; cursor: pointer; font-size: .82rem; color: var(--tinte-leise); }
+.wahl label b { font-size: .95rem; color: var(--tinte); }
+.wahl input { position: absolute; top: 12px; right: 12px; accent-color: var(--kupfer-dunkel); }
+.wahl label:has(input:checked) { border-color: var(--kupfer-dunkel); box-shadow: inset 0 0 0 1px var(--kupfer-dunkel); }
+.check { display: flex; gap: 10px; align-items: flex-start; font-size: .95rem; }
+.check input { margin-top: .3em; accent-color: var(--kupfer-dunkel); }
+.vorschlag { border: 1px dashed rgba(14,26,43,.3); border-radius: 8px; padding: 14px 16px; display: grid; gap: 4px; font-size: .92rem; }
+.vorschlag b { font-family: var(--f-display); font-size: 1.05rem; }
+.vorschlag .spanne { font-family: var(--f-mono); color: var(--kupfer-dunkel); }
+.formular__nav { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; border-top: 1px solid var(--linie-sand); padding-top: 18px; }
+.formular__nav .btn--linie { color: var(--tinte); border-color: rgba(14,26,43,.3); }
+.formular__nav .btn--linie:hover { background: rgba(14,26,43,.06); }
+.fehler { color: #A3341F; font-size: .88rem; }
+.ergebnis { display: grid; gap: 14px; }
+.ergebnis h3 { font-size: 1.4rem; }
+.ergebnis dl { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 8px 14px; margin: 0; font-size: .92rem; }
+.ergebnis dt { color: var(--tinte-leise); }
+.ergebnis dd { margin: 0; }
+.hinweis { font-size: .85rem; color: var(--tinte-leise); background: rgba(14,26,43,.05); border-radius: 6px; padding: 12px 14px; }
+
+/* Footer */
+.fuss { padding-block: 56px 40px; border-top: 1px solid var(--linie); }
+.fuss__raster { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 32px; }
+@media (max-width: 820px) { .fuss__raster { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+@media (max-width: 480px) { .fuss__raster { grid-template-columns: minmax(0, 1fr); } }
+.fuss h3 { font: 500 var(--s-label)/1.3 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--text-leise); margin-bottom: 12px; }
+.fuss p, .fuss li { font-size: .92rem; color: var(--sand); }
+.fuss ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.fuss a { text-decoration: none; color: var(--text-leise); }
+.fuss a:hover { color: var(--sand); }
+.fuss__unten { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--linie); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: .8rem; color: var(--text-leise); }
+
+/* Sticky-CTA mobil */
+.mobil-cta {
+  display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+  background: rgba(14,26,43,.96); border-top: 1px solid var(--linie-stark);
+  gap: 8px;
+}
+.mobil-cta .btn { flex: 1; padding: .9em .6em; font-size: .9rem; }
+@media (max-width: 720px) {
+  .mobil-cta { display: flex; }
+  body { padding-bottom: 76px; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+
+<!-- Fahrzeug als wiederverwendbares Symbol: Teilintegrierter, Seitenansicht, 800 × 340 -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="mobil" viewBox="0 0 800 340">
+      <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+        <path d="M80 262 L80 212 Q82 190 104 184 L160 170 L214 112 Q222 100 242 98 L698 98 Q722 98 722 122 L722 262 Z" fill="var(--rumpf, #16273F)" />
+        <path d="M168 166 L218 116 L262 116 L262 166 Z" />
+        <rect x="330" y="128" width="96" height="48" rx="6" />
+        <rect x="556" y="128" width="92" height="44" rx="6" />
+        <rect x="462" y="124" width="54" height="130" rx="4" />
+        <path d="M80 228 L722 228" stroke-opacity=".45" />
+        <path d="M300 88 h120 v10 h-120 z M440 88 h120 v10 h-120 z" />
+        <path d="M596 98 v-6 h64 v6" />
+        <rect x="604" y="82" width="48" height="10" rx="3" />
+        <path d="M104 184 L92 168" /><rect x="84" y="156" width="14" height="14" rx="2" />
+        <rect x="714" y="104" width="12" height="10" rx="2" />
+        <rect x="376" y="262" width="92" height="16" rx="2" />
+        <path d="M148 262 v26 M700 262 v26" stroke-width="3" />
+        <path d="M138 290 h20 M690 290 h20" stroke-width="2" />
+      </g>
+      <g fill="var(--rumpf-rad, #0E1A2B)" stroke="currentColor" stroke-width="1.6">
+        <circle cx="206" cy="262" r="30" /><circle cx="206" cy="262" r="12" />
+        <circle cx="610" cy="262" r="30" /><circle cx="610" cy="262" r="12" />
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="kopf">
+  <div class="wrap kopf__innen">
+    <a class="logo" href="#top" aria-label="Skydancer, zum Seitenanfang">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#13233A"/><path d="M5 21a11 11 0 0 1 22 0" fill="none" stroke="#E8DCC8" stroke-width="1.8"/><ellipse cx="16" cy="17" rx="12" ry="5" fill="none" stroke="#C8733A" stroke-width="1.3" transform="rotate(-18 16 17)"/><circle cx="26" cy="12" r="2.2" fill="#3FAE7A"/></svg>
+      <b>SKYDANCER</b>
+    </a>
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="#bausteine">Leistungen</a>
+      <a href="#pakete">Pakete</a>
+      <a href="#ablauf">Ablauf &amp; Qualität</a>
+      <a href="#ueber">Über Skydancer</a>
+      <a href="#technik-check">Kontakt</a>
+      <a class="btn" href="#technik-check">Technik-Check buchen</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inhalt">
+
+<!-- ================= 1 HERO ================= -->
+<section class="hero" id="top">
+  <div class="hero__himmel" aria-hidden="true">
+    <!-- Platzhalter für das Hero-Video (Reisemobil zur blauen Stunde). Bis zum Fotoshooting: gezeichnete Szene. -->
+    <svg viewBox="0 0 1440 720" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <linearGradient id="dämmerung" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#0E1A2B" />
+          <stop offset=".55" stop-color="#1B2F4B" />
+          <stop offset=".82" stop-color="#4A4A5C" />
+          <stop offset="1" stop-color="#8A5A3E" />
+        </linearGradient>
+      </defs>
+      <rect width="1440" height="720" fill="url(#dämmerung)" />
+      <g fill="#E8DCC8" opacity=".55">
+        <circle cx="180" cy="90" r="1.2"/><circle cx="420" cy="60" r="1"/><circle cx="640" cy="130" r="1.4"/><circle cx="900" cy="70" r="1"/><circle cx="1120" cy="110" r="1.3"/><circle cx="1320" cy="50" r="1"/><circle cx="300" cy="190" r="1"/><circle cx="1010" cy="200" r="1"/>
+      </g>
+      <path d="M-40 250 Q720 120 1480 250" fill="none" stroke="#C8733A" stroke-opacity=".35" stroke-dasharray="3 7" />
+      <circle cx="1180" cy="196" r="4" fill="#3FAE7A" />
+      <path d="M0 610 L140 540 L260 580 L420 500 L560 570 L700 520 L860 590 L1010 510 L1180 575 L1300 530 L1440 580 L1440 720 L0 720 Z" fill="#0B1522" />
+      <path d="M0 650 L1440 650 L1440 720 L0 720 Z" fill="#08111C" />
+      <g style="color:#E8DCC8; --rumpf:#0F1D30; --rumpf-rad:#08111C" opacity=".9">
+        <use href="#mobil" x="760" y="408" width="560" height="238" />
+      </g>
+      <rect x="1040" y="498" width="44" height="22" rx="4" fill="#DA8A52" opacity=".55" />
+    </svg>
+  </div>
+
+  <div class="wrap hero__innen">
+    <div class="hero__text">
+      <p class="hero__kern"><span>Ein Ansprechpartner.</span><span>Ein System.</span><span>Eine geprüfte Übergabe.</span></p>
+      <h1>Ihr Reisemobil. Als ein System gedacht.</h1>
+      <p class="hero__sub">Kamera, Steuerung, Internet, Sicherheit und Autarkie aus einer Hand geplant, eingebaut und dokumentiert. Sie bedienen alles über eine App und erhalten bei der Übergabe die vollständige Fahrzeugakte.</p>
+      <div class="btn-zeile">
+        <a class="btn" href="#technik-check">Technik-Check buchen</a>
+        <a class="btn btn--linie" href="#command-center">Command Center ansehen</a>
+      </div>
+      <div class="einstiege">
+        <span class="label">Ihr Einstieg</span>
+        <div class="einstiege__liste">
+          <a class="einstieg" href="#technik-check" data-preset="autarkie,smart,security">Autark reisen</a>
+          <a class="einstieg" href="#technik-check" data-preset="internet,smart">Unterwegs arbeiten</a>
+          <a class="einstieg" href="#technik-check" data-preset="kamera,security">Sicher unterwegs</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tafel" role="img" aria-label="Beispielanzeige der SmartCamper-App: Batterie 87 Prozent, Solar 412 Watt, Frischwasser 64 Prozent, Innentemperatur 21,5 Grad, Internet über Starlink, Alarm scharf.">
+      <div class="tafel__kopf"><span>Systemstatus</span><span class="tafel__ok"><span class="puls"></span>Alle Systeme OK</span></div>
+      <dl class="tafel__raster">
+        <div class="kachel"><dt>Batterie</dt><dd>87 <small>%</small></dd><div class="balken"><i style="width:87%"></i></div></div>
+        <div class="kachel"><dt>Solar</dt><dd>412 <small>W</small></dd><div class="balken"><i style="width:69%"></i></div></div>
+        <div class="kachel"><dt>Frischwasser</dt><dd>64 <small>%</small></dd><div class="balken"><i style="width:64%"></i></div></div>
+        <div class="kachel"><dt>Innen</dt><dd>21,5 <small>°C</small></dd><div class="balken"><i style="width:55%"></i></div></div>
+        <div class="kachel"><dt>Internet</dt><dd>Starlink</dd><small style="color:var(--text-leise)">5G bereit als Failover</small></div>
+        <div class="kachel"><dt>Alarm</dt><dd>Scharf</dd><small style="color:var(--text-leise)">GPS · Geofence 200 m</small></div>
+      </dl>
+      <div class="tafel__fuss"><span>Beispielanzeige</span><span>Hubstützen eingefahren · 0,4° Neigung</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 2 VERTRAUENSLEISTE ================= -->
+<section class="vertrauen" aria-label="Systeme und Nachweise">
+  <div class="wrap vertrauen__innen">
+    <span class="label">Systeme, die wir integrieren</span>
+    <div class="marken"><span>VICTRON</span><span>THITRONIK</span><span>REVOTION</span><span>TRUMA</span><span>DOMETIC</span><span>STARLINK</span></div>
+    <div class="vertrauen__zahlen">
+      <span class="ph">Zertifizierungen folgen</span>
+      <span class="ph">Anzahl Projekte ab Pilotphase</span>
+      <span class="ph">Google-Bewertung folgt</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3 PROBLEM ================= -->
+<section class="sek sek--sand" aria-labelledby="problem-titel">
+  <div class="wrap problem">
+    <div class="chaos">
+      <p class="label">Klassische Einzelnachrüstung</p>
+      <h2 id="problem-titel">Fünf Geräte, fünf Apps, drei Werkstätten.</h2>
+      <ul>
+        <li><b>Rückfahrkamera</b><span class="app">eigener Monitor</span><span class="wer">Werkstatt A</span></li>
+        <li><b>Batterie &amp; Solar</b><span class="app">App 1 · Bluetooth</span><span class="wer">Werkstatt A</span></li>
+        <li><b>Heizung &amp; Klima</b><span class="app">App 2 · Bedienteil</span><span class="wer">Händler</span></li>
+        <li><b>Router</b><span class="app">App 3 · Weboberfläche</span><span class="wer">selbst verbaut</span></li>
+        <li><b>Alarm &amp; GPS</b><span class="app">App 4 · SMS</span><span class="wer">Werkstatt B</span></li>
+      </ul>
+      <p class="leise" style="font-size:.95rem">Niemand kennt das Gesamtsystem. Wenn etwas ausfällt, gibt es keinen Schaltplan und keinen Ansprechpartner.</p>
+    </div>
+    <div class="unterschied">
+      <p class="label">So arbeitet Skydancer</p>
+      <div><h3>Planung vor Einbau</h3><p>Aufmaß, Energiebilanz, Zuladungsrechnung und Pflichtenheft, bevor wir Ihnen einen Festpreis nennen.</p></div>
+      <div><h3>Vernetzung statt Insellösungen</h3><p>Eine Bedienlogik für Licht, Tanks, Klima, Batterie und Sicherheit.</p></div>
+      <div><h3>Digitale Fahrzeugakte</h3><p>Schaltplan, Sicherungsliste, Fotos, Seriennummern und Gewichte bei jeder Übergabe.</p></div>
+      <div><h3>Betreuung danach</h3><p>Zwölf Monate System-Support inklusive. Optional Connected Care für 490–790 € pro Jahr.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4 FÜNF BAUSTEINE ================= -->
+<section class="sek" id="bausteine" aria-labelledby="bausteine-titel">
+  <div class="wrap">
+    <div class="sek__kopf">
+      <p class="label">Leistungen</p>
+      <h2 id="bausteine-titel">Fünf Bausteine, ein Bedienkonzept.</h2>
+      <p class="leise">Jeder Baustein funktioniert für sich. Gemeinsam geplant greifen sie ineinander: Der Alarm meldet sich über das Internet, die Kamera zeigt Ihnen das Bild dazu, und die Batterie hält beides am Laufen.</p>
+    </div>
+    <div class="bausteine">
+      <article class="baustein">
+        <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="10" width="20" height="16" rx="3"/><path d="M24 15l8-4v14l-8-4"/><circle cx="14" cy="18" r="4"/></svg>
+        <h3>Kamera &amp; Sicht</h3>
+        <p>Sie sehen jeden Zentimeter beim Rangieren: digitaler Innenspiegel, Außenspiegel-Ersatz oder 360-Grad-Rundumsicht (Birdview).</p>
+        <div class="preis"><small>Enthalten in</small>Vision &amp; Security · 9.500–13.500 €</div>
+        <a href="#technik-check" data-preset="kamera">Zur Leistung →</a>
+      </article>
+      <article class="baustein">
+        <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="8" y="4" width="20" height="28" rx="3"/><path d="M13 12h10M13 17h10M13 22h6"/><circle cx="18" cy="28" r="1" fill="currentColor"/></svg>
+        <h3>SmartCamper</h3>
+        <p>Licht, Tanks, Heizung, Klima und Batterie auf einem Bildschirm, auch von unterwegs. Truma, Dometic und Victron eingebunden.</p>
+        <div class="preis"><small>Enthalten in</small>Touring Connected · 8.900–14.900 €</div>
+        <a href="#technik-check" data-preset="smart">Zur Leistung →</a>
+      </article>
+      <article class="baustein">
+        <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 26a14 14 0 0 1 14-14"/><path d="M6 20a8 8 0 0 1 8-8"/><path d="M8 30l6-6 4 4 12-12"/><circle cx="30" cy="16" r="2"/></svg>
+        <h3>Internet Pro</h3>
+        <p>Starlink und 5G-Router mit automatischer Umschaltung (Failover). Ihr Videocall läuft weiter, wenn ein Netz wegbricht.</p>
+        <div class="preis"><small>Preisrahmen</small>3.500–5.900 €</div>
+        <a href="#technik-check" data-preset="internet">Zur Leistung →</a>
+      </article>
+      <article class="baustein">
+        <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M18 4l12 5v8c0 8-5 13-12 15C11 30 6 25 6 17V9z"/><path d="M13 18l4 4 7-8"/></svg>
+        <h3>Security &amp; Recovery</h3>
+        <p>Alarmanlage, GPS-Ortung, Geofencing und Gefahrenmelder. Sie erfahren sofort, wenn sich jemand an Ihrem Fahrzeug zu schaffen macht.</p>
+        <div class="preis"><small>Enthalten in</small>Vision &amp; Security · 9.500–13.500 €</div>
+        <a href="#technik-check" data-preset="security">Zur Leistung →</a>
+      </article>
+      <article class="baustein">
+        <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="18" cy="12" r="5"/><path d="M18 2v3M18 19v3M8 12H5M31 12h-3M11 5l2 2M25 5l-2 2"/><rect x="8" y="24" width="20" height="9" rx="2"/><path d="M28 27h2v3h-2M13 28.5h6"/></svg>
+        <h3>Autarkie &amp; Komfort</h3>
+        <p>Lithium, Solar, Hubstützen, Luftfederung, Klima, Toilette und Trinkwasser, abgestimmt auf Ihre Energiebilanz und Zuladung.</p>
+        <div class="preis"><small>Enthalten in</small>Expedition Signature · 31.900–44.900 €</div>
+        <a href="#technik-check" data-preset="autarkie">Zur Leistung →</a>
+      </article>
+    </div>
+    <p class="preishinweis">Alle Beträge sind Preisrahmen als Brutto-Endpreise inkl. MwSt. Den Festpreis erhalten Sie nach dem Technik-Check.</p>
+  </div>
+</section>
+
+<!-- ================= 5 COMMAND CENTER ================= -->
+<section class="sek sek--tief" id="command-center" aria-labelledby="cc-titel">
+  <div class="wrap">
+    <div class="sek__kopf">
+      <p class="label">Paket · Empfohlen</p>
+      <h2 id="cc-titel">Command Center: alle Systeme, eine Oberfläche.</h2>
+      <p class="leise">Tippen Sie auf einen Punkt am Fahrzeug, um zu sehen, was dort verbaut wird und wie es mit dem Rest zusammenarbeitet.</p>
+    </div>
+
+    <div class="cc">
+      <div class="fahrzeug">
+        <span class="fahrzeug__masze">TEILINTEGRIERT · 7,40 m · 3,5 t</span>
+        <svg viewBox="0 0 800 340" role="img" aria-label="Seitenansicht eines teilintegrierten Reisemobils mit markierten Einbaupunkten" style="color:#E8DCC8; --rumpf:#16273F">
+          <use href="#mobil" />
+          <path d="M0 292 H800" stroke="#E8DCC8" stroke-opacity=".3" stroke-dasharray="4 6" />
+        </svg>
+        <button class="hotspot" style="left:11.5%; top:48%" data-modul="kamera" aria-pressed="false" aria-label="Kamera und Sicht">01</button>
+        <button class="hotspot" style="left:47%; top:45%" data-modul="smart" aria-pressed="true" aria-label="SmartCamper">02</button>
+        <button class="hotspot" style="left:78.5%; top:22%" data-modul="internet" aria-pressed="false" aria-label="Internet Pro">03</button>
+        <button class="hotspot" style="left:60.5%; top:56%" data-modul="security" aria-pressed="false" aria-label="Security und Recovery">04</button>
+        <button class="hotspot" style="left:52.5%; top:80%" data-modul="autarkie" aria-pressed="false" aria-label="Autarkie und Komfort">05</button>
+        <div class="modul-legende" role="group" aria-label="Module">
+          <button data-modul="kamera" aria-pressed="false">01 Kamera</button>
+          <button data-modul="smart" aria-pressed="true">02 SmartCamper</button>
+          <button data-modul="internet" aria-pressed="false">03 Internet</button>
+          <button data-modul="security" aria-pressed="false">04 Security</button>
+          <button data-modul="autarkie" aria-pressed="false">05 Autarkie</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="modul" aria-live="polite">
+          <p class="modul__status" id="modul-status">● Zentrale · Tablet im Wohnraum</p>
+          <h3 id="modul-titel">SmartCamper</h3>
+          <p class="leise" id="modul-text">Ein Tablet im Wohnraum und die App auf Ihrem Telefon zeigen alle Werte an einer Stelle. Sensoren für Tanks, Gas und Temperatur melden sich, bevor etwas knapp wird.</p>
+          <ul id="modul-liste">
+            <li>Zentrale Steuerung mit Wandtablet und App</li>
+            <li>Einbindung von Truma, Dometic und Victron</li>
+            <li>Füllstand-, Gas- und Temperatursensoren</li>
+          </ul>
+        </div>
+        <div class="cc__paket">
+          <p class="cc__preis">19.900–27.900 €<small>Paketpreis als Preisrahmen, brutto. Festpreis nach Technik-Check.</small></p>
+          <p class="leise" style="font-size:.95rem">Enthalten: Kamera &amp; Sicht, SmartCamper, Internet Pro, Security &amp; Recovery, digitale Fahrzeugakte und zwölf Monate System-Support.</p>
+          <div class="btn-zeile"><a class="btn" href="#technik-check" data-preset="kamera,smart,internet,security">Beratung anfragen</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="leiter" id="pakete">
+      <table>
+        <caption class="label" style="text-align:left; padding-bottom:12px">Angebotsleiter</caption>
+        <thead><tr><th scope="col">Paket</th><th scope="col">Für wen</th><th scope="col">Preisrahmen</th><th scope="col">Schwerpunkt</th></tr></thead>
+        <tbody>
+          <tr><td><b>Touring Connected</b></td><td>Wer remote aus dem Fahrzeug arbeitet</td><td>8.900–14.900 €</td><td>Stabiles Internet, Fernzugriff, Energie für Arbeitsgeräte</td></tr>
+          <tr><td><b>Vision &amp; Security</b></td><td>Neues, hochwertiges Reisemobil</td><td>9.500–13.500 €</td><td>Kamera, Alarm, Ortung</td></tr>
+          <tr class="empfohlen"><td><b>Command Center</b><span class="badge">Empfohlen</span></td><td>Wer alles auf einer Oberfläche will</td><td>19.900–27.900 €</td><td>Alle vier digitalen Bausteine vernetzt</td></tr>
+          <tr><td><b>Expedition Signature</b></td><td>Langzeitreisende, mehrere Monate pro Jahr</td><td>31.900–44.900 €</td><td>Command Center plus Autarkie &amp; Komfort</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6 SO ARBEITEN WIR ================= -->
+<section class="sek sek--sand" id="ablauf" aria-labelledby="ablauf-titel">
+  <div class="wrap">
+    <div class="sek__kopf">
+      <p class="label">Ablauf &amp; Qualität</p>
+      <h2 id="ablauf-titel">Erst planen, dann einbauen.</h2>
+      <p class="leise">Sie kennen den Festpreis, bevor wir das erste Kabel ziehen. Jeder Meilenstein wird abgenommen.</p>
+    </div>
+    <ol class="ablauf" style="list-style:none; margin:0; padding:0">
+      <li class="schritt"><span class="schritt__nr">Schritt 1</span><h3>Vorgespräch</h3><p>Wir rufen Sie zurück und klären in 15 Minuten, was Ihr Fahrzeug kann und was Sie brauchen.</p><span class="dauer">15 Min. · kostenlos</span></li>
+      <li class="schritt"><span class="schritt__nr">Schritt 2</span><h3>Technik-Check</h3><p>Aufmaß am Fahrzeug, Prüfung der vorhandenen Elektrik, Energiebilanz und Zuladungsrechnung.</p><span class="dauer">In der Werkstatt · <span class="ph">Preis folgt</span> · anrechenbar</span></li>
+      <li class="schritt"><span class="schritt__nr">Schritt 3</span><h3>Pflichtenheft</h3><p>Sie erhalten eine schriftliche Planung mit allen Komponenten, Gewichten und dem Festpreis.</p><span class="dauer">Festpreis</span></li>
+      <li class="schritt"><span class="schritt__nr">Schritt 4</span><h3>Einbau &amp; Übergabe</h3><p>Einbau mit Meilensteinabnahme, Einweisung am Fahrzeug und Übergabe der digitalen Fahrzeugakte.</p><span class="dauer">inkl. 12 Monate Support</span></li>
+    </ol>
+    <div class="ablauf__cta">
+      <a class="btn" href="#technik-check">Technik-Check buchen</a>
+      <span class="leise" style="font-size:.9rem">Der Technik-Check wird auf Ihren Auftrag angerechnet.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 7 REFERENZ ================= -->
+<section class="sek" id="referenz" aria-labelledby="ref-titel">
+  <div class="wrap">
+    <div class="sek__kopf">
+      <p class="label">Referenz · <span class="ph">Muster bis zum ersten Pilotprojekt</span></p>
+      <h2 id="ref-titel">Ein Liner, drei Monate Norwegen, kein Landstrom.</h2>
+    </div>
+    <div class="referenz">
+      <div class="story">
+        <dl>
+          <dt>Fahrzeug</dt><dd>Liner, 8,6 m, 7,49 t zulässiges Gesamtgewicht</dd>
+          <dt>Wunsch</dt><dd>Wochenlang frei stehen, im Winter heizen, das Fahrzeug aus der Ferne im Blick behalten.</dd>
+          <dt>Lösung</dt><dd>Expedition Signature: Lithium mit Solar, Starlink mit 5G-Failover, Alarm mit GPS und eine Oberfläche für alles.</dd>
+        </dl>
+        <p class="zitat">Zitat der Kundin oder des Kunden, nach schriftlicher Freigabe.</p>
+        <p class="leise" style="font-size:.9rem">Fotos und Kennzeichen zeigen wir nur mit schriftlicher Freigabe.</p>
+        <div class="btn-zeile"><a class="btn btn--linie" href="#referenz">Alle Projekte</a></div>
+      </div>
+      <figure class="akte" style="margin:0">
+        <div class="akte__kopf"><span>Digitale Fahrzeugakte · Auszug</span><span>Sicherungsliste 12 V</span></div>
+        <div class="akte__scroll">
+          <table>
+            <thead><tr><th>Pos.</th><th>Verbraucher</th><th class="num">Sicherung</th><th class="num">Querschnitt</th></tr></thead>
+            <tbody>
+              <tr><td>F01</td><td>Starlink-Netzteil</td><td class="num">15 A</td><td class="num">4 mm²</td></tr>
+              <tr><td>F02</td><td>5G-Router</td><td class="num">5 A</td><td class="num">1,5 mm²</td></tr>
+              <tr><td>F03</td><td>SmartCamper-Zentrale</td><td class="num">5 A</td><td class="num">1,5 mm²</td></tr>
+              <tr><td>F04</td><td>Alarmzentrale</td><td class="num">3 A</td><td class="num">1,5 mm²</td></tr>
+              <tr><td>F05</td><td>Kamera-Steuergerät</td><td class="num">7,5 A</td><td class="num">2,5 mm²</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figcaption class="akte__fuss"><span>Mehrgewicht Einbau: 86,4 kg</span><span>Resterzuladung: 612 kg</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 8 ABSCHLUSS: ANFRAGE-KONFIGURATOR ================= -->
+<section class="sek sek--sand" id="technik-check" aria-labelledby="konf-titel">
+  <div class="wrap konf">
+    <div class="konf__info">
+      <p class="label">Kontakt · Technik-Check</p>
+      <h2 id="konf-titel">In vier Schritten zum Rückruf.</h2>
+      <p class="leise">Erzählen Sie uns kurz von Ihrem Fahrzeug und Ihren Wünschen. Am Ende sehen Sie eine unverbindliche Preisspanne, und wir rufen Sie zu Ihrer Wunschzeit an.</p>
+      <ol>
+        <li>Fahrzeug</li>
+        <li>Wünsche</li>
+        <li>Nutzung</li>
+        <li>Kontakt</li>
+      </ol>
+      <p class="leise" style="font-size:.9rem">Rückruf statt Chatbot: Sie sprechen direkt mit der Person, die Ihr Fahrzeug plant.</p>
+    </div>
+
+    <form class="formular" id="konfigurator" novalidate>
+      <div class="fortschritt" aria-hidden="true">
+        <span class="aktiv">Fahrzeug</span><span>Wünsche</span><span>Nutzung</span><span>Kontakt</span>
+      </div>
+      <p class="label" id="schritt-anzeige" aria-live="polite">Schritt 1 von 4</p>
+
+      <fieldset data-schritt="1">
+        <legend>Ihr Fahrzeug</legend>
+        <div class="feld">
+          <span class="feld__titel" id="typ-titel">Fahrzeugtyp</span>
+          <div class="chips" role="radiogroup" aria-labelledby="typ-titel">
+            <label class="chip"><input type="radio" name="typ" id="typ-kasten" value="Kastenwagen" /><span>Kastenwagen</span></label>
+            <label class="chip"><input type="radio" name="typ" id="typ-teil" value="Teilintegriert" checked /><span>Teilintegriert</span></label>
+            <label class="chip"><input type="radio" name="typ" id="typ-int" value="Integriert" /><span>Integriert</span></label>
+            <label class="chip"><input type="radio" name="typ" id="typ-liner" value="Liner" /><span>Liner</span></label>
+          </div>
+        </div>
+        <div class="feldreihe">
+          <div class="feld"><label for="hersteller">Hersteller</label><input type="text" id="hersteller" name="hersteller" placeholder="z. B. Hymer" autocomplete="off" /></div>
+          <div class="feld"><label for="baujahr">Baujahr</label><input type="number" id="baujahr" name="baujahr" inputmode="numeric" min="1990" max="2027" placeholder="2024" /></div>
+        </div>
+        <div class="feldreihe">
+          <div class="feld"><label for="laenge">Länge in m</label><input type="text" id="laenge" name="laenge" inputmode="decimal" placeholder="7,40" /></div>
+          <div class="feld"><label for="zgg">Zulässiges Gesamtgewicht</label>
+            <select id="zgg" name="zgg"><option>bis 3,5 t</option><option>bis 4,25 t</option><option>bis 5,5 t</option><option>bis 7,5 t</option><option>über 7,5 t</option><option>weiß ich nicht</option></select>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset data-schritt="2" hidden>
+        <legend>Ihre Wünsche</legend>
+        <p class="leise" style="font-size:.92rem">Wählen Sie alle Bausteine, die Sie interessieren.</p>
+        <div class="wahl">
+          <label for="b-kamera"><input type="checkbox" id="b-kamera" name="baustein" value="kamera" /><b>Kamera &amp; Sicht</b>Innenspiegel, Außenspiegel-Ersatz, 360°</label>
+          <label for="b-smart"><input type="checkbox" id="b-smart" name="baustein" value="smart" /><b>SmartCamper</b>Eine App für alles</label>
+          <label for="b-internet"><input type="checkbox" id="b-internet" name="baustein" value="internet" /><b>Internet Pro</b>Starlink, 5G, Failover</label>
+          <label for="b-security"><input type="checkbox" id="b-security" name="baustein" value="security" /><b>Security &amp; Recovery</b>Alarm, GPS, Geofencing</label>
+          <label for="b-autarkie"><input type="checkbox" id="b-autarkie" name="baustein" value="autarkie" /><b>Autarkie &amp; Komfort</b>Lithium, Solar, Hubstützen</label>
+        </div>
+        <div class="vorschlag" id="vorschlag" aria-live="polite">
+          <span class="label">Passender Vorschlag</span>
+          <b id="vorschlag-name">Wählen Sie mindestens einen Baustein</b>
+          <span class="spanne" id="vorschlag-spanne"></span>
+        </div>
+      </fieldset>
+
+      <fieldset data-schritt="3" hidden>
+        <legend>So nutzen Sie Ihr Fahrzeug</legend>
+        <div class="feld"><label for="dauer">Reisedauer pro Jahr</label>
+          <select id="dauer" name="dauer"><option>bis 4 Wochen</option><option selected>1 bis 3 Monate</option><option>3 bis 6 Monate</option><option>mehr als 6 Monate</option></select>
+        </div>
+        <label class="check" for="winter"><input type="checkbox" id="winter" name="winter" /> Ich campe auch im Winter</label>
+        <label class="check" for="arbeit"><input type="checkbox" id="arbeit" name="arbeit" /> Ich arbeite unterwegs aus dem Fahrzeug</label>
+        <div class="feld"><label for="vorhanden">Vorhandene Technik</label><textarea id="vorhanden" name="vorhanden" placeholder="z. B. 2 × 100 Ah AGM, 200 W Solar, Truma Combi 6"></textarea></div>
+      </fieldset>
+
+      <fieldset data-schritt="4" hidden>
+        <legend>Ihr Rückruf</legend>
+        <div class="feldreihe">
+          <div class="feld"><label for="name">Name</label><input type="text" id="name" name="name" autocomplete="name" required /></div>
+          <div class="feld"><label for="telefon">Telefon</label><input type="tel" id="telefon" name="telefon" autocomplete="tel" required /></div>
+        </div>
+        <div class="feld"><label for="zeit">Wunschzeit für den Rückruf</label>
+          <select id="zeit" name="zeit"><option>Vormittags (9–12 Uhr)</option><option>Mittags (12–14 Uhr)</option><option>Nachmittags (14–17 Uhr)</option><option>Abends (17–19 Uhr)</option></select>
+        </div>
+        <div class="feld"><label for="fotos">Fotos von Elektrik und Zuladungsschild <small>(optional)</small></label><input type="file" id="fotos" name="fotos" accept="image/*" multiple /></div>
+        <p class="fehler" id="fehler" hidden></p>
+      </fieldset>
+
+      <div class="ergebnis" id="ergebnis" hidden tabindex="-1">
+        <p class="label">Anfrage vorbereitet</p>
+        <h3 id="ergebnis-titel">Danke.</h3>
+        <dl id="ergebnis-liste"></dl>
+        <p class="hinweis">Die Preisspanne ist unverbindlich. Den Festpreis erhalten Sie nach dem Technik-Check.</p>
+        <p class="hinweis"><b>Vorschau:</b> Diese Seite überträgt noch keine Daten. Die Anbindung an CRM und Terminbuchung folgt zum Launch.</p>
+      </div>
+
+      <div class="formular__nav">
+        <button type="button" class="btn btn--linie" id="zurueck" hidden>Zurück</button>
+        <button type="button" class="btn" id="weiter" style="margin-left:auto">Weiter</button>
+        <button type="submit" class="btn" id="absenden" hidden style="margin-left:auto">Rückruf anfordern</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="fuss" id="ueber">
+  <div class="wrap">
+    <div class="fuss__raster">
+      <div>
+        <h3>Skydancer System Services</h3>
+        <p>Premium-Nachrüstung für Reisemobile. Geplant, eingebaut und dokumentiert von einem Team, das Ihr Fahrzeug als Ganzes sieht.</p>
+      </div>
+      <div>
+        <h3>Werkstatt</h3>
+        <p><span class="ph">Adresse folgt</span></p>
+        <p class="leise" style="margin-top:8px; font-size:.85rem">Karte und Anfahrt zum Launch</p>
+      </div>
+      <div>
+        <h3>Öffnungszeiten</h3>
+        <p><span class="ph">folgen</span></p>
+        <p class="leise" style="margin-top:8px; font-size:.85rem">Demo-Tage am Command-Center-Fahrzeug nach Termin</p>
+      </div>
+      <div>
+        <h3>Rechtliches</h3>
+        <ul>
+          <li><a href="#ueber">Impressum</a></li>
+          <li><a href="#ueber">Datenschutz</a></li>
+          <li><a href="#ueber">AGB</a></li>
+          <li><a href="#ueber">Partner &amp; Händler</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fuss__unten">
+      <span>© 2026 Skydancer System Services</span>
+      <span>Vorab-Seite · Hinweise zu ECE-R46 und Abnahme von Spiegelersatzsystemen auf der Leistungsseite Kamera &amp; Sicht</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobil-cta">
+  <a class="btn btn--linie" href="#technik-check" data-rueckruf>Rückruf</a>
+  <a class="btn" href="#technik-check">Technik-Check buchen</a>
+</div>
+
+<script>
+(function () {
+  /* ---------- Command Center: Hotspots ---------- */
+  var module = {
+    kamera: {
+      status: "● Front und Heck · Monitor im Cockpit",
+      titel: "Kamera & Sicht",
+      text: "Sie sehen jeden Zentimeter beim Rangieren. Wir planen Innenspiegel, Außenspiegel-Ersatz oder 360-Grad-Rundumsicht passend zu Ihrem Fahrzeug.",
+      liste: ["Digitaler Innenspiegel mit Heckkamera", "360-Grad-Rundumsicht (Birdview) aus vier Kameras", "Außenspiegel-Ersatz nur mit Abnahme nach ECE-R46"]
+    },
+    smart: {
+      status: "● Zentrale · Tablet im Wohnraum",
+      titel: "SmartCamper",
+      text: "Ein Tablet im Wohnraum und die App auf Ihrem Telefon zeigen alle Werte an einer Stelle. Sensoren für Tanks, Gas und Temperatur melden sich, bevor etwas knapp wird.",
+      liste: ["Zentrale Steuerung mit Wandtablet und App", "Einbindung von Truma, Dometic und Victron", "Füllstand-, Gas- und Temperatursensoren"]
+    },
+    internet: {
+      status: "● Dach · Starlink aktiv, 5G bereit",
+      titel: "Internet Pro",
+      text: "Starlink auf dem Dach, 5G-Router im Fahrzeug. Fällt eine Verbindung aus, schaltet das System automatisch um (Failover).",
+      liste: ["Starlink-Antenne flach montiert", "5G-Router mit Dachantenne", "WLAN im ganzen Fahrzeug, Fernzugriff auf alle Systeme"]
+    },
+    security: {
+      status: "● Aufbautür · Alarm scharf",
+      titel: "Security & Recovery",
+      text: "Öffnet nachts jemand die Tür, heult die Sirene, Ihr Telefon meldet sich, und die Kamera zeigt Ihnen, wer da ist.",
+      liste: ["Alarmanlage mit Tür- und Klappenkontakten", "GPS-Ortung mit Geofencing", "Gas- und Rauchmelder mit Push-Nachricht"]
+    },
+    autarkie: {
+      status: "● Unterflur · Lithium 87 %",
+      titel: "Autarkie & Komfort",
+      text: "Lithium-Batterie, Solar und Ladebooster nach Ihrer Energiebilanz. Hubstützen und Luftfederung planen wir mit Blick auf Gewicht und Zuladung.",
+      liste: ["Lithium-Batterie mit Victron-Ladetechnik", "Solar auf dem Dach nach Energiebilanz", "Hubstützen, Luftfederung, Klima, Toilette, Trinkwasser"]
+    }
+  };
+  var knoepfe = document.querySelectorAll("[data-modul]");
+  function zeige(id) {
+    var m = module[id];
+    if (!m) return;
+    document.getElementById("modul-status").textContent = m.status;
+    document.getElementById("modul-titel").textContent = m.titel;
+    document.getElementById("modul-text").textContent = m.text;
+    var ul = document.getElementById("modul-liste");
+    ul.innerHTML = "";
+    m.liste.forEach(function (t) { var li = document.createElement("li"); li.textContent = t; ul.appendChild(li); });
+    knoepfe.forEach(function (k) { k.setAttribute("aria-pressed", k.dataset.modul === id ? "true" : "false"); });
+  }
+  knoepfe.forEach(function (k) { k.addEventListener("click", function () { zeige(k.dataset.modul); }); });
+
+  /* ---------- Anfrage-Konfigurator ---------- */
+  var form = document.getElementById("konfigurator");
+  var schritte = form.querySelectorAll("fieldset[data-schritt]");
+  var marker = form.querySelectorAll(".fortschritt span");
+  var anzeige = document.getElementById("schritt-anzeige");
+  var weiter = document.getElementById("weiter");
+  var zurueck = document.getElementById("zurueck");
+  var absenden = document.getElementById("absenden");
+  var fehler = document.getElementById("fehler");
+  var aktuell = 1;
+
+  var namen = { kamera: "Kamera & Sicht", smart: "SmartCamper", internet: "Internet Pro", security: "Security & Recovery", autarkie: "Autarkie & Komfort" };
+
+  // Paketvorschlag aus den Preiskorridoren des Servicekonzepts.
+  function vorschlag(auswahl) {
+    var hat = function (b) { return auswahl.indexOf(b) !== -1; };
+    if (!auswahl.length) return null;
+    if (hat("autarkie") && auswahl.length >= 3) return { name: "Expedition Signature", spanne: "31.900–44.900 €" };
+    if (hat("kamera") && hat("smart") && hat("internet") && hat("security")) return { name: "Command Center", spanne: "19.900–27.900 €" };
+    if ((hat("kamera") || hat("security")) && !hat("smart") && !hat("internet") && !hat("autarkie")) return { name: "Vision & Security", spanne: "9.500–13.500 €" };
+    if (hat("internet") && auswahl.length === 1) return { name: "Internet Pro (Einzelleistung)", spanne: "3.500–5.900 €" };
+    if ((hat("internet") || hat("smart")) && !hat("kamera") && !hat("security") && !hat("autarkie")) return { name: "Touring Connected", spanne: "8.900–14.900 €" };
+    return { name: "Individuelle Kombination", spanne: "Preisrahmen besprechen wir im Rückruf" };
+  }
+  function auswahl() {
+    return Array.prototype.map.call(form.querySelectorAll("input[name=baustein]:checked"), function (i) { return i.value; });
+  }
+  function aktualisiereVorschlag() {
+    var v = vorschlag(auswahl());
+    document.getElementById("vorschlag-name").textContent = v ? v.name : "Wählen Sie mindestens einen Baustein";
+    document.getElementById("vorschlag-spanne").textContent = v ? v.spanne : "";
+  }
+  form.querySelectorAll("input[name=baustein]").forEach(function (i) { i.addEventListener("change", aktualisiereVorschlag); });
+
+  function geheZu(n) {
+    aktuell = n;
+    schritte.forEach(function (f) { f.hidden = Number(f.dataset.schritt) !== n; });
+    marker.forEach(function (m, i) {
+      m.className = i + 1 < n ? "fertig" : (i + 1 === n ? "aktiv" : "");
+    });
+    anzeige.textContent = "Schritt " + n + " von 4";
+    zurueck.hidden = n === 1;
+    weiter.hidden = n === 4;
+    absenden.hidden = n !== 4;
+    fehler.hidden = true;
+  }
+  function pruefe(n) {
+    if (n === 2 && !auswahl().length) {
+      document.getElementById("vorschlag-name").textContent = "Bitte wählen Sie mindestens einen Baustein.";
+      return false;
+    }
+    return true;
+  }
+  weiter.addEventListener("click", function () {
+    if (!pruefe(aktuell)) return;
+    geheZu(aktuell + 1);
+    var f = form.querySelector('fieldset[data-schritt="' + aktuell + '"] input, fieldset[data-schritt="' + aktuell + '"] select');
+    if (f) f.focus({ preventScroll: true });
+  });
+  zurueck.addEventListener("click", function () { geheZu(aktuell - 1); });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var feldName = document.getElementById("name"), feldTel = document.getElementById("telefon");
+    var name = feldName.value.trim(), tel = feldTel.value.trim();
+    if (!name || !tel) {
+      fehler.textContent = "Bitte tragen Sie Ihren Namen und Ihre Telefonnummer ein, damit wir Sie zurückrufen können.";
+      fehler.hidden = false;
+      (name ? feldTel : feldName).focus();
+      return;
+    }
+    var typ = (form.querySelector("input[name=typ]:checked") || {}).value || "–";
+    var v = vorschlag(auswahl());
+    var zeilen = [
+      ["Fahrzeug", [typ, form.hersteller.value.trim(), form.baujahr.value.trim(), form.laenge.value.trim() ? form.laenge.value.trim() + " m" : "", form.zgg.value].filter(Boolean).join(" · ")],
+      ["Bausteine", auswahl().map(function (b) { return namen[b]; }).join(", ")],
+      ["Vorschlag", v.name],
+      ["Preisspanne", v.spanne],
+      ["Rückruf", tel + " · " + form.zeit.value]
+    ];
+    var dl = document.getElementById("ergebnis-liste");
+    dl.innerHTML = "";
+    zeilen.forEach(function (z) {
+      var dt = document.createElement("dt"), dd = document.createElement("dd");
+      dt.textContent = z[0]; dd.textContent = z[1];
+      dl.appendChild(dt); dl.appendChild(dd);
+    });
+    document.getElementById("ergebnis-titel").textContent = "Danke, " + name + ".";
+    schritte.forEach(function (f) { f.hidden = true; });
+    form.querySelector(".formular__nav").hidden = true;
+    form.querySelector(".fortschritt").hidden = true;
+    anzeige.hidden = true;
+    var erg = document.getElementById("ergebnis");
+    erg.hidden = false;
+    erg.focus();
+  });
+
+  /* ---------- Einstiege und "Zur Leistung": Bausteine vorauswählen ---------- */
+  document.querySelectorAll("[data-preset]").forEach(function (a) {
+    a.addEventListener("click", function () {
+      var preset = a.dataset.preset.split(",");
+      form.querySelectorAll("input[name=baustein]").forEach(function (i) { i.checked = preset.indexOf(i.value) !== -1; });
+      aktualisiereVorschlag();
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -39,6 +39,7 @@ Dazu: Sticky-CTA auf Mobilgeräten, Footer mit Werkstatt, Öffnungszeiten und Re
   - Internet und/oder SmartCamper ohne Kamera, Security oder Autarkie → Touring Connected
   - alles andere → „Individuelle Kombination“, Preisrahmen im Rückruf
 - **Die Vertrauensleiste** nennt Marken als „Systeme, die wir integrieren“, nicht als Partner. Bitte erst nach einer echten Partnerschaft umbenennen.
+- **Farben:** Anthrazit (#1A1D21) mit Gletscherblau (#7CC6E4), helle Flächen kühl (#E6ECF0), Statusgrün (#3FAE7A). Kein Beige (siehe CLAUDE.md), auch wenn das Konzept Sandbeige vorschlägt.
 - **Typografie:** Archivo (Überschriften), IBM Plex Sans (Text), IBM Plex Mono (Anzeigen und Zahlen). Das Konzept nennt Space Grotesk und Inter nur als Beispiele.
 
 ## Vor dem Launch

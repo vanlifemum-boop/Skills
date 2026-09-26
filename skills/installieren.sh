@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Macht alle Skills aus diesem Ordner in ALLEN Projekten verfügbar.
+# Macht alle Skills aus diesem Ordner in ALLEN Projekten verfügbar — und dazu
+# die stehenden Vorgaben aus vorgaben.md als ~/.claude/CLAUDE.md.
 #
 # Für jeden Unterordner mit einer SKILL.md wird ein Symlink unter
 # ~/.claude/skills/<name> angelegt. Weil es Symlinks sind, wirkt jedes spätere
@@ -49,6 +50,25 @@ done
 
 echo
 echo "${verlinkt} Skills unter ${ziel} verfügbar, ${uebersprungen} übersprungen."
+
+# Stehende Vorgaben (vorgaben.md) nach ~/.claude/CLAUDE.md verlinken.
+# Gleiche Schutzregel: eine echte Datei wird nie überschrieben.
+quelle="${hier}/vorgaben.md"
+merkdatei="${HOME}/.claude/CLAUDE.md"
+
+if [ -f "$quelle" ]; then
+  echo
+  if [ -L "$merkdatei" ] && [ "$(readlink "$merkdatei")" = "$quelle" ]; then
+    echo "Vorgaben: bereits verlinkt (${merkdatei})."
+  elif [ -e "$merkdatei" ] || [ -L "$merkdatei" ]; then
+    echo "Vorgaben: ÜBERSPRUNGEN — ${merkdatei} existiert bereits."
+    echo "  Um sie trotzdem zu übernehmen, diese Zeile dort einfügen:"
+    echo "    @${quelle}"
+  else
+    ln -s "$quelle" "$merkdatei"
+    echo "Vorgaben: verlinkt (${merkdatei} → ${quelle})."
+  fi
+fi
 
 if [ "$verlinkt" -gt 0 ]; then
   echo "Claude Code neu starten, damit die Skills gefunden werden."

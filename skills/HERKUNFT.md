@@ -13,6 +13,7 @@ Eigenentwicklungen sind `media-skill`, `schulung` und `grill-me` — sie tauchen
 | [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) | MIT, © 2025–2026 Cloudflare | `8bac420` |
 | [bradautomates/claude-video](https://github.com/bradautomates/claude-video) | MIT, © 2026 Bradley Bonanno | `83da59f` |
 | [mattpocock/skills](https://github.com/mattpocock/skills) | MIT, © 2026 Matt Pocock | `84fdeff` |
+| [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) | Apache-2.0, HeyGen | `d94708e` |
 
 Alle `SKILL.md` und `references/` sind **unverändert** übernommen. Was ich weggelassen habe,
 steht jeweils darunter.
@@ -123,6 +124,26 @@ Weggelassen:
 Die drei Zuletztgenannten (`claude-handoff`, `setup-ts-deep-modules`, `loop-me`) liegen
 ebenfalls unter `in-progress/`. Einzeln nachziehbar mit
 `npx skills@latest add mattpocock/skills --skill=<name>`.
+
+## heygen-com/hyperframes
+
+Alle 21 Skills aus `skills/`: `hyperframes`, `hyperframes-core`, `hyperframes-animation`,
+`hyperframes-keyframes`, `hyperframes-creative`, `hyperframes-audio`, `hyperframes-cli`,
+`hyperframes-registry`, `hyperframes-studio`, `media-use`, `figma`, `general-video`,
+`motion-graphics`, `slideshow`, `embedded-captions`, `talking-head-recut`, `music-to-video`,
+`pr-to-video`, `product-launch-video`, `faceless-explainer`, `remotion-to-hyperframes`.
+
+**Fang mit `hyperframes` an** — das ist der Einstieg für jede Video-Anfrage. Er fragt die
+Absicht ab, schreibt `BRIEF.md` und leitet an den passenden Workflow weiter. Die Skills
+verlinken sich gegenseitig relativ (`../hyperframes-animation/…`), deshalb sind alle
+übernommen, inklusive `scripts/`, Schriften und Klang-Assets.
+
+**Voraussetzungen:** Node.js mit `npx` (die Skills rufen `npx hyperframes …` auf) und
+`ffmpeg` zum Rendern.
+
+Weggelassen: nur `skills/python-encoding.test.mjs`, ein Repo-Test, der zu keinem Skill
+gehört. Nicht übernommen sind außerdem die repo-internen Skills unter `.claude/skills/`
+und die Registry-Blöcke unter `registry/` — die holt `hyperframes-registry` bei Bedarf per CLI.
 
 ---
 

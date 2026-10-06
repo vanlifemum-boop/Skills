@@ -1,0 +1,47 @@
+pfad: kontakt/
+titel: Kontakt — BSSD | Gregor Nebel
+beschreibung: Kontakt zu BSSD – Gregor Nebel. Anfragen zu Beratung, Personal Training, Schulungen und Einzel-AAT®.
+aktiv: kontakt
+saeule: beratung
+---
+    <section class="hero" style="padding-bottom:64px">
+      <div class="container">
+        <p class="hero__nummer einblenden">Kontakt</p>
+        <h1 class="einblenden">Sprechen<br />wir <em>darüber.</em></h1>
+        <p class="lead einblenden">Schreiben Sie kurz, worum es geht – Sie erhalten zeitnah eine Rückmeldung. Alle Anfragen werden vertraulich behandelt.</p>
+      </div>
+    </section>
+
+    <section class="sek sek--weiss">
+      <div class="container hero__raster" style="align-items:start">
+        <form class="formular" id="anfrage" data-empfaenger="{EMAIL_ROH}" novalidate>
+          <div class="zwei">
+            <label>Name *<input name="name" autocomplete="name" required /></label>
+            <label>E-Mail *<input name="email" type="email" autocomplete="email" required /></label>
+          </div>
+          <div class="zwei">
+            <label>Telefon<input name="telefon" type="tel" autocomplete="tel" /></label>
+            <label>Bereich *
+              <select name="bereich" required>
+                <option value="beratung">01 · Beratung</option>
+                <option value="sport">02 · Sport &amp; Gesundheit</option>
+                <option value="schulungen">03 · Schulungen</option>
+                <option value="aat">Einzel-AAT®</option>
+                <option value="sonstiges">Sonstiges</option>
+              </select>
+            </label>
+          </div>
+          <label>Ihre Nachricht *<textarea name="nachricht" required></textarea></label>
+          <label class="check"><input type="checkbox" name="einwilligung" required /> <span>Ich habe die <a href="{R}datenschutz/">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage einverstanden. *</span></label>
+          <div><button class="knopf" type="submit">Anfrage per E-Mail senden <span class="pfeil"></span></button></div>
+          <p class="leise" style="font-size:.9rem;margin:0">Beim Absenden öffnet sich Ihr E-Mail-Programm mit der vorbereiteten Nachricht.</p>
+        </form>
+
+        <ul class="kontaktdaten">
+          <li><small>Telefon</small>{TELEFON}</li>
+          <li><small>E-Mail</small>{EMAIL}</li>
+          <li><small>Einsatzgebiet</small>{ORT}</li>
+          <li><small>Hinweis</small><span class="leise">In akuten Notlagen wenden Sie sich bitte an den Notruf 110 / 112 oder die TelefonSeelsorge 0800 111 0 111.</span></li>
+        </ul>
+      </div>
+    </section>

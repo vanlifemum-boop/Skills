@@ -39,6 +39,15 @@ dann entweder `writing-shape` (Absatz für Absatz) oder `writing-beats` (als Bea
 im Quell-Repo als Beta markiert und deshalb hier fest einkopiert. Für die Frage, wie der
 fertige deutsche Satz klingt, bleibt [`vermenschlichen`](vermenschlichen/) zuständig.
 
+## Video mit HyperFrames (englisch)
+
+21 Skills aus [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) (Apache-2.0):
+Videos aus HTML bauen und rendern. Einstieg ist immer [`hyperframes`](hyperframes/) — er
+fragt, was du willst, und wählt selbst den passenden Workflow (`general-video`,
+`motion-graphics`, `slideshow`, `embedded-captions`, `product-launch-video`, …) und die
+Fachskills (`hyperframes-core`, `-animation`, `-creative`, `media-use`, …). Braucht Node.js
+und `ffmpeg`. Details in [`HERKUNFT.md`](HERKUNFT.md).
+
 ## Marketing (englisch)
 
 Zwölf Skills aus [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills)

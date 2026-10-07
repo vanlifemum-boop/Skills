@@ -7,6 +7,15 @@ Avatar für alle künftigen Videos von „Systemfehler Familie“ vollständig.
 Querformat 3:2, höchste Auflösung (4K), damit jedes der 9 Felder scharf bleibt.
 Dateinamen: `bogen-1-grundgefuehle.png` usw.
 
+## Alles in einem: Fließtext-Prompt (24 Gesichter)
+
+Referenzbild anhängen, Text komplett einfügen. Wird das Raster zu klein oder weichen Gesichter ab:
+zweimal mit je der Hälfte laufen lassen („12“ statt „24“, „4 by 3“ statt „6 by 4“).
+
+```
+Use the attached image as the identity reference and create a large character expression sheet of the exact same woman, keeping her face, features, long wavy blonde hair, light makeup, red lipstick and her black sleeveless high-neck dress with gathered neckline completely identical in every cell. Arrange 24 head-and-shoulders portraits in a clean 6 by 4 grid of equal cells separated by thin white gaps, all with the same framing, head size, camera height and soft even studio lighting on a pure white background, photorealistic and sharp, with no text, labels, numbers or borders anywhere. In reading order from top left to bottom right she shows: calm neutral with a relaxed mouth and no smile, genuinely laughing with teeth showing, sad with a downturned mouth and glossy eyes, angry with lowered eyebrows and tight lips, afraid with wide eyes and raised eyebrows, shocked with one hand covering her mouth, disgusted with a wrinkled nose, deeply concerned with eyebrows raised in the middle, compassionate with tears welling in her eyes, indignant and outraged, exhausted with tired eyes, worried and biting her lower lip, solemn and perfectly serious, determined with a set jaw and steady gaze, hopeful with a soft smile looking slightly upward, attentive listening with a slight head tilt, thinking with her eyes looking up to the side, skeptical with one eyebrow raised, an "aha" moment of sudden realization, an ironic eye-roll with a slight smirk, a stern warning look with chin lowered, encouraging with a confident closed-mouth smile, an awkward apologetic "oops" grimace, and finally a natural blink with both eyes fully closed.
+```
+
 ## Bogen-Basis für Gesichter (Bögen 1–5)
 
 ```

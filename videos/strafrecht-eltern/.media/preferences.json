@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "preferences": {
+    "destination": {
+      "value": "youtube",
+      "confirmed_in": [
+        "strafrecht-eltern"
+      ],
+      "updated_at": "2026-10-07T05:37:59.601Z"
+    },
+    "aspect": {
+      "value": "1920x1080",
+      "confirmed_in": [
+        "strafrecht-eltern"
+      ],
+      "updated_at": "2026-10-07T05:37:59.643Z"
+    },
+    "language": {
+      "value": "de",
+      "confirmed_in": [
+        "strafrecht-eltern"
+      ],
+      "updated_at": "2026-10-07T05:37:59.690Z"
+    },
+    "storyboard": {
+      "value": "yes",
+      "confirmed_in": [
+        "strafrecht-eltern"
+      ],
+      "updated_at": "2026-10-07T05:37:59.741Z"
+    }
+  },
+  "sightings": {}
+}

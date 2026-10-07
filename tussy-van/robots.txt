@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /shop.html
+Sitemap: https://tussy-van.de/sitemap.xml

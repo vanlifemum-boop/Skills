@@ -14,6 +14,7 @@ Eigenentwicklungen sind `media-skill`, `schulung` und `grill-me` — sie tauchen
 | [bradautomates/claude-video](https://github.com/bradautomates/claude-video) | MIT, © 2026 Bradley Bonanno | `83da59f` |
 | [mattpocock/skills](https://github.com/mattpocock/skills) | MIT, © 2026 Matt Pocock | `84fdeff` |
 | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) | Apache-2.0, HeyGen | `d94708e` |
+| [Ismyp/motion-design-skill](https://github.com/Ismyp/motion-design-skill) | MIT, © 2026 Ismajl Pukaj | `4efe2ca` |
 
 Alle `SKILL.md` und `references/` sind **unverändert** übernommen. Was ich weggelassen habe,
 steht jeweils darunter.
@@ -144,6 +145,26 @@ verlinken sich gegenseitig relativ (`../hyperframes-animation/…`), deshalb sin
 Weggelassen: nur `skills/python-encoding.test.mjs`, ein Repo-Test, der zu keinem Skill
 gehört. Nicht übernommen sind außerdem die repo-internen Skills unter `.claude/skills/`
 und die Registry-Blöcke unter `registry/` — die holt `hyperframes-registry` bei Bedarf per CLI.
+
+## Ismyp/motion-design-skill
+
+`erklaervideo` — baut ein fertiges 30-Sekunden-Erklärvideo (16:9) mit Stimme, Musik und
+Animation, ganz ohne KI-Videomodell: jedes Bild ist Code. Ablauf: Interview → drei Stile aus
+22 → Sprechertext zur Freigabe → drei Hörproben → bauen und selbst prüfen.
+
+Vollständig übernommen, inklusive `vorlagen/` (Schriften, three.js, p5) und `beispiele/`
+(ein MP4 je Stil, zusammen gut 50 MB — der Skill zeigt sie bei der Stilwahl). Der Ordner
+heißt `erklaervideo`, weil die Skripte fest `~/.claude/skills/erklaervideo` erwarten; genau
+dorthin verlinkt `installieren.sh`. Fremdlizenzen der Schriften und Bibliotheken stehen in
+[`erklaervideo/DRITTANBIETER.md`](erklaervideo/DRITTANBIETER.md).
+
+**Voraussetzungen:** Node.js 20+, Python 3 mit `numpy`, `soundfile`, `pillow`, `ffmpeg`,
+whisper.cpp mit Modell `large-v3-turbo`, Chrome bzw. chrome-headless-shell und
+`KIE_API_KEY` (derselbe wie für `media-skill`). Einmal `npm install` in
+`erklaervideo/werkzeuge/`, danach meldet `python3 erklaervideo/werkzeuge/pruefen.py`, was
+noch fehlt. Rendert lokal — läuft nicht in der claude.ai-Web-App.
+
+Weggelassen: nur die `.gitignore` des Quell-Repos.
 
 ---
 

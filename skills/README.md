@@ -48,6 +48,16 @@ fragt, was du willst, und wählt selbst den passenden Workflow (`general-video`,
 Fachskills (`hyperframes-core`, `-animation`, `-creative`, `media-use`, …). Braucht Node.js
 und `ffmpeg`. Details in [`HERKUNFT.md`](HERKUNFT.md).
 
+## Erklärvideo (deutsch)
+
+[`erklaervideo`](erklaervideo/) aus [Ismyp/motion-design-skill](https://github.com/Ismyp/motion-design-skill)
+(MIT): ein fertiges 30-Sekunden-Erklärvideo für Firma, Produkt oder Dienstleistung — mit
+Interview, Wahl aus 22 Stilen, Sprechertext, Stimme über kie.ai und Musik. Auslöser:
+„Ich brauche ein Erklärvideo für meine Firma." Braucht Node.js, Python, `ffmpeg`,
+whisper.cpp, Chrome und `KIE_API_KEY`; vor dem ersten Video einmal
+`cd erklaervideo/werkzeuge && npm install && python3 pruefen.py`. Details in
+[`HERKUNFT.md`](HERKUNFT.md).
+
 ## Marketing (englisch)
 
 Zwölf Skills aus [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills)

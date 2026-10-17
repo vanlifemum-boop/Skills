@@ -14,6 +14,7 @@ Eigenentwicklungen sind `media-skill`, `schulung` und `grill-me` — sie tauchen
 | [bradautomates/claude-video](https://github.com/bradautomates/claude-video) | MIT, © 2026 Bradley Bonanno | `83da59f` |
 | [mattpocock/skills](https://github.com/mattpocock/skills) | MIT, © 2026 Matt Pocock | `84fdeff` |
 | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) | Apache-2.0, HeyGen | `d94708e` |
+| [morluto/rea](https://github.com/morluto/rea) | MIT, © 2026 morluto | `9744d07` |
 
 Alle `SKILL.md` und `references/` sind **unverändert** übernommen. Was ich weggelassen habe,
 steht jeweils darunter.
@@ -144,6 +145,21 @@ verlinken sich gegenseitig relativ (`../hyperframes-animation/…`), deshalb sin
 Weggelassen: nur `skills/python-encoding.test.mjs`, ein Repo-Test, der zu keinem Skill
 gehört. Nicht übernommen sind außerdem die repo-internen Skills unter `.claude/skills/`
 und die Registry-Blöcke unter `registry/` — die holt `hyperframes-registry` bei Bedarf per CLI.
+
+## morluto/rea
+
+`reverse-engineer-anything` — untersucht fertig ausgelieferte Software (native Programme,
+.NET, Electron/JavaScript, Android-APKs, Firmware, Browser-Seiten), um zu erklären, wie eine
+Funktion gebaut ist, Versionen zu vergleichen oder Code zu dekompilieren. Für normalen
+Quellcode im Repo ist er ausdrücklich nicht gedacht.
+
+**Voraussetzung:** Der Skill liefert nur die Anleitung. Die eigentlichen Werkzeuge kommen vom
+REA-MCP-Server, einzurichten mit `npx rea-agents setup` (Node.js nötig). Für Dekompilierung
+braucht es zusätzlich Ghidra, Hopper oder IDA — die installiert REA nicht selbst.
+
+Übernommen: nur dieser eine Skill aus `.agents/skills/`, samt `references/`. Weggelassen sind
+die vier repo-internen Entwickler-Skills (`rea-analysis-optimization`, `rea-tool-design`,
+`rea-ci-tests-audit`, `rea-changelog-update`) — sie dienen nur der Arbeit am REA-Code selbst.
 
 ---
 

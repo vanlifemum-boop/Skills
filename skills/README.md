@@ -32,6 +32,7 @@ Ordner mit einer `SKILL.md` darin — genau so erwartet Claude Code es.
 | [`setup-pre-commit`](setup-pre-commit/) | Husky, lint-staged und Prettier in einem JS/TS-Projekt einrichten |
 | [`tdd`](tdd/) | testgetriebene Entwicklung |
 | [`security-audit`](security-audit/) | Codebasis auf ausnutzbare Sicherheitslücken prüfen |
+| [`reverse-engineer-anything`](reverse-engineer-anything/) | fertige Programme, Apps, Pakete und Firmware analysieren (braucht den REA-MCP-Server) |
 | [`watch`](watch/) | ein Video ansehen und Fragen dazu beantworten (braucht `yt-dlp` und `ffmpeg`) |
 
 Die drei `writing-*`-Skills gehören zusammen: erst `writing-fragments` (Material sammeln),

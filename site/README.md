@@ -1,6 +1,7 @@
 # Seifenglück — DIY-Naturkosmetik-Website
 
-Eine hochwertige, statische Website im „Clean-Beauty"-Look mit 10 originalen
+Eine hochwertige, statische Website im Design **„Botanical Noir"** (dunkles
+Nachtgrün, leuchtendes Blattgrün, Messing-Akzent) mit 10 originalen
 DIY-Naturkosmetik-Rezepten, viralen Social-Media-Texten, Bild-Prompts und
 Platz für Affiliate-Links & Werbung.
 
@@ -13,9 +14,11 @@ python3 -m http.server 8000
 
 ## Dateien
 - `index.html` — Struktur: Nav, Hero, „Warum DIY", Rezepte, Werbeplätze, Newsletter, Footer.
-- `styles.css` — Design (Palette, Typografie, Karten, Scroll-Reveals, responsive).
+- `styles.css` — Design: Farb-Tokens (`--bg`, `--leaf`, `--brass` …), Typografie
+  (Fraunces + Inter), Editorial-Reihen, Scroll-Reveals, responsive.
 - `recipes.js` — **alle Rezept-Inhalte** (hier neue Rezepte ergänzen/bearbeiten).
-- `main.js` — Rendering der Rezepte, Filter, Copy-Buttons, Scroll-Effekte.
+- `main.js` — Rendering der Rezepte, Filter, Copy-Buttons, Scroll-Fortschritt,
+  Parallax und gestaffelte Reveals.
 
 ## Neues Rezept hinzufügen
 In `recipes.js` einen neuen Eintrag im `window.RECIPES`-Array ergänzen
@@ -34,6 +37,13 @@ In `recipes.js` einen neuen Eintrag im `window.RECIPES`-Array ergänzen
 Alle Rezepte, Texte und Bild-Prompts wurden eigenständig verfasst und basieren
 auf gängigen, frei nutzbaren DIY-Grundrezepturen — es wurden keine geschützten
 Inhalte Dritter übernommen.
+
+## Design anpassen
+Alle Farben stehen als CSS-Variablen ganz oben in `styles.css` unter `:root`.
+Eine Farbe dort ändern färbt die ganze Seite um.
+
+Hinweis: Die Reveal-Animationen sind an die Klasse `.js` gekoppelt (wird per
+Inline-Skript im `<head>` gesetzt). Ohne JavaScript bleibt die Seite voll lesbar.
 
 ## Optional: Cinematic-Video-Hero
 Für den echten „Scroll-Cinematic"-Video-Effekt (Higgsfield MCP) siehe die

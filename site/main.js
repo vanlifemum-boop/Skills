@@ -1,6 +1,6 @@
 /* =====================================================================
-   Seifenglück — Scroll-Engine + Rezept-Rendering
-   Vanilla JS, keine externen Abhängigkeiten (offline-tauglich).
+   Seifenglück — Rendering + Scroll-Engine („Botanical Noir")
+   Vanilla JS, keine externen Abhängigkeiten.
    ===================================================================== */
 (function () {
   "use strict";
@@ -10,71 +10,70 @@
   const esc = (s) => String(s)
     .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
+  const pad = (n) => String(n).padStart(2, "0");
 
-  /* ---------- Jahr im Footer ---------- */
   const yearEl = $("#year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* ---------- Rezepte rendern ---------- */
+  /* ---------- Rezepte als Editorial-Reihen rendern ---------- */
   const recipes = window.RECIPES || [];
   const list = $("#recipeList");
 
-  function recipeCard(r) {
-    const zutaten = r.zutaten.map((z) => `<li>${esc(z)}</li>`).join("");
+  function recipeRow(r, i) {
+    const zutaten  = r.zutaten.map((z) => `<li>${esc(z)}</li>`).join("");
     const schritte = r.schritte.map((s) => `<li>${esc(s)}</li>`).join("");
     const hashtags = r.hashtags.map((h) => `<span>${esc(h)}</span>`).join(" ");
-    const prompts = r.bildPrompts
-      .map((p, i) => `<div class="prompt-box">
-          <button class="copy-btn" data-copy="${esc(p)}">Kopieren</button>
-          <b>Prompt ${i + 1}</b>
-          <p>${esc(p)}</p>
-        </div>`).join("");
+    const prompts  = r.bildPrompts.map((p, n) => `
+      <div class="box box--prompt">
+        <button class="copy-btn" data-copy="${esc(p)}">Kopieren</button>
+        <b>Prompt ${n + 1}</b>
+        <p>${esc(p)}</p>
+      </div>`).join("");
 
     return `
-    <article class="card reveal" data-cat="${esc(r.category)}" id="rezept-${esc(r.id)}">
-      <div class="card__top">
-        <span class="card__cat">${esc(r.category)}</span>
-        <div class="card__emoji">${r.emoji}</div>
-        <h3 class="card__title">${esc(r.title)}</h3>
-        <p class="card__subtitle">${esc(r.subtitle)}</p>
-        <div class="card__meta">
+    <article class="rx reveal" data-cat="${esc(r.category)}" id="rezept-${esc(r.id)}">
+      <div class="rx__aside">
+        <span class="rx__num">${pad(i + 1)}</span>
+        <div class="rx__emoji">${r.emoji}</div>
+        <span class="rx__cat">${esc(r.category)}</span>
+        <h3 class="rx__title">${esc(r.title)}</h3>
+        <p class="rx__subtitle">${esc(r.subtitle)}</p>
+        <div class="rx__meta">
           <span class="tag tag--time">${esc(r.schwierigkeit)}</span>
           <span class="tag tag--keep">${esc(r.haltbarkeit)}</span>
         </div>
+        <a class="btn btn--primary rx__cta" href="${esc(r.affiliate.href)}"
+           rel="sponsored nofollow" target="_blank">${r.affiliate.label}</a>
       </div>
-      <div class="card__body">
-        <p class="card__hook">${esc(r.hook)}</p>
-        <p>${esc(r.intro)}</p>
 
-        <div class="recipe-block">
+      <div class="rx__main">
+        <p class="rx__hook">${esc(r.hook)}</p>
+        <p class="rx__intro">${esc(r.intro)}</p>
+
+        <div class="block">
           <h4>Zutaten</h4>
           <ul class="zutaten">${zutaten}</ul>
         </div>
 
-        <div class="recipe-block">
+        <div class="block">
           <h4>So geht's</h4>
           <ol class="schritte">${schritte}</ol>
         </div>
 
-        <div class="callout"><b>Warum es wirkt:</b> ${esc(r.nutzen)}</div>
-        <div class="callout callout--tip"><b>Mein Tipp:</b> ${esc(r.tipp)}</div>
-
-        <a class="btn btn--primary card__affiliate" href="${esc(r.affiliate.href)}" rel="sponsored nofollow" target="_blank">${r.affiliate.label}</a>
+        <div class="note"><b>Warum es wirkt:</b> ${esc(r.nutzen)}</div>
+        <div class="note note--tip"><b>Mein Tipp:</b> ${esc(r.tipp)}</div>
 
         <div class="extras">
           <details>
-            <summary>Für Social Media & deine Bilder ✨</summary>
+            <summary>Für Social Media &amp; deine Bilder</summary>
             <div class="extras__inner">
-              <div class="caption-box">
+              <div class="box">
                 <button class="copy-btn" data-copy="${esc(r.caption + "\n\n" + r.hashtags.join(" "))}">Kopieren</button>
                 <b>Caption</b>
                 <p>${esc(r.caption)}</p>
                 <div class="hashtags">${hashtags}</div>
               </div>
-              <div>
-                <b style="font-size:.86rem;color:var(--sage-deep)">Bild-Prompts (EN, Clean Girl Aesthetic)</b>
-                ${prompts}
-              </div>
+              ${prompts}
             </div>
           </details>
         </div>
@@ -83,7 +82,7 @@
   }
 
   if (list && recipes.length) {
-    list.innerHTML = recipes.map(recipeCard).join("");
+    list.innerHTML = recipes.map(recipeRow).join("");
   }
 
   /* ---------- Filter-Chips ---------- */
@@ -100,9 +99,8 @@
       $$(".chip", filterBar).forEach((c) => c.classList.remove("active"));
       chip.classList.add("active");
       const f = chip.dataset.filter;
-      $$(".card", list).forEach((card) => {
-        const show = f === "Alle" || card.dataset.cat === f;
-        card.style.display = show ? "" : "none";
+      $$(".rx", list).forEach((row) => {
+        row.style.display = (f === "Alle" || row.dataset.cat === f) ? "" : "none";
       });
     });
   }
@@ -117,17 +115,6 @@
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => toast.classList.remove("show"), 2200);
   }
-  document.addEventListener("click", (e) => {
-    const btn = e.target.closest(".copy-btn");
-    if (!btn) return;
-    const text = btn.getAttribute("data-copy") || "";
-    const done = () => showToast("In die Zwischenablage kopiert ✓");
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(done).catch(() => fallbackCopy(text, done));
-    } else {
-      fallbackCopy(text, done);
-    }
-  });
   function fallbackCopy(text, cb) {
     const ta = document.createElement("textarea");
     ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
@@ -135,42 +122,57 @@
     try { document.execCommand("copy"); cb(); } catch (_) {}
     document.body.removeChild(ta);
   }
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".copy-btn");
+    if (!btn) return;
+    const text = btn.getAttribute("data-copy") || "";
+    const done = () => showToast("Kopiert ✓");
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done).catch(() => fallbackCopy(text, done));
+    } else {
+      fallbackCopy(text, done);
+    }
+  });
 
-  /* ---------- Scroll Reveal (IntersectionObserver) ---------- */
+  /* ---------- Zeilen-Masken im Hero staffeln ---------- */
+  $$(".hero__title .line i").forEach((el, i) => el.style.setProperty("--i", i));
+
+  /* ---------- Scroll Reveal ---------- */
   const revealEls = $$(".reveal");
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in");
-          io.unobserve(entry.target);
-        }
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("in");
+        io.unobserve(entry.target);
       });
-    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    }, { threshold: 0.1, rootMargin: "0px 0px -6% 0px" });
     revealEls.forEach((el) => io.observe(el));
   } else {
     revealEls.forEach((el) => el.classList.add("in"));
   }
 
-  /* ---------- Nav Hintergrund beim Scrollen ---------- */
+  /* ---------- Scroll: Fortschritt, Nav, Parallax ---------- */
   const nav = $("#nav");
-  const onScrollNav = () => {
-    if (!nav) return;
-    nav.classList.toggle("scrolled", window.scrollY > 40);
-  };
-
-  /* ---------- Parallax Hero ---------- */
+  const bar = $("#progress");
   const parallaxEls = $$("[data-parallax]");
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
   let ticking = false;
+
   function onScroll() {
     if (ticking) return;
     ticking = true;
     requestAnimationFrame(() => {
-      onScrollNav();
+      const y = window.scrollY;
+
+      if (nav) nav.classList.toggle("scrolled", y > 40);
+
+      if (bar) {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (max > 0 ? (y / max) * 100 : 0) + "%";
+      }
+
       if (!prefersReduced) {
-        const y = window.scrollY;
         parallaxEls.forEach((el) => {
           const speed = parseFloat(el.dataset.parallax) || 0.2;
           el.style.transform = `translate3d(0, ${y * speed}px, 0)`;
@@ -180,9 +182,10 @@
     });
   }
   window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll, { passive: true });
   onScroll();
 
-  /* ---------- Smooth-Scroll für Anker (mit Nav-Offset) ---------- */
+  /* ---------- Anker mit Nav-Offset ---------- */
   $$('a[href^="#"]').forEach((a) => {
     a.addEventListener("click", (e) => {
       const id = a.getAttribute("href");
@@ -190,10 +193,12 @@
       const target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();
-      const top = target.getBoundingClientRect().top + window.scrollY - 70;
-      window.scrollTo({ top, behavior: prefersReduced ? "auto" : "smooth" });
+      window.scrollTo({
+        top: target.getBoundingClientRect().top + window.scrollY - 72,
+        behavior: prefersReduced ? "auto" : "smooth"
+      });
     });
   });
 
-  console.log("Seifenglück geladen ·", recipes.length, "Rezepte");
+  console.log("Seifenglück · Botanical Noir ·", recipes.length, "Rezepte");
 })();

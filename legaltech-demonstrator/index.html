@@ -1,0 +1,363 @@
+<title>Aktenprüfung Demonstrator</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: Kanzlei-Arbeitsplatz. Links die Mandatsliste, rechts die Akte mit Reitern;
+   jede Aussage hängt an einer Fundstelle (Blattzahl in Mono, Zitat als Aktenauszug). */
+:root{
+  --bg:#f3f5f7; --surface:#ffffff; --sunken:#e9edf1; --line:#d3dae1;
+  --fg:#17212b; --muted:#566473; --accent:#0d5c63; --accent-fg:#ffffff; --accent-soft:#d9ecec;
+  --high:#a32a2a; --high-soft:#f6dcdc; --mid:#8a5a00; --mid-soft:#f6e8c8;
+  --low:#3d5a80; --low-soft:#dde6f1; --ok:#1f6b3a; --ok-soft:#d8eedf;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#11171d; --surface:#1a222b; --sunken:#141b22; --line:#2e3a46;
+  --fg:#e6ebf0; --muted:#9aa8b6; --accent:#5fbfc6; --accent-fg:#06282b; --accent-soft:#173a3d;
+  --high:#f08a8a; --high-soft:#44201f; --mid:#e6b95c; --mid-soft:#3d3012;
+  --low:#9db9dc; --low-soft:#1f2f44; --ok:#7fd09a; --ok-soft:#173524; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#11171d; --surface:#1a222b; --sunken:#141b22; --line:#2e3a46;
+  --fg:#e6ebf0; --muted:#9aa8b6; --accent:#5fbfc6; --accent-fg:#06282b; --accent-soft:#173a3d;
+  --high:#f08a8a; --high-soft:#44201f; --mid:#e6b95c; --mid-soft:#3d3012;
+  --low:#9db9dc; --low-soft:#1f2f44; --ok:#7fd09a; --ok-soft:#173524; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding-block:20px 48px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  display:flex;flex-direction:column;gap:16px}
+h1{font-size:20px;font-weight:600;margin:0;text-wrap:balance}
+h2{font-size:17px;font-weight:600;margin:0;text-wrap:balance}
+h3{font-size:15px;font-weight:600;margin:0}
+p{margin:0}
+.muted{color:var(--muted)}
+.mono{font-family:var(--mono);font-size:13px}
+.label{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:500}
+
+.top{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;justify-content:space-between}
+.notice{background:var(--mid-soft);color:var(--fg);border:1px solid var(--mid);border-radius:4px;padding:10px 12px;font-size:14px}
+.notice b{color:var(--mid)}
+
+.shell{display:grid;grid-template-columns:250px minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:820px){.shell{grid-template-columns:minmax(0,1fr)}}
+nav.cases{display:flex;flex-direction:column;gap:6px}
+@media (max-width:820px){nav.cases{flex-direction:row;overflow-x:auto;padding-bottom:4px}
+  nav.cases button{flex:0 0 210px}}
+nav.cases button{font:inherit;color:inherit;text-align:left;background:transparent;border:1px solid transparent;
+  border-radius:4px;padding:9px 10px;cursor:pointer;display:flex;flex-direction:column;gap:2px}
+nav.cases button:hover{background:var(--sunken)}
+nav.cases button[aria-current="true"]{background:var(--surface);border-color:var(--line)}
+nav.cases .cnt{font-size:12px;color:var(--muted)}
+button:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+main{min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px;
+  display:flex;flex-direction:column;gap:16px}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px 18px}
+.meta div{display:flex;flex-direction:column;gap:1px;min-width:0}
+.tabs{display:flex;flex-wrap:wrap;gap:4px;border-bottom:1px solid var(--line)}
+.tabs button{font:inherit;color:var(--muted);background:none;border:0;border-bottom:2px solid transparent;
+  padding:8px 10px;cursor:pointer;margin-bottom:-1px}
+.tabs button[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--accent);font-weight:500}
+.list{display:flex;flex-direction:column;gap:0}
+.item{padding:16px 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.item:first-child{border-top:0;padding-top:4px}
+.head{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+.head h3{flex:1 1 260px;min-width:0}
+.pill{font-size:12px;font-weight:500;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.s-hoch{background:var(--high-soft);color:var(--high)}
+.s-mittel{background:var(--mid-soft);color:var(--mid)}
+.s-niedrig{background:var(--low-soft);color:var(--low)}
+.s-ok{background:var(--ok-soft);color:var(--ok)}
+.s-neutral{background:var(--sunken);color:var(--muted)}
+.norm{font-family:var(--mono);font-size:12.5px;color:var(--accent)}
+blockquote{margin:0;background:var(--sunken);border-left:3px solid var(--line);padding:8px 12px;font-size:14px}
+blockquote .src{display:block;font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:3px}
+.pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
+.kv{font-size:14px;max-width:72ch}
+.kv b{font-weight:600}
+.actions{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.btn{font:inherit;font-size:13px;padding:5px 11px;border-radius:4px;border:1px solid var(--line);
+  background:var(--surface);color:var(--fg);cursor:pointer}
+.btn:hover{border-color:var(--accent)}
+.btn.on{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:640px}
+th{text-align:left;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:500;
+  padding:6px 10px 6px 0;border-bottom:1px solid var(--line)}
+td{padding:10px 10px 10px 0;border-bottom:1px solid var(--line);vertical-align:top}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.bar{height:8px;background:var(--accent);border-radius:2px;min-width:2px}
+.report{font-family:var(--mono);font-size:13px;white-space:pre-wrap;background:var(--sunken);border:1px solid var(--line);
+  border-radius:4px;padding:14px;margin:0;overflow-wrap:anywhere}
+.row{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
+select{font:inherit;padding:4px 6px;border:1px solid var(--line);border-radius:4px;background:var(--surface);color:var(--fg)}
+</style>
+
+<div class="wrap">
+  <div class="top">
+    <h1>Aktenprüfung Jugendhilfe <span class="muted" style="font-weight:400">· Demonstrator</span></h1>
+    <span class="muted" style="font-size:13px">Kanzlei Beispiel &amp; Partner (fiktiv) · 3 Mandate</span>
+  </div>
+  <p class="notice"><b>Nur zur Vorführung.</b> Alle Fälle, Namen, Behörden und Aktenauszüge sind erfunden. Die Prüfregeln sind Entwürfe und juristisch nicht validiert. Keine echten Akten in diese Seite eingeben.</p>
+
+  <div class="shell">
+    <nav class="cases" id="nav" aria-label="Mandate"></nav>
+    <main id="main"></main>
+  </div>
+</div>
+
+<script>
+const PILOT_LAND = "Nordrhein-Westfalen";
+
+const CASES = [
+{ id:"2026/014", name:"Familie A.", amt:"Jugendamt Musterstadt", land:"Nordrhein-Westfalen", blatt:212,
+  art:"Gefährdungseinschätzung, anschließend Hilfe zur Erziehung", stand:"Import 09.11.2026",
+  findings:[
+   {id:"B1", rule:"R-AUSK-01", title:"Auskunft verspätet und unvollständig erteilt", norm:"Art. 15, Art. 12 Abs. 3 DSGVO · § 83 SGB X", sev:"hoch",
+    quotes:[["Bl. 141 · Eingangsstempel 03.02.2026","Antrag der Kindesmutter auf Auskunft über sämtliche zu ihrer Person gespeicherten Daten sowie Kopie der Akte."],
+            ["Bl. 168 · Schreiben vom 19.05.2026","Anbei übersenden wir Ihnen einen Auszug aus der Hilfeakte. Interne Vermerke sind nicht Gegenstand der Auskunft."]],
+    why:"Zwischen Antrag und Antwort liegen mehr als drei Monate; eine Fristverlängerung mit Begründung ist in der Akte nicht dokumentiert. Die Ausnahme für interne Vermerke wird pauschal und ohne Rechtsgrundlage erklärt.",
+    open:"Liegt außerhalb der Akte eine Zwischennachricht vor? Mandantin fragen."},
+   {id:"B2", rule:"R-ERH-02", title:"Daten bei Dritten erhoben, ohne dokumentierten Ausnahmegrund", norm:"§ 62 Abs. 2, 3 SGB VIII", sev:"hoch",
+    quotes:[["Bl. 23 · Telefonvermerk 14.01.2026","Tel. mit Kita-Leitung Fr. K.: Angaben zu Bringzeiten, Kleidung und Verhalten der Mutter eingeholt. Eltern wissen nichts von dem Anruf."]],
+    why:"Sozialdaten sind grundsätzlich bei der betroffenen Person zu erheben. Der Vermerk nennt keinen der gesetzlichen Ausnahmegründe für eine Erhebung ohne Mitwirkung der Eltern.",
+    open:"Prüfen, ob zum Zeitpunkt des Anrufs bereits ein Verfahren nach § 8a SGB VIII lief (Bl. 19–22)."},
+   {id:"B3", rule:"R-VERTR-03", title:"Anvertraute Angaben ohne dokumentierte Einwilligung weitergegeben", norm:"§ 65 SGB VIII", sev:"hoch",
+    quotes:[["Bl. 58 · Beratungsgespräch 02.02.2026","Mutter berichtet vertraulich von früherer depressiver Episode (2019), bittet darum, dies nicht weiterzugeben."],
+            ["Bl. 97 · Stellungnahme an das Familiengericht 02.04.2026","Die Kindesmutter leidet nach eigenen Angaben an Depressionen."]],
+    why:"Die Angabe wurde einer Fachkraft im Beratungsgespräch anvertraut. Eine Einwilligung in die Weitergabe oder ein anderer Befugnistatbestand ist nicht dokumentiert. Zudem wird aus einer früheren Episode ein gegenwärtiger Zustand.",
+    open:"Keine."},
+   {id:"B4", rule:"R-BER-04", title:"Unrichtige Tatsachenangabe trotz Berichtigungsantrag unverändert", norm:"Art. 16 DSGVO · § 84 SGB X", sev:"mittel",
+    quotes:[["Bl. 12 · Stammdatenblatt","Kindesvater: unbekannter Aufenthalt."],
+            ["Bl. 150 · Schreiben der Mutter 10.02.2026","Der Vater lebt seit 2024 unter der Ihnen bekannten Anschrift; ich bitte um Berichtigung."]],
+    why:"Die Anschrift des Vaters ist dem Amt laut Bl. 31 bekannt. Über den Berichtigungsantrag wurde nach Aktenlage nicht entschieden.",
+    open:"Keine."},
+   {id:"B5", rule:"R-MIN-05", title:"Gesundheitsdaten einer unbeteiligten Angehörigen in der Akte", norm:"Art. 5 Abs. 1 lit. c, Art. 9 DSGVO", sev:"niedrig",
+    quotes:[["Bl. 64 · Vermerk Hausbesuch","Die Großmutter mütterlicherseits sei alkoholkrank (Aussage Nachbarin)."]],
+    why:"Angabe vom Hörensagen über eine nicht verfahrensbeteiligte Person. Ein Bezug zur Aufgabenerfüllung ist im Vermerk nicht dargelegt.",
+    open:"Betreut die Großmutter das Kind? Dann wäre die Erforderlichkeit anders zu bewerten."}
+  ],
+  contradictions:[
+   {id:"W1", title:"Zustand der Wohnung", sev:"hoch",
+    a:["Bl. 64 · Vermerk Hausbesuch 12.03.2026","Wohnung aufgeräumt und sauber, Kinderzimmer altersgerecht eingerichtet, Kühlschrank gefüllt."],
+    b:["Bl. 96 · Stellungnahme an das Familiengericht 02.04.2026","Beim Hausbesuch wurde die Wohnung in einem verwahrlosten Zustand vorgefunden."],
+    note:"Ein weiterer Hausbesuch zwischen beiden Daten ist in der Akte nicht dokumentiert."},
+   {id:"W2", title:"Datum und Teilnehmende des Hausbesuchs", sev:"mittel",
+    a:["Bl. 64 · Vermerk","Hausbesuch am 12.03.2026 durch Fr. M. allein."],
+    b:["Bl. 96 · Stellungnahme","Hausbesuch am 14.03.2026 durch zwei Fachkräfte."],
+    note:"Relevant für die Frage, ob das Vier-Augen-Prinzip bei der Gefährdungseinschätzung eingehalten wurde."}
+  ],
+  retention:[
+   {kat:"Meldung nach § 8a SGB VIII, Gefährdung nicht bestätigt", fund:"Bl. 19–34 · abgeschlossen 28.01.2026", norm:"§ 84 SGB X · Art. 17 DSGVO", res:"pruefen",
+    why:"Zweck der Erhebung ist mit Abschluss der Einschätzung entfallen. Zu klären ist, ob und wie lange das Amt die Daten zur Dokumentation des eigenen Handelns weiter benötigt."},
+   {kat:"Hilfeakte Hilfe zur Erziehung (laufend)", fund:"Bl. 35–212", norm:"§ 84 SGB X · § 9b SGB VIII", res:"aufbew",
+    why:"Hilfe läuft, Daten sind erforderlich. Für Akten der Erziehungshilfe ist zusätzlich die besondere Aufbewahrung zur Aufarbeitung zu prüfen."},
+   {kat:"Gesundheitsangabe Großmutter", fund:"Bl. 64", norm:"Art. 17 Abs. 1 lit. d DSGVO · § 84 SGB X", res:"pruefen",
+    why:"Folgt aus Befund B5: Wenn die Speicherung nicht erforderlich war, kommt Löschung oder Schwärzung in Betracht."},
+   {kat:"Bestrittene Angabe zum Vater", fund:"Bl. 12", norm:"Art. 16, Art. 18 DSGVO · § 84 SGB X", res:"einschr",
+    why:"Berichtigung vorrangig; bis zur Entscheidung Einschränkung der Verarbeitung bzw. Bestreitensvermerk."}
+  ]
+},
+{ id:"2026/021", name:"Familie B.", amt:"Kreisjugendamt Beispielkreis", land:"Bayern", blatt:87,
+  art:"Mitwirkung im Umgangsverfahren", stand:"Import 02.11.2026",
+  findings:[
+   {id:"B1", rule:"R-UEB-06", title:"Vollständige Akte an Sachverständigen übersandt", norm:"§ 64 SGB VIII · § 69 SGB X", sev:"hoch",
+    quotes:[["Bl. 71 · Übersendungsschreiben 08.06.2026","Zur Erstellung Ihres Gutachtens übersenden wir die vollständige Jugendamtsakte in Kopie."]],
+    why:"Übermittelt wurde die gesamte Akte einschließlich der Unterlagen zu einem früheren, abgeschlossenen Vorgang. Eine Prüfung der Erforderlichkeit einzelner Teile ist nicht dokumentiert.",
+    open:"Gab es einen gerichtlichen Beschluss zur Aktenübersendung? In der Akte nicht enthalten."},
+   {id:"B2", rule:"R-AUSK-01", title:"Auskunftsantrag des Vaters unbeantwortet", norm:"Art. 15, Art. 12 Abs. 3 DSGVO · § 83 SGB X", sev:"hoch",
+    quotes:[["Bl. 80 · E-Mail 01.07.2026","Ich beantrage Auskunft und eine Kopie aller mich betreffenden Daten."]],
+    why:"Bis zum Aktenende (Stand 20.10.2026) findet sich keine Antwort und keine Zwischennachricht.",
+    open:"Keine."},
+   {id:"B3", rule:"R-VERTR-03", title:"Inhalte aus Elternberatung im Bericht verwendet", norm:"§ 65 SGB VIII", sev:"mittel",
+    quotes:[["Bl. 44 · Beratungsprotokoll","Vater äußert im Einzelgespräch Zweifel, ob er den Umgang beruflich leisten kann."],
+            ["Bl. 66 · Bericht an das Gericht","Der Vater räumt selbst ein, zum Umgang nicht in der Lage zu sein."]],
+    why:"Anvertraute Angabe ohne dokumentierte Einwilligung weitergegeben und dabei inhaltlich zugespitzt.",
+    open:"Keine."}
+  ],
+  contradictions:[
+   {id:"W1", title:"Wille des Kindes", sev:"hoch",
+    a:["Bl. 52 · Gesprächsvermerk mit dem Kind 12.05.2026","L. freut sich auf die Wochenenden beim Papa und möchte öfter dort übernachten."],
+    b:["Bl. 67 · Bericht an das Gericht 30.05.2026","Das Kind lehnt Übernachtungen beim Vater ab."],
+    note:"Zwischen beiden Daten ist kein weiteres Gespräch mit dem Kind dokumentiert."}
+  ],
+  retention:[
+   {kat:"Früherer Vorgang (Beratung 2021, abgeschlossen)", fund:"Bl. 1–18", norm:"§ 84 SGB X · Art. 17 DSGVO", res:"pruefen",
+    why:"Zweck seit 2021 erledigt. Weitere Speicherung und die Weitergabe an den Sachverständigen (B1) sind begründungsbedürftig."},
+   {kat:"Mitwirkungsakte Familiengericht (laufend)", fund:"Bl. 19–87", norm:"§ 84 SGB X", res:"aufbew",
+    why:"Verfahren läuft, Daten sind erforderlich."},
+   {kat:"Örtliche Aufbewahrungsfristen und Anbietung an das Archiv", fund:"gesamte Akte", norm:"Landesrecht Bayern", res:"offen",
+    why:"Für dieses Bundesland ist noch kein Regelsatz hinterlegt."}
+  ]
+},
+{ id:"2026/030", name:"Herr C.", amt:"Jugendamt Musterstadt", land:"Nordrhein-Westfalen", blatt:134,
+  art:"Inobhutnahme, Rückführung erfolgt", stand:"Import 12.11.2026",
+  findings:[
+   {id:"B1", rule:"R-ERH-02", title:"Angaben beim Arbeitgeber eingeholt", norm:"§ 62 Abs. 2, 3 SGB VIII", sev:"hoch",
+    quotes:[["Bl. 40 · Telefonvermerk 03.08.2026","Rückfrage beim Arbeitgeber des Vaters zu Schichtzeiten und Fehlzeiten. Hinweis auf laufendes Jugendamtsverfahren gegeben."]],
+    why:"Erhebung bei Dritten ohne dokumentierten Ausnahmegrund. Zugleich wurde dem Arbeitgeber das Verfahren offenbart.",
+    open:"Keine."},
+   {id:"B2", rule:"R-AUSK-01", title:"Akteneinsicht ohne Begründung abgelehnt", norm:"§ 25 SGB X · Art. 15 DSGVO", sev:"mittel",
+    quotes:[["Bl. 110 · Schreiben 22.09.2026","Akteneinsicht kann derzeit nicht gewährt werden."]],
+    why:"Ablehnung ohne Begründung und ohne Rechtsbehelfsbelehrung. Über den daneben gestellten Auskunftsantrag wurde nicht entschieden.",
+    open:"Keine."},
+   {id:"B3", rule:"R-BER-04", title:"Falsche Zuordnung einer Vorstrafe", norm:"Art. 16 DSGVO · § 84 SGB X", sev:"hoch",
+    quotes:[["Bl. 47 · Vermerk","Laut Polizei ist Hr. C. wegen Körperverletzung vorbestraft."],
+            ["Bl. 121 · Führungszeugnis vom 01.10.2026","Keine Eintragung."]],
+    why:"Die Angabe ist durch das später vorgelegte Führungszeugnis widerlegt, steht aber unverändert und ohne Vermerk in der Akte.",
+    open:"Herkunft der polizeilichen Auskunft klären (Namensgleichheit?)."}
+  ],
+  contradictions:[
+   {id:"W1", title:"Anlass der Inobhutnahme", sev:"hoch",
+    a:["Bl. 36 · Einsatzprotokoll 01.08.2026","Kind schläft, wirkt gepflegt. Vater kooperativ, nicht alkoholisiert."],
+    b:["Bl. 49 · Begründung der Inobhutnahme 02.08.2026","Der Vater war stark alkoholisiert und nicht in der Lage, das Kind zu versorgen."],
+    note:"Beide Dokumente beziehen sich auf denselben Einsatz."}
+  ],
+  retention:[
+   {kat:"Akte der Inobhutnahme (beendet 15.09.2026)", fund:"Bl. 30–134", norm:"§ 84 SGB X · § 9b SGB VIII", res:"aufbew",
+    why:"Maßnahme erst kürzlich beendet, Rechtsbehelfe möglich. Sofortige Löschung nicht zu erwarten; Fristbeginn festhalten."},
+   {kat:"Widerlegte Angabe zur Vorstrafe", fund:"Bl. 47", norm:"Art. 16, Art. 17 DSGVO · § 84 SGB X", res:"pruefen",
+    why:"Unrichtige Daten: Berichtigung oder Löschung der Angabe, mindestens ein Richtigstellungsvermerk."},
+   {kat:"Auskunft des Arbeitgebers", fund:"Bl. 40", norm:"Art. 17 Abs. 1 lit. d DSGVO · § 84 SGB X", res:"pruefen",
+    why:"Folgt aus Befund B1: bei unzulässiger Erhebung kommt Löschung in Betracht."}
+  ]
+}];
+
+const RES = { pruefen:["Löschanspruch prüfen","s-hoch"], einschr:["Einschränkung statt Löschung","s-mittel"],
+              aufbew:["Aufbewahrung vorrangig","s-neutral"], offen:["Offen · Regel fehlt","s-niedrig"] };
+const RULES = { "R-AUSK-01":"Auskunft und Akteneinsicht", "R-ERH-02":"Erhebung bei Dritten", "R-VERTR-03":"Anvertraute Daten",
+                "R-BER-04":"Berichtigung", "R-MIN-05":"Datenminimierung", "R-UEB-06":"Übermittlung an Dritte" };
+
+const state = { view:0, tab:"befunde", dec:{} };   // dec["2026/014|B1"] = "bestaetigt" | "verworfen"
+const key = (c,i) => c.id + "|" + i.id;
+const decOf = (c,i) => state.dec[key(c,i)] || "offen";
+const $ = s => document.querySelector(s);
+const q = ([src,text]) => `<blockquote><span class="src">${src}</span>„${text}“</blockquote>`;
+
+function renderNav(){
+  const btn = (label, sub, idx) =>
+    `<button data-view="${idx}" aria-current="${state.view===idx}"><span><b>${label}</b></span><span class="cnt">${sub}</span></button>`;
+  $("#nav").innerHTML = CASES.map((c,i)=>{
+    const open = [...c.findings,...c.contradictions].filter(x=>decOf(c,x)==="offen").length;
+    return btn(`${c.id} · ${c.name}`, `${c.amt} · ${open} offen`, i);
+  }).join("") + btn("Alle Mandate", "Muster über die Kanzlei hinweg", "all");
+}
+
+function decisionButtons(c,i){
+  const d = decOf(c,i);
+  const b = (v,l) => `<button class="btn ${d===v?"on":""}" data-dec="${v}" data-key="${key(c,i)}">${l}</button>`;
+  return `<div class="actions"><span class="label">Anwaltliche Prüfung</span>${b("bestaetigt","Bestätigen")}${b("verworfen","Verwerfen")}${b("offen","Offen lassen")}</div>`;
+}
+
+function tabBefunde(c){
+  return `<div class="list">` + c.findings.map(f=>`
+    <div class="item">
+      <div class="head"><span class="mono muted">${f.id}</span><h3>${f.title}</h3>
+        <span class="pill s-${f.sev}">Gewicht: ${f.sev}</span></div>
+      <div class="norm">${f.norm} · Regel ${f.rule}</div>
+      <div class="pair">${f.quotes.map(q).join("")}</div>
+      <p class="kv"><b>Begründung:</b> ${f.why}</p>
+      <p class="kv muted"><b>Noch zu klären:</b> ${f.open}</p>
+      ${decisionButtons(c,f)}
+    </div>`).join("") + `</div>`;
+}
+function tabWider(c){
+  return `<div class="list">` + c.contradictions.map(w=>`
+    <div class="item">
+      <div class="head"><span class="mono muted">${w.id}</span><h3>${w.title}</h3>
+        <span class="pill s-${w.sev}">Gewicht: ${w.sev}</span></div>
+      <div class="pair">${q(w.a)}${q(w.b)}</div>
+      <p class="kv"><b>Einordnung:</b> ${w.note}</p>
+      ${decisionButtons(c,w)}
+    </div>`).join("") + `</div>`;
+}
+function tabLoesch(c){
+  const pilot = c.land === PILOT_LAND;
+  return `<p class="kv muted">Geprüft wird je Datenkategorie, nicht je Akte: Zweck, Stand des Vorgangs, vorrangige Aufbewahrungspflichten und Landesrecht.
+    Landesregeln ${c.land}: <b>${pilot ? "Entwurfs-Regelsatz hinterlegt (Pilotland)" : "noch nicht hinterlegt"}</b>.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Datenkategorie</th><th>Fundstelle</th><th>Maßgebliche Vorschriften</th><th>Ergebnis</th></tr></thead>
+    <tbody>${c.retention.map(r=>`<tr>
+      <td><b>${r.kat}</b><br><span class="muted">${r.why}</span></td>
+      <td class="mono">${r.fund}</td><td class="norm">${r.norm}</td>
+      <td><span class="pill ${RES[r.res][1]}">${RES[r.res][0]}</span></td></tr>`).join("")}</tbody></table></div>`;
+}
+function reportText(c){
+  const conf = c.findings.filter(f=>decOf(c,f)==="bestaetigt");
+  const wid = c.contradictions.filter(w=>decOf(c,w)==="bestaetigt");
+  const open = [...c.findings,...c.contradictions].filter(x=>decOf(c,x)==="offen").length;
+  let t = `PRÜFBERICHT (Entwurf) · Mandat ${c.id} · ${c.name}\n${c.amt} · ${c.land} · ${c.blatt} Blatt\n\n`;
+  t += `A. Bestätigte Datenschutzbefunde (${conf.length})\n`;
+  t += conf.length ? conf.map((f,n)=>`${n+1}. ${f.title}\n   Vorschriften: ${f.norm}\n   Fundstellen: ${f.quotes.map(x=>x[0]).join("; ")}\n   ${f.why}`).join("\n") : "   Noch keine Befunde bestätigt.";
+  t += `\n\nB. Bestätigte Widersprüche (${wid.length})\n`;
+  t += wid.length ? wid.map((w,n)=>`${n+1}. ${w.title}\n   ${w.a[0]}  gegen  ${w.b[0]}\n   ${w.note}`).join("\n") : "   Noch keine Widersprüche bestätigt.";
+  t += `\n\nC. Löschung, Berichtigung, Einschränkung\n`;
+  t += c.retention.filter(r=>r.res!=="aufbew").map(r=>`   - ${r.kat} (${r.fund}): ${RES[r.res][0]} · ${r.norm}`).join("\n");
+  t += `\n\nNoch nicht anwaltlich geprüft: ${open} Punkt(e). Verworfene Punkte erscheinen nicht im Bericht.`;
+  return t;
+}
+function tabBericht(c){
+  return `<p class="kv muted">Der Bericht enthält nur, was anwaltlich bestätigt wurde. In der Vollversion: Ausgabe als Word-Datei, PDF und Beweistabelle.</p>
+  <pre class="report" id="report">${reportText(c)}</pre>
+  <div class="row"><button class="btn primary" id="copy">Bericht kopieren</button><span class="muted" id="copied" aria-live="polite"></span></div>`;
+}
+
+function renderCase(c){
+  const tabs = [["befunde",`Datenschutzbefunde (${c.findings.length})`],["wider",`Widersprüche (${c.contradictions.length})`],
+                ["loesch","Löschprüfung"],["bericht","Berichtsentwurf"]];
+  const body = {befunde:tabBefunde, wider:tabWider, loesch:tabLoesch, bericht:tabBericht}[state.tab](c);
+  $("#main").innerHTML = `
+    <h2>Mandat ${c.id} · ${c.name}</h2>
+    <div class="meta">
+      <div><span class="label">Behörde</span><span>${c.amt}</span></div>
+      <div><span class="label">Bundesland</span><span>${c.land}</span></div>
+      <div><span class="label">Vorgang</span><span>${c.art}</span></div>
+      <div><span class="label">Akte</span><span class="mono">${c.blatt} Blatt · ${c.stand}</span></div>
+    </div>
+    <div class="tabs" role="tablist">${tabs.map(([k,l])=>`<button role="tab" data-tab="${k}" aria-selected="${state.tab===k}">${l}</button>`).join("")}</div>
+    ${body}`;
+}
+
+function renderAll(){
+  const rows = Object.keys(RULES).map(r=>{
+    const hits = CASES.filter(c=>c.findings.some(f=>f.rule===r));
+    return {r, n:hits.length, total:CASES.reduce((s,c)=>s+c.findings.filter(f=>f.rule===r).length,0), ids:hits.map(c=>c.id).join(", ")};
+  }).sort((a,b)=>b.n-a.n);
+  const amts = [...new Set(CASES.map(c=>c.amt))].map(a=>{
+    const cs = CASES.filter(c=>c.amt===a);
+    return {a, m:cs.length, f:cs.reduce((s,c)=>s+c.findings.length,0), w:cs.reduce((s,c)=>s+c.contradictions.length,0)};
+  });
+  $("#main").innerHTML = `
+    <h2>Muster über alle Mandate</h2>
+    <p class="kv muted">Welche Verstoßarten wiederholen sich, und bei welcher Behörde? Die Auswertung zählt nur, Akteninhalte werden nicht zwischen Mandaten vermischt.</p>
+    <div class="scroll"><table>
+      <thead><tr><th>Prüfregel</th><th>Betroffene Mandate</th><th style="width:30%">Anteil</th><th>Befunde</th></tr></thead>
+      <tbody>${rows.map(x=>`<tr><td><b>${RULES[x.r]}</b><br><span class="mono muted">${x.r}</span></td>
+        <td class="mono">${x.ids||"–"}</td>
+        <td><div class="row"><div class="bar" style="width:${x.n/CASES.length*70}%"></div><span class="num">${x.n} von ${CASES.length}</span></div></td>
+        <td class="num">${x.total}</td></tr>`).join("")}</tbody></table></div>
+    <h3>Nach Behörde</h3>
+    <div class="scroll"><table>
+      <thead><tr><th>Behörde</th><th>Mandate</th><th>Datenschutzbefunde</th><th>Widersprüche</th></tr></thead>
+      <tbody>${amts.map(x=>`<tr><td><b>${x.a}</b></td><td class="num">${x.m}</td><td class="num">${x.f}</td><td class="num">${x.w}</td></tr>`).join("")}</tbody></table></div>`;
+}
+
+function render(){ renderNav(); state.view==="all" ? renderAll() : renderCase(CASES[state.view]); }
+
+document.addEventListener("click", e=>{
+  const t = e.target.closest("button"); if(!t) return;
+  if(t.dataset.view!==undefined){ state.view = t.dataset.view==="all" ? "all" : +t.dataset.view; state.tab="befunde"; render(); }
+  else if(t.dataset.tab){ state.tab=t.dataset.tab; render(); }
+  else if(t.dataset.dec){ state.dec[t.dataset.key]=t.dataset.dec; render(); }
+  else if(t.id==="copy"){
+    const el=$("#report"), done=()=>{$("#copied").textContent="Kopiert.";};
+    const fallback=()=>{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);
+      $("#copied").textContent="Text ist markiert, bitte mit Strg+C kopieren.";};
+    try{ navigator.clipboard.writeText(el.textContent).then(done,fallback); }catch(_){ fallback(); }
+  }
+});
+render();
+</script>

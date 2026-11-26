@@ -1,0 +1,111 @@
+<template>
+  <style>
+    #root { position:absolute; inset:0; overflow:hidden; background:#B5B0A6; }
+    #root .world { position:absolute; left:0; top:0; width:1080px; height:1920px; }
+    #root .grain { opacity:0.10; mix-blend-mode:multiply; }
+    #root .line { position:absolute; left:120px; top:330px; width:768px; color:#2E2A25;
+                  font-family:"Nunito",sans-serif; font-weight:800; font-size:60px; line-height:1.2; letter-spacing:-0.01em; }
+    #root .line .w { display:inline-block; }
+    #root .src { position:absolute; left:120px; width:768px; font-family:"Inter",sans-serif; font-weight:400;
+                 font-size:28px; line-height:1.3; color:#4A372D; }
+
+    #root #da-card { position:absolute; left:96px; top:330px; width:888px; height:550px; background:#E6DFCC;
+      border:3px solid #9C9483; box-shadow:0 10px 0 rgba(60,55,48,0.25); }
+    #root #da-tab { position:absolute; left:40px; top:-44px; padding:6px 22px; background:#E6DFCC; border:3px solid #9C9483;
+      border-bottom:none; font-family:"IBM Plex Mono",monospace; font-size:28px; color:#5A544A; }
+    #root .akte { left:150px; top:395px; width:780px; color:#2E2A25; font-family:"IBM Plex Mono",monospace;
+      font-weight:500; font-size:44px; line-height:1.28; letter-spacing:-0.01em; }
+    #root .akte .wd { display:inline-block; }
+    #root .akte.stamp { font-family:"Inter",sans-serif; font-weight:900; font-size:54px; text-transform:uppercase; color:#6E2A22; }
+    #root .akte.stamp .w { display:inline-block; border:4px solid #6E2A22; padding:2px 12px; margin:6px 6px 0 0; transform:rotate(-2deg); }
+    #root #da-dim { position:absolute; inset:0; background:#2A2622; opacity:0; }
+  </style>
+  <div id="root" data-composition-id="damals" data-width="1080" data-height="1920">
+
+<svg class="world" viewBox="0 0 1080 1920" width="1080" height="1920" xmlns="http://www.w3.org/2000/svg" data-layout-ignore>
+  <defs><g id="da-obj">
+<rect x="-150" y="-280" width="22" height="240" fill="#8F8B83" stroke="#4A4640" stroke-width="6" stroke-linejoin="round"/>
+<rect x="128" y="-280" width="22" height="240" fill="#8F8B83" stroke="#4A4640" stroke-width="6" stroke-linejoin="round"/>
+<rect x="-150" y="-280" width="22" height="240" fill="#000" opacity="0.2"/>
+<rect x="128" y="-280" width="22" height="240" fill="#000" opacity="0.2"/>
+<rect x="-172" y="-640" width="28" height="320" rx="6" fill="#8F8B83" stroke="#4A4640" stroke-width="6" stroke-linejoin="round"/>
+<rect x="144" y="-640" width="28" height="320" rx="6" fill="#8F8B83" stroke="#4A4640" stroke-width="6" stroke-linejoin="round"/>
+<rect x="-92" y="-570" width="22" height="240" fill="#8F8B83" stroke="#4A4640" stroke-width="6" stroke-linejoin="round"/>
+<rect x="-11" y="-570" width="22" height="240" fill="#8F8B83" stroke="#4A4640" stroke-width="6" stroke-linejoin="round"/>
+<rect x="70" y="-570" width="22" height="240" fill="#8F8B83" stroke="#4A4640" stroke-width="6" stroke-linejoin="round"/>
+<rect x="-184" y="-636" width="368" height="70" rx="16" fill="#8F8B83" stroke="#4A4640" stroke-width="6" stroke-linejoin="round"/>
+<path d="M-176 -352 L176 -352 L204 -326 L-204 -326 Z" fill="#8F8B83" stroke="#4A4640" stroke-width="6" stroke-linejoin="round"/>
+<path d="M-176 -352 L176 -352 L204 -326 L-204 -326 Z" fill="#fff" opacity="0.14"/>
+<rect x="-212" y="-328" width="424" height="52" rx="8" fill="#8F8B83" stroke="#4A4640" stroke-width="6" stroke-linejoin="round"/>
+<rect x="-204" y="-280" width="32" height="280" rx="4" fill="#8F8B83" stroke="#4A4640" stroke-width="6" stroke-linejoin="round"/>
+<rect x="172" y="-280" width="32" height="280" rx="4" fill="#8F8B83" stroke="#4A4640" stroke-width="6" stroke-linejoin="round"/>
+<rect x="-176" y="-112" width="352" height="18" fill="#8F8B83" stroke="#4A4640" stroke-width="6" stroke-linejoin="round"/>
+</g></defs>
+  <rect width="1080" height="1920" fill="#B5B0A6"/>
+  <line x1="0" y1="0" x2="1080" y2="0" stroke="#A39E94" stroke-width="2"/><line x1="0" y1="80" x2="1080" y2="80" stroke="#A39E94" stroke-width="2"/><line x1="0" y1="160" x2="1080" y2="160" stroke="#A39E94" stroke-width="2"/><line x1="0" y1="240" x2="1080" y2="240" stroke="#A39E94" stroke-width="2"/><line x1="0" y1="320" x2="1080" y2="320" stroke="#A39E94" stroke-width="2"/><line x1="0" y1="400" x2="1080" y2="400" stroke="#A39E94" stroke-width="2"/><line x1="0" y1="480" x2="1080" y2="480" stroke="#A39E94" stroke-width="2"/><line x1="0" y1="560" x2="1080" y2="560" stroke="#A39E94" stroke-width="2"/><line x1="0" y1="640" x2="1080" y2="640" stroke="#A39E94" stroke-width="2"/><line x1="0" y1="720" x2="1080" y2="720" stroke="#A39E94" stroke-width="2"/><line x1="0" y1="800" x2="1080" y2="800" stroke="#A39E94" stroke-width="2"/><line x1="0" y1="880" x2="1080" y2="880" stroke="#A39E94" stroke-width="2"/><line x1="0" y1="960" x2="1080" y2="960" stroke="#A39E94" stroke-width="2"/><line x1="0" y1="1040" x2="1080" y2="1040" stroke="#A39E94" stroke-width="2"/><line x1="0" y1="1120" x2="1080" y2="1120" stroke="#A39E94" stroke-width="2"/><line x1="0" y1="1200" x2="1080" y2="1200" stroke="#A39E94" stroke-width="2"/><line x1="0" y1="1280" x2="1080" y2="1280" stroke="#A39E94" stroke-width="2"/><line x1="0" y1="1360" x2="1080" y2="1360" stroke="#A39E94" stroke-width="2"/><line x1="0" y1="1440" x2="1080" y2="1440" stroke="#A39E94" stroke-width="2"/><line x1="0" y1="0" x2="0" y2="1480" stroke="#A39E94" stroke-width="2"/><line x1="80" y1="0" x2="80" y2="1480" stroke="#A39E94" stroke-width="2"/><line x1="160" y1="0" x2="160" y2="1480" stroke="#A39E94" stroke-width="2"/><line x1="240" y1="0" x2="240" y2="1480" stroke="#A39E94" stroke-width="2"/><line x1="320" y1="0" x2="320" y2="1480" stroke="#A39E94" stroke-width="2"/><line x1="400" y1="0" x2="400" y2="1480" stroke="#A39E94" stroke-width="2"/><line x1="480" y1="0" x2="480" y2="1480" stroke="#A39E94" stroke-width="2"/><line x1="560" y1="0" x2="560" y2="1480" stroke="#A39E94" stroke-width="2"/><line x1="640" y1="0" x2="640" y2="1480" stroke="#A39E94" stroke-width="2"/><line x1="720" y1="0" x2="720" y2="1480" stroke="#A39E94" stroke-width="2"/><line x1="800" y1="0" x2="800" y2="1480" stroke="#A39E94" stroke-width="2"/><line x1="880" y1="0" x2="880" y2="1480" stroke="#A39E94" stroke-width="2"/><line x1="960" y1="0" x2="960" y2="1480" stroke="#A39E94" stroke-width="2"/><line x1="1040" y1="0" x2="1040" y2="1480" stroke="#A39E94" stroke-width="2"/>
+  <rect y="1480" width="1080" height="440" fill="#8D887E"/>
+  <rect y="1474" width="1080" height="12" fill="#6E6A62"/>
+  <g transform="translate(965,912)">
+    <circle r="46" fill="#ECE7DC" stroke="#3E3A34" stroke-width="7"/>
+    <line x1="0" y1="-38" x2="0" y2="-31" stroke="#3E3A34" stroke-width="4" transform="rotate(0)"/><line x1="0" y1="-38" x2="0" y2="-31" stroke="#3E3A34" stroke-width="4" transform="rotate(30)"/><line x1="0" y1="-38" x2="0" y2="-31" stroke="#3E3A34" stroke-width="4" transform="rotate(60)"/><line x1="0" y1="-38" x2="0" y2="-31" stroke="#3E3A34" stroke-width="4" transform="rotate(90)"/><line x1="0" y1="-38" x2="0" y2="-31" stroke="#3E3A34" stroke-width="4" transform="rotate(120)"/><line x1="0" y1="-38" x2="0" y2="-31" stroke="#3E3A34" stroke-width="4" transform="rotate(150)"/><line x1="0" y1="-38" x2="0" y2="-31" stroke="#3E3A34" stroke-width="4" transform="rotate(180)"/><line x1="0" y1="-38" x2="0" y2="-31" stroke="#3E3A34" stroke-width="4" transform="rotate(210)"/><line x1="0" y1="-38" x2="0" y2="-31" stroke="#3E3A34" stroke-width="4" transform="rotate(240)"/><line x1="0" y1="-38" x2="0" y2="-31" stroke="#3E3A34" stroke-width="4" transform="rotate(270)"/><line x1="0" y1="-38" x2="0" y2="-31" stroke="#3E3A34" stroke-width="4" transform="rotate(300)"/><line x1="0" y1="-38" x2="0" y2="-31" stroke="#3E3A34" stroke-width="4" transform="rotate(330)"/>
+    <line x1="0" y1="0" x2="0" y2="-24" stroke="#3E3A34" stroke-width="6" stroke-linecap="round" transform="rotate(300)"/>
+    <line x1="0" y1="0" x2="0" y2="-33" stroke="#3E3A34" stroke-width="4" stroke-linecap="round" transform="rotate(60)"/>
+    <g id="da-sec" transform="rotate(0)"><line x1="0" y1="6" x2="0" y2="-36" stroke="#8E2A22" stroke-width="2.5"/></g>
+    <circle r="4" fill="#3E3A34"/>
+  </g>
+  <g id="da-c0" class="da-copy" transform="translate(90,1335) scale(0.42)"><use href="#da-obj"/></g><g id="da-c1" class="da-copy" transform="translate(250,1335) scale(0.42)"><use href="#da-obj"/></g><g id="da-c2" class="da-copy" transform="translate(410,1335) scale(0.42)"><use href="#da-obj"/></g><g id="da-c3" class="da-copy" transform="translate(570,1335) scale(0.42)"><use href="#da-obj"/></g><g id="da-c4" class="da-copy" transform="translate(730,1335) scale(0.42)"><use href="#da-obj"/></g><g id="da-c5" class="da-copy" transform="translate(890,1335) scale(0.42)"><use href="#da-obj"/></g><g id="da-c6" class="da-copy" transform="translate(1050,1335) scale(0.42)"><use href="#da-obj"/></g><g id="da-c7" class="da-copy" transform="translate(20,1420) scale(0.62)"><use href="#da-obj"/></g><g id="da-c8" class="da-copy" transform="translate(250,1420) scale(0.62)"><use href="#da-obj"/></g><g id="da-c9" class="da-copy" transform="translate(830,1420) scale(0.62)"><use href="#da-obj"/></g><g id="da-c10" class="da-copy" transform="translate(1060,1420) scale(0.62)"><use href="#da-obj"/></g><g id="da-c11" class="da-copy" transform="translate(40,1560) scale(1.0)"><use href="#da-obj"/></g><g id="da-c12" class="da-copy" transform="translate(1040,1560) scale(1.0)"><use href="#da-obj"/></g>
+</svg>
+<svg class="world" viewBox="0 0 1080 1920" width="1080" height="1920" xmlns="http://www.w3.org/2000/svg" data-layout-ignore>
+  <g id="da-heroPos" transform="translate(540,1560)">
+    <g id="da-hero">
+<rect x="-150" y="-280" width="22" height="240" fill="#8F8B83" class="da-fill" stroke="#2B1D17" stroke-width="6" stroke-linejoin="round"/>
+<rect x="128" y="-280" width="22" height="240" fill="#8F8B83" class="da-fill" stroke="#2B1D17" stroke-width="6" stroke-linejoin="round"/>
+<rect x="-150" y="-280" width="22" height="240" fill="#000" opacity="0.2"/>
+<rect x="128" y="-280" width="22" height="240" fill="#000" opacity="0.2"/>
+<rect x="-172" y="-640" width="28" height="320" rx="6" fill="#8F8B83" class="da-fill" stroke="#2B1D17" stroke-width="6" stroke-linejoin="round"/>
+<rect x="144" y="-640" width="28" height="320" rx="6" fill="#8F8B83" class="da-fill" stroke="#2B1D17" stroke-width="6" stroke-linejoin="round"/>
+<rect x="-92" y="-570" width="22" height="240" fill="#8F8B83" class="da-fill" stroke="#2B1D17" stroke-width="6" stroke-linejoin="round"/>
+<rect x="-11" y="-570" width="22" height="240" fill="#8F8B83" class="da-fill" stroke="#2B1D17" stroke-width="6" stroke-linejoin="round"/>
+<rect x="70" y="-570" width="22" height="240" fill="#8F8B83" class="da-fill" stroke="#2B1D17" stroke-width="6" stroke-linejoin="round"/>
+<rect x="-184" y="-636" width="368" height="70" rx="16" fill="#8F8B83" class="da-fill" stroke="#2B1D17" stroke-width="6" stroke-linejoin="round"/>
+<path d="M-176 -352 L176 -352 L204 -326 L-204 -326 Z" fill="#8F8B83" class="da-fill" stroke="#2B1D17" stroke-width="6" stroke-linejoin="round"/>
+<path d="M-176 -352 L176 -352 L204 -326 L-204 -326 Z" fill="#fff" opacity="0.14"/>
+<rect x="-212" y="-328" width="424" height="52" rx="8" fill="#8F8B83" class="da-fill" stroke="#2B1D17" stroke-width="6" stroke-linejoin="round"/>
+<rect x="-204" y="-280" width="32" height="280" rx="4" fill="#8F8B83" class="da-fill" stroke="#2B1D17" stroke-width="6" stroke-linejoin="round"/>
+<rect x="172" y="-280" width="32" height="280" rx="4" fill="#8F8B83" class="da-fill" stroke="#2B1D17" stroke-width="6" stroke-linejoin="round"/>
+<rect x="-176" y="-112" width="352" height="18" fill="#8F8B83" class="da-fill" stroke="#2B1D17" stroke-width="6" stroke-linejoin="round"/>
+</g>
+  </g>
+</svg><div id="da-dim"></div><div id="da-cardWrap" class="clip" data-start="0" data-duration="20" data-track-index="1"><div id="da-card"><div id="da-tab">AKTE</div></div><div id="da-src" class="src" style="top:820px;left:150px;width:620px;color:#5A544A">Quelle: Diakonie Deutschland – Erziehungshilfe im historischen Verlauf</div></div><div id="da-l0" class="clip line akte" data-start="0.90" data-duration="6.38" data-track-index="2" data-hold><span class="wd"><span class="c">B</span><span class="c">e</span><span class="c">v</span><span class="c">o</span><span class="c">r</span></span> <span class="wd"><span class="c">e</span><span class="c">s</span></span> <span class="wd"><span class="c">J</span><span class="c">u</span><span class="c">g</span><span class="c">e</span><span class="c">n</span><span class="c">d</span><span class="c">ä</span><span class="c">m</span><span class="c">t</span><span class="c">e</span><span class="c">r</span></span> <span class="wd"><span class="c">g</span><span class="c">a</span><span class="c">b</span><span class="c">,</span></span> <span class="wd"><span class="c">w</span><span class="c">u</span><span class="c">r</span><span class="c">d</span><span class="c">e</span><span class="c">n</span></span> <span class="wd"><span class="c">K</span><span class="c">i</span><span class="c">n</span><span class="c">d</span><span class="c">e</span><span class="c">r</span></span> <span class="wd"><span class="c">b</span><span class="c">e</span><span class="c">r</span><span class="c">e</span><span class="c">i</span><span class="c">t</span><span class="c">s</span></span> <span class="wd"><span class="c">i</span><span class="c">n</span></span> <span class="wd"><span class="c">A</span><span class="c">n</span><span class="c">s</span><span class="c">t</span><span class="c">a</span><span class="c">l</span><span class="c">t</span><span class="c">e</span><span class="c">n</span></span> <span class="wd"><span class="c">e</span><span class="c">r</span><span class="c">z</span><span class="c">o</span><span class="c">g</span><span class="c">e</span><span class="c">n</span><span class="c">.</span></span></div>
+<div id="da-l1" class="clip line akte stamp" data-start="7.38" data-duration="5.45" data-track-index="2" data-hold><span class="w">Religiöse</span> <span class="w">Unterweisung,</span> <span class="w">Arbeit,</span> <span class="w">Ordnung,</span> <span class="w">Gehorsam.</span></div>
+<div id="da-l2" class="clip line akte" data-start="12.93" data-duration="7.02" data-track-index="2" data-hold><span class="wd"><span class="c">W</span><span class="c">i</span><span class="c">e</span></span> <span class="wd"><span class="c">m</span><span class="c">u</span><span class="c">s</span><span class="c">s</span></span> <span class="wd"><span class="c">e</span><span class="c">i</span><span class="c">n</span></span> <span class="wd"><span class="c">K</span><span class="c">i</span><span class="c">n</span><span class="c">d</span></span> <span class="wd"><span class="c">w</span><span class="c">e</span><span class="c">r</span><span class="c">d</span><span class="c">e</span><span class="c">n</span><span class="c">,</span></span> <span class="wd"><span class="c">d</span><span class="c">a</span><span class="c">m</span><span class="c">i</span><span class="c">t</span></span> <span class="wd"><span class="c">e</span><span class="c">s</span></span> <span class="wd"><span class="c">d</span><span class="c">e</span><span class="c">n</span></span> <span class="wd"><span class="c">E</span><span class="c">r</span><span class="c">w</span><span class="c">a</span><span class="c">r</span><span class="c">t</span><span class="c">u</span><span class="c">n</span><span class="c">g</span><span class="c">e</span><span class="c">n</span></span> <span class="wd"><span class="c">d</span><span class="c">e</span><span class="c">r</span></span> <span class="wd"><span class="c">E</span><span class="c">r</span><span class="c">w</span><span class="c">a</span><span class="c">c</span><span class="c">h</span><span class="c">s</span><span class="c">e</span><span class="c">n</span><span class="c">e</span><span class="c">n</span></span> <span class="wd"><span class="c">e</span><span class="c">n</span><span class="c">t</span><span class="c">s</span><span class="c">p</span><span class="c">r</span><span class="c">i</span><span class="c">c</span><span class="c">h</span><span class="c">t</span><span class="c">?</span></span></div><svg class="world grain" viewBox="0 0 1080 1920" width="1080" height="1920" data-layout-ignore>
+<filter id="da-grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4"/>
+<feColorMatrix values="0 0 0 0 0.2  0 0 0 0 0.18  0 0 0 0 0.15  0 0 0 0.55 0"/></filter>
+<rect width="1080" height="1920" filter="url(#da-grain)"/></svg>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+function blurWords(sel,t,gap){tl.fromTo(sel+" .w",{opacity:0,filter:"blur(7px)"},{opacity:1,filter:"blur(0px)",duration:0.55,ease:"power2.out",stagger:gap||0.11},t);}
+function greyWords(sel,t,gap){tl.fromTo(sel+" .w",{opacity:0.16},{opacity:1,duration:0.45,ease:"none",stagger:gap||0.12},t);}
+function lineIn(sel,t){tl.fromTo(sel,{opacity:0,filter:"blur(9px)"},{opacity:1,filter:"blur(0px)",duration:0.7,ease:"power3.out"},t);}
+function typeIn(sel,t,gap){tl.fromTo(sel+" .c",{opacity:0},{opacity:1,duration:0.01,ease:"none",stagger:gap||0.028},t);}
+function stampWords(sel,t,gap){var ws=document.querySelectorAll(sel+" .w");ws.forEach(function(w,i){var at=t+i*(gap||0.38);tl.fromTo(w,{opacity:0,scale:1.35},{opacity:1,scale:1,duration:0.12,ease:"power4.out"},at);});}
+function outLine(sel,t){tl.to(sel,{opacity:0,filter:"blur(7px)",duration:0.3,ease:"power2.in"},t);}
+
+typeIn("#da-l0",0.90);
+outLine("#da-l0",6.63);
+stampWords("#da-l1",7.38);
+outLine("#da-l1",12.18);
+typeIn("#da-l2",12.93);
+outLine("#da-l2",19.30);
+tl.set("#da-sec",{rotation:6, svgOrigin:"0 0"},1);tl.set("#da-sec",{rotation:12, svgOrigin:"0 0"},2);tl.set("#da-sec",{rotation:18, svgOrigin:"0 0"},3);tl.set("#da-sec",{rotation:24, svgOrigin:"0 0"},4);tl.set("#da-sec",{rotation:30, svgOrigin:"0 0"},5);tl.set("#da-sec",{rotation:36, svgOrigin:"0 0"},6);tl.set("#da-sec",{rotation:42, svgOrigin:"0 0"},7);tl.set("#da-sec",{rotation:48, svgOrigin:"0 0"},8);tl.set("#da-sec",{rotation:54, svgOrigin:"0 0"},9);tl.set("#da-sec",{rotation:60, svgOrigin:"0 0"},10);tl.set("#da-sec",{rotation:66, svgOrigin:"0 0"},11);tl.set("#da-sec",{rotation:72, svgOrigin:"0 0"},12);tl.set("#da-sec",{rotation:78, svgOrigin:"0 0"},13);tl.set("#da-sec",{rotation:84, svgOrigin:"0 0"},14);tl.set("#da-sec",{rotation:90, svgOrigin:"0 0"},15);tl.set("#da-sec",{rotation:96, svgOrigin:"0 0"},16);tl.set("#da-sec",{rotation:102, svgOrigin:"0 0"},17);tl.set("#da-sec",{rotation:108, svgOrigin:"0 0"},18);tl.set("#da-sec",{rotation:114, svgOrigin:"0 0"},19);
+tl.fromTo("#da-card",{y:-60,rotation:-3,opacity:0},{y:0,rotation:-1,opacity:1,duration:0.8,ease:"power3.out"},0.0);
+tl.fromTo("#da-src",{opacity:0},{opacity:1,duration:0.5},0.6);
+tl.to("#da-cardWrap",{opacity:0,duration:0.3,ease:"power2.in"},19.65);
+tl.fromTo("#da-hero",{rotation:0,x:0},{rotation:7,x:26,duration:0.9,ease:"power2.out",transformOrigin:"50% 100%"},13.23);
+tl.to("#da-hero",{rotation:0,x:0,duration:0.22,ease:"power4.in"},18.20);
+tl.to("#da-dim",{opacity:0.28,duration:2.8,ease:"power2.inOut"},12.93);
+    window.__timelines["damals"] = tl;
+  </script>
+</template>

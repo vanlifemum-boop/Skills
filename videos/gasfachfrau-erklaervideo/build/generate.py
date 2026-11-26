@@ -254,7 +254,7 @@ def sc1():
         </svg>
         {van}
       </div>
-      <div id="sc1-hook" style="position:absolute; left:110px; right:200px; top:440px; text-align:center">
+      <div id="sc1-hook" style="position:absolute; left:110px; right:200px; top:330px; text-align:center">
         <div id="sc1-hook-1" style="display:inline-block; background:{PET}; color:#fff; font-weight:900; font-size:72px; line-height:1.08; padding:24px 34px; border-radius:26px; box-shadow:0 12px 0 rgba(0,0,0,.2)">Tankflasche an die<br>Autogas&#8209;Zapfsäule?</div>
       </div>
     </div>
@@ -462,11 +462,15 @@ def sc6():
     CUR["scene"] = "sc6"
     off = AUDIO_START
     field = f"""
-    <div id="sc6-b" class="clip shot" data-start="1.5" data-duration="4.7" style="background:linear-gradient(#BFDCE8, #E9F2F1 60%)">
+    <div id="sc6-b" class="clip shot" data-start="1.5" data-duration="4.7" style="background:linear-gradient(#D7E6EE, #F3F6F8 70%)">
       <div id="sc6-b-cam" class="cam">
-        <div style="position:absolute;left:-60px;top:1060px;width:1200px;height:300px;background:#7F9A55;border-radius:50% 50% 0 0"></div>
-        {''.join(f'<div style="position:absolute;left:{x}px;top:{y}px;width:{r}px;height:{r}px;border-radius:50%;background:#56733A"></div>' for x, y, r in [(60, 1000, 120), (150, 1030, 90), (820, 990, 140), (930, 1040, 90), (480, 1050, 70)])}
-        <div style="position:absolute;left:0;top:1200px;width:1080px;height:720px;background:linear-gradient(#A9BD68,#8DA552)"></div>
+        <div style="position:absolute;left:-40px;top:600px;width:1160px;height:70px;background:{PET};border-bottom:10px solid #0B5E53"></div>
+        <div style="position:absolute;left:60px;top:670px;width:40px;height:540px;background:#C9CED3;border:5px solid {INK}"></div><div style="position:absolute;left:980px;top:670px;width:40px;height:540px;background:#C9CED3;border:5px solid {INK}"></div>
+        <div style="position:absolute;left:770px;top:860px;width:190px;height:350px;background:#fff;border:6px solid {INK};border-radius:14px"></div>
+        <div style="position:absolute;left:790px;top:880px;width:150px;height:56px;background:{PET};border-radius:8px;color:#fff;font-weight:900;font-size:36px;text-align:center;line-height:56px">LPG</div>
+        <div style="position:absolute;left:800px;top:960px;width:130px;height:70px;background:#1E2A22;border-radius:8px"></div>
+
+        <div style="position:absolute;left:0;top:1200px;width:1080px;height:720px;background:linear-gradient(#8E959B,#71787E)"></div><div style="position:absolute;left:0;top:1200px;width:1080px;height:10px;background:#B9BEC3"></div>
         <svg id="sc6-red" viewBox="0 0 300 720" style="position:absolute;left:230px;top:400px;width:390px;height:936px;overflow:visible">
           <ellipse cx="150" cy="708" rx="140" ry="16" fill="#000" opacity="0.2"/>
           <path d="M70 40 L230 40 L238 168 L62 168 Z" fill="#56632F" stroke="{INK}" stroke-width="7" stroke-linejoin="round"/>
@@ -546,8 +550,7 @@ def index():
     hosts = ""
     for cid, st, du, _ in SCENES:
         hosts += f'      <div id="{cid}" data-composition-id="{cid}" data-composition-src="compositions/{cid}.html" data-start="{st}" data-duration="{du}" data-track-index="1" data-track-kind="graphics" data-width="{W}" data-height="{H}"></div>\n'
-    hosts += f'      <div id="captions" data-composition-id="captions" data-composition-src="compositions/captions.html" data-start="0" data-duration="{TOTAL}" data-track-index="2" data-track-kind="captions" data-width="{W}" data-height="{H}"></div>\n'
-    hosts += f'      <img id="logo-bug" class="clip" src="assets/brand/icon.png" data-start="0" data-duration="{START["end"]}" data-track-index="4" style="position:absolute; left:800px; top:296px; width:88px; height:88px; z-index:50;"/>\n'
+    hosts += f'      <div id="brand" class="clip" data-start="0" data-duration="{START["end"]}" data-track-index="4" style="position:absolute; left:0; right:0; top:1600px; text-align:center; z-index:50;"><div style="display:inline-flex; align-items:center; gap:14px; background:rgba(255,255,255,0.94); border-radius:40px; padding:10px 28px 10px 14px; box-shadow:0 6px 18px rgba(0,0,0,0.18);"><img src="assets/brand/icon.png" style="width:52px; height:52px"/><span style="font-family:Montserrat, sans-serif; font-weight:800; font-size:34px; color:#232323; letter-spacing:0.3px">gasfachfrau.de</span></div></div>\n'
     hosts += f'      <audio id="vo" class="clip" src="{AUDIO}" data-start="{AUDIO_START}" data-duration="{AUDIO_DUR:.3f}" data-track-index="3" data-volume="0.8"></audio>\n'
     return f"""<!doctype html>
 <html lang="de">

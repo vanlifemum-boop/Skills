@@ -46,16 +46,14 @@
       <g transform="translate(150 265)"><rect x="-40" y="-24" width="80" height="48" rx="7" fill="#D7DDE2" stroke="#7F8890" stroke-width="3"/>
       <rect x="-30" y="-10" width="60" height="18" rx="4" fill="#F1F3F5" stroke="#8E979F" stroke-width="2"/></g></g>
 </svg></div>
-    <div id="s4-stamp" class="abs" style="left:290px;top:330px;width:500px;height:500px">
+    <div id="s4-stamp" class="abs" style="left:290px;top:440px;width:500px;height:500px">
       <svg viewBox="0 0 500 500" width="500"><defs><path id="s4-ring" d="M250 250 m-190 0 a190 190 0 1 1 380 0 a190 190 0 1 1 -380 0"/></defs>
         <circle cx="250" cy="250" r="236" fill="none" stroke="#F07A2E" stroke-width="14"/>
         <circle cx="250" cy="250" r="150" fill="#F07A2E"/>
         <text font-family="Montserrat" font-weight="800" font-size="30" fill="#fff" letter-spacing="4"><textPath href="#s4-ring">DIN EN 12195-1 · VDI 2700 · LADUNGSSICHERUNG ·</textPath></text>
-        <text x="250" y="236" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="46" fill="#1B2452">TÜV NORD</text>
-        <text x="250" y="300" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="44" fill="#fff">GEPRÜFT</text></svg></div>
-    <div id="s4-force" class="abs center" style="top:880px">
-      <div class="heavy" style="font-size:120px;color:#fff">60 daN</div>
-      <div class="thin" style="font-size:40px;color:#fff;margin-top:12px">in, entgegen &amp; quer zur Fahrtrichtung</div></div>
+        <text x="250" y="226" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="54" fill="#1B2452">GEPRÜFT</text>
+        <text x="250" y="268" text-anchor="middle" font-family="Montserrat" font-weight="700" font-size="30" fill="#fff">nach DIN EN</text>
+        <text x="250" y="312" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="42" fill="#fff">12195-1</text></svg></div>
     <div id="s4-wipe" class="abs" style="left:540px;top:960px;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;background:#FFFFFF;opacity:0"></div>
     <div class="abs" style="left:700px;top:1380px;width:620px;height:620px;border-radius:50%;background:#F07A2E"></div>
 
@@ -74,7 +72,6 @@ tl.fromTo("#s4-b2",{opacity:0,y:200},{opacity:1,y:0,duration:0.45,ease:"back.out
 tl.to(["#s4-specs","#s4-b1","#s4-b2"],{opacity:0,y:-40,duration:0.3,ease:"power2.in",stagger:0.03},2.45);
 tl.fromTo("#s4-stamp",{opacity:0,scale:2.4,rotation:-30},{opacity:1,scale:1,rotation:-10,duration:0.28,ease:"power4.in"},2.75);
 tl.fromTo("#root",{x:0},{x:14,duration:0.05,yoyo:true,repeat:5,ease:"none"},3.03);
-tl.fromTo("#s4-force",{opacity:0,y:40},{opacity:1,y:0,duration:0.45,ease:"power3.out"},4.95);
 tl.fromTo("#s4-wipe",{scale:0},{scale:40,duration:0.5,ease:"power2.in"},7.3);
 
     window.__timelines["s4"] = tl;

@@ -15,7 +15,7 @@ MOTION:  Paul: Federn (back.out 1.6 / elastic.out(1,0.5)), Squash vor jedem Spru
 SHOTS:   S1 0–8,6  Hook: Gaskasten rappelt, Vollbremsung, Flasche fliegt – "Lose Flasche = Geschoss", Gurt-Arm schnappt rein.
          S2 8,6–14,6  Paul ploppt auf, winkt: "Hi, ich bin PAUL.", umarmt die Flasche, Wohnwagen fährt los.
          S3 14,6–26,4 Aluminium (Foto echtes Profil, leicht/robust/rostet nicht, Stahl-Rost ✕) → Klappschloss klappt zu → Vorhängeschloss.
-         S4 26,4–34,2 5 + 11 kg, Ø 229–300 mm, max. 910 mm → Stempel "TÜV NORD geprüft · DIN EN 12195-1 / VDI 2700 · 60 daN".
+         S4 26,4–34,2 5 + 11 kg, Ø 229–300 mm, max. 910 mm → Stempel "Geprüft nach DIN EN 12195-1 / VDI 2700" (kein Markenname TÜV – Kundenwunsch).
          S5 34,2–40,6 Ehrlich: Schrauben nicht dabei (Holz/Metall/GFK) → in 6 Schritten montiert.
          S6 40,6–49   Echtes Produktfoto + QR-Code (Produktseite mit Montagevideo), URL, VB-Logo, Paul zeigt auf den Code.
 BANNED:  dunkle Leere mit Kleinkram in der Mitte; Glow/Partikel; Lila-/Blau-Verläufe; drei Karten in einer Reihe; Logo in der Ecke geparkt;

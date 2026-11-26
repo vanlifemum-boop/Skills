@@ -336,7 +336,7 @@ tl.to("#s3-wipe",{{y:-1920,duration:0.45,ease:"power3.in"}},11.35);
 '''
 write("s3", scene("s3", 11.8, "", s3_html, s3_js))
 
-# ================================================================ S4 PASST + TÜV (7.8s)
+# ================================================================ S4 PASST + GEPRÜFT (7.8s)
 rows = [("5 + 11 kg", "Gasflaschen"), ("Ø 229–300 mm", "Durchmesser"), ("max. 910 mm", "Flaschenhöhe")]
 rows_html = "".join(
     f'<div id="s4-r{i}" style="display:flex;justify-content:space-between;align-items:baseline;border-top:2px solid rgba(255,255,255,.25);padding:22px 0">'
@@ -348,16 +348,14 @@ s4_html = f'''
       {rows_html}</div>
     <div id="s4-b1" class="abs" style="left:260px;top:820px">{bottle_svg("s4-ba", strap=True, w=130)}</div>
     <div id="s4-b2" class="abs" style="left:560px;top:760px">{bottle_svg("s4-bb", strap=True, w=180)}</div>
-    <div id="s4-stamp" class="abs" style="left:290px;top:330px;width:500px;height:500px">
+    <div id="s4-stamp" class="abs" style="left:290px;top:440px;width:500px;height:500px">
       <svg viewBox="0 0 500 500" width="500"><defs><path id="s4-ring" d="M250 250 m-190 0 a190 190 0 1 1 380 0 a190 190 0 1 1 -380 0"/></defs>
         <circle cx="250" cy="250" r="236" fill="none" stroke="{ORANGE}" stroke-width="14"/>
         <circle cx="250" cy="250" r="150" fill="{ORANGE}"/>
         <text font-family="Montserrat" font-weight="800" font-size="30" fill="#fff" letter-spacing="4"><textPath href="#s4-ring">DIN EN 12195-1 · VDI 2700 · LADUNGSSICHERUNG ·</textPath></text>
-        <text x="250" y="236" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="46" fill="{NAVY}">TÜV NORD</text>
-        <text x="250" y="300" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="44" fill="#fff">GEPRÜFT</text></svg></div>
-    <div id="s4-force" class="abs center" style="top:880px">
-      <div class="heavy" style="font-size:120px;color:#fff">60 daN</div>
-      <div class="thin" style="font-size:40px;color:#fff;margin-top:12px">in, entgegen &amp; quer zur Fahrtrichtung</div></div>
+        <text x="250" y="226" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="54" fill="{NAVY}">GEPRÜFT</text>
+        <text x="250" y="268" text-anchor="middle" font-family="Montserrat" font-weight="700" font-size="30" fill="#fff">nach DIN EN</text>
+        <text x="250" y="312" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="42" fill="#fff">12195-1</text></svg></div>
     <div id="s4-wipe" class="abs" style="left:540px;top:960px;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;background:#FFFFFF;opacity:0"></div>
     <div class="abs" style="left:700px;top:1380px;width:620px;height:620px;border-radius:50%;background:{ORANGE}"></div>
 '''
@@ -373,7 +371,6 @@ tl.fromTo("#s4-b2",{{opacity:0,y:200}},{{opacity:1,y:0,duration:0.45,ease:"back.
 tl.to(["#s4-specs","#s4-b1","#s4-b2"],{{opacity:0,y:-40,duration:0.3,ease:"power2.in",stagger:0.03}},2.45);
 tl.fromTo("#s4-stamp",{{opacity:0,scale:2.4,rotation:-30}},{{opacity:1,scale:1,rotation:-10,duration:0.28,ease:"power4.in"}},2.75);
 tl.fromTo("#root",{{x:0}},{{x:14,duration:0.05,yoyo:true,repeat:5,ease:"none"}},3.03);
-tl.fromTo("#s4-force",{{opacity:0,y:40}},{{opacity:1,y:0,duration:0.45,ease:"power3.out"}},4.95);
 tl.fromTo("#s4-wipe",{{scale:0}},{{scale:40,duration:0.5,ease:"power2.in"}},7.3);
 '''
 write("s4", scene("s4", 7.8, "", s4_html, s4_js, ground=NAVY))
@@ -459,7 +456,7 @@ s6_html = f'''
     <div id="s6-foot" class="abs" style="left:120px;top:1130px;width:840px;display:flex;align-items:center;gap:24px;opacity:0">
       <img src="assets/logo-vb.png" style="width:110px"/>
       <div><div class="heavy" style="font-size:30px">Gasflaschenhalterung FH 160 Aluminium</div>
-      <div class="thin" style="font-size:28px;margin-top:6px">TÜV NORD geprüft · DIN EN 12195-1 / VDI 2700</div></div></div>
+      <div class="thin" style="font-size:28px;margin-top:6px">Geprüft nach DIN EN 12195-1 / VDI 2700</div></div></div>
 '''
 s6_js = f'''{rest_arms("s6p")}
 tl.fromTo("#s6-blobN",{{scale:0.4,rotation:-30}},{{scale:1,rotation:0,duration:0.7,ease:"back.out(1.3)"}},0);
@@ -497,9 +494,9 @@ caps = [  # absolute seconds
     (19.33, 20.6, "Mein Klappschloss?"),
     (20.82, 22.4, "Ein Handgriff, und zu!"),
     (22.87, 25.4, "Und mit Vorhängeschloss bin ich sogar abschließbar."),
-    (26.8, 28.74, "Ich passe auf 5- und 11-Kilo-Flaschen."),
-    (29.02, 30.82, "Und der TÜV Nord hat mich geprüft –"),
-    (31.4, 33.2, "nach der Norm für Ladungssicherung."),
+    (26.8, 28.99, "Ich passe auf 5- und 11-Kilo-Flaschen."),
+    (29.43, 30.45, "Und ich bin geprüft –"),
+    (30.85, 32.45, "nach der Norm für Ladungssicherung."),
     (34.6, 36.57, "Ehrlich gesagt: Schrauben bring ich nicht mit –"),
     (37.06, 38.3, "denn jede Wand ist anders."),
     (38.89, 40.63, "Dafür bin ich in sechs Schritten montiert."),

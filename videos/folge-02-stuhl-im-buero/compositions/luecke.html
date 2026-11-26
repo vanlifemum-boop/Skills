@@ -1,8 +1,8 @@
 <template>
   <style>
     #root { position: absolute; inset: 0; overflow: hidden; }
-    #l-oben { position: absolute; left: 0; right: 0; top: 0; height: 960px; background: var(--papier); }
-    #l-unten { position: absolute; left: 0; right: 0; top: 960px; bottom: 0; background: #111; }
+    #l-oben { position: absolute; left: 0; right: 0; top: 0; height: 960px; background: var(--hellblau); }
+    #l-unten { position: absolute; left: 0; right: 0; top: 960px; bottom: 0; background: var(--nacht); }
     .l-label {
       position: absolute; left: 130px; font-family: "Archivo Black", sans-serif; font-size: 34px;
       letter-spacing: 0.08em; text-transform: uppercase; padding: 8px 16px;
@@ -12,7 +12,7 @@
     #l-akte { left: 130px; top: 380px; width: 760px; transform: rotate(-1.5deg); }
     #l-akte .satz { font-weight: 700; margin: 12px 0; }
     #l-erlebt {
-      position: absolute; left: 130px; top: 1084px; width: 500px; color: #fff;
+      position: absolute; left: 130px; top: 1084px; width: 540px; color: #fff;
       font-size: 34px; font-weight: 700; line-height: 1.22;
     }
     #l-erlebt em { color: var(--ocker); font-style: italic; }
@@ -36,7 +36,7 @@
         <div class="zeile" style="width:54%"></div>
       </div>
       <div id="l-lab-erlebt" class="l-label">Erlebt</div>
-      <div id="l-erlebt">Thadeo verstummt: <em>„Ach, nichts.“</em> Was er erzählen wollte, bleibt ungesagt.</div>
+      <div id="l-erlebt">Thadeo sagt: <em>„Ach, nichts.“</em> Dabei will er allein telefonieren. Niemand hört ihn.</div>
       <div id="l-th" class="figur">
         <div id="l-th-hub" class="hub"><div id="l-th-atem" class="atem">
           <img id="l-th-ruhig" src="assets/figuren/thadeo-ruhig.png" alt="" />
@@ -47,7 +47,7 @@
       </div>
       <svg id="l-riss" viewBox="0 0 1080 120" aria-hidden="true" data-layout-ignore>
         <path id="l-riss-pfad" d="M0 60 L120 40 L210 78 L330 30 L430 70 L540 44 L650 86 L760 36 L870 74 L980 46 L1080 62"
-          fill="none" stroke="#d6392e" stroke-width="12" stroke-linejoin="bevel" pathLength="100" stroke-dasharray="100 120" stroke-dashoffset="110" />
+          fill="none" stroke="#ff7a5c" stroke-width="12" stroke-linejoin="bevel" pathLength="100" stroke-dasharray="100 120" stroke-dashoffset="110" />
       </svg>
       <div id="l-fehler" data-layout-allow-overlap><span>SYSTEMFEHLER</span></div>
     </div>

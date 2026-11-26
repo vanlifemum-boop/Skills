@@ -1,6 +1,6 @@
 <template>
   <style>
-    #root { position: absolute; inset: 0; overflow: hidden; background: #111; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: var(--nacht); }
     #f-frage {
       position: absolute; left: 130px; top: 400px; width: 760px;
       font-family: "Archivo Black", sans-serif; font-size: 66px; line-height: 1.08; color: #fff;
@@ -12,7 +12,7 @@
       border-left: 10px solid var(--ocker); padding-left: 24px; opacity: 0;
     }
     #f-hinweis {
-      position: absolute; left: 130px; top: 1150px; width: 760px; font-size: 28px; line-height: 1.3; color: #b8b5af; opacity: 0;
+      position: absolute; left: 130px; top: 1150px; width: 760px; font-size: 28px; line-height: 1.3; color: #b3cde6; opacity: 0;
     }
     #f-ma { left: 520px; width: 420px; height: 700px; bottom: -330px; }
     #f-th { left: 300px; width: 300px; height: 470px; bottom: -330px; }
@@ -25,7 +25,7 @@
       </div>
       <div id="f-aufruf">Schreib es in die Kommentare. Speichern. Teilen.</div>
       <div id="f-hinweis">Szenische Darstellung nach Schilderung der Familie. Keine Rechtsberatung.</div>
-      <div id="f-ma" class="figur">
+      <div id="f-ma" class="figur spiegel">
         <div id="f-ma-hub" class="hub"><div id="f-ma-atem" class="atem">
           <img id="f-ma-ruhig" src="assets/figuren/mama-ruhig.png" alt="Mama" />
           <img id="f-ma-erklaert" src="assets/figuren/mama-erklaert.png" alt="" />

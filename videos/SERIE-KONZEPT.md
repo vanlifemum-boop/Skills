@@ -13,8 +13,9 @@ das Verfahren vorsieht und welches Recht das Kind hat.
 
 ## Look
 
-- Farben wie GutachtenKompass: Schwarz/Weiß tragen, **Rot** = Systemfehler und Lücke,
-  **Petrol** = Recht, **Ocker** = Wärme und Zuhause
+- Palette „Abendblau“: **Nachtblau** trägt, **Himmelblau** = Thadeos Gedanken,
+  **Koralle** = Systemfehler und Lücke, **Sonnengelb** = Wärme und Zuhause, **Recht-Blau** = Recht.
+  Kein Schwarz, kein Beige.
 - Schriften: Archivo Black (Überschriften), Inter (Text)
 - Figuren: freigestellte Posen aus den Figurenblättern (`assets/figuren/`),
   je vier Posen: `ruhig`, `erklaert`, `denkt`, `zeigt`
@@ -33,6 +34,27 @@ das Verfahren vorsieht und welches Recht das Kind hat.
 | Euer Recht | ~17 s | Petrol-Karte(n) mit Erklärung und Norm, der Dialog läuft weiter |
 | Die Lücke | ~11 s | Oben „In den Unterlagen“, unten „Erlebt“, roter Riss „SYSTEMFEHLER“ |
 | Schlussfrage | 10 s | Frage aus dem Szenenplan, Aufruf zum Kommentieren, Hinweis „Szenische Darstellung nach Schilderung der Familie. Keine Rechtsberatung.“ |
+
+## Kernbotschaft (in jeder Folge)
+
+Thadeo sagt oft, was er will, aber niemand will es hören, alle verweigern sich dem:
+„Ich will nach Hause. Niemand hört mich.“ – „Ich will allein mit Mama telefonieren,
+aber niemand lässt mich.“ Oft traut er sich auch nicht, etwas zu sagen, weil er
+Konsequenzen fürchtet.
+
+- **Gesagt und gedacht:** Laut sagt Thadeo wenig („Ach, nichts.“), in der Denkblase steht,
+  was er wirklich meint. Dieser Widerspruch wird in jeder Folge klar benannt.
+- **Mama:** spricht zu Thadeo gewandt (Figur gespiegelt, Blick zueinander), zeigt Sorge,
+  Traurigkeit und Bedrücktheit; Denkblase z. B. „Was ist mit Thadeo los? Warum verstummt er?
+  Ich mache mir Sorgen.“
+- **Du bist nicht allein:** Andere Kinder als Silhouetten mit eigenen Denkblasen.
+  Thadeo ist nicht das einzige Kind in so einer Situation.
+- **Nach einer wahren Begebenheit** steht im Einstieg.
+
+## Geplant, sobald kie.ai-Guthaben da ist
+
+- Stimmen (ElevenLabs über kie.ai), ca. 0,13 € pro Folge
+- Neue Posen mit Mimik (traurig, besorgt, ängstlich, zugewandt), jeweils Mund offen/zu, ca. 0,70 €
 
 ## Wortwahl
 

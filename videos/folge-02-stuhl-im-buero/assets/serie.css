@@ -1,15 +1,24 @@
 /* Systemfehler Familie — gemeinsamer Look aller Folgen.
-   Farben aus GutachtenKompass: Schwarz/Weiß tragen, Rot = Fehler/Lücke,
-   Petrol = Recht, Ocker = Wärme/Zuhause. */
+   Palette "Abendblau": Nachtblau trägt, Koralle = Fehler/Lücke,
+   Recht-Blau = Recht, Sonnengelb = Wärme/Zuhause, Himmelblau = Gedanken. */
 :root {
-  --schwarz: #111111;
+  /* Palette "Abendblau" */
+  --nacht: #1d2b4f;      /* dunkler Grund, Schrift */
+  --nacht-2: #26386a;
+  --himmel: #8fb8de;     /* Thadeos Innenwelt, Flächen */
+  --hellblau: #e6f0fa;   /* heller Grund, Papier */
+  --koralle: #ff7a5c;    /* Systemfehler, Lücke, Mama */
+  --sonne: #ffc94a;      /* Wärme, Zuhause, Thadeo */
+  --recht: #2f5d8a;      /* Recht-Karten */
   --weiss: #ffffff;
-  --rot: #d6392e;
-  --ocker: #e8a93d;
-  --petrol: #1f6f6b;
-  --petrol-dunkel: #134542;
-  --papier: #f7f3ea;
-  --text: #1a1a1a;
+  --text: #1d2b4f;
+  /* alte Namen zeigen auf die neue Palette */
+  --schwarz: var(--nacht);
+  --rot: var(--koralle);
+  --ocker: var(--sonne);
+  --petrol: var(--recht);
+  --petrol-dunkel: var(--nacht);
+  --papier: #ffffff;
 }
 
 .szene {
@@ -63,7 +72,7 @@
   font-size: 46px;
   line-height: 1.22;
   font-weight: 700;
-  box-shadow: 10px 10px 0 rgba(17, 17, 17, 0.9);
+  box-shadow: 10px 10px 0 rgba(29, 43, 79, 0.9);
   opacity: 0;
 }
 .blase .wer {
@@ -74,8 +83,8 @@
   text-transform: uppercase;
   margin-bottom: 8px;
 }
-.blase.thadeo .wer { color: #b4761a; }
-.blase.mama .wer { color: var(--rot); }
+.blase.thadeo .wer { color: #b07a00; }
+.blase.mama .wer { color: #d9502f; }
 .blase .zipfel {
   position: absolute;
   width: 44px;
@@ -94,7 +103,7 @@
   right: 192px;
   top: 1180px;
   padding: 10px 18px;
-  background: rgba(17, 17, 17, 0.78);
+  background: rgba(29, 43, 79, 0.85);
   color: var(--weiss);
   font-family: "Archivo Black", sans-serif;
   font-size: 28px;
@@ -116,7 +125,7 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
-.stempel .marke { background: var(--rot); color: var(--weiss); padding: 8px 14px; }
+.stempel .marke { background: var(--rot); color: var(--nacht); padding: 8px 14px; }
 .stempel .folge { background: var(--schwarz); color: var(--weiss); padding: 8px 14px; }
 
 /* Papier / Akte */
@@ -137,7 +146,7 @@
 }
 .papier .zeile {
   height: 18px;
-  background: #d9d2c3;
+  background: #c9d9ea;
   border-radius: 9px;
   margin: 18px 0;
 }
@@ -168,3 +177,41 @@
   padding: 10px 18px;
   border-radius: 8px;
 }
+
+/* Spiegeln: Figur schaut nach links statt nach rechts */
+.figur.spiegel img { scale: -1 1; }
+
+/* Denkblase: Wolke mit drei kleiner werdenden Kreisen */
+.denke {
+  position: absolute;
+  background: var(--hellblau);
+  border: 5px solid var(--nacht);
+  border-radius: 70px;
+  padding: 30px 40px;
+  font-size: 42px;
+  line-height: 1.22;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--nacht);
+  box-shadow: 0 0 0 10px rgba(143, 184, 222, 0.45);
+  opacity: 0;
+}
+.denke .wer {
+  display: block;
+  font-family: "Archivo Black", sans-serif;
+  font-style: normal;
+  font-size: 28px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--recht);
+  margin-bottom: 8px;
+}
+.denke .punkt {
+  position: absolute;
+  background: var(--hellblau);
+  border: 5px solid var(--nacht);
+  border-radius: 50%;
+}
+.denke .p1 { width: 44px; height: 44px; bottom: -40px; }
+.denke .p2 { width: 28px; height: 28px; bottom: -78px; }
+.denke .p3 { width: 18px; height: 18px; bottom: -106px; }

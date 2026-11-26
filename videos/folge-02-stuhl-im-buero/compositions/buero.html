@@ -1,22 +1,22 @@
 <template>
   <style>
     #root { position: absolute; inset: 0; overflow: hidden; }
-    #b-wand { position: absolute; inset: 0; background: linear-gradient(#dfe7e4, #c9d6d2); }
-    #b-leiste { position: absolute; left: 0; right: 0; top: 1470px; height: 24px; background: #8f7b62; }
+    #b-wand { position: absolute; inset: 0; background: linear-gradient(#cfe1f2, #b3cde6); }
+    #b-leiste { position: absolute; left: 0; right: 0; top: 1470px; height: 24px; background: #5d7aa8; }
     #b-boden {
       position: absolute; left: 0; right: 0; top: 1494px; bottom: 0;
-      background: repeating-linear-gradient(90deg, #b9a487 0 178px, #ad987b 178px 180px);
+      background: repeating-linear-gradient(90deg, #7f9cc6 0 178px, #7593bd 178px 180px);
     }
     #b-fenster {
       position: absolute; left: 600px; top: 330px; width: 380px; height: 420px;
       border: 18px solid #ffffff; box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      background: repeating-linear-gradient(#f4f1e6 0 26px, #d8d3c4 26px 30px);
+      background: repeating-linear-gradient(#f3f8fd 0 26px, #c9d9ea 26px 30px);
     }
-    #b-regal { position: absolute; left: 70px; top: 1010px; width: 330px; height: 22px; background: #8f7b62; }
+    #b-regal { position: absolute; left: 70px; top: 1010px; width: 330px; height: 22px; background: #5d7aa8; }
     .b-ordner { position: absolute; bottom: 910px; width: 54px; height: 190px; border-radius: 4px 4px 0 0; }
     #b-tisch { position: absolute; left: 560px; top: 1150px; width: 560px; height: 350px; }
-    #b-tisch .platte { position: absolute; inset: 0 0 auto 0; height: 40px; background: #7a5f45; border-radius: 6px; }
-    #b-tisch .front { position: absolute; left: 20px; right: 0; top: 40px; bottom: 0; background: #8e7053; }
+    #b-tisch .platte { position: absolute; inset: 0 0 auto 0; height: 40px; background: #3d5687; border-radius: 6px; }
+    #b-tisch .front { position: absolute; left: 20px; right: 0; top: 40px; bottom: 0; background: #4a659a; }
     #b-telefon { position: absolute; left: 620px; top: 1040px; width: 230px; height: 120px; }
     #b-hoerer { transform-origin: 70% 80%; }
     #b-th { left: 170px; width: 400px; height: 760px; bottom: 360px; }
@@ -33,9 +33,12 @@
       background: var(--petrol); color: var(--weiss); font-size: 30px; font-weight: 700;
       display: flex; gap: 12px; align-items: center; opacity: 0;
     }
-    #b-blase-a { left: 130px; top: 450px; width: 760px; transform-origin: 20% 100%; }
+    #b-blase-a { left: 130px; top: 450px; width: 740px; transform-origin: 20% 100%; }
     #b-blase-b { left: 130px; top: 450px; width: 700px; transform-origin: 20% 100%; }
     #b-blase-c { left: 130px; top: 520px; width: 420px; transform-origin: 30% 100%; }
+    #b-denk-1 { left: 130px; top: 300px; width: 700px; transform-origin: 30% 100%; }
+    #b-denk-2 { left: 190px; top: 560px; width: 600px; transform-origin: 20% 100%; }
+    #b-denk-2 .p1 { left: 90px; } #b-denk-2 .p2 { left: 70px; } #b-denk-2 .p3 { left: 58px; }
     #b-blase-a .zipfel, #b-blase-b .zipfel { left: 190px; }
     #b-blase-c .zipfel { left: 150px; }
   </style>
@@ -43,11 +46,11 @@
     <div class="szene">
       <div id="b-wand"></div>
       <div id="b-fenster"></div>
-      <div class="b-ordner" style="left:90px;background:#1f6f6b"></div>
-      <div class="b-ordner" style="left:150px;background:#e8a93d"></div>
-      <div class="b-ordner" style="left:210px;background:#55524c"></div>
-      <div class="b-ordner" style="left:270px;background:#d6392e"></div>
-      <div class="b-ordner" style="left:330px;background:#1f6f6b"></div>
+      <div class="b-ordner" style="left:90px;background:#2f5d8a"></div>
+      <div class="b-ordner" style="left:150px;background:#ffc94a"></div>
+      <div class="b-ordner" style="left:210px;background:#1d2b4f"></div>
+      <div class="b-ordner" style="left:270px;background:#ff7a5c"></div>
+      <div class="b-ordner" style="left:330px;background:#8fb8de"></div>
       <div id="b-regal"></div>
       <div id="b-leiste"></div>
       <div id="b-boden"></div>
@@ -72,7 +75,7 @@
       </div>
       <svg id="b-stuhl" data-layout-allow-overflow viewBox="0 0 440 620" aria-hidden="true">
         <!-- Person ohne Gesicht: nur Anwesenheit -->
-        <g id="b-person" fill="#2f4644">
+        <g id="b-person" fill="#2a3b63">
           <circle cx="250" cy="70" r="62" />
           <path d="M160 150 Q250 115 340 150 L360 360 L150 360 Z" />
           <path d="M150 330 L360 330 L370 400 L150 400 Z" />
@@ -89,47 +92,56 @@
         <path class="b-welle" id="b-w2" d="M200 80 Q140 150 200 220" />
         <path class="b-welle" id="b-w3" d="M160 50 Q80 150 160 250" />
       </svg>
-      <div id="b-info-1" class="b-info">Im Heim. Das Telefon steht im Büro.</div>
+      <div id="b-info-1" class="b-info">Im Heim. Telefonieren nur im Büro.</div>
+      <div id="b-info-3" class="b-info">Er hat es schon oft gesagt. Niemand geht darauf ein.</div>
       <div id="b-info-2" class="b-info">Jemand setzt sich dazu. In Hörweite.</div>
       <div id="b-anruf">
         <svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.6 3.6a1 1 0 0 1-.25 1z"/></svg>
         Anruf bei Mama
       </div>
-      <div id="b-blase-a" class="blase thadeo"><span class="wer">Thadeo</span>Allein telefonieren darf ich hier nicht. Nur im Büro.<span class="zipfel"></span></div>
+      <div id="b-blase-a" class="blase thadeo"><span class="wer">Thadeo</span>Ich will allein mit Mama telefonieren. Nicht hier im Büro.<span class="zipfel"></span></div>
       <div id="b-blase-b" class="blase thadeo"><span class="wer">Thadeo</span>Hallo Mama! Rate mal, was heute passiert ist …<span class="zipfel"></span></div>
-      <div id="b-blase-c" class="blase thadeo leise"><span class="wer">Thadeo</span>… ach, nichts.<span class="zipfel"></span></div>
+      <div id="b-blase-c" class="blase thadeo leise"><span class="wer">Thadeo sagt</span>… ach, nichts.<span class="zipfel"></span></div>
+      <div id="b-denk-1" class="denke"><span class="wer">Thadeo denkt</span>Ich will nach Hause. Aber niemand hört mich.</div>
+      <div id="b-denk-2" class="denke"><span class="wer">Thadeo denkt</span>Wenn ich was sage, krieg ich Ärger.<span class="punkt p1"></span><span class="punkt p2"></span><span class="punkt p3"></span></div>
       <div class="kennung">Szenische Darstellung</div>
     </div>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
     SF.pose(tl, "b-th", "ruhig", 0);
-    SF.atem(tl, "b-th", 14.3, 2.3);
-    SF.blase(tl, "#b-info-1", 0.3, 3.9);
+    SF.atem(tl, "b-th", 17.7, 2.3);
+    SF.blase(tl, "#b-info-1", 0.3, 3.6);
     SF.gehen(tl, "b-th", 0, -520, 0, 2.2);
     SF.pose(tl, "b-th", "erklaert", 2.4);
-    SF.blase(tl, "#b-blase-a", 2.6, 5.4);
-    SF.sprich(tl, "b-th", 2.7, 4.6);
-    // Hörer abnehmen
-    tl.to("#b-hoerer", { rotation: -24, y: -26, x: -10, duration: 0.35, ease: "back.out(2)", svgOrigin: "200 40" }, 8.0);
-    SF.rein(tl, "#b-anruf", 8.1, { x: 40 });
-    SF.pose(tl, "b-th", "zeigt", 8.3);
-    SF.blase(tl, "#b-blase-b", 8.4, 4.0);
-    SF.sprich(tl, "b-th", 8.5, 3.4);
+    SF.blase(tl, "#b-blase-a", 2.5, 5.0);
+    SF.sprich(tl, "b-th", 2.6, 4.4);
+    // Niemand reagiert
+    SF.pose(tl, "b-th", "denkt", 7.6);
+    SF.blase(tl, "#b-info-3", 7.6, 3.6);
+    // Hörer abnehmen, Mama anrufen
+    tl.to("#b-hoerer", { rotation: -24, y: -26, x: -10, duration: 0.35, ease: "back.out(2)", svgOrigin: "200 40" }, 11.2);
+    tl.fromTo("#b-anruf", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 11.3);
+    SF.pose(tl, "b-th", "zeigt", 11.4);
+    SF.blase(tl, "#b-blase-b", 11.5, 3.7);
+    SF.sprich(tl, "b-th", 11.6, 3.0);
     // Der Stuhl rückt heran
-    tl.fromTo("#b-stuhl", { x: 520, rotation: 6 }, { x: 0, rotation: 0, duration: 0.7, ease: "back.out(1.4)", transformOrigin: "50% 100%" }, 12.5);
-    tl.to("#b-stuhl", { x: -8, duration: 0.08, yoyo: true, repeat: 3, ease: "sine.inOut" }, 13.2);
-    tl.to("#b-th-hub", { x: -14, duration: 0.18, ease: "power2.out" }, 12.9);
-    tl.to("#b-th-hub", { x: 0, duration: 0.5, ease: "power2.inOut" }, 13.1);
-    SF.pose(tl, "b-th", "denkt", 13.3);
-    tl.to("#b-anruf", { opacity: 0, duration: 0.3 }, 12.6);
-    SF.blase(tl, "#b-info-2", 13.0, 4.8);
-    // Hörweite: drei Wellen vom Stuhl zu Thadeo, dreimal
+    tl.to("#b-anruf", { opacity: 0, duration: 0.3 }, 15.0);
+    tl.fromTo("#b-stuhl", { x: 520, rotation: 6 }, { x: 0, rotation: 0, duration: 0.7, ease: "back.out(1.4)", transformOrigin: "50% 100%" }, 15.2);
+    tl.to("#b-stuhl", { x: -8, duration: 0.08, yoyo: true, repeat: 3, ease: "sine.inOut" }, 15.9);
+    tl.to("#b-th-hub", { x: -14, duration: 0.18, ease: "power2.out" }, 15.6);
+    tl.to("#b-th-hub", { x: 0, duration: 0.5, ease: "power2.inOut" }, 15.8);
+    SF.pose(tl, "b-th", "denkt", 16.0);
+    SF.blase(tl, "#b-info-2", 15.6, 4.0);
     ["#b-w1", "#b-w2", "#b-w3"].forEach((w, i) => {
-      tl.fromTo(w, { opacity: 0 }, { opacity: 0.9, duration: 0.3, yoyo: true, repeat: 5, repeatDelay: 0.3, ease: "sine.inOut" }, 13.7 + i * 0.2);
+      tl.fromTo(w, { opacity: 0 }, { opacity: 0.9, duration: 0.3, yoyo: true, repeat: 5, repeatDelay: 0.3, ease: "sine.inOut" }, 16.3 + i * 0.2);
     });
-    SF.blase(tl, "#b-blase-c", 14.4, 3.4);
-    tl.fromTo("#b-th-atem", { scale: 1 }, { scale: 0.97, duration: 1.5, ease: "power2.inOut" }, 14.4);
+    // Gesagt ...
+    SF.blase(tl, "#b-blase-c", 16.6, 3.2);
+    tl.fromTo("#b-th-atem", { scale: 1 }, { scale: 0.96, duration: 1.5, ease: "power2.inOut" }, 17.8);
+    // ... und gedacht
+    SF.blase(tl, "#b-denk-1", 19.9, 4.1);
+    SF.blase(tl, "#b-denk-2", 20.7, 3.3);
     window.__timelines["buero"] = tl;
   </script>
 </template>

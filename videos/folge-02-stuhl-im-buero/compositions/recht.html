@@ -1,8 +1,8 @@
 <template>
   <style>
     #root { position: absolute; inset: 0; overflow: hidden; }
-    #r-grund { position: absolute; inset: 0; background: linear-gradient(#dfe7e4, #c9d6d2); }
-    #r-boden { position: absolute; left: 0; right: 0; top: 1850px; bottom: 0; background: #b9a487; }
+    #r-grund { position: absolute; inset: 0; background: linear-gradient(#cfe1f2, #b3cde6); }
+    #r-boden { position: absolute; left: 0; right: 0; top: 1850px; bottom: 0; background: #7f9cc6; }
     .r-karte { left: 130px; top: 300px; width: 760px; opacity: 0; transform-origin: 50% 0%; }
     #r-th { left: 90px; width: 360px; height: 560px; bottom: 50px; }
     #r-ma { left: 570px; width: 460px; height: 760px; bottom: 50px; }
@@ -24,7 +24,7 @@
           <img id="r-th-zeigt" src="assets/figuren/thadeo-zeigt.png" alt="" />
         </div></div>
       </div>
-      <div id="r-ma" class="figur">
+      <div id="r-ma" class="figur spiegel">
         <div id="r-ma-hub" class="hub"><div id="r-ma-atem" class="atem">
           <div class="schatten"></div>
           <img id="r-ma-ruhig" src="assets/figuren/mama-ruhig.png" alt="Mama" />
@@ -43,8 +43,8 @@
         <div class="erkl">Ein Gespräch heimlich aufnehmen oder mit Technik abhören ist verboten. Wer offen daneben sitzt, ist eine andere Frage. Die muss die Einrichtung erklären.</div>
         <div class="norm">§ 201 StGB</div>
       </div>
-      <div id="r-blase-t" class="blase thadeo"><span class="wer">Thadeo</span>Also darf ich fragen, warum jemand dabei ist?<span class="zipfel"></span></div>
-      <div id="r-blase-m" class="blase mama"><span class="wer">Mama</span>Ja. Und du darfst sagen, was du dir wünschst.<span class="zipfel"></span></div>
+      <div id="r-blase-t" class="blase thadeo"><span class="wer">Thadeo</span>Also darf ich sagen, dass ich allein telefonieren will?<span class="zipfel"></span></div>
+      <div id="r-blase-m" class="blase mama"><span class="wer">Mama</span>Ja. Und jemand muss dir richtig zuhören.<span class="zipfel"></span></div>
     </div>
   </div>
   <script>

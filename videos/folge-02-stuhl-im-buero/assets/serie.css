@@ -83,7 +83,7 @@
   text-transform: uppercase;
   margin-bottom: 8px;
 }
-.blase.thadeo .wer { color: #b07a00; }
+.blase.thadeo .wer { color: #8a5d00; }
 .blase.mama .wer { color: #d9502f; }
 .blase .zipfel {
   position: absolute;
@@ -180,6 +180,9 @@
 
 /* Spiegeln: Figur schaut nach links statt nach rechts */
 .figur.spiegel img { scale: -1 1; }
+/* neue Mama-Posen schauen schon nach links: nur ohne .spiegel umdrehen */
+.figur img.sieht-links { scale: -1 1; }
+.figur.spiegel img.sieht-links { scale: 1 1; }
 
 /* Denkblase: Wolke mit drei kleiner werdenden Kreisen */
 .denke {

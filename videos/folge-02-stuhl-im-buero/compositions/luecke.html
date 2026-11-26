@@ -20,7 +20,7 @@
     #l-riss { position: absolute; left: 0; top: 900px; width: 1080px; height: 120px; }
     #l-fehler {
       position: absolute; left: 0; right: 0; top: 925px; text-align: center;
-      font-family: "Archivo Black", sans-serif; font-size: 58px; color: #fff; letter-spacing: 0.06em; opacity: 0;
+      font-family: "Archivo Black", sans-serif; font-size: 58px; color: var(--nacht); letter-spacing: 0.06em; opacity: 0;
     }
     #l-fehler span { background: var(--rot); padding: 4px 18px; }
   </style>
@@ -43,6 +43,9 @@
           <img id="l-th-erklaert" src="assets/figuren/thadeo-erklaert.png" alt="" />
           <img id="l-th-denkt" src="assets/figuren/thadeo-denkt.png" alt="Thadeo, nachdenklich" />
           <img id="l-th-zeigt" src="assets/figuren/thadeo-zeigt.png" alt="" />
+          <img id="l-th-traurig" src="assets/figuren/thadeo-traurig.png" alt="" />
+          <img id="l-th-leise" src="assets/figuren/thadeo-leise.png" alt="" />
+          <img id="l-th-leise-zu" src="assets/figuren/thadeo-leise-zu.png" alt="" />
         </div></div>
       </div>
       <svg id="l-riss" viewBox="0 0 1080 120" aria-hidden="true" data-layout-ignore>
@@ -57,7 +60,7 @@
     SF.rein(tl, "#l-lab-akte", 0.1, { x: -30 });
     tl.fromTo("#l-akte", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.3);
     SF.rein(tl, "#l-lab-erlebt", 2.4, { x: -30 });
-    SF.pose(tl, "l-th", "denkt", 0);
+    SF.pose(tl, "l-th", "traurig", 0);
     tl.fromTo("#l-th", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 2.5);
     SF.atem(tl, "l-th", 11, 3.2);
     SF.rein(tl, "#l-erlebt", 2.9, { y: 30 });

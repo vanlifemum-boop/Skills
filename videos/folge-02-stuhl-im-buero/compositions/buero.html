@@ -71,6 +71,9 @@
           <img id="b-th-erklaert" src="assets/figuren/thadeo-erklaert.png" alt="" />
           <img id="b-th-denkt" src="assets/figuren/thadeo-denkt.png" alt="" />
           <img id="b-th-zeigt" src="assets/figuren/thadeo-zeigt.png" alt="" />
+          <img id="b-th-traurig" src="assets/figuren/thadeo-traurig.png" alt="" />
+          <img id="b-th-leise" src="assets/figuren/thadeo-leise.png" alt="" />
+          <img id="b-th-leise-zu" src="assets/figuren/thadeo-leise-zu.png" alt="" />
         </div></div>
       </div>
       <svg id="b-stuhl" data-layout-allow-overflow viewBox="0 0 440 620" aria-hidden="true">
@@ -109,15 +112,16 @@
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    SF.pose(tl, "b-th", "ruhig", 0);
+    SF.pose(tl, "b-th", "traurig", 0);
     SF.atem(tl, "b-th", 17.7, 2.3);
     SF.blase(tl, "#b-info-1", 0.3, 3.6);
     SF.gehen(tl, "b-th", 0, -520, 0, 2.2);
-    SF.pose(tl, "b-th", "erklaert", 2.4);
+    SF.pose(tl, "b-th", "leise", 2.4);
+    SF.mund(tl, "b-th", "leise", "leise-zu", 2.6, 4.4);
     SF.blase(tl, "#b-blase-a", 2.5, 5.0);
     SF.sprich(tl, "b-th", 2.6, 4.4);
     // Niemand reagiert
-    SF.pose(tl, "b-th", "denkt", 7.6);
+    SF.pose(tl, "b-th", "traurig", 7.6);
     SF.blase(tl, "#b-info-3", 7.6, 3.6);
     // Hörer abnehmen, Mama anrufen
     tl.to("#b-hoerer", { rotation: -24, y: -26, x: -10, duration: 0.35, ease: "back.out(2)", svgOrigin: "200 40" }, 11.2);
@@ -131,13 +135,16 @@
     tl.to("#b-stuhl", { x: -8, duration: 0.08, yoyo: true, repeat: 3, ease: "sine.inOut" }, 15.9);
     tl.to("#b-th-hub", { x: -14, duration: 0.18, ease: "power2.out" }, 15.6);
     tl.to("#b-th-hub", { x: 0, duration: 0.5, ease: "power2.inOut" }, 15.8);
-    SF.pose(tl, "b-th", "denkt", 16.0);
+    SF.pose(tl, "b-th", "traurig", 16.0);
     SF.blase(tl, "#b-info-2", 15.6, 4.0);
     ["#b-w1", "#b-w2", "#b-w3"].forEach((w, i) => {
       tl.fromTo(w, { opacity: 0 }, { opacity: 0.9, duration: 0.3, yoyo: true, repeat: 5, repeatDelay: 0.3, ease: "sine.inOut" }, 16.3 + i * 0.2);
     });
     // Gesagt ...
     SF.blase(tl, "#b-blase-c", 16.6, 3.2);
+    SF.pose(tl, "b-th", "leise", 16.7);
+    SF.mund(tl, "b-th", "leise", "leise-zu", 16.8, 0.9);
+    SF.pose(tl, "b-th", "traurig", 17.9);
     tl.fromTo("#b-th-atem", { scale: 1 }, { scale: 0.96, duration: 1.5, ease: "power2.inOut" }, 17.8);
     // ... und gedacht
     SF.blase(tl, "#b-denk-1", 19.9, 4.1);

@@ -40,6 +40,9 @@
           <img id="a-th-erklaert" src="assets/figuren/thadeo-erklaert.png" alt="" />
           <img id="a-th-denkt" src="assets/figuren/thadeo-denkt.png" alt="" />
           <img id="a-th-zeigt" src="assets/figuren/thadeo-zeigt.png" alt="" />
+          <img id="a-th-traurig" src="assets/figuren/thadeo-traurig.png" alt="" />
+          <img id="a-th-leise" src="assets/figuren/thadeo-leise.png" alt="" />
+          <img id="a-th-leise-zu" src="assets/figuren/thadeo-leise-zu.png" alt="" />
         </div></div>
       </div>
     </div>
@@ -48,15 +51,15 @@
     const tl = gsap.timeline({ paused: true });
     SF.rein(tl, "#a-titel", 0.1, { y: -30 });
     tl.fromTo("#a-linie", { scaleY: 0 }, { scaleY: 1, duration: 10, ease: "none" }, 0.8);
-    SF.pose(tl, "a-th", "denkt", 0);
+    SF.pose(tl, "a-th", "traurig", 0);
     tl.fromTo("#a-th", { y: 400 }, { y: 0, duration: 0.7, ease: "power3.out" }, 0.4);
     SF.atem(tl, "a-th", 15, 1.2);
     SF.rein(tl, "#a-s1", 1.0, { x: -40 });
     SF.rein(tl, "#a-s2", 3.6, { x: -40 });
     SF.rein(tl, "#a-s3", 6.6, { x: -40 });
-    SF.pose(tl, "a-th", "ruhig", 6.6);
+    SF.pose(tl, "a-th", "leise", 6.6);
     SF.rein(tl, "#a-s4", 9.8, { x: -40 });
-    SF.pose(tl, "a-th", "zeigt", 10.0);
+    SF.pose(tl, "a-th", "leise-zu", 10.0);
     tl.fromTo(".a-nr", { scale: 1 }, { scale: 1.12, duration: 0.2, yoyo: true, repeat: 1, stagger: 0.2, ease: "power2.out" }, 12.6);
     window.__timelines["ablauf"] = tl;
   </script>

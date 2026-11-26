@@ -22,6 +22,9 @@
           <img id="r-th-erklaert" src="assets/figuren/thadeo-erklaert.png" alt="" />
           <img id="r-th-denkt" src="assets/figuren/thadeo-denkt.png" alt="" />
           <img id="r-th-zeigt" src="assets/figuren/thadeo-zeigt.png" alt="" />
+          <img id="r-th-traurig" src="assets/figuren/thadeo-traurig.png" alt="" />
+          <img id="r-th-leise" src="assets/figuren/thadeo-leise.png" alt="" />
+          <img id="r-th-leise-zu" src="assets/figuren/thadeo-leise-zu.png" alt="" />
         </div></div>
       </div>
       <div id="r-ma" class="figur spiegel">
@@ -31,6 +34,9 @@
           <img id="r-ma-erklaert" src="assets/figuren/mama-erklaert.png" alt="" />
           <img id="r-ma-denkt" src="assets/figuren/mama-denkt.png" alt="" />
           <img id="r-ma-zeigt" src="assets/figuren/mama-zeigt.png" alt="" />
+          <img id="r-ma-besorgt" class="sieht-links" src="assets/figuren/mama-besorgt.png" alt="" />
+          <img id="r-ma-spricht" class="sieht-links" src="assets/figuren/mama-spricht.png" alt="" />
+          <img id="r-ma-spricht-zu" class="sieht-links" src="assets/figuren/mama-spricht-zu.png" alt="" />
         </div></div>
       </div>
       <div id="r-k1" class="recht r-karte">
@@ -49,23 +55,25 @@
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    SF.pose(tl, "r-th", "ruhig", 0);
-    SF.pose(tl, "r-ma", "ruhig", 0);
+    SF.pose(tl, "r-th", "traurig", 0);
+    SF.pose(tl, "r-ma", "besorgt", 0);
     SF.atem(tl, "r-th", 17, 0.3);
     SF.atem(tl, "r-ma", 17, 1.1);
     tl.fromTo("#r-th", { x: -300 }, { x: 0, duration: 0.7, ease: "power3.out" }, 0);
     tl.fromTo("#r-ma", { x: 400 }, { x: 0, duration: 0.7, ease: "power3.out" }, 0.15);
     tl.fromTo("#r-k1", { opacity: 0, rotationX: -70, y: -40 }, { opacity: 1, rotationX: 0, y: 0, duration: 0.6, ease: "back.out(1.4)" }, 0.6);
-    SF.pose(tl, "r-th", "erklaert", 4.0);
+    SF.pose(tl, "r-th", "leise", 4.0);
+    SF.mund(tl, "r-th", "leise", "leise-zu", 4.1, 3.3);
     SF.blase(tl, "#r-blase-t", 4.0, 4.0);
     SF.sprich(tl, "r-th", 4.1, 3.3);
     tl.to("#r-k1", { opacity: 0, rotationX: 70, y: -30, duration: 0.4, ease: "power2.in" }, 8.4);
     tl.fromTo("#r-k2", { opacity: 0, rotationX: -70, y: -40 }, { opacity: 1, rotationX: 0, y: 0, duration: 0.6, ease: "back.out(1.4)" }, 8.7);
-    SF.pose(tl, "r-th", "denkt", 8.6);
-    SF.pose(tl, "r-ma", "erklaert", 12.2);
+    SF.pose(tl, "r-th", "traurig", 8.6);
+    SF.pose(tl, "r-ma", "spricht", 12.2);
+    SF.mund(tl, "r-ma", "spricht", "spricht-zu", 12.3, 3.8);
     SF.blase(tl, "#r-blase-m", 12.2, 4.6);
     SF.sprich(tl, "r-ma", 12.3, 3.8);
-    SF.pose(tl, "r-th", "zeigt", 13.6);
+    SF.pose(tl, "r-th", "ruhig", 15.2);
     window.__timelines["recht"] = tl;
   </script>
 </template>

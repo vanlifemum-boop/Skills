@@ -1,7 +1,7 @@
 /* Systemfehler Familie — gemeinsame Animationshelfer für alle Szenen.
    Alles hängt nur an der Timeline-Zeit, nichts läuft von selbst. */
 window.SF = (function () {
-  const POSEN = ["ruhig", "erklaert", "denkt", "zeigt"];
+  const POSEN = ["ruhig", "erklaert", "denkt", "zeigt", "besorgt", "spricht", "spricht-zu", "traurig", "leise", "leise-zu"];
 
   // Posenwechsel: Bild tauschen, kurz "einatmen" (Squash + Settle)
   function pose(tl, fig, name, t) {
@@ -80,5 +80,24 @@ window.SF = (function () {
     );
   }
 
-  return { pose, atem, sprich, gehen, blase, rein };
+  // Mund auf und zu: wechselt zwischen offener und geschlossener Variante derselben Pose.
+  // Das Muster ist fest (kein Zufall), damit jeder Render gleich aussieht.
+  function mund(tl, fig, offen, zu, t, dauer) {
+    const takte = [0.13, 0.11, 0.16, 0.1, 0.14, 0.12, 0.18, 0.11];
+    const a = document.querySelector("#" + fig + "-" + offen);
+    const b = document.querySelector("#" + fig + "-" + zu);
+    if (!a || !b) return;
+    let s = t, i = 0, auf = true;
+    while (s < t + dauer) {
+      tl.set(a, { opacity: auf ? 1 : 0 }, s);
+      tl.set(b, { opacity: auf ? 0 : 1 }, s);
+      s += takte[i % takte.length];
+      i++;
+      auf = !auf;
+    }
+    tl.set(a, { opacity: 0 }, t + dauer);
+    tl.set(b, { opacity: 1 }, t + dauer);
+  }
+
+  return { pose, atem, sprich, gehen, blase, rein, mund };
 })();

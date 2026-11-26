@@ -31,6 +31,9 @@
           <img id="f-ma-erklaert" src="assets/figuren/mama-erklaert.png" alt="" />
           <img id="f-ma-denkt" src="assets/figuren/mama-denkt.png" alt="" />
           <img id="f-ma-zeigt" src="assets/figuren/mama-zeigt.png" alt="" />
+          <img id="f-ma-besorgt" class="sieht-links" src="assets/figuren/mama-besorgt.png" alt="" />
+          <img id="f-ma-spricht" class="sieht-links" src="assets/figuren/mama-spricht.png" alt="" />
+          <img id="f-ma-spricht-zu" class="sieht-links" src="assets/figuren/mama-spricht-zu.png" alt="" />
         </div></div>
       </div>
       <div id="f-th" class="figur">
@@ -39,6 +42,9 @@
           <img id="f-th-erklaert" src="assets/figuren/thadeo-erklaert.png" alt="" />
           <img id="f-th-denkt" src="assets/figuren/thadeo-denkt.png" alt="" />
           <img id="f-th-zeigt" src="assets/figuren/thadeo-zeigt.png" alt="" />
+          <img id="f-th-traurig" src="assets/figuren/thadeo-traurig.png" alt="" />
+          <img id="f-th-leise" src="assets/figuren/thadeo-leise.png" alt="" />
+          <img id="f-th-leise-zu" src="assets/figuren/thadeo-leise-zu.png" alt="" />
         </div></div>
       </div>
     </div>
@@ -48,14 +54,13 @@
     SF.rein(tl, "#f-stempel", 0.1, { y: -20 });
     tl.fromTo("#f-frage .w", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out", stagger: 0.22 }, 0.4);
     tl.fromTo("#f-frage .rot", { scale: 1 }, { scale: 1.08, duration: 0.25, yoyo: true, repeat: 1, ease: "power2.out", transformOrigin: "0% 50%" }, 3.2);
-    SF.pose(tl, "f-ma", "ruhig", 0);
-    SF.pose(tl, "f-th", "denkt", 0);
+    SF.pose(tl, "f-ma", "besorgt", 0);
+    SF.pose(tl, "f-th", "traurig", 0);
     tl.fromTo("#f-ma", { y: 300 }, { y: 0, duration: 0.8, ease: "power3.out" }, 1.0);
     tl.fromTo("#f-th", { y: 300 }, { y: 0, duration: 0.8, ease: "power3.out" }, 1.2);
     SF.atem(tl, "f-ma", 10, 1.8);
     SF.atem(tl, "f-th", 10, 2.1);
     SF.rein(tl, "#f-aufruf", 4.6, { x: -30 });
-    SF.pose(tl, "f-th", "ruhig", 5.0);
     SF.rein(tl, "#f-hinweis", 5.6, { y: 10 });
     window.__timelines["frage"] = tl;
   </script>

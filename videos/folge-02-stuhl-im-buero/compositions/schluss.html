@@ -1,7 +1,11 @@
 <template>
   <style>
     #root { position: absolute; inset: 0; overflow: hidden; background: linear-gradient(#26386a, #1d2b4f); }
-    #s-herz { position: absolute; left: 340px; top: 980px; width: 420px; height: 420px; opacity: 0; }
+    #s-herz { position: absolute; left: 160px; top: 860px; width: 760px; height: 700px; opacity: 0; }
+    #s-umarmung { position: absolute; left: 230px; bottom: 120px; width: 620px; height: 1040px; opacity: 0; }
+    #s-umarmung img { position: absolute; left: 50%; bottom: 0; height: 100%; translate: -50% 0; }
+    #s-blase-t { left: 130px; top: 600px; width: 520px; transform-origin: 20% 100%; }
+    #s-blase-t .zipfel { left: 120px; }
     #s-ma { left: 520px; width: 480px; height: 860px; bottom: 120px; }
     #s-th { left: 120px; width: 360px; height: 600px; bottom: 120px; }
     #s-blase { left: 130px; top: 300px; width: 760px; transform-origin: 75% 100%; }
@@ -27,6 +31,9 @@
           <img id="s-th-erklaert" src="assets/figuren/thadeo-erklaert.png" alt="" />
           <img id="s-th-denkt" src="assets/figuren/thadeo-denkt.png" alt="" />
           <img id="s-th-zeigt" src="assets/figuren/thadeo-zeigt.png" alt="" />
+          <img id="s-th-traurig" src="assets/figuren/thadeo-traurig.png" alt="" />
+          <img id="s-th-leise" src="assets/figuren/thadeo-leise.png" alt="" />
+          <img id="s-th-leise-zu" src="assets/figuren/thadeo-leise-zu.png" alt="" />
         </div></div>
       </div>
       <div id="s-ma" class="figur spiegel">
@@ -36,8 +43,13 @@
           <img id="s-ma-erklaert" src="assets/figuren/mama-erklaert.png" alt="" />
           <img id="s-ma-denkt" src="assets/figuren/mama-denkt.png" alt="" />
           <img id="s-ma-zeigt" src="assets/figuren/mama-zeigt.png" alt="" />
+          <img id="s-ma-besorgt" class="sieht-links" src="assets/figuren/mama-besorgt.png" alt="" />
+          <img id="s-ma-spricht" class="sieht-links" src="assets/figuren/mama-spricht.png" alt="" />
+          <img id="s-ma-spricht-zu" class="sieht-links" src="assets/figuren/mama-spricht-zu.png" alt="" />
         </div></div>
       </div>
+      <div id="s-umarmung"><img src="assets/figuren/umarmung.png" alt="Mama kniet und umarmt Thadeo" /></div>
+      <div id="s-blase-t" class="blase thadeo leise"><span class="wer">Thadeo</span>Ich vermisse dich so, Mama.<span class="zipfel"></span></div>
       <div id="s-blase" class="blase mama"><span class="wer">Mama</span>Mama liebt dich und kämpft um dich, sodass du bald wieder zu Hause sein kannst.<span class="zipfel"></span></div>
       <div id="s-text">So wie viele andere Eltern <span>deutschlandweit</span> auch.<small>Lasst uns laut werden und gemeinsam für unsere Kinder und unser Recht kämpfen.</small></div>
       <div id="s-web">systemfehlerfamilie.de</div>
@@ -45,23 +57,31 @@
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    SF.pose(tl, "s-th", "denkt", 0);
-    SF.pose(tl, "s-ma", "denkt", 0);
-    SF.atem(tl, "s-th", 13, 0.2);
-    SF.atem(tl, "s-ma", 13, 0.9);
+    SF.pose(tl, "s-th", "traurig", 0);
+    SF.pose(tl, "s-ma", "besorgt", 0);
+    SF.atem(tl, "s-th", 8.6, 0.2);
+    SF.atem(tl, "s-ma", 8.6, 0.9);
     tl.fromTo("#s-th", { x: -200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 0);
     tl.fromTo("#s-ma", { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 0.1);
-    SF.pose(tl, "s-ma", "erklaert", 0.8);
-    SF.blase(tl, "#s-blase", 0.9, 5.4);
+    // Mama spricht zu Thadeo
+    SF.pose(tl, "s-ma", "spricht", 0.8);
+    SF.blase(tl, "#s-blase", 0.9, 5.2);
     SF.sprich(tl, "s-ma", 1.0, 4.6);
-    tl.fromTo("#s-herz", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(2)" }, 2.0);
-    tl.to("#s-herz", { scale: 1.06, duration: 0.5, yoyo: true, repeat: 9, ease: "sine.inOut" }, 2.8);
-    SF.pose(tl, "s-th", "ruhig", 3.5);
-    tl.to("#s-th", { x: 90, duration: 1.2, ease: "power2.inOut" }, 3.5);
-    tl.to("#s-ma", { x: -60, duration: 1.2, ease: "power2.inOut" }, 3.5);
-    SF.pose(tl, "s-ma", "ruhig", 6.0);
-    SF.rein(tl, "#s-text", 6.4, { y: 30 });
-    SF.rein(tl, "#s-web", 8.2, { scale: 0.8 });
+    SF.mund(tl, "s-ma", "spricht", "spricht-zu", 1.0, 4.6);
+    // Thadeo antwortet
+    SF.pose(tl, "s-th", "leise", 6.2);
+    SF.blase(tl, "#s-blase-t", 6.3, 2.8);
+    SF.mund(tl, "s-th", "leise", "leise-zu", 6.4, 1.4);
+    // aufeinander zu, dann die Umarmung
+    tl.to("#s-th", { x: 120, duration: 0.8, ease: "power2.in" }, 8.4);
+    tl.to("#s-ma", { x: -120, duration: 0.8, ease: "power2.in" }, 8.4);
+    tl.to(["#s-th", "#s-ma"], { opacity: 0, duration: 0.4, ease: "power1.in" }, 8.9);
+    tl.fromTo("#s-umarmung", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.7, ease: "power2.out", transformOrigin: "50% 100%" }, 8.9);
+    tl.fromTo("#s-herz", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.9, ease: "back.out(1.8)" }, 9.2);
+    tl.to("#s-herz", { scale: 1.05, duration: 0.55, yoyo: true, repeat: 11, ease: "sine.inOut" }, 10.1);
+    tl.fromTo("#s-umarmung", { y: 0 }, { y: -6, duration: 1.8, yoyo: true, repeat: 3, ease: "sine.inOut" }, 9.6);
+    SF.rein(tl, "#s-text", 10.2, { y: 30 });
+    SF.rein(tl, "#s-web", 12.4, { scale: 0.8 });
     window.__timelines["schluss"] = tl;
   </script>
 </template>

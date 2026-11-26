@@ -1,0 +1,47 @@
+[
+  {
+    "zeit": "2026-11-26T06:59:48",
+    "datei": "01.png",
+    "typ": "bild",
+    "modell": "gpt-image-2-image-to-image",
+    "prompt": "Use the two characters from the reference images exactly as they look (same 3D animated Pixar-like style, same faces, hair, clothes): the blonde mother with long wavy hair, red lips, sunglasses on top of her head, fitted long-sleeve black knee-length dress and black high heels; and her young son (about 8) with blond hair tied in a small bun, white t-shirt, dark blue jeans, white sneakers and an amber bead necklace. The mother kneels down and hugs her son tightly, his arms around her neck, his face on her shoulder. Both have their eyes closed, sad but loving expressions, they have missed each other very much, a single tear on the mother's cheek. Full body visible, centered, side three-quarter view. Plain solid flat background color #26386a, no floor, no text, no logo.",
+    "credits": 6.0,
+    "eur": 0.0258
+  },
+  {
+    "zeit": "2026-11-26T07:01:15",
+    "datei": "02.png",
+    "typ": "bild",
+    "modell": "gpt-image-2-image-to-image",
+    "prompt": "Character sheet of the same woman from the reference image (same 3D animated Pixar-like style, same face, long wavy blonde hair, red lips, sunglasses on top of her head, fitted long-sleeve black knee-length dress, black high heels). Two full-body poses side by side with clear space between them, both turned in three-quarter view facing to the LEFT side of the image: LEFT pose: worried and sad, eyebrows raised in concern, eyes slightly teary, one hand pressed to her chest, mouth closed. RIGHT pose: speaking softly and lovingly but sad, mouth slightly open as if talking, one hand reaching out gently forward to the left, concerned caring eyes. No smiling. Plain solid flat pure green background #00FF00, no shadows on the background, no floor, no text.",
+    "credits": 6.0,
+    "eur": 0.0258
+  },
+  {
+    "zeit": "2026-11-26T07:02:20",
+    "datei": "03.png",
+    "typ": "bild",
+    "modell": "gpt-image-2-image-to-image",
+    "prompt": "Character sheet of the same boy from the reference image (same 3D animated Pixar-like style, same face, about 8 years old, blond hair tied in a small bun, white t-shirt, dark blue jeans, white sneakers with blue patch, amber bead necklace). Two full-body poses side by side with clear space between them, both in three-quarter view facing to the RIGHT side of the image: LEFT pose: sad and withdrawn, head lowered, eyes looking down, shoulders hunched, hands clasped in front, mouth closed. RIGHT pose: sad and scared but speaking quietly, mouth slightly open as if talking, eyebrows worried, eyes glossy, one hand at his chest. No smiling. Plain solid flat pure green background #00FF00, no shadows on the background, no floor, no text.",
+    "credits": 6.0,
+    "eur": 0.0258
+  },
+  {
+    "zeit": "2026-11-26T07:04:51",
+    "datei": "04.png",
+    "typ": "bild",
+    "modell": "gpt-image-2-image-to-image",
+    "prompt": "Edit this image minimally: keep everything exactly identical (same woman, same pose, same position, same size, same framing, same lighting, same expression around the eyes and eyebrows, same plain pure green background #00FF00). Only change the mouth: the lips are now gently closed. Nothing else changes.",
+    "credits": 6.0,
+    "eur": 0.0258
+  },
+  {
+    "zeit": "2026-11-26T07:04:59",
+    "datei": "05.png",
+    "typ": "bild",
+    "modell": "gpt-image-2-image-to-image",
+    "prompt": "Edit this image minimally: keep everything exactly identical (same boy, same pose, same position, same size, same framing, same lighting, same expression around the eyes and eyebrows, same plain pure green background #00FF00). Only change the mouth: the lips are now gently closed. Nothing else changes.",
+    "credits": 6.0,
+    "eur": 0.0258
+  }
+]

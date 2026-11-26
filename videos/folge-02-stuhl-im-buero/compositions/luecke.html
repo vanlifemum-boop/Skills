@@ -36,7 +36,7 @@
         <div class="zeile" style="width:54%"></div>
       </div>
       <div id="l-lab-erlebt" class="l-label">Erlebt</div>
-      <div id="l-erlebt">Thadeo sagt: <em>„Ach, nichts.“</em> Dabei will er allein telefonieren. Niemand hört ihn.</div>
+      <div id="l-erlebt">Thadeo sagt: <em>„Ach, nichts.“</em> Er will allein telefonieren. Niemand hört ihn.</div>
       <div id="l-th" class="figur">
         <div id="l-th-hub" class="hub"><div id="l-th-atem" class="atem">
           <img id="l-th-ruhig" src="assets/figuren/thadeo-ruhig.png" alt="" />
@@ -58,20 +58,20 @@
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    SF.rein(tl, "#l-lab-akte", 0.1, { x: -30 });
-    tl.fromTo("#l-akte", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.3);
-    SF.rein(tl, "#l-lab-erlebt", 2.4, { x: -30 });
     SF.pose(tl, "l-th", "traurig", 0);
-    tl.fromTo("#l-th", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 2.5);
-    SF.atem(tl, "l-th", 11, 3.2);
-    SF.kreuzAn(tl, "l-th", 3.3);
-    SF.rein(tl, "#l-erlebt", 2.9, { y: 30 });
-    tl.to("#l-riss-pfad", { strokeDashoffset: 0, duration: 0.9, ease: "power2.inOut" }, 5.6);
-    [6.5, 6.62, 6.74, 8.8, 8.9].forEach((t, i) => {
+    tl.set("#l-th-x", { opacity: 1 }, 0);
+    SF.atem(tl, "l-th", 5, 0.2);
+    tl.set(["#l-lab-akte", "#l-akte"], { opacity: 1 }, 0);
+    tl.fromTo("#l-akte", { y: -20 }, { y: 0, duration: 0.4, ease: "power3.out" }, 0);
+    SF.rein(tl, "#l-lab-erlebt", 0.8, { x: -30 });
+    tl.fromTo("#l-th", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.8);
+    SF.rein(tl, "#l-erlebt", 1.0, { y: 20 });
+    tl.to("#l-riss-pfad", { strokeDashoffset: 0, duration: 0.5, ease: "power2.inOut" }, 2.4);
+    [2.9, 3.0, 3.1, 4.0, 4.08].forEach((t, i) => {
       tl.set("#l-fehler", { opacity: 1, x: [14, -18, 0, -10, 0][i], skewX: [8, -6, 0, 5, 0][i] }, t);
     });
-    tl.fromTo("#l-oben", { y: 0 }, { y: -8, duration: 0.1, yoyo: true, repeat: 1 }, 6.5);
-    tl.fromTo("#l-unten", { y: 0 }, { y: 8, duration: 0.1, yoyo: true, repeat: 1 }, 6.5);
+    tl.fromTo("#l-oben", { y: 0 }, { y: -8, duration: 0.08, yoyo: true, repeat: 1 }, 2.9);
+    tl.fromTo("#l-unten", { y: 0 }, { y: 8, duration: 0.08, yoyo: true, repeat: 1 }, 2.9);
     window.__timelines["luecke"] = tl;
   </script>
 </template>

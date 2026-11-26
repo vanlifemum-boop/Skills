@@ -13,7 +13,9 @@
     #d-bett { position: absolute; left: -40px; top: 1300px; width: 520px; height: 260px; }
     #d-boden { position: absolute; left: 0; right: 0; top: 1520px; bottom: 0; background: #17223f; }
     #d-th { left: 380px; width: 400px; height: 760px; bottom: 380px; }
-    .d-denk { left: 130px; top: 300px; width: 760px; transform-origin: 40% 100%; }
+    .d-denk { left: 160px; top: 540px; width: 700px; font-size: 52px; transform-origin: 40% 100%; }
+    .d-kind { position: absolute; bottom: 380px; opacity: 0; }
+    .d-kind svg { display: block; width: 100%; height: 100%; }
     .d-denk .p1 { left: 330px; } .d-denk .p2 { left: 350px; } .d-denk .p3 { left: 362px; }
     #d-denk-5 { background: #ffffff; border-color: var(--koralle); }
     #d-denk-5 .wer { color: #d9502f; }
@@ -36,26 +38,35 @@
           <div id="d-th-x" class="kreuz" aria-hidden="true"></div>
         </div></div>
       </div>
+      <div id="d-a1" class="ansage">Stell dir vor, du denkst nur noch:</div>
+      <div id="d-a2" class="ansage">So geht es <span class="rot" style="display:inline">vielen Kindern</span> im Heim.</div>
+      <div id="d-k1" class="d-kind" style="left:60px;width:150px;height:330px"><svg viewBox="0 0 150 330" aria-hidden="true"><circle cx="75" cy="52" r="46" fill="#4a659a"/><g stroke="#111111" stroke-width="13" stroke-linecap="round"><line x1="54" y1="47" x2="96" y2="71"/><line x1="96" y1="47" x2="54" y2="71"/></g><path d="M20 115 Q75 92 130 115 L134 235 L16 235 Z" fill="#4a659a"/><rect x="34" y="226" width="34" height="104" fill="#4a659a"/><rect x="82" y="226" width="34" height="104" fill="#4a659a"/></svg></div>
+      <div id="d-k2" class="d-kind" style="left:230px;width:130px;height:290px"><svg viewBox="0 0 150 330" aria-hidden="true"><circle cx="75" cy="52" r="46" fill="#5d7aa8"/><g stroke="#111111" stroke-width="13" stroke-linecap="round"><line x1="54" y1="47" x2="96" y2="71"/><line x1="96" y1="47" x2="54" y2="71"/></g><path d="M20 115 Q75 92 130 115 L134 235 L16 235 Z" fill="#5d7aa8"/><rect x="34" y="226" width="34" height="104" fill="#5d7aa8"/><rect x="82" y="226" width="34" height="104" fill="#5d7aa8"/></svg></div>
+      <div id="d-k3" class="d-kind" style="left:760px;width:140px;height:310px"><svg viewBox="0 0 150 330" aria-hidden="true"><circle cx="75" cy="52" r="46" fill="#5d7aa8"/><g stroke="#111111" stroke-width="13" stroke-linecap="round"><line x1="54" y1="47" x2="96" y2="71"/><line x1="96" y1="47" x2="54" y2="71"/></g><path d="M20 115 Q75 92 130 115 L134 235 L16 235 Z" fill="#5d7aa8"/><rect x="34" y="226" width="34" height="104" fill="#5d7aa8"/><rect x="82" y="226" width="34" height="104" fill="#5d7aa8"/></svg></div>
+      <div id="d-k4" class="d-kind" style="left:910px;width:130px;height:280px"><svg viewBox="0 0 150 330" aria-hidden="true"><circle cx="75" cy="52" r="46" fill="#4a659a"/><g stroke="#111111" stroke-width="13" stroke-linecap="round"><line x1="54" y1="47" x2="96" y2="71"/><line x1="96" y1="47" x2="54" y2="71"/></g><path d="M20 115 Q75 92 130 115 L134 235 L16 235 Z" fill="#4a659a"/><rect x="34" y="226" width="34" height="104" fill="#4a659a"/><rect x="82" y="226" width="34" height="104" fill="#4a659a"/></svg></div>
       <div id="d-denk-1" class="denke d-denk"><span class="wer">Thadeo denkt</span>Niemand hört mir zu.<span class="punkt p1"></span><span class="punkt p2"></span><span class="punkt p3"></span></div>
-      <div id="d-denk-2" class="denke d-denk"><span class="wer">Thadeo denkt</span>Alle tun so, als würden sie zuhören. Aber keiner macht, was ich mir wünsche.<span class="punkt p1"></span><span class="punkt p2"></span><span class="punkt p3"></span></div>
-      <div id="d-denk-3" class="denke d-denk"><span class="wer">Thadeo denkt</span>Ich will hier raus. Ich will zu meiner Mama.<span class="punkt p1"></span><span class="punkt p2"></span><span class="punkt p3"></span></div>
-      <div id="d-denk-4" class="denke d-denk"><span class="wer">Thadeo denkt</span>Mit ihr reden. Zeit mit ihr verbringen. Wieder mit ihr in den Urlaub fahren.<span class="punkt p1"></span><span class="punkt p2"></span><span class="punkt p3"></span></div>
-      <div id="d-denk-5" class="denke d-denk"><span class="wer">Thadeo denkt</span>Ich will nicht wie ein Gefangener im Kinderheim leben.<span class="punkt p1"></span><span class="punkt p2"></span><span class="punkt p3"></span></div>
+      <div id="d-denk-2" class="denke d-denk">Ich will hier raus.<span class="punkt p1"></span><span class="punkt p2"></span><span class="punkt p3"></span></div>
+      <div id="d-denk-3" class="denke d-denk">Ich will zu meiner Mama.<span class="punkt p1"></span><span class="punkt p2"></span><span class="punkt p3"></span></div>
+      <div id="d-denk-5" class="denke d-denk">Ich bin doch kein Gefangener.<span class="punkt p1"></span><span class="punkt p2"></span><span class="punkt p3"></span></div>
     </div>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
     SF.pose(tl, "d-th", "traurig", 0);
     tl.set("#d-th-x", { opacity: 1 }, 0);
-    SF.atem(tl, "d-th", 22, 0.3);
-    tl.fromTo("#d-th", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, 0);
-    tl.fromTo("#d-licht", { opacity: 0.4 }, { opacity: 1, duration: 10, yoyo: true, repeat: 1, ease: "sine.inOut" }, 0);
-    SF.blase(tl, "#d-denk-1", 0.8, 3.0);
-    SF.blase(tl, "#d-denk-2", 4.0, 4.6);
-    SF.blase(tl, "#d-denk-3", 8.8, 3.6);
-    SF.blase(tl, "#d-denk-4", 12.6, 4.4);
-    SF.blase(tl, "#d-denk-5", 17.2, 4.6);
-    tl.fromTo("#d-th-atem", { scale: 1 }, { scale: 0.96, duration: 2, ease: "power2.inOut" }, 17.2);
+    SF.atem(tl, "d-th", 11, 0.2);
+    tl.fromTo("#d-licht", { opacity: 0.5 }, { opacity: 1, duration: 5, yoyo: true, repeat: 1, ease: "sine.inOut" }, 0);
+    tl.fromTo("#d-th", { scale: 1 }, { scale: 1.06, duration: 8, ease: "none", transformOrigin: "50% 100%" }, 0);
+    SF.rein(tl, "#d-a1", 0.1, { y: -20 });
+    SF.blase(tl, "#d-denk-1", 0.6, 1.9);
+    SF.blase(tl, "#d-denk-2", 2.6, 1.9);
+    SF.blase(tl, "#d-denk-3", 4.6, 2.1);
+    SF.blase(tl, "#d-denk-5", 6.8, 2.1);
+    tl.to("#d-a1", { opacity: 0, duration: 0.2 }, 8.8);
+    SF.rein(tl, "#d-a2", 8.9, { y: -20 });
+    ["#d-k2", "#d-k3", "#d-k1", "#d-k4"].forEach((k, i) => {
+      tl.fromTo(k, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 9.0 + i * 0.15);
+    });
     window.__timelines["gedanken"] = tl;
   </script>
 </template>

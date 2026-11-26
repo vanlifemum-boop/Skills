@@ -65,9 +65,9 @@
         </div></div>
       </div>
       <div id="m-kreis" data-layout-allow-overflow><img src="assets/figuren/thadeo-traurig.png" alt="Thadeo am Telefon" /><div id="m-kreis-x" class="kreuz" aria-hidden="true"></div></div>
-      <div id="m-kreis-label">Thadeo am Telefon</div>
+      <div id="m-kreis-label">Am Telefon: Mama</div>
       <div id="m-pill">Am anderen Ende: Mama</div>
-      <div id="m-denk" class="denke"><span class="wer">Mama denkt</span>Was ist mit Thadeo los? Warum verstummt er? Ich mache mir Sorgen.<span class="punkt p1"></span><span class="punkt p2"></span><span class="punkt p3"></span></div>
+      <div id="m-denk" class="denke"><span class="wer">Mama denkt</span>Warum ist er so still?<span class="punkt p1"></span><span class="punkt p2"></span><span class="punkt p3"></span></div>
       <div id="m-blase-1" class="blase mama m-blase"><span class="wer">Mama</span>Du bist auf einmal so still, mein Schatz.<span class="zipfel"></span></div>
       <div id="m-blase-2" class="blase mama m-blase"><span class="wer">Mama</span>Was würdest du mir lieber unter vier Augen erzählen?<span class="zipfel"></span></div>
       <div id="m-blase-t" class="blase thadeo leise"><span class="wer">Thadeo</span>Später. Wenn keiner daneben sitzt.<span class="zipfel"></span></div>
@@ -77,30 +77,18 @@
   <script>
     const tl = gsap.timeline({ paused: true });
     SF.pose(tl, "m-ma", "besorgt", 0);
-    SF.atem(tl, "m-ma", 21, 0.6);
-    tl.fromTo("#m-ma", { x: 60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0);
-    tl.fromTo("#m-fenster", { boxShadow: "0 0 60px 10px rgba(255,201,74,0.35)" }, { boxShadow: "0 0 140px 40px rgba(255,201,74,0.6)", duration: 10, yoyo: true, repeat: 1, ease: "sine.inOut" }, 0);
-    // Thadeo im Kreis, Mama schaut zu ihm
-    tl.fromTo("#m-kreis", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, 0.4);
-    SF.rein(tl, "#m-kreis-label", 0.7, { x: -20 });
-    SF.blase(tl, "#m-pill", 0.6, 2.4);
-    // Sorge
-    SF.pose(tl, "m-ma", "besorgt", 3.0);
-    tl.to("#m-ma-hub", { rotation: -2, y: 6, duration: 1.2, ease: "sine.inOut" }, 3.0);
-    SF.blase(tl, "#m-denk", 3.2, 5.0);
-    tl.to("#m-ma-hub", { rotation: 0, y: 0, duration: 0.6, ease: "sine.inOut" }, 7.6);
-    // Sie spricht ihn an
-    SF.pose(tl, "m-ma", "spricht", 8.3);
-    SF.mund(tl, "m-ma", "spricht", "spricht-zu", 8.5, 3.6);
-    SF.mund(tl, "m-ma", "spricht", "spricht-zu", 13.0, 4.0);
-    SF.blase(tl, "#m-blase-1", 8.4, 4.3);
-    SF.sprich(tl, "m-ma", 8.5, 3.6);
-    SF.blase(tl, "#m-blase-2", 12.9, 4.8);
-    SF.sprich(tl, "m-ma", 13.0, 4.0);
-    // Thadeos Antwort
-    SF.pose(tl, "m-ma", "besorgt", 17.8);
-    tl.to("#m-kreis", { scale: 1.08, duration: 0.3, yoyo: true, repeat: 1, ease: "power2.out" }, 17.8);
-    SF.blase(tl, "#m-blase-t", 17.9, 3.1);
+    SF.atem(tl, "m-ma", 8, 0.3);
+    tl.fromTo("#m-ma", { x: 80 }, { x: 0, duration: 0.5, ease: "power3.out" }, 0);
+    tl.set("#m-kreis", { opacity: 1 }, 0);
+    tl.set("#m-kreis-label", { opacity: 1 }, 0);
+    SF.blase(tl, "#m-denk", 0.3, 2.7);
+    tl.to("#m-ma-hub", { rotation: -2, y: 6, duration: 1, ease: "sine.inOut" }, 0.3);
+    tl.to("#m-ma-hub", { rotation: 0, y: 0, duration: 0.4, ease: "sine.inOut" }, 2.6);
+    SF.pose(tl, "m-ma", "spricht", 3.0);
+    SF.blase(tl, "#m-blase-2", 3.1, 4.8);
+    SF.mund(tl, "m-ma", "spricht", "spricht-zu", 3.2, 3.8);
+    SF.sprich(tl, "m-ma", 3.2, 3.8);
+    tl.fromTo("#m-kreis", { scale: 1 }, { scale: 1.06, duration: 0.3, yoyo: true, repeat: 1 }, 7.2);
     window.__timelines["mama"] = tl;
   </script>
 </template>

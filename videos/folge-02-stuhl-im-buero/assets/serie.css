@@ -235,3 +235,23 @@
 }
 .kreuz::before { transform: rotate(35deg); }
 .kreuz::after { transform: rotate(-35deg); }
+
+/* Ansage im Format "Stell dir vor": große Texttafel oben im Bild */
+.ansage {
+  position: absolute;
+  left: 130px;
+  top: 300px;
+  width: 760px;
+  background: var(--nacht);
+  color: var(--weiss);
+  padding: 24px 32px;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 54px;
+  line-height: 1.12;
+  opacity: 0;
+}
+.ansage .rot { color: var(--koralle); display: block; }
+.ansage.gross { font-size: 72px; }
+
+/* kurzer heller Blitz beim Kreuz */
+.blitz { position: absolute; inset: 0; background: #ffffff; opacity: 0; pointer-events: none; }

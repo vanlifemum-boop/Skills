@@ -17,7 +17,7 @@
     #s-text span { color: var(--sonne); }
     #s-text small { display: block; margin-top: 22px; font-family: "Inter", sans-serif; font-weight: 700; font-size: 36px; line-height: 1.28; color: var(--himmel); }
     #s-web {
-      position: absolute; left: 130px; top: 620px; padding: 14px 26px; border-radius: 40px;
+      position: absolute; left: 130px; top: 660px; padding: 14px 26px; border-radius: 40px;
       background: var(--koralle); color: var(--nacht); font-family: "Archivo Black", sans-serif; font-size: 40px; opacity: 0;
     }
   </style>
@@ -60,31 +60,22 @@
     const tl = gsap.timeline({ paused: true });
     SF.pose(tl, "s-th", "traurig", 0);
     SF.pose(tl, "s-ma", "besorgt", 0);
-    SF.atem(tl, "s-th", 8.6, 0.2);
     tl.set("#s-th-x", { opacity: 1 }, 0);
-    SF.atem(tl, "s-ma", 8.6, 0.9);
-    tl.fromTo("#s-th", { x: -200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 0);
-    tl.fromTo("#s-ma", { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 0.1);
-    // Mama spricht zu Thadeo
-    SF.pose(tl, "s-ma", "spricht", 0.8);
-    SF.blase(tl, "#s-blase", 0.9, 5.2);
-    SF.sprich(tl, "s-ma", 1.0, 4.6);
-    SF.mund(tl, "s-ma", "spricht", "spricht-zu", 1.0, 4.6);
-    // Bei Mama fällt das Kreuz ab, Thadeo darf sprechen
-    SF.kreuzAb(tl, "s-th", 5.6);
-    SF.pose(tl, "s-th", "leise", 6.2);
-    SF.blase(tl, "#s-blase-t", 6.3, 2.8);
-    SF.mund(tl, "s-th", "leise", "leise-zu", 6.4, 1.4);
-    // aufeinander zu, dann die Umarmung
-    tl.to("#s-th", { x: 120, duration: 0.8, ease: "power2.in" }, 8.4);
-    tl.to("#s-ma", { x: -120, duration: 0.8, ease: "power2.in" }, 8.4);
-    tl.to(["#s-th", "#s-ma"], { opacity: 0, duration: 0.4, ease: "power1.in" }, 8.9);
-    tl.fromTo("#s-umarmung", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.7, ease: "power2.out", transformOrigin: "50% 100%" }, 8.9);
-    tl.fromTo("#s-herz", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.9, ease: "back.out(1.8)" }, 9.2);
-    tl.to("#s-herz", { scale: 1.05, duration: 0.55, yoyo: true, repeat: 11, ease: "sine.inOut" }, 10.1);
-    tl.fromTo("#s-umarmung", { y: 0 }, { y: -6, duration: 1.8, yoyo: true, repeat: 3, ease: "sine.inOut" }, 9.6);
-    SF.rein(tl, "#s-text", 10.2, { y: 30 });
-    SF.rein(tl, "#s-web", 12.4, { scale: 0.8 });
+    tl.set(["#s-th", "#s-ma"], { opacity: 1 }, 0);
+    // Bei Mama fällt das Kreuz ab
+    SF.kreuzAb(tl, "s-th", 0.4);
+    tl.to("#s-th", { x: 120, duration: 0.6, ease: "power2.in" }, 0.7);
+    tl.to("#s-ma", { x: -120, duration: 0.6, ease: "power2.in" }, 0.7);
+    tl.to(["#s-th", "#s-ma"], { opacity: 0, duration: 0.3, ease: "power1.in" }, 1.1);
+    tl.fromTo("#s-umarmung", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.5, ease: "power2.out", transformOrigin: "50% 100%" }, 1.1);
+    tl.fromTo("#s-herz", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.7, ease: "back.out(1.8)" }, 1.3);
+    tl.to("#s-herz", { scale: 1.05, duration: 0.55, yoyo: true, repeat: 7, ease: "sine.inOut" }, 2.0);
+    tl.fromTo("#s-umarmung", { y: 0 }, { y: -6, duration: 1.6, yoyo: true, repeat: 3, ease: "sine.inOut" }, 1.6);
+    // Mamas Satz, dann der Aufruf; die Adresse steht die ganze Zeit
+    SF.blase(tl, "#s-blase", 1.5, 4.8);
+    SF.rein(tl, "#s-web", 1.8, { scale: 0.8 });
+    SF.rein(tl, "#s-text", 6.4, { y: 30 });
+    tl.to("#s-umarmung", { scale: 1.03, duration: 5.6, ease: "none", transformOrigin: "50% 100%" }, 6.4);
     window.__timelines["schluss"] = tl;
   </script>
 </template>

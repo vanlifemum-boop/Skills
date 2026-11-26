@@ -23,7 +23,7 @@
       <div id="f-frage">
         <span class="w">Wer</span><span class="w">ermöglicht</span><span class="w">Thadeo</span><span class="w">ein</span><span class="w">Telefonat</span><span class="w">mit</span><span class="w">Mama,</span><span class="w">bei</span><span class="w">dem</span><span class="w rot">niemand</span><span class="w rot">mithört?</span>
       </div>
-      <div id="f-aufruf">Schreib es in die Kommentare. Speichern. Teilen.</div>
+      <div id="f-aufruf">Was denkst du? Schreib es in die Kommentare.</div>
       <div id="f-hinweis">Szenische Darstellung nach Schilderung der Familie. Keine Rechtsberatung.</div>
       <div id="f-ma" class="figur spiegel">
         <div id="f-ma-hub" class="hub"><div id="f-ma-atem" class="atem">
@@ -53,17 +53,17 @@
   <script>
     const tl = gsap.timeline({ paused: true });
     SF.rein(tl, "#f-stempel", 0.1, { y: -20 });
-    tl.fromTo("#f-frage .w", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out", stagger: 0.22 }, 0.4);
-    tl.fromTo("#f-frage .rot", { scale: 1 }, { scale: 1.08, duration: 0.25, yoyo: true, repeat: 1, ease: "power2.out", transformOrigin: "0% 50%" }, 3.2);
+    tl.fromTo("#f-frage .w", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out", stagger: 0.12 }, 0.2);
+    tl.fromTo("#f-frage .rot", { scale: 1 }, { scale: 1.08, duration: 0.25, yoyo: true, repeat: 1, ease: "power2.out", transformOrigin: "0% 50%" }, 1.7);
     SF.pose(tl, "f-ma", "besorgt", 0);
     SF.pose(tl, "f-th", "traurig", 0);
-    tl.fromTo("#f-ma", { y: 300 }, { y: 0, duration: 0.8, ease: "power3.out" }, 1.0);
-    tl.fromTo("#f-th", { y: 300 }, { y: 0, duration: 0.8, ease: "power3.out" }, 1.2);
-    SF.atem(tl, "f-ma", 10, 1.8);
-    SF.atem(tl, "f-th", 10, 2.1);
+    tl.fromTo("#f-ma", { y: 300 }, { y: 0, duration: 0.6, ease: "power3.out" }, 0.3);
+    tl.fromTo("#f-th", { y: 300 }, { y: 0, duration: 0.6, ease: "power3.out" }, 0.4);
+    SF.atem(tl, "f-ma", 5, 0.9);
+    SF.atem(tl, "f-th", 5, 1.0);
     tl.set("#f-th-x", { opacity: 1 }, 0);
-    SF.rein(tl, "#f-aufruf", 4.6, { x: -30 });
-    SF.rein(tl, "#f-hinweis", 5.6, { y: 10 });
+    SF.rein(tl, "#f-aufruf", 2.2, { x: -30 });
+    SF.rein(tl, "#f-hinweis", 2.6, { y: 10 });
     window.__timelines["frage"] = tl;
   </script>
 </template>

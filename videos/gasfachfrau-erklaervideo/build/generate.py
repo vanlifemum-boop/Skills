@@ -12,8 +12,8 @@ OR, OR_D, OR_L, PET, INK = "#FD5B2A", "#D9441A", "#FF8B62", "#108474", "#232323"
 
 import wave, struct, math, re
 
-# Stimme: eine durchgehende Aufnahme (kie.ai, ElevenLabs "Brian", DE)
-AUDIO = "assets/voice/brian/vo.wav"
+# Stimme: eine durchgehende Aufnahme (kie.ai, ElevenLabs "Will", DE)
+AUDIO = "assets/voice/v3/vo.wav"
 AUDIO_START = 0.30
 
 
@@ -31,15 +31,15 @@ ENV_ALL, AUDIO_DUR = _envelope(AUDIO)
 
 # Szenen: id, start, dauer (an die Satzgrenzen der Aufnahme gelegt)
 SCENES = [
-    ("sc1", 0.0, 5.26, "s1"),
-    ("sc2", 5.26, 4.54, "s2"),
-    ("sc3", 9.80, 5.54, "s3"),
-    ("sc4", 15.34, 8.66, "s4"),
-    ("sc5", 24.00, 5.39, "s5"),
-    ("sc6", 29.39, 9.46, "s6"),
-    ("end", 38.85, 3.7, None),
+    ("sc1", 0.0, 7.60, "s1"),
+    ("sc2", 7.60, 4.95, "s2"),
+    ("sc3", 12.55, 4.77, "s3"),
+    ("sc4", 17.32, 7.90, "s4"),
+    ("sc5", 25.22, 5.62, "s5"),
+    ("sc6", 30.84, 10.89, "s6"),
+    ("end", 41.73, 5.0, None),
 ]
-TOTAL = 42.55
+TOTAL = 46.73
 START = {c: st for c, st, _, _ in SCENES}
 NEWDUR = {c: du for c, _, du, _ in SCENES}
 CUR = {"scene": None}
@@ -514,19 +514,22 @@ def sc6():
 # ---------------------------------------------------------------- Abspann
 def end():
     inner = f"""
-    <div id="end-a" class="clip shot" data-start="0" data-duration="3.7" style="background:#fff">
+    <div id="end-a" class="clip shot" data-start="0" data-duration="5.0" style="background:#fff">
       <div id="end-cam" class="cam">
-        <img id="end-icon" src="assets/brand/icon.png" style="position:absolute;left:360px;top:420px;width:360px;height:360px"/>
-        <div id="end-name" style="position:absolute;left:0;right:0;top:840px;text-align:center;font-weight:900;font-size:84px;color:{INK};letter-spacing:-2px">Die Gasfachfrau</div>
-        <div id="end-sub" style="position:absolute;left:0;right:0;top:960px;text-align:center;font-weight:700;font-size:40px;color:{PET}">Tankflaschen · Einbau · Beratung</div>
-        <div id="end-url" style="position:absolute;left:0;right:0;top:1040px;text-align:center;font-weight:800;font-size:52px;color:{OR}">gasfachfrau.de</div>
+        <img id="end-icon" src="assets/brand/icon.png" style="position:absolute;left:400px;top:320px;width:280px;height:280px"/>
+        <div id="end-name" style="position:absolute;left:0;right:0;top:640px;text-align:center;font-weight:900;font-size:84px;color:{INK};letter-spacing:-2px">Die Gasfachfrau</div>
+        <div id="end-sub" style="position:absolute;left:0;right:0;top:752px;text-align:center;font-weight:700;font-size:40px;color:{PET}">Tankflaschen · Einbau · Beratung</div>
+        <div id="end-qrbox" style="position:absolute;left:330px;top:850px;width:420px;height:420px;background:#fff;border:8px solid {INK};border-radius:28px;padding:18px">
+          <img src="assets/brand/qr-gasfachfrau.png" style="width:100%;height:100%"/></div>
+        <div id="end-url" style="position:absolute;left:0;right:0;top:1300px;text-align:center;font-weight:800;font-size:58px;color:{OR}">gasfachfrau.de</div>
       </div>
     </div>"""
     s = 'tl.fromTo("#end-icon", { opacity: 0, scale: 0.5, rotation: -90 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.7, ease: "back.out(1.7)" }, 0.05);\n'
-    s += 'tl.fromTo("#end-name", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 0.45);\n'
-    s += 'tl.fromTo("#end-sub", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 0.75);\n'
-    s += 'tl.fromTo("#end-url", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 0.95);\n'
-    return scene_file("end", 3.7, inner, s)
+    s += 'tl.fromTo("#end-name", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 0.4);\n'
+    s += 'tl.fromTo("#end-sub", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 0.65);\n'
+    s += 'tl.fromTo("#end-qrbox", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.8)" }, 0.85);\n'
+    s += 'tl.fromTo("#end-url", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 1.1);\n'
+    return scene_file("end", 5.0, inner, s)
 
 
 # ---------------------------------------------------------------- Untertitel
@@ -550,7 +553,7 @@ def index():
     hosts = ""
     for cid, st, du, _ in SCENES:
         hosts += f'      <div id="{cid}" data-composition-id="{cid}" data-composition-src="compositions/{cid}.html" data-start="{st}" data-duration="{du}" data-track-index="1" data-track-kind="graphics" data-width="{W}" data-height="{H}"></div>\n'
-    hosts += f'      <div id="brand" class="clip" data-start="0" data-duration="{START["end"]}" data-track-index="4" style="position:absolute; left:0; right:0; top:1600px; text-align:center; z-index:50;"><div style="display:inline-flex; align-items:center; gap:14px; background:rgba(255,255,255,0.94); border-radius:40px; padding:10px 28px 10px 14px; box-shadow:0 6px 18px rgba(0,0,0,0.18);"><img src="assets/brand/icon.png" style="width:52px; height:52px"/><span style="font-family:Montserrat, sans-serif; font-weight:800; font-size:34px; color:#232323; letter-spacing:0.3px">gasfachfrau.de</span></div></div>\n'
+    hosts += f'      <div id="brand" class="clip" data-start="0" data-duration="{START["end"]}" data-track-index="4" style="position:absolute; left:0; right:0; top:1700px; text-align:center; z-index:50;"><div style="display:inline-flex; align-items:center; gap:14px; background:rgba(255,255,255,0.94); border-radius:60px; padding:12px 40px 12px 16px; box-shadow:0 6px 18px rgba(0,0,0,0.2);"><img src="assets/brand/icon.png" style="width:84px; height:84px"/><span style="font-family:Montserrat, sans-serif; font-weight:800; font-size:54px; color:#232323; letter-spacing:0.3px">gasfachfrau.de</span></div></div>\n'
     hosts += f'      <audio id="vo" class="clip" src="{AUDIO}" data-start="{AUDIO_START}" data-duration="{AUDIO_DUR:.3f}" data-track-index="3" data-volume="0.8"></audio>\n'
     return f"""<!doctype html>
 <html lang="de">

@@ -53,3 +53,10 @@ Aufbau nach dem Instagram-Vorbild (multitalent_fluessiggas): Statt des Sprechers
 - Gasi ist jetzt eine silberne Alu-Tankflasche mit Schutzkragen, ohne weitere Farben. Die π-Tauschflasche ist armeegrün.
 - Kein Beige mehr: Die Studio-Wand ist Petrol, die Füllstands-Szene Hellgrau
 - Das Flammen-Logo läuft oben rechts mit
+
+## Umsetzung v3 (26.11.2026)
+- Stimme „Will“ (kie.ai/ElevenLabs, stability 0.3, style 0.6, speed 1.08) mit begeistertem Text, eine durchgehende Aufnahme: `assets/voice/v3/vo.wav`, Text in `v3/script.txt`. Proben von Liam und Charlie liegen daneben.
+- Ohne Untertitel
+- Die grüne Tauschflasche steht an einer Tankstelle (Asphalt, Dach in Petrol, LPG-Säule)
+- Unten am Bildrand ein großes Schild mit Flammen-Logo und gasfachfrau.de
+- Abspann mit QR-Code zu https://gasfachfrau.de (`assets/brand/qr-gasfachfrau.png`), 46,7 s gesamt

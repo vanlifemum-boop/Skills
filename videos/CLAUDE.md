@@ -1,7 +1,7 @@
 # Videoprojekte – feste Vorgaben
 
 ## Stimme / Voiceover
-- **Gasfachfrau.de und ähnliche Kunden- und Erklärvideos:** Für das Voiceover **immer die kie.ai-Stimme** verwenden, also ElevenLabs-TTS über kie.ai, Stimme **„Brian“** (wie im Paul-Video), Deutsch. Gesprochen wird flüssig in **einer** durchgehenden Aufnahme, nicht in Einzelstücken, und der Text kommt mit wenigen Gedankenstrichen und Doppelpunkten aus. Kein HeyGen, kein Higgsfield, kein Kokoro.
+- **Gasfachfrau.de und ähnliche Kunden- und Erklärvideos:** Für das Voiceover **immer die kie.ai-Stimme** verwenden, also ElevenLabs-TTS über kie.ai, Stimme **„Will“** (Deutsch; stability 0.3, style 0.6, speed 1.08), energisch und begeistert. Gesprochen wird flüssig in **einer** durchgehenden Aufnahme, nicht in Einzelstücken, und der Text kommt mit wenigen Gedankenstrichen und Doppelpunkten aus. Kein HeyGen, kein Higgsfield, kein Kokoro.
 - Für andere Projekte kann das abweichen. Vorher fragen, wenn unklar.
 
 ## Gasfachfrau.de

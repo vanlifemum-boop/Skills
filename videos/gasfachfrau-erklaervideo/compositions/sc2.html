@@ -7,9 +7,9 @@
     #root .tag { position: absolute; color: #fff; font-weight: 800; padding: 14px 26px; border-radius: 18px; white-space: nowrap; letter-spacing: 0.5px; line-height: 1.1; box-shadow: 0 8px 0 rgba(0,0,0,0.18); }
     
   </style>
-  <div id="root" data-composition-id="sc2" data-width="1080" data-height="1920" data-duration="4.54">
+  <div id="root" data-composition-id="sc2" data-width="1080" data-height="1920" data-duration="4.95">
 
-    <div id="sc2-a" class="clip shot" data-start="0.000" data-duration="1.081" style="background:#E9ECEE">
+    <div id="sc2-a" class="clip shot" data-start="0.000" data-duration="1.179" style="background:#E9ECEE">
       <div id="sc2-a-cam" class="cam">
         <div style="position:absolute;left:90px;top:300px;width:900px;height:1080px;background:#fff;border:7px solid #232323;border-radius:30px"></div>
         <div style="position:absolute;left:150px;top:350px;width:780px;height:120px;background:#108474;border-radius:16px;color:#fff;font-weight:900;font-size:70px;text-align:center;line-height:120px;letter-spacing:6px">AUTOGAS · LPG</div>
@@ -17,7 +17,7 @@
         <div style="position:absolute;left:650px;top:980px;width:280px;height:280px;border-radius:50%;border:12px solid #108474;color:#108474;font-weight:900;font-size:46px;text-align:center;line-height:1.1;padding-top:84px">GEPRÜFT<br>LPG</div>
       </div>
     </div>
-    <div id="sc2-g" class="clip shot" data-start="1.081" data-duration="3.459" style="background: radial-gradient(ellipse 900px 1200px at 50% 40%, #1B9C8A 0%, #11796B 58%, #0A544B 100%);">
+    <div id="sc2-g" class="clip shot" data-start="1.179" data-duration="3.771" style="background: radial-gradient(ellipse 900px 1200px at 50% 40%, #1B9C8A 0%, #11796B 58%, #0A544B 100%);">
       <div id="sc2-g-cam" class="cam">
         <div class="gasi" style="position:absolute; width: 820px; left: 130px; top: 220px; margin-left:0px;">
 <svg viewBox="-60 -10 520 780" class="gasi-svg" xmlns="http://www.w3.org/2000/svg">
@@ -85,17 +85,17 @@ tli.fromTo("#sc2-g-cam", { scale: 1.0, transformOrigin: "50% 45%" }, { scale: 1.
 tli.fromTo("#sc2-sheet", { y: 700, rotation: 18, opacity: 0 }, { y: 0, rotation: -6, opacity: 1, duration: 0.55, ease: "back.out(1.5)" }, 2.3);
 
   (function(){
-    const M = "#sc2-g-mouth", env = [0.1, 0.1, 0.1, 0.16, 0.54, 0.78, 0.66, 0.9, 0.78, 0.69, 0.82, 0.95, 1.0, 1.0, 1.0, 1.0, 0.95, 0.88, 0.53, 0.33, 0.76, 0.58, 0.56, 0.61, 0.52, 0.36, 0.25, 0.12, 0.63, 0.73, 0.55, 0.47, 0.2, 0.74, 0.72, 0.36, 0.17, 0.25, 0.66, 0.87, 0.6, 0.2, 0.11, 0.26, 0.27, 0.99, 0.6, 0.4, 0.44, 0.72, 0.84, 0.83, 0.84, 0.81, 0.77, 0.74, 0.69, 0.45, 0.33, 0.28, 0.33, 0.71, 0.95, 0.89, 0.88, 0.78, 0.66, 0.46, 0.38, 0.42, 0.6, 0.85, 0.69, 0.26, 0.31, 0.46, 0.38, 0.2, 0.66, 0.85, 0.73, 0.78, 0.77, 0.74, 0.69, 0.55, 0.56, 0.58, 0.78, 0.83, 0.86, 0.63, 0.41, 0.7, 0.71, 0.66, 0.6, 0.47, 0.2, 0.11, 0.2, 0.66, 0.71, 0.76, 0.7, 0.66, 0.68, 0.82, 0.47, 0.31, 0.61, 0.53, 0.45, 0.42, 0.22, 0.12, 0.1, 0.44, 0.42, 0.35, 0.27, 0.18, 0.14, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.11, 0.12, 0.12, 0.12, 0.12, 0.12, 0.13], off = 0.0067;
+    const M = "#sc2-g-mouth", env = [0.1, 0.1, 0.1, 0.25, 0.85, 0.85, 0.6, 0.56, 0.53, 0.49, 0.39, 0.3, 0.35, 0.6, 0.31, 0.74, 0.84, 0.36, 0.59, 0.75, 0.41, 0.28, 0.74, 0.75, 0.71, 0.77, 0.73, 0.62, 0.4, 0.19, 0.47, 0.7, 0.6, 0.44, 0.36, 0.26, 0.1, 0.25, 0.24, 0.16, 0.11, 0.11, 0.65, 0.82, 0.57, 0.48, 0.33, 0.47, 0.44, 0.37, 0.42, 0.65, 0.7, 0.66, 0.67, 0.68, 0.45, 0.32, 0.23, 0.18, 0.26, 0.82, 0.73, 0.51, 0.51, 0.53, 0.53, 0.78, 0.76, 0.78, 0.65, 0.63, 0.57, 0.65, 0.64, 0.47, 0.36, 0.42, 0.86, 0.83, 0.69, 0.67, 0.64, 0.5, 0.36, 0.27, 0.35, 0.54, 0.79, 0.55, 0.3, 0.36, 0.33, 0.28, 0.8, 0.67, 0.47, 0.75, 0.51, 0.46, 0.39, 0.4, 0.54, 0.65, 0.6, 0.69, 0.71, 0.49, 0.44, 0.4, 0.28, 0.57, 0.27, 0.17, 0.79, 0.67, 0.61, 0.43, 0.16, 0.12, 0.11, 0.54, 0.45, 0.27, 0.19, 0.19, 0.18, 0.14, 0.11, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1], off = 0.0;
     tl.set(M, { scaleY: 0.1, svgOrigin: "200 364" }, 0);
     for (let i = 0; i < env.length; i++) tl.set(M, { scaleY: env[i] }, off + i / 30);
-    tl.set(M, { scaleY: 0.1 }, Math.min(off + env.length / 30, 4.500));
+    tl.set(M, { scaleY: 0.1 }, Math.min(off + env.length / 30, 4.910));
     tli.fromTo("#sc2-g-body", { rotation: -1.2, svgOrigin: "200 740" }, { rotation: 1.2, duration: 1.6, ease: "sine.inOut", yoyo: true, repeat: 7 }, 0);
     tli.set("#sc2-g-lids", {opacity:1}, 1.6); tli.set("#sc2-g-lids", {opacity:0}, 1.7000000000000002);tli.set("#sc2-g-lids", {opacity:1}, 3.6); tli.set("#sc2-g-lids", {opacity:0}, 3.7);
     tli.to("#sc2-g-armR", { rotation: -38, svgOrigin: "342 430", duration: 0.55, ease: "back.out(1.6)" }, 2.3);
     tli.to("#sc2-g-pupils", { x: 14, y: 10, duration: 0.18, ease: "power2.out" }, 2.5);tli.to("#sc2-g-pupils", { x: 0, y: 0, duration: 0.18, ease: "power2.out" }, 3.3);
     tli.to("#sc2-g-brows", { y: -10, duration: 0.2, ease: "power2.out" }, 1.1);tli.to("#sc2-g-brows", { y: 0, duration: 0.2, ease: "power2.out" }, 2.0);
   })();
-    tli.timeScale(0.92511);
+    tli.timeScale(0.84848);
     tl.add(tli, 0);
 
     window.__timelines["sc2"] = tl;

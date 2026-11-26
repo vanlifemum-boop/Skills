@@ -1,0 +1,21 @@
+{
+ "taskId": "4f03e30e76a8eb5d9a734450ca68e61c",
+ "model": "elevenlabs/text-to-speech-multilingual-v2",
+ "state": "success",
+ "param": "{\"input\":\"{\\\"voice\\\":\\\"Brian\\\",\\\"language_code\\\":\\\"de\\\",\\\"similarity_boost\\\":0.75,\\\"style\\\":0.25,\\\"text\\\":\\\"Tankflasche an der Autogastankstelle füllen? Das ist ab jetzt offiziell erlaubt, aber nur, wenn ich nach der aktuellen G 607 eingebaut bin. Das heißt, ich bin im Flaschenkasten fest fixiert, ohne Werkzeug lösbar und versiegelt. Getankt wird nur über einen Füllanschluss außen am Fahrzeug, mit einer Sicherheitskupplung in der Füllleitung, und die Leitung führt nicht durch den Wohnraum. Dazu kommen ein Sicherheitsventil und der automatische Füllstopp bei achtzig Prozent. Ganz wichtig: Normale Gasflaschen dürfen weiterhin nicht an die Tankstelle. Unsicher, ob deine Anlage passt? Die Gasfachfrau hilft dir gerne weiter.\\\",\\\"stability\\\":0.4,\\\"speed\\\":1.05}\",\"model\":\"elevenlabs/text-to-speech-multilingual-v2\"}",
+ "resultJson": "{\"resultUrls\":[\"https://tempfile.aiquickdraw.com/voice/4f03e30e76a8eb5d9a734450ca68e61c.mp3\"]}",
+ "failCode": null,
+ "failMsg": null,
+ "costTime": 9,
+ "completeTime": 1795700128667,
+ "createTime": 1795700119128,
+ "creditsConsumed": 12.0,
+ "operationType": "elevenlabs/text-to-speech-multilingual-v2",
+ "successFlag": 1,
+ "paramJson": "{\"input\":\"{\\\"voice\\\":\\\"Brian\\\",\\\"language_code\\\":\\\"de\\\",\\\"similarity_boost\\\":0.75,\\\"style\\\":0.25,\\\"text\\\":\\\"Tankflasche an der Autogastankstelle füllen? Das ist ab jetzt offiziell erlaubt, aber nur, wenn ich nach der aktuellen G 607 eingebaut bin. Das heißt, ich bin im Flaschenkasten fest fixiert, ohne Werkzeug lösbar und versiegelt. Getankt wird nur über einen Füllanschluss außen am Fahrzeug, mit einer Sicherheitskupplung in der Füllleitung, und die Leitung führt nicht durch den Wohnraum. Dazu kommen ein Sicherheitsventil und der automatische Füllstopp bei achtzig Prozent. Ganz wichtig: Normale Gasflaschen dürfen weiterhin nicht an die Tankstelle. Unsicher, ob deine Anlage passt? Die Gasfachfrau hilft dir gerne weiter.\\\",\\\"stability\\\":0.4,\\\"speed\\\":1.05}\",\"model\":\"elevenlabs/text-to-speech-multilingual-v2\"}",
+ "response": {
+  "resultUrls": [
+   "https://tempfile.aiquickdraw.com/voice/4f03e30e76a8eb5d9a734450ca68e61c.mp3"
+  ]
+ }
+}

@@ -10,99 +10,120 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 W, H, FPS = 1080, 1920, 30
 OR, OR_D, OR_L, PET, INK = "#FD5B2A", "#D9441A", "#FF8B62", "#108474", "#232323"
 
-vd = json.load(open(os.path.join(ROOT, "assets/voice/voice_data.json")))
-ENV = {s["id"]: s["env"] for s in vd["segments"]}
-DUR = {s["id"]: s["dur"] for s in vd["segments"]}
+import wave, struct, math, re
 
-# Stimme: absolute Startzeiten der sechs Abschnitte
-VO = {"s1": 0.30, "s2": 5.70, "s3": 9.95, "s4": 15.95, "s5": 25.90, "s6": 31.05}
-# Szenen: id, start, dauer, zugehöriger Stimmabschnitt
+# Stimme: eine durchgehende Aufnahme (kie.ai, ElevenLabs "Brian", DE)
+AUDIO = "assets/voice/brian/vo.wav"
+AUDIO_START = 0.30
+
+
+def _envelope(path):
+    w = wave.open(os.path.join(ROOT, path)); n = w.getnframes(); sr = w.getframerate()
+    data = struct.unpack("<%dh" % n, w.readframes(n)); w.close()
+    hop = sr // FPS; env = []
+    for k in range(0, n, hop):
+        ch = data[k:k + hop]; env.append(math.sqrt(sum(x * x for x in ch) / max(1, len(ch))) / 32768)
+    m = max(env)
+    return [round(min(1, e / m * 1.4), 2) for e in env], n / sr
+
+
+ENV_ALL, AUDIO_DUR = _envelope(AUDIO)
+
+# Szenen: id, start, dauer (an die Satzgrenzen der Aufnahme gelegt)
 SCENES = [
-    ("sc1", 0.0, 5.6, "s1"),
-    ("sc2", 5.6, 4.2, "s2"),
-    ("sc3", 9.8, 6.0, "s3"),
-    ("sc4", 15.8, 9.95, "s4"),
-    ("sc5", 25.75, 5.15, "s5"),
-    ("sc6", 30.9, 11.4, "s6"),
-    ("end", 42.3, 3.7, None),
+    ("sc1", 0.0, 5.26, "s1"),
+    ("sc2", 5.26, 4.54, "s2"),
+    ("sc3", 9.80, 5.54, "s3"),
+    ("sc4", 15.34, 8.66, "s4"),
+    ("sc5", 24.00, 5.39, "s5"),
+    ("sc6", 29.39, 9.46, "s6"),
+    ("end", 38.85, 3.7, None),
 ]
-TOTAL = 46.0
+TOTAL = 42.55
+START = {c: st for c, st, _, _ in SCENES}
+NEWDUR = {c: du for c, _, du, _ in SCENES}
+CUR = {"scene": None}
+# Mundbewegung: alle Szenen nutzen dieselbe Hüllkurve, versetzt um den Szenenstart
+VO = {f"s{i}": AUDIO_START for i in range(1, 7)}
+ENV = {f"s{i}": ENV_ALL for i in range(1, 7)}
 
 CAPTIONS = [
-    ("Tankflasche an der Autogastankstelle füllen?", 0.30, 2.73),
-    ("Ab jetzt ist das offiziell erlaubt.", 3.35, 5.38),
-    ("Aber nur,", 5.70, 6.17),
-    ("wenn ich nach der aktuellen G 607 eingebaut bin.", 6.55, 9.61),
-    ("Das heißt:", 9.95, 10.37),
-    ("Ich bin fest im Flaschenkasten fixiert –", 10.82, 12.62),
-    ("werkzeuglos lösbar", 13.11, 14.44),
-    ("und versiegelt.", 14.90, 15.64),
-    ("Getankt wird nur über einen Füllanschluss", 15.95, 18.20),
-    ("außen am Fahrzeug.", 18.33, 19.40),
-    ("In der Füllleitung", 20.06, 20.92),
-    ("sitzt eine Sicherheitskupplung –", 21.19, 22.65),
-    ("und die Leitung", 23.13, 23.79),
-    ("führt nicht durch den Wohnraum.", 24.13, 25.58),
-    ("Dazu kommen ein Sicherheitsventil", 25.90, 27.58),
-    ("und der automatische Füllstopp", 27.97, 29.40),
-    ("bei achtzig Prozent.", 29.78, 30.75),
-    ("Ganz wichtig:", 31.05, 31.71),
-    ("Normale Gasflaschen", 32.39, 33.56),
-    ("dürfen weiterhin nicht", 33.93, 34.78),
-    ("an die Tankstelle.", 35.16, 36.39),
-    ("Unsicher,", 37.09, 37.62),
-    ("ob deine Anlage passt?", 38.00, 39.25),
-    ("Die Gasfachfrau", 39.94, 40.75),
-    ("hilft dir weiter.", 41.10, 41.92),
+    ('Tankflasche an der Autogastankstelle füllen?', 0.3, 2.78),
+    ('Das ist ab jetzt offiziell erlaubt,', 3.44, 5.09),
+    ('aber nur, wenn ich nach der', 5.38, 7.24),
+    ('aktuellen G 607 eingebaut bin.', 7.24, 9.3),
+    ('Das heißt, ich bin', 9.92, 10.89),
+    ('im Flaschenkasten fest fixiert,', 10.89, 12.57),
+    ('ohne Werkzeug lösbar und versiegelt.', 13.04, 14.82),
+    ('Getankt wird nur über einen Füllanschluss', 15.46, 17.7),
+    ('außen am Fahrzeug,', 17.7, 18.68),
+    ('mit einer Sicherheitskupplung', 18.99, 20.3),
+    ('in der Füllleitung,', 20.3, 21.16),
+    ('und die Leitung führt nicht', 21.62, 22.82),
+    ('durch den Wohnraum.', 22.82, 23.66),
+    ('Dazu kommen ein Sicherheitsventil', 24.12, 26.1),
+    ('und der automatische Füllstopp', 26.43, 27.93),
+    ('bei achtzig Prozent.', 27.93, 28.94),
+    ('Ganz wichtig:', 29.51, 30.11),
+    ('Normale Gasflaschen dürfen', 30.69, 32.05),
+    ('weiterhin nicht an die Tankstelle.', 32.05, 33.83),
+    ('Unsicher, ob deine Anlage passt?', 34.41, 36.03),
+    ('Die Gasfachfrau hilft dir gerne weiter.', 36.6, 38.49),
 ]
 
 
 # ---------------------------------------------------------------- Gasi
+SIL, SIL_D, SIL_L, ANT = "#C9CED3", "#8E959C", "#F4F6F7", "#3A3F44"
+BODY_PATH = "M60 250 C60 182 122 150 200 150 C278 150 340 182 340 250 L340 662 C340 690 322 700 292 700 L108 700 C78 700 60 690 60 662 Z"
+
+
 def gasi(p, look=(0, 0)):
-    """Gasi, die Tankflasche, als SVG (viewBox 0 0 400 760). p = Id-Präfix."""
+    """Gasi, die silberne Alu-Tankflasche (Form angelehnt an Tankflaschen mit Schutzkragen), viewBox 0 0 400 760."""
     lx, ly = look
     return f"""
 <svg viewBox="-60 -10 520 780" class="gasi-svg" xmlns="http://www.w3.org/2000/svg">
-  <ellipse cx="200" cy="748" rx="170" ry="16" fill="#000" opacity="0.16"/>
+  <defs>
+    <linearGradient id="{p}-alu" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#7F868D"/><stop offset="0.18" stop-color="#C3C8CD"/><stop offset="0.38" stop-color="#F6F8F9"/>
+      <stop offset="0.6" stop-color="#D3D7DB"/><stop offset="0.85" stop-color="#A3AAB0"/><stop offset="1" stop-color="#737A81"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="200" cy="752" rx="170" ry="16" fill="#000" opacity="0.16"/>
   <g id="{p}-body">
-    <g id="{p}-armL"><path d="M58 430 Q-6 500 6 590" fill="none" stroke="{INK}" stroke-width="30" stroke-linecap="round"/>
-      <path d="M58 430 Q-6 500 6 590" fill="none" stroke="{OR_D}" stroke-width="18" stroke-linecap="round"/>
-      <circle cx="6" cy="598" r="30" fill="#fff" stroke="{INK}" stroke-width="6"/></g>
-    <g id="{p}-armR"><path d="M342 430 Q406 500 394 590" fill="none" stroke="{INK}" stroke-width="30" stroke-linecap="round"/>
-      <path d="M342 430 Q406 500 394 590" fill="none" stroke="{OR_D}" stroke-width="18" stroke-linecap="round"/>
-      <circle cx="394" cy="598" r="30" fill="#fff" stroke="{INK}" stroke-width="6"/></g>
-    <rect x="70" y="690" width="260" height="52" rx="14" fill="{OR_D}" stroke="{INK}" stroke-width="6"/>
-    <path d="M200 112 C 110 112 44 150 44 250 L44 600 C44 680 100 712 200 712 C300 712 356 680 356 600 L356 250 C356 150 290 112 200 112 Z" fill="{OR}" stroke="{INK}" stroke-width="7"/>
-    <path d="M86 210 C 70 260 68 420 74 600" fill="none" stroke="{OR_L}" stroke-width="20" stroke-linecap="round" opacity="0.9"/>
-    <path d="M326 230 C 338 300 338 520 330 630" fill="none" stroke="{OR_D}" stroke-width="16" stroke-linecap="round" opacity="0.7"/>
-    <rect x="44" y="470" width="312" height="70" fill="#fff" stroke="{INK}" stroke-width="6"/>
-    <text data-layout-ignore x="200" y="519" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="38" fill="{PET}" letter-spacing="4">LPG</text>
+    <g id="{p}-armL"><path d="M62 430 Q-6 500 6 590" fill="none" stroke="{ANT}" stroke-width="26" stroke-linecap="round"/>
+      <circle cx="6" cy="598" r="30" fill="#fff" stroke="{ANT}" stroke-width="6"/></g>
+    <g id="{p}-armR"><path d="M338 430 Q406 500 394 590" fill="none" stroke="{ANT}" stroke-width="26" stroke-linecap="round"/>
+      <circle cx="394" cy="598" r="30" fill="#fff" stroke="{ANT}" stroke-width="6"/></g>
+    <path d="M78 690 L322 690 L330 744 L70 744 Z" fill="url(#{p}-alu)" stroke="{ANT}" stroke-width="6" stroke-linejoin="round"/>
+    <ellipse cx="130" cy="720" rx="16" ry="9" fill="{ANT}"/><ellipse cx="200" cy="720" rx="16" ry="9" fill="{ANT}"/><ellipse cx="270" cy="720" rx="16" ry="9" fill="{ANT}"/>
+    <path d="{BODY_PATH}" fill="url(#{p}-alu)" stroke="{ANT}" stroke-width="7"/>
+    <path d="M60 612 L340 612 M60 640 L340 640" stroke="#8E959C" stroke-width="3"/>
     <g id="{p}-valve">
-      <path d="M120 128 C120 40 280 40 280 128" fill="none" stroke="{INK}" stroke-width="40" stroke-linecap="round"/>
-      <path d="M120 128 C120 40 280 40 280 128" fill="none" stroke="{OR_D}" stroke-width="26" stroke-linecap="round"/>
-      <rect x="178" y="40" width="44" height="76" rx="6" fill="#B9BEC3" stroke="{INK}" stroke-width="6"/>
-      <ellipse cx="200" cy="40" rx="46" ry="14" fill="#8D949A" stroke="{INK}" stroke-width="6"/>
+      <path d="M116 168 L124 52 L276 52 L284 168 Z" fill="url(#{p}-alu)" stroke="{ANT}" stroke-width="7" stroke-linejoin="round"/>
+      <ellipse cx="200" cy="52" rx="76" ry="14" fill="#DDE1E4" stroke="{ANT}" stroke-width="6"/>
+      <rect x="160" y="78" width="80" height="70" rx="10" fill="#2E3337" stroke="{ANT}" stroke-width="5"/>
+      <rect x="188" y="96" width="24" height="52" rx="4" fill="#9AA1A7"/><ellipse cx="200" cy="96" rx="20" ry="8" fill="#B9BEC3"/>
     </g>
     <g id="{p}-face">
-      <circle cx="118" cy="340" r="24" fill="#FF6F8A" opacity="0.35"/>
-      <circle cx="282" cy="340" r="24" fill="#FF6F8A" opacity="0.35"/>
+      <circle cx="118" cy="340" r="24" fill="#FF8A8A" opacity="0.28"/>
+      <circle cx="282" cy="340" r="24" fill="#FF8A8A" opacity="0.28"/>
       <g id="{p}-eyes">
-        <ellipse cx="150" cy="262" rx="36" ry="44" fill="#fff" stroke="{INK}" stroke-width="6"/>
-        <ellipse cx="250" cy="262" rx="36" ry="44" fill="#fff" stroke="{INK}" stroke-width="6"/>
-        <g id="{p}-pupils"><circle cx="{154+lx}" cy="{268+ly}" r="17" fill="{INK}"/><circle cx="{254+lx}" cy="{268+ly}" r="17" fill="{INK}"/>
+        <ellipse cx="150" cy="262" rx="36" ry="44" fill="#fff" stroke="{ANT}" stroke-width="6"/>
+        <ellipse cx="250" cy="262" rx="36" ry="44" fill="#fff" stroke="{ANT}" stroke-width="6"/>
+        <g id="{p}-pupils"><circle cx="{154+lx}" cy="{268+ly}" r="17" fill="{ANT}"/><circle cx="{254+lx}" cy="{268+ly}" r="17" fill="{ANT}"/>
           <circle cx="{160+lx}" cy="{261+ly}" r="6" fill="#fff"/><circle cx="{260+lx}" cy="{261+ly}" r="6" fill="#fff"/></g>
         <g id="{p}-lids" opacity="0">
-          <ellipse cx="150" cy="262" rx="39" ry="47" fill="{OR}" stroke="{INK}" stroke-width="6"/>
-          <ellipse cx="250" cy="262" rx="39" ry="47" fill="{OR}" stroke="{INK}" stroke-width="6"/>
-          <path d="M114 266 Q150 282 186 266 M214 266 Q250 282 286 266" stroke="{INK}" stroke-width="6" fill="none"/>
+          <ellipse cx="150" cy="262" rx="39" ry="47" fill="#D3D7DB" stroke="{ANT}" stroke-width="6"/>
+          <ellipse cx="250" cy="262" rx="39" ry="47" fill="#D3D7DB" stroke="{ANT}" stroke-width="6"/>
+          <path d="M114 266 Q150 282 186 266 M214 266 Q250 282 286 266" stroke="{ANT}" stroke-width="6" fill="none"/>
         </g>
       </g>
       <g id="{p}-brows">
-        <path d="M118 200 Q150 184 182 198" stroke="{INK}" stroke-width="9" fill="none" stroke-linecap="round"/>
-        <path d="M218 198 Q250 184 282 200" stroke="{INK}" stroke-width="9" fill="none" stroke-linecap="round"/>
+        <path d="M118 200 Q150 184 182 198" stroke="{ANT}" stroke-width="9" fill="none" stroke-linecap="round"/>
+        <path d="M218 198 Q250 184 282 200" stroke="{ANT}" stroke-width="9" fill="none" stroke-linecap="round"/>
       </g>
       <g id="{p}-mouth">
-        <path d="M150 362 Q200 372 250 362 Q246 420 200 424 Q154 420 150 362 Z" fill="#3A1210" stroke="{INK}" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M150 362 Q200 372 250 362 Q246 420 200 424 Q154 420 150 362 Z" fill="#3A1210" stroke="{ANT}" stroke-width="6" stroke-linejoin="round"/>
         <ellipse cx="200" cy="408" rx="26" ry="11" fill="#E8575A"/>
       </g>
     </g>
@@ -112,13 +133,16 @@ def gasi(p, look=(0, 0)):
 
 def gasi_rig_js(p, voice_off, env, blinks=(), gestures=(), look_keys=(), brows=()):
     """JS, das Mund (aus Lautstärke), Blinzeln, Arme und Blick von Gasi p animiert."""
-    vals = [round(0.10 + 0.9 * e, 2) for e in env]
+    sc = CUR["scene"]; dur = NEWDUR[sc]; off = voice_off - START[sc]
+    i0 = max(0, int(math.ceil(-off * FPS))); i1 = min(len(env), int((dur - off) * FPS))
+    vals = [round(0.10 + 0.9 * e, 2) for e in env[i0:i1]]
+    voice_off = round(off + i0 / FPS, 4)
     return f"""
   (function(){{
     const M = "#{p}-mouth", env = {json.dumps(vals)}, off = {voice_off};
-    tl.set(M, {{ scaleY: 0.1, svgOrigin: "200 364" }}, 0);
-    for (let i = 0; i < env.length; i++) tl.set(M, {{ scaleY: env[i] }}, off + i / 30);
-    tl.set(M, {{ scaleY: 0.1 }}, off + env.length / 30);
+    TLM.set(M, {{ scaleY: 0.1, svgOrigin: "200 364" }}, 0);
+    for (let i = 0; i < env.length; i++) TLM.set(M, {{ scaleY: env[i] }}, off + i / 30);
+    TLM.set(M, {{ scaleY: 0.1 }}, Math.min(off + env.length / 30, {dur - 0.04:.3f}));
     tl.fromTo("#{p}-body", {{ rotation: -1.2, svgOrigin: "200 740" }}, {{ rotation: 1.2, duration: 1.6, ease: "sine.inOut", yoyo: true, repeat: 7 }}, 0);
     {''.join(f'tl.set("#{p}-lids", {{opacity:1}}, {b}); tl.set("#{p}-lids", {{opacity:0}}, {b + 0.1});' for b in blinks)}
     {''.join(f'tl.to("#{p}-arm{side}", {{ rotation: {rot}, svgOrigin: "{58 if side == "L" else 342} 430", duration: {d}, ease: "back.out(1.6)" }}, {t});' for (side, rot, t, d) in gestures)}
@@ -128,7 +152,7 @@ def gasi_rig_js(p, voice_off, env, blinks=(), gestures=(), look_keys=(), brows=(
 
 
 # ---------------------------------------------------------------- Bausteine
-PRESENTER_BG = """background: radial-gradient(ellipse 900px 1200px at 50% 42%, #EFE3D3 0%, #DCC8AF 62%, #C4AC8F 100%);"""
+PRESENTER_BG = """background: radial-gradient(ellipse 900px 1200px at 50% 40%, #1B9C8A 0%, #11796B 58%, #0A544B 100%);"""
 
 
 def presenter(p, framing, start, dur, extra="", dx=0):
@@ -156,6 +180,12 @@ def label(id_, text, x, y, lx2=None, ly2=None, color=PET, size=46, anchor="left"
 
 
 def scene_file(cid, dur, inner, script, style=""):
+    newdur = NEWDUR.get(cid, dur); k = newdur / dur
+    if abs(k - 1) > 1e-6:
+        inner = re.sub(r'data-(start|duration)="([0-9.]+)"', lambda m: f'data-{m.group(1)}="{float(m.group(2)) * k:.3f}"', inner)
+    script = script.replace("tl.", "tli.").replace("TLM.", "tl.")
+    script = "    const tli = gsap.timeline();\n" + script + f"\n    tli.timeScale({1 / k:.5f});\n    tl.add(tli, 0);\n"
+    dur = newdur
     return f"""<template>
   <style>
     #root {{ position: absolute; inset: 0; overflow: hidden; font-family: Montserrat, sans-serif; }}
@@ -193,7 +223,8 @@ def draw(sel, t, d, length=2000):
 
 # ---------------------------------------------------------------- Szene 1
 def sc1():
-    off = VO["s1"] - 0.0
+    CUR["scene"] = "sc1"
+    off = AUDIO_START
     trees = "".join(
         f'<circle cx="{x}" cy="{y}" r="{r}" fill="#4E6B34"/><circle cx="{x-r*0.4}" cy="{y-r*0.3}" r="{r*0.55}" fill="#6B8A45"/>'
         for x, y, r in [(90, 300, 60), (170, 380, 46), (950, 520, 70), (880, 640, 44), (120, 1500, 66), (980, 1300, 52), (60, 2300, 70), (960, 2500, 60), (150, 3000, 50)])
@@ -223,11 +254,11 @@ def sc1():
         </svg>
         {van}
       </div>
-      <div id="sc1-hook" style="position:absolute; left:110px; right:200px; top:330px; text-align:center">
+      <div id="sc1-hook" style="position:absolute; left:110px; right:200px; top:440px; text-align:center">
         <div id="sc1-hook-1" style="display:inline-block; background:{PET}; color:#fff; font-weight:900; font-size:72px; line-height:1.08; padding:24px 34px; border-radius:26px; box-shadow:0 12px 0 rgba(0,0,0,.2)">Tankflasche an die<br>Autogas&#8209;Zapfsäule?</div>
       </div>
     </div>
-    {presenter("sc1-g", "medium", 2.75, 2.85, label("sc1-ok", "✓ OFFIZIELL<br>ERLAUBT", 140, 640, size=46), dx=150)}
+    {presenter("sc1-g", "medium", 2.75, 2.85, label("sc1-ok", "✓ OFFIZIELL<br>ERLAUBT", 140, 640, color=OR, size=46), dx=90)}
 """
     s = ""
     s += 'tl.fromTo("#sc1-world", { y: 0 }, { y: 900, duration: 2.75, ease: "none" }, 0);\n'
@@ -243,7 +274,8 @@ def sc1():
 
 # ---------------------------------------------------------------- Szene 2
 def sc2():
-    off = VO["s2"] - 5.6
+    CUR["scene"] = "sc2"
+    off = AUDIO_START
     pump = f"""
     <div id="sc2-a" class="clip shot" data-start="0" data-duration="1.0" style="background:#E9ECEE">
       <div id="sc2-a-cam" class="cam">
@@ -270,7 +302,8 @@ def sc2():
 
 # ---------------------------------------------------------------- Szene 3
 def sc3():
-    off = VO["s3"] - 9.8
+    CUR["scene"] = "sc3"
+    off = AUDIO_START
     wing = f"""<svg id="sc3-wing" viewBox="-110 -60 220 120" style="position:absolute;left:740px;top:844px;width:260px;height:142px;overflow:visible">
         <path d="M-20 -14 C -70 -60 -110 -40 -100 -6 C -94 20 -50 18 -20 12 Z" fill="#C7CCD1" stroke="{INK}" stroke-width="6"/>
         <path d="M20 -14 C 70 -60 110 -40 100 -6 C 94 20 50 18 20 12 Z" fill="#C7CCD1" stroke="{INK}" stroke-width="6"/>
@@ -314,7 +347,8 @@ def sc3():
 
 # ---------------------------------------------------------------- Szene 4
 def sc4():
-    off = VO["s4"] - 15.8
+    CUR["scene"] = "sc4"
+    off = AUDIO_START
     side = f"""
     <div id="sc4-a" class="clip shot" data-start="0" data-duration="4.3" style="background:#E7EAEC">
       <div id="sc4-a-cam" class="cam">
@@ -342,13 +376,13 @@ def sc4():
         <svg viewBox="0 0 1080 1920" style="position:absolute;left:0;top:-170px;width:1080px;height:1920px;overflow:visible">
           <path d="M40 640 L860 640 Q900 640 930 700 L1030 900 L1040 1230 L40 1230 Z" fill="#FBFAF7" stroke="{INK}" stroke-width="9" stroke-linejoin="round"/>
           <path d="M880 700 L1000 920 L880 920 Z" fill="#9CC3D8" stroke="{INK}" stroke-width="7"/>
-          <rect id="sc4-room" x="70" y="680" width="770" height="440" fill="#FFF0DC"/>
+          <rect id="sc4-room" x="70" y="680" width="770" height="440" fill="#EAF2F5"/>
           <rect x="90" y="760" width="300" height="110" rx="14" fill="#C9D9E6" stroke="{INK}" stroke-width="6"/>
           <rect x="90" y="740" width="90" height="40" rx="12" fill="#fff" stroke="{INK}" stroke-width="5"/>
           <rect x="480" y="900" width="200" height="22" rx="8" fill="#B07A4A" stroke="{INK}" stroke-width="5"/>
           <rect x="570" y="922" width="22" height="160" fill="#B07A4A" stroke="{INK}" stroke-width="5"/>
           <rect x="700" y="960" width="120" height="130" rx="14" fill="#C9D9E6" stroke="{INK}" stroke-width="6"/>
-          <text x="455" y="760" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="46" fill="#8C7350">WOHNRAUM</text>
+          <text x="455" y="760" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="46" fill="#5C6B75">WOHNRAUM</text>
           <line x1="40" y1="1120" x2="1040" y2="1120" stroke="{INK}" stroke-width="8"/>
           <rect x="90" y="930" width="230" height="190" fill="#4B525A" stroke="{INK}" stroke-width="7"/>
           <rect x="40" y="1230" width="1000" height="20" fill="#5D646B"/>
@@ -379,7 +413,7 @@ def sc4():
     s += 'tl.set("#sc4-bad", { strokeDasharray: "30 22" }, 8.0);\n'
     s += 'tl.fromTo("#sc4-x", { opacity: 0, scale: 0.2, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.6)" }, 8.3);\n'
     s += 'tl.to("#sc4-bad", { opacity: 0.25, duration: 0.3 }, 8.9);\n'
-    s += 'tl.to("#sc4-room", { fill: "#FFE3C7", duration: 0.3, yoyo: true, repeat: 1 }, 8.3);\n'
+    s += 'tl.to("#sc4-room", { fill: "#FBE1DC", duration: 0.3, yoyo: true, repeat: 1 }, 8.3);\n'
     s += pop("#sc4-l3", 8.5, 0.4, 0.4)
     s += 'tl.fromTo("#sc4-good", { strokeWidth: 18 }, { strokeWidth: 28, duration: 0.25, yoyo: true, repeat: 1, ease: "sine.inOut" }, 9.0);\n'
     s += gasi_rig_js("sc4-m", off, ENV["s4"], blinks=(5.0, 7.0), look_keys=[(16, 6, 4.6), (16, -14, 7.4), (0, 0, 9.0)])
@@ -388,23 +422,24 @@ def sc4():
 
 # ---------------------------------------------------------------- Szene 5
 def sc5():
-    off = VO["s5"] - 25.75
-    ring = f"""<div id="sc5-ring" style="position:absolute;left:380px;top:-70px;width:320px;height:320px;border-radius:50%;border:14px solid {PET};"></div>
-      {label("sc5-l1", "Sicherheitsventil", 150, 400, 420, 220, color=PET, size=52)}"""
+    CUR["scene"] = "sc5"
+    off = AUDIO_START
+    ring = f"""<div id="sc5-ring" style="position:absolute;left:380px;top:-70px;width:320px;height:320px;border-radius:50%;border:14px solid {OR};"></div>
+      {label("sc5-l1", "Sicherheitsventil", 150, 400, 420, 220, color=OR, size=52)}"""
     gauge_bottle = f"""
-    <div id="sc5-b" class="clip shot" data-start="2.2" data-duration="2.95" style="background:#F2E8DA">
+    <div id="sc5-b" class="clip shot" data-start="2.2" data-duration="2.95" style="background:#EEF1F3">
       <div id="sc5-b-cam" class="cam">
         <svg viewBox="0 0 400 760" style="position:absolute;left:200px;top:300px;width:680px;height:1292px;overflow:visible">
-          <defs><clipPath id="sc5-clip"><path d="M200 112 C 110 112 44 150 44 250 L44 600 C44 680 100 712 200 712 C300 712 356 680 356 600 L356 250 C356 150 290 112 200 112 Z"/></clipPath></defs>
-          <path d="M200 112 C 110 112 44 150 44 250 L44 600 C44 680 100 712 200 712 C300 712 356 680 356 600 L356 250 C356 150 290 112 200 112 Z" fill="#fff"/>
-          <g clip-path="url(#sc5-clip)"><rect id="sc5-liq" x="0" y="112" width="400" height="600" fill="{PET}"/>
-            <rect id="sc5-liq-top" x="0" y="112" width="400" height="14" fill="#3FB3A0"/></g>
-          <path d="M200 112 C 110 112 44 150 44 250 L44 600 C44 680 100 712 200 712 C300 712 356 680 356 600 L356 250 C356 150 290 112 200 112 Z" fill="none" stroke="{OR}" stroke-width="16"/>
-          <line x1="20" y1="232" x2="380" y2="232" stroke="{INK}" stroke-width="5" stroke-dasharray="16 12"/>
-          <path d="M120 128 C120 40 280 40 280 128" fill="none" stroke="{OR}" stroke-width="22" stroke-linecap="round"/>
+          <defs><clipPath id="sc5-clip"><path d="{BODY_PATH}"/></clipPath></defs>
+          <path d="{BODY_PATH}" fill="#fff"/>
+          <g clip-path="url(#sc5-clip)"><rect id="sc5-liq" x="0" y="150" width="400" height="600" fill="{PET}"/>
+            <rect id="sc5-liq-top" x="0" y="150" width="400" height="14" fill="#3FB3A0"/></g>
+          <path d="{BODY_PATH}" fill="none" stroke="#8E959C" stroke-width="16"/>
+          <line x1="20" y1="260" x2="380" y2="260" stroke="{INK}" stroke-width="5" stroke-dasharray="16 12"/>
+          <path d="M116 168 L124 52 L276 52 L284 168" fill="none" stroke="#8E959C" stroke-width="16" stroke-linejoin="round"/>
         </svg>
-        <div id="sc5-pct" style="position:absolute;left:0;right:0;top:880px;text-align:center;font-weight:900;font-size:200px;color:#fff;text-shadow:0 8px 0 rgba(0,0,0,.18)">0 %</div>
-        <div style="position:absolute;left:110px;top:640px;font-weight:900;font-size:56px;color:{INK}">80 %</div>
+        <div id="sc5-pct" style="position:absolute;left:0;right:0;top:880px;text-align:center;font-weight:900;font-size:200px;color:#fff;-webkit-text-stroke:10px #232323;paint-order:stroke fill;">0 %</div>
+        <div style="position:absolute;left:110px;top:688px;font-weight:900;font-size:56px;color:{INK}">80 %</div>
         <div id="sc5-stop" style="position:absolute;left:300px;top:380px;width:480px;height:160px;background:{OR};border:8px solid {INK};border-radius:24px;color:#fff;font-weight:900;font-size:110px;text-align:center;line-height:146px;box-shadow:0 12px 0 rgba(0,0,0,.2)">STOPP</div>
       </div>
     </div>"""
@@ -414,7 +449,7 @@ def sc5():
     s += 'tl.fromTo("#sc5-ring", { borderWidth: 14 }, { borderWidth: 22, duration: 0.3, yoyo: true, repeat: 3, ease: "sine.inOut" }, 1.0);\n'
     s += draw("#sc5-l1-ln", 0.8, 0.3, 600) + pop("#sc5-l1-dot", 0.8, 0, 0.3) + pop("#sc5-l1", 0.9, 0.4, 0.4)
     # Füllstand: y der Flüssigkeit von 712 (leer) bis 232 (80 %)
-    s += 'tl.fromTo(["#sc5-liq", "#sc5-liq-top"], { attr: { y: 712 } }, { attr: { y: 232 }, duration: 1.85, ease: "power1.in" }, 2.35);\n'
+    s += 'tl.fromTo(["#sc5-liq", "#sc5-liq-top"], { attr: { y: 700 } }, { attr: { y: 260 }, duration: 1.85, ease: "power1.in" }, 2.35);\n'
     s += 'tl.to({v:0}, { v: 80, duration: 1.85, ease: "power1.in", onUpdate: function(){ const el = document.getElementById("sc5-pct"); if (el) el.textContent = Math.round(this.targets()[0].v) + " %"; } }, 2.35);\n'
     s += 'tl.fromTo("#sc5-stop", { opacity: 0, scale: 2.2, rotation: -16 }, { opacity: 1, scale: 1, rotation: -5, duration: 0.25, ease: "power4.in" }, 4.2);\n'
     s += 'tl.fromTo("#sc5-b-cam", { x: 0 }, { x: 12, duration: 0.05, yoyo: true, repeat: 3, ease: "none" }, 4.45);\n'
@@ -424,7 +459,8 @@ def sc5():
 
 # ---------------------------------------------------------------- Szene 6
 def sc6():
-    off = VO["s6"] - 30.9
+    CUR["scene"] = "sc6"
+    off = AUDIO_START
     field = f"""
     <div id="sc6-b" class="clip shot" data-start="1.5" data-duration="4.7" style="background:linear-gradient(#BFDCE8, #E9F2F1 60%)">
       <div id="sc6-b-cam" class="cam">
@@ -432,14 +468,16 @@ def sc6():
         {''.join(f'<div style="position:absolute;left:{x}px;top:{y}px;width:{r}px;height:{r}px;border-radius:50%;background:#56733A"></div>' for x, y, r in [(60, 1000, 120), (150, 1030, 90), (820, 990, 140), (930, 1040, 90), (480, 1050, 70)])}
         <div style="position:absolute;left:0;top:1200px;width:1080px;height:720px;background:linear-gradient(#A9BD68,#8DA552)"></div>
         <svg id="sc6-red" viewBox="0 0 300 720" style="position:absolute;left:230px;top:400px;width:390px;height:936px;overflow:visible">
-          <ellipse cx="150" cy="706" rx="140" ry="16" fill="#000" opacity="0.2"/>
-          <path d="M80 60 L220 60 L220 150 L80 150 Z" fill="#B71C2A" stroke="{INK}" stroke-width="7"/>
-          <rect x="105" y="80" width="30" height="40" rx="8" fill="#E9ECEE" stroke="{INK}" stroke-width="5"/><rect x="165" y="80" width="30" height="40" rx="8" fill="#E9ECEE" stroke="{INK}" stroke-width="5"/>
-          <rect x="128" y="20" width="44" height="46" rx="6" fill="#9AA1A7" stroke="{INK}" stroke-width="6"/>
-          <path d="M150 150 C 60 150 30 200 30 280 L30 640 Q30 690 80 690 L220 690 Q270 690 270 640 L270 280 C 270 200 240 150 150 150 Z" fill="#D2232F" stroke="{INK}" stroke-width="7"/>
-          <path d="M62 250 L62 620" stroke="#F06A70" stroke-width="18" stroke-linecap="round"/>
+          <ellipse cx="150" cy="708" rx="140" ry="16" fill="#000" opacity="0.2"/>
+          <path d="M70 40 L230 40 L238 168 L62 168 Z" fill="#56632F" stroke="{INK}" stroke-width="7" stroke-linejoin="round"/>
+          <ellipse cx="150" cy="40" rx="80" ry="13" fill="#6E7B45" stroke="{INK}" stroke-width="6"/>
+          <rect x="92" y="78" width="40" height="52" rx="16" fill="#E6EAE3" stroke="{INK}" stroke-width="5"/><rect x="168" y="78" width="40" height="52" rx="16" fill="#E6EAE3" stroke="{INK}" stroke-width="5"/>
+          <rect x="136" y="60" width="28" height="60" rx="5" fill="#9AA1A7" stroke="{INK}" stroke-width="5"/>
+          <path d="M150 160 C 70 160 30 196 30 262 L30 640 Q30 680 70 680 L230 680 Q270 680 270 640 L270 262 C 270 196 230 160 150 160 Z" fill="#5B6935" stroke="{INK}" stroke-width="7"/>
+          <path d="M62 250 L62 620" stroke="#7F8E52" stroke-width="18" stroke-linecap="round"/>
+          <path d="M246 260 L246 620" stroke="#434E24" stroke-width="12" stroke-linecap="round"/>
           <text x="150" y="470" text-anchor="middle" font-family="Montserrat" font-weight="900" font-size="150" fill="#fff">π</text>
-          <rect x="60" y="690" width="180" height="26" rx="8" fill="#9E1A25" stroke="{INK}" stroke-width="6"/>
+          <path d="M44 676 L256 676 L262 716 L38 716 Z" fill="#46512A" stroke="{INK}" stroke-width="6" stroke-linejoin="round"/>
         </svg>
         <div id="sc6-ban" style="position:absolute;left:600px;top:300px;width:300px;height:300px;border-radius:50%;background:#fff;border:24px solid #D63A2F;box-shadow:0 12px 0 rgba(0,0,0,.2)">
           <svg viewBox="0 0 300 300" style="position:absolute;left:0;top:0;width:252px;height:252px">
@@ -493,8 +531,8 @@ def captions():
     for i, (text, a, b) in enumerate(CAPTIONS):
         nxt = CAPTIONS[i + 1][1] if i + 1 < len(CAPTIONS) else None
         if nxt is not None and nxt - b < 0.5:
-            b = nxt - 0.02
-        b = round(b + 0.08, 2) if nxt is None or b + 0.08 < nxt else round(b, 2)
+            b = nxt - 0.09
+        b = round(b + 0.08, 2) if nxt is None or b + 0.08 < nxt - 0.1 else round(b, 2)
         groups += f'    <div id="cap{i}" class="cap"><span>{text}</span></div>\n'
         s += f'tl.set("#cap{i}", {{ opacity: 1, visibility: "visible" }}, {round(a - 0.05, 2)});\n'
         s += f'tl.set("#cap{i}", {{ opacity: 0, visibility: "hidden" }}, {b});\n'
@@ -509,8 +547,8 @@ def index():
     for cid, st, du, _ in SCENES:
         hosts += f'      <div id="{cid}" data-composition-id="{cid}" data-composition-src="compositions/{cid}.html" data-start="{st}" data-duration="{du}" data-track-index="1" data-track-kind="graphics" data-width="{W}" data-height="{H}"></div>\n'
     hosts += f'      <div id="captions" data-composition-id="captions" data-composition-src="compositions/captions.html" data-start="0" data-duration="{TOTAL}" data-track-index="2" data-track-kind="captions" data-width="{W}" data-height="{H}"></div>\n'
-    for i, sid in enumerate(["s1", "s2", "s3", "s4", "s5", "s6"]):
-        hosts += f'      <audio id="vo{i+1}" class="clip" src="assets/voice/t{i+1}.wav" data-start="{VO[sid]}" data-duration="{DUR[sid]}" data-track-index="3" data-volume="0.75"></audio>\n'
+    hosts += f'      <img id="logo-bug" class="clip" src="assets/brand/icon.png" data-start="0" data-duration="{START["end"]}" data-track-index="4" style="position:absolute; left:800px; top:296px; width:88px; height:88px; z-index:50;"/>\n'
+    hosts += f'      <audio id="vo" class="clip" src="{AUDIO}" data-start="{AUDIO_START}" data-duration="{AUDIO_DUR:.3f}" data-track-index="3" data-volume="0.8"></audio>\n'
     return f"""<!doctype html>
 <html lang="de">
   <head>

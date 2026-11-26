@@ -46,3 +46,10 @@ Aufbau nach dem Instagram-Vorbild (multitalent_fluessiggas): Statt des Sprechers
 - Gasis Mund folgt der Lautstärke der Stimme (`assets/voice/voice_data.json`)
 - Neu erzeugen: `python3 build/generate.py`. **Achtung:** Das überschreibt Änderungen, die im Studio gemacht wurden.
 - Video: `renders/gasfachfrau-tankflasche-autogas_9x16.mp4` (1080×1920, 46 s, −14,9 LUFS)
+
+## Umsetzung v2 (26.11.2026)
+- Stimme „Brian“ (kie.ai/ElevenLabs, wie im Paul-Video) in einer flüssigen Aufnahme: `assets/voice/brian/vo.wav`, Text in `brian/script.txt`
+- Bilder an die Stimme angepasst, 42,6 s
+- Gasi ist jetzt eine silberne Alu-Tankflasche mit Schutzkragen, ohne weitere Farben. Die π-Tauschflasche ist armeegrün.
+- Kein Beige mehr: Die Studio-Wand ist Petrol, die Füllstands-Szene Hellgrau
+- Das Flammen-Logo läuft oben rechts mit

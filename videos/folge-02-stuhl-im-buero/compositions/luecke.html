@@ -1,0 +1,72 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #l-oben { position: absolute; left: 0; right: 0; top: 0; height: 960px; background: var(--papier); }
+    #l-unten { position: absolute; left: 0; right: 0; top: 960px; bottom: 0; background: #111; }
+    .l-label {
+      position: absolute; left: 130px; font-family: "Archivo Black", sans-serif; font-size: 34px;
+      letter-spacing: 0.08em; text-transform: uppercase; padding: 8px 16px;
+    }
+    #l-lab-akte { top: 300px; background: var(--schwarz); color: #fff; }
+    #l-lab-erlebt { top: 1020px; background: var(--ocker); color: var(--schwarz); }
+    #l-akte { left: 130px; top: 380px; width: 760px; transform: rotate(-1.5deg); }
+    #l-akte .satz { font-weight: 700; margin: 12px 0; }
+    #l-erlebt {
+      position: absolute; left: 130px; top: 1084px; width: 500px; color: #fff;
+      font-size: 34px; font-weight: 700; line-height: 1.22;
+    }
+    #l-erlebt em { color: var(--ocker); font-style: italic; }
+    #l-th { left: 640px; width: 400px; height: 680px; bottom: 120px; }
+    #l-riss { position: absolute; left: 0; top: 900px; width: 1080px; height: 120px; }
+    #l-fehler {
+      position: absolute; left: 0; right: 0; top: 925px; text-align: center;
+      font-family: "Archivo Black", sans-serif; font-size: 58px; color: #fff; letter-spacing: 0.06em; opacity: 0;
+    }
+    #l-fehler span { background: var(--rot); padding: 4px 18px; }
+  </style>
+  <div id="root" data-composition-id="luecke" data-width="1080" data-height="1920">
+    <div class="szene">
+      <div id="l-oben"></div>
+      <div id="l-unten"></div>
+      <div id="l-lab-akte" class="l-label">In den Unterlagen</div>
+      <div id="l-akte" class="papier">
+        <div class="zeile" style="width:70%"></div>
+        <div class="satz">Telefonat mit der Mutter. Eine Mitarbeiterin war anwesend.</div>
+        <div class="zeile" style="width:88%"></div>
+        <div class="zeile" style="width:54%"></div>
+      </div>
+      <div id="l-lab-erlebt" class="l-label">Erlebt</div>
+      <div id="l-erlebt">Thadeo verstummt: <em>„Ach, nichts.“</em> Was er erzählen wollte, bleibt ungesagt.</div>
+      <div id="l-th" class="figur">
+        <div id="l-th-hub" class="hub"><div id="l-th-atem" class="atem">
+          <img id="l-th-ruhig" src="assets/figuren/thadeo-ruhig.png" alt="" />
+          <img id="l-th-erklaert" src="assets/figuren/thadeo-erklaert.png" alt="" />
+          <img id="l-th-denkt" src="assets/figuren/thadeo-denkt.png" alt="Thadeo, nachdenklich" />
+          <img id="l-th-zeigt" src="assets/figuren/thadeo-zeigt.png" alt="" />
+        </div></div>
+      </div>
+      <svg id="l-riss" viewBox="0 0 1080 120" aria-hidden="true" data-layout-ignore>
+        <path id="l-riss-pfad" d="M0 60 L120 40 L210 78 L330 30 L430 70 L540 44 L650 86 L760 36 L870 74 L980 46 L1080 62"
+          fill="none" stroke="#d6392e" stroke-width="12" stroke-linejoin="bevel" pathLength="100" stroke-dasharray="100 120" stroke-dashoffset="110" />
+      </svg>
+      <div id="l-fehler" data-layout-allow-overlap><span>SYSTEMFEHLER</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    SF.rein(tl, "#l-lab-akte", 0.1, { x: -30 });
+    tl.fromTo("#l-akte", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.3);
+    SF.rein(tl, "#l-lab-erlebt", 2.4, { x: -30 });
+    SF.pose(tl, "l-th", "denkt", 0);
+    tl.fromTo("#l-th", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 2.5);
+    SF.atem(tl, "l-th", 11, 3.2);
+    SF.rein(tl, "#l-erlebt", 2.9, { y: 30 });
+    tl.to("#l-riss-pfad", { strokeDashoffset: 0, duration: 0.9, ease: "power2.inOut" }, 5.6);
+    [6.5, 6.62, 6.74, 8.8, 8.9].forEach((t, i) => {
+      tl.set("#l-fehler", { opacity: 1, x: [14, -18, 0, -10, 0][i], skewX: [8, -6, 0, 5, 0][i] }, t);
+    });
+    tl.fromTo("#l-oben", { y: 0 }, { y: -8, duration: 0.1, yoyo: true, repeat: 1 }, 6.5);
+    tl.fromTo("#l-unten", { y: 0 }, { y: 8, duration: 0.1, yoyo: true, repeat: 1 }, 6.5);
+    window.__timelines["luecke"] = tl;
+  </script>
+</template>

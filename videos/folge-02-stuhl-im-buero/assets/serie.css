@@ -1,0 +1,170 @@
+/* Systemfehler Familie — gemeinsamer Look aller Folgen.
+   Farben aus GutachtenKompass: Schwarz/Weiß tragen, Rot = Fehler/Lücke,
+   Petrol = Recht, Ocker = Wärme/Zuhause. */
+:root {
+  --schwarz: #111111;
+  --weiss: #ffffff;
+  --rot: #d6392e;
+  --ocker: #e8a93d;
+  --petrol: #1f6f6b;
+  --petrol-dunkel: #134542;
+  --papier: #f7f3ea;
+  --text: #1a1a1a;
+}
+
+.szene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+}
+
+/* Figuren: aussen = Position/Gang, .hub = Wippen und Posenwechsel, .atem = Atmen */
+.figur {
+  position: absolute;
+  bottom: 0;
+  transform-origin: 50% 100%;
+}
+.figur .hub,
+.figur .atem {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-origin: 50% 100%;
+}
+.figur img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 100%;
+  width: auto;
+  translate: -50% 0;
+  opacity: 0;
+}
+.figur .schatten {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  bottom: -14px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.22);
+  filter: blur(6px);
+}
+
+/* Sprechblasen */
+.blase {
+  position: absolute;
+  background: var(--weiss);
+  border: 5px solid var(--schwarz);
+  border-radius: 38px;
+  padding: 30px 38px;
+  font-size: 46px;
+  line-height: 1.22;
+  font-weight: 700;
+  box-shadow: 10px 10px 0 rgba(17, 17, 17, 0.9);
+  opacity: 0;
+}
+.blase .wer {
+  display: block;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 28px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.blase.thadeo .wer { color: #b4761a; }
+.blase.mama .wer { color: var(--rot); }
+.blase .zipfel {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  background: var(--weiss);
+  border-right: 5px solid var(--schwarz);
+  border-bottom: 5px solid var(--schwarz);
+  bottom: -27px;
+  transform: rotate(45deg);
+}
+.blase.leise { font-weight: 400; font-style: italic; color: #555; }
+
+/* Kleine Kennzeichnung */
+.kennung {
+  position: absolute;
+  right: 192px;
+  top: 1180px;
+  padding: 10px 18px;
+  background: rgba(17, 17, 17, 0.78);
+  color: var(--weiss);
+  font-family: "Archivo Black", sans-serif;
+  font-size: 28px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 6px;
+}
+
+/* Serienstempel oben */
+.stempel {
+  position: absolute;
+  left: 130px;
+  top: 300px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 28px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.stempel .marke { background: var(--rot); color: var(--weiss); padding: 8px 14px; }
+.stempel .folge { background: var(--schwarz); color: var(--weiss); padding: 8px 14px; }
+
+/* Papier / Akte */
+.papier {
+  position: absolute;
+  background: var(--papier);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+  padding: 46px 50px;
+  font-size: 34px;
+  line-height: 1.35;
+}
+.papier .kopf {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 30px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.papier .zeile {
+  height: 18px;
+  background: #d9d2c3;
+  border-radius: 9px;
+  margin: 18px 0;
+}
+
+/* Recht-Kasten */
+.recht {
+  position: absolute;
+  background: var(--petrol);
+  color: var(--weiss);
+  border-radius: 28px;
+  padding: 44px 48px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+.recht .titel {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 64px;
+  line-height: 1;
+  margin-bottom: 22px;
+}
+.recht .erkl { font-size: 38px; line-height: 1.32; font-weight: 700; }
+.recht .norm {
+  display: inline-block;
+  margin-top: 26px;
+  background: var(--weiss);
+  color: var(--petrol-dunkel);
+  font-family: "Archivo Black", sans-serif;
+  font-size: 30px;
+  padding: 10px 18px;
+  border-radius: 8px;
+}

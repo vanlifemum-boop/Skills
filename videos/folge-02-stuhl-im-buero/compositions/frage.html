@@ -1,0 +1,62 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #111; }
+    #f-frage {
+      position: absolute; left: 130px; top: 400px; width: 760px;
+      font-family: "Archivo Black", sans-serif; font-size: 66px; line-height: 1.08; color: #fff;
+    }
+    #f-frage .w { display: inline-block; opacity: 0; margin-right: 0.22em; }
+    #f-frage .rot { color: var(--rot); }
+    #f-aufruf {
+      position: absolute; left: 130px; top: 960px; width: 760px; font-size: 40px; font-weight: 700; color: #fff;
+      border-left: 10px solid var(--ocker); padding-left: 24px; opacity: 0;
+    }
+    #f-hinweis {
+      position: absolute; left: 130px; top: 1150px; width: 760px; font-size: 28px; line-height: 1.3; color: #b8b5af; opacity: 0;
+    }
+    #f-ma { left: 520px; width: 420px; height: 700px; bottom: -330px; }
+    #f-th { left: 300px; width: 300px; height: 470px; bottom: -330px; }
+  </style>
+  <div id="root" data-composition-id="frage" data-width="1080" data-height="1920">
+    <div class="szene">
+      <div id="f-stempel" class="stempel"><span class="marke">Systemfehler Familie</span><span class="folge">Folge 02</span></div>
+      <div id="f-frage">
+        <span class="w">Wer</span><span class="w">ermöglicht</span><span class="w">Thadeo</span><span class="w">ein</span><span class="w">Telefonat</span><span class="w">mit</span><span class="w">Mama,</span><span class="w">bei</span><span class="w">dem</span><span class="w rot">niemand</span><span class="w rot">mithört?</span>
+      </div>
+      <div id="f-aufruf">Schreib es in die Kommentare. Speichern. Teilen.</div>
+      <div id="f-hinweis">Szenische Darstellung nach Schilderung der Familie. Keine Rechtsberatung.</div>
+      <div id="f-ma" class="figur">
+        <div id="f-ma-hub" class="hub"><div id="f-ma-atem" class="atem">
+          <img id="f-ma-ruhig" src="assets/figuren/mama-ruhig.png" alt="Mama" />
+          <img id="f-ma-erklaert" src="assets/figuren/mama-erklaert.png" alt="" />
+          <img id="f-ma-denkt" src="assets/figuren/mama-denkt.png" alt="" />
+          <img id="f-ma-zeigt" src="assets/figuren/mama-zeigt.png" alt="" />
+        </div></div>
+      </div>
+      <div id="f-th" class="figur">
+        <div id="f-th-hub" class="hub"><div id="f-th-atem" class="atem">
+          <img id="f-th-ruhig" src="assets/figuren/thadeo-ruhig.png" alt="Thadeo" />
+          <img id="f-th-erklaert" src="assets/figuren/thadeo-erklaert.png" alt="" />
+          <img id="f-th-denkt" src="assets/figuren/thadeo-denkt.png" alt="" />
+          <img id="f-th-zeigt" src="assets/figuren/thadeo-zeigt.png" alt="" />
+        </div></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    SF.rein(tl, "#f-stempel", 0.1, { y: -20 });
+    tl.fromTo("#f-frage .w", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out", stagger: 0.22 }, 0.4);
+    tl.fromTo("#f-frage .rot", { scale: 1 }, { scale: 1.08, duration: 0.25, yoyo: true, repeat: 1, ease: "power2.out", transformOrigin: "0% 50%" }, 3.2);
+    SF.pose(tl, "f-ma", "ruhig", 0);
+    SF.pose(tl, "f-th", "denkt", 0);
+    tl.fromTo("#f-ma", { y: 300 }, { y: 0, duration: 0.8, ease: "power3.out" }, 1.0);
+    tl.fromTo("#f-th", { y: 300 }, { y: 0, duration: 0.8, ease: "power3.out" }, 1.2);
+    SF.atem(tl, "f-ma", 10, 1.8);
+    SF.atem(tl, "f-th", 10, 2.1);
+    SF.rein(tl, "#f-aufruf", 4.6, { x: -30 });
+    SF.pose(tl, "f-th", "ruhig", 5.0);
+    SF.rein(tl, "#f-hinweis", 5.6, { y: 10 });
+    window.__timelines["frage"] = tl;
+  </script>
+</template>

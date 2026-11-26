@@ -1,0 +1,67 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: linear-gradient(#26386a, #1d2b4f); }
+    #s-herz { position: absolute; left: 340px; top: 980px; width: 420px; height: 420px; opacity: 0; }
+    #s-ma { left: 520px; width: 480px; height: 860px; bottom: 120px; }
+    #s-th { left: 120px; width: 360px; height: 600px; bottom: 120px; }
+    #s-blase { left: 130px; top: 300px; width: 760px; transform-origin: 75% 100%; }
+    #s-blase .zipfel { left: 600px; }
+    #s-text {
+      position: absolute; left: 130px; top: 300px; width: 760px; color: #fff;
+      font-family: "Archivo Black", sans-serif; font-size: 52px; line-height: 1.12; opacity: 0;
+    }
+    #s-text span { color: var(--sonne); }
+    #s-text small { display: block; margin-top: 22px; font-family: "Inter", sans-serif; font-weight: 700; font-size: 36px; line-height: 1.28; color: var(--himmel); }
+    #s-web {
+      position: absolute; left: 130px; top: 620px; padding: 14px 26px; border-radius: 40px;
+      background: var(--koralle); color: var(--nacht); font-family: "Archivo Black", sans-serif; font-size: 40px; opacity: 0;
+    }
+  </style>
+  <div id="root" data-composition-id="schluss" data-width="1080" data-height="1920">
+    <div class="szene">
+      <svg id="s-herz" viewBox="0 0 100 92" aria-hidden="true" data-layout-ignore><path d="M50 88 C20 66 2 50 2 28 C2 12 14 2 28 2 C38 2 46 8 50 16 C54 8 62 2 72 2 C86 2 98 12 98 28 C98 50 80 66 50 88 Z" fill="#ff7a5c" opacity="0.35"/></svg>
+      <div id="s-th" class="figur">
+        <div id="s-th-hub" class="hub"><div id="s-th-atem" class="atem">
+          <div class="schatten"></div>
+          <img id="s-th-ruhig" src="assets/figuren/thadeo-ruhig.png" alt="Thadeo" />
+          <img id="s-th-erklaert" src="assets/figuren/thadeo-erklaert.png" alt="" />
+          <img id="s-th-denkt" src="assets/figuren/thadeo-denkt.png" alt="" />
+          <img id="s-th-zeigt" src="assets/figuren/thadeo-zeigt.png" alt="" />
+        </div></div>
+      </div>
+      <div id="s-ma" class="figur spiegel">
+        <div id="s-ma-hub" class="hub"><div id="s-ma-atem" class="atem">
+          <div class="schatten"></div>
+          <img id="s-ma-ruhig" src="assets/figuren/mama-ruhig.png" alt="Mama" />
+          <img id="s-ma-erklaert" src="assets/figuren/mama-erklaert.png" alt="" />
+          <img id="s-ma-denkt" src="assets/figuren/mama-denkt.png" alt="" />
+          <img id="s-ma-zeigt" src="assets/figuren/mama-zeigt.png" alt="" />
+        </div></div>
+      </div>
+      <div id="s-blase" class="blase mama"><span class="wer">Mama</span>Mama liebt dich und kämpft um dich, sodass du bald wieder zu Hause sein kannst.<span class="zipfel"></span></div>
+      <div id="s-text">So wie viele andere Eltern <span>deutschlandweit</span> auch.<small>Lasst uns laut werden und gemeinsam für unsere Kinder und unser Recht kämpfen.</small></div>
+      <div id="s-web">systemfehlerfamilie.de</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    SF.pose(tl, "s-th", "denkt", 0);
+    SF.pose(tl, "s-ma", "denkt", 0);
+    SF.atem(tl, "s-th", 13, 0.2);
+    SF.atem(tl, "s-ma", 13, 0.9);
+    tl.fromTo("#s-th", { x: -200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 0);
+    tl.fromTo("#s-ma", { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 0.1);
+    SF.pose(tl, "s-ma", "erklaert", 0.8);
+    SF.blase(tl, "#s-blase", 0.9, 5.4);
+    SF.sprich(tl, "s-ma", 1.0, 4.6);
+    tl.fromTo("#s-herz", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(2)" }, 2.0);
+    tl.to("#s-herz", { scale: 1.06, duration: 0.5, yoyo: true, repeat: 9, ease: "sine.inOut" }, 2.8);
+    SF.pose(tl, "s-th", "ruhig", 3.5);
+    tl.to("#s-th", { x: 90, duration: 1.2, ease: "power2.inOut" }, 3.5);
+    tl.to("#s-ma", { x: -60, duration: 1.2, ease: "power2.inOut" }, 3.5);
+    SF.pose(tl, "s-ma", "ruhig", 6.0);
+    SF.rein(tl, "#s-text", 6.4, { y: 30 });
+    SF.rein(tl, "#s-web", 8.2, { scale: 0.8 });
+    window.__timelines["schluss"] = tl;
+  </script>
+</template>

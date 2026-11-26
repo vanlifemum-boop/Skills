@@ -1,110 +1,32 @@
 <template>
   <style>
-    #root { position:absolute; inset:0; overflow:hidden; background:#C9A388; }
-    #root .world { position:absolute; left:0; top:0; width:1080px; height:1920px; }
-    #root .grain { opacity:0.10; mix-blend-mode:multiply; }
-    #root .line { position:absolute; left:120px; top:330px; width:768px; color:#2B1D17;
-                  font-family:"Nunito",sans-serif; font-weight:800; font-size:60px; line-height:1.2; letter-spacing:-0.01em; }
-    #root .line .w { display:inline-block; }
-    #root .src { position:absolute; left:120px; width:768px; font-family:"Inter",sans-serif; font-weight:400;
-                 font-size:28px; line-height:1.3; color:#4A372D; }
 
-    #root .door { position:absolute; top:0; width:540px; height:1920px; background:#7E2620; }
-    #root .door .inset { position:absolute; left:50px; right:50px; top:120px; bottom:120px; border:6px solid #5E1B16; }
-    #root .door .inset2 { position:absolute; left:80px; right:80px; top:150px; bottom:150px; border:3px solid #C99A6B; opacity:0.6; }
-    #root #en-doorL { left:0; } #root #en-doorR { left:540px; }
-    #root #en-doorL { box-shadow: inset -6px 0 0 #5E1B16; }
+    #root { position:absolute; inset:0; overflow:hidden; background:#1b1512; }
+    #root .stage { position:absolute; left:0; top:0; width:2880px; height:1920px; }
+    #root .stage > img.bg { position:absolute; left:0; top:0; width:2880px; height:1920px; }
+    #root .kidbox { position:absolute; overflow:hidden; }
+    #root .kidbody { position:absolute; left:0; right:0; top:0; }
+    #root .pose { position:absolute; inset:0; }
+    #root .pose img { position:absolute; bottom:0; left:50%; height:100%; width:auto; transform:translateX(-50%); }
+    #root .scrim { position:absolute; inset:0; background:linear-gradient(180deg, rgba(14,10,9,0.78) 0%, rgba(14,10,9,0.55) 30%, rgba(14,10,9,0) 48%); }
+    #root .line { position:absolute; left:124px; top:330px; width:800px; color:#FFF6EA; font-family:"Nunito",sans-serif;
+                  font-weight:900; font-size:64px; line-height:1.16; letter-spacing:-0.01em; text-shadow:0 3px 18px rgba(0,0,0,0.45); }
+    #root .line .w, #root .line .wd { display:inline-block; }
+    #root .src { position:absolute; left:124px; width:660px; font-family:"Inter",sans-serif; font-size:28px; line-height:1.3;
+                 color:rgba(255,246,234,0.82); }
+    #root .door { position:absolute; top:0; width:540px; height:1920px; background:#8A2A22; }
+    #root .door .inset { position:absolute; left:50px; right:50px; top:120px; bottom:120px; border:6px solid #651D17; }
+    #root .door .inset2 { position:absolute; left:80px; right:80px; top:150px; bottom:150px; border:3px solid #D9A86F; opacity:0.6; }
+    #root #en-doorL { left:0; box-shadow: inset -6px 0 0 #651D17; } #root #en-doorR { left:540px; }
     #root #en-num { position:absolute; left:0; width:1080px; top:360px; text-align:center; font-family:"League Gothic",sans-serif;
-      font-size:420px; line-height:1; color:#F3E6D3; }
+      font-size:420px; line-height:1; color:#FFF6EA; }
     #root #en-name { position:absolute; left:120px; width:840px; top:830px; text-align:center; font-family:"Inter",sans-serif;
-      font-weight:900; font-size:64px; line-height:1.1; color:#F3E6D3; }
+      font-weight:900; font-size:64px; line-height:1.1; color:#FFF6EA; }
     #root #en-rest { position:absolute; left:120px; width:840px; top:930px; text-align:center; font-family:"Inter",sans-serif;
-      font-weight:400; font-size:38px; line-height:1.3; color:#E8C9A8; }
+      font-size:38px; line-height:1.3; color:#F0D2B0; }
   </style>
   <div id="root" data-composition-id="ende" data-width="1080" data-height="1920">
-
-<svg class="world" viewBox="0 0 1080 1920" width="1080" height="1920" xmlns="http://www.w3.org/2000/svg" data-layout-ignore>
-  <defs>
-    <radialGradient id="en-pool" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#F6D7A8" stop-opacity="0.55"/>
-      <stop offset="100%" stop-color="#F6D7A8" stop-opacity="0"/>
-    </radialGradient>
-    <clipPath id="en-win"><rect x="150" y="820" width="300" height="330" rx="6"/></clipPath>
-  </defs>
-  <rect width="1080" height="1920" fill="#C9A388"/>
-  <rect y="1480" width="1080" height="440" fill="#7A5644"/>
-  <rect y="1474" width="1080" height="12" fill="#5E4235"/>
-  <g>
-    <rect x="150" y="820" width="300" height="330" rx="6" fill="#2F3B57"/>
-    <g clip-path="url(#en-win)"><circle id="en-fl0" cx="271.2" cy="810" r="4.9" fill="#F4F1EA" opacity="0.85"/>
-<circle id="en-fl1" cx="347.8" cy="810" r="3.3" fill="#F4F1EA" opacity="0.85"/>
-<circle id="en-fl2" cx="185.1" cy="810" r="3.8" fill="#F4F1EA" opacity="0.85"/>
-<circle id="en-fl3" cx="246.0" cy="810" r="4.4" fill="#F4F1EA" opacity="0.85"/>
-<circle id="en-fl4" cx="388.7" cy="810" r="5.4" fill="#F4F1EA" opacity="0.85"/>
-<circle id="en-fl5" cx="429.4" cy="810" r="4.8" fill="#F4F1EA" opacity="0.85"/>
-<circle id="en-fl6" cx="238.6" cy="810" r="5.4" fill="#F4F1EA" opacity="0.85"/>
-<circle id="en-fl7" cx="164.8" cy="810" r="4.9" fill="#F4F1EA" opacity="0.85"/>
-<circle id="en-fl8" cx="182.7" cy="810" r="3.9" fill="#F4F1EA" opacity="0.85"/>
-<circle id="en-fl9" cx="188.3" cy="810" r="2.5" fill="#F4F1EA" opacity="0.85"/>
-<circle id="en-fl10" cx="371.2" cy="810" r="4.2" fill="#F4F1EA" opacity="0.85"/>
-<circle id="en-fl11" cx="246.0" cy="810" r="2.9" fill="#F4F1EA" opacity="0.85"/>
-<circle id="en-fl12" cx="265.7" cy="810" r="3.2" fill="#F4F1EA" opacity="0.85"/>
-<circle id="en-fl13" cx="220.2" cy="810" r="3.4" fill="#F4F1EA" opacity="0.85"/>
-<circle id="en-fl14" cx="238.1" cy="810" r="5.3" fill="#F4F1EA" opacity="0.85"/>
-<circle id="en-fl15" cx="392.6" cy="810" r="3.5" fill="#F4F1EA" opacity="0.85"/>
-<circle id="en-fl16" cx="204.6" cy="810" r="2.9" fill="#F4F1EA" opacity="0.85"/>
-<circle id="en-fl17" cx="342.7" cy="810" r="5.0" fill="#F4F1EA" opacity="0.85"/>
-<circle id="en-fl18" cx="165.8" cy="810" r="3.7" fill="#F4F1EA" opacity="0.85"/>
-<circle id="en-fl19" cx="303.0" cy="810" r="4.8" fill="#F4F1EA" opacity="0.85"/>
-<circle id="en-fl20" cx="294.4" cy="810" r="3.6" fill="#F4F1EA" opacity="0.85"/>
-<circle id="en-fl21" cx="304.1" cy="810" r="3.7" fill="#F4F1EA" opacity="0.85"/>
-<circle id="en-fl22" cx="331.1" cy="810" r="4.0" fill="#F4F1EA" opacity="0.85"/>
-<circle id="en-fl23" cx="332.1" cy="810" r="3.9" fill="#F4F1EA" opacity="0.85"/>
-<circle id="en-fl24" cx="259.4" cy="810" r="3.1" fill="#F4F1EA" opacity="0.85"/>
-<circle id="en-fl25" cx="253.2" cy="810" r="2.9" fill="#F4F1EA" opacity="0.85"/></g>
-    <rect x="150" y="820" width="300" height="330" rx="6" fill="none" stroke="#2B1D17" stroke-width="10"/>
-    <line x1="300" y1="820" x2="300" y2="1150" stroke="#2B1D17" stroke-width="8"/>
-    <line x1="150" y1="985" x2="450" y2="985" stroke="#2B1D17" stroke-width="8"/>
-    <rect x="130" y="1150" width="340" height="16" rx="4" fill="#E9DCC9" stroke="#2B1D17" stroke-width="5"/>
-  </g>
-  <g>
-    <rect x="770" y="1130" width="330" height="26" fill="#8A5A3C" stroke="#2B1D17" stroke-width="5"/>
-    <path d="M770 1156 H1100 V1300 Q1020 1290 950 1310 Q860 1292 770 1306 Z" fill="#E9DCC9" stroke="#2B1D17" stroke-width="5"/>
-    <rect x="800" y="1306" width="22" height="174" fill="#7A4E33" stroke="#2B1D17" stroke-width="5"/>
-    <rect id="en-candle" x="902" y="1040" width="34" height="90" rx="4" fill="#F1E8D8" stroke="#2B1D17" stroke-width="5"/>
-    <line x1="919" y1="1040" x2="919" y2="1024" stroke="#2B1D17" stroke-width="4"/>
-    <ellipse id="en-flame" cx="919" cy="1008" rx="11" ry="20" fill="#F2B54A" stroke="#C9772B" stroke-width="3"/>
-  </g>
-  <ellipse id="en-pool" cx="540" cy="1560" rx="420" ry="120" fill="url(#en-pool)"/>
-</svg>
-<svg class="world" viewBox="0 0 1080 1920" width="1080" height="1920" xmlns="http://www.w3.org/2000/svg" data-layout-ignore>
-  <g id="en-heroPos" transform="translate(540,1560)">
-    <g id="en-hero">
-<rect x="-150" y="-280" width="22" height="240" fill="#A87650" class="en-fill" stroke="#2B1D17" stroke-width="6" stroke-linejoin="round"/>
-<rect x="128" y="-280" width="22" height="240" fill="#A87650" class="en-fill" stroke="#2B1D17" stroke-width="6" stroke-linejoin="round"/>
-<rect x="-150" y="-280" width="22" height="240" fill="#000" opacity="0.2"/>
-<rect x="128" y="-280" width="22" height="240" fill="#000" opacity="0.2"/>
-<rect x="-172" y="-640" width="28" height="320" rx="6" fill="#A87650" class="en-fill" stroke="#2B1D17" stroke-width="6" stroke-linejoin="round"/>
-<rect x="144" y="-640" width="28" height="320" rx="6" fill="#A87650" class="en-fill" stroke="#2B1D17" stroke-width="6" stroke-linejoin="round"/>
-<rect x="-92" y="-570" width="22" height="240" fill="#A87650" class="en-fill" stroke="#2B1D17" stroke-width="6" stroke-linejoin="round"/>
-<rect x="-11" y="-570" width="22" height="240" fill="#A87650" class="en-fill" stroke="#2B1D17" stroke-width="6" stroke-linejoin="round"/>
-<rect x="70" y="-570" width="22" height="240" fill="#A87650" class="en-fill" stroke="#2B1D17" stroke-width="6" stroke-linejoin="round"/>
-<rect x="-184" y="-636" width="368" height="70" rx="16" fill="#A87650" class="en-fill" stroke="#2B1D17" stroke-width="6" stroke-linejoin="round"/>
-<path d="M-176 -352 L176 -352 L204 -326 L-204 -326 Z" fill="#A87650" class="en-fill" stroke="#2B1D17" stroke-width="6" stroke-linejoin="round"/>
-<path d="M-176 -352 L176 -352 L204 -326 L-204 -326 Z" fill="#fff" opacity="0.14"/>
-<rect x="-212" y="-328" width="424" height="52" rx="8" fill="#A87650" class="en-fill" stroke="#2B1D17" stroke-width="6" stroke-linejoin="round"/>
-<rect x="-204" y="-280" width="32" height="280" rx="4" fill="#A87650" class="en-fill" stroke="#2B1D17" stroke-width="6" stroke-linejoin="round"/>
-<rect x="172" y="-280" width="32" height="280" rx="4" fill="#A87650" class="en-fill" stroke="#2B1D17" stroke-width="6" stroke-linejoin="round"/>
-<rect x="-176" y="-112" width="352" height="18" fill="#A87650" class="en-fill" stroke="#2B1D17" stroke-width="6" stroke-linejoin="round"/>
-</g>
-  </g>
-</svg>
-<svg class="world" viewBox="0 0 1080 1920" width="1080" height="1920" data-layout-ignore>
-  <g transform="translate(540,1214)"><g id="en-sheet">
-    <rect x="-95" y="-14" width="190" height="20" fill="#F7F2E6" stroke="#2B1D17" stroke-width="4" transform="skewX(-25)"/>
-    <path d="M -10 -10 l 7 -2 l 3 -6 l 3 6 l 7 2 l -6 3 l 1 6 l -5 -3 l -5 3 l 1 -6 z" fill="#E0A63A" stroke="#2B1D17" stroke-width="2"/>
-  </g></g>
-</svg><div id="en-l" class="clip line" data-start="0.30" data-duration="3.95" data-track-index="2" data-hold><span class="w">Ich</span> <span class="w">weiß</span> <span class="w">noch</span> <span class="w">genau,</span> <span class="w">wohin</span> <span class="w">ich</span> <span class="w">gehöre.</span></div><div id="en-card" class="clip" data-start="4.0" data-duration="4" data-track-index="3"><div id="en-doorL" class="door"><div class="inset"></div><div class="inset2"></div></div><div id="en-doorR" class="door"><div class="inset"></div><div class="inset2"></div></div><div id="en-num">1</div><div id="en-name">Systemfehler Familie</div><div id="en-rest">Adventskalender 2026<br>Noch 23 Tage bis Weihnachten</div></div>
+<div id="en-stage" class="stage"><img class="bg" src="assets/raeume/wohnzimmer.jpg" alt=""/><div id="en-k" class="kidbox" style="left:199px;top:844px;width:840px;height:1050px;" data-layout-ignore><div id="en-k-body" class="kidbody" style="height:1050px"><div id="en-k-hoffnungsvoll" class="pose" style="opacity:1"><img src="assets/kinder/k01_heute_hoffnungsvoll.png" alt=""/></div><div id="en-k-froehlich" class="pose" style="opacity:0"><img src="assets/kinder/k01_heute_froehlich.png" alt=""/></div></div></div></div><div class="scrim"></div><div id="en-l0" class="clip line" data-start="0.20" data-duration="3.45" data-track-index="2" data-hold><span class="w">Ich</span> <span class="w">weiß</span> <span class="w">noch</span> <span class="w">genau,</span> <span class="w">wohin</span> <span class="w">ich</span> <span class="w">gehöre.</span></div><div id="en-card" class="clip" data-start="3.4" data-duration="3.6" data-track-index="3"><div id="en-doorL" class="door"><div class="inset"></div><div class="inset2"></div></div><div id="en-doorR" class="door"><div class="inset"></div><div class="inset2"></div></div><div id="en-num">1</div><div id="en-name">Systemfehler Familie</div><div id="en-rest">Adventskalender 2026<br>Noch 23 Tage bis Weihnachten</div></div>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
@@ -116,40 +38,17 @@ function typeIn(sel,t,gap){tl.fromTo(sel+" .c",{opacity:0},{opacity:1,duration:0
 function stampWords(sel,t,gap){var ws=document.querySelectorAll(sel+" .w");ws.forEach(function(w,i){var at=t+i*(gap||0.38);tl.fromTo(w,{opacity:0,scale:1.35},{opacity:1,scale:1,duration:0.12,ease:"power4.out"},at);});}
 function outLine(sel,t){tl.to(sel,{opacity:0,filter:"blur(7px)",duration:0.3,ease:"power2.in"},t);}
 
-tl.fromTo("#en-fl0",{y:0,x:0},{y:350,x:-9.5,duration:8.47,ease:"none",repeat:2},-3.89);
-tl.fromTo("#en-fl1",{y:0,x:0},{y:350,x:16.6,duration:10.38,ease:"none",repeat:2},-2.53);
-tl.fromTo("#en-fl2",{y:0,x:0},{y:350,x:12.4,duration:8.71,ease:"none",repeat:2},-8.28);
-tl.fromTo("#en-fl3",{y:0,x:0},{y:350,x:11.4,duration:9.93,ease:"none",repeat:1},-1.74);
-tl.fromTo("#en-fl4",{y:0,x:0},{y:350,x:-1.5,duration:7.38,ease:"none",repeat:2},-5.44);
-tl.fromTo("#en-fl5",{y:0,x:0},{y:350,x:11.7,duration:6.57,ease:"none",repeat:3},-6.19);
-tl.fromTo("#en-fl6",{y:0,x:0},{y:350,x:3.5,duration:7.15,ease:"none",repeat:3},-6.73);
-tl.fromTo("#en-fl7",{y:0,x:0},{y:350,x:-12.1,duration:7.77,ease:"none",repeat:2},-0.56);
-tl.fromTo("#en-fl8",{y:0,x:0},{y:350,x:-4.2,duration:7.65,ease:"none",repeat:2},-7.03);
-tl.fromTo("#en-fl9",{y:0,x:0},{y:350,x:16.5,duration:9.33,ease:"none",repeat:1},-1.01);
-tl.fromTo("#en-fl10",{y:0,x:0},{y:350,x:14.5,duration:8.79,ease:"none",repeat:2},-2.46);
-tl.fromTo("#en-fl11",{y:0,x:0},{y:350,x:16.9,duration:8.81,ease:"none",repeat:2},-7.63);
-tl.fromTo("#en-fl12",{y:0,x:0},{y:350,x:3.6,duration:8.35,ease:"none",repeat:2},-0.90);
-tl.fromTo("#en-fl13",{y:0,x:0},{y:350,x:4.3,duration:9.65,ease:"none",repeat:2},-9.11);
-tl.fromTo("#en-fl14",{y:0,x:0},{y:350,x:-3.5,duration:8.88,ease:"none",repeat:2},-4.91);
-tl.fromTo("#en-fl15",{y:0,x:0},{y:350,x:-6.6,duration:7.14,ease:"none",repeat:2},-2.56);
-tl.fromTo("#en-fl16",{y:0,x:0},{y:350,x:13.1,duration:9.29,ease:"none",repeat:2},-2.25);
-tl.fromTo("#en-fl17",{y:0,x:0},{y:350,x:11.0,duration:9.18,ease:"none",repeat:1},-0.54);
-tl.fromTo("#en-fl18",{y:0,x:0},{y:350,x:14.7,duration:9.85,ease:"none",repeat:2},-5.42);
-tl.fromTo("#en-fl19",{y:0,x:0},{y:350,x:5.0,duration:8.09,ease:"none",repeat:2},-2.76);
-tl.fromTo("#en-fl20",{y:0,x:0},{y:350,x:15.9,duration:9.66,ease:"none",repeat:2},-3.81);
-tl.fromTo("#en-fl21",{y:0,x:0},{y:350,x:-4.0,duration:10.31,ease:"none",repeat:2},-5.50);
-tl.fromTo("#en-fl22",{y:0,x:0},{y:350,x:-7.5,duration:6.65,ease:"none",repeat:2},-1.56);
-tl.fromTo("#en-fl23",{y:0,x:0},{y:350,x:10.3,duration:8.16,ease:"none",repeat:2},-2.80);
-tl.fromTo("#en-fl24",{y:0,x:0},{y:350,x:-6.6,duration:7.32,ease:"none",repeat:2},-5.77);
-tl.fromTo("#en-fl25",{y:0,x:0},{y:350,x:-17.0,duration:6.66,ease:"none",repeat:3},-6.37);
-tl.fromTo("#en-flame",{scaleY:1,transformOrigin:"50% 100%"},{scaleY:1.12,duration:0.9,ease:"sine.inOut",yoyo:true,repeat:8},0);
-greyWords("#en-l",0.30);
-outLine("#en-l",3.6);
-tl.fromTo("#en-doorL",{x:-560},{x:0,duration:0.7,ease:"power3.inOut"},4.0);
-tl.fromTo("#en-doorR",{x:560},{x:0,duration:0.7,ease:"power3.inOut"},4.0);
-tl.fromTo("#en-num",{opacity:0,scale:1.25},{opacity:1,scale:1,duration:0.45,ease:"expo.out"},4.75);
-tl.fromTo("#en-name",{opacity:0,filter:"blur(8px)"},{opacity:1,filter:"blur(0px)",duration:0.5,ease:"power3.out"},5.2);
-tl.fromTo("#en-rest",{opacity:0},{opacity:1,duration:0.5,ease:"power2.out"},5.6);
+tl.set("#en-stage",{x:-560,y:-380,scale:1.25,transformOrigin:"0 0"},0);
+tl.to("#en-stage",{x:-520,y:-320,scale:1.21,duration:3.3,ease:"power1.inOut"},0.10);
+tl.fromTo("#en-k-body",{scaleY:1},{scaleY:1.012,transformOrigin:"50% 100%",duration:0.85,ease:"sine.inOut",yoyo:true,repeat:7},0.00);
+tl.to("#en-k-hoffnungsvoll",{opacity:0,duration:0.22,ease:"power1.in"},1.80);tl.fromTo("#en-k-froehlich",{opacity:0,scale:0.965},{opacity:1,scale:1,duration:0.32,ease:"power2.out",transformOrigin:"50% 100%",immediateRender:false},1.80);
+greyWords("#en-l0",0.20);
+outLine("#en-l0",3.00);
+tl.fromTo("#en-doorL",{x:-560},{x:0,duration:0.7,ease:"power3.inOut"},3.4);
+tl.fromTo("#en-doorR",{x:560},{x:0,duration:0.7,ease:"power3.inOut"},3.4);
+tl.fromTo("#en-num",{opacity:0,scale:1.25},{opacity:1,scale:1,duration:0.45,ease:"expo.out"},4.1);
+tl.fromTo("#en-name",{opacity:0,filter:"blur(8px)"},{opacity:1,filter:"blur(0px)",duration:0.5,ease:"power3.out"},4.4);
+tl.fromTo("#en-rest",{opacity:0},{opacity:1,duration:0.5},4.6);
     window.__timelines["ende"] = tl;
   </script>
 </template>

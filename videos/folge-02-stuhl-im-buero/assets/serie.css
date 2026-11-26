@@ -219,7 +219,7 @@
 .denke .p2 { width: 28px; height: 28px; bottom: -78px; }
 .denke .p3 { width: 18px; height: 18px; bottom: -106px; }
 
-/* Kreuz auf Thadeos Mund: zwei gekreuzte Klebestreifen */
+/* Kreuz auf Thadeos Mund: zwei gekreuzte schwarze Klebestreifen */
 .figur .kreuz { position: absolute; opacity: 0; z-index: 5; }
 .kreuz::before, .kreuz::after {
   content: "";
@@ -228,10 +228,10 @@
   top: 38%;
   width: 130%;
   height: 24%;
-  background: var(--koralle);
-  border: 3px solid #c94a30;
+  background: #111111;
+  border: 2px solid #000000;
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
 }
 .kreuz::before { transform: rotate(35deg); }
 .kreuz::after { transform: rotate(-35deg); }

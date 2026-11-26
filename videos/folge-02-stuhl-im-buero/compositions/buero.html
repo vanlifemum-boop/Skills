@@ -74,6 +74,7 @@
           <img id="b-th-traurig" src="assets/figuren/thadeo-traurig.png" alt="" />
           <img id="b-th-leise" src="assets/figuren/thadeo-leise.png" alt="" />
           <img id="b-th-leise-zu" src="assets/figuren/thadeo-leise-zu.png" alt="" />
+          <div id="b-th-x" class="kreuz" aria-hidden="true"></div>
         </div></div>
       </div>
       <svg id="b-stuhl" data-layout-allow-overflow viewBox="0 0 440 620" aria-hidden="true">
@@ -145,6 +146,7 @@
     SF.pose(tl, "b-th", "leise", 16.7);
     SF.mund(tl, "b-th", "leise", "leise-zu", 16.8, 0.9);
     SF.pose(tl, "b-th", "traurig", 17.9);
+    SF.kreuzAn(tl, "b-th", 18.1);
     tl.fromTo("#b-th-atem", { scale: 1 }, { scale: 0.96, duration: 1.5, ease: "power2.inOut" }, 17.8);
     // ... und gedacht
     SF.blase(tl, "#b-denk-1", 19.9, 4.1);

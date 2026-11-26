@@ -7,7 +7,7 @@
     #r-th { left: 90px; width: 360px; height: 560px; bottom: 50px; }
     #r-ma { left: 570px; width: 460px; height: 760px; bottom: 50px; }
     #r-blase-t { left: 130px; top: 940px; width: 600px; transform-origin: 20% 100%; }
-    #r-blase-t .zipfel { left: 140px; }
+    #r-blase-t .p1 { left: 120px; } #r-blase-t .p2 { left: 100px; } #r-blase-t .p3 { left: 86px; }
     #r-blase-m { left: 260px; top: 890px; width: 620px; transform-origin: 80% 100%; }
     #r-blase-m .zipfel { left: 460px; }
   </style>
@@ -25,6 +25,7 @@
           <img id="r-th-traurig" src="assets/figuren/thadeo-traurig.png" alt="" />
           <img id="r-th-leise" src="assets/figuren/thadeo-leise.png" alt="" />
           <img id="r-th-leise-zu" src="assets/figuren/thadeo-leise-zu.png" alt="" />
+          <div id="r-th-x" class="kreuz" aria-hidden="true"></div>
         </div></div>
       </div>
       <div id="r-ma" class="figur spiegel">
@@ -49,7 +50,7 @@
         <div class="erkl">Ein Gespräch heimlich aufnehmen oder mit Technik abhören ist verboten. Wer offen daneben sitzt, ist eine andere Frage. Die muss die Einrichtung erklären.</div>
         <div class="norm">§ 201 StGB</div>
       </div>
-      <div id="r-blase-t" class="blase thadeo"><span class="wer">Thadeo</span>Also darf ich sagen, dass ich allein telefonieren will?<span class="zipfel"></span></div>
+      <div id="r-blase-t" class="denke"><span class="wer">Thadeo denkt</span>Darf ich sagen, dass ich allein telefonieren will?<span class="punkt p1"></span><span class="punkt p2"></span><span class="punkt p3"></span></div>
       <div id="r-blase-m" class="blase mama"><span class="wer">Mama</span>Ja. Und jemand muss dir richtig zuhören.<span class="zipfel"></span></div>
     </div>
   </div>
@@ -58,22 +59,18 @@
     SF.pose(tl, "r-th", "traurig", 0);
     SF.pose(tl, "r-ma", "besorgt", 0);
     SF.atem(tl, "r-th", 17, 0.3);
+    SF.kreuzAn(tl, "r-th", 0.9);
     SF.atem(tl, "r-ma", 17, 1.1);
     tl.fromTo("#r-th", { x: -300 }, { x: 0, duration: 0.7, ease: "power3.out" }, 0);
     tl.fromTo("#r-ma", { x: 400 }, { x: 0, duration: 0.7, ease: "power3.out" }, 0.15);
     tl.fromTo("#r-k1", { opacity: 0, rotationX: -70, y: -40 }, { opacity: 1, rotationX: 0, y: 0, duration: 0.6, ease: "back.out(1.4)" }, 0.6);
-    SF.pose(tl, "r-th", "leise", 4.0);
-    SF.mund(tl, "r-th", "leise", "leise-zu", 4.1, 3.3);
-    SF.blase(tl, "#r-blase-t", 4.0, 4.0);
-    SF.sprich(tl, "r-th", 4.1, 3.3);
-    tl.to("#r-k1", { opacity: 0, rotationX: 70, y: -30, duration: 0.4, ease: "power2.in" }, 8.4);
+        SF.blase(tl, "#r-blase-t", 4.0, 4.0);
+        tl.to("#r-k1", { opacity: 0, rotationX: 70, y: -30, duration: 0.4, ease: "power2.in" }, 8.4);
     tl.fromTo("#r-k2", { opacity: 0, rotationX: -70, y: -40 }, { opacity: 1, rotationX: 0, y: 0, duration: 0.6, ease: "back.out(1.4)" }, 8.7);
-    SF.pose(tl, "r-th", "traurig", 8.6);
-    SF.pose(tl, "r-ma", "spricht", 12.2);
+        SF.pose(tl, "r-ma", "spricht", 12.2);
     SF.mund(tl, "r-ma", "spricht", "spricht-zu", 12.3, 3.8);
     SF.blase(tl, "#r-blase-m", 12.2, 4.6);
     SF.sprich(tl, "r-ma", 12.3, 3.8);
-    SF.pose(tl, "r-th", "ruhig", 15.2);
-    window.__timelines["recht"] = tl;
+        window.__timelines["recht"] = tl;
   </script>
 </template>

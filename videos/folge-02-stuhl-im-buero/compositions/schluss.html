@@ -34,6 +34,7 @@
           <img id="s-th-traurig" src="assets/figuren/thadeo-traurig.png" alt="" />
           <img id="s-th-leise" src="assets/figuren/thadeo-leise.png" alt="" />
           <img id="s-th-leise-zu" src="assets/figuren/thadeo-leise-zu.png" alt="" />
+          <div id="s-th-x" class="kreuz" aria-hidden="true"></div>
         </div></div>
       </div>
       <div id="s-ma" class="figur spiegel">
@@ -60,6 +61,7 @@
     SF.pose(tl, "s-th", "traurig", 0);
     SF.pose(tl, "s-ma", "besorgt", 0);
     SF.atem(tl, "s-th", 8.6, 0.2);
+    tl.set("#s-th-x", { opacity: 1 }, 0);
     SF.atem(tl, "s-ma", 8.6, 0.9);
     tl.fromTo("#s-th", { x: -200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 0);
     tl.fromTo("#s-ma", { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 0.1);
@@ -68,7 +70,8 @@
     SF.blase(tl, "#s-blase", 0.9, 5.2);
     SF.sprich(tl, "s-ma", 1.0, 4.6);
     SF.mund(tl, "s-ma", "spricht", "spricht-zu", 1.0, 4.6);
-    // Thadeo antwortet
+    // Bei Mama fällt das Kreuz ab, Thadeo darf sprechen
+    SF.kreuzAb(tl, "s-th", 5.6);
     SF.pose(tl, "s-th", "leise", 6.2);
     SF.blase(tl, "#s-blase-t", 6.3, 2.8);
     SF.mund(tl, "s-th", "leise", "leise-zu", 6.4, 1.4);

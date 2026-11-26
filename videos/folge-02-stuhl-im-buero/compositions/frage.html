@@ -45,6 +45,7 @@
           <img id="f-th-traurig" src="assets/figuren/thadeo-traurig.png" alt="" />
           <img id="f-th-leise" src="assets/figuren/thadeo-leise.png" alt="" />
           <img id="f-th-leise-zu" src="assets/figuren/thadeo-leise-zu.png" alt="" />
+          <div id="f-th-x" class="kreuz" aria-hidden="true"></div>
         </div></div>
       </div>
     </div>
@@ -60,6 +61,7 @@
     tl.fromTo("#f-th", { y: 300 }, { y: 0, duration: 0.8, ease: "power3.out" }, 1.2);
     SF.atem(tl, "f-ma", 10, 1.8);
     SF.atem(tl, "f-th", 10, 2.1);
+    tl.set("#f-th-x", { opacity: 1 }, 0);
     SF.rein(tl, "#f-aufruf", 4.6, { x: -30 });
     SF.rein(tl, "#f-hinweis", 5.6, { y: 10 });
     window.__timelines["frage"] = tl;

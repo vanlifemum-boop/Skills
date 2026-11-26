@@ -3,8 +3,33 @@
 window.SF = (function () {
   const POSEN = ["ruhig", "erklaert", "denkt", "zeigt", "besorgt", "spricht", "spricht-zu", "traurig", "leise", "leise-zu"];
 
+  // Mundposition je Pose: [x, y] als Anteil am Bild, dazu Seitenverhältnis des Bildes (Breite/Höhe)
+  const MUND = {
+    traurig: [0.70, 0.25, 292 / 993],
+    leise: [0.555, 0.21, 307 / 974],
+    "leise-zu": [0.60, 0.205, 430 / 1375],
+  };
+
+  // Kreuz auf Thadeos Mund an die Mundposition der aktuellen Pose setzen
+  function kreuzSetzen(tl, fig, name, t) {
+    const x = document.querySelector("#" + fig + "-x");
+    const box = document.querySelector("#" + fig);
+    if (!x || !box || !MUND[name]) return;
+    const h = box.offsetHeight, w = box.offsetWidth;
+    const [mx, my, ar] = MUND[name];
+    const bildB = h * ar;
+    const groesse = h * 0.1;
+    tl.set(x, {
+      left: w / 2 + (mx - 0.5) * bildB - groesse / 2,
+      top: my * h - groesse / 2,
+      width: groesse,
+      height: groesse,
+    }, t);
+  }
+
   // Posenwechsel: Bild tauschen, kurz "einatmen" (Squash + Settle)
   function pose(tl, fig, name, t) {
+    kreuzSetzen(tl, fig, name, t);
     POSEN.forEach((p) => {
       const el = document.querySelector("#" + fig + "-" + p);
       if (el) tl.set(el, { opacity: p === name ? 1 : 0 }, t);
@@ -99,5 +124,17 @@ window.SF = (function () {
     tl.set(b, { opacity: 1 }, t + dauer);
   }
 
-  return { pose, atem, sprich, gehen, blase, rein, mund };
+  // Das Kreuz klatscht auf den Mund
+  function kreuzAn(tl, fig, t) {
+    const sel = "#" + fig + "-x";
+    tl.fromTo(sel, { opacity: 0, scale: 2.4, rotation: -25 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.22, ease: "power4.in" }, t);
+    tl.fromTo("#" + fig + "-hub", { x: 0 }, { x: -10, duration: 0.06, yoyo: true, repeat: 3, ease: "sine.inOut" }, t + 0.22);
+  }
+
+  // Das Kreuz fällt ab
+  function kreuzAb(tl, fig, t) {
+    tl.to("#" + fig + "-x", { opacity: 0, y: 80, rotation: 40, duration: 0.7, ease: "power2.in" }, t);
+  }
+
+  return { pose, atem, sprich, gehen, blase, rein, mund, kreuzAn, kreuzAb };
 })();

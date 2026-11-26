@@ -1,0 +1,21 @@
+{
+ "taskId": "53861564d623beab477f23676ea6f1f8",
+ "model": "elevenlabs/text-to-speech-multilingual-v2",
+ "state": "success",
+ "param": "{\"input\":\"{\\\"voice\\\":\\\"Daniel\\\",\\\"language_code\\\":\\\"de\\\",\\\"similarity_boost\\\":0.75,\\\"style\\\":0,\\\"text\\\":\\\"Ganz wichtig: Normale Gasflaschen dürfen weiterhin nicht an die Tankstelle. Unsicher, ob deine Anlage passt? Die Gasfachfrau hilft dir weiter.\\\",\\\"stability\\\":0.55,\\\"speed\\\":1}\",\"model\":\"elevenlabs/text-to-speech-multilingual-v2\"}",
+ "resultJson": "{\"resultUrls\":[\"https://tempfile.aiquickdraw.com/voice/53861564d623beab477f23676ea6f1f8.mp3\"]}",
+ "failCode": null,
+ "failMsg": null,
+ "costTime": 6,
+ "completeTime": 1795697942832,
+ "createTime": 1795697936254,
+ "creditsConsumed": 12.0,
+ "operationType": "elevenlabs/text-to-speech-multilingual-v2",
+ "successFlag": 1,
+ "paramJson": "{\"input\":\"{\\\"voice\\\":\\\"Daniel\\\",\\\"language_code\\\":\\\"de\\\",\\\"similarity_boost\\\":0.75,\\\"style\\\":0,\\\"text\\\":\\\"Ganz wichtig: Normale Gasflaschen dürfen weiterhin nicht an die Tankstelle. Unsicher, ob deine Anlage passt? Die Gasfachfrau hilft dir weiter.\\\",\\\"stability\\\":0.55,\\\"speed\\\":1}\",\"model\":\"elevenlabs/text-to-speech-multilingual-v2\"}",
+ "response": {
+  "resultUrls": [
+   "https://tempfile.aiquickdraw.com/voice/53861564d623beab477f23676ea6f1f8.mp3"
+  ]
+ }
+}

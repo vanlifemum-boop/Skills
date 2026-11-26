@@ -1,0 +1,21 @@
+{
+ "taskId": "07dc737e070210caddb87132d0cfe10b",
+ "model": "elevenlabs/text-to-speech-multilingual-v2",
+ "state": "success",
+ "param": "{\"input\":\"{\\\"voice\\\":\\\"Daniel\\\",\\\"language_code\\\":\\\"de\\\",\\\"similarity_boost\\\":0.75,\\\"style\\\":0,\\\"text\\\":\\\"Tankflasche an der Autogastankstelle füllen? Ab jetzt ist das offiziell erlaubt.\\\",\\\"stability\\\":0.55,\\\"speed\\\":1}\",\"model\":\"elevenlabs/text-to-speech-multilingual-v2\"}",
+ "resultJson": "{\"resultUrls\":[\"https://tempfile.aiquickdraw.com/voice/07dc737e070210caddb87132d0cfe10b.mp3\"]}",
+ "failCode": null,
+ "failMsg": null,
+ "costTime": 6,
+ "completeTime": 1795697942244,
+ "createTime": 1795697936239,
+ "creditsConsumed": 12.0,
+ "operationType": "elevenlabs/text-to-speech-multilingual-v2",
+ "successFlag": 1,
+ "paramJson": "{\"input\":\"{\\\"voice\\\":\\\"Daniel\\\",\\\"language_code\\\":\\\"de\\\",\\\"similarity_boost\\\":0.75,\\\"style\\\":0,\\\"text\\\":\\\"Tankflasche an der Autogastankstelle füllen? Ab jetzt ist das offiziell erlaubt.\\\",\\\"stability\\\":0.55,\\\"speed\\\":1}\",\"model\":\"elevenlabs/text-to-speech-multilingual-v2\"}",
+ "response": {
+  "resultUrls": [
+   "https://tempfile.aiquickdraw.com/voice/07dc737e070210caddb87132d0cfe10b.mp3"
+  ]
+ }
+}

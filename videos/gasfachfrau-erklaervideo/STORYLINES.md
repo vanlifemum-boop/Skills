@@ -37,3 +37,12 @@ Ein Camper schleppt eine Tauschflasche über den Campingplatz, und Gasi schaut m
 - **Ton:** Musik, die nach dem Wechsel von schwerfällig zu leicht umschlägt
 
 **Hinweis:** Bei A und B steht das Erklären im Vordergrund. C ist eher Werbung für Tankflaschen und lässt weniger Zeit für die fünf Regeln.
+
+---
+
+## Umsetzung (v1, 26.11.2026)
+Aufbau nach dem Instagram-Vorbild (multitalent_fluessiggas): Statt des Sprechers erklärt **Gasi**, die sprechende Tankflasche, vor einer warmen Studio-Wand. Alle 1–3 s wird auf gezeichnete Zwischenbilder geschnitten: Wohnmobil von oben, Zapfsäule, Flaschenkasten mit Spanngurt, Flügelschraube und Siegel, Außenfüllanschluss, Wohnmobil im Schnitt mit Füllleitung und Sicherheitskupplung, Füllstand mit Stopp bei 80 %, π-Flasche mit Verbotsschild. Unten laufen kleine zentrierte Untertitel, am Ende steht der Abspann mit Logo auf Weiß.
+- Stimme: kie.ai, ElevenLabs Multilingual v2, Stimme „Daniel“, auf Deutsch, in 6 Abschnitten (`assets/voice/s1–s6.mp3`), um 6 % beschleunigt (`t1–t6.wav`)
+- Gasis Mund folgt der Lautstärke der Stimme (`assets/voice/voice_data.json`)
+- Neu erzeugen: `python3 build/generate.py`. **Achtung:** Das überschreibt Änderungen, die im Studio gemacht wurden.
+- Video: `renders/gasfachfrau-tankflasche-autogas_9x16.mp4` (1080×1920, 46 s, −14,9 LUFS)

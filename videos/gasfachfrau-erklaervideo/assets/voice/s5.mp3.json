@@ -1,0 +1,21 @@
+{
+ "taskId": "d79a4277e65d80b12e392dd994e46f61",
+ "model": "elevenlabs/text-to-speech-multilingual-v2",
+ "state": "success",
+ "param": "{\"input\":\"{\\\"voice\\\":\\\"Daniel\\\",\\\"language_code\\\":\\\"de\\\",\\\"similarity_boost\\\":0.75,\\\"style\\\":0,\\\"text\\\":\\\"Dazu kommen ein Sicherheitsventil und der automatische Füllstopp bei achtzig Prozent.\\\",\\\"stability\\\":0.55,\\\"speed\\\":1}\",\"model\":\"elevenlabs/text-to-speech-multilingual-v2\"}",
+ "resultJson": "{\"resultUrls\":[\"https://tempfile.aiquickdraw.com/voice/d79a4277e65d80b12e392dd994e46f61.mp3\"]}",
+ "failCode": null,
+ "failMsg": null,
+ "costTime": 5,
+ "completeTime": 1795697941851,
+ "createTime": 1795697936245,
+ "creditsConsumed": 12.0,
+ "operationType": "elevenlabs/text-to-speech-multilingual-v2",
+ "response": {
+  "resultUrls": [
+   "https://tempfile.aiquickdraw.com/voice/d79a4277e65d80b12e392dd994e46f61.mp3"
+  ]
+ },
+ "successFlag": 1,
+ "paramJson": "{\"input\":\"{\\\"voice\\\":\\\"Daniel\\\",\\\"language_code\\\":\\\"de\\\",\\\"similarity_boost\\\":0.75,\\\"style\\\":0,\\\"text\\\":\\\"Dazu kommen ein Sicherheitsventil und der automatische Füllstopp bei achtzig Prozent.\\\",\\\"stability\\\":0.55,\\\"speed\\\":1}\",\"model\":\"elevenlabs/text-to-speech-multilingual-v2\"}"
+}

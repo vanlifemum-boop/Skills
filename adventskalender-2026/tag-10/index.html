@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Systemfehler Familie · Tag 10</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { margin:0; width:1080px; height:1920px; overflow:hidden; background:#1b1512; }
+      #root { width:100%; height:100%; position:relative; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="75" data-width="1080" data-height="1920">
+      <div id="a" data-composition-id="a" data-composition-src="compositions/a.html" data-start="0" data-duration="17" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="b" data-composition-id="b" data-composition-src="compositions/b.html" data-start="17" data-duration="12" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="wandel" data-composition-id="wandel" data-composition-src="compositions/wandel.html" data-start="29" data-duration="6" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="damals" data-composition-id="damals" data-composition-src="compositions/damals.html" data-start="35" data-duration="19" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="recht" data-composition-id="recht" data-composition-src="compositions/recht.html" data-start="54" data-duration="14" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="ende" data-composition-id="ende" data-composition-src="compositions/ende.html" data-start="68" data-duration="7" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <audio id="musik" class="clip" src="assets/melodie.mp3" data-start="0" data-duration="75" data-track-index="5" data-volume="1"></audio>
+    </div>
+    <script>
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

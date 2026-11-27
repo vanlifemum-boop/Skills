@@ -1,0 +1,43 @@
+<template>
+  <style>
+
+    #root { position:absolute; inset:0; overflow:hidden; background:#1b1512; }
+    #root .stage { position:absolute; left:0; top:0; width:2880px; height:1920px; }
+    #root .stage img.bg { position:absolute; left:0; top:0; width:2880px; height:1920px; }
+    #root .fig, #root .figb { position:absolute; inset:0; }
+    #root .pose { position:absolute; }
+    #root .pose img { width:100%; height:100%; display:block; }
+    #root .scrim { position:absolute; inset:0; background:linear-gradient(180deg, rgba(14,10,9,0.8) 0%, rgba(14,10,9,0.58) 30%, rgba(14,10,9,0) 50%); }
+    #root .line { position:absolute; left:124px; top:330px; width:756px; color:#FFF6EA; font-family:"Nunito",sans-serif;
+                  font-weight:900; font-size:62px; line-height:1.16; letter-spacing:-0.01em; text-shadow:0 3px 18px rgba(0,0,0,0.45); }
+    #root .line .w, #root .line .wd { display:inline-block; }
+    #root .src { position:absolute; left:124px; width:640px; font-family:"Inter",sans-serif; font-size:28px; line-height:1.3; color:rgba(255,246,234,0.85); }
+    #root .flash { position:absolute; inset:0; background:#fff; opacity:0; }
+  </style>
+  <div id="root" data-composition-id="a" data-width="1080" data-height="1920">
+<div id="a-stage" class="stage"><img class="bg" src="assets/raum/kueche_wohngruppe.jpg" alt=""/></div><div id="a-f0" class="fig" style="opacity:1" data-layout-ignore><div id="a-f0-b" class="figb" style="transform-origin:540px 1990px"><div id="a-f0-0" class="pose" style="opacity:1;left:320px;top:840px;width:440px;height:1150px"><img src="assets/fig/k07_heute_nachdenklich.webp" alt=""/></div><div id="a-f0-1" class="pose" style="opacity:0;left:246px;top:840px;width:588px;height:1150px"><img src="assets/fig/k07_heute_hoffnungsvoll.webp" alt=""/></div><div id="a-f0-2" class="pose" style="opacity:0;left:280px;top:840px;width:520px;height:1150px"><img src="assets/fig/k07_heute_plaetzchen.webp" alt=""/></div></div></div><div class="scrim"></div><div id="a-l0" class="clip line" data-start="0.00" data-duration="4.54" data-track-index="2" data-hold><span class="w">Heute</span> <span class="w">gab</span> <span class="w">es</span> <span class="w">Plätzchen.</span></div>
+<div id="a-l1" class="clip line" data-start="4.59" data-duration="5.62" data-track-index="2" data-hold><span class="w">Eines</span> <span class="w">war</span> <span class="w">am</span> <span class="w">Rand</span> <span class="w">ein</span> <span class="w">bisschen</span> <span class="w">dunkler.</span></div>
+<div id="a-l2" class="clip line" data-start="10.25" data-duration="6.70" data-track-index="2" data-hold><span class="w">Ich</span> <span class="w">esse</span> <span class="w">es</span> <span class="w">ganz</span> <span class="w">langsam.</span> <span class="w">Es</span> <span class="w">schmeckt</span> <span class="w">fast</span> <span class="w">nach</span> <span class="w">früher.</span></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+function blurWords(sel,t,gap){tl.fromTo(sel+" .w",{opacity:0,filter:"blur(7px)"},{opacity:1,filter:"blur(0px)",duration:0.55,ease:"power2.out",stagger:gap||0.1},t);}
+function greyWords(sel,t,gap){tl.fromTo(sel+" .w",{opacity:0.16},{opacity:1,duration:0.45,ease:"none",stagger:gap||0.1},t);}
+function lineIn(sel,t){tl.fromTo(sel,{opacity:0,filter:"blur(9px)"},{opacity:1,filter:"blur(0px)",duration:0.7,ease:"power3.out"},t);}
+function typeIn(sel,t,gap){tl.fromTo(sel+" .c",{opacity:0},{opacity:1,duration:0.01,ease:"none",stagger:gap||0.022},t);}
+function stampWords(sel,t,gap){var ws=document.querySelectorAll(sel+" .w");ws.forEach(function(w,i){tl.fromTo(w,{opacity:0,scale:1.4},{opacity:1,scale:1,duration:0.12,ease:"power4.out"},t+i*(gap||0.38));});}
+function outLine(sel,t){tl.to(sel,{opacity:0,filter:"blur(7px)",duration:0.3,ease:"power2.in"},t);}
+
+tl.set("#a-stage",{x:-420,y:-0,scale:1.0,transformOrigin:"0 0"},0);tl.to("#a-stage",{x:-1080,y:-58,scale:1.06,duration:16.90,ease:"power1.inOut"},0.05);
+tl.fromTo("#a-f0-b",{scaleY:1},{scaleY:1.012,duration:0.75,ease:"sine.inOut",yoyo:true,repeat:21},0.00);
+tl.to("#a-f0-0",{opacity:0,duration:0.25,ease:"power1.in"},4.99);tl.fromTo("#a-f0-1",{opacity:0,scale:0.97},{opacity:1,scale:1,duration:0.35,ease:"power2.out",transformOrigin:"50% 100%",immediateRender:false},4.99);tl.to("#a-f0-1",{opacity:0,duration:0.25,ease:"power1.in"},10.65);tl.fromTo("#a-f0-2",{opacity:0,scale:0.97},{opacity:1,scale:1,duration:0.35,ease:"power2.out",transformOrigin:"50% 100%",immediateRender:false},10.65);
+
+outLine("#a-l0",3.89);
+blurWords("#a-l1",4.59);
+outLine("#a-l1",9.55);
+greyWords("#a-l2",10.25);
+outLine("#a-l2",16.30);
+    window.__timelines["a"] = tl;
+  </script>
+</template>

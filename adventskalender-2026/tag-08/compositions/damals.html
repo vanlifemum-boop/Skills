@@ -1,0 +1,56 @@
+<template>
+  <style>
+
+    #root { position:absolute; inset:0; overflow:hidden; background:#1b1512; }
+    #root .stage { position:absolute; left:0; top:0; width:2880px; height:1920px; }
+    #root .stage img.bg { position:absolute; left:0; top:0; width:2880px; height:1920px; }
+    #root .fig, #root .figb { position:absolute; inset:0; }
+    #root .pose { position:absolute; }
+    #root .pose img { width:100%; height:100%; display:block; }
+    #root .scrim { position:absolute; inset:0; background:linear-gradient(180deg, rgba(14,10,9,0.8) 0%, rgba(14,10,9,0.58) 30%, rgba(14,10,9,0) 50%); }
+    #root .line { position:absolute; left:124px; top:330px; width:756px; color:#FFF6EA; font-family:"Nunito",sans-serif;
+                  font-weight:900; font-size:62px; line-height:1.16; letter-spacing:-0.01em; text-shadow:0 3px 18px rgba(0,0,0,0.45); }
+    #root .line .w, #root .line .wd { display:inline-block; }
+    #root .src { position:absolute; left:124px; width:640px; font-family:"Inter",sans-serif; font-size:28px; line-height:1.3; color:rgba(255,246,234,0.85); }
+    #root .flash { position:absolute; inset:0; background:#fff; opacity:0; }
+    #root #damals-card { position:absolute; left:80px; top:300px; width:920px; height:580px; background:#EFE6D2;
+      border:3px solid #8C7E66; box-shadow:0 14px 0 rgba(30,20,10,0.35); transform:rotate(-1deg); }
+    #root .akte { left:130px; top:350px; width:760px; color:#2E2A25; font-family:"IBM Plex Mono",monospace; font-weight:600;
+      font-size:42px; line-height:1.28; text-shadow:none; }
+    #root .akte.stamp { font-family:"Inter",sans-serif; font-weight:900; font-size:72px; text-transform:uppercase; color:#7A2A20; top:420px; }
+    #root .akte.stamp .w { border:6px solid #7A2A20; padding:4px 16px; margin:6px 8px 0 0; transform:rotate(-3deg); }
+  </style>
+  <div id="root" data-composition-id="damals" data-width="1080" data-height="1920">
+<div id="damals-stage" class="stage"><img class="bg" src="assets/raum/lager.jpg" alt=""/></div><div id="damals-f0" class="fig" style="opacity:1" data-layout-ignore><div id="damals-f0-b" class="figb" style="transform-origin:230px 1500px"><div id="damals-f0-0" class="pose" style="opacity:1;left:137px;top:1020px;width:185px;height:480px"><img src="assets/fig/k05_damals_still_sepia.webp" alt=""/></div></div></div>
+<div id="damals-f1" class="fig" style="opacity:1" data-layout-ignore><div id="damals-f1-b" class="figb" style="transform-origin:850px 1500px"><div id="damals-f1-0" class="pose" style="opacity:1;left:766px;top:1020px;width:168px;height:480px"><img src="assets/fig/k09_damals_still_sepia.webp" alt=""/></div></div></div>
+<div id="damals-f2" class="fig" style="opacity:1" data-layout-ignore><div id="damals-f2-b" class="figb" style="transform-origin:540px 1990px"><div id="damals-f2-0" class="pose" style="opacity:1;left:323px;top:840px;width:435px;height:1150px"><img src="assets/fig/k08_damals_still_sepia.webp" alt=""/></div><div id="damals-f2-1" class="pose" style="opacity:0;left:303px;top:840px;width:473px;height:1150px"><img src="assets/fig/k08_damals_aengstlich_sepia.webp" alt=""/></div><div id="damals-f2-2" class="pose" style="opacity:0;left:278px;top:840px;width:525px;height:1150px"><img src="assets/fig/k08_damals_weinend_sepia.webp" alt=""/></div></div></div><div id="damals-cardClip" class="clip" data-start="0" data-duration="19" data-track-index="1"><div id="damals-card"></div><div id="damals-src" class="src" style="top:770px;left:130px;width:760px;color:#5A5040">Quelle: Martin Guse / bpb: Das Jugend-KZ Uckermark 1942–1945</div></div><div id="damals-l0" class="clip line akte" data-start="0.80" data-duration="7.18" data-track-index="2" data-hold><span class="wd"><span class="c">I</span><span class="c">m</span></span> <span class="wd"><span class="c">J</span><span class="c">u</span><span class="c">n</span><span class="c">i</span></span> <span class="wd"><span class="c">1</span><span class="c">9</span><span class="c">4</span><span class="c">2</span></span> <span class="wd"><span class="c">k</span><span class="c">a</span><span class="c">m</span><span class="c">e</span><span class="c">n</span></span> <span class="wd"><span class="c">d</span><span class="c">i</span><span class="c">e</span></span> <span class="wd"><span class="c">e</span><span class="c">r</span><span class="c">s</span><span class="c">t</span><span class="c">e</span><span class="c">n</span></span> <span class="wd"><span class="c">M</span><span class="c">ä</span><span class="c">d</span><span class="c">c</span><span class="c">h</span><span class="c">e</span><span class="c">n</span></span> <span class="wd"><span class="c">i</span><span class="c">n</span></span> <span class="wd"><span class="c">d</span><span class="c">a</span><span class="c">s</span></span> <span class="wd"><span class="c">J</span><span class="c">u</span><span class="c">g</span><span class="c">e</span><span class="c">n</span><span class="c">d</span><span class="c">l</span><span class="c">a</span><span class="c">g</span><span class="c">e</span><span class="c">r</span></span> <span class="wd"><span class="c">U</span><span class="c">c</span><span class="c">k</span><span class="c">e</span><span class="c">r</span><span class="c">m</span><span class="c">a</span><span class="c">r</span><span class="c">k</span><span class="c">.</span></span></div>
+<div id="damals-l1" class="clip line akte" data-start="8.03" data-duration="5.65" data-track-index="2" data-hold><span class="w">Etwa</span> <span class="w">1.200</span> <span class="w">Mädchen</span> <span class="w">und</span> <span class="w">junge</span> <span class="w">Frauen</span> <span class="w">waren</span> <span class="w">dort</span> <span class="w">inhaftiert.</span></div>
+<div id="damals-l2" class="clip line akte" data-start="13.73" data-duration="5.22" data-track-index="2" data-hold><span class="wd"><span class="c">E</span><span class="c">r</span><span class="c">w</span><span class="c">a</span><span class="c">c</span><span class="c">h</span><span class="c">s</span><span class="c">e</span><span class="c">n</span><span class="c">e</span></span> <span class="wd"><span class="c">h</span><span class="c">a</span><span class="c">t</span><span class="c">t</span><span class="c">e</span><span class="c">n</span></span> <span class="wd"><span class="c">s</span><span class="c">i</span><span class="c">e</span></span> <span class="wd"><span class="c">f</span><span class="c">ü</span><span class="c">r</span></span> <span class="wd"><span class="c">u</span><span class="c">n</span><span class="c">e</span><span class="c">r</span><span class="c">z</span><span class="c">i</span><span class="c">e</span><span class="c">h</span><span class="c">b</span><span class="c">a</span><span class="c">r</span></span> <span class="wd"><span class="c">e</span><span class="c">r</span><span class="c">k</span><span class="c">l</span><span class="c">ä</span><span class="c">r</span><span class="c">t</span><span class="c">.</span></span></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+function blurWords(sel,t,gap){tl.fromTo(sel+" .w",{opacity:0,filter:"blur(7px)"},{opacity:1,filter:"blur(0px)",duration:0.55,ease:"power2.out",stagger:gap||0.1},t);}
+function greyWords(sel,t,gap){tl.fromTo(sel+" .w",{opacity:0.16},{opacity:1,duration:0.45,ease:"none",stagger:gap||0.1},t);}
+function lineIn(sel,t){tl.fromTo(sel,{opacity:0,filter:"blur(9px)"},{opacity:1,filter:"blur(0px)",duration:0.7,ease:"power3.out"},t);}
+function typeIn(sel,t,gap){tl.fromTo(sel+" .c",{opacity:0},{opacity:1,duration:0.01,ease:"none",stagger:gap||0.022},t);}
+function stampWords(sel,t,gap){var ws=document.querySelectorAll(sel+" .w");ws.forEach(function(w,i){tl.fromTo(w,{opacity:0,scale:1.4},{opacity:1,scale:1,duration:0.12,ease:"power4.out"},t+i*(gap||0.38));});}
+function outLine(sel,t){tl.to(sel,{opacity:0,filter:"blur(7px)",duration:0.3,ease:"power2.in"},t);}
+
+tl.set("#damals-stage",{x:-1250,y:-38,scale:1.04,transformOrigin:"0 0"},0);tl.to("#damals-stage",{x:-650,y:-0,scale:1.0,duration:18.90,ease:"none"},0.05);
+tl.fromTo("#damals-card",{y:-50,opacity:0},{y:0,opacity:1,duration:0.7,ease:"power3.out"},0.1);
+tl.fromTo("#damals-src",{opacity:0},{opacity:1,duration:0.5},0.6);
+tl.to("#damals-cardClip",{opacity:0,duration:0.3},18.6);
+tl.fromTo("#damals-f0-b",{scaleY:1},{scaleY:1.016,duration:0.75,ease:"sine.inOut",yoyo:true,repeat:23},0.00);
+tl.fromTo("#damals-f1-b",{scaleY:1},{scaleY:1.016,duration:0.83,ease:"sine.inOut",yoyo:true,repeat:21},0.25);
+tl.fromTo("#damals-f2-b",{scaleY:1},{scaleY:1.012,duration:0.92,ease:"sine.inOut",yoyo:true,repeat:19},0.50);
+tl.to("#damals-f2-0",{opacity:0,duration:0.25,ease:"power1.in"},8.43);tl.fromTo("#damals-f2-1",{opacity:0,scale:0.97},{opacity:1,scale:1,duration:0.35,ease:"power2.out",transformOrigin:"50% 100%",immediateRender:false},8.43);tl.to("#damals-f2-1",{opacity:0,duration:0.25,ease:"power1.in"},14.13);tl.fromTo("#damals-f2-2",{opacity:0,scale:0.97},{opacity:1,scale:1,duration:0.35,ease:"power2.out",transformOrigin:"50% 100%",immediateRender:false},14.13);
+typeIn("#damals-l0",0.80);
+outLine("#damals-l0",7.33);
+lineIn("#damals-l1",8.03);
+outLine("#damals-l1",13.03);
+typeIn("#damals-l2",13.73);
+outLine("#damals-l2",18.30);
+    window.__timelines["damals"] = tl;
+  </script>
+</template>

@@ -1,0 +1,54 @@
+<template>
+  <style>
+
+    #root { position:absolute; inset:0; overflow:hidden; background:#1b1512; }
+    #root .stage { position:absolute; left:0; top:0; width:2880px; height:1920px; }
+    #root .stage img.bg { position:absolute; left:0; top:0; width:2880px; height:1920px; }
+    #root .fig, #root .figb { position:absolute; inset:0; }
+    #root .pose { position:absolute; }
+    #root .pose img { width:100%; height:100%; display:block; }
+    #root .scrim { position:absolute; inset:0; background:linear-gradient(180deg, rgba(14,10,9,0.8) 0%, rgba(14,10,9,0.58) 30%, rgba(14,10,9,0) 50%); }
+    #root .line { position:absolute; left:124px; top:330px; width:756px; color:#FFF6EA; font-family:"Nunito",sans-serif;
+                  font-weight:900; font-size:62px; line-height:1.16; letter-spacing:-0.01em; text-shadow:0 3px 18px rgba(0,0,0,0.45); }
+    #root .line .w, #root .line .wd { display:inline-block; }
+    #root .src { position:absolute; left:124px; width:640px; font-family:"Inter",sans-serif; font-size:28px; line-height:1.3; color:rgba(255,246,234,0.85); }
+    #root .flash { position:absolute; inset:0; background:#fff; opacity:0; }
+    #root #damals-card { position:absolute; left:80px; top:300px; width:920px; height:580px; background:#EFE6D2;
+      border:3px solid #8C7E66; box-shadow:0 14px 0 rgba(30,20,10,0.35); transform:rotate(-1deg); }
+    #root .akte { left:130px; top:350px; width:760px; color:#2E2A25; font-family:"IBM Plex Mono",monospace; font-weight:600;
+      font-size:42px; line-height:1.28; text-shadow:none; }
+    #root .akte.stamp { font-family:"Inter",sans-serif; font-weight:900; font-size:72px; text-transform:uppercase; color:#7A2A20; top:420px; }
+    #root .akte.stamp .w { border:6px solid #7A2A20; padding:4px 16px; margin:6px 8px 0 0; transform:rotate(-3deg); }
+  </style>
+  <div id="root" data-composition-id="damals" data-width="1080" data-height="1920">
+<div id="damals-stage" class="stage"><img class="bg" src="assets/raum/heim1960.jpg" alt=""/></div><div id="damals-f0" class="fig" style="opacity:1" data-layout-ignore><div id="damals-f0-b" class="figb" style="transform-origin:230px 1500px"><div id="damals-f0-0" class="pose" style="opacity:1;left:155px;top:1020px;width:150px;height:480px"><img src="assets/fig/k01_heim60_gerade_faded.webp" alt=""/></div></div></div>
+<div id="damals-f1" class="fig" style="opacity:1" data-layout-ignore><div id="damals-f1-b" class="figb" style="transform-origin:540px 1990px"><div id="damals-f1-0" class="pose" style="opacity:1;left:50px;top:1137px;width:980px;height:853px"><img src="assets/fig/k05_heim60_schrubbt_faded.webp" alt=""/></div><div id="damals-f1-1" class="pose" style="opacity:0;left:322px;top:840px;width:435px;height:1150px"><img src="assets/fig/k05_heim60_weinend_faded.webp" alt=""/></div><div id="damals-f1-2" class="pose" style="opacity:0;left:324px;top:840px;width:432px;height:1150px"><img src="assets/fig/k05_heim60_aengstlich_faded.webp" alt=""/></div></div></div><div id="damals-cardClip" class="clip" data-start="0" data-duration="19" data-track-index="1"><div id="damals-card"></div><div id="damals-src" class="src" style="top:770px;left:130px;width:760px;color:#5A5040">Quelle: Runder Tisch Heimerziehung, Abschlussbericht 2010</div></div><div id="damals-l0" class="clip line akte" data-start="0.80" data-duration="4.54" data-track-index="2" data-hold><span class="wd"><span class="c">W</span><span class="c">e</span><span class="c">r</span></span> <span class="wd"><span class="c">k</span><span class="c">o</span><span class="c">n</span><span class="c">t</span><span class="c">r</span><span class="c">o</span><span class="c">l</span><span class="c">l</span><span class="c">i</span><span class="c">e</span><span class="c">r</span><span class="c">t</span><span class="c">e</span></span> <span class="wd"><span class="c">d</span><span class="c">i</span><span class="c">e</span></span> <span class="wd"><span class="c">H</span><span class="c">e</span><span class="c">i</span><span class="c">m</span><span class="c">e</span><span class="c">?</span></span></div>
+<div id="damals-l1" class="clip line akte" data-start="5.39" data-duration="6.33" data-track-index="2" data-hold><span class="w">Eine</span> <span class="w">geregelte</span> <span class="w">Heimaufsicht</span> <span class="w">entstand</span> <span class="w">erst</span> <span class="w">durch</span> <span class="w">das</span> <span class="w">Gesetz</span> <span class="w">von</span> <span class="w">1961.</span></div>
+<div id="damals-l2" class="clip line akte" data-start="11.77" data-duration="7.18" data-track-index="2" data-hold><span class="wd"><span class="c">K</span><span class="c">i</span><span class="c">n</span><span class="c">d</span><span class="c">e</span><span class="c">r</span></span> <span class="wd"><span class="c">l</span><span class="c">e</span><span class="c">b</span><span class="c">t</span><span class="c">e</span><span class="c">n</span></span> <span class="wd"><span class="c">i</span><span class="c">n</span></span> <span class="wd"><span class="c">H</span><span class="c">e</span><span class="c">i</span><span class="c">m</span><span class="c">e</span><span class="c">n</span><span class="c">,</span></span> <span class="wd"><span class="c">d</span><span class="c">e</span><span class="c">r</span><span class="c">e</span><span class="c">n</span></span> <span class="wd"><span class="c">A</span><span class="c">l</span><span class="c">l</span><span class="c">t</span><span class="c">a</span><span class="c">g</span></span> <span class="wd"><span class="c">i</span><span class="c">h</span><span class="c">r</span><span class="c">e</span></span> <span class="wd"><span class="c">V</span><span class="c">e</span><span class="c">r</span><span class="c">t</span><span class="c">r</span><span class="c">e</span><span class="c">t</span><span class="c">e</span><span class="c">r</span></span> <span class="wd"><span class="c">k</span><span class="c">a</span><span class="c">u</span><span class="c">m</span></span> <span class="wd"><span class="c">k</span><span class="c">a</span><span class="c">n</span><span class="c">n</span><span class="c">t</span><span class="c">e</span><span class="c">n</span><span class="c">.</span></span></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+function blurWords(sel,t,gap){tl.fromTo(sel+" .w",{opacity:0,filter:"blur(7px)"},{opacity:1,filter:"blur(0px)",duration:0.55,ease:"power2.out",stagger:gap||0.1},t);}
+function greyWords(sel,t,gap){tl.fromTo(sel+" .w",{opacity:0.16},{opacity:1,duration:0.45,ease:"none",stagger:gap||0.1},t);}
+function lineIn(sel,t){tl.fromTo(sel,{opacity:0,filter:"blur(9px)"},{opacity:1,filter:"blur(0px)",duration:0.7,ease:"power3.out"},t);}
+function typeIn(sel,t,gap){tl.fromTo(sel+" .c",{opacity:0},{opacity:1,duration:0.01,ease:"none",stagger:gap||0.022},t);}
+function stampWords(sel,t,gap){var ws=document.querySelectorAll(sel+" .w");ws.forEach(function(w,i){tl.fromTo(w,{opacity:0,scale:1.4},{opacity:1,scale:1,duration:0.12,ease:"power4.out"},t+i*(gap||0.38));});}
+function outLine(sel,t){tl.to(sel,{opacity:0,filter:"blur(7px)",duration:0.3,ease:"power2.in"},t);}
+
+tl.set("#damals-stage",{x:-1250,y:-38,scale:1.04,transformOrigin:"0 0"},0);tl.to("#damals-stage",{x:-650,y:-0,scale:1.0,duration:18.90,ease:"none"},0.05);
+tl.fromTo("#damals-card",{y:-50,opacity:0},{y:0,opacity:1,duration:0.7,ease:"power3.out"},0.1);
+tl.fromTo("#damals-src",{opacity:0},{opacity:1,duration:0.5},0.6);
+tl.to("#damals-cardClip",{opacity:0,duration:0.3},18.6);
+tl.fromTo("#damals-f0-b",{scaleY:1},{scaleY:1.016,duration:0.75,ease:"sine.inOut",yoyo:true,repeat:23},0.00);
+tl.fromTo("#damals-f1-b",{scaleY:1},{scaleY:1.012,duration:0.83,ease:"sine.inOut",yoyo:true,repeat:21},0.25);
+tl.to("#damals-f1-0",{opacity:0,duration:0.25,ease:"power1.in"},5.79);tl.fromTo("#damals-f1-1",{opacity:0,scale:0.97},{opacity:1,scale:1,duration:0.35,ease:"power2.out",transformOrigin:"50% 100%",immediateRender:false},5.79);tl.to("#damals-f1-1",{opacity:0,duration:0.25,ease:"power1.in"},12.17);tl.fromTo("#damals-f1-2",{opacity:0,scale:0.97},{opacity:1,scale:1,duration:0.35,ease:"power2.out",transformOrigin:"50% 100%",immediateRender:false},12.17);
+typeIn("#damals-l0",0.80);
+outLine("#damals-l0",4.69);
+lineIn("#damals-l1",5.39);
+outLine("#damals-l1",11.07);
+typeIn("#damals-l2",11.77);
+outLine("#damals-l2",18.30);
+    window.__timelines["damals"] = tl;
+  </script>
+</template>

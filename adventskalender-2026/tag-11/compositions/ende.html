@@ -1,0 +1,52 @@
+<template>
+  <style>
+
+    #root { position:absolute; inset:0; overflow:hidden; background:#1b1512; }
+    #root .stage { position:absolute; left:0; top:0; width:2880px; height:1920px; }
+    #root .stage img.bg { position:absolute; left:0; top:0; width:2880px; height:1920px; }
+    #root .fig, #root .figb { position:absolute; inset:0; }
+    #root .pose { position:absolute; }
+    #root .pose img { width:100%; height:100%; display:block; }
+    #root .scrim { position:absolute; inset:0; background:linear-gradient(180deg, rgba(14,10,9,0.8) 0%, rgba(14,10,9,0.58) 30%, rgba(14,10,9,0) 50%); }
+    #root .line { position:absolute; left:124px; top:330px; width:756px; color:#FFF6EA; font-family:"Nunito",sans-serif;
+                  font-weight:900; font-size:62px; line-height:1.16; letter-spacing:-0.01em; text-shadow:0 3px 18px rgba(0,0,0,0.45); }
+    #root .line .w, #root .line .wd { display:inline-block; }
+    #root .src { position:absolute; left:124px; width:640px; font-family:"Inter",sans-serif; font-size:28px; line-height:1.3; color:rgba(255,246,234,0.85); }
+    #root .flash { position:absolute; inset:0; background:#fff; opacity:0; }
+    #root .door { position:absolute; top:0; width:540px; height:1920px; background:#8A2A22; }
+    #root .door .inset { position:absolute; left:50px; right:50px; top:120px; bottom:120px; border:6px solid #651D17; }
+    #root .door .inset2 { position:absolute; left:80px; right:80px; top:150px; bottom:150px; border:3px solid #D9A86F; opacity:0.6; }
+    #root #ende-doorL { left:0; box-shadow: inset -6px 0 0 #651D17; } #root #ende-doorR { left:540px; }
+    #root #ende-num { position:absolute; left:0; width:1080px; top:360px; text-align:center; font-family:"League Gothic",sans-serif;
+      font-size:420px; line-height:1; color:#FFF6EA; }
+    #root #ende-name { position:absolute; left:120px; width:840px; top:830px; text-align:center; font-family:"Inter",sans-serif;
+      font-weight:900; font-size:64px; line-height:1.1; color:#FFF6EA; }
+    #root #ende-rest { position:absolute; left:120px; width:840px; top:930px; text-align:center; font-family:"Inter",sans-serif;
+      font-size:38px; line-height:1.3; color:#F0D2B0; }
+  </style>
+  <div id="root" data-composition-id="ende" data-width="1080" data-height="1920">
+<div id="ende-stage" class="stage"><img class="bg" src="assets/raum/gemeinschaftsraum.jpg" alt=""/></div><div id="ende-f0" class="fig" style="opacity:1" data-layout-ignore><div id="ende-f0-b" class="figb" style="transform-origin:540px 1990px"><div id="ende-f0-0" class="pose" style="opacity:1;left:208px;top:840px;width:665px;height:1150px"><img src="assets/fig/k02_heute_hoffnungsvoll.webp" alt=""/></div><div id="ende-f0-1" class="pose" style="opacity:0;left:194px;top:840px;width:691px;height:1150px"><img src="assets/fig/k02_heute_froehlich.webp" alt=""/></div></div></div><div class="scrim"></div><div id="ende-l0" class="clip line" data-start="0.20" data-duration="4.05" data-track-index="2" data-hold><span class="w">Mit</span> <span class="w">meiner</span> <span class="w">leisen</span> <span class="w">Stimme.</span> <span class="w">Mit</span> <span class="w">meiner</span> <span class="w">Angst.</span></div><div id="ende-card" class="clip" data-start="3.95" data-duration="3.05" data-track-index="3"><div id="ende-doorL" class="door"><div class="inset"></div><div class="inset2"></div></div><div id="ende-doorR" class="door"><div class="inset"></div><div class="inset2"></div></div><div id="ende-num">11</div><div id="ende-name">Systemfehler Familie</div><div id="ende-rest">Adventskalender 2026<br>Noch 13 Tage bis Weihnachten</div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+function blurWords(sel,t,gap){tl.fromTo(sel+" .w",{opacity:0,filter:"blur(7px)"},{opacity:1,filter:"blur(0px)",duration:0.55,ease:"power2.out",stagger:gap||0.1},t);}
+function greyWords(sel,t,gap){tl.fromTo(sel+" .w",{opacity:0.16},{opacity:1,duration:0.45,ease:"none",stagger:gap||0.1},t);}
+function lineIn(sel,t){tl.fromTo(sel,{opacity:0,filter:"blur(9px)"},{opacity:1,filter:"blur(0px)",duration:0.7,ease:"power3.out"},t);}
+function typeIn(sel,t,gap){tl.fromTo(sel+" .c",{opacity:0},{opacity:1,duration:0.01,ease:"none",stagger:gap||0.022},t);}
+function stampWords(sel,t,gap){var ws=document.querySelectorAll(sel+" .w");ws.forEach(function(w,i){tl.fromTo(w,{opacity:0,scale:1.4},{opacity:1,scale:1,duration:0.12,ease:"power4.out"},t+i*(gap||0.38));});}
+function outLine(sel,t){tl.to(sel,{opacity:0,filter:"blur(7px)",duration:0.3,ease:"power2.in"},t);}
+
+tl.set("#ende-stage",{x:-700,y:-115,scale:1.12,transformOrigin:"0 0"},0);tl.to("#ende-stage",{x:-760,y:-154,scale:1.16,duration:6.90,ease:"power1.inOut"},0.05);
+tl.fromTo("#ende-f0-b",{scaleY:1},{scaleY:1.012,duration:0.75,ease:"sine.inOut",yoyo:true,repeat:7},0.00);
+tl.to("#ende-f0-0",{opacity:0,duration:0.25,ease:"power1.in"},1.80);tl.fromTo("#ende-f0-1",{opacity:0,scale:0.97},{opacity:1,scale:1,duration:0.35,ease:"power2.out",transformOrigin:"50% 100%",immediateRender:false},1.80);
+greyWords("#ende-l0",0.20);
+outLine("#ende-l0",3.60);
+tl.fromTo("#ende-doorL",{x:-560},{x:0,duration:0.7,ease:"power3.inOut"},3.95);
+tl.fromTo("#ende-doorR",{x:560},{x:0,duration:0.7,ease:"power3.inOut"},3.95);
+tl.fromTo("#ende-num",{opacity:0,scale:1.25},{opacity:1,scale:1,duration:0.45,ease:"expo.out"},4.65);
+tl.fromTo("#ende-name",{opacity:0,filter:"blur(8px)"},{opacity:1,filter:"blur(0px)",duration:0.5,ease:"power3.out"},4.95);
+tl.fromTo("#ende-rest",{opacity:0},{opacity:1,duration:0.5},4.75);
+    window.__timelines["ende"] = tl;
+  </script>
+</template>

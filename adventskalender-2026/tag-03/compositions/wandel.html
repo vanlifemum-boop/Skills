@@ -1,0 +1,47 @@
+<template>
+  <style>
+
+    #root { position:absolute; inset:0; overflow:hidden; background:#1b1512; }
+    #root .stage { position:absolute; left:0; top:0; width:2880px; height:1920px; }
+    #root .stage img.bg { position:absolute; left:0; top:0; width:2880px; height:1920px; }
+    #root .fig, #root .figb { position:absolute; inset:0; }
+    #root .pose { position:absolute; }
+    #root .pose img { width:100%; height:100%; display:block; }
+    #root .scrim { position:absolute; inset:0; background:linear-gradient(180deg, rgba(14,10,9,0.8) 0%, rgba(14,10,9,0.58) 30%, rgba(14,10,9,0) 50%); }
+    #root .line { position:absolute; left:124px; top:330px; width:756px; color:#FFF6EA; font-family:"Nunito",sans-serif;
+                  font-weight:900; font-size:62px; line-height:1.16; letter-spacing:-0.01em; text-shadow:0 3px 18px rgba(0,0,0,0.45); }
+    #root .line .w, #root .line .wd { display:inline-block; }
+    #root .src { position:absolute; left:124px; width:640px; font-family:"Inter",sans-serif; font-size:28px; line-height:1.3; color:rgba(255,246,234,0.85); }
+    #root .flash { position:absolute; inset:0; background:#fff; opacity:0; }
+    #root .layer { position:absolute; inset:0; }
+    #root .layer .stage { left:-900px; }
+    #root #wandel-past { clip-path: inset(0 100% 0 0); }
+    #root #wandel-band { position:absolute; top:0; bottom:0; width:160px; left:-160px;
+       background:linear-gradient(90deg, rgba(255,240,210,0) 0%, rgba(255,240,210,0.85) 50%, rgba(255,240,210,0) 100%); }
+    #root #wandel-yrWin { position:absolute; left:124px; top:330px; width:756px; height:300px; overflow:hidden; }
+    #root #wandel-yrStrip .yr { height:300px; display:flex; align-items:center; justify-content:center; color:#FFF6EA;
+      font-family:"League Gothic",sans-serif; font-size:280px; line-height:1; text-shadow:0 4px 24px rgba(0,0,0,0.5); }
+    #root #wandel-yrStrip .yr.last { font-size:250px; letter-spacing:0.02em; }
+  </style>
+  <div id="root" data-composition-id="wandel" data-width="1080" data-height="1920">
+<div id="wandel-now" class="layer"><div class="stage"><img class="bg" src="assets/raum/kinderzimmer_tag_weich.jpg" alt=""/></div><div id="wandel-n" class="fig" style="opacity:1" data-layout-ignore><div id="wandel-n-b" class="figb" style="transform-origin:540px 2420px"><div id="wandel-n-0" class="pose" style="opacity:1;left:138px;top:270px;width:803px;height:2150px"><img src="assets/fig/k03_heute_traurig.webp" alt=""/></div></div></div></div><div id="wandel-past" class="layer"><div class="stage"><img class="bg" src="assets/raum/gerichtssaal_weich.jpg" alt=""/></div><div id="wandel-o" class="fig" style="opacity:1" data-layout-ignore><div id="wandel-o-b" class="figb" style="transform-origin:540px 2420px"><div id="wandel-o-0" class="pose" style="opacity:1;left:143px;top:270px;width:794px;height:2150px"><img src="assets/fig/k03_damals_traurig_sepia.webp" alt=""/></div></div></div></div><div id="wandel-band"></div><div class="scrim"></div><div id="wandel-yr" class="clip" data-start="0.1" data-duration="5.8" data-track-index="2" data-layout-allow-overflow><div id="wandel-yrWin" data-layout-ignore><div id="wandel-yrStrip" data-layout-ignore><div class="yr">2026</div><div class="yr">1990</div><div class="yr">1945</div><div class="yr">1933</div><div class="yr last">WEIMAR</div></div></div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+function blurWords(sel,t,gap){tl.fromTo(sel+" .w",{opacity:0,filter:"blur(7px)"},{opacity:1,filter:"blur(0px)",duration:0.55,ease:"power2.out",stagger:gap||0.1},t);}
+function greyWords(sel,t,gap){tl.fromTo(sel+" .w",{opacity:0.16},{opacity:1,duration:0.45,ease:"none",stagger:gap||0.1},t);}
+function lineIn(sel,t){tl.fromTo(sel,{opacity:0,filter:"blur(9px)"},{opacity:1,filter:"blur(0px)",duration:0.7,ease:"power3.out"},t);}
+function typeIn(sel,t,gap){tl.fromTo(sel+" .c",{opacity:0},{opacity:1,duration:0.01,ease:"none",stagger:gap||0.022},t);}
+function stampWords(sel,t,gap){var ws=document.querySelectorAll(sel+" .w");ws.forEach(function(w,i){tl.fromTo(w,{opacity:0,scale:1.4},{opacity:1,scale:1,duration:0.12,ease:"power4.out"},t+i*(gap||0.38));});}
+function outLine(sel,t){tl.to(sel,{opacity:0,filter:"blur(7px)",duration:0.3,ease:"power2.in"},t);}
+
+tl.fromTo("#wandel-n-b, #wandel-o-b",{scale:1},{scale:1.06,transformOrigin:"50% 40%",duration:6,ease:"none"},0);
+tl.to("#wandel-past",{clipPath:"inset(0 0% 0 0)",duration:1.6,ease:"power2.inOut"},1.2);
+tl.fromTo("#wandel-band",{x:0},{x:1240,duration:1.6,ease:"power2.inOut"},1.2);
+tl.fromTo("#wandel-yrStrip",{y:0},{y:-1200,duration:3.0,ease:"power3.inOut"},1.0);
+tl.fromTo("#wandel-yrStrip",{filter:"blur(0px)"},{filter:"blur(5px)",duration:1.1,ease:"power2.in",yoyo:true,repeat:1},1.3);
+tl.to("#wandel-yr",{opacity:0,duration:0.3},5.55);
+    window.__timelines["wandel"] = tl;
+  </script>
+</template>
